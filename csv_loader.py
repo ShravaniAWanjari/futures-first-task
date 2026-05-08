@@ -1,3 +1,13 @@
+"""
+Module: csv_loader.py
+Purpose: Modular CSV ingestion engine loading raw operational files into structured SQLite databases.
+Responsibilities: Handles transaction rolling, normalization routing, and validation mapping during table loading.
+Security Boundaries: Enforces isolated datasets; guarantees no silent failures on invalid primary keys.
+Key Decisions: Implemented purely row-by-row state evaluation to provide meticulous error log traceability instead of batch-failing.
+Inputs: CSV paths, database connection, duplicate-checking state sets.
+Outputs: Standardized database rows and structured metric summaries.
+"""
+
 import pandas as pd
 import sqlite3
 import os

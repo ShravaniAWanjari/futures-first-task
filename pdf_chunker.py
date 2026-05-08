@@ -1,3 +1,13 @@
+"""
+Module: pdf_chunker.py
+Purpose: PyMuPDF textual extraction and logical semantic chunking pipeline.
+Responsibilities: Recursively parses unstructured PDFs, extracts plain text layouts, applies token-optimized chunk overlaps dynamically.
+Security Boundaries: Gracefully isolates and skips malformed or encrypted documents without crashing batch jobs.
+Key Decisions: Employs stable MD5 chunk hashing algorithms to guarantee idempotent pipeline reruns and absolute granular traceability.
+Inputs: PDF directory paths.
+Outputs: Traceable chunk dictionaries with mapped metadata.
+"""
+
 import os
 import glob
 import hashlib

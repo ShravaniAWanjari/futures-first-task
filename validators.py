@@ -1,3 +1,13 @@
+"""
+Module: validators.py
+Purpose: Non-destructive data validation and schema integrity layer.
+Responsibilities: Enforces numerical boundaries, date logic, unique ID integrity, and cross-table foreign key rules prior to ingestion.
+Security Boundaries: Purely functional evaluation logic; makes absolutely zero database mutations.
+Key Decisions: Differentiates validation strictness dynamically between the messy NeonPlay (Startup) and strict VistaStream (Enterprise) environments.
+Inputs: Raw dictionary rows.
+Outputs: Structured validation result payloads (`valid`, `severity`, `message`).
+"""
+
 from datetime import datetime
 
 def make_result(valid, severity, message, action):

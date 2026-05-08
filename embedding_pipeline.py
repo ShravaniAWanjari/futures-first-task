@@ -1,3 +1,13 @@
+"""
+Module: embedding_pipeline.py
+Purpose: Initializes ChromaDB embeddings and bridges the semantic layout back to SQLite.
+Responsibilities: Chroma client initialization, upsert batching, and dual-system synchronization.
+Security Boundaries: Utilizes dedicated collection namespaces to strictly prevent Startup and Enterprise semantic cross-contamination.
+Key Decisions: Utilizes a dynamic two-step commit to ensure the relational DB `embedding_id` perfectly matches the finalized Chroma state.
+Inputs: SQLite connection, parsed chunk payloads.
+Outputs: Persistent vector collections and SQLite relation updates.
+"""
+
 import os
 import sqlite3
 try:

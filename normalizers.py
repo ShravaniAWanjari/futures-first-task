@@ -1,3 +1,13 @@
+"""
+Module: normalizers.py
+Purpose: Operational data cleanup and string standardization utility.
+Responsibilities: Trims whitespace, unifies capitalizations, and standardizes geography/device terminology via mapping dictionaries.
+Security Boundaries: Mutates only text formatting; explicitly relies on the validators.py module for handling true structural failures.
+Key Decisions: Highly active manipulation for Startup datasets to prove automated handling; mostly pass-through behavior for clean Enterprise data.
+Inputs: Raw cell values, field names.
+Outputs: Standardized strings and log records.
+"""
+
 import re
 try:
     from logging_utils import log_warning
