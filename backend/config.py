@@ -22,6 +22,7 @@ class Config:
     CHROMA_DB_PATH = os.path.join(BASE_DIR, os.getenv("CHROMA_DB_PATH", "chroma"))
     VISTASTREAM_DB_PATH = os.path.join(BASE_DIR, os.getenv("VISTASTREAM_DB_PATH", "databases/vistastream.db"))
     NEONPLAY_DB_PATH = os.path.join(BASE_DIR, os.getenv("NEONPLAY_DB_PATH", "databases/neonplay.db"))
+    SESSIONS_DB_PATH = os.path.join(BASE_DIR, os.getenv("SESSIONS_DB_PATH", "databases/sessions.db"))
 
 def validate_environment():
     """Validates critical environment configurations at startup."""
@@ -29,6 +30,7 @@ def validate_environment():
         print("WARNING: GEMINI_API_KEY is missing. Downstream LLM generation logic may fail.")
         
     os.makedirs(os.path.dirname(Config.VISTASTREAM_DB_PATH), exist_ok=True)
+    os.makedirs(os.path.dirname(Config.SESSIONS_DB_PATH), exist_ok=True)
     os.makedirs(Config.CHROMA_DB_PATH, exist_ok=True)
 
 validate_environment()

@@ -20,17 +20,17 @@ from backend.orchestration.sql_guard import execute_safe_sql
 from backend.logging_utils import get_file_logger
 from backend.exceptions import RetrievalError, UnsafeQueryError
 from backend.schemas import RetrievalResult, RetrievalTrace, SQLTrace
+from backend.config import Config
 
 def get_chroma_client():
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    chroma_dir = os.path.join(base_dir, "chroma")
     if chromadb is None:
         raise RetrievalError("ChromaDB is not installed.")
-    return chromadb.PersistentClient(path=chroma_dir)
+    return chromadb.PersistentClient(path=Config.CHROMA_DB_PATH)
 
 def get_db_path(dataset_name: str) -> str:
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(base_dir, "databases", f"{dataset_name}.db")
+    if dataset_name == "vistastream":
+        return Config.VISTASTREAM_DB_PATH
+    return Config.NEONPLAY_DB_PATH
 
 # --- FORMATTING HELPERS ---
 

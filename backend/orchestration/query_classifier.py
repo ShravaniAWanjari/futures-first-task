@@ -1,100 +1,95 @@
-import re
-import json
-from typing import Dict, Any
+"""
+Module: query_classifier.py
+Purpose: Classifies queries with domain-aware operational intent.
+"""
 
-def classify_query(query: str) -> Dict[str, Any]:
+import re
+from typing import Dict, Any, List, Optional
+
+
+def classify_query(query: str, history: List[Dict[str, Any]] = None) -> Dict[str, Any]:
     """
-    Classifies an incoming management query into 'sql', 'pdf', or 'hybrid' execution routes.
-    Employs NLP heuristics to determine quantitative vs qualitative intent.
-    Provides orchestration systems with specific tool recommendations and a confidence score.
+    Classifies a query into an execution route with deterministic operational mapping.
     """
-    query_lower = query.lower()
+    query_lower = query.lower().strip()
+    history = history or []
     
-    # 1. Define heuristic intent clusters
-    sql_keywords = [
-        r"how many", r"average", r"\bavg\b", r"count", r"metric", r"trend", 
-        r"total", r"sum", r"revenue", r"watch hours", r"subscribers", 
-        r"churn", r"performance", r"monthly", r"quarterly", r"q[1-4]",
-        r"completion rate", r"top \d+", r"distribution", r"calculate"
-    ]
-    
-    pdf_keywords = [
-        r"policy", r"governance", r"roadmap", r"executive", r"commentary",
-        r"strategy", r"guidelines", r"report", r"explain", r"why did", 
-        r"context", r"narrative", r"decision matrix", r"logs", r"timeline",
-        r"document", r"paragraph", r"section"
-    ]
-    
-    hybrid_keywords = [
-        r"compare.*report", r"correlate", r"explain inconsistency", 
-        r"explain drop", r"why is revenue", r"compare.*data", 
-        r"impact on metrics", r"does the report match", r"match.*metrics"
-    ]
-    
-    # 2. Score the query intent
-    sql_score = sum(1 for kw in sql_keywords if re.search(kw, query_lower))
-    pdf_score = sum(1 for kw in pdf_keywords if re.search(kw, query_lower))
-    hybrid_score = sum(1 for kw in hybrid_keywords if re.search(kw, query_lower))
-    
-    # 3. Formulate the response
-    result = {
-        "query_type": "unknown",
-        "reasoning": "",
-        "recommended_tools": [],
-        "confidence": 0.0
+    # 1. Detect Follow-up context
+    is_follow_up = _is_follow_up(query_lower)
+    resolved_query = query
+    context_reasoning = ""
+
+    if is_follow_up and history:
+        last_user_query = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "")
+        if last_user_query:
+            resolved_query = f"{last_user_query} (Follow-up: {query})"
+            context_reasoning = f"Conversational follow-up resolved against: '{last_user_query}'."
+            query_lower = resolved_query.lower()
+
+    # 2. Domain-Aware Operational Intent (Deterministic Routing)
+    operational_intents = {
+        "ingestion_quality": [r"ingestion", r"upload", r"data quality", r"inconsistenc", r"inbound", r"latest upload"],
+        "validation_errors": [r"validation", r"rejected", r"failed row", r"error summary", r"invalid", r"rejection"],
+        "normalization_activity": [r"normalization", r"mapping", r"transformed", r"standardiz"],
+        "anomaly_detection": [r"anomaly", r"spike", r"unusual", r"warning count", r"outlier"],
+        "duplicates": [r"duplicate", r"repeated", r"collision"]
     }
     
-    # Hybrid triggers explicitly via distinct keywords OR overlapping strong signals
-    is_hybrid = hybrid_score > 0 or (sql_score >= 1 and pdf_score >= 1)
-    
-    if is_hybrid:
-        result["query_type"] = "hybrid"
-        result["reasoning"] = "Query contains overlapping requests requiring both quantitative analytics and qualitative document context."
-        result["recommended_tools"] = ["query_structured_data", "search_documents"]
-        
-        # Calculate algorithmic confidence based on overlapping signal strength
-        base_confidence = 0.70 + (min(sql_score + pdf_score + hybrid_score, 5) * 0.05)
-        result["confidence"] = round(min(base_confidence, 0.98), 2)
-        
-    elif sql_score > pdf_score:
-        result["query_type"] = "sql"
-        result["reasoning"] = "Query strongly focuses on structured quantitative metrics, counts, averages, or database trends."
-        result["recommended_tools"] = ["query_structured_data"]
-        
-        base_confidence = 0.75 + (min(sql_score, 5) * 0.05)
-        result["confidence"] = round(min(base_confidence, 0.99), 2)
-        
-    elif pdf_score > sql_score:
-        result["query_type"] = "pdf"
-        result["reasoning"] = "Query targets unstructured qualitative data such as policy, strategy documentation, or executive narrative."
-        result["recommended_tools"] = ["search_documents"]
-        
-        base_confidence = 0.75 + (min(pdf_score, 5) * 0.05)
-        result["confidence"] = round(min(base_confidence, 0.99), 2)
-        
-    else:
-        # Fallback for ambiguous or overly brief queries
-        result["query_type"] = "hybrid"
-        result["reasoning"] = "Query intent is ambiguous or lacks dominant signal. Defaulting to broad multi-tool search."
-        result["recommended_tools"] = ["query_structured_data", "search_documents"]
-        result["confidence"] = 0.50
+    detected_domains = [domain for domain, patterns in operational_intents.items() 
+                       if any(re.search(p, query_lower) for p in patterns)]
 
-    return result
-
-if __name__ == "__main__":
-    # Test suite for the orchestration layer
-    test_queries = [
-        "What was the total revenue in APAC last quarter?",
-        "What does the Q2 executive report say about our European expansion strategy?",
-        "Why did our watch hours drop in Q3, and does the executive report explain it?",
-        "Show me the top 10 movies by completion rate.",
-        "What are the official guidelines for handling malformed CSV uploads?",
-        "Hello!"
+    # 3. Traditional Signal Detection
+    sql_explicit = [
+        r"how many\b", r"\baverage\b", r"count\b", r"total\b", r"calculate\b", r"top \d+",
+        r"spend", r"roi", r"efficiency", r"correlate", r"relationship", r"compare", r"metrics"
+    ]
+    pdf_explicit = [
+        r"policy", r"guideline", r"governance", r"strategy", r"roadmap", r"narrative", r"commentary"
     ]
     
-    print("=== QUERY CLASSIFIER ROUTING TESTS ===\n")
-    for q in test_queries:
-        print(f"Incoming Query: '{q}'")
-        res = classify_query(q)
-        print(json.dumps(res, indent=2))
-        print("-" * 60)
+    sql_score = sum(1 for kw in sql_explicit if re.search(kw, query_lower))
+    pdf_score = sum(1 for kw in pdf_explicit if re.search(kw, query_lower))
+    
+    # --- Routing Logic ---
+    result = {
+        "query_type": "unknown",
+        "reasoning": context_reasoning,
+        "recommended_tools": [],
+        "confidence": 0.0,
+        "resolved_query": resolved_query,
+        "operational_domain": detected_domains[0] if detected_domains else None
+    }
+
+    # Priority 1: Deterministic Operational Routing
+    if detected_domains:
+        result["query_type"] = "sql"
+        result["recommended_tools"] = ["query_structured_data"]
+        result["confidence"] = 0.95
+        result["reasoning"] = f"Deterministic operational intent detected ({detected_domains[0]}). Routing to structured analytics."
+        return result
+
+    # Priority 2: Hybrid/SQL/PDF based on scores
+    if sql_score > 0 and pdf_score > 0:
+        result["query_type"] = "hybrid"
+        result["recommended_tools"] = ["query_structured_data", "search_documents"] if sql_score >= pdf_score else ["search_documents", "query_structured_data"]
+        result["confidence"] = 0.85
+    elif sql_score > pdf_score:
+        result["query_type"] = "sql"
+        result["recommended_tools"] = ["query_structured_data"]
+        result["confidence"] = 0.90
+    elif pdf_score > sql_score:
+        result["query_type"] = "pdf"
+        result["recommended_tools"] = ["search_documents"]
+        result["confidence"] = 0.90
+    else:
+        # Default to safety with lower confidence
+        result["query_type"] = "hybrid"
+        result["recommended_tools"] = ["search_documents", "query_structured_data"]
+        result["confidence"] = 0.60
+        
+    return result
+
+
+def _is_follow_up(query: str) -> bool:
+    patterns = [r"^explain ", r"^elaborate", r"^why", r"^how so", r"^expand ", r"^can you explain more"]
+    return any(re.match(p, query) for p in patterns)

@@ -4,7 +4,20 @@ Purpose: Standardized Pydantic interfaces for the orchestration pipeline.
 Responsibilities: Ensures data predictability, type safety, and API readiness.
 """
 from pydantic import BaseModel, Field
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Generic, TypeVar
+
+T = TypeVar("T")
+
+class ErrorDetail(BaseModel):
+    type: str
+    message: str
+
+class APIResponse(BaseModel, Generic[T]):
+    success: bool
+    request_id: str
+    data: Optional[T] = None
+    error: Optional[ErrorDetail] = None
+    api_version: str = "1.0"
 
 class ValidationResult(BaseModel):
     valid: bool
@@ -62,3 +75,23 @@ class QueryRequest(BaseModel):
     query: str
     dataset: str
     request_id: Optional[str] = None
+
+class MessageResponse(BaseModel):
+    id: str
+    role: str
+    content: str
+    context: Optional[str] = None
+    sources: Optional[str] = None
+    trace: Optional[str] = None
+    timestamp: str
+
+class SessionResponse(BaseModel):
+    id: str
+    title: str
+    workspace: str
+    created_at: str
+    updated_at: str
+    messages: List[MessageResponse] = Field(default_factory=list)
+
+class SuggestionResponse(BaseModel):
+    suggestions: List[str]
