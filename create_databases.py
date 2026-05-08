@@ -30,6 +30,9 @@ def create_databases():
             conn = sqlite3.connect(db_path)
             cursor = conn.cursor()
             
+            # Enable foreign key support
+            cursor.execute("PRAGMA foreign_keys = ON;")
+            
             # Execute schema.sql to initialize empty tables (idempotent script)
             cursor.executescript(schema_sql)
             conn.commit()

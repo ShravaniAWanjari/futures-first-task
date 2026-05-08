@@ -1,0 +1,95 @@
+=== DATABASE VERIFICATION: VistaStream Global (Enterprise) ===
+
+movies: 60 rows
+viewers: 1500 rows
+watch_activity: 20000 rows
+reviews: 2500 rows
+marketing_campaigns: 60 rows
+regional_performance: 4 rows
+
+Rejected Rows: 0
+Warnings: 0
+Normalizations: 0
+
+--- Most Common Warnings ---
+
+--- Most Common Errors ---
+
+--- Normalization Frequency ---
+
+--- QA Validation Checks ---
+Unnormalized regions found (should be 0): 0
+Unnormalized genres found (should be 0): 0
+Orphan watch activities mapped to missing viewers (should be 0): 0
+Orphan watch activities mapped to missing movies (should be 0): 0
+Invalid completion rates remaining (should be 0): 0
+Duplicate activity IDs found (should be 0): 0
+
+--- Sample Diagnostic Queries for Analysis ---
+1. Count rows by region:
+   SELECT region, COUNT(*) FROM viewers GROUP BY region;
+
+2. Avg completion by genre:
+   SELECT m.genre, AVG(w.completion_rate) FROM watch_activity w 
+   JOIN movies m ON w.movie_id = m.movie_id GROUP BY m.genre;
+
+3. Duplicate detection check:
+   SELECT activity_id, COUNT(*) FROM watch_activity GROUP BY activity_id HAVING COUNT(*) > 1;
+
+==================================================
+
+=== DATABASE VERIFICATION: NeonPlay Media (Startup) ===
+
+movies: 60 rows
+viewers: 1199 rows
+watch_activity: 0 rows
+reviews: 0 rows
+marketing_campaigns: 0 rows
+regional_performance: 0 rows
+
+Rejected Rows: 3169
+Warnings: 11302
+Normalizations: 11312
+
+--- Most Common Warnings ---
+ - 1700x: Normalized device_type from 'android' to 'Mobile'
+ - 1683x: Normalized device_type from 'iphone' to 'Mobile'
+ - 1605x: Normalized device_type from 'smart tv' to 'Smart TV'
+ - 1598x: Normalized device_type from 'iPhone' to 'Mobile'
+ - 1539x: Normalized device_type from 'SmartTV' to 'Smart TV'
+
+--- Most Common Errors ---
+ - 219x: Missing critical field: movie_id
+ - 175x: Missing critical field: region
+ - 41x: Value 105.0 above maximum 100
+ - 30x: Value 999.0 above maximum 100
+ - 19x: Value -10.0 below minimum 0
+
+--- Normalization Frequency ---
+ - 1700x: Normalized device_type from 'android' to 'Mobile'
+ - 1683x: Normalized device_type from 'iphone' to 'Mobile'
+ - 1605x: Normalized device_type from 'smart tv' to 'Smart TV'
+ - 1598x: Normalized device_type from 'iPhone' to 'Mobile'
+ - 1540x: Normalized device_type from 'SmartTV' to 'Smart TV'
+
+--- QA Validation Checks ---
+Unnormalized regions found (should be 0): 0
+Unnormalized genres found (should be 0): 0
+Orphan watch activities mapped to missing viewers (should be 0): 0
+Orphan watch activities mapped to missing movies (should be 0): 0
+Invalid completion rates remaining (should be 0): 0
+Duplicate activity IDs found (should be 0): 0
+
+--- Sample Diagnostic Queries for Analysis ---
+1. Count rows by region:
+   SELECT region, COUNT(*) FROM viewers GROUP BY region;
+
+2. Avg completion by genre:
+   SELECT m.genre, AVG(w.completion_rate) FROM watch_activity w 
+   JOIN movies m ON w.movie_id = m.movie_id GROUP BY m.genre;
+
+3. Duplicate detection check:
+   SELECT activity_id, COUNT(*) FROM watch_activity GROUP BY activity_id HAVING COUNT(*) > 1;
+
+==================================================
+

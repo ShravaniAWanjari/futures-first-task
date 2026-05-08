@@ -64,13 +64,15 @@ CREATE TABLE IF NOT EXISTS regional_performance (
 );
 
 CREATE TABLE IF NOT EXISTS ingestion_logs (
-    log_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    filename TEXT,
-    ingestion_date TEXT,
-    status TEXT,
-    rows_processed INTEGER,
-    errors_detected INTEGER,
-    log_message TEXT
+    log_id TEXT PRIMARY KEY,
+    dataset TEXT,
+    source_file TEXT,
+    table_name TEXT,
+    row_reference TEXT,
+    log_level TEXT,
+    action_taken TEXT,
+    message TEXT,
+    timestamp TEXT
 );
 
 CREATE TABLE IF NOT EXISTS pdf_chunks_metadata (
