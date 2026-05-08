@@ -1,0 +1,43 @@
+{
+  "request_id": "req_hybrid_001",
+  "answer_context": "=== SQL EXECUTION RESULTS ===\nExecuted Query: SELECT quarter, total_watch_hours FROM regional_performance LIMIT 4;\nReturned 4 rows.\n\nquarter | total_watch_hours\n------------------------------\nQ2 FY2026 | 6786542\nQ2 FY2026 | 4761389\nQ2 FY2026 | 1182971\nQ2 FY2026 | 4635234\n\n\nNo documents found matching the semantic query.",
+  "sources": [
+    "DB_TABLE:REGIONAL_PERFORMANCE"
+  ],
+  "trace": {
+    "request_id": "req_hybrid_001",
+    "dataset": "vistastream",
+    "classification": {
+      "query_type": "hybrid",
+      "reasoning": "Query contains overlapping requests requiring both quantitative analytics and qualitative document context.",
+      "recommended_tools": [
+        "query_structured_data",
+        "search_documents"
+      ],
+      "confidence": 0.95
+    },
+    "tool_executions": [
+      {
+        "tool": "query_structured_data",
+        "success": true,
+        "query_used": "SELECT quarter, total_watch_hours FROM regional_performance LIMIT 4;",
+        "error": null,
+        "timing_ms": 2.14,
+        "table_references": [
+          "REGIONAL_PERFORMANCE"
+        ]
+      },
+      {
+        "tool": "search_documents",
+        "success": true,
+        "n_results": 0,
+        "error": null,
+        "timing_ms": 646.52
+      }
+    ],
+    "total_timing_ms": 652.73
+  },
+  "overall_confidence": 0.95,
+  "warnings": [],
+  "errors": []
+}
