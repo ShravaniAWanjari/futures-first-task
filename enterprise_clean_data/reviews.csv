@@ -1,0 +1,2501 @@
+review_id,viewer_id,movie_id,rating,review_text,sentiment,review_date
+REV0001,VWR1257,MOV022,4,An absolute masterpiece.,Positive,2025-03-05
+REV0002,VWR0955,MOV033,2,Very disappointing.,Negative,2026-01-01
+REV0003,VWR0452,MOV027,3,Average movie experience.,Neutral,2025-12-09
+REV0004,VWR1115,MOV029,2,Waste of time.,Negative,2025-03-30
+REV0005,VWR1220,MOV020,5,Will definitely watch again.,Positive,2025-12-12
+REV0006,VWR0310,MOV058,1,Terrible plot and awful acting.,Negative,2025-06-21
+REV0007,VWR1407,MOV036,4,Strong pacing and high production quality.,Positive,2025-03-20
+REV0008,VWR0305,MOV022,4,Strong pacing and high production quality.,Positive,2025-08-02
+REV0009,VWR0257,MOV041,1,Could not finish it.,Negative,2025-08-30
+REV0010,VWR0936,MOV020,5,Strong pacing and high production quality.,Positive,2025-01-24
+REV0011,VWR0834,MOV032,2,Could not finish it.,Negative,2025-12-19
+REV0012,VWR0852,MOV042,3,"Nothing special, but not bad.",Neutral,2025-08-07
+REV0013,VWR0089,MOV053,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-22
+REV0014,VWR0559,MOV036,1,Terrible plot and awful acting.,Negative,2025-01-14
+REV0015,VWR0615,MOV045,4,Incredible visual effects.,Positive,2025-01-09
+REV0016,VWR0648,MOV039,4,Will definitely watch again.,Positive,2025-08-07
+REV0017,VWR1173,MOV054,4,Strong pacing and high production quality.,Positive,2025-09-28
+REV0018,VWR0099,MOV042,1,Waste of time.,Negative,2025-04-13
+REV0019,VWR0929,MOV008,1,Could not finish it.,Negative,2025-05-28
+REV0020,VWR1097,MOV002,4,An absolute masterpiece.,Positive,2025-05-31
+REV0021,VWR0861,MOV037,2,Terrible plot and awful acting.,Negative,2025-06-26
+REV0022,VWR0260,MOV042,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-13
+REV0023,VWR0929,MOV058,4,Strong pacing and high production quality.,Positive,2025-08-19
+REV0024,VWR0166,MOV054,2,Waste of time.,Negative,2025-08-25
+REV0025,VWR0602,MOV045,5,Will definitely watch again.,Positive,2025-08-15
+REV0026,VWR1306,MOV024,4,Incredible visual effects.,Positive,2025-08-04
+REV0027,VWR0347,MOV022,5,Incredible visual effects.,Positive,2025-12-14
+REV0028,VWR0169,MOV047,1,Could not finish it.,Negative,2025-11-30
+REV0029,VWR0879,MOV010,4,An absolute masterpiece.,Positive,2025-07-19
+REV0030,VWR0942,MOV034,3,Average movie experience.,Neutral,2025-05-22
+REV0031,VWR0361,MOV026,4,Loved the character development.,Positive,2025-09-06
+REV0032,VWR0998,MOV001,3,"Nothing special, but not bad.",Neutral,2025-01-27
+REV0033,VWR0489,MOV029,1,Expected much better.,Negative,2025-05-16
+REV0034,VWR0138,MOV019,3,"It was okay, not great.",Neutral,2025-08-13
+REV0035,VWR0300,MOV045,2,Terrible plot and awful acting.,Negative,2025-07-31
+REV0036,VWR0121,MOV016,2,Waste of time.,Negative,2025-10-30
+REV0037,VWR0408,MOV026,3,Pacing felt a bit slow.,Neutral,2025-12-26
+REV0038,VWR1082,MOV026,3,Average movie experience.,Neutral,2025-02-10
+REV0039,VWR1384,MOV002,5,Loved the character development.,Positive,2025-10-01
+REV0040,VWR0278,MOV020,5,Loved the character development.,Positive,2025-02-04
+REV0041,VWR1314,MOV056,3,Average movie experience.,Neutral,2025-06-28
+REV0042,VWR1279,MOV050,1,Expected much better.,Negative,2025-12-03
+REV0043,VWR0008,MOV042,1,Terrible plot and awful acting.,Negative,2025-12-05
+REV0044,VWR0102,MOV042,5,Will definitely watch again.,Positive,2025-09-20
+REV0045,VWR0196,MOV023,4,Loved the character development.,Positive,2025-11-05
+REV0046,VWR0738,MOV051,1,Terrible plot and awful acting.,Negative,2025-05-11
+REV0047,VWR1276,MOV028,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-16
+REV0048,VWR0001,MOV006,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-09
+REV0049,VWR0967,MOV031,4,Incredible visual effects.,Positive,2025-05-27
+REV0050,VWR0344,MOV029,4,Loved the character development.,Positive,2025-10-08
+REV0051,VWR1157,MOV009,4,Incredible visual effects.,Positive,2025-05-02
+REV0052,VWR0923,MOV031,5,Strong pacing and high production quality.,Positive,2025-09-04
+REV0053,VWR1275,MOV038,5,Loved the character development.,Positive,2025-09-23
+REV0054,VWR0302,MOV022,2,Terrible plot and awful acting.,Negative,2025-09-05
+REV0055,VWR0382,MOV057,5,Incredible visual effects.,Positive,2025-09-12
+REV0056,VWR1261,MOV021,1,Very disappointing.,Negative,2025-11-29
+REV0057,VWR0298,MOV045,2,Waste of time.,Negative,2025-02-18
+REV0058,VWR0876,MOV006,4,Will definitely watch again.,Positive,2025-11-17
+REV0059,VWR0770,MOV019,5,Incredible visual effects.,Positive,2025-01-15
+REV0060,VWR0200,MOV026,4,An absolute masterpiece.,Positive,2025-11-22
+REV0061,VWR0084,MOV039,4,Strong pacing and high production quality.,Positive,2025-03-10
+REV0062,VWR0474,MOV017,5,Incredible visual effects.,Positive,2025-03-03
+REV0063,VWR0401,MOV036,2,Waste of time.,Negative,2025-07-27
+REV0064,VWR0328,MOV044,1,Terrible plot and awful acting.,Negative,2025-08-27
+REV0065,VWR0411,MOV025,5,Strong pacing and high production quality.,Positive,2025-10-21
+REV0066,VWR0422,MOV020,4,Incredible visual effects.,Positive,2025-07-28
+REV0067,VWR0237,MOV042,5,An absolute masterpiece.,Positive,2025-06-28
+REV0068,VWR0219,MOV004,5,An absolute masterpiece.,Positive,2025-09-11
+REV0069,VWR0487,MOV048,4,Incredible visual effects.,Positive,2025-05-15
+REV0070,VWR0784,MOV002,4,Incredible visual effects.,Positive,2025-06-21
+REV0071,VWR1166,MOV033,2,Could not finish it.,Negative,2025-10-15
+REV0072,VWR1497,MOV022,5,Incredible visual effects.,Positive,2025-01-07
+REV0073,VWR1200,MOV044,5,Will definitely watch again.,Positive,2025-03-15
+REV0074,VWR0963,MOV002,5,Loved the character development.,Positive,2025-09-24
+REV0075,VWR0274,MOV027,4,An absolute masterpiece.,Positive,2025-02-03
+REV0076,VWR0429,MOV028,5,An absolute masterpiece.,Positive,2025-03-16
+REV0077,VWR0404,MOV030,4,An absolute masterpiece.,Positive,2025-09-19
+REV0078,VWR0624,MOV055,5,Strong pacing and high production quality.,Positive,2025-08-06
+REV0079,VWR0015,MOV039,1,Could not finish it.,Negative,2025-08-21
+REV0080,VWR0306,MOV046,4,Loved the character development.,Positive,2025-06-04
+REV0081,VWR0081,MOV003,5,Incredible visual effects.,Positive,2025-08-26
+REV0082,VWR0188,MOV015,2,Could not finish it.,Negative,2025-02-15
+REV0083,VWR0683,MOV049,2,Waste of time.,Negative,2025-08-18
+REV0084,VWR0274,MOV006,2,Expected much better.,Negative,2025-01-13
+REV0085,VWR1322,MOV039,3,Pacing felt a bit slow.,Neutral,2025-07-28
+REV0086,VWR1216,MOV045,2,Expected much better.,Negative,2025-04-29
+REV0087,VWR0513,MOV032,3,Average movie experience.,Neutral,2025-04-22
+REV0088,VWR0772,MOV005,4,Will definitely watch again.,Positive,2026-01-01
+REV0089,VWR1441,MOV054,5,Loved the character development.,Positive,2025-08-26
+REV0090,VWR1282,MOV032,4,Will definitely watch again.,Positive,2025-03-22
+REV0091,VWR1484,MOV001,2,Very disappointing.,Negative,2025-12-28
+REV0092,VWR0164,MOV005,5,An absolute masterpiece.,Positive,2025-09-06
+REV0093,VWR0895,MOV013,5,Will definitely watch again.,Positive,2025-02-07
+REV0094,VWR1172,MOV050,3,"Nothing special, but not bad.",Neutral,2025-03-24
+REV0095,VWR0266,MOV055,5,Will definitely watch again.,Positive,2025-09-17
+REV0096,VWR0015,MOV058,5,An absolute masterpiece.,Positive,2025-06-24
+REV0097,VWR0608,MOV029,5,Will definitely watch again.,Positive,2025-01-09
+REV0098,VWR0608,MOV030,4,An absolute masterpiece.,Positive,2025-08-30
+REV0099,VWR1429,MOV013,4,Incredible visual effects.,Positive,2025-06-09
+REV0100,VWR1146,MOV050,4,Strong pacing and high production quality.,Positive,2025-10-16
+REV0101,VWR0610,MOV039,1,Expected much better.,Negative,2025-03-10
+REV0102,VWR0952,MOV041,3,Pacing felt a bit slow.,Neutral,2025-06-29
+REV0103,VWR0710,MOV016,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-26
+REV0104,VWR1204,MOV012,4,Incredible visual effects.,Positive,2025-07-19
+REV0105,VWR0651,MOV051,3,Pacing felt a bit slow.,Neutral,2025-02-28
+REV0106,VWR0124,MOV041,2,Expected much better.,Negative,2025-01-06
+REV0107,VWR0096,MOV004,5,Incredible visual effects.,Positive,2025-03-28
+REV0108,VWR0462,MOV018,5,An absolute masterpiece.,Positive,2025-01-07
+REV0109,VWR0798,MOV049,2,Waste of time.,Negative,2025-11-21
+REV0110,VWR0569,MOV009,5,Will definitely watch again.,Positive,2025-09-02
+REV0111,VWR0418,MOV027,2,Terrible plot and awful acting.,Negative,2025-04-02
+REV0112,VWR0972,MOV006,5,Will definitely watch again.,Positive,2025-09-29
+REV0113,VWR1027,MOV035,5,Strong pacing and high production quality.,Positive,2025-08-10
+REV0114,VWR0180,MOV045,3,Pacing felt a bit slow.,Neutral,2025-02-03
+REV0115,VWR1439,MOV040,2,Could not finish it.,Negative,2025-10-24
+REV0116,VWR0440,MOV060,2,Expected much better.,Negative,2025-03-25
+REV0117,VWR0347,MOV001,1,Could not finish it.,Negative,2025-09-30
+REV0118,VWR1397,MOV049,4,Incredible visual effects.,Positive,2025-11-23
+REV0119,VWR0557,MOV026,3,Average movie experience.,Neutral,2025-09-25
+REV0120,VWR0833,MOV023,4,Incredible visual effects.,Positive,2025-07-23
+REV0121,VWR0836,MOV044,2,Terrible plot and awful acting.,Negative,2025-03-28
+REV0122,VWR1021,MOV043,2,Waste of time.,Negative,2025-08-18
+REV0123,VWR0201,MOV006,5,Incredible visual effects.,Positive,2025-03-09
+REV0124,VWR0229,MOV012,4,Strong pacing and high production quality.,Positive,2025-12-04
+REV0125,VWR0933,MOV001,2,Could not finish it.,Negative,2025-08-05
+REV0126,VWR0099,MOV032,2,Terrible plot and awful acting.,Negative,2025-09-28
+REV0127,VWR1250,MOV015,5,Loved the character development.,Positive,2025-11-23
+REV0128,VWR0940,MOV057,3,Average movie experience.,Neutral,2025-06-29
+REV0129,VWR0604,MOV036,2,Expected much better.,Negative,2025-07-16
+REV0130,VWR0949,MOV054,1,Very disappointing.,Negative,2025-06-06
+REV0131,VWR0191,MOV002,4,Strong pacing and high production quality.,Positive,2025-05-22
+REV0132,VWR1469,MOV011,3,"Nothing special, but not bad.",Neutral,2025-01-18
+REV0133,VWR0449,MOV005,4,Strong pacing and high production quality.,Positive,2025-02-23
+REV0134,VWR1429,MOV009,5,An absolute masterpiece.,Positive,2025-02-16
+REV0135,VWR0316,MOV024,1,Very disappointing.,Negative,2025-11-07
+REV0136,VWR0568,MOV056,4,Will definitely watch again.,Positive,2025-01-09
+REV0137,VWR0898,MOV041,3,"It was okay, not great.",Neutral,2025-11-10
+REV0138,VWR0762,MOV058,2,Very disappointing.,Negative,2025-11-12
+REV0139,VWR1403,MOV047,4,Incredible visual effects.,Positive,2025-02-17
+REV0140,VWR0036,MOV015,4,Incredible visual effects.,Positive,2025-04-20
+REV0141,VWR0601,MOV039,4,Incredible visual effects.,Positive,2025-06-12
+REV0142,VWR0582,MOV048,4,An absolute masterpiece.,Positive,2025-08-19
+REV0143,VWR0905,MOV011,4,An absolute masterpiece.,Positive,2025-03-22
+REV0144,VWR0130,MOV010,4,An absolute masterpiece.,Positive,2025-12-14
+REV0145,VWR1022,MOV018,3,Pacing felt a bit slow.,Neutral,2025-06-14
+REV0146,VWR0123,MOV036,4,Strong pacing and high production quality.,Positive,2025-01-17
+REV0147,VWR0853,MOV022,4,Strong pacing and high production quality.,Positive,2025-11-15
+REV0148,VWR1379,MOV025,4,An absolute masterpiece.,Positive,2025-03-27
+REV0149,VWR1391,MOV022,2,Very disappointing.,Negative,2025-10-22
+REV0150,VWR0395,MOV059,3,Pacing felt a bit slow.,Neutral,2025-07-27
+REV0151,VWR0944,MOV026,4,Will definitely watch again.,Positive,2025-07-10
+REV0152,VWR0159,MOV023,4,Will definitely watch again.,Positive,2025-11-19
+REV0153,VWR0725,MOV010,4,Incredible visual effects.,Positive,2025-09-22
+REV0154,VWR0038,MOV027,5,Loved the character development.,Positive,2025-03-10
+REV0155,VWR1297,MOV006,4,An absolute masterpiece.,Positive,2025-03-05
+REV0156,VWR1473,MOV049,1,Very disappointing.,Negative,2025-07-17
+REV0157,VWR1317,MOV046,1,Expected much better.,Negative,2025-11-26
+REV0158,VWR1197,MOV037,4,Incredible visual effects.,Positive,2025-08-22
+REV0159,VWR0744,MOV021,2,Expected much better.,Negative,2025-04-02
+REV0160,VWR0278,MOV019,1,Terrible plot and awful acting.,Negative,2025-12-21
+REV0161,VWR0128,MOV044,1,Very disappointing.,Negative,2025-09-21
+REV0162,VWR0927,MOV018,2,Expected much better.,Negative,2025-04-27
+REV0163,VWR0523,MOV019,3,Pacing felt a bit slow.,Neutral,2025-03-02
+REV0164,VWR1054,MOV026,5,Strong pacing and high production quality.,Positive,2025-03-17
+REV0165,VWR0628,MOV011,2,Could not finish it.,Negative,2025-02-02
+REV0166,VWR1199,MOV047,1,Expected much better.,Negative,2025-03-05
+REV0167,VWR0491,MOV004,5,Incredible visual effects.,Positive,2025-12-18
+REV0168,VWR0256,MOV037,2,Waste of time.,Negative,2025-06-21
+REV0169,VWR0104,MOV010,4,Will definitely watch again.,Positive,2025-07-18
+REV0170,VWR0709,MOV014,1,Waste of time.,Negative,2025-02-20
+REV0171,VWR0089,MOV029,3,Pacing felt a bit slow.,Neutral,2025-04-15
+REV0172,VWR1120,MOV057,5,Incredible visual effects.,Positive,2025-12-19
+REV0173,VWR1211,MOV036,3,Average movie experience.,Neutral,2025-08-24
+REV0174,VWR1474,MOV046,4,Loved the character development.,Positive,2025-02-06
+REV0175,VWR1064,MOV005,5,Incredible visual effects.,Positive,2025-04-17
+REV0176,VWR1369,MOV036,5,Strong pacing and high production quality.,Positive,2025-11-14
+REV0177,VWR1347,MOV022,5,Incredible visual effects.,Positive,2025-08-03
+REV0178,VWR1494,MOV031,2,Could not finish it.,Negative,2025-10-13
+REV0179,VWR0199,MOV008,4,An absolute masterpiece.,Positive,2025-01-16
+REV0180,VWR1103,MOV045,1,Very disappointing.,Negative,2025-09-23
+REV0181,VWR1178,MOV058,3,"Nothing special, but not bad.",Neutral,2025-08-07
+REV0182,VWR0085,MOV015,1,Very disappointing.,Negative,2025-05-10
+REV0183,VWR1375,MOV057,5,Loved the character development.,Positive,2025-01-24
+REV0184,VWR1305,MOV002,5,Strong pacing and high production quality.,Positive,2025-12-15
+REV0185,VWR1042,MOV037,3,Pacing felt a bit slow.,Neutral,2025-06-19
+REV0186,VWR0786,MOV043,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-07
+REV0187,VWR0818,MOV006,4,Strong pacing and high production quality.,Positive,2025-05-10
+REV0188,VWR1488,MOV036,5,Strong pacing and high production quality.,Positive,2025-04-02
+REV0189,VWR0448,MOV015,4,Loved the character development.,Positive,2025-12-06
+REV0190,VWR0132,MOV051,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-15
+REV0191,VWR0878,MOV008,1,Expected much better.,Negative,2025-07-24
+REV0192,VWR1441,MOV037,3,"It was okay, not great.",Neutral,2025-01-23
+REV0193,VWR0403,MOV028,4,Strong pacing and high production quality.,Positive,2025-10-28
+REV0194,VWR1398,MOV047,3,Pacing felt a bit slow.,Neutral,2025-04-07
+REV0195,VWR0893,MOV048,1,Terrible plot and awful acting.,Negative,2025-06-04
+REV0196,VWR0774,MOV034,3,"It was okay, not great.",Neutral,2025-07-10
+REV0197,VWR1466,MOV049,4,Loved the character development.,Positive,2025-02-26
+REV0198,VWR1297,MOV054,2,Very disappointing.,Negative,2025-11-21
+REV0199,VWR1221,MOV006,2,Expected much better.,Negative,2025-10-30
+REV0200,VWR0388,MOV017,3,"Nothing special, but not bad.",Neutral,2025-09-21
+REV0201,VWR0345,MOV040,3,Average movie experience.,Neutral,2025-01-11
+REV0202,VWR0073,MOV052,4,Incredible visual effects.,Positive,2025-02-16
+REV0203,VWR0223,MOV028,1,Could not finish it.,Negative,2025-05-03
+REV0204,VWR0347,MOV042,2,Very disappointing.,Negative,2025-12-21
+REV0205,VWR0769,MOV041,5,Strong pacing and high production quality.,Positive,2025-07-30
+REV0206,VWR0670,MOV052,5,Strong pacing and high production quality.,Positive,2025-02-04
+REV0207,VWR0500,MOV052,4,Incredible visual effects.,Positive,2025-06-08
+REV0208,VWR0460,MOV032,2,Waste of time.,Negative,2025-02-10
+REV0209,VWR0050,MOV039,2,Could not finish it.,Negative,2025-11-04
+REV0210,VWR0221,MOV046,1,Waste of time.,Negative,2025-06-04
+REV0211,VWR0471,MOV028,4,Loved the character development.,Positive,2025-11-16
+REV0212,VWR0476,MOV011,4,Strong pacing and high production quality.,Positive,2025-04-18
+REV0213,VWR0087,MOV054,5,An absolute masterpiece.,Positive,2025-10-28
+REV0214,VWR0566,MOV049,4,Incredible visual effects.,Positive,2025-02-01
+REV0215,VWR1173,MOV041,5,Will definitely watch again.,Positive,2025-08-05
+REV0216,VWR0585,MOV001,5,Strong pacing and high production quality.,Positive,2025-08-28
+REV0217,VWR0634,MOV039,5,An absolute masterpiece.,Positive,2025-07-06
+REV0218,VWR0009,MOV059,4,Strong pacing and high production quality.,Positive,2025-03-06
+REV0219,VWR0264,MOV010,1,Could not finish it.,Negative,2025-03-10
+REV0220,VWR0080,MOV019,1,Very disappointing.,Negative,2025-12-12
+REV0221,VWR0180,MOV033,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-19
+REV0222,VWR0411,MOV039,1,Could not finish it.,Negative,2025-01-15
+REV0223,VWR0890,MOV044,4,An absolute masterpiece.,Positive,2025-03-07
+REV0224,VWR0395,MOV012,1,Very disappointing.,Negative,2025-02-05
+REV0225,VWR0498,MOV011,1,Expected much better.,Negative,2025-04-27
+REV0226,VWR0228,MOV015,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-18
+REV0227,VWR0839,MOV024,4,Strong pacing and high production quality.,Positive,2025-07-23
+REV0228,VWR1221,MOV004,3,"It was okay, not great.",Neutral,2025-08-30
+REV0229,VWR1400,MOV003,5,Incredible visual effects.,Positive,2025-05-01
+REV0230,VWR0948,MOV005,3,"Nothing special, but not bad.",Neutral,2025-11-03
+REV0231,VWR0354,MOV054,3,"It was okay, not great.",Neutral,2025-10-06
+REV0232,VWR0571,MOV029,4,Will definitely watch again.,Positive,2025-10-20
+REV0233,VWR0982,MOV019,5,Will definitely watch again.,Positive,2025-04-16
+REV0234,VWR0340,MOV009,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-02
+REV0235,VWR1276,MOV028,4,Incredible visual effects.,Positive,2025-07-17
+REV0236,VWR0234,MOV034,1,Very disappointing.,Negative,2025-10-18
+REV0237,VWR1370,MOV051,2,Terrible plot and awful acting.,Negative,2025-05-14
+REV0238,VWR0834,MOV052,2,Terrible plot and awful acting.,Negative,2025-11-22
+REV0239,VWR0640,MOV057,2,Terrible plot and awful acting.,Negative,2025-03-14
+REV0240,VWR0693,MOV021,2,Expected much better.,Negative,2025-01-13
+REV0241,VWR1058,MOV016,1,Very disappointing.,Negative,2025-04-04
+REV0242,VWR1400,MOV009,3,"It was okay, not great.",Neutral,2025-08-25
+REV0243,VWR0345,MOV044,1,Waste of time.,Negative,2025-06-11
+REV0244,VWR0956,MOV054,4,Will definitely watch again.,Positive,2025-01-03
+REV0245,VWR0230,MOV016,5,An absolute masterpiece.,Positive,2025-10-05
+REV0246,VWR1431,MOV020,4,Strong pacing and high production quality.,Positive,2025-05-08
+REV0247,VWR0132,MOV021,5,Will definitely watch again.,Positive,2025-03-29
+REV0248,VWR0007,MOV040,1,Waste of time.,Negative,2025-07-15
+REV0249,VWR0049,MOV041,3,Average movie experience.,Neutral,2025-05-20
+REV0250,VWR0086,MOV002,5,Strong pacing and high production quality.,Positive,2025-04-23
+REV0251,VWR1485,MOV052,1,Expected much better.,Negative,2025-04-08
+REV0252,VWR0996,MOV055,4,Loved the character development.,Positive,2025-06-09
+REV0253,VWR0550,MOV050,2,Waste of time.,Negative,2025-02-09
+REV0254,VWR1156,MOV027,3,"Nothing special, but not bad.",Neutral,2025-02-03
+REV0255,VWR0755,MOV043,3,Pacing felt a bit slow.,Neutral,2025-12-17
+REV0256,VWR0909,MOV023,4,Strong pacing and high production quality.,Positive,2025-11-23
+REV0257,VWR0323,MOV035,1,Waste of time.,Negative,2025-07-23
+REV0258,VWR0047,MOV033,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-11
+REV0259,VWR1386,MOV017,1,Waste of time.,Negative,2025-01-30
+REV0260,VWR0714,MOV040,3,"Nothing special, but not bad.",Neutral,2025-07-19
+REV0261,VWR0561,MOV009,2,Expected much better.,Negative,2025-05-22
+REV0262,VWR0555,MOV021,2,Waste of time.,Negative,2025-04-23
+REV0263,VWR0006,MOV059,4,Loved the character development.,Positive,2025-02-04
+REV0264,VWR0858,MOV014,5,Will definitely watch again.,Positive,2025-11-05
+REV0265,VWR1483,MOV010,4,Strong pacing and high production quality.,Positive,2025-12-07
+REV0266,VWR1441,MOV051,1,Could not finish it.,Negative,2025-09-25
+REV0267,VWR0834,MOV055,5,An absolute masterpiece.,Positive,2025-07-22
+REV0268,VWR0848,MOV035,2,Could not finish it.,Negative,2025-11-24
+REV0269,VWR1178,MOV042,5,Incredible visual effects.,Positive,2025-02-15
+REV0270,VWR0425,MOV054,4,Will definitely watch again.,Positive,2025-04-19
+REV0271,VWR0822,MOV049,4,Incredible visual effects.,Positive,2025-12-11
+REV0272,VWR0339,MOV002,5,Strong pacing and high production quality.,Positive,2025-10-28
+REV0273,VWR1019,MOV055,5,Incredible visual effects.,Positive,2025-01-14
+REV0274,VWR1325,MOV024,3,"It was okay, not great.",Neutral,2025-03-04
+REV0275,VWR0905,MOV023,5,An absolute masterpiece.,Positive,2025-07-23
+REV0276,VWR1343,MOV007,2,Waste of time.,Negative,2026-01-01
+REV0277,VWR1101,MOV002,2,Waste of time.,Negative,2025-10-11
+REV0278,VWR0169,MOV024,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-16
+REV0279,VWR0350,MOV022,2,Terrible plot and awful acting.,Negative,2025-05-08
+REV0280,VWR1428,MOV015,5,Will definitely watch again.,Positive,2025-12-23
+REV0281,VWR0203,MOV053,1,Could not finish it.,Negative,2025-10-15
+REV0282,VWR1005,MOV007,3,"It was okay, not great.",Neutral,2025-02-09
+REV0283,VWR0307,MOV014,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-14
+REV0284,VWR1359,MOV057,5,Incredible visual effects.,Positive,2025-01-26
+REV0285,VWR0816,MOV044,1,Waste of time.,Negative,2025-01-04
+REV0286,VWR0400,MOV001,1,Could not finish it.,Negative,2025-12-18
+REV0287,VWR1213,MOV048,1,Could not finish it.,Negative,2025-09-01
+REV0288,VWR1190,MOV060,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-03
+REV0289,VWR1275,MOV012,5,An absolute masterpiece.,Positive,2025-12-03
+REV0290,VWR1429,MOV006,1,Expected much better.,Negative,2025-01-18
+REV0291,VWR0278,MOV047,5,Strong pacing and high production quality.,Positive,2025-10-22
+REV0292,VWR0549,MOV010,1,Waste of time.,Negative,2025-11-21
+REV0293,VWR1338,MOV047,5,Will definitely watch again.,Positive,2025-03-30
+REV0294,VWR0040,MOV021,4,Loved the character development.,Positive,2025-07-07
+REV0295,VWR0169,MOV040,1,Terrible plot and awful acting.,Negative,2025-05-20
+REV0296,VWR0173,MOV042,1,Expected much better.,Negative,2025-02-14
+REV0297,VWR0869,MOV005,3,Pacing felt a bit slow.,Neutral,2025-10-27
+REV0298,VWR0605,MOV034,1,Terrible plot and awful acting.,Negative,2025-08-26
+REV0299,VWR0942,MOV007,1,Expected much better.,Negative,2025-12-22
+REV0300,VWR0144,MOV011,5,Will definitely watch again.,Positive,2025-06-12
+REV0301,VWR0920,MOV030,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-22
+REV0302,VWR1221,MOV029,2,Expected much better.,Negative,2025-09-07
+REV0303,VWR1086,MOV001,3,Average movie experience.,Neutral,2025-01-08
+REV0304,VWR0888,MOV004,1,Waste of time.,Negative,2025-03-14
+REV0305,VWR1131,MOV009,5,An absolute masterpiece.,Positive,2025-09-17
+REV0306,VWR0865,MOV018,4,Loved the character development.,Positive,2025-11-19
+REV0307,VWR1389,MOV039,4,Loved the character development.,Positive,2025-07-07
+REV0308,VWR0288,MOV013,5,Loved the character development.,Positive,2025-09-07
+REV0309,VWR0126,MOV049,2,Very disappointing.,Negative,2025-10-13
+REV0310,VWR0767,MOV053,1,Terrible plot and awful acting.,Negative,2025-01-14
+REV0311,VWR0209,MOV012,1,Expected much better.,Negative,2025-09-05
+REV0312,VWR1435,MOV054,3,"It was okay, not great.",Neutral,2025-11-22
+REV0313,VWR0743,MOV040,5,Strong pacing and high production quality.,Positive,2025-12-09
+REV0314,VWR1148,MOV048,3,Average movie experience.,Neutral,2025-06-13
+REV0315,VWR0050,MOV045,1,Expected much better.,Negative,2025-08-01
+REV0316,VWR0107,MOV036,2,Very disappointing.,Negative,2025-06-09
+REV0317,VWR0970,MOV029,5,Incredible visual effects.,Positive,2025-06-10
+REV0318,VWR1172,MOV031,3,Average movie experience.,Neutral,2025-04-20
+REV0319,VWR0314,MOV015,1,Terrible plot and awful acting.,Negative,2025-01-28
+REV0320,VWR0360,MOV020,1,Very disappointing.,Negative,2025-05-07
+REV0321,VWR0606,MOV015,4,Incredible visual effects.,Positive,2025-01-07
+REV0322,VWR1215,MOV022,5,Loved the character development.,Positive,2025-12-08
+REV0323,VWR0977,MOV004,4,An absolute masterpiece.,Positive,2025-05-04
+REV0324,VWR0774,MOV047,1,Could not finish it.,Negative,2025-06-17
+REV0325,VWR0448,MOV049,5,An absolute masterpiece.,Positive,2025-07-12
+REV0326,VWR0727,MOV004,1,Waste of time.,Negative,2025-08-03
+REV0327,VWR1385,MOV025,3,Pacing felt a bit slow.,Neutral,2025-09-24
+REV0328,VWR0656,MOV039,2,Expected much better.,Negative,2025-10-16
+REV0329,VWR0740,MOV054,5,Incredible visual effects.,Positive,2025-06-26
+REV0330,VWR0705,MOV016,3,"Nothing special, but not bad.",Neutral,2025-01-24
+REV0331,VWR0849,MOV011,3,"It was okay, not great.",Neutral,2025-07-24
+REV0332,VWR1099,MOV059,2,Expected much better.,Negative,2025-06-25
+REV0333,VWR0684,MOV029,2,Expected much better.,Negative,2025-01-17
+REV0334,VWR1166,MOV013,1,Very disappointing.,Negative,2025-04-29
+REV0335,VWR0743,MOV019,4,Loved the character development.,Positive,2025-11-12
+REV0336,VWR0846,MOV016,2,Very disappointing.,Negative,2025-11-03
+REV0337,VWR0365,MOV059,2,Expected much better.,Negative,2025-10-27
+REV0338,VWR1255,MOV010,2,Waste of time.,Negative,2025-11-10
+REV0339,VWR0784,MOV032,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-06
+REV0340,VWR1077,MOV060,2,Could not finish it.,Negative,2025-10-19
+REV0341,VWR0821,MOV041,2,Expected much better.,Negative,2025-03-17
+REV0342,VWR0286,MOV020,4,Will definitely watch again.,Positive,2025-04-04
+REV0343,VWR0025,MOV003,2,Expected much better.,Negative,2025-04-18
+REV0344,VWR0770,MOV042,4,An absolute masterpiece.,Positive,2025-04-24
+REV0345,VWR1018,MOV051,4,Incredible visual effects.,Positive,2025-09-14
+REV0346,VWR1382,MOV040,3,"It was okay, not great.",Neutral,2025-08-19
+REV0347,VWR0081,MOV009,3,Pacing felt a bit slow.,Neutral,2025-12-31
+REV0348,VWR0467,MOV028,4,Loved the character development.,Positive,2025-12-22
+REV0349,VWR0973,MOV051,2,Waste of time.,Negative,2025-12-07
+REV0350,VWR0612,MOV002,1,Waste of time.,Negative,2025-06-11
+REV0351,VWR0411,MOV015,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-14
+REV0352,VWR0306,MOV033,1,Could not finish it.,Negative,2025-06-19
+REV0353,VWR1380,MOV047,5,An absolute masterpiece.,Positive,2025-03-12
+REV0354,VWR1206,MOV035,3,"Nothing special, but not bad.",Neutral,2025-11-08
+REV0355,VWR1198,MOV050,5,Will definitely watch again.,Positive,2025-08-24
+REV0356,VWR0945,MOV036,2,Terrible plot and awful acting.,Negative,2025-06-27
+REV0357,VWR0163,MOV018,2,Terrible plot and awful acting.,Negative,2025-12-16
+REV0358,VWR0821,MOV047,4,Incredible visual effects.,Positive,2025-08-12
+REV0359,VWR0988,MOV047,4,Incredible visual effects.,Positive,2025-10-30
+REV0360,VWR0061,MOV021,1,Expected much better.,Negative,2025-05-31
+REV0361,VWR0026,MOV051,5,Strong pacing and high production quality.,Positive,2025-01-16
+REV0362,VWR0761,MOV020,3,Pacing felt a bit slow.,Neutral,2025-10-29
+REV0363,VWR1069,MOV007,5,Strong pacing and high production quality.,Positive,2025-07-06
+REV0364,VWR0462,MOV022,3,"Nothing special, but not bad.",Neutral,2025-07-19
+REV0365,VWR1316,MOV035,3,"It was okay, not great.",Neutral,2025-02-27
+REV0366,VWR1498,MOV010,4,An absolute masterpiece.,Positive,2025-07-18
+REV0367,VWR0495,MOV034,4,An absolute masterpiece.,Positive,2025-12-11
+REV0368,VWR1373,MOV003,1,Very disappointing.,Negative,2025-07-31
+REV0369,VWR0352,MOV026,4,Incredible visual effects.,Positive,2025-05-24
+REV0370,VWR1206,MOV052,1,Terrible plot and awful acting.,Negative,2025-09-22
+REV0371,VWR0810,MOV026,2,Very disappointing.,Negative,2025-03-23
+REV0372,VWR0528,MOV011,1,Terrible plot and awful acting.,Negative,2025-03-11
+REV0373,VWR0214,MOV048,2,Very disappointing.,Negative,2025-03-09
+REV0374,VWR1231,MOV003,1,Waste of time.,Negative,2025-12-11
+REV0375,VWR1250,MOV033,4,Incredible visual effects.,Positive,2025-02-03
+REV0376,VWR0956,MOV022,4,Loved the character development.,Positive,2025-12-31
+REV0377,VWR0778,MOV042,5,Will definitely watch again.,Positive,2025-06-07
+REV0378,VWR1350,MOV005,4,Strong pacing and high production quality.,Positive,2025-08-26
+REV0379,VWR0465,MOV002,1,Could not finish it.,Negative,2025-08-23
+REV0380,VWR0132,MOV011,2,Very disappointing.,Negative,2025-08-16
+REV0381,VWR0542,MOV028,4,Loved the character development.,Positive,2025-02-21
+REV0382,VWR0975,MOV057,4,Incredible visual effects.,Positive,2025-09-18
+REV0383,VWR1306,MOV044,3,Pacing felt a bit slow.,Neutral,2025-07-04
+REV0384,VWR1454,MOV026,5,Strong pacing and high production quality.,Positive,2025-03-29
+REV0385,VWR0993,MOV036,1,Very disappointing.,Negative,2025-03-06
+REV0386,VWR1057,MOV048,3,Average movie experience.,Neutral,2025-09-25
+REV0387,VWR0585,MOV054,5,Will definitely watch again.,Positive,2025-10-10
+REV0388,VWR0341,MOV045,2,Very disappointing.,Negative,2025-05-18
+REV0389,VWR1019,MOV050,4,Will definitely watch again.,Positive,2025-10-03
+REV0390,VWR1353,MOV033,4,Will definitely watch again.,Positive,2025-01-28
+REV0391,VWR0119,MOV050,3,"Nothing special, but not bad.",Neutral,2025-03-16
+REV0392,VWR1182,MOV060,2,Expected much better.,Negative,2025-12-26
+REV0393,VWR0807,MOV004,4,An absolute masterpiece.,Positive,2025-05-26
+REV0394,VWR0326,MOV007,2,Waste of time.,Negative,2025-08-10
+REV0395,VWR0546,MOV030,4,An absolute masterpiece.,Positive,2025-03-17
+REV0396,VWR0803,MOV002,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-09
+REV0397,VWR1262,MOV040,5,Loved the character development.,Positive,2025-01-31
+REV0398,VWR0688,MOV039,1,Terrible plot and awful acting.,Negative,2025-12-08
+REV0399,VWR0266,MOV034,5,Loved the character development.,Positive,2025-10-13
+REV0400,VWR0997,MOV026,5,Strong pacing and high production quality.,Positive,2025-02-08
+REV0401,VWR0802,MOV050,4,Incredible visual effects.,Positive,2025-08-18
+REV0402,VWR0413,MOV036,2,Could not finish it.,Negative,2025-03-10
+REV0403,VWR0876,MOV039,3,Pacing felt a bit slow.,Neutral,2025-07-14
+REV0404,VWR1216,MOV004,5,Incredible visual effects.,Positive,2025-12-23
+REV0405,VWR1219,MOV040,2,Very disappointing.,Negative,2025-08-18
+REV0406,VWR0961,MOV053,4,Will definitely watch again.,Positive,2025-10-23
+REV0407,VWR1101,MOV002,3,"Nothing special, but not bad.",Neutral,2025-09-22
+REV0408,VWR1148,MOV051,3,Average movie experience.,Neutral,2025-04-29
+REV0409,VWR0873,MOV046,2,Could not finish it.,Negative,2025-10-19
+REV0410,VWR1382,MOV002,5,Will definitely watch again.,Positive,2025-12-23
+REV0411,VWR0190,MOV053,4,Loved the character development.,Positive,2025-09-20
+REV0412,VWR1411,MOV003,2,Could not finish it.,Negative,2025-09-17
+REV0413,VWR0759,MOV003,4,Incredible visual effects.,Positive,2025-04-04
+REV0414,VWR0599,MOV028,4,Incredible visual effects.,Positive,2025-07-14
+REV0415,VWR1012,MOV019,1,Waste of time.,Negative,2025-07-08
+REV0416,VWR0439,MOV021,5,Incredible visual effects.,Positive,2025-11-29
+REV0417,VWR1021,MOV010,1,Terrible plot and awful acting.,Negative,2025-09-19
+REV0418,VWR0304,MOV009,5,Will definitely watch again.,Positive,2025-04-26
+REV0419,VWR0612,MOV039,5,Loved the character development.,Positive,2025-05-13
+REV0420,VWR0247,MOV032,2,Could not finish it.,Negative,2025-02-04
+REV0421,VWR0980,MOV003,3,Average movie experience.,Neutral,2025-01-10
+REV0422,VWR1439,MOV004,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-15
+REV0423,VWR0571,MOV005,3,"It was okay, not great.",Neutral,2025-04-02
+REV0424,VWR0018,MOV019,1,Terrible plot and awful acting.,Negative,2025-10-13
+REV0425,VWR1173,MOV007,3,"Nothing special, but not bad.",Neutral,2025-03-03
+REV0426,VWR0880,MOV030,2,Waste of time.,Negative,2025-03-17
+REV0427,VWR0395,MOV038,4,Will definitely watch again.,Positive,2025-09-14
+REV0428,VWR0897,MOV056,1,Expected much better.,Negative,2025-07-02
+REV0429,VWR1202,MOV025,4,An absolute masterpiece.,Positive,2025-11-03
+REV0430,VWR0553,MOV035,2,Terrible plot and awful acting.,Negative,2025-08-20
+REV0431,VWR0684,MOV050,5,Strong pacing and high production quality.,Positive,2025-12-23
+REV0432,VWR0826,MOV033,4,Strong pacing and high production quality.,Positive,2025-08-23
+REV0433,VWR0293,MOV017,1,Could not finish it.,Negative,2025-08-09
+REV0434,VWR0643,MOV001,5,Strong pacing and high production quality.,Positive,2025-05-23
+REV0435,VWR1203,MOV028,5,An absolute masterpiece.,Positive,2025-06-17
+REV0436,VWR0036,MOV036,3,Average movie experience.,Neutral,2025-08-27
+REV0437,VWR0179,MOV015,1,Expected much better.,Negative,2025-05-09
+REV0438,VWR0065,MOV006,3,Pacing felt a bit slow.,Neutral,2025-12-27
+REV0439,VWR1249,MOV037,1,Terrible plot and awful acting.,Negative,2025-01-07
+REV0440,VWR0214,MOV032,5,Incredible visual effects.,Positive,2025-01-22
+REV0441,VWR1102,MOV020,3,Average movie experience.,Neutral,2025-07-21
+REV0442,VWR1081,MOV026,3,"Nothing special, but not bad.",Neutral,2025-12-24
+REV0443,VWR0109,MOV018,4,Strong pacing and high production quality.,Positive,2025-05-01
+REV0444,VWR0747,MOV028,3,Average movie experience.,Neutral,2025-11-03
+REV0445,VWR0415,MOV047,4,An absolute masterpiece.,Positive,2025-06-13
+REV0446,VWR0594,MOV051,2,Waste of time.,Negative,2025-06-21
+REV0447,VWR0733,MOV046,2,Very disappointing.,Negative,2025-07-08
+REV0448,VWR0960,MOV050,4,Loved the character development.,Positive,2025-09-07
+REV0449,VWR0041,MOV024,1,Very disappointing.,Negative,2025-09-04
+REV0450,VWR1332,MOV059,5,Strong pacing and high production quality.,Positive,2025-10-31
+REV0451,VWR0913,MOV036,4,Incredible visual effects.,Positive,2025-08-19
+REV0452,VWR0268,MOV046,3,Decent watch for a Sunday afternoon.,Neutral,2025-01-04
+REV0453,VWR0932,MOV004,4,Loved the character development.,Positive,2025-02-05
+REV0454,VWR1137,MOV055,4,Will definitely watch again.,Positive,2025-03-12
+REV0455,VWR1142,MOV021,5,Strong pacing and high production quality.,Positive,2025-10-27
+REV0456,VWR0648,MOV054,4,Will definitely watch again.,Positive,2025-11-13
+REV0457,VWR1298,MOV014,3,Decent watch for a Sunday afternoon.,Neutral,2025-08-01
+REV0458,VWR1486,MOV041,4,Strong pacing and high production quality.,Positive,2025-07-01
+REV0459,VWR1352,MOV023,5,Incredible visual effects.,Positive,2025-05-12
+REV0460,VWR1345,MOV047,4,Loved the character development.,Positive,2025-03-04
+REV0461,VWR1073,MOV038,4,Strong pacing and high production quality.,Positive,2025-11-03
+REV0462,VWR1487,MOV022,4,An absolute masterpiece.,Positive,2025-09-18
+REV0463,VWR0589,MOV016,2,Very disappointing.,Negative,2025-12-26
+REV0464,VWR1351,MOV030,5,An absolute masterpiece.,Positive,2025-03-20
+REV0465,VWR0232,MOV049,4,Loved the character development.,Positive,2025-03-02
+REV0466,VWR0140,MOV047,5,Strong pacing and high production quality.,Positive,2025-05-13
+REV0467,VWR0913,MOV036,3,"Nothing special, but not bad.",Neutral,2025-11-22
+REV0468,VWR0995,MOV053,1,Expected much better.,Negative,2025-07-20
+REV0469,VWR1430,MOV047,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-31
+REV0470,VWR1312,MOV052,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-09
+REV0471,VWR0621,MOV003,2,Very disappointing.,Negative,2025-04-14
+REV0472,VWR1215,MOV058,2,Could not finish it.,Negative,2025-06-09
+REV0473,VWR0435,MOV036,5,Incredible visual effects.,Positive,2025-07-20
+REV0474,VWR1319,MOV019,4,An absolute masterpiece.,Positive,2025-03-22
+REV0475,VWR0991,MOV021,5,Incredible visual effects.,Positive,2025-04-11
+REV0476,VWR1194,MOV005,4,Loved the character development.,Positive,2025-06-26
+REV0477,VWR1448,MOV037,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-30
+REV0478,VWR0417,MOV004,5,Will definitely watch again.,Positive,2025-04-21
+REV0479,VWR0008,MOV050,1,Expected much better.,Negative,2025-03-20
+REV0480,VWR0778,MOV013,1,Terrible plot and awful acting.,Negative,2025-10-29
+REV0481,VWR0829,MOV044,5,Loved the character development.,Positive,2025-11-30
+REV0482,VWR0613,MOV005,5,Will definitely watch again.,Positive,2025-08-20
+REV0483,VWR0224,MOV044,4,An absolute masterpiece.,Positive,2025-04-30
+REV0484,VWR0384,MOV044,1,Waste of time.,Negative,2025-10-02
+REV0485,VWR0936,MOV046,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-14
+REV0486,VWR1465,MOV042,2,Could not finish it.,Negative,2025-10-11
+REV0487,VWR1303,MOV043,3,Decent watch for a Sunday afternoon.,Neutral,2025-06-16
+REV0488,VWR1250,MOV059,1,Could not finish it.,Negative,2025-07-16
+REV0489,VWR1393,MOV018,1,Expected much better.,Negative,2025-11-08
+REV0490,VWR1078,MOV057,2,Waste of time.,Negative,2025-06-09
+REV0491,VWR0985,MOV047,4,Incredible visual effects.,Positive,2025-08-17
+REV0492,VWR0504,MOV013,2,Very disappointing.,Negative,2025-06-11
+REV0493,VWR0066,MOV021,2,Waste of time.,Negative,2025-07-10
+REV0494,VWR1495,MOV044,2,Could not finish it.,Negative,2025-12-17
+REV0495,VWR1042,MOV017,5,An absolute masterpiece.,Positive,2025-07-13
+REV0496,VWR0861,MOV033,1,Very disappointing.,Negative,2025-08-03
+REV0497,VWR0088,MOV015,5,Incredible visual effects.,Positive,2025-08-27
+REV0498,VWR0754,MOV029,5,An absolute masterpiece.,Positive,2025-12-21
+REV0499,VWR1201,MOV010,4,Strong pacing and high production quality.,Positive,2025-10-08
+REV0500,VWR0642,MOV055,1,Could not finish it.,Negative,2025-02-25
+REV0501,VWR0521,MOV011,5,Will definitely watch again.,Positive,2025-04-27
+REV0502,VWR0087,MOV038,2,Terrible plot and awful acting.,Negative,2025-06-26
+REV0503,VWR0283,MOV016,4,Will definitely watch again.,Positive,2025-06-21
+REV0504,VWR0871,MOV018,4,Strong pacing and high production quality.,Positive,2025-09-30
+REV0505,VWR0630,MOV035,4,Loved the character development.,Positive,2025-08-30
+REV0506,VWR0993,MOV030,4,Incredible visual effects.,Positive,2025-11-09
+REV0507,VWR1218,MOV030,4,An absolute masterpiece.,Positive,2025-01-13
+REV0508,VWR0377,MOV022,4,Loved the character development.,Positive,2025-10-25
+REV0509,VWR0057,MOV018,4,Loved the character development.,Positive,2025-08-21
+REV0510,VWR1025,MOV056,2,Expected much better.,Negative,2025-10-31
+REV0511,VWR0341,MOV049,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-26
+REV0512,VWR1374,MOV019,1,Expected much better.,Negative,2025-09-19
+REV0513,VWR0869,MOV055,3,Pacing felt a bit slow.,Neutral,2025-07-13
+REV0514,VWR0427,MOV002,2,Expected much better.,Negative,2025-08-19
+REV0515,VWR0414,MOV017,5,Incredible visual effects.,Positive,2025-06-07
+REV0516,VWR1452,MOV043,2,Very disappointing.,Negative,2025-09-25
+REV0517,VWR0313,MOV028,5,Will definitely watch again.,Positive,2025-10-04
+REV0518,VWR0426,MOV054,2,Could not finish it.,Negative,2025-05-23
+REV0519,VWR0250,MOV019,5,Will definitely watch again.,Positive,2025-09-26
+REV0520,VWR1222,MOV023,5,Strong pacing and high production quality.,Positive,2025-02-03
+REV0521,VWR0989,MOV014,1,Waste of time.,Negative,2025-12-31
+REV0522,VWR0339,MOV060,5,Will definitely watch again.,Positive,2025-04-11
+REV0523,VWR0148,MOV011,1,Very disappointing.,Negative,2025-04-23
+REV0524,VWR1209,MOV050,4,An absolute masterpiece.,Positive,2025-06-07
+REV0525,VWR1055,MOV013,5,Strong pacing and high production quality.,Positive,2025-09-23
+REV0526,VWR1417,MOV041,5,Loved the character development.,Positive,2025-06-22
+REV0527,VWR0395,MOV057,2,Could not finish it.,Negative,2025-05-04
+REV0528,VWR0063,MOV045,2,Very disappointing.,Negative,2025-03-29
+REV0529,VWR0082,MOV019,4,Will definitely watch again.,Positive,2025-08-11
+REV0530,VWR0501,MOV004,4,Incredible visual effects.,Positive,2025-04-17
+REV0531,VWR0670,MOV002,5,Incredible visual effects.,Positive,2025-06-08
+REV0532,VWR0871,MOV016,1,Expected much better.,Negative,2025-10-24
+REV0533,VWR1394,MOV046,2,Waste of time.,Negative,2025-12-04
+REV0534,VWR1392,MOV016,4,Strong pacing and high production quality.,Positive,2025-12-01
+REV0535,VWR0785,MOV029,1,Waste of time.,Negative,2025-02-11
+REV0536,VWR0767,MOV022,4,Will definitely watch again.,Positive,2025-09-14
+REV0537,VWR1077,MOV059,2,Very disappointing.,Negative,2025-04-11
+REV0538,VWR0551,MOV002,5,An absolute masterpiece.,Positive,2025-09-23
+REV0539,VWR1191,MOV046,2,Terrible plot and awful acting.,Negative,2025-01-31
+REV0540,VWR0982,MOV004,5,Will definitely watch again.,Positive,2025-08-03
+REV0541,VWR0158,MOV047,1,Could not finish it.,Negative,2025-05-12
+REV0542,VWR0477,MOV052,5,Will definitely watch again.,Positive,2025-03-26
+REV0543,VWR0645,MOV036,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-29
+REV0544,VWR0112,MOV005,2,Terrible plot and awful acting.,Negative,2025-06-02
+REV0545,VWR0963,MOV029,4,Strong pacing and high production quality.,Positive,2025-08-30
+REV0546,VWR0798,MOV056,4,Strong pacing and high production quality.,Positive,2025-09-23
+REV0547,VWR0115,MOV038,2,Terrible plot and awful acting.,Negative,2025-09-04
+REV0548,VWR1264,MOV007,2,Very disappointing.,Negative,2025-11-03
+REV0549,VWR0810,MOV035,2,Terrible plot and awful acting.,Negative,2025-02-12
+REV0550,VWR0215,MOV040,4,Will definitely watch again.,Positive,2025-03-20
+REV0551,VWR0298,MOV021,2,Could not finish it.,Negative,2025-09-20
+REV0552,VWR0581,MOV018,5,Strong pacing and high production quality.,Positive,2025-05-25
+REV0553,VWR0578,MOV045,1,Could not finish it.,Negative,2025-08-26
+REV0554,VWR0293,MOV050,1,Very disappointing.,Negative,2025-12-06
+REV0555,VWR1376,MOV009,5,Incredible visual effects.,Positive,2025-04-29
+REV0556,VWR0007,MOV059,4,An absolute masterpiece.,Positive,2025-04-07
+REV0557,VWR0067,MOV037,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-01
+REV0558,VWR1071,MOV017,4,Strong pacing and high production quality.,Positive,2025-02-17
+REV0559,VWR1323,MOV058,5,Will definitely watch again.,Positive,2025-08-25
+REV0560,VWR1442,MOV060,5,Strong pacing and high production quality.,Positive,2025-05-01
+REV0561,VWR1413,MOV033,5,Strong pacing and high production quality.,Positive,2025-12-14
+REV0562,VWR1043,MOV047,3,Decent watch for a Sunday afternoon.,Neutral,2025-08-15
+REV0563,VWR1008,MOV028,5,An absolute masterpiece.,Positive,2025-09-25
+REV0564,VWR0193,MOV058,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-21
+REV0565,VWR0591,MOV041,4,Will definitely watch again.,Positive,2025-01-29
+REV0566,VWR1436,MOV052,5,An absolute masterpiece.,Positive,2025-03-14
+REV0567,VWR0258,MOV054,5,Loved the character development.,Positive,2025-05-10
+REV0568,VWR0133,MOV035,2,Very disappointing.,Negative,2025-02-04
+REV0569,VWR0852,MOV004,3,Pacing felt a bit slow.,Neutral,2025-06-10
+REV0570,VWR0728,MOV047,4,Loved the character development.,Positive,2025-08-27
+REV0571,VWR1139,MOV023,2,Expected much better.,Negative,2025-04-27
+REV0572,VWR0051,MOV048,1,Very disappointing.,Negative,2025-01-03
+REV0573,VWR1154,MOV024,4,Incredible visual effects.,Positive,2025-09-25
+REV0574,VWR1438,MOV041,2,Expected much better.,Negative,2025-02-28
+REV0575,VWR0725,MOV009,4,Will definitely watch again.,Positive,2025-10-31
+REV0576,VWR1479,MOV036,4,Will definitely watch again.,Positive,2025-03-19
+REV0577,VWR0096,MOV053,5,Strong pacing and high production quality.,Positive,2025-04-17
+REV0578,VWR0963,MOV016,4,Strong pacing and high production quality.,Positive,2025-11-21
+REV0579,VWR1248,MOV059,5,Loved the character development.,Positive,2025-01-12
+REV0580,VWR0307,MOV059,1,Very disappointing.,Negative,2025-08-26
+REV0581,VWR0727,MOV058,2,Expected much better.,Negative,2025-12-14
+REV0582,VWR0843,MOV046,5,Will definitely watch again.,Positive,2025-11-19
+REV0583,VWR1106,MOV058,1,Waste of time.,Negative,2025-09-19
+REV0584,VWR0740,MOV034,5,Will definitely watch again.,Positive,2025-11-19
+REV0585,VWR0445,MOV037,3,"It was okay, not great.",Neutral,2025-12-26
+REV0586,VWR0270,MOV032,4,Will definitely watch again.,Positive,2025-06-30
+REV0587,VWR0532,MOV024,4,Loved the character development.,Positive,2025-09-24
+REV0588,VWR1286,MOV018,3,Pacing felt a bit slow.,Neutral,2025-01-24
+REV0589,VWR0095,MOV017,2,Waste of time.,Negative,2025-07-26
+REV0590,VWR1469,MOV056,4,Incredible visual effects.,Positive,2025-07-07
+REV0591,VWR0127,MOV013,3,Pacing felt a bit slow.,Neutral,2025-12-07
+REV0592,VWR0574,MOV047,2,Waste of time.,Negative,2025-07-24
+REV0593,VWR1285,MOV009,2,Terrible plot and awful acting.,Negative,2025-08-24
+REV0594,VWR0208,MOV035,4,Strong pacing and high production quality.,Positive,2025-03-24
+REV0595,VWR0186,MOV009,3,"It was okay, not great.",Neutral,2025-06-02
+REV0596,VWR0194,MOV034,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-23
+REV0597,VWR1477,MOV017,2,Waste of time.,Negative,2025-04-07
+REV0598,VWR0259,MOV025,2,Very disappointing.,Negative,2025-04-28
+REV0599,VWR1248,MOV055,2,Waste of time.,Negative,2025-12-21
+REV0600,VWR0663,MOV028,1,Expected much better.,Negative,2025-08-16
+REV0601,VWR0136,MOV039,4,An absolute masterpiece.,Positive,2025-12-05
+REV0602,VWR0142,MOV049,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-04
+REV0603,VWR0374,MOV033,4,Will definitely watch again.,Positive,2025-12-25
+REV0604,VWR1001,MOV010,4,Loved the character development.,Positive,2025-11-08
+REV0605,VWR0332,MOV018,2,Terrible plot and awful acting.,Negative,2025-06-17
+REV0606,VWR0986,MOV012,1,Expected much better.,Negative,2025-06-24
+REV0607,VWR0974,MOV004,2,Waste of time.,Negative,2025-12-01
+REV0608,VWR1110,MOV023,4,Incredible visual effects.,Positive,2025-07-09
+REV0609,VWR0143,MOV005,2,Very disappointing.,Negative,2025-12-14
+REV0610,VWR0209,MOV020,2,Very disappointing.,Negative,2025-01-29
+REV0611,VWR0198,MOV031,1,Terrible plot and awful acting.,Negative,2025-12-15
+REV0612,VWR0493,MOV010,4,Incredible visual effects.,Positive,2025-02-24
+REV0613,VWR0093,MOV034,2,Waste of time.,Negative,2025-03-10
+REV0614,VWR0292,MOV013,2,Waste of time.,Negative,2025-01-13
+REV0615,VWR0414,MOV047,3,"It was okay, not great.",Neutral,2025-04-21
+REV0616,VWR1017,MOV052,1,Very disappointing.,Negative,2025-11-06
+REV0617,VWR0863,MOV058,2,Waste of time.,Negative,2025-07-21
+REV0618,VWR0134,MOV039,5,Incredible visual effects.,Positive,2025-06-20
+REV0619,VWR0684,MOV008,3,Pacing felt a bit slow.,Neutral,2025-11-16
+REV0620,VWR0047,MOV030,1,Terrible plot and awful acting.,Negative,2025-01-27
+REV0621,VWR1117,MOV008,2,Terrible plot and awful acting.,Negative,2025-02-25
+REV0622,VWR0929,MOV018,5,Will definitely watch again.,Positive,2025-02-07
+REV0623,VWR0124,MOV012,5,Strong pacing and high production quality.,Positive,2025-08-01
+REV0624,VWR0682,MOV025,3,Average movie experience.,Neutral,2025-03-23
+REV0625,VWR0463,MOV045,1,Terrible plot and awful acting.,Negative,2025-06-06
+REV0626,VWR1134,MOV034,1,Waste of time.,Negative,2025-03-14
+REV0627,VWR0364,MOV010,1,Waste of time.,Negative,2025-08-29
+REV0628,VWR0531,MOV047,1,Terrible plot and awful acting.,Negative,2025-01-13
+REV0629,VWR1094,MOV049,5,Loved the character development.,Positive,2025-10-13
+REV0630,VWR0819,MOV030,1,Expected much better.,Negative,2025-10-26
+REV0631,VWR0577,MOV030,3,Pacing felt a bit slow.,Neutral,2025-04-12
+REV0632,VWR0093,MOV030,2,Waste of time.,Negative,2025-07-28
+REV0633,VWR0739,MOV031,4,Incredible visual effects.,Positive,2025-09-19
+REV0634,VWR0697,MOV018,5,An absolute masterpiece.,Positive,2025-11-07
+REV0635,VWR1200,MOV016,5,Will definitely watch again.,Positive,2025-02-01
+REV0636,VWR0338,MOV056,1,Very disappointing.,Negative,2025-09-05
+REV0637,VWR0442,MOV018,4,Will definitely watch again.,Positive,2025-06-13
+REV0638,VWR0657,MOV021,4,Strong pacing and high production quality.,Positive,2025-03-14
+REV0639,VWR0205,MOV057,4,Incredible visual effects.,Positive,2025-02-25
+REV0640,VWR0448,MOV026,1,Terrible plot and awful acting.,Negative,2025-04-04
+REV0641,VWR1249,MOV020,1,Waste of time.,Negative,2025-07-07
+REV0642,VWR0120,MOV042,2,Expected much better.,Negative,2025-03-05
+REV0643,VWR0046,MOV041,5,Strong pacing and high production quality.,Positive,2025-02-08
+REV0644,VWR1353,MOV050,5,Will definitely watch again.,Positive,2025-09-01
+REV0645,VWR0365,MOV038,1,Could not finish it.,Negative,2025-07-10
+REV0646,VWR1334,MOV007,5,Incredible visual effects.,Positive,2025-12-21
+REV0647,VWR0089,MOV042,2,Waste of time.,Negative,2025-08-07
+REV0648,VWR1313,MOV020,1,Waste of time.,Negative,2025-12-17
+REV0649,VWR0086,MOV032,5,Strong pacing and high production quality.,Positive,2025-08-11
+REV0650,VWR0922,MOV011,4,Strong pacing and high production quality.,Positive,2025-10-14
+REV0651,VWR1113,MOV038,5,Incredible visual effects.,Positive,2025-07-05
+REV0652,VWR1086,MOV012,4,Incredible visual effects.,Positive,2025-11-28
+REV0653,VWR0523,MOV013,1,Expected much better.,Negative,2025-10-16
+REV0654,VWR1466,MOV054,2,Waste of time.,Negative,2025-03-28
+REV0655,VWR1380,MOV032,3,Average movie experience.,Neutral,2025-03-21
+REV0656,VWR0283,MOV031,4,Incredible visual effects.,Positive,2025-09-24
+REV0657,VWR0164,MOV009,4,Will definitely watch again.,Positive,2025-09-12
+REV0658,VWR0968,MOV027,1,Expected much better.,Negative,2025-10-02
+REV0659,VWR0403,MOV021,4,Strong pacing and high production quality.,Positive,2025-12-21
+REV0660,VWR0844,MOV041,3,"It was okay, not great.",Neutral,2025-07-11
+REV0661,VWR1085,MOV015,1,Expected much better.,Negative,2025-11-13
+REV0662,VWR0889,MOV054,5,Incredible visual effects.,Positive,2025-03-19
+REV0663,VWR0586,MOV020,3,"It was okay, not great.",Neutral,2025-08-02
+REV0664,VWR0847,MOV030,5,Will definitely watch again.,Positive,2025-02-22
+REV0665,VWR0317,MOV038,2,Very disappointing.,Negative,2025-03-19
+REV0666,VWR0033,MOV018,4,Will definitely watch again.,Positive,2025-09-09
+REV0667,VWR0320,MOV010,4,Incredible visual effects.,Positive,2025-06-16
+REV0668,VWR1408,MOV022,4,Loved the character development.,Positive,2025-02-13
+REV0669,VWR0940,MOV054,4,An absolute masterpiece.,Positive,2025-12-11
+REV0670,VWR1151,MOV033,4,Will definitely watch again.,Positive,2025-03-31
+REV0671,VWR0804,MOV023,4,Will definitely watch again.,Positive,2025-06-03
+REV0672,VWR0850,MOV050,1,Terrible plot and awful acting.,Negative,2025-06-23
+REV0673,VWR1426,MOV008,1,Terrible plot and awful acting.,Negative,2025-03-28
+REV0674,VWR0503,MOV014,5,Will definitely watch again.,Positive,2025-04-07
+REV0675,VWR0202,MOV043,3,"It was okay, not great.",Neutral,2025-03-16
+REV0676,VWR1494,MOV018,5,Strong pacing and high production quality.,Positive,2025-02-23
+REV0677,VWR1477,MOV057,3,Average movie experience.,Neutral,2025-11-27
+REV0678,VWR1233,MOV032,2,Expected much better.,Negative,2025-12-29
+REV0679,VWR0634,MOV043,4,Strong pacing and high production quality.,Positive,2025-01-13
+REV0680,VWR0914,MOV050,4,Strong pacing and high production quality.,Positive,2025-01-10
+REV0681,VWR0269,MOV045,1,Waste of time.,Negative,2025-01-04
+REV0682,VWR1450,MOV013,2,Terrible plot and awful acting.,Negative,2025-10-27
+REV0683,VWR1096,MOV021,1,Terrible plot and awful acting.,Negative,2025-01-07
+REV0684,VWR0080,MOV059,1,Terrible plot and awful acting.,Negative,2025-07-06
+REV0685,VWR0745,MOV052,5,Will definitely watch again.,Positive,2025-02-12
+REV0686,VWR1246,MOV056,4,Will definitely watch again.,Positive,2025-11-02
+REV0687,VWR0982,MOV044,1,Expected much better.,Negative,2025-08-07
+REV0688,VWR0013,MOV047,3,"It was okay, not great.",Neutral,2025-06-23
+REV0689,VWR0375,MOV016,2,Waste of time.,Negative,2025-12-11
+REV0690,VWR0843,MOV026,1,Waste of time.,Negative,2025-06-20
+REV0691,VWR1166,MOV014,2,Could not finish it.,Negative,2025-04-14
+REV0692,VWR1307,MOV047,4,An absolute masterpiece.,Positive,2025-11-05
+REV0693,VWR0757,MOV025,4,An absolute masterpiece.,Positive,2025-12-01
+REV0694,VWR1217,MOV020,5,An absolute masterpiece.,Positive,2025-05-24
+REV0695,VWR0778,MOV043,5,An absolute masterpiece.,Positive,2025-08-10
+REV0696,VWR0156,MOV022,3,"Nothing special, but not bad.",Neutral,2025-06-05
+REV0697,VWR1176,MOV044,2,Waste of time.,Negative,2025-09-08
+REV0698,VWR0335,MOV019,4,Incredible visual effects.,Positive,2025-06-08
+REV0699,VWR1456,MOV034,5,Loved the character development.,Positive,2025-09-29
+REV0700,VWR0549,MOV050,4,Will definitely watch again.,Positive,2025-01-29
+REV0701,VWR0945,MOV042,3,Pacing felt a bit slow.,Neutral,2025-06-17
+REV0702,VWR1056,MOV049,4,An absolute masterpiece.,Positive,2025-11-15
+REV0703,VWR1262,MOV053,2,Waste of time.,Negative,2025-02-24
+REV0704,VWR1239,MOV026,4,An absolute masterpiece.,Positive,2025-01-24
+REV0705,VWR1171,MOV016,4,Loved the character development.,Positive,2025-10-02
+REV0706,VWR0809,MOV039,3,"Nothing special, but not bad.",Neutral,2025-07-25
+REV0707,VWR0120,MOV035,5,Loved the character development.,Positive,2025-10-24
+REV0708,VWR0617,MOV050,1,Waste of time.,Negative,2025-08-11
+REV0709,VWR0895,MOV004,2,Expected much better.,Negative,2025-08-03
+REV0710,VWR0005,MOV047,1,Very disappointing.,Negative,2025-07-15
+REV0711,VWR0094,MOV034,2,Expected much better.,Negative,2025-09-02
+REV0712,VWR1165,MOV010,5,Strong pacing and high production quality.,Positive,2025-02-05
+REV0713,VWR0772,MOV040,4,Loved the character development.,Positive,2025-06-29
+REV0714,VWR0008,MOV043,2,Could not finish it.,Negative,2025-05-02
+REV0715,VWR0788,MOV043,3,"Nothing special, but not bad.",Neutral,2025-11-16
+REV0716,VWR0037,MOV001,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-10
+REV0717,VWR0237,MOV002,4,Incredible visual effects.,Positive,2025-10-04
+REV0718,VWR0412,MOV034,4,Loved the character development.,Positive,2025-02-17
+REV0719,VWR0335,MOV001,4,Incredible visual effects.,Positive,2025-05-08
+REV0720,VWR0180,MOV059,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-09
+REV0721,VWR0415,MOV029,3,"Nothing special, but not bad.",Neutral,2025-11-20
+REV0722,VWR1165,MOV040,2,Terrible plot and awful acting.,Negative,2025-10-12
+REV0723,VWR1373,MOV015,1,Terrible plot and awful acting.,Negative,2025-11-26
+REV0724,VWR0238,MOV023,2,Waste of time.,Negative,2025-08-13
+REV0725,VWR0457,MOV057,1,Expected much better.,Negative,2025-02-17
+REV0726,VWR0697,MOV053,2,Very disappointing.,Negative,2025-01-15
+REV0727,VWR0726,MOV030,5,An absolute masterpiece.,Positive,2025-05-07
+REV0728,VWR0341,MOV020,1,Expected much better.,Negative,2025-04-23
+REV0729,VWR1441,MOV023,4,Will definitely watch again.,Positive,2025-10-05
+REV0730,VWR0710,MOV058,1,Terrible plot and awful acting.,Negative,2025-05-22
+REV0731,VWR0756,MOV020,4,Incredible visual effects.,Positive,2025-12-27
+REV0732,VWR1245,MOV006,1,Expected much better.,Negative,2025-08-29
+REV0733,VWR0803,MOV057,3,"It was okay, not great.",Neutral,2025-06-21
+REV0734,VWR0495,MOV036,2,Expected much better.,Negative,2025-03-17
+REV0735,VWR0672,MOV016,5,Strong pacing and high production quality.,Positive,2025-02-01
+REV0736,VWR0121,MOV026,3,Pacing felt a bit slow.,Neutral,2025-01-12
+REV0737,VWR0297,MOV021,3,Pacing felt a bit slow.,Neutral,2025-07-11
+REV0738,VWR1162,MOV041,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-16
+REV0739,VWR1375,MOV001,5,Loved the character development.,Positive,2025-06-11
+REV0740,VWR0202,MOV005,1,Waste of time.,Negative,2025-06-03
+REV0741,VWR0166,MOV029,5,An absolute masterpiece.,Positive,2025-04-22
+REV0742,VWR0225,MOV011,4,Strong pacing and high production quality.,Positive,2025-08-03
+REV0743,VWR0092,MOV016,5,Incredible visual effects.,Positive,2025-03-27
+REV0744,VWR0884,MOV018,1,Waste of time.,Negative,2025-10-17
+REV0745,VWR0484,MOV005,4,Strong pacing and high production quality.,Positive,2025-07-28
+REV0746,VWR0630,MOV032,3,"Nothing special, but not bad.",Neutral,2025-10-14
+REV0747,VWR0259,MOV029,1,Waste of time.,Negative,2025-12-11
+REV0748,VWR1053,MOV038,5,An absolute masterpiece.,Positive,2025-07-06
+REV0749,VWR0980,MOV020,3,"Nothing special, but not bad.",Neutral,2025-05-31
+REV0750,VWR1000,MOV054,3,"It was okay, not great.",Neutral,2025-09-14
+REV0751,VWR0023,MOV001,1,Expected much better.,Negative,2025-09-18
+REV0752,VWR1370,MOV043,2,Expected much better.,Negative,2025-08-08
+REV0753,VWR0824,MOV031,3,Pacing felt a bit slow.,Neutral,2025-06-02
+REV0754,VWR1377,MOV022,4,Will definitely watch again.,Positive,2025-06-07
+REV0755,VWR0711,MOV024,5,An absolute masterpiece.,Positive,2025-09-24
+REV0756,VWR1360,MOV040,1,Expected much better.,Negative,2025-12-12
+REV0757,VWR0931,MOV043,1,Expected much better.,Negative,2025-04-23
+REV0758,VWR1410,MOV044,3,"Nothing special, but not bad.",Neutral,2025-10-19
+REV0759,VWR0168,MOV003,5,Incredible visual effects.,Positive,2025-05-25
+REV0760,VWR1211,MOV046,2,Expected much better.,Negative,2025-03-30
+REV0761,VWR0805,MOV060,1,Waste of time.,Negative,2025-03-24
+REV0762,VWR1257,MOV041,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-14
+REV0763,VWR1146,MOV027,5,Loved the character development.,Positive,2025-05-12
+REV0764,VWR0290,MOV049,5,Incredible visual effects.,Positive,2025-03-05
+REV0765,VWR0972,MOV059,2,Could not finish it.,Negative,2025-11-07
+REV0766,VWR0863,MOV040,2,Terrible plot and awful acting.,Negative,2025-11-23
+REV0767,VWR1054,MOV036,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-18
+REV0768,VWR1445,MOV008,1,Expected much better.,Negative,2025-06-22
+REV0769,VWR0911,MOV004,4,Strong pacing and high production quality.,Positive,2025-04-06
+REV0770,VWR1395,MOV009,1,Very disappointing.,Negative,2025-02-02
+REV0771,VWR1003,MOV036,2,Very disappointing.,Negative,2025-04-09
+REV0772,VWR0151,MOV037,4,Loved the character development.,Positive,2025-06-25
+REV0773,VWR0694,MOV014,5,Will definitely watch again.,Positive,2025-09-16
+REV0774,VWR1072,MOV028,1,Very disappointing.,Negative,2025-04-27
+REV0775,VWR0406,MOV012,4,Strong pacing and high production quality.,Positive,2025-11-18
+REV0776,VWR1163,MOV045,5,Will definitely watch again.,Positive,2025-09-25
+REV0777,VWR0553,MOV056,1,Waste of time.,Negative,2025-02-26
+REV0778,VWR0010,MOV011,2,Waste of time.,Negative,2025-09-04
+REV0779,VWR0302,MOV055,2,Very disappointing.,Negative,2025-06-10
+REV0780,VWR0867,MOV005,3,"It was okay, not great.",Neutral,2025-05-06
+REV0781,VWR0422,MOV022,4,Loved the character development.,Positive,2025-12-30
+REV0782,VWR1270,MOV044,5,Loved the character development.,Positive,2025-01-12
+REV0783,VWR0416,MOV013,4,Incredible visual effects.,Positive,2025-01-23
+REV0784,VWR0723,MOV022,4,Incredible visual effects.,Positive,2025-08-05
+REV0785,VWR0380,MOV013,2,Could not finish it.,Negative,2025-05-10
+REV0786,VWR0081,MOV024,5,An absolute masterpiece.,Positive,2025-02-15
+REV0787,VWR0240,MOV043,1,Waste of time.,Negative,2025-12-05
+REV0788,VWR1360,MOV015,3,"It was okay, not great.",Neutral,2025-03-15
+REV0789,VWR0451,MOV017,5,Incredible visual effects.,Positive,2026-01-01
+REV0790,VWR1033,MOV027,1,Could not finish it.,Negative,2026-01-01
+REV0791,VWR0145,MOV004,2,Waste of time.,Negative,2025-06-13
+REV0792,VWR0445,MOV042,4,Will definitely watch again.,Positive,2025-06-18
+REV0793,VWR0408,MOV036,2,Very disappointing.,Negative,2025-03-29
+REV0794,VWR0001,MOV048,2,Expected much better.,Negative,2025-08-25
+REV0795,VWR0216,MOV055,4,Strong pacing and high production quality.,Positive,2025-07-17
+REV0796,VWR0430,MOV028,1,Terrible plot and awful acting.,Negative,2025-03-31
+REV0797,VWR0782,MOV055,4,Strong pacing and high production quality.,Positive,2025-07-10
+REV0798,VWR1440,MOV041,4,An absolute masterpiece.,Positive,2025-05-07
+REV0799,VWR0235,MOV051,4,Strong pacing and high production quality.,Positive,2025-02-07
+REV0800,VWR1476,MOV022,5,An absolute masterpiece.,Positive,2025-11-01
+REV0801,VWR0590,MOV015,4,Incredible visual effects.,Positive,2025-11-21
+REV0802,VWR0431,MOV017,5,Strong pacing and high production quality.,Positive,2025-02-18
+REV0803,VWR1444,MOV023,5,Loved the character development.,Positive,2025-07-03
+REV0804,VWR1488,MOV050,2,Terrible plot and awful acting.,Negative,2025-03-18
+REV0805,VWR1245,MOV014,1,Waste of time.,Negative,2025-08-26
+REV0806,VWR0475,MOV007,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-29
+REV0807,VWR0818,MOV036,2,Very disappointing.,Negative,2025-04-04
+REV0808,VWR0167,MOV026,2,Expected much better.,Negative,2025-05-29
+REV0809,VWR0540,MOV045,3,Average movie experience.,Neutral,2025-01-02
+REV0810,VWR0318,MOV048,5,Will definitely watch again.,Positive,2025-07-23
+REV0811,VWR0475,MOV029,3,"It was okay, not great.",Neutral,2025-03-19
+REV0812,VWR0206,MOV026,2,Terrible plot and awful acting.,Negative,2025-06-12
+REV0813,VWR1398,MOV055,5,Incredible visual effects.,Positive,2025-03-24
+REV0814,VWR1396,MOV018,5,Will definitely watch again.,Positive,2025-06-27
+REV0815,VWR0516,MOV043,2,Could not finish it.,Negative,2025-11-14
+REV0816,VWR0412,MOV001,5,An absolute masterpiece.,Positive,2025-02-14
+REV0817,VWR0336,MOV004,5,Strong pacing and high production quality.,Positive,2025-08-28
+REV0818,VWR1433,MOV007,2,Waste of time.,Negative,2025-03-04
+REV0819,VWR0733,MOV030,2,Terrible plot and awful acting.,Negative,2025-05-14
+REV0820,VWR0569,MOV023,2,Expected much better.,Negative,2025-04-07
+REV0821,VWR1475,MOV045,5,Incredible visual effects.,Positive,2025-08-18
+REV0822,VWR0728,MOV024,5,Strong pacing and high production quality.,Positive,2025-10-25
+REV0823,VWR0469,MOV046,2,Terrible plot and awful acting.,Negative,2025-08-11
+REV0824,VWR0912,MOV058,1,Could not finish it.,Negative,2025-01-06
+REV0825,VWR0360,MOV038,2,Expected much better.,Negative,2025-10-29
+REV0826,VWR1138,MOV018,2,Very disappointing.,Negative,2025-07-27
+REV0827,VWR1157,MOV053,3,Average movie experience.,Neutral,2025-08-04
+REV0828,VWR0317,MOV053,2,Very disappointing.,Negative,2025-08-29
+REV0829,VWR1347,MOV013,2,Waste of time.,Negative,2025-12-20
+REV0830,VWR0481,MOV040,5,Loved the character development.,Positive,2025-11-22
+REV0831,VWR1494,MOV029,4,Loved the character development.,Positive,2025-07-29
+REV0832,VWR1159,MOV056,4,Strong pacing and high production quality.,Positive,2025-05-05
+REV0833,VWR0622,MOV028,5,Will definitely watch again.,Positive,2025-07-18
+REV0834,VWR1416,MOV033,5,Will definitely watch again.,Positive,2025-07-18
+REV0835,VWR0522,MOV039,2,Expected much better.,Negative,2025-01-22
+REV0836,VWR0638,MOV008,3,"It was okay, not great.",Neutral,2025-04-08
+REV0837,VWR1314,MOV052,2,Terrible plot and awful acting.,Negative,2026-01-01
+REV0838,VWR1224,MOV043,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-08
+REV0839,VWR0216,MOV030,4,An absolute masterpiece.,Positive,2025-03-25
+REV0840,VWR0490,MOV033,4,Will definitely watch again.,Positive,2025-04-27
+REV0841,VWR0987,MOV016,1,Expected much better.,Negative,2025-04-14
+REV0842,VWR1208,MOV047,4,An absolute masterpiece.,Positive,2025-02-13
+REV0843,VWR0368,MOV016,5,Loved the character development.,Positive,2025-10-06
+REV0844,VWR0647,MOV052,3,Average movie experience.,Neutral,2025-03-08
+REV0845,VWR0638,MOV054,3,Average movie experience.,Neutral,2025-11-15
+REV0846,VWR1337,MOV058,4,Loved the character development.,Positive,2025-06-12
+REV0847,VWR0050,MOV017,5,Strong pacing and high production quality.,Positive,2025-07-30
+REV0848,VWR0123,MOV055,2,Terrible plot and awful acting.,Negative,2025-04-30
+REV0849,VWR1292,MOV016,4,Strong pacing and high production quality.,Positive,2025-12-22
+REV0850,VWR0176,MOV055,5,Will definitely watch again.,Positive,2025-12-20
+REV0851,VWR0585,MOV043,3,Decent watch for a Sunday afternoon.,Neutral,2025-01-06
+REV0852,VWR0526,MOV034,2,Terrible plot and awful acting.,Negative,2025-09-02
+REV0853,VWR0805,MOV004,2,Waste of time.,Negative,2025-04-25
+REV0854,VWR0213,MOV050,3,"Nothing special, but not bad.",Neutral,2025-06-25
+REV0855,VWR0561,MOV051,5,Incredible visual effects.,Positive,2025-01-13
+REV0856,VWR1227,MOV052,1,Expected much better.,Negative,2025-07-25
+REV0857,VWR1191,MOV046,2,Terrible plot and awful acting.,Negative,2025-01-19
+REV0858,VWR0804,MOV053,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-28
+REV0859,VWR1384,MOV014,2,Terrible plot and awful acting.,Negative,2025-05-10
+REV0860,VWR1296,MOV037,1,Expected much better.,Negative,2025-09-10
+REV0861,VWR1036,MOV007,4,Loved the character development.,Positive,2025-10-08
+REV0862,VWR1099,MOV051,5,Incredible visual effects.,Positive,2025-06-16
+REV0863,VWR0603,MOV044,5,Loved the character development.,Positive,2025-06-27
+REV0864,VWR1305,MOV013,2,Waste of time.,Negative,2025-09-06
+REV0865,VWR1116,MOV004,5,Incredible visual effects.,Positive,2025-07-20
+REV0866,VWR0097,MOV059,1,Could not finish it.,Negative,2025-11-26
+REV0867,VWR1456,MOV028,5,Strong pacing and high production quality.,Positive,2025-07-23
+REV0868,VWR0376,MOV009,2,Expected much better.,Negative,2025-09-25
+REV0869,VWR1116,MOV041,3,Pacing felt a bit slow.,Neutral,2025-11-25
+REV0870,VWR0353,MOV001,2,Terrible plot and awful acting.,Negative,2025-05-15
+REV0871,VWR0762,MOV060,5,Loved the character development.,Positive,2025-11-04
+REV0872,VWR1491,MOV011,1,Waste of time.,Negative,2025-08-20
+REV0873,VWR0779,MOV060,5,An absolute masterpiece.,Positive,2025-10-10
+REV0874,VWR0268,MOV051,3,"It was okay, not great.",Neutral,2025-07-18
+REV0875,VWR1419,MOV052,4,Strong pacing and high production quality.,Positive,2025-03-15
+REV0876,VWR0938,MOV007,3,"It was okay, not great.",Neutral,2025-05-21
+REV0877,VWR0346,MOV031,2,Expected much better.,Negative,2025-08-13
+REV0878,VWR1064,MOV054,2,Very disappointing.,Negative,2025-03-31
+REV0879,VWR0075,MOV050,1,Could not finish it.,Negative,2025-09-09
+REV0880,VWR0745,MOV042,1,Waste of time.,Negative,2025-02-20
+REV0881,VWR0016,MOV029,4,Will definitely watch again.,Positive,2025-04-11
+REV0882,VWR0387,MOV007,1,Terrible plot and awful acting.,Negative,2025-02-06
+REV0883,VWR1394,MOV002,5,Strong pacing and high production quality.,Positive,2025-09-22
+REV0884,VWR1188,MOV024,4,Will definitely watch again.,Positive,2025-07-22
+REV0885,VWR1243,MOV045,2,Waste of time.,Negative,2025-07-17
+REV0886,VWR0552,MOV005,1,Very disappointing.,Negative,2025-05-01
+REV0887,VWR0069,MOV020,4,Strong pacing and high production quality.,Positive,2025-01-09
+REV0888,VWR0238,MOV029,1,Terrible plot and awful acting.,Negative,2025-11-05
+REV0889,VWR0223,MOV029,4,Will definitely watch again.,Positive,2025-03-05
+REV0890,VWR0223,MOV031,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-16
+REV0891,VWR0087,MOV033,5,An absolute masterpiece.,Positive,2025-08-16
+REV0892,VWR1212,MOV010,1,Terrible plot and awful acting.,Negative,2025-01-13
+REV0893,VWR0757,MOV033,1,Could not finish it.,Negative,2025-05-09
+REV0894,VWR0449,MOV054,3,Average movie experience.,Neutral,2025-10-02
+REV0895,VWR1413,MOV042,3,Pacing felt a bit slow.,Neutral,2025-05-17
+REV0896,VWR0397,MOV019,2,Very disappointing.,Negative,2025-09-28
+REV0897,VWR0723,MOV005,3,Pacing felt a bit slow.,Neutral,2025-02-26
+REV0898,VWR0907,MOV056,3,Average movie experience.,Neutral,2025-12-22
+REV0899,VWR0155,MOV014,3,Pacing felt a bit slow.,Neutral,2025-04-05
+REV0900,VWR0006,MOV028,5,Incredible visual effects.,Positive,2025-03-10
+REV0901,VWR1253,MOV041,2,Expected much better.,Negative,2025-04-27
+REV0902,VWR0036,MOV009,5,An absolute masterpiece.,Positive,2025-06-08
+REV0903,VWR1478,MOV030,4,An absolute masterpiece.,Positive,2025-04-25
+REV0904,VWR1079,MOV017,3,Decent watch for a Sunday afternoon.,Neutral,2025-06-27
+REV0905,VWR0182,MOV023,5,Incredible visual effects.,Positive,2025-11-09
+REV0906,VWR1096,MOV002,4,Loved the character development.,Positive,2025-08-11
+REV0907,VWR1061,MOV050,2,Expected much better.,Negative,2025-10-10
+REV0908,VWR0068,MOV050,4,Incredible visual effects.,Positive,2025-07-18
+REV0909,VWR0393,MOV015,3,Average movie experience.,Neutral,2025-10-31
+REV0910,VWR1174,MOV007,5,An absolute masterpiece.,Positive,2025-09-25
+REV0911,VWR0684,MOV025,4,An absolute masterpiece.,Positive,2025-01-10
+REV0912,VWR0439,MOV033,5,Incredible visual effects.,Positive,2025-02-24
+REV0913,VWR0376,MOV003,4,An absolute masterpiece.,Positive,2025-03-09
+REV0914,VWR0714,MOV031,4,Will definitely watch again.,Positive,2025-05-31
+REV0915,VWR0222,MOV060,2,Expected much better.,Negative,2025-04-23
+REV0916,VWR1073,MOV021,1,Waste of time.,Negative,2025-06-11
+REV0917,VWR0282,MOV014,2,Very disappointing.,Negative,2025-08-21
+REV0918,VWR0018,MOV005,4,Will definitely watch again.,Positive,2025-08-01
+REV0919,VWR0696,MOV031,4,Incredible visual effects.,Positive,2025-04-23
+REV0920,VWR0925,MOV026,2,Terrible plot and awful acting.,Negative,2025-07-12
+REV0921,VWR0790,MOV047,1,Expected much better.,Negative,2025-12-30
+REV0922,VWR1326,MOV030,2,Terrible plot and awful acting.,Negative,2025-07-16
+REV0923,VWR0034,MOV033,4,Incredible visual effects.,Positive,2025-07-29
+REV0924,VWR0729,MOV046,1,Could not finish it.,Negative,2025-04-11
+REV0925,VWR1413,MOV026,4,An absolute masterpiece.,Positive,2025-01-25
+REV0926,VWR0753,MOV014,1,Very disappointing.,Negative,2025-12-15
+REV0927,VWR0852,MOV015,1,Could not finish it.,Negative,2025-08-30
+REV0928,VWR1166,MOV045,3,"Nothing special, but not bad.",Neutral,2025-01-09
+REV0929,VWR1190,MOV037,2,Terrible plot and awful acting.,Negative,2025-10-19
+REV0930,VWR1269,MOV043,3,Average movie experience.,Neutral,2025-10-16
+REV0931,VWR0780,MOV054,5,Loved the character development.,Positive,2025-11-07
+REV0932,VWR0591,MOV033,5,Will definitely watch again.,Positive,2025-11-28
+REV0933,VWR0023,MOV029,3,"Nothing special, but not bad.",Neutral,2025-04-30
+REV0934,VWR1380,MOV002,4,Will definitely watch again.,Positive,2025-08-15
+REV0935,VWR1471,MOV003,4,Loved the character development.,Positive,2025-10-27
+REV0936,VWR1424,MOV043,5,Will definitely watch again.,Positive,2025-10-19
+REV0937,VWR0182,MOV041,1,Terrible plot and awful acting.,Negative,2025-01-14
+REV0938,VWR0210,MOV036,2,Could not finish it.,Negative,2025-09-24
+REV0939,VWR0593,MOV022,5,Strong pacing and high production quality.,Positive,2025-03-27
+REV0940,VWR1195,MOV008,1,Terrible plot and awful acting.,Negative,2025-12-21
+REV0941,VWR0067,MOV027,2,Very disappointing.,Negative,2025-10-15
+REV0942,VWR1270,MOV002,4,Strong pacing and high production quality.,Positive,2025-08-31
+REV0943,VWR0769,MOV030,5,An absolute masterpiece.,Positive,2025-05-17
+REV0944,VWR0046,MOV036,3,Pacing felt a bit slow.,Neutral,2025-06-24
+REV0945,VWR0098,MOV056,3,"Nothing special, but not bad.",Neutral,2025-05-18
+REV0946,VWR0917,MOV004,3,Pacing felt a bit slow.,Neutral,2025-01-03
+REV0947,VWR0683,MOV037,3,"It was okay, not great.",Neutral,2025-08-31
+REV0948,VWR1405,MOV040,5,An absolute masterpiece.,Positive,2025-02-02
+REV0949,VWR1265,MOV049,5,Incredible visual effects.,Positive,2025-08-20
+REV0950,VWR0604,MOV049,4,Will definitely watch again.,Positive,2025-01-26
+REV0951,VWR1289,MOV014,3,Pacing felt a bit slow.,Neutral,2025-03-16
+REV0952,VWR1235,MOV046,2,Terrible plot and awful acting.,Negative,2025-07-09
+REV0953,VWR1101,MOV047,5,Strong pacing and high production quality.,Positive,2025-12-09
+REV0954,VWR1268,MOV048,3,"Nothing special, but not bad.",Neutral,2025-10-06
+REV0955,VWR0307,MOV043,3,"Nothing special, but not bad.",Neutral,2025-01-25
+REV0956,VWR0808,MOV057,4,Strong pacing and high production quality.,Positive,2025-07-26
+REV0957,VWR1193,MOV029,5,Incredible visual effects.,Positive,2025-09-19
+REV0958,VWR0066,MOV006,1,Terrible plot and awful acting.,Negative,2025-12-09
+REV0959,VWR1022,MOV048,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-26
+REV0960,VWR1441,MOV052,2,Expected much better.,Negative,2025-08-29
+REV0961,VWR1311,MOV008,4,Incredible visual effects.,Positive,2025-01-13
+REV0962,VWR0457,MOV056,1,Waste of time.,Negative,2025-07-08
+REV0963,VWR1126,MOV006,1,Could not finish it.,Negative,2025-12-30
+REV0964,VWR1473,MOV005,2,Terrible plot and awful acting.,Negative,2025-01-21
+REV0965,VWR1287,MOV026,2,Waste of time.,Negative,2025-02-19
+REV0966,VWR0225,MOV060,3,"It was okay, not great.",Neutral,2025-05-04
+REV0967,VWR0630,MOV013,4,Incredible visual effects.,Positive,2025-11-10
+REV0968,VWR1315,MOV036,1,Could not finish it.,Negative,2025-01-15
+REV0969,VWR0694,MOV048,3,Pacing felt a bit slow.,Neutral,2025-10-24
+REV0970,VWR0562,MOV022,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-01
+REV0971,VWR1011,MOV054,4,Loved the character development.,Positive,2025-09-11
+REV0972,VWR1389,MOV026,4,Will definitely watch again.,Positive,2025-04-25
+REV0973,VWR0999,MOV006,5,Will definitely watch again.,Positive,2025-01-08
+REV0974,VWR1339,MOV035,3,Pacing felt a bit slow.,Neutral,2025-10-25
+REV0975,VWR1071,MOV056,4,Strong pacing and high production quality.,Positive,2025-07-15
+REV0976,VWR1177,MOV013,3,"It was okay, not great.",Neutral,2025-11-25
+REV0977,VWR0710,MOV018,3,Average movie experience.,Neutral,2025-09-12
+REV0978,VWR0758,MOV022,4,Will definitely watch again.,Positive,2025-04-30
+REV0979,VWR0597,MOV047,2,Waste of time.,Negative,2025-11-25
+REV0980,VWR1337,MOV041,4,Loved the character development.,Positive,2025-02-04
+REV0981,VWR1069,MOV026,5,Incredible visual effects.,Positive,2025-10-07
+REV0982,VWR0357,MOV010,2,Could not finish it.,Negative,2025-08-15
+REV0983,VWR0342,MOV016,4,Loved the character development.,Positive,2025-02-03
+REV0984,VWR1485,MOV051,3,Pacing felt a bit slow.,Neutral,2025-11-24
+REV0985,VWR0571,MOV047,1,Expected much better.,Negative,2025-12-22
+REV0986,VWR0290,MOV026,3,Average movie experience.,Neutral,2025-01-11
+REV0987,VWR0088,MOV023,5,An absolute masterpiece.,Positive,2025-09-26
+REV0988,VWR1335,MOV020,3,"Nothing special, but not bad.",Neutral,2025-08-11
+REV0989,VWR1167,MOV031,3,"It was okay, not great.",Neutral,2025-01-23
+REV0990,VWR0715,MOV011,2,Very disappointing.,Negative,2025-01-25
+REV0991,VWR0764,MOV012,5,Incredible visual effects.,Positive,2025-05-24
+REV0992,VWR1248,MOV023,5,Loved the character development.,Positive,2025-03-11
+REV0993,VWR0965,MOV056,2,Could not finish it.,Negative,2025-07-02
+REV0994,VWR0270,MOV032,2,Waste of time.,Negative,2025-11-21
+REV0995,VWR0811,MOV013,3,Pacing felt a bit slow.,Neutral,2025-05-23
+REV0996,VWR1458,MOV054,1,Could not finish it.,Negative,2025-06-18
+REV0997,VWR0151,MOV049,5,Strong pacing and high production quality.,Positive,2025-08-10
+REV0998,VWR1031,MOV018,4,Loved the character development.,Positive,2025-10-05
+REV0999,VWR0957,MOV029,4,Incredible visual effects.,Positive,2025-09-30
+REV1000,VWR0421,MOV050,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-13
+REV1001,VWR0675,MOV042,1,Could not finish it.,Negative,2025-06-17
+REV1002,VWR1044,MOV025,3,Pacing felt a bit slow.,Neutral,2025-02-27
+REV1003,VWR0790,MOV034,1,Expected much better.,Negative,2025-05-31
+REV1004,VWR0877,MOV031,5,Strong pacing and high production quality.,Positive,2025-11-21
+REV1005,VWR0393,MOV058,2,Expected much better.,Negative,2025-08-23
+REV1006,VWR0067,MOV041,1,Waste of time.,Negative,2025-02-10
+REV1007,VWR0130,MOV034,4,Loved the character development.,Positive,2025-04-19
+REV1008,VWR0355,MOV048,2,Waste of time.,Negative,2025-04-13
+REV1009,VWR0098,MOV021,5,Strong pacing and high production quality.,Positive,2025-07-27
+REV1010,VWR1305,MOV051,5,An absolute masterpiece.,Positive,2025-08-16
+REV1011,VWR0671,MOV046,3,"Nothing special, but not bad.",Neutral,2025-07-04
+REV1012,VWR0506,MOV048,1,Very disappointing.,Negative,2025-01-05
+REV1013,VWR0652,MOV026,1,Very disappointing.,Negative,2025-11-07
+REV1014,VWR1420,MOV017,5,Strong pacing and high production quality.,Positive,2025-01-30
+REV1015,VWR0430,MOV020,3,"It was okay, not great.",Neutral,2025-10-10
+REV1016,VWR1276,MOV034,5,Incredible visual effects.,Positive,2025-03-01
+REV1017,VWR0396,MOV048,1,Waste of time.,Negative,2025-08-03
+REV1018,VWR1335,MOV037,1,Expected much better.,Negative,2025-03-03
+REV1019,VWR1460,MOV009,2,Could not finish it.,Negative,2025-12-12
+REV1020,VWR1123,MOV060,1,Very disappointing.,Negative,2025-04-28
+REV1021,VWR0459,MOV001,5,Incredible visual effects.,Positive,2025-01-15
+REV1022,VWR1099,MOV017,5,Strong pacing and high production quality.,Positive,2025-12-14
+REV1023,VWR1023,MOV013,5,Strong pacing and high production quality.,Positive,2025-02-19
+REV1024,VWR1246,MOV056,3,Pacing felt a bit slow.,Neutral,2025-05-31
+REV1025,VWR0545,MOV034,1,Could not finish it.,Negative,2025-04-17
+REV1026,VWR1012,MOV050,5,Strong pacing and high production quality.,Positive,2025-02-26
+REV1027,VWR0145,MOV045,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-11
+REV1028,VWR0090,MOV055,2,Could not finish it.,Negative,2025-10-11
+REV1029,VWR0839,MOV014,4,Incredible visual effects.,Positive,2025-06-06
+REV1030,VWR0444,MOV019,4,An absolute masterpiece.,Positive,2025-05-08
+REV1031,VWR1088,MOV023,2,Could not finish it.,Negative,2025-07-10
+REV1032,VWR0668,MOV011,2,Waste of time.,Negative,2025-12-29
+REV1033,VWR0813,MOV012,3,"It was okay, not great.",Neutral,2025-09-13
+REV1034,VWR1221,MOV035,3,"It was okay, not great.",Neutral,2025-11-09
+REV1035,VWR0539,MOV030,2,Expected much better.,Negative,2025-04-09
+REV1036,VWR1133,MOV032,5,Incredible visual effects.,Positive,2025-12-06
+REV1037,VWR0266,MOV031,5,Strong pacing and high production quality.,Positive,2025-04-05
+REV1038,VWR0282,MOV012,3,"It was okay, not great.",Neutral,2025-07-28
+REV1039,VWR0127,MOV015,2,Expected much better.,Negative,2025-02-21
+REV1040,VWR0490,MOV025,2,Terrible plot and awful acting.,Negative,2025-05-22
+REV1041,VWR1199,MOV004,3,"Nothing special, but not bad.",Neutral,2025-01-21
+REV1042,VWR1188,MOV055,4,Strong pacing and high production quality.,Positive,2025-12-05
+REV1043,VWR1268,MOV012,5,Loved the character development.,Positive,2025-05-15
+REV1044,VWR0189,MOV015,4,Strong pacing and high production quality.,Positive,2025-07-21
+REV1045,VWR0667,MOV021,4,Strong pacing and high production quality.,Positive,2025-07-16
+REV1046,VWR1317,MOV013,3,Pacing felt a bit slow.,Neutral,2025-09-11
+REV1047,VWR0024,MOV032,2,Very disappointing.,Negative,2025-12-17
+REV1048,VWR0692,MOV025,4,An absolute masterpiece.,Positive,2025-07-20
+REV1049,VWR1077,MOV015,5,Loved the character development.,Positive,2025-11-27
+REV1050,VWR0359,MOV013,2,Terrible plot and awful acting.,Negative,2025-09-30
+REV1051,VWR0382,MOV055,5,Will definitely watch again.,Positive,2025-07-25
+REV1052,VWR0252,MOV045,1,Terrible plot and awful acting.,Negative,2025-10-16
+REV1053,VWR0383,MOV056,5,Incredible visual effects.,Positive,2025-07-03
+REV1054,VWR0103,MOV034,1,Very disappointing.,Negative,2025-12-11
+REV1055,VWR0604,MOV055,4,Loved the character development.,Positive,2025-05-03
+REV1056,VWR0452,MOV057,5,Will definitely watch again.,Positive,2025-04-12
+REV1057,VWR0014,MOV058,2,Waste of time.,Negative,2025-04-02
+REV1058,VWR0253,MOV021,4,Incredible visual effects.,Positive,2025-05-10
+REV1059,VWR0003,MOV048,3,"Nothing special, but not bad.",Neutral,2025-10-08
+REV1060,VWR0310,MOV025,4,An absolute masterpiece.,Positive,2025-07-08
+REV1061,VWR0303,MOV041,3,"It was okay, not great.",Neutral,2025-02-27
+REV1062,VWR1471,MOV033,4,Incredible visual effects.,Positive,2025-02-12
+REV1063,VWR0442,MOV040,4,Will definitely watch again.,Positive,2025-01-07
+REV1064,VWR0184,MOV020,3,Pacing felt a bit slow.,Neutral,2025-12-28
+REV1065,VWR1421,MOV022,5,Loved the character development.,Positive,2025-07-01
+REV1066,VWR1321,MOV055,4,Will definitely watch again.,Positive,2025-04-24
+REV1067,VWR1130,MOV040,5,Loved the character development.,Positive,2025-09-23
+REV1068,VWR0448,MOV023,2,Very disappointing.,Negative,2025-07-06
+REV1069,VWR1240,MOV039,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-14
+REV1070,VWR0002,MOV042,3,"It was okay, not great.",Neutral,2025-08-16
+REV1071,VWR1452,MOV049,2,Very disappointing.,Negative,2025-09-03
+REV1072,VWR1181,MOV008,4,Strong pacing and high production quality.,Positive,2025-05-07
+REV1073,VWR0767,MOV001,5,Will definitely watch again.,Positive,2025-10-05
+REV1074,VWR1267,MOV060,4,Strong pacing and high production quality.,Positive,2025-11-25
+REV1075,VWR0844,MOV016,5,Will definitely watch again.,Positive,2025-08-27
+REV1076,VWR1491,MOV025,2,Expected much better.,Negative,2025-03-24
+REV1077,VWR1192,MOV005,5,Incredible visual effects.,Positive,2025-07-30
+REV1078,VWR0322,MOV051,1,Waste of time.,Negative,2025-04-14
+REV1079,VWR1107,MOV045,2,Expected much better.,Negative,2025-04-01
+REV1080,VWR1120,MOV006,1,Expected much better.,Negative,2025-12-08
+REV1081,VWR0751,MOV048,5,An absolute masterpiece.,Positive,2025-05-14
+REV1082,VWR1478,MOV054,1,Terrible plot and awful acting.,Negative,2025-09-30
+REV1083,VWR1453,MOV031,1,Very disappointing.,Negative,2025-06-25
+REV1084,VWR1359,MOV023,5,Incredible visual effects.,Positive,2025-04-28
+REV1085,VWR0944,MOV014,1,Very disappointing.,Negative,2025-07-05
+REV1086,VWR1378,MOV033,2,Waste of time.,Negative,2025-11-13
+REV1087,VWR1110,MOV021,5,Will definitely watch again.,Positive,2025-08-27
+REV1088,VWR1353,MOV024,5,An absolute masterpiece.,Positive,2025-01-11
+REV1089,VWR1379,MOV004,3,"It was okay, not great.",Neutral,2025-02-05
+REV1090,VWR0969,MOV022,2,Waste of time.,Negative,2025-01-21
+REV1091,VWR1373,MOV042,2,Terrible plot and awful acting.,Negative,2025-04-11
+REV1092,VWR0622,MOV025,4,Incredible visual effects.,Positive,2025-08-08
+REV1093,VWR1151,MOV022,2,Terrible plot and awful acting.,Negative,2025-01-17
+REV1094,VWR0798,MOV021,2,Terrible plot and awful acting.,Negative,2025-10-13
+REV1095,VWR0193,MOV011,1,Could not finish it.,Negative,2025-10-22
+REV1096,VWR1099,MOV011,5,Incredible visual effects.,Positive,2025-03-23
+REV1097,VWR0874,MOV044,4,An absolute masterpiece.,Positive,2025-05-04
+REV1098,VWR0651,MOV003,1,Very disappointing.,Negative,2025-09-10
+REV1099,VWR1295,MOV039,2,Expected much better.,Negative,2025-11-07
+REV1100,VWR0095,MOV043,3,"It was okay, not great.",Neutral,2025-11-21
+REV1101,VWR0064,MOV029,5,Incredible visual effects.,Positive,2025-11-14
+REV1102,VWR1160,MOV045,2,Terrible plot and awful acting.,Negative,2025-03-14
+REV1103,VWR0549,MOV017,2,Terrible plot and awful acting.,Negative,2025-10-29
+REV1104,VWR0566,MOV011,4,An absolute masterpiece.,Positive,2025-01-06
+REV1105,VWR1372,MOV022,3,"Nothing special, but not bad.",Neutral,2025-05-07
+REV1106,VWR1291,MOV020,2,Very disappointing.,Negative,2025-02-01
+REV1107,VWR0813,MOV043,5,Strong pacing and high production quality.,Positive,2025-07-09
+REV1108,VWR0051,MOV019,4,Loved the character development.,Positive,2025-08-04
+REV1109,VWR1164,MOV014,2,Could not finish it.,Negative,2025-07-02
+REV1110,VWR0751,MOV040,1,Expected much better.,Negative,2025-11-15
+REV1111,VWR0707,MOV051,4,An absolute masterpiece.,Positive,2025-02-19
+REV1112,VWR1371,MOV001,5,An absolute masterpiece.,Positive,2025-11-22
+REV1113,VWR0894,MOV037,4,Loved the character development.,Positive,2025-02-03
+REV1114,VWR0213,MOV011,3,"It was okay, not great.",Neutral,2025-06-18
+REV1115,VWR1066,MOV053,2,Could not finish it.,Negative,2025-12-23
+REV1116,VWR1029,MOV003,1,Expected much better.,Negative,2025-12-12
+REV1117,VWR1221,MOV044,1,Very disappointing.,Negative,2025-04-03
+REV1118,VWR0995,MOV037,5,Incredible visual effects.,Positive,2025-05-31
+REV1119,VWR1352,MOV042,5,Loved the character development.,Positive,2025-10-23
+REV1120,VWR0729,MOV052,4,Will definitely watch again.,Positive,2025-12-05
+REV1121,VWR0134,MOV053,2,Terrible plot and awful acting.,Negative,2025-04-06
+REV1122,VWR1361,MOV049,2,Very disappointing.,Negative,2025-11-06
+REV1123,VWR0590,MOV040,3,Pacing felt a bit slow.,Neutral,2025-09-25
+REV1124,VWR0231,MOV050,2,Could not finish it.,Negative,2025-04-14
+REV1125,VWR0214,MOV043,1,Expected much better.,Negative,2025-08-02
+REV1126,VWR0663,MOV006,3,Pacing felt a bit slow.,Neutral,2025-11-24
+REV1127,VWR0986,MOV007,3,Pacing felt a bit slow.,Neutral,2025-03-22
+REV1128,VWR1206,MOV031,5,Loved the character development.,Positive,2025-08-29
+REV1129,VWR1349,MOV027,4,Incredible visual effects.,Positive,2025-10-10
+REV1130,VWR0206,MOV023,4,Loved the character development.,Positive,2025-08-20
+REV1131,VWR0344,MOV023,1,Waste of time.,Negative,2025-10-02
+REV1132,VWR0191,MOV022,4,An absolute masterpiece.,Positive,2025-08-23
+REV1133,VWR1394,MOV009,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-08
+REV1134,VWR0272,MOV041,1,Expected much better.,Negative,2025-07-22
+REV1135,VWR0991,MOV055,5,Loved the character development.,Positive,2025-03-26
+REV1136,VWR0133,MOV021,2,Could not finish it.,Negative,2025-09-20
+REV1137,VWR1016,MOV001,1,Very disappointing.,Negative,2025-06-26
+REV1138,VWR1381,MOV014,3,Average movie experience.,Neutral,2025-06-10
+REV1139,VWR1332,MOV028,4,Incredible visual effects.,Positive,2025-08-04
+REV1140,VWR0029,MOV001,4,Incredible visual effects.,Positive,2025-12-25
+REV1141,VWR1403,MOV038,2,Very disappointing.,Negative,2025-01-21
+REV1142,VWR0253,MOV039,3,Average movie experience.,Neutral,2025-12-07
+REV1143,VWR0264,MOV024,4,Incredible visual effects.,Positive,2025-05-01
+REV1144,VWR0030,MOV057,1,Waste of time.,Negative,2025-01-05
+REV1145,VWR1381,MOV031,1,Expected much better.,Negative,2025-11-15
+REV1146,VWR0745,MOV008,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-25
+REV1147,VWR1322,MOV035,1,Could not finish it.,Negative,2025-06-21
+REV1148,VWR0399,MOV051,5,Strong pacing and high production quality.,Positive,2025-10-19
+REV1149,VWR0665,MOV034,4,Incredible visual effects.,Positive,2025-12-17
+REV1150,VWR1312,MOV004,2,Terrible plot and awful acting.,Negative,2025-02-05
+REV1151,VWR0734,MOV024,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-04
+REV1152,VWR0517,MOV047,1,Waste of time.,Negative,2025-06-02
+REV1153,VWR1013,MOV035,5,Strong pacing and high production quality.,Positive,2025-10-28
+REV1154,VWR1321,MOV017,2,Could not finish it.,Negative,2025-06-21
+REV1155,VWR0655,MOV015,4,Loved the character development.,Positive,2025-11-09
+REV1156,VWR0052,MOV026,2,Waste of time.,Negative,2025-10-24
+REV1157,VWR0865,MOV027,3,"Nothing special, but not bad.",Neutral,2025-10-12
+REV1158,VWR0061,MOV031,1,Terrible plot and awful acting.,Negative,2025-02-10
+REV1159,VWR0367,MOV051,1,Could not finish it.,Negative,2025-02-01
+REV1160,VWR1019,MOV023,5,Incredible visual effects.,Positive,2025-12-25
+REV1161,VWR1200,MOV042,5,An absolute masterpiece.,Positive,2025-09-03
+REV1162,VWR0547,MOV011,4,Will definitely watch again.,Positive,2025-07-27
+REV1163,VWR0973,MOV014,4,Incredible visual effects.,Positive,2025-12-21
+REV1164,VWR0790,MOV012,4,An absolute masterpiece.,Positive,2025-04-29
+REV1165,VWR1186,MOV014,1,Could not finish it.,Negative,2025-07-21
+REV1166,VWR0947,MOV021,1,Expected much better.,Negative,2025-12-17
+REV1167,VWR0684,MOV033,1,Waste of time.,Negative,2025-09-12
+REV1168,VWR0185,MOV021,2,Terrible plot and awful acting.,Negative,2025-10-25
+REV1169,VWR1033,MOV027,1,Very disappointing.,Negative,2025-12-12
+REV1170,VWR0289,MOV060,4,Loved the character development.,Positive,2025-06-21
+REV1171,VWR1291,MOV026,1,Could not finish it.,Negative,2025-04-25
+REV1172,VWR0723,MOV009,3,"It was okay, not great.",Neutral,2025-01-17
+REV1173,VWR0188,MOV033,2,Expected much better.,Negative,2025-02-04
+REV1174,VWR0921,MOV015,4,Strong pacing and high production quality.,Positive,2025-09-30
+REV1175,VWR0600,MOV025,1,Waste of time.,Negative,2025-12-31
+REV1176,VWR1070,MOV016,4,Incredible visual effects.,Positive,2025-06-10
+REV1177,VWR0821,MOV028,5,Incredible visual effects.,Positive,2025-01-02
+REV1178,VWR0171,MOV057,5,Will definitely watch again.,Positive,2025-02-01
+REV1179,VWR0727,MOV051,4,Incredible visual effects.,Positive,2025-01-01
+REV1180,VWR0424,MOV056,2,Terrible plot and awful acting.,Negative,2025-04-03
+REV1181,VWR1412,MOV020,5,An absolute masterpiece.,Positive,2025-05-18
+REV1182,VWR1414,MOV001,3,"It was okay, not great.",Neutral,2025-09-18
+REV1183,VWR0132,MOV027,3,Pacing felt a bit slow.,Neutral,2025-03-23
+REV1184,VWR0367,MOV058,4,An absolute masterpiece.,Positive,2025-10-26
+REV1185,VWR0903,MOV011,4,Incredible visual effects.,Positive,2025-09-27
+REV1186,VWR1308,MOV058,5,Incredible visual effects.,Positive,2025-06-26
+REV1187,VWR0215,MOV014,4,Strong pacing and high production quality.,Positive,2025-10-30
+REV1188,VWR0754,MOV017,3,Pacing felt a bit slow.,Neutral,2025-11-02
+REV1189,VWR0950,MOV028,5,Strong pacing and high production quality.,Positive,2025-03-03
+REV1190,VWR0942,MOV037,1,Waste of time.,Negative,2025-08-27
+REV1191,VWR0955,MOV004,3,Pacing felt a bit slow.,Neutral,2025-01-01
+REV1192,VWR0117,MOV007,4,Loved the character development.,Positive,2025-11-07
+REV1193,VWR0421,MOV001,1,Terrible plot and awful acting.,Negative,2025-02-06
+REV1194,VWR0010,MOV037,5,Loved the character development.,Positive,2025-06-14
+REV1195,VWR0465,MOV044,2,Expected much better.,Negative,2025-01-14
+REV1196,VWR0841,MOV051,5,Loved the character development.,Positive,2025-03-15
+REV1197,VWR0121,MOV011,5,An absolute masterpiece.,Positive,2025-09-09
+REV1198,VWR1429,MOV003,1,Waste of time.,Negative,2025-06-08
+REV1199,VWR0638,MOV025,1,Very disappointing.,Negative,2025-02-11
+REV1200,VWR0998,MOV018,4,Strong pacing and high production quality.,Positive,2025-09-01
+REV1201,VWR0499,MOV059,3,Pacing felt a bit slow.,Neutral,2026-01-01
+REV1202,VWR0327,MOV020,1,Terrible plot and awful acting.,Negative,2025-06-26
+REV1203,VWR0495,MOV034,4,Loved the character development.,Positive,2025-03-03
+REV1204,VWR0316,MOV008,1,Very disappointing.,Negative,2025-09-17
+REV1205,VWR0911,MOV004,3,Average movie experience.,Neutral,2025-11-06
+REV1206,VWR1359,MOV012,4,Loved the character development.,Positive,2025-08-28
+REV1207,VWR0204,MOV040,4,An absolute masterpiece.,Positive,2025-01-29
+REV1208,VWR1469,MOV022,2,Expected much better.,Negative,2025-09-30
+REV1209,VWR0907,MOV015,2,Very disappointing.,Negative,2025-10-27
+REV1210,VWR1203,MOV043,3,Decent watch for a Sunday afternoon.,Neutral,2025-06-09
+REV1211,VWR0420,MOV042,3,"Nothing special, but not bad.",Neutral,2025-06-09
+REV1212,VWR0234,MOV014,1,Terrible plot and awful acting.,Negative,2025-11-05
+REV1213,VWR1265,MOV031,1,Could not finish it.,Negative,2025-11-05
+REV1214,VWR0175,MOV007,4,An absolute masterpiece.,Positive,2025-07-26
+REV1215,VWR1325,MOV042,1,Expected much better.,Negative,2025-09-25
+REV1216,VWR1361,MOV022,1,Waste of time.,Negative,2025-09-12
+REV1217,VWR0192,MOV019,4,Loved the character development.,Positive,2025-01-15
+REV1218,VWR1114,MOV058,5,Strong pacing and high production quality.,Positive,2025-05-05
+REV1219,VWR0745,MOV045,1,Could not finish it.,Negative,2025-09-04
+REV1220,VWR1247,MOV043,5,Loved the character development.,Positive,2025-09-14
+REV1221,VWR1459,MOV009,1,Waste of time.,Negative,2025-08-05
+REV1222,VWR0377,MOV059,3,Pacing felt a bit slow.,Neutral,2025-06-23
+REV1223,VWR1387,MOV049,1,Waste of time.,Negative,2025-05-19
+REV1224,VWR1236,MOV025,5,Will definitely watch again.,Positive,2025-05-21
+REV1225,VWR0204,MOV024,5,An absolute masterpiece.,Positive,2025-10-04
+REV1226,VWR1344,MOV006,1,Waste of time.,Negative,2025-08-31
+REV1227,VWR1139,MOV057,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-03
+REV1228,VWR0907,MOV036,4,Incredible visual effects.,Positive,2025-06-03
+REV1229,VWR0257,MOV049,1,Terrible plot and awful acting.,Negative,2025-05-16
+REV1230,VWR0600,MOV019,3,"It was okay, not great.",Neutral,2025-07-27
+REV1231,VWR1230,MOV014,1,Terrible plot and awful acting.,Negative,2025-07-17
+REV1232,VWR1094,MOV017,2,Terrible plot and awful acting.,Negative,2025-01-23
+REV1233,VWR1046,MOV015,1,Very disappointing.,Negative,2025-04-29
+REV1234,VWR1059,MOV015,1,Expected much better.,Negative,2025-10-29
+REV1235,VWR0519,MOV009,4,Will definitely watch again.,Positive,2025-06-13
+REV1236,VWR1008,MOV041,2,Terrible plot and awful acting.,Negative,2025-09-05
+REV1237,VWR1292,MOV034,5,Incredible visual effects.,Positive,2025-02-14
+REV1238,VWR0933,MOV018,2,Very disappointing.,Negative,2025-02-25
+REV1239,VWR0716,MOV026,5,Will definitely watch again.,Positive,2025-01-13
+REV1240,VWR0867,MOV042,5,Incredible visual effects.,Positive,2025-04-02
+REV1241,VWR1421,MOV058,4,Strong pacing and high production quality.,Positive,2025-06-14
+REV1242,VWR0577,MOV049,2,Very disappointing.,Negative,2025-06-13
+REV1243,VWR1137,MOV049,2,Terrible plot and awful acting.,Negative,2025-04-14
+REV1244,VWR0335,MOV039,5,An absolute masterpiece.,Positive,2025-10-01
+REV1245,VWR0889,MOV010,2,Expected much better.,Negative,2025-12-31
+REV1246,VWR0464,MOV041,5,An absolute masterpiece.,Positive,2025-08-08
+REV1247,VWR0543,MOV047,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-10
+REV1248,VWR0034,MOV048,1,Waste of time.,Negative,2025-10-19
+REV1249,VWR1402,MOV043,2,Waste of time.,Negative,2025-02-22
+REV1250,VWR1030,MOV035,4,Incredible visual effects.,Positive,2025-09-19
+REV1251,VWR0903,MOV033,5,An absolute masterpiece.,Positive,2025-02-14
+REV1252,VWR1471,MOV019,5,Will definitely watch again.,Positive,2025-04-27
+REV1253,VWR1365,MOV035,3,"Nothing special, but not bad.",Neutral,2025-10-07
+REV1254,VWR1056,MOV013,2,Waste of time.,Negative,2025-09-09
+REV1255,VWR0450,MOV024,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-06
+REV1256,VWR1262,MOV037,5,Will definitely watch again.,Positive,2025-03-05
+REV1257,VWR1291,MOV047,5,An absolute masterpiece.,Positive,2025-06-02
+REV1258,VWR1022,MOV033,2,Waste of time.,Negative,2025-07-19
+REV1259,VWR0450,MOV030,5,Strong pacing and high production quality.,Positive,2025-05-21
+REV1260,VWR0356,MOV031,2,Very disappointing.,Negative,2025-09-16
+REV1261,VWR1322,MOV044,2,Very disappointing.,Negative,2025-03-14
+REV1262,VWR1168,MOV020,4,An absolute masterpiece.,Positive,2025-11-12
+REV1263,VWR0238,MOV030,1,Terrible plot and awful acting.,Negative,2025-03-28
+REV1264,VWR0762,MOV008,3,Decent watch for a Sunday afternoon.,Neutral,2025-01-11
+REV1265,VWR0005,MOV006,4,Loved the character development.,Positive,2025-02-24
+REV1266,VWR0909,MOV005,5,Will definitely watch again.,Positive,2025-07-06
+REV1267,VWR0718,MOV007,5,Will definitely watch again.,Positive,2025-08-03
+REV1268,VWR0390,MOV050,5,An absolute masterpiece.,Positive,2025-09-28
+REV1269,VWR0500,MOV060,2,Could not finish it.,Negative,2025-01-24
+REV1270,VWR0063,MOV010,5,Will definitely watch again.,Positive,2025-08-24
+REV1271,VWR0835,MOV050,5,Strong pacing and high production quality.,Positive,2025-09-18
+REV1272,VWR0276,MOV004,1,Waste of time.,Negative,2025-12-24
+REV1273,VWR0554,MOV008,4,Strong pacing and high production quality.,Positive,2025-05-27
+REV1274,VWR0141,MOV012,4,Will definitely watch again.,Positive,2025-03-26
+REV1275,VWR0725,MOV019,5,Strong pacing and high production quality.,Positive,2025-12-06
+REV1276,VWR0493,MOV028,5,Loved the character development.,Positive,2025-08-10
+REV1277,VWR0633,MOV016,5,Incredible visual effects.,Positive,2025-03-31
+REV1278,VWR0523,MOV006,3,Pacing felt a bit slow.,Neutral,2025-04-13
+REV1279,VWR0570,MOV037,1,Expected much better.,Negative,2025-02-12
+REV1280,VWR0458,MOV037,1,Very disappointing.,Negative,2025-03-23
+REV1281,VWR0094,MOV001,5,An absolute masterpiece.,Positive,2025-11-26
+REV1282,VWR1356,MOV040,1,Very disappointing.,Negative,2025-11-15
+REV1283,VWR0108,MOV007,4,Loved the character development.,Positive,2025-11-15
+REV1284,VWR0398,MOV057,5,Strong pacing and high production quality.,Positive,2025-04-15
+REV1285,VWR0792,MOV057,5,Incredible visual effects.,Positive,2025-09-11
+REV1286,VWR0928,MOV054,4,Incredible visual effects.,Positive,2025-10-27
+REV1287,VWR0439,MOV033,5,Loved the character development.,Positive,2025-03-02
+REV1288,VWR1210,MOV010,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-25
+REV1289,VWR1226,MOV022,1,Terrible plot and awful acting.,Negative,2025-02-10
+REV1290,VWR0372,MOV018,4,Will definitely watch again.,Positive,2025-12-17
+REV1291,VWR0587,MOV040,1,Could not finish it.,Negative,2025-01-21
+REV1292,VWR1067,MOV042,4,Strong pacing and high production quality.,Positive,2025-02-23
+REV1293,VWR0662,MOV027,5,Incredible visual effects.,Positive,2025-06-20
+REV1294,VWR0133,MOV023,1,Very disappointing.,Negative,2025-11-10
+REV1295,VWR0676,MOV002,4,Incredible visual effects.,Positive,2025-07-26
+REV1296,VWR0425,MOV046,3,"It was okay, not great.",Neutral,2025-05-24
+REV1297,VWR0025,MOV035,3,"It was okay, not great.",Neutral,2025-05-12
+REV1298,VWR1235,MOV010,5,Will definitely watch again.,Positive,2025-02-17
+REV1299,VWR0021,MOV052,5,Strong pacing and high production quality.,Positive,2025-06-09
+REV1300,VWR0415,MOV042,4,Incredible visual effects.,Positive,2025-01-14
+REV1301,VWR1049,MOV054,3,Pacing felt a bit slow.,Neutral,2025-06-16
+REV1302,VWR0764,MOV020,5,Incredible visual effects.,Positive,2025-07-31
+REV1303,VWR0373,MOV054,4,Will definitely watch again.,Positive,2025-05-04
+REV1304,VWR0377,MOV012,4,An absolute masterpiece.,Positive,2025-12-13
+REV1305,VWR0940,MOV052,4,Loved the character development.,Positive,2025-03-31
+REV1306,VWR1137,MOV033,4,Incredible visual effects.,Positive,2025-10-22
+REV1307,VWR0583,MOV011,1,Very disappointing.,Negative,2025-03-24
+REV1308,VWR0216,MOV045,5,Incredible visual effects.,Positive,2025-03-04
+REV1309,VWR0892,MOV033,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-02
+REV1310,VWR1427,MOV015,5,Strong pacing and high production quality.,Positive,2025-10-25
+REV1311,VWR0611,MOV031,1,Terrible plot and awful acting.,Negative,2025-01-05
+REV1312,VWR0124,MOV059,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-25
+REV1313,VWR0554,MOV011,4,Incredible visual effects.,Positive,2025-06-21
+REV1314,VWR0205,MOV040,4,Incredible visual effects.,Positive,2025-03-28
+REV1315,VWR0932,MOV020,4,Incredible visual effects.,Positive,2025-01-02
+REV1316,VWR0904,MOV057,4,Loved the character development.,Positive,2025-05-31
+REV1317,VWR0567,MOV058,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-11
+REV1318,VWR1175,MOV040,4,Strong pacing and high production quality.,Positive,2025-10-06
+REV1319,VWR0810,MOV042,3,"Nothing special, but not bad.",Neutral,2025-11-21
+REV1320,VWR0934,MOV032,5,Strong pacing and high production quality.,Positive,2025-09-01
+REV1321,VWR0761,MOV054,5,Strong pacing and high production quality.,Positive,2025-06-01
+REV1322,VWR0596,MOV029,5,Loved the character development.,Positive,2025-10-30
+REV1323,VWR0666,MOV024,3,Average movie experience.,Neutral,2025-10-18
+REV1324,VWR0536,MOV018,5,Incredible visual effects.,Positive,2025-08-31
+REV1325,VWR0778,MOV010,4,Strong pacing and high production quality.,Positive,2025-09-05
+REV1326,VWR1099,MOV040,4,Incredible visual effects.,Positive,2025-10-05
+REV1327,VWR0037,MOV047,3,"It was okay, not great.",Neutral,2025-07-25
+REV1328,VWR0157,MOV040,2,Terrible plot and awful acting.,Negative,2025-03-14
+REV1329,VWR1316,MOV026,2,Expected much better.,Negative,2025-12-19
+REV1330,VWR0682,MOV005,1,Expected much better.,Negative,2025-02-09
+REV1331,VWR1251,MOV005,2,Very disappointing.,Negative,2025-03-02
+REV1332,VWR0291,MOV033,1,Could not finish it.,Negative,2025-05-24
+REV1333,VWR0610,MOV037,2,Expected much better.,Negative,2025-10-24
+REV1334,VWR1433,MOV043,5,Will definitely watch again.,Positive,2025-08-21
+REV1335,VWR0989,MOV055,5,An absolute masterpiece.,Positive,2025-06-11
+REV1336,VWR1413,MOV029,1,Terrible plot and awful acting.,Negative,2025-04-27
+REV1337,VWR0562,MOV014,4,Loved the character development.,Positive,2025-05-23
+REV1338,VWR0470,MOV025,2,Could not finish it.,Negative,2025-06-07
+REV1339,VWR0916,MOV003,1,Terrible plot and awful acting.,Negative,2025-05-10
+REV1340,VWR0007,MOV057,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-16
+REV1341,VWR1267,MOV002,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-08
+REV1342,VWR0016,MOV059,2,Terrible plot and awful acting.,Negative,2025-01-30
+REV1343,VWR0529,MOV014,5,Will definitely watch again.,Positive,2025-08-18
+REV1344,VWR0332,MOV059,4,Will definitely watch again.,Positive,2025-06-03
+REV1345,VWR0544,MOV046,2,Could not finish it.,Negative,2025-11-05
+REV1346,VWR0107,MOV009,2,Expected much better.,Negative,2025-03-09
+REV1347,VWR0749,MOV018,5,Will definitely watch again.,Positive,2025-11-19
+REV1348,VWR0907,MOV028,5,An absolute masterpiece.,Positive,2025-08-06
+REV1349,VWR0307,MOV007,2,Terrible plot and awful acting.,Negative,2025-10-27
+REV1350,VWR1500,MOV028,5,Loved the character development.,Positive,2025-12-20
+REV1351,VWR1078,MOV050,4,Will definitely watch again.,Positive,2025-05-07
+REV1352,VWR0877,MOV025,2,Expected much better.,Negative,2025-02-10
+REV1353,VWR0042,MOV008,5,Incredible visual effects.,Positive,2025-05-01
+REV1354,VWR0784,MOV009,3,"Nothing special, but not bad.",Neutral,2025-08-13
+REV1355,VWR0971,MOV031,4,Strong pacing and high production quality.,Positive,2025-12-06
+REV1356,VWR0212,MOV023,1,Could not finish it.,Negative,2025-01-27
+REV1357,VWR0246,MOV038,1,Expected much better.,Negative,2025-04-08
+REV1358,VWR1416,MOV028,5,An absolute masterpiece.,Positive,2025-03-10
+REV1359,VWR1255,MOV005,2,Could not finish it.,Negative,2025-10-22
+REV1360,VWR1208,MOV046,3,"Nothing special, but not bad.",Neutral,2025-04-18
+REV1361,VWR0038,MOV029,4,An absolute masterpiece.,Positive,2025-05-18
+REV1362,VWR0537,MOV006,2,Could not finish it.,Negative,2025-09-14
+REV1363,VWR1450,MOV012,4,Strong pacing and high production quality.,Positive,2025-03-07
+REV1364,VWR0340,MOV040,3,"Nothing special, but not bad.",Neutral,2025-07-04
+REV1365,VWR0913,MOV026,2,Terrible plot and awful acting.,Negative,2025-09-05
+REV1366,VWR0778,MOV038,1,Could not finish it.,Negative,2025-06-06
+REV1367,VWR1327,MOV036,2,Very disappointing.,Negative,2025-01-19
+REV1368,VWR0999,MOV003,2,Expected much better.,Negative,2025-06-18
+REV1369,VWR0381,MOV051,3,Average movie experience.,Neutral,2025-12-12
+REV1370,VWR1388,MOV039,1,Expected much better.,Negative,2025-12-31
+REV1371,VWR1500,MOV005,1,Waste of time.,Negative,2025-04-24
+REV1372,VWR0119,MOV036,2,Waste of time.,Negative,2025-11-03
+REV1373,VWR1059,MOV056,1,Waste of time.,Negative,2025-02-01
+REV1374,VWR0796,MOV034,2,Terrible plot and awful acting.,Negative,2025-02-02
+REV1375,VWR0850,MOV049,2,Very disappointing.,Negative,2025-06-19
+REV1376,VWR0477,MOV029,3,"Nothing special, but not bad.",Neutral,2025-02-10
+REV1377,VWR1209,MOV004,4,Will definitely watch again.,Positive,2025-05-08
+REV1378,VWR1370,MOV014,2,Waste of time.,Negative,2025-09-05
+REV1379,VWR0811,MOV045,3,"Nothing special, but not bad.",Neutral,2025-05-12
+REV1380,VWR0643,MOV034,4,An absolute masterpiece.,Positive,2025-04-07
+REV1381,VWR1137,MOV009,1,Waste of time.,Negative,2025-10-21
+REV1382,VWR0424,MOV007,5,Will definitely watch again.,Positive,2025-01-20
+REV1383,VWR0646,MOV059,1,Very disappointing.,Negative,2025-11-30
+REV1384,VWR0183,MOV028,4,Will definitely watch again.,Positive,2025-12-06
+REV1385,VWR1027,MOV019,3,"Nothing special, but not bad.",Neutral,2025-11-02
+REV1386,VWR0243,MOV018,2,Waste of time.,Negative,2025-10-26
+REV1387,VWR0904,MOV018,4,Will definitely watch again.,Positive,2025-12-21
+REV1388,VWR0957,MOV012,4,Loved the character development.,Positive,2025-04-12
+REV1389,VWR1243,MOV025,2,Waste of time.,Negative,2025-06-24
+REV1390,VWR0436,MOV002,1,Very disappointing.,Negative,2025-08-24
+REV1391,VWR1121,MOV053,1,Expected much better.,Negative,2025-05-11
+REV1392,VWR0917,MOV003,2,Waste of time.,Negative,2025-10-10
+REV1393,VWR0424,MOV059,5,Incredible visual effects.,Positive,2025-11-26
+REV1394,VWR0804,MOV047,5,Incredible visual effects.,Positive,2025-07-09
+REV1395,VWR0880,MOV031,4,Loved the character development.,Positive,2025-05-20
+REV1396,VWR1152,MOV027,1,Terrible plot and awful acting.,Negative,2025-12-09
+REV1397,VWR1168,MOV053,3,"Nothing special, but not bad.",Neutral,2025-10-11
+REV1398,VWR1206,MOV023,1,Waste of time.,Negative,2025-02-27
+REV1399,VWR0698,MOV008,1,Waste of time.,Negative,2025-12-16
+REV1400,VWR0185,MOV054,3,"Nothing special, but not bad.",Neutral,2025-04-12
+REV1401,VWR1461,MOV053,4,Strong pacing and high production quality.,Positive,2025-03-22
+REV1402,VWR0015,MOV047,5,Incredible visual effects.,Positive,2025-01-19
+REV1403,VWR0483,MOV054,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-04
+REV1404,VWR0523,MOV032,2,Terrible plot and awful acting.,Negative,2025-02-25
+REV1405,VWR0629,MOV003,5,Strong pacing and high production quality.,Positive,2025-06-23
+REV1406,VWR1127,MOV042,4,Incredible visual effects.,Positive,2025-01-19
+REV1407,VWR0287,MOV001,2,Could not finish it.,Negative,2025-02-10
+REV1408,VWR0418,MOV019,2,Very disappointing.,Negative,2025-02-12
+REV1409,VWR0497,MOV042,5,Incredible visual effects.,Positive,2025-04-29
+REV1410,VWR1127,MOV034,2,Expected much better.,Negative,2025-08-25
+REV1411,VWR1185,MOV012,5,Will definitely watch again.,Positive,2025-03-31
+REV1412,VWR1079,MOV028,1,Terrible plot and awful acting.,Negative,2025-11-09
+REV1413,VWR0802,MOV059,2,Expected much better.,Negative,2025-02-25
+REV1414,VWR1230,MOV002,5,Will definitely watch again.,Positive,2025-07-26
+REV1415,VWR1258,MOV034,5,Strong pacing and high production quality.,Positive,2025-08-31
+REV1416,VWR0254,MOV024,3,"Nothing special, but not bad.",Neutral,2025-09-08
+REV1417,VWR0547,MOV007,4,Incredible visual effects.,Positive,2025-12-26
+REV1418,VWR1178,MOV011,5,An absolute masterpiece.,Positive,2025-12-09
+REV1419,VWR0790,MOV005,2,Very disappointing.,Negative,2025-01-12
+REV1420,VWR1331,MOV033,5,Incredible visual effects.,Positive,2025-10-05
+REV1421,VWR0543,MOV052,3,"Nothing special, but not bad.",Neutral,2025-05-30
+REV1422,VWR0217,MOV024,5,Loved the character development.,Positive,2025-10-12
+REV1423,VWR0816,MOV032,3,Decent watch for a Sunday afternoon.,Neutral,2025-06-24
+REV1424,VWR1267,MOV005,5,An absolute masterpiece.,Positive,2025-08-16
+REV1425,VWR0797,MOV029,5,Will definitely watch again.,Positive,2025-03-07
+REV1426,VWR0704,MOV034,3,"It was okay, not great.",Neutral,2025-08-11
+REV1427,VWR0979,MOV057,1,Expected much better.,Negative,2025-03-15
+REV1428,VWR1415,MOV021,5,Will definitely watch again.,Positive,2025-03-09
+REV1429,VWR1180,MOV002,3,Average movie experience.,Neutral,2025-07-03
+REV1430,VWR0320,MOV015,4,Will definitely watch again.,Positive,2025-04-10
+REV1431,VWR1123,MOV020,5,Incredible visual effects.,Positive,2025-05-14
+REV1432,VWR0642,MOV054,1,Terrible plot and awful acting.,Negative,2025-10-07
+REV1433,VWR1071,MOV052,4,Strong pacing and high production quality.,Positive,2025-06-14
+REV1434,VWR0187,MOV010,4,Will definitely watch again.,Positive,2025-08-13
+REV1435,VWR1044,MOV014,4,Incredible visual effects.,Positive,2025-08-22
+REV1436,VWR0761,MOV040,4,An absolute masterpiece.,Positive,2025-07-15
+REV1437,VWR1103,MOV040,4,Will definitely watch again.,Positive,2025-01-22
+REV1438,VWR0822,MOV005,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-12
+REV1439,VWR0095,MOV031,2,Very disappointing.,Negative,2025-04-27
+REV1440,VWR0158,MOV006,1,Expected much better.,Negative,2025-05-27
+REV1441,VWR1185,MOV005,1,Very disappointing.,Negative,2025-12-07
+REV1442,VWR1268,MOV003,5,Loved the character development.,Positive,2025-02-14
+REV1443,VWR1389,MOV022,4,Incredible visual effects.,Positive,2025-03-09
+REV1444,VWR0084,MOV019,2,Waste of time.,Negative,2025-06-30
+REV1445,VWR0301,MOV043,4,An absolute masterpiece.,Positive,2025-05-18
+REV1446,VWR0733,MOV010,1,Waste of time.,Negative,2025-11-14
+REV1447,VWR1204,MOV008,4,Strong pacing and high production quality.,Positive,2025-11-25
+REV1448,VWR0925,MOV046,1,Very disappointing.,Negative,2025-10-12
+REV1449,VWR0879,MOV055,5,Loved the character development.,Positive,2025-02-15
+REV1450,VWR1438,MOV055,2,Expected much better.,Negative,2025-04-17
+REV1451,VWR1153,MOV030,1,Very disappointing.,Negative,2025-04-23
+REV1452,VWR0621,MOV044,5,Strong pacing and high production quality.,Positive,2025-04-10
+REV1453,VWR0427,MOV028,1,Could not finish it.,Negative,2025-12-10
+REV1454,VWR0993,MOV043,5,Incredible visual effects.,Positive,2025-03-28
+REV1455,VWR0955,MOV006,2,Waste of time.,Negative,2025-03-26
+REV1456,VWR0431,MOV003,3,"It was okay, not great.",Neutral,2025-10-01
+REV1457,VWR1242,MOV058,3,Average movie experience.,Neutral,2025-03-27
+REV1458,VWR1413,MOV029,2,Waste of time.,Negative,2025-01-31
+REV1459,VWR0956,MOV055,3,Pacing felt a bit slow.,Neutral,2025-03-09
+REV1460,VWR1172,MOV059,4,Loved the character development.,Positive,2025-02-22
+REV1461,VWR0567,MOV031,1,Waste of time.,Negative,2025-08-03
+REV1462,VWR0026,MOV035,2,Waste of time.,Negative,2025-03-31
+REV1463,VWR1408,MOV059,3,Average movie experience.,Neutral,2025-10-04
+REV1464,VWR0110,MOV051,1,Very disappointing.,Negative,2025-06-10
+REV1465,VWR1116,MOV021,5,Loved the character development.,Positive,2025-07-02
+REV1466,VWR0344,MOV011,5,Will definitely watch again.,Positive,2025-01-22
+REV1467,VWR0669,MOV057,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-25
+REV1468,VWR1087,MOV032,5,Will definitely watch again.,Positive,2025-05-23
+REV1469,VWR0045,MOV056,3,Average movie experience.,Neutral,2025-08-08
+REV1470,VWR1432,MOV056,3,"It was okay, not great.",Neutral,2025-04-26
+REV1471,VWR1361,MOV046,5,Loved the character development.,Positive,2025-08-30
+REV1472,VWR1120,MOV024,3,Pacing felt a bit slow.,Neutral,2025-10-05
+REV1473,VWR0477,MOV057,5,An absolute masterpiece.,Positive,2025-03-17
+REV1474,VWR1424,MOV003,2,Could not finish it.,Negative,2025-02-26
+REV1475,VWR0486,MOV059,4,Incredible visual effects.,Positive,2025-05-03
+REV1476,VWR0650,MOV015,2,Expected much better.,Negative,2025-10-24
+REV1477,VWR1414,MOV057,1,Expected much better.,Negative,2025-07-06
+REV1478,VWR0805,MOV036,2,Could not finish it.,Negative,2025-01-15
+REV1479,VWR1130,MOV048,3,Average movie experience.,Neutral,2025-05-01
+REV1480,VWR0781,MOV008,1,Expected much better.,Negative,2025-01-18
+REV1481,VWR0686,MOV006,4,Strong pacing and high production quality.,Positive,2025-05-25
+REV1482,VWR1250,MOV055,5,Incredible visual effects.,Positive,2025-01-20
+REV1483,VWR1121,MOV011,2,Very disappointing.,Negative,2025-04-26
+REV1484,VWR0498,MOV038,1,Could not finish it.,Negative,2025-09-13
+REV1485,VWR0283,MOV031,4,Incredible visual effects.,Positive,2025-01-02
+REV1486,VWR1481,MOV057,3,Average movie experience.,Neutral,2025-01-14
+REV1487,VWR0578,MOV034,3,Average movie experience.,Neutral,2025-08-15
+REV1488,VWR1152,MOV056,4,Strong pacing and high production quality.,Positive,2025-05-15
+REV1489,VWR0401,MOV046,5,Strong pacing and high production quality.,Positive,2025-07-05
+REV1490,VWR1347,MOV003,2,Very disappointing.,Negative,2025-08-12
+REV1491,VWR1045,MOV004,4,Incredible visual effects.,Positive,2025-04-18
+REV1492,VWR0799,MOV044,2,Very disappointing.,Negative,2025-07-05
+REV1493,VWR0156,MOV020,2,Expected much better.,Negative,2025-04-11
+REV1494,VWR1151,MOV052,2,Terrible plot and awful acting.,Negative,2025-09-16
+REV1495,VWR0082,MOV039,4,Incredible visual effects.,Positive,2025-08-04
+REV1496,VWR0270,MOV013,2,Could not finish it.,Negative,2025-02-18
+REV1497,VWR0172,MOV003,5,Incredible visual effects.,Positive,2025-06-16
+REV1498,VWR0695,MOV056,4,Will definitely watch again.,Positive,2025-12-09
+REV1499,VWR0978,MOV036,1,Very disappointing.,Negative,2025-04-17
+REV1500,VWR1471,MOV031,4,Loved the character development.,Positive,2025-02-27
+REV1501,VWR1243,MOV059,1,Expected much better.,Negative,2025-05-09
+REV1502,VWR1071,MOV055,1,Could not finish it.,Negative,2025-07-30
+REV1503,VWR0726,MOV006,2,Very disappointing.,Negative,2025-07-29
+REV1504,VWR0844,MOV051,4,Will definitely watch again.,Positive,2025-02-26
+REV1505,VWR1321,MOV002,5,Incredible visual effects.,Positive,2025-04-03
+REV1506,VWR0837,MOV052,5,Will definitely watch again.,Positive,2025-07-13
+REV1507,VWR0570,MOV017,3,Pacing felt a bit slow.,Neutral,2025-06-05
+REV1508,VWR0563,MOV015,4,An absolute masterpiece.,Positive,2025-10-12
+REV1509,VWR0949,MOV039,4,An absolute masterpiece.,Positive,2025-01-30
+REV1510,VWR1344,MOV037,4,Incredible visual effects.,Positive,2025-12-16
+REV1511,VWR0256,MOV048,2,Very disappointing.,Negative,2025-07-11
+REV1512,VWR1337,MOV003,5,Will definitely watch again.,Positive,2025-09-11
+REV1513,VWR1298,MOV007,4,Strong pacing and high production quality.,Positive,2025-08-30
+REV1514,VWR1168,MOV011,2,Terrible plot and awful acting.,Negative,2025-05-23
+REV1515,VWR1277,MOV030,2,Waste of time.,Negative,2025-06-03
+REV1516,VWR1166,MOV028,2,Terrible plot and awful acting.,Negative,2025-09-10
+REV1517,VWR0273,MOV027,4,Incredible visual effects.,Positive,2025-03-04
+REV1518,VWR1486,MOV059,4,Loved the character development.,Positive,2025-07-24
+REV1519,VWR0095,MOV019,4,Will definitely watch again.,Positive,2025-10-23
+REV1520,VWR1141,MOV041,2,Waste of time.,Negative,2025-04-03
+REV1521,VWR0429,MOV007,2,Waste of time.,Negative,2025-05-19
+REV1522,VWR1343,MOV039,4,An absolute masterpiece.,Positive,2025-03-22
+REV1523,VWR0268,MOV018,5,Loved the character development.,Positive,2025-07-08
+REV1524,VWR0091,MOV059,4,Strong pacing and high production quality.,Positive,2025-11-05
+REV1525,VWR0605,MOV027,1,Waste of time.,Negative,2025-05-09
+REV1526,VWR0338,MOV010,3,Pacing felt a bit slow.,Neutral,2025-12-16
+REV1527,VWR0306,MOV042,1,Terrible plot and awful acting.,Negative,2025-12-25
+REV1528,VWR0626,MOV042,2,Waste of time.,Negative,2025-10-06
+REV1529,VWR0667,MOV003,5,Strong pacing and high production quality.,Positive,2025-03-12
+REV1530,VWR0325,MOV001,1,Waste of time.,Negative,2025-11-19
+REV1531,VWR0097,MOV029,2,Terrible plot and awful acting.,Negative,2025-08-06
+REV1532,VWR1319,MOV017,1,Very disappointing.,Negative,2025-09-07
+REV1533,VWR1307,MOV019,2,Could not finish it.,Negative,2025-10-18
+REV1534,VWR0281,MOV005,3,Average movie experience.,Neutral,2025-01-15
+REV1535,VWR0781,MOV038,4,An absolute masterpiece.,Positive,2025-07-28
+REV1536,VWR0599,MOV033,4,Will definitely watch again.,Positive,2025-12-27
+REV1537,VWR0499,MOV032,1,Waste of time.,Negative,2025-06-18
+REV1538,VWR0739,MOV043,2,Expected much better.,Negative,2025-09-13
+REV1539,VWR0083,MOV006,2,Very disappointing.,Negative,2025-12-28
+REV1540,VWR0846,MOV038,5,Will definitely watch again.,Positive,2025-07-09
+REV1541,VWR0646,MOV043,3,Decent watch for a Sunday afternoon.,Neutral,2025-08-18
+REV1542,VWR1292,MOV056,4,Incredible visual effects.,Positive,2025-08-30
+REV1543,VWR0342,MOV039,3,"It was okay, not great.",Neutral,2025-01-17
+REV1544,VWR1156,MOV058,3,Decent watch for a Sunday afternoon.,Neutral,2025-06-13
+REV1545,VWR0389,MOV057,4,Loved the character development.,Positive,2025-08-12
+REV1546,VWR1117,MOV045,5,Strong pacing and high production quality.,Positive,2025-05-30
+REV1547,VWR1391,MOV039,4,Loved the character development.,Positive,2025-06-26
+REV1548,VWR0607,MOV024,4,Incredible visual effects.,Positive,2025-02-26
+REV1549,VWR1287,MOV028,1,Could not finish it.,Negative,2025-07-04
+REV1550,VWR1420,MOV006,5,Incredible visual effects.,Positive,2025-05-07
+REV1551,VWR0337,MOV004,4,An absolute masterpiece.,Positive,2025-04-02
+REV1552,VWR0508,MOV015,2,Expected much better.,Negative,2025-09-03
+REV1553,VWR0405,MOV049,1,Could not finish it.,Negative,2025-04-20
+REV1554,VWR0021,MOV018,1,Waste of time.,Negative,2025-09-03
+REV1555,VWR0281,MOV045,2,Terrible plot and awful acting.,Negative,2025-05-07
+REV1556,VWR0218,MOV059,1,Expected much better.,Negative,2025-07-17
+REV1557,VWR1013,MOV058,3,Average movie experience.,Neutral,2025-06-21
+REV1558,VWR0534,MOV038,1,Terrible plot and awful acting.,Negative,2025-05-09
+REV1559,VWR0074,MOV045,4,Incredible visual effects.,Positive,2025-02-27
+REV1560,VWR0627,MOV036,1,Very disappointing.,Negative,2025-11-02
+REV1561,VWR1429,MOV054,1,Waste of time.,Negative,2025-07-14
+REV1562,VWR0394,MOV055,3,Pacing felt a bit slow.,Neutral,2025-12-17
+REV1563,VWR1294,MOV033,4,Loved the character development.,Positive,2025-07-03
+REV1564,VWR1265,MOV003,1,Waste of time.,Negative,2025-04-24
+REV1565,VWR0585,MOV004,2,Waste of time.,Negative,2025-05-15
+REV1566,VWR1159,MOV048,2,Waste of time.,Negative,2025-08-14
+REV1567,VWR0142,MOV042,4,Loved the character development.,Positive,2025-02-06
+REV1568,VWR0110,MOV047,1,Terrible plot and awful acting.,Negative,2025-10-19
+REV1569,VWR0735,MOV043,4,An absolute masterpiece.,Positive,2025-02-23
+REV1570,VWR0813,MOV015,2,Expected much better.,Negative,2025-08-19
+REV1571,VWR1325,MOV010,4,Incredible visual effects.,Positive,2025-01-18
+REV1572,VWR1458,MOV020,5,Loved the character development.,Positive,2025-11-18
+REV1573,VWR1406,MOV024,4,Loved the character development.,Positive,2025-04-12
+REV1574,VWR1160,MOV049,5,An absolute masterpiece.,Positive,2025-10-14
+REV1575,VWR0825,MOV014,2,Waste of time.,Negative,2025-10-22
+REV1576,VWR1006,MOV048,4,Strong pacing and high production quality.,Positive,2025-05-30
+REV1577,VWR0117,MOV012,2,Waste of time.,Negative,2025-08-17
+REV1578,VWR1237,MOV058,2,Expected much better.,Negative,2025-11-27
+REV1579,VWR0792,MOV057,3,Pacing felt a bit slow.,Neutral,2025-07-14
+REV1580,VWR0697,MOV017,1,Expected much better.,Negative,2025-04-16
+REV1581,VWR0287,MOV005,5,An absolute masterpiece.,Positive,2025-06-20
+REV1582,VWR1342,MOV057,3,"Nothing special, but not bad.",Neutral,2025-09-22
+REV1583,VWR1277,MOV014,2,Expected much better.,Negative,2025-11-27
+REV1584,VWR1435,MOV040,2,Waste of time.,Negative,2025-03-16
+REV1585,VWR1153,MOV044,3,Pacing felt a bit slow.,Neutral,2025-05-22
+REV1586,VWR0506,MOV037,4,Incredible visual effects.,Positive,2025-10-13
+REV1587,VWR0841,MOV012,4,Strong pacing and high production quality.,Positive,2025-01-09
+REV1588,VWR0406,MOV053,1,Very disappointing.,Negative,2025-03-23
+REV1589,VWR0346,MOV038,5,Incredible visual effects.,Positive,2025-11-26
+REV1590,VWR0594,MOV033,5,An absolute masterpiece.,Positive,2025-07-23
+REV1591,VWR0731,MOV030,4,Incredible visual effects.,Positive,2025-11-16
+REV1592,VWR0713,MOV030,3,"Nothing special, but not bad.",Neutral,2025-06-19
+REV1593,VWR0800,MOV045,3,"Nothing special, but not bad.",Neutral,2025-01-17
+REV1594,VWR0568,MOV011,4,An absolute masterpiece.,Positive,2025-11-11
+REV1595,VWR1157,MOV040,5,Loved the character development.,Positive,2025-04-14
+REV1596,VWR0047,MOV032,1,Waste of time.,Negative,2025-04-13
+REV1597,VWR0962,MOV058,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-25
+REV1598,VWR0417,MOV008,5,Will definitely watch again.,Positive,2025-11-20
+REV1599,VWR0193,MOV041,2,Expected much better.,Negative,2025-03-15
+REV1600,VWR0408,MOV043,5,Strong pacing and high production quality.,Positive,2025-10-11
+REV1601,VWR0862,MOV036,5,Strong pacing and high production quality.,Positive,2025-09-16
+REV1602,VWR1402,MOV001,5,Will definitely watch again.,Positive,2025-06-05
+REV1603,VWR0685,MOV039,2,Waste of time.,Negative,2025-02-07
+REV1604,VWR1389,MOV018,1,Very disappointing.,Negative,2025-08-03
+REV1605,VWR0159,MOV029,4,An absolute masterpiece.,Positive,2025-05-07
+REV1606,VWR0034,MOV059,4,Loved the character development.,Positive,2025-02-18
+REV1607,VWR0163,MOV004,4,An absolute masterpiece.,Positive,2025-01-19
+REV1608,VWR1126,MOV032,1,Could not finish it.,Negative,2025-07-13
+REV1609,VWR0607,MOV045,4,Will definitely watch again.,Positive,2025-03-16
+REV1610,VWR0062,MOV048,3,"Nothing special, but not bad.",Neutral,2025-10-29
+REV1611,VWR0361,MOV008,3,"It was okay, not great.",Neutral,2025-07-22
+REV1612,VWR0794,MOV029,4,Will definitely watch again.,Positive,2025-12-13
+REV1613,VWR0810,MOV026,2,Terrible plot and awful acting.,Negative,2025-02-15
+REV1614,VWR0756,MOV030,4,An absolute masterpiece.,Positive,2025-04-11
+REV1615,VWR0196,MOV001,4,Strong pacing and high production quality.,Positive,2025-12-07
+REV1616,VWR0341,MOV025,2,Very disappointing.,Negative,2025-03-23
+REV1617,VWR0951,MOV053,5,An absolute masterpiece.,Positive,2025-08-06
+REV1618,VWR1394,MOV017,2,Could not finish it.,Negative,2025-04-20
+REV1619,VWR0367,MOV021,3,Pacing felt a bit slow.,Neutral,2025-11-02
+REV1620,VWR0405,MOV032,5,Incredible visual effects.,Positive,2025-10-07
+REV1621,VWR0024,MOV005,1,Could not finish it.,Negative,2025-08-18
+REV1622,VWR0145,MOV044,1,Terrible plot and awful acting.,Negative,2025-11-29
+REV1623,VWR1453,MOV048,2,Very disappointing.,Negative,2025-05-17
+REV1624,VWR0356,MOV058,3,Pacing felt a bit slow.,Neutral,2025-08-10
+REV1625,VWR1372,MOV028,2,Expected much better.,Negative,2025-10-24
+REV1626,VWR0419,MOV057,1,Waste of time.,Negative,2025-01-12
+REV1627,VWR0124,MOV035,1,Expected much better.,Negative,2025-06-18
+REV1628,VWR1024,MOV005,4,Loved the character development.,Positive,2025-10-10
+REV1629,VWR0736,MOV034,5,An absolute masterpiece.,Positive,2025-04-10
+REV1630,VWR0735,MOV049,4,An absolute masterpiece.,Positive,2025-02-26
+REV1631,VWR0794,MOV040,2,Waste of time.,Negative,2025-10-05
+REV1632,VWR0929,MOV018,1,Could not finish it.,Negative,2025-07-11
+REV1633,VWR0532,MOV001,1,Very disappointing.,Negative,2025-10-15
+REV1634,VWR0408,MOV017,2,Waste of time.,Negative,2025-02-22
+REV1635,VWR1239,MOV042,1,Very disappointing.,Negative,2025-06-08
+REV1636,VWR0556,MOV051,1,Very disappointing.,Negative,2025-12-13
+REV1637,VWR1002,MOV052,4,Loved the character development.,Positive,2025-05-17
+REV1638,VWR1165,MOV057,1,Could not finish it.,Negative,2025-07-23
+REV1639,VWR0360,MOV047,2,Expected much better.,Negative,2025-08-30
+REV1640,VWR1347,MOV022,5,Incredible visual effects.,Positive,2025-05-11
+REV1641,VWR0822,MOV011,2,Waste of time.,Negative,2025-01-10
+REV1642,VWR0069,MOV041,1,Could not finish it.,Negative,2025-03-01
+REV1643,VWR1298,MOV033,4,Strong pacing and high production quality.,Positive,2025-05-12
+REV1644,VWR0067,MOV024,5,Loved the character development.,Positive,2025-10-02
+REV1645,VWR0074,MOV013,1,Could not finish it.,Negative,2025-08-17
+REV1646,VWR0811,MOV025,3,Pacing felt a bit slow.,Neutral,2025-03-09
+REV1647,VWR0722,MOV048,1,Terrible plot and awful acting.,Negative,2025-01-09
+REV1648,VWR1260,MOV040,4,Will definitely watch again.,Positive,2025-07-21
+REV1649,VWR0777,MOV005,5,Strong pacing and high production quality.,Positive,2025-01-25
+REV1650,VWR1078,MOV029,5,Will definitely watch again.,Positive,2025-12-06
+REV1651,VWR0387,MOV030,1,Expected much better.,Negative,2025-11-29
+REV1652,VWR0072,MOV036,3,Average movie experience.,Neutral,2025-06-03
+REV1653,VWR1045,MOV021,3,"It was okay, not great.",Neutral,2025-03-08
+REV1654,VWR0344,MOV051,2,Could not finish it.,Negative,2025-12-05
+REV1655,VWR0739,MOV047,5,Loved the character development.,Positive,2025-06-08
+REV1656,VWR0653,MOV012,4,Incredible visual effects.,Positive,2025-12-04
+REV1657,VWR0598,MOV058,3,"Nothing special, but not bad.",Neutral,2025-02-26
+REV1658,VWR1259,MOV044,1,Waste of time.,Negative,2025-02-11
+REV1659,VWR0612,MOV022,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-16
+REV1660,VWR0375,MOV035,4,Loved the character development.,Positive,2025-04-07
+REV1661,VWR0708,MOV012,2,Waste of time.,Negative,2025-09-28
+REV1662,VWR0183,MOV003,2,Expected much better.,Negative,2025-08-16
+REV1663,VWR1378,MOV060,5,An absolute masterpiece.,Positive,2025-05-12
+REV1664,VWR0977,MOV020,5,Will definitely watch again.,Positive,2025-08-20
+REV1665,VWR0261,MOV037,1,Very disappointing.,Negative,2025-05-09
+REV1666,VWR0968,MOV028,3,"It was okay, not great.",Neutral,2025-11-10
+REV1667,VWR1111,MOV003,2,Terrible plot and awful acting.,Negative,2025-09-25
+REV1668,VWR0568,MOV053,2,Waste of time.,Negative,2025-02-07
+REV1669,VWR1234,MOV040,1,Waste of time.,Negative,2025-11-09
+REV1670,VWR0288,MOV006,5,Will definitely watch again.,Positive,2025-02-10
+REV1671,VWR1491,MOV056,2,Terrible plot and awful acting.,Negative,2025-04-28
+REV1672,VWR0954,MOV060,3,Average movie experience.,Neutral,2025-10-23
+REV1673,VWR1278,MOV007,3,"Nothing special, but not bad.",Neutral,2025-11-20
+REV1674,VWR1498,MOV037,4,An absolute masterpiece.,Positive,2025-12-11
+REV1675,VWR0229,MOV060,5,Will definitely watch again.,Positive,2025-05-19
+REV1676,VWR0225,MOV016,1,Could not finish it.,Negative,2025-06-09
+REV1677,VWR0738,MOV036,3,Pacing felt a bit slow.,Neutral,2025-10-06
+REV1678,VWR0943,MOV035,3,"Nothing special, but not bad.",Neutral,2025-05-11
+REV1679,VWR0083,MOV038,1,Waste of time.,Negative,2025-02-16
+REV1680,VWR0890,MOV017,3,Average movie experience.,Neutral,2025-06-18
+REV1681,VWR1220,MOV060,1,Expected much better.,Negative,2025-07-25
+REV1682,VWR0604,MOV040,2,Very disappointing.,Negative,2025-10-10
+REV1683,VWR1050,MOV015,3,Pacing felt a bit slow.,Neutral,2025-03-03
+REV1684,VWR1494,MOV021,5,Will definitely watch again.,Positive,2025-06-03
+REV1685,VWR0057,MOV048,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-14
+REV1686,VWR0575,MOV049,3,Pacing felt a bit slow.,Neutral,2025-10-08
+REV1687,VWR0507,MOV026,2,Could not finish it.,Negative,2025-02-11
+REV1688,VWR0746,MOV047,4,Strong pacing and high production quality.,Positive,2025-07-19
+REV1689,VWR0572,MOV035,5,An absolute masterpiece.,Positive,2025-09-21
+REV1690,VWR1031,MOV025,5,An absolute masterpiece.,Positive,2025-07-31
+REV1691,VWR0840,MOV010,4,An absolute masterpiece.,Positive,2025-12-26
+REV1692,VWR0404,MOV049,4,Incredible visual effects.,Positive,2025-12-22
+REV1693,VWR0591,MOV058,5,Incredible visual effects.,Positive,2025-02-24
+REV1694,VWR0110,MOV010,1,Expected much better.,Negative,2025-09-13
+REV1695,VWR0205,MOV017,4,An absolute masterpiece.,Positive,2025-06-27
+REV1696,VWR0539,MOV053,1,Waste of time.,Negative,2025-12-01
+REV1697,VWR0684,MOV020,1,Expected much better.,Negative,2025-07-28
+REV1698,VWR0166,MOV032,4,Loved the character development.,Positive,2025-08-25
+REV1699,VWR0264,MOV008,2,Waste of time.,Negative,2025-05-15
+REV1700,VWR0604,MOV035,2,Waste of time.,Negative,2025-06-17
+REV1701,VWR1045,MOV016,5,Incredible visual effects.,Positive,2025-02-16
+REV1702,VWR0562,MOV057,3,Average movie experience.,Neutral,2025-07-20
+REV1703,VWR1476,MOV049,1,Could not finish it.,Negative,2025-08-26
+REV1704,VWR0335,MOV044,2,Could not finish it.,Negative,2025-05-09
+REV1705,VWR0064,MOV040,3,Pacing felt a bit slow.,Neutral,2025-05-13
+REV1706,VWR0378,MOV014,5,Loved the character development.,Positive,2025-03-28
+REV1707,VWR0545,MOV020,3,"Nothing special, but not bad.",Neutral,2025-09-30
+REV1708,VWR0686,MOV034,1,Waste of time.,Negative,2025-04-08
+REV1709,VWR0456,MOV032,5,Will definitely watch again.,Positive,2025-11-06
+REV1710,VWR0270,MOV031,1,Could not finish it.,Negative,2025-01-31
+REV1711,VWR1130,MOV043,2,Expected much better.,Negative,2025-02-11
+REV1712,VWR0998,MOV047,4,Will definitely watch again.,Positive,2025-02-20
+REV1713,VWR0227,MOV007,3,Average movie experience.,Neutral,2025-08-28
+REV1714,VWR0868,MOV038,1,Terrible plot and awful acting.,Negative,2025-04-10
+REV1715,VWR0556,MOV060,5,Loved the character development.,Positive,2025-02-05
+REV1716,VWR0624,MOV002,3,Pacing felt a bit slow.,Neutral,2025-05-05
+REV1717,VWR0850,MOV037,1,Could not finish it.,Negative,2025-06-17
+REV1718,VWR0008,MOV011,2,Waste of time.,Negative,2025-02-08
+REV1719,VWR0365,MOV055,2,Expected much better.,Negative,2025-07-03
+REV1720,VWR1453,MOV054,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-02
+REV1721,VWR1390,MOV006,4,Will definitely watch again.,Positive,2025-08-20
+REV1722,VWR1497,MOV052,3,Pacing felt a bit slow.,Neutral,2025-12-10
+REV1723,VWR1382,MOV031,1,Waste of time.,Negative,2025-05-24
+REV1724,VWR0641,MOV042,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-09
+REV1725,VWR0622,MOV049,1,Very disappointing.,Negative,2025-02-18
+REV1726,VWR0937,MOV017,1,Could not finish it.,Negative,2025-07-08
+REV1727,VWR0024,MOV020,5,Will definitely watch again.,Positive,2025-12-10
+REV1728,VWR0023,MOV012,5,Will definitely watch again.,Positive,2025-07-14
+REV1729,VWR0088,MOV040,4,An absolute masterpiece.,Positive,2025-08-24
+REV1730,VWR0824,MOV026,1,Waste of time.,Negative,2025-07-25
+REV1731,VWR0887,MOV002,2,Terrible plot and awful acting.,Negative,2025-03-05
+REV1732,VWR0444,MOV046,2,Expected much better.,Negative,2025-01-15
+REV1733,VWR0613,MOV037,4,Incredible visual effects.,Positive,2025-09-24
+REV1734,VWR0755,MOV053,3,Decent watch for a Sunday afternoon.,Neutral,2025-08-22
+REV1735,VWR0209,MOV050,4,An absolute masterpiece.,Positive,2025-03-06
+REV1736,VWR0058,MOV004,4,Will definitely watch again.,Positive,2025-01-01
+REV1737,VWR0483,MOV034,5,Will definitely watch again.,Positive,2025-07-21
+REV1738,VWR0085,MOV014,4,Incredible visual effects.,Positive,2025-03-07
+REV1739,VWR0365,MOV054,5,Loved the character development.,Positive,2025-09-02
+REV1740,VWR0063,MOV051,4,An absolute masterpiece.,Positive,2025-03-16
+REV1741,VWR0424,MOV007,3,Pacing felt a bit slow.,Neutral,2025-02-23
+REV1742,VWR1376,MOV018,3,Pacing felt a bit slow.,Neutral,2025-07-22
+REV1743,VWR0889,MOV033,1,Terrible plot and awful acting.,Negative,2025-12-16
+REV1744,VWR1429,MOV053,2,Expected much better.,Negative,2025-05-17
+REV1745,VWR1396,MOV049,2,Expected much better.,Negative,2025-08-20
+REV1746,VWR1206,MOV025,2,Terrible plot and awful acting.,Negative,2025-05-27
+REV1747,VWR0199,MOV047,2,Terrible plot and awful acting.,Negative,2025-11-29
+REV1748,VWR1337,MOV007,1,Terrible plot and awful acting.,Negative,2025-11-06
+REV1749,VWR0032,MOV043,1,Waste of time.,Negative,2025-12-10
+REV1750,VWR1048,MOV041,3,Pacing felt a bit slow.,Neutral,2025-08-02
+REV1751,VWR1378,MOV036,1,Could not finish it.,Negative,2025-08-06
+REV1752,VWR1475,MOV057,3,"It was okay, not great.",Neutral,2025-02-02
+REV1753,VWR0737,MOV034,5,Strong pacing and high production quality.,Positive,2025-08-13
+REV1754,VWR1426,MOV001,2,Waste of time.,Negative,2025-04-18
+REV1755,VWR0622,MOV060,1,Very disappointing.,Negative,2025-11-12
+REV1756,VWR0376,MOV008,3,"It was okay, not great.",Neutral,2025-09-29
+REV1757,VWR0632,MOV032,5,Loved the character development.,Positive,2025-08-13
+REV1758,VWR0582,MOV010,5,An absolute masterpiece.,Positive,2025-01-20
+REV1759,VWR0936,MOV017,4,Incredible visual effects.,Positive,2025-07-10
+REV1760,VWR1333,MOV056,2,Very disappointing.,Negative,2025-07-12
+REV1761,VWR0729,MOV029,4,Strong pacing and high production quality.,Positive,2025-10-10
+REV1762,VWR0342,MOV038,2,Expected much better.,Negative,2025-05-12
+REV1763,VWR0659,MOV044,2,Expected much better.,Negative,2025-09-09
+REV1764,VWR0834,MOV003,5,Strong pacing and high production quality.,Positive,2025-09-29
+REV1765,VWR0264,MOV008,3,"Nothing special, but not bad.",Neutral,2025-05-14
+REV1766,VWR0055,MOV005,1,Could not finish it.,Negative,2025-12-16
+REV1767,VWR1417,MOV025,1,Very disappointing.,Negative,2025-05-15
+REV1768,VWR0113,MOV029,1,Could not finish it.,Negative,2025-11-25
+REV1769,VWR1048,MOV018,5,Will definitely watch again.,Positive,2025-08-21
+REV1770,VWR0627,MOV032,1,Very disappointing.,Negative,2025-06-19
+REV1771,VWR1410,MOV045,4,Loved the character development.,Positive,2025-10-06
+REV1772,VWR0399,MOV021,1,Terrible plot and awful acting.,Negative,2025-09-09
+REV1773,VWR0759,MOV015,1,Expected much better.,Negative,2025-07-22
+REV1774,VWR0316,MOV002,5,Will definitely watch again.,Positive,2025-06-22
+REV1775,VWR0165,MOV046,4,Will definitely watch again.,Positive,2025-12-10
+REV1776,VWR0559,MOV007,4,Will definitely watch again.,Positive,2025-10-06
+REV1777,VWR0161,MOV051,3,Decent watch for a Sunday afternoon.,Neutral,2025-04-18
+REV1778,VWR1391,MOV036,5,Loved the character development.,Positive,2025-12-11
+REV1779,VWR0358,MOV009,5,Loved the character development.,Positive,2025-08-15
+REV1780,VWR0301,MOV039,2,Expected much better.,Negative,2025-06-09
+REV1781,VWR0471,MOV048,4,Loved the character development.,Positive,2025-11-05
+REV1782,VWR1039,MOV028,3,Average movie experience.,Neutral,2025-03-14
+REV1783,VWR0199,MOV060,2,Waste of time.,Negative,2025-11-23
+REV1784,VWR1333,MOV007,1,Waste of time.,Negative,2025-11-14
+REV1785,VWR0044,MOV005,4,Strong pacing and high production quality.,Positive,2025-02-12
+REV1786,VWR1084,MOV038,1,Terrible plot and awful acting.,Negative,2025-10-24
+REV1787,VWR0687,MOV005,1,Expected much better.,Negative,2025-06-11
+REV1788,VWR0747,MOV042,1,Expected much better.,Negative,2025-01-19
+REV1789,VWR1297,MOV029,1,Expected much better.,Negative,2025-12-17
+REV1790,VWR0207,MOV015,5,Incredible visual effects.,Positive,2025-03-17
+REV1791,VWR0033,MOV048,1,Expected much better.,Negative,2025-06-12
+REV1792,VWR1438,MOV029,5,Incredible visual effects.,Positive,2025-05-03
+REV1793,VWR0555,MOV012,4,Will definitely watch again.,Positive,2025-10-19
+REV1794,VWR1373,MOV023,5,Incredible visual effects.,Positive,2025-03-08
+REV1795,VWR0980,MOV036,2,Expected much better.,Negative,2025-05-09
+REV1796,VWR0668,MOV044,5,An absolute masterpiece.,Positive,2025-10-31
+REV1797,VWR0653,MOV034,4,An absolute masterpiece.,Positive,2025-02-10
+REV1798,VWR0020,MOV001,4,Strong pacing and high production quality.,Positive,2025-02-02
+REV1799,VWR0817,MOV017,5,An absolute masterpiece.,Positive,2025-01-07
+REV1800,VWR0401,MOV054,2,Waste of time.,Negative,2025-06-06
+REV1801,VWR0704,MOV016,4,Strong pacing and high production quality.,Positive,2025-03-29
+REV1802,VWR1157,MOV007,4,Will definitely watch again.,Positive,2025-03-07
+REV1803,VWR1214,MOV054,3,Pacing felt a bit slow.,Neutral,2025-11-18
+REV1804,VWR0829,MOV043,5,Will definitely watch again.,Positive,2025-09-20
+REV1805,VWR0529,MOV003,3,Pacing felt a bit slow.,Neutral,2025-09-08
+REV1806,VWR0967,MOV041,2,Terrible plot and awful acting.,Negative,2025-11-08
+REV1807,VWR0901,MOV022,3,Pacing felt a bit slow.,Neutral,2025-01-27
+REV1808,VWR0070,MOV038,1,Terrible plot and awful acting.,Negative,2025-07-03
+REV1809,VWR0697,MOV023,3,Pacing felt a bit slow.,Neutral,2025-12-04
+REV1810,VWR1039,MOV005,4,An absolute masterpiece.,Positive,2025-10-23
+REV1811,VWR1023,MOV009,3,Pacing felt a bit slow.,Neutral,2025-04-16
+REV1812,VWR0760,MOV051,2,Waste of time.,Negative,2025-10-09
+REV1813,VWR0844,MOV044,4,Incredible visual effects.,Positive,2025-09-22
+REV1814,VWR0951,MOV026,1,Very disappointing.,Negative,2025-01-23
+REV1815,VWR0249,MOV006,1,Could not finish it.,Negative,2025-07-30
+REV1816,VWR0577,MOV029,3,Pacing felt a bit slow.,Neutral,2025-06-23
+REV1817,VWR0528,MOV012,1,Terrible plot and awful acting.,Negative,2025-08-11
+REV1818,VWR0389,MOV060,1,Could not finish it.,Negative,2025-07-20
+REV1819,VWR0578,MOV060,1,Very disappointing.,Negative,2025-05-20
+REV1820,VWR1235,MOV054,5,An absolute masterpiece.,Positive,2025-05-09
+REV1821,VWR0575,MOV023,5,Will definitely watch again.,Positive,2025-10-23
+REV1822,VWR0871,MOV020,2,Could not finish it.,Negative,2025-07-15
+REV1823,VWR0442,MOV044,1,Waste of time.,Negative,2025-05-28
+REV1824,VWR1129,MOV016,2,Expected much better.,Negative,2025-02-16
+REV1825,VWR0812,MOV013,1,Waste of time.,Negative,2025-11-26
+REV1826,VWR0792,MOV033,4,Strong pacing and high production quality.,Positive,2025-02-27
+REV1827,VWR0689,MOV006,5,Strong pacing and high production quality.,Positive,2025-07-11
+REV1828,VWR0920,MOV019,3,"Nothing special, but not bad.",Neutral,2025-10-04
+REV1829,VWR1214,MOV035,3,"It was okay, not great.",Neutral,2025-10-27
+REV1830,VWR1357,MOV035,1,Very disappointing.,Negative,2025-09-17
+REV1831,VWR1254,MOV040,5,Incredible visual effects.,Positive,2025-06-23
+REV1832,VWR1454,MOV025,2,Waste of time.,Negative,2025-11-18
+REV1833,VWR0635,MOV017,4,Will definitely watch again.,Positive,2025-11-19
+REV1834,VWR1155,MOV054,1,Expected much better.,Negative,2025-05-01
+REV1835,VWR0332,MOV059,5,Strong pacing and high production quality.,Positive,2025-08-18
+REV1836,VWR1099,MOV057,5,An absolute masterpiece.,Positive,2025-12-04
+REV1837,VWR0970,MOV036,4,Incredible visual effects.,Positive,2025-03-30
+REV1838,VWR0185,MOV017,1,Terrible plot and awful acting.,Negative,2025-06-30
+REV1839,VWR0198,MOV026,1,Very disappointing.,Negative,2025-03-15
+REV1840,VWR1182,MOV060,2,Waste of time.,Negative,2025-09-06
+REV1841,VWR0637,MOV029,4,An absolute masterpiece.,Positive,2025-04-18
+REV1842,VWR0625,MOV029,1,Could not finish it.,Negative,2025-01-10
+REV1843,VWR0839,MOV024,4,Will definitely watch again.,Positive,2025-07-11
+REV1844,VWR0865,MOV054,4,Will definitely watch again.,Positive,2025-06-23
+REV1845,VWR1414,MOV012,1,Very disappointing.,Negative,2025-10-31
+REV1846,VWR1132,MOV044,5,Incredible visual effects.,Positive,2025-03-26
+REV1847,VWR1212,MOV001,5,Loved the character development.,Positive,2025-01-31
+REV1848,VWR0187,MOV006,2,Terrible plot and awful acting.,Negative,2025-01-28
+REV1849,VWR1230,MOV037,2,Waste of time.,Negative,2025-08-27
+REV1850,VWR1231,MOV058,5,Incredible visual effects.,Positive,2025-08-04
+REV1851,VWR0805,MOV047,5,Incredible visual effects.,Positive,2025-04-23
+REV1852,VWR0375,MOV043,2,Terrible plot and awful acting.,Negative,2025-06-04
+REV1853,VWR1026,MOV029,4,Will definitely watch again.,Positive,2025-07-30
+REV1854,VWR1283,MOV043,2,Terrible plot and awful acting.,Negative,2025-03-13
+REV1855,VWR0335,MOV010,3,Pacing felt a bit slow.,Neutral,2025-08-02
+REV1856,VWR0971,MOV030,3,"Nothing special, but not bad.",Neutral,2025-01-31
+REV1857,VWR1441,MOV038,1,Could not finish it.,Negative,2025-07-12
+REV1858,VWR1090,MOV035,2,Expected much better.,Negative,2025-03-06
+REV1859,VWR1337,MOV038,3,Pacing felt a bit slow.,Neutral,2025-05-17
+REV1860,VWR1404,MOV013,4,Incredible visual effects.,Positive,2025-09-15
+REV1861,VWR0916,MOV058,4,Loved the character development.,Positive,2025-06-29
+REV1862,VWR1039,MOV040,5,Loved the character development.,Positive,2025-08-29
+REV1863,VWR1382,MOV035,5,Loved the character development.,Positive,2025-07-15
+REV1864,VWR0634,MOV004,4,Incredible visual effects.,Positive,2025-10-02
+REV1865,VWR0726,MOV025,1,Waste of time.,Negative,2025-06-14
+REV1866,VWR1311,MOV049,5,Will definitely watch again.,Positive,2025-03-14
+REV1867,VWR0445,MOV033,2,Terrible plot and awful acting.,Negative,2025-07-23
+REV1868,VWR0737,MOV027,1,Terrible plot and awful acting.,Negative,2025-07-27
+REV1869,VWR0410,MOV003,2,Expected much better.,Negative,2025-04-06
+REV1870,VWR1046,MOV045,2,Terrible plot and awful acting.,Negative,2025-01-11
+REV1871,VWR1390,MOV046,3,Average movie experience.,Neutral,2025-07-14
+REV1872,VWR1386,MOV009,3,"It was okay, not great.",Neutral,2025-06-01
+REV1873,VWR1314,MOV029,4,Loved the character development.,Positive,2025-07-03
+REV1874,VWR0454,MOV055,2,Very disappointing.,Negative,2025-12-06
+REV1875,VWR0447,MOV028,5,Will definitely watch again.,Positive,2025-05-25
+REV1876,VWR0620,MOV045,3,"It was okay, not great.",Neutral,2025-02-16
+REV1877,VWR0274,MOV035,5,Loved the character development.,Positive,2025-04-20
+REV1878,VWR0444,MOV023,5,Will definitely watch again.,Positive,2025-07-09
+REV1879,VWR1285,MOV013,1,Could not finish it.,Negative,2025-04-10
+REV1880,VWR1017,MOV038,3,Average movie experience.,Neutral,2025-01-14
+REV1881,VWR1317,MOV017,3,Pacing felt a bit slow.,Neutral,2025-05-31
+REV1882,VWR1171,MOV003,1,Could not finish it.,Negative,2025-07-16
+REV1883,VWR0093,MOV059,2,Terrible plot and awful acting.,Negative,2025-07-10
+REV1884,VWR0033,MOV034,3,Average movie experience.,Neutral,2025-06-12
+REV1885,VWR0030,MOV015,2,Terrible plot and awful acting.,Negative,2025-05-10
+REV1886,VWR0678,MOV060,2,Terrible plot and awful acting.,Negative,2025-09-11
+REV1887,VWR1488,MOV048,4,An absolute masterpiece.,Positive,2025-07-31
+REV1888,VWR1159,MOV013,4,Loved the character development.,Positive,2025-04-05
+REV1889,VWR1033,MOV018,2,Expected much better.,Negative,2025-11-11
+REV1890,VWR0917,MOV046,1,Waste of time.,Negative,2025-10-21
+REV1891,VWR0559,MOV024,2,Waste of time.,Negative,2025-07-10
+REV1892,VWR0172,MOV002,4,Strong pacing and high production quality.,Positive,2025-02-18
+REV1893,VWR0460,MOV057,5,Will definitely watch again.,Positive,2025-08-17
+REV1894,VWR1363,MOV036,3,"It was okay, not great.",Neutral,2025-08-08
+REV1895,VWR0949,MOV043,3,"It was okay, not great.",Neutral,2025-08-06
+REV1896,VWR0417,MOV003,3,"It was okay, not great.",Neutral,2025-06-09
+REV1897,VWR1378,MOV039,3,Pacing felt a bit slow.,Neutral,2025-11-03
+REV1898,VWR0322,MOV059,5,An absolute masterpiece.,Positive,2025-11-03
+REV1899,VWR1302,MOV022,1,Expected much better.,Negative,2025-08-23
+REV1900,VWR1022,MOV028,1,Expected much better.,Negative,2025-01-16
+REV1901,VWR0051,MOV001,5,Strong pacing and high production quality.,Positive,2025-08-24
+REV1902,VWR0530,MOV041,3,Pacing felt a bit slow.,Neutral,2025-06-07
+REV1903,VWR1092,MOV059,3,Pacing felt a bit slow.,Neutral,2025-10-07
+REV1904,VWR0003,MOV041,2,Terrible plot and awful acting.,Negative,2025-08-31
+REV1905,VWR1314,MOV033,5,Will definitely watch again.,Positive,2025-05-28
+REV1906,VWR0398,MOV004,3,"It was okay, not great.",Neutral,2025-03-11
+REV1907,VWR1080,MOV013,3,Pacing felt a bit slow.,Neutral,2025-04-13
+REV1908,VWR0525,MOV037,4,Will definitely watch again.,Positive,2025-12-13
+REV1909,VWR1454,MOV051,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-02
+REV1910,VWR1317,MOV018,4,Loved the character development.,Positive,2025-11-23
+REV1911,VWR1096,MOV053,5,Strong pacing and high production quality.,Positive,2025-06-14
+REV1912,VWR1420,MOV055,1,Expected much better.,Negative,2025-07-09
+REV1913,VWR0717,MOV036,3,"Nothing special, but not bad.",Neutral,2025-01-26
+REV1914,VWR0505,MOV037,3,"Nothing special, but not bad.",Neutral,2025-08-09
+REV1915,VWR0836,MOV050,2,Could not finish it.,Negative,2025-08-24
+REV1916,VWR0464,MOV003,5,Incredible visual effects.,Positive,2025-03-13
+REV1917,VWR0975,MOV004,1,Expected much better.,Negative,2025-04-13
+REV1918,VWR1306,MOV014,5,Loved the character development.,Positive,2025-06-09
+REV1919,VWR0629,MOV056,5,An absolute masterpiece.,Positive,2025-11-11
+REV1920,VWR1316,MOV030,2,Waste of time.,Negative,2025-07-28
+REV1921,VWR0843,MOV023,3,"Nothing special, but not bad.",Neutral,2025-01-12
+REV1922,VWR0442,MOV037,2,Waste of time.,Negative,2025-12-02
+REV1923,VWR0797,MOV052,2,Very disappointing.,Negative,2025-03-28
+REV1924,VWR1400,MOV014,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-27
+REV1925,VWR0703,MOV018,2,Expected much better.,Negative,2025-04-14
+REV1926,VWR1237,MOV053,1,Very disappointing.,Negative,2025-06-22
+REV1927,VWR0260,MOV027,1,Could not finish it.,Negative,2025-09-06
+REV1928,VWR1472,MOV028,1,Waste of time.,Negative,2025-08-12
+REV1929,VWR1472,MOV034,4,Will definitely watch again.,Positive,2025-03-26
+REV1930,VWR0355,MOV011,1,Terrible plot and awful acting.,Negative,2025-11-03
+REV1931,VWR0411,MOV017,3,Pacing felt a bit slow.,Neutral,2025-01-29
+REV1932,VWR1239,MOV040,1,Could not finish it.,Negative,2025-01-13
+REV1933,VWR0273,MOV010,2,Expected much better.,Negative,2025-07-15
+REV1934,VWR1355,MOV054,5,An absolute masterpiece.,Positive,2025-08-02
+REV1935,VWR0075,MOV060,5,Will definitely watch again.,Positive,2025-11-15
+REV1936,VWR0457,MOV030,2,Very disappointing.,Negative,2025-10-03
+REV1937,VWR0839,MOV054,3,"It was okay, not great.",Neutral,2025-12-16
+REV1938,VWR0493,MOV029,2,Could not finish it.,Negative,2025-08-10
+REV1939,VWR1172,MOV033,5,An absolute masterpiece.,Positive,2025-01-30
+REV1940,VWR0216,MOV032,5,Will definitely watch again.,Positive,2025-02-28
+REV1941,VWR0403,MOV038,1,Expected much better.,Negative,2025-10-09
+REV1942,VWR0642,MOV025,5,Incredible visual effects.,Positive,2025-10-23
+REV1943,VWR0303,MOV029,2,Very disappointing.,Negative,2025-03-31
+REV1944,VWR0013,MOV003,4,Will definitely watch again.,Positive,2025-10-12
+REV1945,VWR0123,MOV013,4,Incredible visual effects.,Positive,2025-12-30
+REV1946,VWR0288,MOV026,4,Strong pacing and high production quality.,Positive,2025-12-18
+REV1947,VWR0098,MOV017,2,Waste of time.,Negative,2025-06-26
+REV1948,VWR0912,MOV026,1,Terrible plot and awful acting.,Negative,2025-06-09
+REV1949,VWR0936,MOV033,4,Loved the character development.,Positive,2025-01-21
+REV1950,VWR0704,MOV028,3,"Nothing special, but not bad.",Neutral,2025-11-18
+REV1951,VWR0615,MOV014,3,"Nothing special, but not bad.",Neutral,2025-01-10
+REV1952,VWR0242,MOV002,2,Terrible plot and awful acting.,Negative,2025-11-28
+REV1953,VWR0930,MOV032,2,Very disappointing.,Negative,2025-10-31
+REV1954,VWR0529,MOV054,2,Waste of time.,Negative,2025-05-16
+REV1955,VWR0196,MOV056,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-29
+REV1956,VWR0774,MOV037,3,Average movie experience.,Neutral,2025-10-01
+REV1957,VWR0253,MOV060,5,An absolute masterpiece.,Positive,2025-03-09
+REV1958,VWR0068,MOV045,2,Could not finish it.,Negative,2025-03-27
+REV1959,VWR0868,MOV003,3,Average movie experience.,Neutral,2025-08-31
+REV1960,VWR0900,MOV002,5,Loved the character development.,Positive,2025-11-19
+REV1961,VWR0892,MOV028,3,Decent watch for a Sunday afternoon.,Neutral,2025-08-04
+REV1962,VWR0130,MOV036,1,Very disappointing.,Negative,2025-07-29
+REV1963,VWR1035,MOV019,1,Could not finish it.,Negative,2025-11-25
+REV1964,VWR0065,MOV012,4,Will definitely watch again.,Positive,2025-09-16
+REV1965,VWR1095,MOV005,5,Strong pacing and high production quality.,Positive,2025-06-22
+REV1966,VWR0467,MOV031,2,Could not finish it.,Negative,2025-07-13
+REV1967,VWR0234,MOV050,4,Will definitely watch again.,Positive,2025-03-17
+REV1968,VWR0257,MOV035,4,An absolute masterpiece.,Positive,2025-06-29
+REV1969,VWR1380,MOV027,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-05
+REV1970,VWR0536,MOV039,3,"Nothing special, but not bad.",Neutral,2025-08-29
+REV1971,VWR1049,MOV044,1,Expected much better.,Negative,2025-02-25
+REV1972,VWR0291,MOV026,4,Will definitely watch again.,Positive,2025-10-24
+REV1973,VWR1156,MOV057,5,Incredible visual effects.,Positive,2025-08-19
+REV1974,VWR1457,MOV010,5,Incredible visual effects.,Positive,2025-01-21
+REV1975,VWR1401,MOV016,5,Incredible visual effects.,Positive,2025-12-02
+REV1976,VWR0361,MOV003,3,"Nothing special, but not bad.",Neutral,2025-11-25
+REV1977,VWR1240,MOV012,5,Loved the character development.,Positive,2025-06-09
+REV1978,VWR1432,MOV058,1,Waste of time.,Negative,2025-06-22
+REV1979,VWR1285,MOV039,1,Could not finish it.,Negative,2025-08-10
+REV1980,VWR0508,MOV004,5,Strong pacing and high production quality.,Positive,2025-03-04
+REV1981,VWR1052,MOV022,5,Will definitely watch again.,Positive,2025-07-03
+REV1982,VWR1108,MOV034,2,Terrible plot and awful acting.,Negative,2025-11-29
+REV1983,VWR0688,MOV048,5,An absolute masterpiece.,Positive,2025-12-26
+REV1984,VWR0703,MOV020,5,Incredible visual effects.,Positive,2025-09-10
+REV1985,VWR0149,MOV028,2,Terrible plot and awful acting.,Negative,2025-12-20
+REV1986,VWR0901,MOV019,2,Terrible plot and awful acting.,Negative,2025-02-08
+REV1987,VWR1410,MOV009,3,Pacing felt a bit slow.,Neutral,2026-01-01
+REV1988,VWR0220,MOV004,3,Decent watch for a Sunday afternoon.,Neutral,2025-08-16
+REV1989,VWR0528,MOV046,2,Waste of time.,Negative,2025-11-05
+REV1990,VWR0778,MOV030,4,Incredible visual effects.,Positive,2025-04-09
+REV1991,VWR1343,MOV009,4,Strong pacing and high production quality.,Positive,2025-10-08
+REV1992,VWR1132,MOV054,2,Terrible plot and awful acting.,Negative,2025-11-16
+REV1993,VWR0588,MOV042,2,Could not finish it.,Negative,2025-10-16
+REV1994,VWR1431,MOV035,2,Could not finish it.,Negative,2025-01-03
+REV1995,VWR1208,MOV032,4,Will definitely watch again.,Positive,2025-10-18
+REV1996,VWR1163,MOV023,5,Will definitely watch again.,Positive,2025-12-27
+REV1997,VWR1338,MOV006,3,Average movie experience.,Neutral,2025-12-20
+REV1998,VWR0387,MOV041,4,Loved the character development.,Positive,2025-05-05
+REV1999,VWR0323,MOV027,5,An absolute masterpiece.,Positive,2025-12-03
+REV2000,VWR0715,MOV031,4,Incredible visual effects.,Positive,2025-05-24
+REV2001,VWR0700,MOV011,1,Waste of time.,Negative,2025-12-09
+REV2002,VWR0354,MOV014,5,An absolute masterpiece.,Positive,2025-09-18
+REV2003,VWR0002,MOV011,5,Loved the character development.,Positive,2025-04-23
+REV2004,VWR0298,MOV033,3,Pacing felt a bit slow.,Neutral,2025-04-17
+REV2005,VWR0791,MOV018,4,Strong pacing and high production quality.,Positive,2025-12-30
+REV2006,VWR1466,MOV027,4,Strong pacing and high production quality.,Positive,2025-05-14
+REV2007,VWR1105,MOV020,4,Incredible visual effects.,Positive,2025-07-19
+REV2008,VWR0798,MOV028,1,Could not finish it.,Negative,2025-11-05
+REV2009,VWR1019,MOV054,2,Waste of time.,Negative,2025-11-18
+REV2010,VWR0638,MOV011,4,Incredible visual effects.,Positive,2025-04-09
+REV2011,VWR1384,MOV024,1,Expected much better.,Negative,2025-10-05
+REV2012,VWR1033,MOV047,1,Very disappointing.,Negative,2025-03-23
+REV2013,VWR0780,MOV057,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-28
+REV2014,VWR1311,MOV003,3,"Nothing special, but not bad.",Neutral,2025-09-25
+REV2015,VWR0058,MOV006,3,Average movie experience.,Neutral,2025-06-07
+REV2016,VWR1246,MOV005,1,Expected much better.,Negative,2025-06-06
+REV2017,VWR0507,MOV040,1,Could not finish it.,Negative,2025-04-25
+REV2018,VWR0531,MOV042,5,Loved the character development.,Positive,2025-10-19
+REV2019,VWR0574,MOV037,4,Incredible visual effects.,Positive,2025-10-19
+REV2020,VWR0921,MOV022,4,Loved the character development.,Positive,2025-07-27
+REV2021,VWR1271,MOV060,2,Waste of time.,Negative,2025-11-14
+REV2022,VWR0074,MOV050,4,An absolute masterpiece.,Positive,2025-03-09
+REV2023,VWR0865,MOV058,5,An absolute masterpiece.,Positive,2025-06-25
+REV2024,VWR0859,MOV013,2,Waste of time.,Negative,2025-02-06
+REV2025,VWR0601,MOV057,2,Expected much better.,Negative,2025-07-07
+REV2026,VWR0374,MOV050,4,Will definitely watch again.,Positive,2025-03-28
+REV2027,VWR0767,MOV040,5,Loved the character development.,Positive,2025-07-23
+REV2028,VWR0901,MOV018,4,Will definitely watch again.,Positive,2025-10-19
+REV2029,VWR1080,MOV001,5,Strong pacing and high production quality.,Positive,2025-03-02
+REV2030,VWR0876,MOV048,5,An absolute masterpiece.,Positive,2025-08-30
+REV2031,VWR1293,MOV047,5,Strong pacing and high production quality.,Positive,2025-03-28
+REV2032,VWR0156,MOV023,2,Terrible plot and awful acting.,Negative,2025-07-03
+REV2033,VWR0727,MOV016,5,Incredible visual effects.,Positive,2025-11-17
+REV2034,VWR0351,MOV021,1,Expected much better.,Negative,2025-07-29
+REV2035,VWR1090,MOV037,2,Expected much better.,Negative,2025-06-16
+REV2036,VWR0430,MOV018,2,Very disappointing.,Negative,2025-09-03
+REV2037,VWR0776,MOV042,1,Expected much better.,Negative,2025-07-05
+REV2038,VWR0673,MOV032,1,Expected much better.,Negative,2025-02-01
+REV2039,VWR0108,MOV037,4,Loved the character development.,Positive,2025-06-01
+REV2040,VWR0763,MOV011,1,Very disappointing.,Negative,2025-02-17
+REV2041,VWR1452,MOV058,4,Strong pacing and high production quality.,Positive,2025-05-10
+REV2042,VWR1120,MOV026,5,Strong pacing and high production quality.,Positive,2025-06-25
+REV2043,VWR0809,MOV013,5,An absolute masterpiece.,Positive,2025-01-11
+REV2044,VWR0793,MOV043,1,Could not finish it.,Negative,2025-03-15
+REV2045,VWR1080,MOV013,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-04
+REV2046,VWR0140,MOV023,4,Strong pacing and high production quality.,Positive,2025-09-05
+REV2047,VWR0058,MOV040,3,"Nothing special, but not bad.",Neutral,2025-10-13
+REV2048,VWR0809,MOV035,2,Terrible plot and awful acting.,Negative,2025-07-06
+REV2049,VWR0706,MOV045,1,Terrible plot and awful acting.,Negative,2025-08-04
+REV2050,VWR0816,MOV049,4,An absolute masterpiece.,Positive,2025-01-07
+REV2051,VWR0591,MOV038,5,Strong pacing and high production quality.,Positive,2025-04-09
+REV2052,VWR1039,MOV010,3,Pacing felt a bit slow.,Neutral,2025-06-06
+REV2053,VWR1086,MOV055,2,Could not finish it.,Negative,2025-08-17
+REV2054,VWR1338,MOV058,3,"It was okay, not great.",Neutral,2025-06-11
+REV2055,VWR1321,MOV001,5,Incredible visual effects.,Positive,2025-06-18
+REV2056,VWR1364,MOV034,2,Terrible plot and awful acting.,Negative,2025-05-05
+REV2057,VWR0573,MOV045,5,Strong pacing and high production quality.,Positive,2025-01-10
+REV2058,VWR0031,MOV039,3,"It was okay, not great.",Neutral,2025-05-02
+REV2059,VWR0001,MOV055,5,Will definitely watch again.,Positive,2025-07-21
+REV2060,VWR0772,MOV053,3,"Nothing special, but not bad.",Neutral,2025-06-10
+REV2061,VWR0919,MOV044,5,Will definitely watch again.,Positive,2025-04-28
+REV2062,VWR0254,MOV037,4,Loved the character development.,Positive,2025-03-03
+REV2063,VWR0572,MOV008,4,An absolute masterpiece.,Positive,2025-05-04
+REV2064,VWR1355,MOV046,1,Expected much better.,Negative,2025-06-16
+REV2065,VWR0904,MOV009,3,"It was okay, not great.",Neutral,2025-07-08
+REV2066,VWR1455,MOV013,2,Waste of time.,Negative,2025-05-16
+REV2067,VWR0481,MOV034,4,Will definitely watch again.,Positive,2025-01-19
+REV2068,VWR0552,MOV023,4,Will definitely watch again.,Positive,2025-05-29
+REV2069,VWR0970,MOV002,5,Strong pacing and high production quality.,Positive,2025-09-27
+REV2070,VWR0650,MOV046,5,Loved the character development.,Positive,2025-08-15
+REV2071,VWR1237,MOV027,2,Expected much better.,Negative,2025-06-06
+REV2072,VWR0709,MOV002,4,Will definitely watch again.,Positive,2025-01-23
+REV2073,VWR0577,MOV013,5,Incredible visual effects.,Positive,2025-11-22
+REV2074,VWR0812,MOV034,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-25
+REV2075,VWR0887,MOV016,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-20
+REV2076,VWR0787,MOV052,1,Could not finish it.,Negative,2025-02-08
+REV2077,VWR1295,MOV052,2,Could not finish it.,Negative,2025-03-01
+REV2078,VWR1476,MOV040,5,Will definitely watch again.,Positive,2025-08-14
+REV2079,VWR1041,MOV039,3,"Nothing special, but not bad.",Neutral,2025-07-01
+REV2080,VWR0429,MOV018,5,Will definitely watch again.,Positive,2025-03-24
+REV2081,VWR0308,MOV042,5,Will definitely watch again.,Positive,2025-02-07
+REV2082,VWR1465,MOV024,2,Very disappointing.,Negative,2025-11-21
+REV2083,VWR0956,MOV048,1,Very disappointing.,Negative,2025-07-15
+REV2084,VWR0232,MOV024,2,Waste of time.,Negative,2025-04-12
+REV2085,VWR0928,MOV024,5,An absolute masterpiece.,Positive,2025-04-27
+REV2086,VWR0303,MOV038,2,Could not finish it.,Negative,2025-05-27
+REV2087,VWR0034,MOV060,1,Very disappointing.,Negative,2025-02-23
+REV2088,VWR0352,MOV060,2,Expected much better.,Negative,2025-10-21
+REV2089,VWR0899,MOV045,1,Expected much better.,Negative,2025-02-15
+REV2090,VWR1040,MOV016,5,Strong pacing and high production quality.,Positive,2025-09-27
+REV2091,VWR0165,MOV034,2,Expected much better.,Negative,2025-04-03
+REV2092,VWR0635,MOV051,5,An absolute masterpiece.,Positive,2025-04-24
+REV2093,VWR0034,MOV011,1,Terrible plot and awful acting.,Negative,2025-03-02
+REV2094,VWR0519,MOV010,5,Loved the character development.,Positive,2025-06-09
+REV2095,VWR0589,MOV044,1,Waste of time.,Negative,2025-04-18
+REV2096,VWR1096,MOV035,5,Incredible visual effects.,Positive,2025-01-19
+REV2097,VWR0317,MOV030,2,Could not finish it.,Negative,2025-04-02
+REV2098,VWR1492,MOV038,2,Expected much better.,Negative,2025-08-21
+REV2099,VWR0976,MOV031,5,Loved the character development.,Positive,2025-05-24
+REV2100,VWR0931,MOV022,4,Incredible visual effects.,Positive,2025-04-04
+REV2101,VWR0741,MOV034,3,Pacing felt a bit slow.,Neutral,2025-12-16
+REV2102,VWR0429,MOV029,4,Incredible visual effects.,Positive,2025-12-02
+REV2103,VWR0291,MOV035,1,Could not finish it.,Negative,2025-10-02
+REV2104,VWR0571,MOV010,1,Could not finish it.,Negative,2025-01-29
+REV2105,VWR0519,MOV054,2,Could not finish it.,Negative,2025-05-02
+REV2106,VWR0169,MOV059,2,Expected much better.,Negative,2025-04-16
+REV2107,VWR0794,MOV030,2,Waste of time.,Negative,2025-08-18
+REV2108,VWR0634,MOV018,4,Will definitely watch again.,Positive,2025-08-27
+REV2109,VWR1466,MOV013,2,Waste of time.,Negative,2025-08-07
+REV2110,VWR1363,MOV035,1,Waste of time.,Negative,2025-05-15
+REV2111,VWR0487,MOV045,4,An absolute masterpiece.,Positive,2025-07-08
+REV2112,VWR0808,MOV059,2,Waste of time.,Negative,2025-09-26
+REV2113,VWR1429,MOV025,3,"It was okay, not great.",Neutral,2025-09-24
+REV2114,VWR0739,MOV038,2,Very disappointing.,Negative,2025-02-01
+REV2115,VWR0705,MOV021,2,Expected much better.,Negative,2025-08-17
+REV2116,VWR1320,MOV010,4,Incredible visual effects.,Positive,2025-10-08
+REV2117,VWR1347,MOV059,4,Strong pacing and high production quality.,Positive,2025-03-18
+REV2118,VWR0742,MOV009,4,Incredible visual effects.,Positive,2025-10-23
+REV2119,VWR0161,MOV009,5,Loved the character development.,Positive,2025-06-25
+REV2120,VWR1471,MOV027,1,Terrible plot and awful acting.,Negative,2025-04-19
+REV2121,VWR1081,MOV007,1,Expected much better.,Negative,2025-08-10
+REV2122,VWR0898,MOV026,2,Waste of time.,Negative,2025-02-05
+REV2123,VWR0180,MOV001,5,Strong pacing and high production quality.,Positive,2025-07-15
+REV2124,VWR1393,MOV024,1,Waste of time.,Negative,2025-07-24
+REV2125,VWR0956,MOV012,2,Terrible plot and awful acting.,Negative,2025-07-23
+REV2126,VWR0350,MOV008,1,Could not finish it.,Negative,2025-08-04
+REV2127,VWR1239,MOV047,4,Incredible visual effects.,Positive,2025-04-14
+REV2128,VWR0992,MOV001,3,"Nothing special, but not bad.",Neutral,2025-12-20
+REV2129,VWR0399,MOV049,4,Will definitely watch again.,Positive,2025-03-04
+REV2130,VWR0766,MOV013,5,An absolute masterpiece.,Positive,2025-10-01
+REV2131,VWR0555,MOV047,4,Incredible visual effects.,Positive,2025-08-03
+REV2132,VWR0193,MOV032,4,Incredible visual effects.,Positive,2025-05-15
+REV2133,VWR0797,MOV058,3,Average movie experience.,Neutral,2025-11-27
+REV2134,VWR0820,MOV007,5,An absolute masterpiece.,Positive,2025-07-03
+REV2135,VWR0959,MOV038,5,Will definitely watch again.,Positive,2025-11-07
+REV2136,VWR0474,MOV036,2,Could not finish it.,Negative,2025-10-31
+REV2137,VWR1024,MOV011,3,Pacing felt a bit slow.,Neutral,2025-08-04
+REV2138,VWR0614,MOV024,3,Average movie experience.,Neutral,2025-08-29
+REV2139,VWR1430,MOV056,1,Could not finish it.,Negative,2025-08-25
+REV2140,VWR1018,MOV038,3,"Nothing special, but not bad.",Neutral,2025-03-09
+REV2141,VWR0269,MOV021,3,Average movie experience.,Neutral,2025-07-25
+REV2142,VWR0488,MOV055,3,"It was okay, not great.",Neutral,2025-10-07
+REV2143,VWR1149,MOV006,4,Strong pacing and high production quality.,Positive,2025-05-17
+REV2144,VWR0866,MOV051,2,Waste of time.,Negative,2025-08-07
+REV2145,VWR0676,MOV038,3,Pacing felt a bit slow.,Neutral,2025-07-08
+REV2146,VWR1016,MOV054,1,Could not finish it.,Negative,2025-09-03
+REV2147,VWR1188,MOV005,1,Very disappointing.,Negative,2025-06-15
+REV2148,VWR1343,MOV006,4,Will definitely watch again.,Positive,2025-04-28
+REV2149,VWR1176,MOV008,2,Expected much better.,Negative,2025-11-23
+REV2150,VWR0394,MOV034,2,Expected much better.,Negative,2025-12-26
+REV2151,VWR0459,MOV033,3,Decent watch for a Sunday afternoon.,Neutral,2025-06-17
+REV2152,VWR0341,MOV036,5,Incredible visual effects.,Positive,2025-02-07
+REV2153,VWR0279,MOV054,4,Will definitely watch again.,Positive,2025-12-24
+REV2154,VWR0343,MOV033,1,Waste of time.,Negative,2025-12-24
+REV2155,VWR1301,MOV040,2,Very disappointing.,Negative,2025-06-06
+REV2156,VWR0349,MOV035,1,Waste of time.,Negative,2025-01-14
+REV2157,VWR0139,MOV021,4,Incredible visual effects.,Positive,2025-12-24
+REV2158,VWR0454,MOV006,4,Loved the character development.,Positive,2025-01-14
+REV2159,VWR0831,MOV053,4,Strong pacing and high production quality.,Positive,2025-07-28
+REV2160,VWR0793,MOV027,3,"It was okay, not great.",Neutral,2025-07-27
+REV2161,VWR0845,MOV013,3,Decent watch for a Sunday afternoon.,Neutral,2025-11-28
+REV2162,VWR0789,MOV004,1,Very disappointing.,Negative,2025-05-15
+REV2163,VWR0628,MOV054,1,Waste of time.,Negative,2025-07-20
+REV2164,VWR0755,MOV053,5,Incredible visual effects.,Positive,2025-02-01
+REV2165,VWR1269,MOV051,2,Expected much better.,Negative,2025-03-06
+REV2166,VWR1003,MOV038,3,Pacing felt a bit slow.,Neutral,2025-01-20
+REV2167,VWR1223,MOV034,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-13
+REV2168,VWR1217,MOV044,3,"It was okay, not great.",Neutral,2025-11-28
+REV2169,VWR0252,MOV060,1,Terrible plot and awful acting.,Negative,2025-05-21
+REV2170,VWR0405,MOV021,3,Pacing felt a bit slow.,Neutral,2025-02-22
+REV2171,VWR0820,MOV029,4,An absolute masterpiece.,Positive,2025-06-02
+REV2172,VWR0869,MOV046,2,Could not finish it.,Negative,2025-07-03
+REV2173,VWR0894,MOV057,2,Expected much better.,Negative,2025-12-18
+REV2174,VWR1391,MOV007,3,Decent watch for a Sunday afternoon.,Neutral,2025-03-19
+REV2175,VWR0242,MOV041,2,Expected much better.,Negative,2025-06-03
+REV2176,VWR0086,MOV051,5,An absolute masterpiece.,Positive,2025-01-22
+REV2177,VWR0906,MOV059,4,Strong pacing and high production quality.,Positive,2025-06-21
+REV2178,VWR0362,MOV022,4,Loved the character development.,Positive,2025-12-22
+REV2179,VWR1199,MOV021,3,"Nothing special, but not bad.",Neutral,2025-03-13
+REV2180,VWR1113,MOV035,5,Loved the character development.,Positive,2025-02-07
+REV2181,VWR0508,MOV027,3,Average movie experience.,Neutral,2025-10-22
+REV2182,VWR0336,MOV060,2,Could not finish it.,Negative,2025-03-04
+REV2183,VWR1319,MOV030,3,Decent watch for a Sunday afternoon.,Neutral,2025-05-26
+REV2184,VWR0617,MOV054,1,Could not finish it.,Negative,2025-04-07
+REV2185,VWR1347,MOV013,2,Waste of time.,Negative,2025-11-02
+REV2186,VWR0151,MOV044,4,Incredible visual effects.,Positive,2025-07-09
+REV2187,VWR0067,MOV035,5,Strong pacing and high production quality.,Positive,2025-05-27
+REV2188,VWR0053,MOV019,4,Incredible visual effects.,Positive,2025-03-31
+REV2189,VWR1457,MOV021,5,Loved the character development.,Positive,2025-05-22
+REV2190,VWR0232,MOV005,1,Waste of time.,Negative,2025-08-01
+REV2191,VWR0986,MOV053,1,Terrible plot and awful acting.,Negative,2025-03-14
+REV2192,VWR0158,MOV023,4,Strong pacing and high production quality.,Positive,2025-03-31
+REV2193,VWR0598,MOV026,1,Waste of time.,Negative,2025-05-02
+REV2194,VWR1261,MOV034,2,Terrible plot and awful acting.,Negative,2025-05-27
+REV2195,VWR0642,MOV020,2,Could not finish it.,Negative,2025-03-27
+REV2196,VWR0310,MOV053,5,Loved the character development.,Positive,2025-04-06
+REV2197,VWR1226,MOV024,1,Could not finish it.,Negative,2025-12-16
+REV2198,VWR0920,MOV050,1,Terrible plot and awful acting.,Negative,2025-06-05
+REV2199,VWR0016,MOV005,5,Loved the character development.,Positive,2025-01-10
+REV2200,VWR0899,MOV017,4,Strong pacing and high production quality.,Positive,2025-04-24
+REV2201,VWR0037,MOV017,3,Average movie experience.,Neutral,2025-12-29
+REV2202,VWR0747,MOV050,2,Could not finish it.,Negative,2025-06-01
+REV2203,VWR0652,MOV043,1,Terrible plot and awful acting.,Negative,2025-01-24
+REV2204,VWR1184,MOV019,2,Terrible plot and awful acting.,Negative,2025-06-26
+REV2205,VWR1297,MOV014,2,Terrible plot and awful acting.,Negative,2025-10-10
+REV2206,VWR0774,MOV009,3,"Nothing special, but not bad.",Neutral,2025-10-28
+REV2207,VWR0505,MOV017,1,Very disappointing.,Negative,2025-12-06
+REV2208,VWR0690,MOV052,4,Loved the character development.,Positive,2025-03-22
+REV2209,VWR1183,MOV016,1,Could not finish it.,Negative,2025-07-24
+REV2210,VWR0367,MOV052,5,Will definitely watch again.,Positive,2025-02-06
+REV2211,VWR0870,MOV028,2,Waste of time.,Negative,2025-03-18
+REV2212,VWR1423,MOV053,3,Decent watch for a Sunday afternoon.,Neutral,2025-10-10
+REV2213,VWR1259,MOV057,4,Strong pacing and high production quality.,Positive,2025-01-28
+REV2214,VWR0469,MOV051,5,Loved the character development.,Positive,2025-06-11
+REV2215,VWR1278,MOV052,3,Average movie experience.,Neutral,2025-12-29
+REV2216,VWR0484,MOV055,3,"Nothing special, but not bad.",Neutral,2025-06-27
+REV2217,VWR1219,MOV009,2,Very disappointing.,Negative,2025-07-13
+REV2218,VWR0977,MOV012,4,Strong pacing and high production quality.,Positive,2025-09-01
+REV2219,VWR1341,MOV001,5,Incredible visual effects.,Positive,2025-08-24
+REV2220,VWR0582,MOV006,3,Average movie experience.,Neutral,2025-03-26
+REV2221,VWR0994,MOV026,5,An absolute masterpiece.,Positive,2025-02-17
+REV2222,VWR0057,MOV021,2,Very disappointing.,Negative,2025-08-06
+REV2223,VWR0661,MOV035,5,An absolute masterpiece.,Positive,2025-10-16
+REV2224,VWR0721,MOV006,2,Expected much better.,Negative,2025-08-06
+REV2225,VWR0602,MOV050,4,Incredible visual effects.,Positive,2025-09-30
+REV2226,VWR1055,MOV060,4,Loved the character development.,Positive,2025-01-21
+REV2227,VWR1482,MOV038,5,Incredible visual effects.,Positive,2025-10-10
+REV2228,VWR1488,MOV028,3,Average movie experience.,Neutral,2025-05-19
+REV2229,VWR0005,MOV012,1,Could not finish it.,Negative,2025-12-21
+REV2230,VWR0842,MOV034,3,"It was okay, not great.",Neutral,2025-09-04
+REV2231,VWR1384,MOV059,1,Terrible plot and awful acting.,Negative,2025-11-29
+REV2232,VWR0639,MOV056,2,Terrible plot and awful acting.,Negative,2025-01-31
+REV2233,VWR1180,MOV020,3,"It was okay, not great.",Neutral,2025-07-14
+REV2234,VWR0092,MOV023,5,Incredible visual effects.,Positive,2025-11-23
+REV2235,VWR1252,MOV045,4,Incredible visual effects.,Positive,2025-07-13
+REV2236,VWR1499,MOV058,4,Loved the character development.,Positive,2025-11-01
+REV2237,VWR1461,MOV019,2,Expected much better.,Negative,2025-12-19
+REV2238,VWR0133,MOV007,1,Expected much better.,Negative,2025-02-05
+REV2239,VWR1367,MOV003,5,Incredible visual effects.,Positive,2025-10-17
+REV2240,VWR0159,MOV006,5,Strong pacing and high production quality.,Positive,2025-08-19
+REV2241,VWR1262,MOV038,3,Pacing felt a bit slow.,Neutral,2025-09-11
+REV2242,VWR1368,MOV050,4,Will definitely watch again.,Positive,2025-06-15
+REV2243,VWR0932,MOV042,3,Pacing felt a bit slow.,Neutral,2025-03-30
+REV2244,VWR0401,MOV005,3,"Nothing special, but not bad.",Neutral,2025-08-01
+REV2245,VWR0973,MOV011,4,Loved the character development.,Positive,2025-10-08
+REV2246,VWR0192,MOV047,1,Waste of time.,Negative,2025-11-28
+REV2247,VWR0903,MOV029,3,"It was okay, not great.",Neutral,2025-05-14
+REV2248,VWR0282,MOV007,3,Average movie experience.,Neutral,2025-10-07
+REV2249,VWR1477,MOV048,2,Terrible plot and awful acting.,Negative,2025-01-12
+REV2250,VWR0035,MOV029,4,Loved the character development.,Positive,2025-05-01
+REV2251,VWR0033,MOV042,1,Could not finish it.,Negative,2025-12-26
+REV2252,VWR0196,MOV056,4,Strong pacing and high production quality.,Positive,2025-01-17
+REV2253,VWR0663,MOV056,4,Strong pacing and high production quality.,Positive,2025-11-05
+REV2254,VWR0227,MOV004,1,Waste of time.,Negative,2025-05-02
+REV2255,VWR0982,MOV010,4,Strong pacing and high production quality.,Positive,2025-08-10
+REV2256,VWR0809,MOV039,1,Terrible plot and awful acting.,Negative,2025-03-07
+REV2257,VWR0199,MOV019,4,Will definitely watch again.,Positive,2025-10-14
+REV2258,VWR0349,MOV001,2,Expected much better.,Negative,2025-09-23
+REV2259,VWR0804,MOV044,4,Incredible visual effects.,Positive,2025-07-14
+REV2260,VWR0888,MOV018,2,Terrible plot and awful acting.,Negative,2025-01-25
+REV2261,VWR0275,MOV007,5,Will definitely watch again.,Positive,2025-05-11
+REV2262,VWR0426,MOV043,3,Average movie experience.,Neutral,2025-10-27
+REV2263,VWR0029,MOV041,5,Incredible visual effects.,Positive,2025-09-16
+REV2264,VWR1069,MOV007,3,Average movie experience.,Neutral,2025-11-25
+REV2265,VWR0921,MOV057,4,Will definitely watch again.,Positive,2025-08-10
+REV2266,VWR0130,MOV042,1,Waste of time.,Negative,2025-05-01
+REV2267,VWR0065,MOV038,3,Decent watch for a Sunday afternoon.,Neutral,2025-02-06
+REV2268,VWR1382,MOV036,1,Expected much better.,Negative,2025-08-07
+REV2269,VWR0073,MOV054,4,Loved the character development.,Positive,2025-11-08
+REV2270,VWR1272,MOV055,1,Waste of time.,Negative,2025-07-05
+REV2271,VWR0426,MOV027,2,Could not finish it.,Negative,2025-11-26
+REV2272,VWR0874,MOV007,2,Could not finish it.,Negative,2025-12-21
+REV2273,VWR1454,MOV038,5,Loved the character development.,Positive,2025-07-14
+REV2274,VWR1448,MOV056,5,Incredible visual effects.,Positive,2025-03-04
+REV2275,VWR1348,MOV018,3,Pacing felt a bit slow.,Neutral,2025-09-17
+REV2276,VWR0640,MOV049,3,Pacing felt a bit slow.,Neutral,2025-09-16
+REV2277,VWR0928,MOV051,1,Very disappointing.,Negative,2025-01-02
+REV2278,VWR0281,MOV002,2,Expected much better.,Negative,2025-04-07
+REV2279,VWR0498,MOV036,2,Could not finish it.,Negative,2025-04-22
+REV2280,VWR1324,MOV025,4,Incredible visual effects.,Positive,2025-08-26
+REV2281,VWR0564,MOV053,2,Waste of time.,Negative,2025-10-10
+REV2282,VWR0474,MOV016,2,Could not finish it.,Negative,2025-05-23
+REV2283,VWR1262,MOV012,4,Incredible visual effects.,Positive,2025-06-08
+REV2284,VWR0266,MOV025,5,Loved the character development.,Positive,2025-09-25
+REV2285,VWR1009,MOV020,2,Could not finish it.,Negative,2025-11-11
+REV2286,VWR0044,MOV009,4,An absolute masterpiece.,Positive,2025-07-22
+REV2287,VWR1157,MOV031,3,"Nothing special, but not bad.",Neutral,2025-06-18
+REV2288,VWR0454,MOV025,4,An absolute masterpiece.,Positive,2025-03-24
+REV2289,VWR0035,MOV029,4,Loved the character development.,Positive,2025-06-28
+REV2290,VWR0543,MOV005,4,Loved the character development.,Positive,2025-06-04
+REV2291,VWR0537,MOV050,5,Incredible visual effects.,Positive,2025-12-19
+REV2292,VWR0417,MOV054,3,"It was okay, not great.",Neutral,2025-07-29
+REV2293,VWR0272,MOV026,1,Terrible plot and awful acting.,Negative,2025-10-03
+REV2294,VWR0521,MOV038,3,"Nothing special, but not bad.",Neutral,2025-06-07
+REV2295,VWR0958,MOV006,2,Could not finish it.,Negative,2025-12-05
+REV2296,VWR0966,MOV036,3,Pacing felt a bit slow.,Neutral,2025-01-19
+REV2297,VWR0549,MOV016,3,Decent watch for a Sunday afternoon.,Neutral,2025-01-09
+REV2298,VWR0899,MOV003,4,Loved the character development.,Positive,2025-01-16
+REV2299,VWR1338,MOV050,5,Incredible visual effects.,Positive,2025-06-03
+REV2300,VWR0938,MOV057,3,Average movie experience.,Neutral,2025-01-16
+REV2301,VWR0725,MOV019,4,Incredible visual effects.,Positive,2025-05-04
+REV2302,VWR1016,MOV043,4,An absolute masterpiece.,Positive,2025-08-05
+REV2303,VWR0791,MOV058,4,Incredible visual effects.,Positive,2025-12-21
+REV2304,VWR0832,MOV025,2,Expected much better.,Negative,2025-08-13
+REV2305,VWR1074,MOV020,4,Incredible visual effects.,Positive,2025-10-21
+REV2306,VWR0277,MOV026,5,Incredible visual effects.,Positive,2025-09-28
+REV2307,VWR1452,MOV006,3,"It was okay, not great.",Neutral,2025-12-28
+REV2308,VWR0007,MOV055,3,Average movie experience.,Neutral,2025-10-29
+REV2309,VWR0265,MOV036,1,Very disappointing.,Negative,2025-06-28
+REV2310,VWR0990,MOV016,5,An absolute masterpiece.,Positive,2025-02-04
+REV2311,VWR1072,MOV014,2,Could not finish it.,Negative,2025-03-24
+REV2312,VWR0916,MOV039,5,Loved the character development.,Positive,2025-03-27
+REV2313,VWR0606,MOV057,3,Pacing felt a bit slow.,Neutral,2025-04-21
+REV2314,VWR0823,MOV048,4,Strong pacing and high production quality.,Positive,2025-01-10
+REV2315,VWR1344,MOV044,4,Incredible visual effects.,Positive,2025-01-05
+REV2316,VWR1096,MOV023,5,Loved the character development.,Positive,2025-08-21
+REV2317,VWR0764,MOV017,1,Could not finish it.,Negative,2025-09-25
+REV2318,VWR1270,MOV026,2,Very disappointing.,Negative,2025-10-22
+REV2319,VWR0052,MOV023,5,Strong pacing and high production quality.,Positive,2025-10-14
+REV2320,VWR1146,MOV005,2,Very disappointing.,Negative,2025-04-24
+REV2321,VWR0435,MOV003,5,Incredible visual effects.,Positive,2025-06-11
+REV2322,VWR0599,MOV019,4,Strong pacing and high production quality.,Positive,2025-01-17
+REV2323,VWR1381,MOV056,1,Could not finish it.,Negative,2025-11-23
+REV2324,VWR0132,MOV056,4,Will definitely watch again.,Positive,2025-03-08
+REV2325,VWR0192,MOV016,5,Will definitely watch again.,Positive,2025-03-24
+REV2326,VWR0875,MOV005,4,Will definitely watch again.,Positive,2025-07-04
+REV2327,VWR0709,MOV035,5,Will definitely watch again.,Positive,2025-12-12
+REV2328,VWR0683,MOV024,5,Incredible visual effects.,Positive,2025-07-01
+REV2329,VWR0907,MOV043,4,Loved the character development.,Positive,2025-02-06
+REV2330,VWR0720,MOV048,4,Will definitely watch again.,Positive,2025-07-10
+REV2331,VWR1287,MOV059,3,Average movie experience.,Neutral,2025-10-14
+REV2332,VWR0251,MOV001,4,Loved the character development.,Positive,2025-09-23
+REV2333,VWR0912,MOV001,3,"Nothing special, but not bad.",Neutral,2025-01-24
+REV2334,VWR0944,MOV037,3,"Nothing special, but not bad.",Neutral,2025-06-06
+REV2335,VWR0007,MOV012,2,Expected much better.,Negative,2025-02-01
+REV2336,VWR0670,MOV012,1,Expected much better.,Negative,2025-07-20
+REV2337,VWR1446,MOV057,5,Strong pacing and high production quality.,Positive,2025-07-27
+REV2338,VWR1099,MOV041,2,Waste of time.,Negative,2025-03-03
+REV2339,VWR0561,MOV045,2,Terrible plot and awful acting.,Negative,2025-02-28
+REV2340,VWR0205,MOV022,4,Incredible visual effects.,Positive,2025-08-11
+REV2341,VWR0405,MOV010,5,Loved the character development.,Positive,2025-07-16
+REV2342,VWR1259,MOV023,5,Will definitely watch again.,Positive,2025-09-24
+REV2343,VWR1481,MOV029,4,Incredible visual effects.,Positive,2025-05-30
+REV2344,VWR0427,MOV053,2,Expected much better.,Negative,2025-04-25
+REV2345,VWR0651,MOV007,3,"It was okay, not great.",Neutral,2025-01-10
+REV2346,VWR0894,MOV038,1,Waste of time.,Negative,2025-03-29
+REV2347,VWR0178,MOV017,5,An absolute masterpiece.,Positive,2025-03-13
+REV2348,VWR0237,MOV010,5,Incredible visual effects.,Positive,2025-05-18
+REV2349,VWR1019,MOV036,3,Decent watch for a Sunday afternoon.,Neutral,2025-09-06
+REV2350,VWR0926,MOV022,4,Incredible visual effects.,Positive,2025-03-30
+REV2351,VWR1046,MOV018,2,Expected much better.,Negative,2025-12-16
+REV2352,VWR1078,MOV009,4,An absolute masterpiece.,Positive,2025-03-10
+REV2353,VWR1472,MOV023,3,"Nothing special, but not bad.",Neutral,2025-06-01
+REV2354,VWR1376,MOV039,2,Could not finish it.,Negative,2025-09-17
+REV2355,VWR1012,MOV038,1,Very disappointing.,Negative,2025-11-27
+REV2356,VWR1283,MOV056,4,Incredible visual effects.,Positive,2025-06-11
+REV2357,VWR0310,MOV010,4,Strong pacing and high production quality.,Positive,2025-03-28
+REV2358,VWR1291,MOV027,5,An absolute masterpiece.,Positive,2025-03-26
+REV2359,VWR0134,MOV030,4,Strong pacing and high production quality.,Positive,2025-03-30
+REV2360,VWR1055,MOV004,3,Average movie experience.,Neutral,2025-07-27
+REV2361,VWR1039,MOV040,2,Waste of time.,Negative,2025-09-30
+REV2362,VWR0144,MOV048,5,An absolute masterpiece.,Positive,2025-03-27
+REV2363,VWR0958,MOV042,3,Average movie experience.,Neutral,2025-06-15
+REV2364,VWR0950,MOV014,1,Waste of time.,Negative,2025-12-31
+REV2365,VWR1220,MOV022,5,Loved the character development.,Positive,2025-02-16
+REV2366,VWR0938,MOV030,3,"Nothing special, but not bad.",Neutral,2025-10-11
+REV2367,VWR0121,MOV046,2,Very disappointing.,Negative,2025-04-17
+REV2368,VWR0762,MOV006,1,Very disappointing.,Negative,2025-05-06
+REV2369,VWR1046,MOV046,2,Terrible plot and awful acting.,Negative,2025-08-09
+REV2370,VWR1367,MOV053,3,Average movie experience.,Neutral,2025-01-30
+REV2371,VWR0994,MOV049,5,Incredible visual effects.,Positive,2025-12-20
+REV2372,VWR1109,MOV042,4,An absolute masterpiece.,Positive,2025-12-08
+REV2373,VWR0267,MOV039,3,Average movie experience.,Neutral,2025-06-04
+REV2374,VWR0658,MOV027,5,Will definitely watch again.,Positive,2025-10-08
+REV2375,VWR0342,MOV013,2,Terrible plot and awful acting.,Negative,2025-11-22
+REV2376,VWR1453,MOV012,5,Will definitely watch again.,Positive,2025-04-15
+REV2377,VWR0511,MOV046,5,Will definitely watch again.,Positive,2025-04-04
+REV2378,VWR0096,MOV052,1,Expected much better.,Negative,2025-05-20
+REV2379,VWR0631,MOV015,5,Will definitely watch again.,Positive,2025-07-10
+REV2380,VWR0065,MOV017,5,An absolute masterpiece.,Positive,2025-12-30
+REV2381,VWR1344,MOV014,2,Expected much better.,Negative,2025-05-18
+REV2382,VWR1143,MOV033,2,Could not finish it.,Negative,2025-06-06
+REV2383,VWR0001,MOV011,3,"It was okay, not great.",Neutral,2025-01-27
+REV2384,VWR0177,MOV035,2,Expected much better.,Negative,2025-03-19
+REV2385,VWR0134,MOV025,4,Loved the character development.,Positive,2025-10-18
+REV2386,VWR0548,MOV003,4,Loved the character development.,Positive,2025-11-15
+REV2387,VWR0651,MOV041,5,Loved the character development.,Positive,2025-04-24
+REV2388,VWR1382,MOV021,1,Terrible plot and awful acting.,Negative,2025-01-13
+REV2389,VWR0965,MOV059,5,Will definitely watch again.,Positive,2025-12-31
+REV2390,VWR0157,MOV052,4,An absolute masterpiece.,Positive,2025-08-12
+REV2391,VWR0112,MOV010,5,Will definitely watch again.,Positive,2025-03-23
+REV2392,VWR1495,MOV039,3,"It was okay, not great.",Neutral,2025-12-25
+REV2393,VWR0048,MOV053,3,Average movie experience.,Neutral,2025-08-26
+REV2394,VWR1161,MOV021,4,An absolute masterpiece.,Positive,2025-02-20
+REV2395,VWR0291,MOV021,4,Incredible visual effects.,Positive,2025-03-31
+REV2396,VWR0106,MOV059,5,Strong pacing and high production quality.,Positive,2025-05-05
+REV2397,VWR1203,MOV045,4,Strong pacing and high production quality.,Positive,2025-12-23
+REV2398,VWR0477,MOV053,5,Loved the character development.,Positive,2025-08-29
+REV2399,VWR1043,MOV049,1,Terrible plot and awful acting.,Negative,2025-06-21
+REV2400,VWR0230,MOV013,4,Will definitely watch again.,Positive,2025-03-04
+REV2401,VWR1493,MOV002,5,Strong pacing and high production quality.,Positive,2025-05-01
+REV2402,VWR0917,MOV047,5,Loved the character development.,Positive,2025-08-20
+REV2403,VWR1331,MOV039,2,Could not finish it.,Negative,2025-08-05
+REV2404,VWR0449,MOV018,1,Expected much better.,Negative,2025-03-16
+REV2405,VWR1147,MOV031,3,Average movie experience.,Neutral,2025-03-27
+REV2406,VWR1268,MOV028,2,Terrible plot and awful acting.,Negative,2025-02-18
+REV2407,VWR1282,MOV030,2,Could not finish it.,Negative,2025-06-17
+REV2408,VWR0409,MOV011,5,An absolute masterpiece.,Positive,2025-07-30
+REV2409,VWR1423,MOV029,5,An absolute masterpiece.,Positive,2025-12-19
+REV2410,VWR0078,MOV019,4,Will definitely watch again.,Positive,2025-06-06
+REV2411,VWR0826,MOV027,1,Waste of time.,Negative,2025-12-08
+REV2412,VWR1456,MOV013,1,Waste of time.,Negative,2025-09-24
+REV2413,VWR1001,MOV030,2,Waste of time.,Negative,2025-02-27
+REV2414,VWR1117,MOV015,2,Could not finish it.,Negative,2025-05-14
+REV2415,VWR1199,MOV033,4,Will definitely watch again.,Positive,2025-07-15
+REV2416,VWR0090,MOV007,3,Pacing felt a bit slow.,Neutral,2025-02-20
+REV2417,VWR1402,MOV002,5,An absolute masterpiece.,Positive,2025-02-08
+REV2418,VWR0176,MOV012,5,Incredible visual effects.,Positive,2025-12-05
+REV2419,VWR1009,MOV031,5,Strong pacing and high production quality.,Positive,2025-12-27
+REV2420,VWR1063,MOV018,5,Strong pacing and high production quality.,Positive,2025-04-17
+REV2421,VWR1444,MOV010,5,Will definitely watch again.,Positive,2025-05-29
+REV2422,VWR0354,MOV023,2,Terrible plot and awful acting.,Negative,2025-12-08
+REV2423,VWR1292,MOV018,5,Incredible visual effects.,Positive,2025-11-16
+REV2424,VWR0206,MOV043,4,Incredible visual effects.,Positive,2025-07-09
+REV2425,VWR0411,MOV007,5,Incredible visual effects.,Positive,2025-08-19
+REV2426,VWR1125,MOV008,4,Strong pacing and high production quality.,Positive,2025-06-03
+REV2427,VWR0729,MOV056,2,Very disappointing.,Negative,2025-04-02
+REV2428,VWR0670,MOV036,4,An absolute masterpiece.,Positive,2025-11-22
+REV2429,VWR1355,MOV056,3,Pacing felt a bit slow.,Neutral,2025-08-24
+REV2430,VWR1340,MOV020,2,Expected much better.,Negative,2025-06-29
+REV2431,VWR1427,MOV010,4,Loved the character development.,Positive,2025-06-08
+REV2432,VWR0653,MOV039,4,Strong pacing and high production quality.,Positive,2025-05-21
+REV2433,VWR1262,MOV007,2,Very disappointing.,Negative,2025-12-31
+REV2434,VWR0918,MOV051,2,Terrible plot and awful acting.,Negative,2025-10-31
+REV2435,VWR0738,MOV044,2,Terrible plot and awful acting.,Negative,2025-08-28
+REV2436,VWR0948,MOV050,1,Expected much better.,Negative,2025-02-19
+REV2437,VWR0599,MOV023,4,An absolute masterpiece.,Positive,2025-03-14
+REV2438,VWR1302,MOV041,3,Pacing felt a bit slow.,Neutral,2025-06-28
+REV2439,VWR1312,MOV040,5,Strong pacing and high production quality.,Positive,2025-10-20
+REV2440,VWR0508,MOV060,3,Decent watch for a Sunday afternoon.,Neutral,2025-07-24
+REV2441,VWR1019,MOV016,5,Strong pacing and high production quality.,Positive,2025-01-22
+REV2442,VWR1231,MOV005,5,Will definitely watch again.,Positive,2025-09-30
+REV2443,VWR0768,MOV027,1,Waste of time.,Negative,2025-06-17
+REV2444,VWR0003,MOV004,4,Incredible visual effects.,Positive,2025-07-16
+REV2445,VWR0182,MOV012,5,Will definitely watch again.,Positive,2025-09-04
+REV2446,VWR1093,MOV058,3,"It was okay, not great.",Neutral,2025-02-14
+REV2447,VWR1138,MOV015,4,Loved the character development.,Positive,2025-09-26
+REV2448,VWR1174,MOV034,3,"Nothing special, but not bad.",Neutral,2025-05-15
+REV2449,VWR0983,MOV050,5,Strong pacing and high production quality.,Positive,2025-02-04
+REV2450,VWR0028,MOV035,5,Loved the character development.,Positive,2025-05-05
+REV2451,VWR0004,MOV047,5,Will definitely watch again.,Positive,2025-06-11
+REV2452,VWR0549,MOV005,2,Expected much better.,Negative,2025-04-26
+REV2453,VWR1125,MOV030,4,Incredible visual effects.,Positive,2025-04-13
+REV2454,VWR0743,MOV020,4,Will definitely watch again.,Positive,2025-11-26
+REV2455,VWR1024,MOV030,4,An absolute masterpiece.,Positive,2026-01-01
+REV2456,VWR0730,MOV002,2,Terrible plot and awful acting.,Negative,2025-08-01
+REV2457,VWR0825,MOV052,3,"It was okay, not great.",Neutral,2025-08-27
+REV2458,VWR0276,MOV048,2,Very disappointing.,Negative,2025-09-27
+REV2459,VWR1012,MOV050,3,Decent watch for a Sunday afternoon.,Neutral,2025-12-01
+REV2460,VWR1094,MOV042,5,An absolute masterpiece.,Positive,2025-05-08
+REV2461,VWR0639,MOV018,4,Loved the character development.,Positive,2025-04-26
+REV2462,VWR0214,MOV011,2,Expected much better.,Negative,2025-05-15
+REV2463,VWR0960,MOV041,4,Loved the character development.,Positive,2025-12-28
+REV2464,VWR1372,MOV036,4,Strong pacing and high production quality.,Positive,2025-08-08
+REV2465,VWR0401,MOV017,4,Incredible visual effects.,Positive,2025-09-16
+REV2466,VWR0671,MOV014,5,Will definitely watch again.,Positive,2025-03-27
+REV2467,VWR1412,MOV037,1,Very disappointing.,Negative,2025-12-08
+REV2468,VWR0086,MOV010,5,Loved the character development.,Positive,2025-11-11
+REV2469,VWR0885,MOV033,5,Strong pacing and high production quality.,Positive,2025-07-17
+REV2470,VWR1345,MOV021,5,Strong pacing and high production quality.,Positive,2025-03-01
+REV2471,VWR0422,MOV058,4,Loved the character development.,Positive,2025-02-14
+REV2472,VWR0969,MOV010,4,Strong pacing and high production quality.,Positive,2025-02-06
+REV2473,VWR1184,MOV019,1,Waste of time.,Negative,2025-05-25
+REV2474,VWR0034,MOV025,4,Incredible visual effects.,Positive,2025-09-10
+REV2475,VWR1106,MOV020,1,Waste of time.,Negative,2025-10-14
+REV2476,VWR0746,MOV019,4,Strong pacing and high production quality.,Positive,2025-08-14
+REV2477,VWR1232,MOV059,2,Expected much better.,Negative,2025-03-30
+REV2478,VWR1286,MOV057,2,Very disappointing.,Negative,2025-08-09
+REV2479,VWR0034,MOV002,5,Will definitely watch again.,Positive,2025-04-22
+REV2480,VWR1181,MOV005,4,Incredible visual effects.,Positive,2025-01-03
+REV2481,VWR1457,MOV006,2,Waste of time.,Negative,2025-04-28
+REV2482,VWR1133,MOV048,5,Strong pacing and high production quality.,Positive,2025-12-26
+REV2483,VWR1413,MOV022,4,Will definitely watch again.,Positive,2025-11-01
+REV2484,VWR1087,MOV027,2,Waste of time.,Negative,2025-05-07
+REV2485,VWR0815,MOV057,3,"It was okay, not great.",Neutral,2025-07-25
+REV2486,VWR1187,MOV026,3,Average movie experience.,Neutral,2025-04-26
+REV2487,VWR0053,MOV024,4,Strong pacing and high production quality.,Positive,2025-09-30
+REV2488,VWR1054,MOV044,4,Will definitely watch again.,Positive,2025-06-29
+REV2489,VWR0171,MOV027,4,Will definitely watch again.,Positive,2025-12-01
+REV2490,VWR0314,MOV038,1,Expected much better.,Negative,2025-11-10
+REV2491,VWR0486,MOV051,5,An absolute masterpiece.,Positive,2025-03-25
+REV2492,VWR0259,MOV032,4,Incredible visual effects.,Positive,2025-07-18
+REV2493,VWR0337,MOV010,2,Very disappointing.,Negative,2025-02-20
+REV2494,VWR0912,MOV016,2,Could not finish it.,Negative,2025-06-28
+REV2495,VWR0341,MOV039,1,Could not finish it.,Negative,2025-02-24
+REV2496,VWR1334,MOV040,5,Strong pacing and high production quality.,Positive,2025-10-15
+REV2497,VWR0206,MOV052,5,Loved the character development.,Positive,2025-06-13
+REV2498,VWR1125,MOV028,1,Could not finish it.,Negative,2025-09-08
+REV2499,VWR1198,MOV050,5,Incredible visual effects.,Positive,2025-02-04
+REV2500,VWR0560,MOV022,5,Will definitely watch again.,Positive,2025-05-22

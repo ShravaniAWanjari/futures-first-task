@@ -1,0 +1,1501 @@
+viewer_id,region,country,age_group,subscription_type,device_type,join_date
+VWR0001,Europe,Spain,18-24,Basic,Desktop,2022-09-26
+VWR0002,Europe,France,55+,Premium,Tablet,2020-06-26
+VWR0003,North America,Canada,18-24,Premium,Smart TV,2022-12-11
+VWR0004,Europe,France,45-54,Standard,Tablet,2021-03-13
+VWR0005,North America,USA,25-34,Basic,Tablet,2022-05-24
+VWR0006,North America,Canada,25-34,Basic,Tablet,2021-03-01
+VWR0007,North America,Canada,18-24,Basic,Mobile,2021-06-09
+VWR0008,North America,Canada,18-24,Premium,Mobile,2023-06-23
+VWR0009,North America,Canada,45-54,Basic,Desktop,2022-05-08
+VWR0010,North America,USA,35-44,Basic,Desktop,2021-01-17
+VWR0011,APAC,India,35-44,Standard,Mobile,2023-01-11
+VWR0012,APAC,Singapore,55+,Standard,Mobile,2021-10-14
+VWR0013,APAC,Singapore,45-54,Premium,Mobile,2021-01-28
+VWR0014,North America,Canada,35-44,Basic,Desktop,2021-03-10
+VWR0015,Europe,Italy,18-24,Basic,Desktop,2022-05-02
+VWR0016,APAC,Singapore,45-54,Premium,Mobile,2022-08-17
+VWR0017,APAC,Japan,55+,Premium,Mobile,2020-04-09
+VWR0018,LATAM,Brazil,55+,Premium,Desktop,2020-12-14
+VWR0019,LATAM,Argentina,35-44,Premium,Smart TV,2022-06-10
+VWR0020,APAC,Singapore,55+,Standard,Mobile,2023-08-07
+VWR0021,Europe,France,25-34,Basic,Tablet,2020-04-16
+VWR0022,APAC,Australia,55+,Basic,Mobile,2020-01-09
+VWR0023,Europe,Spain,35-44,Standard,Mobile,2022-06-10
+VWR0024,LATAM,Chile,18-24,Premium,Tablet,2022-11-21
+VWR0025,APAC,India,18-24,Standard,Mobile,2020-09-20
+VWR0026,APAC,Singapore,25-34,Premium,Desktop,2023-12-30
+VWR0027,Europe,Spain,55+,Premium,Smart TV,2021-03-16
+VWR0028,Europe,Germany,45-54,Standard,Mobile,2022-09-19
+VWR0029,Europe,Germany,55+,Basic,Desktop,2020-12-04
+VWR0030,LATAM,Argentina,18-24,Standard,Tablet,2020-03-31
+VWR0031,LATAM,Chile,55+,Basic,Tablet,2022-05-29
+VWR0032,APAC,Singapore,45-54,Premium,Mobile,2022-03-05
+VWR0033,North America,Canada,55+,Premium,Mobile,2023-09-27
+VWR0034,APAC,Singapore,35-44,Premium,Mobile,2022-11-02
+VWR0035,APAC,South Korea,35-44,Basic,Mobile,2023-02-12
+VWR0036,Europe,Spain,45-54,Standard,Mobile,2022-03-07
+VWR0037,LATAM,Colombia,55+,Basic,Smart TV,2023-12-09
+VWR0038,APAC,South Korea,55+,Basic,Tablet,2020-12-21
+VWR0039,LATAM,Chile,35-44,Premium,Tablet,2021-05-22
+VWR0040,APAC,Australia,18-24,Standard,Smart TV,2022-08-11
+VWR0041,LATAM,Brazil,25-34,Basic,Tablet,2021-05-08
+VWR0042,LATAM,Chile,18-24,Premium,Desktop,2020-10-04
+VWR0043,North America,Mexico,45-54,Premium,Mobile,2021-01-23
+VWR0044,Europe,Italy,55+,Premium,Desktop,2021-03-23
+VWR0045,Europe,Spain,45-54,Basic,Smart TV,2022-10-04
+VWR0046,APAC,India,55+,Basic,Mobile,2020-03-13
+VWR0047,Europe,UK,25-34,Premium,Desktop,2023-08-14
+VWR0048,LATAM,Argentina,18-24,Premium,Smart TV,2020-03-10
+VWR0049,LATAM,Colombia,45-54,Premium,Mobile,2020-02-01
+VWR0050,APAC,Japan,35-44,Basic,Mobile,2022-03-17
+VWR0051,North America,USA,35-44,Basic,Desktop,2020-07-29
+VWR0052,APAC,Japan,55+,Standard,Mobile,2020-01-12
+VWR0053,APAC,Japan,18-24,Basic,Smart TV,2023-03-11
+VWR0054,North America,Canada,18-24,Standard,Tablet,2020-09-02
+VWR0055,Europe,Italy,55+,Standard,Desktop,2021-09-18
+VWR0056,North America,Canada,18-24,Standard,Desktop,2021-05-22
+VWR0057,North America,USA,45-54,Basic,Tablet,2020-09-05
+VWR0058,Europe,France,45-54,Premium,Desktop,2023-01-24
+VWR0059,APAC,Japan,25-34,Premium,Mobile,2020-12-18
+VWR0060,North America,Mexico,25-34,Basic,Smart TV,2022-08-15
+VWR0061,LATAM,Colombia,35-44,Standard,Tablet,2020-09-17
+VWR0062,LATAM,Colombia,18-24,Premium,Desktop,2020-05-28
+VWR0063,North America,Mexico,55+,Premium,Desktop,2021-05-05
+VWR0064,LATAM,Argentina,35-44,Premium,Tablet,2020-07-05
+VWR0065,LATAM,Colombia,45-54,Standard,Mobile,2021-03-03
+VWR0066,LATAM,Colombia,18-24,Standard,Desktop,2020-04-17
+VWR0067,Europe,Italy,45-54,Standard,Smart TV,2020-11-11
+VWR0068,North America,Mexico,55+,Standard,Desktop,2020-09-28
+VWR0069,Europe,UK,45-54,Standard,Smart TV,2021-05-28
+VWR0070,APAC,Japan,25-34,Premium,Mobile,2023-10-03
+VWR0071,North America,Canada,25-34,Standard,Smart TV,2021-02-19
+VWR0072,North America,Mexico,45-54,Premium,Mobile,2022-10-04
+VWR0073,Europe,France,45-54,Premium,Desktop,2022-07-22
+VWR0074,APAC,Japan,18-24,Basic,Mobile,2020-03-15
+VWR0075,LATAM,Argentina,35-44,Standard,Desktop,2020-09-17
+VWR0076,APAC,India,18-24,Basic,Mobile,2020-05-30
+VWR0077,LATAM,Argentina,55+,Basic,Smart TV,2022-10-30
+VWR0078,LATAM,Argentina,18-24,Basic,Tablet,2023-10-15
+VWR0079,North America,USA,35-44,Basic,Tablet,2021-10-23
+VWR0080,LATAM,Colombia,55+,Premium,Mobile,2020-12-08
+VWR0081,LATAM,Brazil,55+,Premium,Smart TV,2022-07-19
+VWR0082,APAC,Japan,35-44,Premium,Desktop,2023-05-07
+VWR0083,APAC,Singapore,45-54,Premium,Mobile,2022-07-23
+VWR0084,Europe,Italy,25-34,Standard,Desktop,2020-01-24
+VWR0085,Europe,Spain,45-54,Basic,Mobile,2020-04-27
+VWR0086,APAC,South Korea,55+,Standard,Mobile,2020-08-30
+VWR0087,LATAM,Argentina,18-24,Standard,Tablet,2020-11-22
+VWR0088,North America,Mexico,18-24,Basic,Mobile,2020-07-05
+VWR0089,LATAM,Argentina,55+,Basic,Tablet,2020-11-22
+VWR0090,Europe,Italy,35-44,Standard,Desktop,2022-05-05
+VWR0091,North America,Canada,35-44,Premium,Mobile,2020-05-23
+VWR0092,APAC,India,35-44,Standard,Mobile,2021-10-16
+VWR0093,North America,Canada,18-24,Standard,Tablet,2023-07-16
+VWR0094,APAC,Japan,55+,Standard,Mobile,2021-06-08
+VWR0095,North America,Canada,45-54,Standard,Tablet,2023-02-27
+VWR0096,Europe,Spain,45-54,Basic,Tablet,2021-12-15
+VWR0097,Europe,France,35-44,Premium,Tablet,2020-07-18
+VWR0098,APAC,India,35-44,Basic,Tablet,2023-07-17
+VWR0099,LATAM,Colombia,55+,Basic,Tablet,2023-09-17
+VWR0100,LATAM,Colombia,25-34,Standard,Tablet,2021-04-20
+VWR0101,North America,USA,45-54,Basic,Smart TV,2020-12-10
+VWR0102,North America,Mexico,18-24,Basic,Desktop,2021-12-12
+VWR0103,Europe,France,18-24,Premium,Desktop,2020-03-30
+VWR0104,APAC,Japan,35-44,Basic,Mobile,2020-01-01
+VWR0105,APAC,Japan,55+,Standard,Mobile,2021-10-27
+VWR0106,Europe,Italy,25-34,Standard,Desktop,2022-09-15
+VWR0107,North America,Canada,25-34,Premium,Desktop,2021-09-28
+VWR0108,APAC,Japan,45-54,Standard,Mobile,2023-05-23
+VWR0109,Europe,UK,18-24,Standard,Desktop,2022-01-08
+VWR0110,LATAM,Chile,25-34,Standard,Mobile,2023-05-01
+VWR0111,LATAM,Argentina,35-44,Basic,Tablet,2022-04-14
+VWR0112,LATAM,Colombia,25-34,Basic,Tablet,2021-05-09
+VWR0113,Europe,France,18-24,Basic,Tablet,2023-12-18
+VWR0114,Europe,France,25-34,Premium,Mobile,2021-02-02
+VWR0115,Europe,Germany,25-34,Standard,Tablet,2021-07-10
+VWR0116,APAC,South Korea,35-44,Basic,Desktop,2021-09-28
+VWR0117,LATAM,Brazil,35-44,Basic,Mobile,2022-03-29
+VWR0118,LATAM,Chile,35-44,Basic,Tablet,2022-01-27
+VWR0119,LATAM,Colombia,45-54,Standard,Smart TV,2024-01-20
+VWR0120,North America,Canada,35-44,Basic,Mobile,2023-12-14
+VWR0121,North America,Mexico,35-44,Standard,Smart TV,2022-08-03
+VWR0122,APAC,South Korea,55+,Basic,Smart TV,2023-07-18
+VWR0123,Europe,Spain,55+,Premium,Tablet,2021-08-27
+VWR0124,Europe,France,25-34,Standard,Desktop,2021-05-14
+VWR0125,LATAM,Brazil,45-54,Standard,Desktop,2021-01-28
+VWR0126,LATAM,Brazil,55+,Basic,Desktop,2022-10-19
+VWR0127,Europe,Germany,18-24,Premium,Tablet,2021-11-05
+VWR0128,APAC,India,45-54,Premium,Mobile,2022-05-06
+VWR0129,Europe,France,25-34,Standard,Mobile,2021-04-17
+VWR0130,North America,Mexico,18-24,Basic,Tablet,2022-01-18
+VWR0131,Europe,Italy,45-54,Standard,Desktop,2021-07-20
+VWR0132,LATAM,Argentina,55+,Standard,Desktop,2022-12-19
+VWR0133,North America,Mexico,25-34,Basic,Smart TV,2021-09-28
+VWR0134,North America,Canada,35-44,Basic,Mobile,2023-07-03
+VWR0135,North America,USA,18-24,Standard,Desktop,2020-06-10
+VWR0136,LATAM,Brazil,35-44,Basic,Mobile,2022-04-27
+VWR0137,North America,USA,18-24,Premium,Tablet,2023-08-01
+VWR0138,LATAM,Chile,45-54,Basic,Desktop,2021-10-01
+VWR0139,APAC,Japan,25-34,Basic,Mobile,2022-01-24
+VWR0140,LATAM,Brazil,25-34,Standard,Smart TV,2022-06-17
+VWR0141,LATAM,Colombia,45-54,Basic,Tablet,2020-05-22
+VWR0142,APAC,Australia,45-54,Standard,Desktop,2021-06-30
+VWR0143,North America,Mexico,18-24,Basic,Mobile,2021-03-10
+VWR0144,Europe,Germany,45-54,Basic,Mobile,2022-06-15
+VWR0145,Europe,Germany,18-24,Standard,Smart TV,2023-05-06
+VWR0146,APAC,India,35-44,Basic,Mobile,2021-10-16
+VWR0147,Europe,France,25-34,Standard,Tablet,2023-10-11
+VWR0148,North America,Mexico,45-54,Premium,Smart TV,2021-01-18
+VWR0149,APAC,Japan,18-24,Basic,Mobile,2021-02-07
+VWR0150,Europe,Germany,35-44,Basic,Desktop,2022-04-25
+VWR0151,APAC,Singapore,35-44,Premium,Mobile,2021-12-26
+VWR0152,APAC,Japan,45-54,Basic,Mobile,2021-06-23
+VWR0153,APAC,Australia,35-44,Premium,Mobile,2020-04-23
+VWR0154,North America,USA,45-54,Premium,Smart TV,2023-11-24
+VWR0155,APAC,Singapore,18-24,Standard,Desktop,2021-11-10
+VWR0156,Europe,France,55+,Standard,Tablet,2021-04-01
+VWR0157,APAC,Australia,35-44,Basic,Mobile,2021-12-04
+VWR0158,APAC,Japan,25-34,Premium,Mobile,2020-04-18
+VWR0159,APAC,Japan,35-44,Standard,Mobile,2022-10-21
+VWR0160,North America,Mexico,35-44,Basic,Smart TV,2020-07-08
+VWR0161,LATAM,Argentina,55+,Standard,Smart TV,2021-05-22
+VWR0162,LATAM,Argentina,45-54,Basic,Mobile,2022-04-16
+VWR0163,North America,USA,35-44,Basic,Mobile,2020-10-04
+VWR0164,APAC,Japan,45-54,Standard,Mobile,2022-11-09
+VWR0165,LATAM,Colombia,55+,Premium,Tablet,2023-09-08
+VWR0166,North America,Mexico,45-54,Standard,Smart TV,2022-05-26
+VWR0167,LATAM,Chile,45-54,Premium,Desktop,2022-09-29
+VWR0168,North America,Mexico,25-34,Basic,Mobile,2021-12-26
+VWR0169,APAC,Australia,45-54,Basic,Desktop,2022-03-24
+VWR0170,APAC,Singapore,45-54,Standard,Tablet,2022-12-21
+VWR0171,North America,Mexico,35-44,Standard,Desktop,2022-12-18
+VWR0172,APAC,India,18-24,Basic,Smart TV,2023-09-23
+VWR0173,Europe,Italy,25-34,Standard,Mobile,2020-07-01
+VWR0174,APAC,Singapore,35-44,Basic,Mobile,2022-07-30
+VWR0175,APAC,Singapore,45-54,Standard,Mobile,2023-10-16
+VWR0176,APAC,Japan,55+,Premium,Tablet,2022-11-16
+VWR0177,LATAM,Colombia,45-54,Premium,Tablet,2021-07-02
+VWR0178,North America,USA,45-54,Basic,Smart TV,2021-03-19
+VWR0179,APAC,Singapore,35-44,Premium,Mobile,2020-02-11
+VWR0180,LATAM,Argentina,35-44,Premium,Mobile,2021-04-13
+VWR0181,LATAM,Argentina,45-54,Basic,Tablet,2021-05-19
+VWR0182,APAC,Japan,45-54,Standard,Mobile,2020-10-11
+VWR0183,APAC,South Korea,55+,Standard,Mobile,2023-01-18
+VWR0184,LATAM,Colombia,35-44,Premium,Mobile,2023-10-29
+VWR0185,North America,USA,18-24,Basic,Tablet,2021-03-23
+VWR0186,Europe,UK,25-34,Premium,Desktop,2021-10-10
+VWR0187,North America,Mexico,25-34,Basic,Desktop,2021-09-12
+VWR0188,LATAM,Argentina,18-24,Premium,Mobile,2021-10-10
+VWR0189,LATAM,Chile,55+,Basic,Mobile,2023-02-15
+VWR0190,Europe,UK,55+,Standard,Desktop,2020-04-03
+VWR0191,Europe,France,55+,Basic,Smart TV,2022-07-17
+VWR0192,APAC,Australia,35-44,Premium,Mobile,2023-09-17
+VWR0193,LATAM,Brazil,35-44,Premium,Mobile,2022-01-31
+VWR0194,North America,Mexico,55+,Standard,Mobile,2023-01-29
+VWR0195,LATAM,Brazil,45-54,Premium,Desktop,2020-10-21
+VWR0196,APAC,South Korea,45-54,Standard,Mobile,2023-09-18
+VWR0197,LATAM,Colombia,18-24,Premium,Desktop,2021-06-24
+VWR0198,Europe,France,45-54,Premium,Smart TV,2023-04-10
+VWR0199,North America,Mexico,55+,Basic,Tablet,2021-07-26
+VWR0200,APAC,South Korea,25-34,Premium,Mobile,2022-01-18
+VWR0201,North America,USA,35-44,Premium,Smart TV,2020-12-19
+VWR0202,APAC,India,25-34,Standard,Mobile,2022-03-20
+VWR0203,LATAM,Colombia,25-34,Basic,Tablet,2020-12-17
+VWR0204,APAC,Australia,25-34,Basic,Mobile,2020-05-10
+VWR0205,LATAM,Colombia,18-24,Premium,Desktop,2023-10-02
+VWR0206,Europe,Germany,45-54,Premium,Tablet,2023-02-10
+VWR0207,LATAM,Brazil,18-24,Basic,Mobile,2021-06-10
+VWR0208,North America,Canada,18-24,Basic,Desktop,2021-03-06
+VWR0209,LATAM,Chile,45-54,Premium,Desktop,2020-10-10
+VWR0210,APAC,Singapore,25-34,Premium,Mobile,2022-01-06
+VWR0211,APAC,Singapore,18-24,Standard,Desktop,2020-06-16
+VWR0212,North America,USA,45-54,Premium,Desktop,2020-06-17
+VWR0213,LATAM,Chile,25-34,Premium,Desktop,2020-09-20
+VWR0214,LATAM,Brazil,25-34,Premium,Desktop,2023-06-27
+VWR0215,North America,USA,45-54,Standard,Smart TV,2023-04-12
+VWR0216,Europe,Italy,55+,Premium,Mobile,2023-10-31
+VWR0217,North America,Mexico,45-54,Standard,Smart TV,2020-04-16
+VWR0218,LATAM,Argentina,18-24,Basic,Tablet,2024-02-08
+VWR0219,APAC,South Korea,25-34,Standard,Mobile,2020-04-26
+VWR0220,North America,Mexico,18-24,Standard,Smart TV,2023-09-16
+VWR0221,North America,USA,35-44,Standard,Desktop,2020-11-03
+VWR0222,APAC,South Korea,55+,Basic,Mobile,2022-07-19
+VWR0223,LATAM,Argentina,35-44,Premium,Smart TV,2020-12-31
+VWR0224,LATAM,Chile,55+,Standard,Tablet,2021-12-10
+VWR0225,LATAM,Brazil,35-44,Basic,Tablet,2022-11-28
+VWR0226,LATAM,Chile,35-44,Premium,Tablet,2021-10-26
+VWR0227,Europe,UK,18-24,Premium,Tablet,2022-10-06
+VWR0228,North America,Mexico,25-34,Basic,Smart TV,2023-05-17
+VWR0229,APAC,South Korea,45-54,Standard,Mobile,2021-04-30
+VWR0230,North America,USA,18-24,Basic,Mobile,2022-07-10
+VWR0231,North America,USA,55+,Premium,Tablet,2023-03-18
+VWR0232,Europe,France,45-54,Standard,Mobile,2020-07-29
+VWR0233,Europe,Spain,35-44,Basic,Smart TV,2020-12-25
+VWR0234,APAC,South Korea,35-44,Premium,Mobile,2023-02-28
+VWR0235,LATAM,Colombia,18-24,Premium,Desktop,2021-09-05
+VWR0236,North America,Mexico,45-54,Standard,Smart TV,2021-10-03
+VWR0237,APAC,South Korea,55+,Standard,Mobile,2022-06-07
+VWR0238,North America,Mexico,55+,Standard,Desktop,2022-11-27
+VWR0239,LATAM,Argentina,45-54,Premium,Tablet,2023-01-04
+VWR0240,LATAM,Argentina,25-34,Basic,Smart TV,2021-03-18
+VWR0241,North America,USA,25-34,Premium,Tablet,2022-12-08
+VWR0242,North America,Mexico,18-24,Premium,Tablet,2020-02-24
+VWR0243,Europe,Germany,45-54,Basic,Mobile,2023-04-21
+VWR0244,LATAM,Chile,18-24,Premium,Desktop,2020-05-22
+VWR0245,LATAM,Colombia,25-34,Premium,Mobile,2023-08-08
+VWR0246,Europe,France,35-44,Premium,Mobile,2020-11-08
+VWR0247,Europe,France,35-44,Basic,Tablet,2022-09-11
+VWR0248,APAC,Singapore,55+,Standard,Mobile,2023-12-30
+VWR0249,APAC,South Korea,25-34,Premium,Mobile,2022-04-19
+VWR0250,Europe,Spain,35-44,Basic,Tablet,2020-04-30
+VWR0251,APAC,Japan,45-54,Basic,Mobile,2023-09-11
+VWR0252,LATAM,Colombia,55+,Premium,Tablet,2023-11-29
+VWR0253,APAC,Australia,25-34,Standard,Mobile,2022-06-12
+VWR0254,Europe,Italy,25-34,Standard,Mobile,2020-10-10
+VWR0255,North America,Canada,25-34,Premium,Mobile,2022-10-28
+VWR0256,LATAM,Brazil,25-34,Premium,Smart TV,2024-02-05
+VWR0257,Europe,Italy,18-24,Premium,Desktop,2021-12-07
+VWR0258,APAC,Australia,55+,Basic,Mobile,2021-07-24
+VWR0259,Europe,France,35-44,Standard,Tablet,2021-05-26
+VWR0260,APAC,South Korea,35-44,Standard,Mobile,2023-10-30
+VWR0261,Europe,Spain,45-54,Basic,Tablet,2022-09-30
+VWR0262,APAC,India,35-44,Standard,Smart TV,2022-05-19
+VWR0263,LATAM,Brazil,55+,Basic,Mobile,2023-09-14
+VWR0264,Europe,France,18-24,Standard,Desktop,2023-05-15
+VWR0265,LATAM,Brazil,45-54,Standard,Smart TV,2020-03-15
+VWR0266,LATAM,Colombia,55+,Standard,Desktop,2021-07-06
+VWR0267,LATAM,Chile,25-34,Basic,Smart TV,2020-10-03
+VWR0268,Europe,Italy,18-24,Standard,Tablet,2022-10-04
+VWR0269,Europe,Spain,45-54,Standard,Smart TV,2022-08-19
+VWR0270,LATAM,Argentina,35-44,Basic,Desktop,2021-10-18
+VWR0271,North America,Mexico,45-54,Standard,Smart TV,2021-10-24
+VWR0272,Europe,France,18-24,Premium,Smart TV,2021-01-06
+VWR0273,LATAM,Colombia,35-44,Basic,Mobile,2020-10-16
+VWR0274,LATAM,Colombia,18-24,Standard,Tablet,2022-10-23
+VWR0275,LATAM,Colombia,45-54,Standard,Desktop,2021-10-03
+VWR0276,LATAM,Brazil,45-54,Standard,Desktop,2021-05-21
+VWR0277,North America,USA,35-44,Standard,Desktop,2021-03-22
+VWR0278,LATAM,Argentina,25-34,Premium,Tablet,2020-09-02
+VWR0279,LATAM,Chile,25-34,Standard,Tablet,2020-02-06
+VWR0280,North America,Canada,25-34,Premium,Desktop,2022-09-20
+VWR0281,LATAM,Brazil,55+,Premium,Desktop,2021-06-15
+VWR0282,Europe,Germany,55+,Basic,Mobile,2022-09-27
+VWR0283,APAC,India,35-44,Basic,Tablet,2020-09-05
+VWR0284,North America,Mexico,25-34,Premium,Smart TV,2020-07-05
+VWR0285,Europe,Germany,18-24,Standard,Desktop,2022-04-08
+VWR0286,Europe,UK,25-34,Premium,Smart TV,2023-06-19
+VWR0287,LATAM,Brazil,55+,Basic,Desktop,2020-08-23
+VWR0288,LATAM,Colombia,35-44,Basic,Smart TV,2022-03-27
+VWR0289,Europe,France,45-54,Standard,Tablet,2020-02-08
+VWR0290,Europe,UK,25-34,Premium,Desktop,2023-01-03
+VWR0291,North America,Mexico,55+,Standard,Smart TV,2021-09-19
+VWR0292,Europe,Spain,55+,Premium,Desktop,2024-01-13
+VWR0293,LATAM,Argentina,55+,Premium,Smart TV,2020-10-18
+VWR0294,North America,USA,18-24,Premium,Smart TV,2020-12-24
+VWR0295,Europe,Italy,35-44,Standard,Smart TV,2021-02-05
+VWR0296,Europe,France,45-54,Basic,Mobile,2022-11-17
+VWR0297,Europe,Germany,45-54,Basic,Tablet,2023-04-28
+VWR0298,LATAM,Chile,18-24,Basic,Smart TV,2023-12-10
+VWR0299,Europe,Germany,55+,Premium,Smart TV,2022-09-21
+VWR0300,APAC,Japan,55+,Basic,Mobile,2022-06-29
+VWR0301,Europe,Italy,25-34,Basic,Smart TV,2023-12-18
+VWR0302,North America,USA,45-54,Basic,Desktop,2021-12-23
+VWR0303,LATAM,Colombia,25-34,Premium,Tablet,2020-06-06
+VWR0304,LATAM,Chile,25-34,Basic,Smart TV,2021-08-14
+VWR0305,LATAM,Chile,55+,Basic,Tablet,2021-01-30
+VWR0306,Europe,UK,18-24,Standard,Tablet,2021-01-28
+VWR0307,LATAM,Argentina,18-24,Standard,Smart TV,2020-08-11
+VWR0308,Europe,Spain,45-54,Basic,Tablet,2020-04-12
+VWR0309,APAC,Singapore,18-24,Premium,Mobile,2021-07-18
+VWR0310,Europe,UK,45-54,Basic,Mobile,2021-08-16
+VWR0311,Europe,Italy,25-34,Standard,Smart TV,2021-01-07
+VWR0312,Europe,Germany,25-34,Basic,Smart TV,2021-04-25
+VWR0313,North America,USA,55+,Premium,Smart TV,2022-07-14
+VWR0314,Europe,Spain,55+,Premium,Mobile,2024-01-08
+VWR0315,Europe,UK,55+,Premium,Smart TV,2021-08-28
+VWR0316,LATAM,Chile,25-34,Premium,Mobile,2020-09-03
+VWR0317,Europe,France,25-34,Basic,Desktop,2023-01-29
+VWR0318,North America,USA,18-24,Standard,Mobile,2021-05-15
+VWR0319,LATAM,Chile,18-24,Basic,Smart TV,2020-05-01
+VWR0320,APAC,Singapore,18-24,Premium,Mobile,2020-12-04
+VWR0321,North America,Mexico,18-24,Basic,Mobile,2022-02-19
+VWR0322,LATAM,Argentina,25-34,Basic,Desktop,2021-11-03
+VWR0323,North America,Mexico,45-54,Premium,Tablet,2021-03-07
+VWR0324,LATAM,Colombia,55+,Premium,Desktop,2020-09-20
+VWR0325,Europe,France,25-34,Premium,Smart TV,2022-10-28
+VWR0326,North America,Canada,18-24,Premium,Smart TV,2021-12-06
+VWR0327,LATAM,Argentina,25-34,Standard,Mobile,2022-08-26
+VWR0328,Europe,Germany,45-54,Basic,Smart TV,2021-03-27
+VWR0329,LATAM,Brazil,45-54,Premium,Smart TV,2023-03-29
+VWR0330,LATAM,Argentina,45-54,Premium,Smart TV,2021-02-19
+VWR0331,Europe,UK,55+,Basic,Desktop,2022-07-09
+VWR0332,LATAM,Argentina,35-44,Basic,Smart TV,2021-12-18
+VWR0333,APAC,South Korea,35-44,Basic,Mobile,2020-12-12
+VWR0334,APAC,South Korea,45-54,Basic,Smart TV,2020-04-29
+VWR0335,Europe,UK,25-34,Basic,Tablet,2023-02-08
+VWR0336,North America,Canada,18-24,Basic,Mobile,2021-02-03
+VWR0337,Europe,Italy,18-24,Standard,Smart TV,2020-03-18
+VWR0338,North America,USA,18-24,Basic,Tablet,2021-12-04
+VWR0339,LATAM,Brazil,55+,Basic,Desktop,2020-06-19
+VWR0340,North America,Mexico,35-44,Basic,Desktop,2020-12-31
+VWR0341,LATAM,Brazil,55+,Premium,Mobile,2020-12-01
+VWR0342,LATAM,Chile,45-54,Basic,Smart TV,2020-04-28
+VWR0343,North America,USA,35-44,Premium,Tablet,2023-02-26
+VWR0344,North America,Canada,55+,Premium,Mobile,2020-01-17
+VWR0345,APAC,India,45-54,Basic,Desktop,2021-01-31
+VWR0346,North America,USA,55+,Basic,Smart TV,2021-09-10
+VWR0347,Europe,Spain,45-54,Premium,Mobile,2022-01-24
+VWR0348,North America,USA,25-34,Standard,Smart TV,2023-07-25
+VWR0349,North America,Mexico,55+,Basic,Mobile,2023-08-20
+VWR0350,LATAM,Colombia,45-54,Standard,Mobile,2023-10-24
+VWR0351,LATAM,Chile,25-34,Premium,Tablet,2023-08-26
+VWR0352,LATAM,Colombia,25-34,Standard,Mobile,2021-07-24
+VWR0353,North America,USA,25-34,Premium,Desktop,2020-12-17
+VWR0354,LATAM,Argentina,45-54,Standard,Mobile,2022-11-18
+VWR0355,LATAM,Argentina,25-34,Premium,Desktop,2020-07-04
+VWR0356,LATAM,Colombia,18-24,Basic,Desktop,2021-03-18
+VWR0357,Europe,Italy,45-54,Standard,Desktop,2022-05-25
+VWR0358,Europe,France,25-34,Basic,Tablet,2021-11-28
+VWR0359,North America,Canada,45-54,Premium,Tablet,2022-07-02
+VWR0360,Europe,Germany,45-54,Basic,Desktop,2021-11-20
+VWR0361,APAC,Australia,35-44,Basic,Mobile,2020-02-05
+VWR0362,North America,Mexico,18-24,Premium,Smart TV,2020-02-04
+VWR0363,LATAM,Brazil,45-54,Standard,Tablet,2023-09-26
+VWR0364,Europe,UK,45-54,Basic,Mobile,2023-04-13
+VWR0365,North America,Mexico,55+,Standard,Mobile,2022-12-24
+VWR0366,Europe,France,25-34,Standard,Mobile,2020-05-08
+VWR0367,Europe,Spain,25-34,Basic,Mobile,2020-10-08
+VWR0368,North America,USA,55+,Standard,Mobile,2022-05-10
+VWR0369,APAC,Japan,45-54,Standard,Mobile,2022-06-09
+VWR0370,North America,Canada,25-34,Standard,Desktop,2021-07-13
+VWR0371,APAC,South Korea,55+,Basic,Smart TV,2020-04-01
+VWR0372,North America,USA,25-34,Premium,Mobile,2021-07-08
+VWR0373,LATAM,Argentina,45-54,Standard,Mobile,2023-08-12
+VWR0374,APAC,Japan,18-24,Basic,Mobile,2022-10-07
+VWR0375,North America,USA,45-54,Standard,Tablet,2020-02-11
+VWR0376,Europe,Italy,45-54,Premium,Tablet,2023-07-02
+VWR0377,APAC,Japan,18-24,Basic,Mobile,2020-03-05
+VWR0378,LATAM,Brazil,55+,Standard,Tablet,2022-08-09
+VWR0379,LATAM,Chile,55+,Basic,Desktop,2022-08-29
+VWR0380,North America,USA,45-54,Standard,Smart TV,2022-12-19
+VWR0381,LATAM,Chile,35-44,Premium,Smart TV,2020-02-25
+VWR0382,APAC,India,55+,Standard,Desktop,2022-03-21
+VWR0383,LATAM,Brazil,45-54,Standard,Desktop,2022-01-28
+VWR0384,North America,Canada,25-34,Premium,Mobile,2022-05-02
+VWR0385,LATAM,Chile,25-34,Premium,Smart TV,2022-05-14
+VWR0386,LATAM,Chile,45-54,Standard,Mobile,2021-03-04
+VWR0387,APAC,Singapore,25-34,Standard,Mobile,2020-01-10
+VWR0388,North America,USA,45-54,Premium,Desktop,2022-03-14
+VWR0389,North America,USA,18-24,Standard,Desktop,2022-06-26
+VWR0390,Europe,Germany,55+,Standard,Tablet,2020-06-23
+VWR0391,North America,Mexico,35-44,Standard,Desktop,2020-11-09
+VWR0392,Europe,UK,45-54,Basic,Tablet,2020-09-21
+VWR0393,Europe,UK,25-34,Premium,Mobile,2021-10-27
+VWR0394,North America,USA,25-34,Premium,Smart TV,2023-12-08
+VWR0395,LATAM,Chile,35-44,Premium,Tablet,2021-01-30
+VWR0396,Europe,Germany,25-34,Basic,Mobile,2022-11-14
+VWR0397,North America,Canada,35-44,Premium,Smart TV,2020-03-28
+VWR0398,LATAM,Chile,45-54,Basic,Tablet,2021-09-01
+VWR0399,North America,USA,25-34,Premium,Mobile,2020-04-12
+VWR0400,LATAM,Chile,18-24,Premium,Mobile,2023-10-31
+VWR0401,North America,USA,55+,Standard,Mobile,2023-06-19
+VWR0402,North America,Mexico,25-34,Basic,Desktop,2022-07-07
+VWR0403,APAC,India,55+,Basic,Mobile,2022-11-30
+VWR0404,APAC,India,45-54,Basic,Mobile,2023-08-13
+VWR0405,LATAM,Colombia,18-24,Premium,Mobile,2020-11-12
+VWR0406,North America,Mexico,25-34,Premium,Tablet,2023-04-19
+VWR0407,Europe,France,45-54,Basic,Mobile,2021-04-01
+VWR0408,Europe,Italy,45-54,Standard,Desktop,2023-12-16
+VWR0409,LATAM,Argentina,55+,Standard,Desktop,2024-01-09
+VWR0410,LATAM,Chile,55+,Basic,Mobile,2022-11-18
+VWR0411,APAC,Singapore,18-24,Premium,Mobile,2022-05-02
+VWR0412,LATAM,Colombia,55+,Premium,Tablet,2020-08-20
+VWR0413,LATAM,Brazil,35-44,Premium,Tablet,2020-05-07
+VWR0414,North America,Mexico,18-24,Basic,Desktop,2022-08-17
+VWR0415,LATAM,Colombia,35-44,Standard,Mobile,2020-12-04
+VWR0416,North America,Mexico,35-44,Standard,Tablet,2020-11-19
+VWR0417,North America,USA,25-34,Premium,Smart TV,2020-12-10
+VWR0418,LATAM,Argentina,55+,Basic,Tablet,2024-02-07
+VWR0419,LATAM,Argentina,18-24,Basic,Smart TV,2023-07-25
+VWR0420,APAC,Australia,55+,Premium,Mobile,2022-04-23
+VWR0421,LATAM,Argentina,45-54,Premium,Smart TV,2022-12-17
+VWR0422,APAC,Japan,35-44,Basic,Mobile,2021-04-17
+VWR0423,LATAM,Brazil,25-34,Premium,Desktop,2022-08-26
+VWR0424,APAC,Singapore,55+,Basic,Desktop,2020-02-21
+VWR0425,APAC,South Korea,18-24,Standard,Tablet,2021-11-18
+VWR0426,APAC,India,18-24,Basic,Mobile,2021-06-10
+VWR0427,North America,Canada,18-24,Basic,Desktop,2020-03-13
+VWR0428,LATAM,Brazil,45-54,Premium,Tablet,2020-07-05
+VWR0429,APAC,South Korea,45-54,Standard,Mobile,2023-10-16
+VWR0430,Europe,Germany,55+,Standard,Desktop,2020-01-07
+VWR0431,North America,Canada,35-44,Premium,Desktop,2020-05-27
+VWR0432,LATAM,Chile,45-54,Premium,Smart TV,2020-11-22
+VWR0433,APAC,Japan,55+,Basic,Mobile,2022-06-01
+VWR0434,North America,Canada,35-44,Premium,Desktop,2021-03-10
+VWR0435,Europe,Italy,55+,Basic,Smart TV,2020-10-09
+VWR0436,Europe,Spain,25-34,Basic,Tablet,2023-11-27
+VWR0437,North America,Canada,25-34,Basic,Tablet,2022-06-24
+VWR0438,APAC,Singapore,25-34,Basic,Mobile,2021-04-21
+VWR0439,APAC,Singapore,35-44,Standard,Mobile,2020-03-16
+VWR0440,LATAM,Chile,25-34,Basic,Desktop,2020-01-07
+VWR0441,North America,Canada,45-54,Standard,Desktop,2021-09-04
+VWR0442,LATAM,Chile,45-54,Basic,Mobile,2022-12-09
+VWR0443,APAC,Singapore,35-44,Standard,Tablet,2021-12-17
+VWR0444,APAC,Australia,45-54,Standard,Mobile,2022-09-16
+VWR0445,North America,Canada,18-24,Standard,Desktop,2021-09-06
+VWR0446,APAC,Japan,25-34,Standard,Mobile,2023-08-23
+VWR0447,Europe,Spain,35-44,Standard,Tablet,2022-03-19
+VWR0448,North America,Mexico,25-34,Basic,Smart TV,2021-05-31
+VWR0449,Europe,UK,55+,Premium,Desktop,2022-12-23
+VWR0450,North America,Mexico,45-54,Basic,Smart TV,2021-10-11
+VWR0451,LATAM,Brazil,45-54,Standard,Desktop,2020-03-10
+VWR0452,LATAM,Brazil,25-34,Basic,Smart TV,2023-01-21
+VWR0453,Europe,Germany,35-44,Standard,Tablet,2023-04-11
+VWR0454,North America,USA,45-54,Standard,Mobile,2022-08-08
+VWR0455,APAC,Japan,18-24,Basic,Mobile,2021-02-27
+VWR0456,LATAM,Colombia,25-34,Standard,Smart TV,2022-05-16
+VWR0457,APAC,India,25-34,Standard,Mobile,2022-09-11
+VWR0458,APAC,South Korea,35-44,Standard,Tablet,2020-03-31
+VWR0459,North America,Canada,25-34,Standard,Tablet,2020-10-11
+VWR0460,Europe,France,25-34,Premium,Tablet,2023-10-03
+VWR0461,North America,Mexico,55+,Premium,Tablet,2020-11-01
+VWR0462,LATAM,Argentina,55+,Premium,Mobile,2021-01-14
+VWR0463,APAC,Japan,45-54,Basic,Mobile,2021-04-24
+VWR0464,North America,Mexico,35-44,Standard,Mobile,2020-12-17
+VWR0465,LATAM,Argentina,25-34,Basic,Mobile,2022-09-04
+VWR0466,APAC,India,55+,Premium,Mobile,2022-08-05
+VWR0467,LATAM,Chile,35-44,Premium,Smart TV,2020-10-22
+VWR0468,LATAM,Argentina,45-54,Basic,Tablet,2020-12-09
+VWR0469,North America,USA,55+,Premium,Desktop,2020-05-16
+VWR0470,APAC,Singapore,35-44,Premium,Mobile,2023-02-15
+VWR0471,APAC,India,45-54,Standard,Desktop,2024-01-04
+VWR0472,LATAM,Chile,55+,Premium,Smart TV,2020-06-11
+VWR0473,Europe,France,18-24,Premium,Smart TV,2020-11-03
+VWR0474,LATAM,Colombia,45-54,Standard,Smart TV,2020-08-19
+VWR0475,North America,USA,35-44,Standard,Desktop,2023-11-28
+VWR0476,LATAM,Colombia,35-44,Premium,Smart TV,2020-07-07
+VWR0477,LATAM,Colombia,35-44,Basic,Desktop,2023-10-28
+VWR0478,Europe,France,45-54,Basic,Smart TV,2022-08-03
+VWR0479,Europe,Italy,25-34,Basic,Mobile,2022-02-03
+VWR0480,Europe,France,18-24,Premium,Tablet,2021-06-18
+VWR0481,North America,USA,55+,Premium,Desktop,2021-12-12
+VWR0482,LATAM,Brazil,18-24,Premium,Tablet,2021-05-06
+VWR0483,Europe,Germany,35-44,Premium,Desktop,2020-04-30
+VWR0484,North America,Mexico,35-44,Standard,Desktop,2021-03-21
+VWR0485,Europe,Italy,35-44,Basic,Mobile,2022-07-02
+VWR0486,APAC,Australia,35-44,Standard,Mobile,2023-09-23
+VWR0487,Europe,UK,18-24,Basic,Smart TV,2020-08-07
+VWR0488,LATAM,Chile,45-54,Basic,Tablet,2021-09-19
+VWR0489,Europe,Spain,55+,Basic,Smart TV,2022-03-20
+VWR0490,North America,Canada,25-34,Basic,Desktop,2021-06-12
+VWR0491,APAC,South Korea,35-44,Standard,Desktop,2021-07-07
+VWR0492,APAC,India,18-24,Basic,Mobile,2021-03-17
+VWR0493,LATAM,Brazil,55+,Standard,Mobile,2022-03-18
+VWR0494,APAC,Australia,18-24,Premium,Desktop,2020-01-08
+VWR0495,Europe,France,18-24,Basic,Desktop,2023-12-17
+VWR0496,North America,Canada,35-44,Basic,Tablet,2022-06-27
+VWR0497,LATAM,Brazil,55+,Basic,Smart TV,2023-08-23
+VWR0498,APAC,Japan,55+,Basic,Smart TV,2020-08-02
+VWR0499,APAC,Japan,18-24,Premium,Mobile,2020-07-13
+VWR0500,Europe,France,18-24,Standard,Smart TV,2023-01-09
+VWR0501,LATAM,Argentina,35-44,Basic,Mobile,2022-11-12
+VWR0502,Europe,Spain,18-24,Premium,Smart TV,2023-10-05
+VWR0503,APAC,Japan,55+,Basic,Mobile,2022-05-02
+VWR0504,North America,Canada,45-54,Premium,Smart TV,2023-11-27
+VWR0505,Europe,Germany,25-34,Standard,Mobile,2020-05-15
+VWR0506,LATAM,Chile,55+,Premium,Smart TV,2023-10-17
+VWR0507,LATAM,Chile,18-24,Premium,Mobile,2020-09-14
+VWR0508,North America,Mexico,18-24,Basic,Tablet,2023-01-08
+VWR0509,APAC,Singapore,35-44,Basic,Mobile,2020-08-26
+VWR0510,North America,Canada,45-54,Standard,Desktop,2021-04-13
+VWR0511,Europe,Italy,25-34,Basic,Smart TV,2021-07-27
+VWR0512,Europe,France,35-44,Basic,Smart TV,2023-09-05
+VWR0513,Europe,Spain,45-54,Premium,Tablet,2021-08-19
+VWR0514,LATAM,Chile,18-24,Premium,Smart TV,2023-12-03
+VWR0515,North America,Mexico,25-34,Premium,Mobile,2020-05-09
+VWR0516,LATAM,Brazil,35-44,Premium,Mobile,2020-08-21
+VWR0517,LATAM,Argentina,18-24,Standard,Desktop,2022-09-10
+VWR0518,LATAM,Chile,35-44,Basic,Smart TV,2023-08-30
+VWR0519,APAC,Singapore,55+,Premium,Mobile,2023-03-13
+VWR0520,APAC,South Korea,18-24,Basic,Mobile,2024-01-05
+VWR0521,North America,Canada,35-44,Basic,Tablet,2021-01-19
+VWR0522,North America,USA,55+,Premium,Tablet,2020-02-16
+VWR0523,Europe,Italy,18-24,Basic,Smart TV,2020-05-21
+VWR0524,North America,USA,55+,Basic,Tablet,2022-09-22
+VWR0525,APAC,South Korea,35-44,Basic,Mobile,2020-11-06
+VWR0526,LATAM,Brazil,45-54,Premium,Mobile,2022-11-19
+VWR0527,North America,Mexico,18-24,Standard,Desktop,2023-10-13
+VWR0528,North America,Mexico,55+,Standard,Mobile,2020-05-29
+VWR0529,LATAM,Argentina,55+,Basic,Mobile,2023-04-10
+VWR0530,North America,Canada,35-44,Basic,Desktop,2021-04-24
+VWR0531,Europe,Germany,55+,Standard,Tablet,2022-06-13
+VWR0532,LATAM,Brazil,25-34,Premium,Smart TV,2023-05-20
+VWR0533,LATAM,Brazil,35-44,Premium,Smart TV,2021-12-06
+VWR0534,Europe,France,45-54,Standard,Mobile,2020-09-26
+VWR0535,LATAM,Brazil,55+,Standard,Smart TV,2023-05-29
+VWR0536,Europe,Italy,35-44,Basic,Tablet,2023-07-31
+VWR0537,Europe,Germany,55+,Standard,Desktop,2023-02-17
+VWR0538,Europe,Germany,18-24,Standard,Mobile,2021-01-04
+VWR0539,APAC,South Korea,25-34,Basic,Tablet,2020-04-24
+VWR0540,North America,Canada,55+,Premium,Tablet,2020-03-21
+VWR0541,Europe,France,35-44,Basic,Tablet,2022-10-02
+VWR0542,APAC,Australia,18-24,Basic,Mobile,2020-04-26
+VWR0543,Europe,Germany,45-54,Basic,Mobile,2020-08-31
+VWR0544,APAC,India,35-44,Standard,Mobile,2021-02-13
+VWR0545,LATAM,Chile,55+,Basic,Tablet,2021-12-01
+VWR0546,APAC,Singapore,55+,Premium,Mobile,2021-09-17
+VWR0547,Europe,Spain,45-54,Basic,Mobile,2020-03-10
+VWR0548,Europe,UK,18-24,Basic,Mobile,2020-05-15
+VWR0549,LATAM,Colombia,55+,Basic,Tablet,2023-02-21
+VWR0550,Europe,Germany,25-34,Basic,Mobile,2023-11-05
+VWR0551,LATAM,Chile,25-34,Basic,Smart TV,2023-08-17
+VWR0552,Europe,Germany,18-24,Basic,Mobile,2022-06-19
+VWR0553,Europe,Germany,35-44,Basic,Smart TV,2020-01-31
+VWR0554,Europe,Spain,25-34,Premium,Mobile,2023-05-20
+VWR0555,North America,Canada,25-34,Premium,Tablet,2024-01-05
+VWR0556,APAC,Japan,35-44,Standard,Mobile,2021-09-03
+VWR0557,North America,USA,18-24,Standard,Smart TV,2022-06-06
+VWR0558,LATAM,Brazil,55+,Premium,Smart TV,2022-06-25
+VWR0559,APAC,Singapore,35-44,Standard,Mobile,2023-01-23
+VWR0560,LATAM,Brazil,35-44,Premium,Desktop,2021-12-23
+VWR0561,Europe,France,25-34,Basic,Desktop,2021-08-16
+VWR0562,North America,Canada,55+,Standard,Mobile,2023-02-28
+VWR0563,APAC,Australia,45-54,Standard,Mobile,2022-05-09
+VWR0564,North America,Canada,55+,Premium,Smart TV,2021-01-21
+VWR0565,LATAM,Chile,25-34,Standard,Smart TV,2022-05-23
+VWR0566,LATAM,Argentina,45-54,Standard,Tablet,2022-12-12
+VWR0567,Europe,UK,45-54,Basic,Smart TV,2021-02-01
+VWR0568,APAC,Australia,25-34,Standard,Mobile,2020-05-23
+VWR0569,LATAM,Colombia,45-54,Standard,Desktop,2020-09-05
+VWR0570,APAC,South Korea,18-24,Standard,Desktop,2021-11-24
+VWR0571,Europe,Germany,25-34,Basic,Smart TV,2022-09-28
+VWR0572,North America,Canada,18-24,Basic,Desktop,2020-10-23
+VWR0573,APAC,South Korea,35-44,Premium,Mobile,2020-03-09
+VWR0574,Europe,Italy,45-54,Basic,Tablet,2023-07-14
+VWR0575,APAC,India,45-54,Premium,Mobile,2020-10-14
+VWR0576,LATAM,Brazil,18-24,Premium,Tablet,2021-06-30
+VWR0577,LATAM,Brazil,55+,Premium,Desktop,2021-03-09
+VWR0578,Europe,Germany,25-34,Standard,Desktop,2023-06-14
+VWR0579,North America,Canada,18-24,Standard,Desktop,2023-05-24
+VWR0580,Europe,Germany,45-54,Basic,Tablet,2020-05-29
+VWR0581,Europe,UK,55+,Standard,Desktop,2022-12-24
+VWR0582,Europe,France,45-54,Basic,Tablet,2021-02-06
+VWR0583,APAC,Japan,35-44,Basic,Mobile,2021-10-23
+VWR0584,LATAM,Chile,35-44,Premium,Desktop,2021-05-17
+VWR0585,Europe,Italy,18-24,Premium,Mobile,2023-10-28
+VWR0586,Europe,France,18-24,Standard,Desktop,2023-05-25
+VWR0587,Europe,Germany,45-54,Standard,Tablet,2023-03-22
+VWR0588,LATAM,Chile,18-24,Premium,Smart TV,2021-03-07
+VWR0589,LATAM,Colombia,45-54,Basic,Mobile,2020-04-03
+VWR0590,LATAM,Argentina,35-44,Basic,Mobile,2021-01-18
+VWR0591,North America,USA,35-44,Standard,Smart TV,2022-01-28
+VWR0592,LATAM,Chile,18-24,Standard,Mobile,2023-12-27
+VWR0593,APAC,Singapore,35-44,Basic,Mobile,2020-12-31
+VWR0594,LATAM,Argentina,35-44,Basic,Mobile,2020-04-19
+VWR0595,Europe,Italy,35-44,Standard,Tablet,2020-08-23
+VWR0596,LATAM,Argentina,45-54,Premium,Desktop,2022-08-17
+VWR0597,North America,Canada,55+,Standard,Smart TV,2023-08-21
+VWR0598,LATAM,Chile,35-44,Premium,Tablet,2023-05-05
+VWR0599,APAC,Japan,35-44,Basic,Mobile,2023-05-13
+VWR0600,North America,Mexico,55+,Premium,Smart TV,2022-10-15
+VWR0601,APAC,South Korea,18-24,Standard,Mobile,2023-07-17
+VWR0602,APAC,Japan,25-34,Basic,Mobile,2022-01-09
+VWR0603,LATAM,Brazil,25-34,Premium,Desktop,2020-05-29
+VWR0604,APAC,South Korea,18-24,Basic,Mobile,2022-01-16
+VWR0605,APAC,Japan,35-44,Basic,Mobile,2022-10-09
+VWR0606,LATAM,Argentina,55+,Basic,Desktop,2020-01-17
+VWR0607,LATAM,Argentina,45-54,Basic,Smart TV,2020-05-30
+VWR0608,LATAM,Colombia,35-44,Premium,Desktop,2021-05-29
+VWR0609,APAC,India,18-24,Standard,Mobile,2020-06-21
+VWR0610,Europe,France,25-34,Standard,Tablet,2020-11-23
+VWR0611,Europe,Italy,55+,Premium,Smart TV,2020-02-06
+VWR0612,North America,Canada,35-44,Premium,Tablet,2023-11-04
+VWR0613,North America,USA,45-54,Basic,Desktop,2020-12-12
+VWR0614,Europe,Germany,55+,Basic,Mobile,2021-05-04
+VWR0615,LATAM,Argentina,45-54,Basic,Mobile,2022-07-19
+VWR0616,Europe,UK,45-54,Premium,Desktop,2020-08-13
+VWR0617,Europe,Spain,25-34,Premium,Tablet,2023-12-03
+VWR0618,APAC,Australia,25-34,Standard,Smart TV,2020-11-20
+VWR0619,APAC,Japan,25-34,Premium,Smart TV,2023-02-05
+VWR0620,Europe,UK,18-24,Standard,Mobile,2023-07-05
+VWR0621,LATAM,Chile,18-24,Basic,Desktop,2021-02-09
+VWR0622,North America,USA,35-44,Standard,Mobile,2020-06-12
+VWR0623,APAC,Australia,18-24,Basic,Smart TV,2021-03-11
+VWR0624,LATAM,Colombia,35-44,Basic,Mobile,2021-07-24
+VWR0625,LATAM,Colombia,25-34,Premium,Tablet,2023-09-28
+VWR0626,Europe,Spain,35-44,Standard,Desktop,2022-01-29
+VWR0627,North America,Mexico,55+,Basic,Smart TV,2023-08-11
+VWR0628,APAC,Australia,35-44,Basic,Mobile,2022-05-20
+VWR0629,North America,USA,55+,Basic,Mobile,2020-12-14
+VWR0630,Europe,Germany,18-24,Standard,Smart TV,2021-05-12
+VWR0631,APAC,South Korea,55+,Premium,Mobile,2022-06-05
+VWR0632,LATAM,Argentina,18-24,Premium,Tablet,2021-04-25
+VWR0633,APAC,South Korea,45-54,Basic,Mobile,2020-01-12
+VWR0634,LATAM,Brazil,18-24,Standard,Mobile,2023-03-06
+VWR0635,LATAM,Colombia,35-44,Premium,Mobile,2022-12-28
+VWR0636,LATAM,Brazil,55+,Premium,Desktop,2021-05-22
+VWR0637,Europe,Spain,55+,Premium,Tablet,2023-10-18
+VWR0638,APAC,Japan,18-24,Premium,Smart TV,2022-03-20
+VWR0639,Europe,UK,35-44,Basic,Tablet,2022-04-22
+VWR0640,LATAM,Argentina,25-34,Basic,Desktop,2021-11-29
+VWR0641,Europe,Spain,55+,Standard,Desktop,2021-09-02
+VWR0642,North America,Canada,25-34,Premium,Tablet,2022-12-17
+VWR0643,APAC,Singapore,35-44,Premium,Mobile,2021-11-01
+VWR0644,North America,Canada,35-44,Standard,Tablet,2022-09-06
+VWR0645,LATAM,Brazil,18-24,Basic,Desktop,2023-10-07
+VWR0646,North America,Canada,55+,Standard,Desktop,2023-05-19
+VWR0647,APAC,Singapore,45-54,Premium,Mobile,2020-10-10
+VWR0648,North America,USA,25-34,Standard,Tablet,2020-04-01
+VWR0649,North America,Mexico,18-24,Standard,Mobile,2020-09-15
+VWR0650,Europe,Germany,45-54,Basic,Smart TV,2023-04-22
+VWR0651,North America,USA,25-34,Basic,Smart TV,2023-02-16
+VWR0652,LATAM,Chile,18-24,Basic,Mobile,2023-12-25
+VWR0653,APAC,Singapore,45-54,Standard,Mobile,2022-12-08
+VWR0654,APAC,South Korea,25-34,Standard,Desktop,2020-04-19
+VWR0655,North America,Canada,25-34,Basic,Desktop,2021-09-01
+VWR0656,APAC,South Korea,18-24,Standard,Mobile,2021-05-27
+VWR0657,Europe,Germany,25-34,Standard,Desktop,2021-06-17
+VWR0658,North America,USA,35-44,Basic,Desktop,2020-11-30
+VWR0659,North America,USA,18-24,Premium,Smart TV,2022-02-18
+VWR0660,Europe,Germany,55+,Basic,Smart TV,2020-04-21
+VWR0661,Europe,Spain,55+,Standard,Mobile,2020-03-29
+VWR0662,Europe,Spain,55+,Premium,Mobile,2020-11-15
+VWR0663,Europe,Italy,35-44,Premium,Smart TV,2021-01-19
+VWR0664,APAC,Australia,25-34,Standard,Mobile,2023-06-24
+VWR0665,LATAM,Argentina,55+,Basic,Desktop,2020-09-09
+VWR0666,LATAM,Colombia,25-34,Premium,Smart TV,2021-08-12
+VWR0667,APAC,South Korea,25-34,Basic,Mobile,2021-09-22
+VWR0668,LATAM,Chile,18-24,Standard,Desktop,2022-08-05
+VWR0669,North America,USA,18-24,Standard,Mobile,2020-04-24
+VWR0670,North America,Canada,25-34,Premium,Smart TV,2023-11-02
+VWR0671,LATAM,Argentina,25-34,Basic,Tablet,2024-01-13
+VWR0672,LATAM,Colombia,55+,Standard,Desktop,2020-11-04
+VWR0673,APAC,Singapore,35-44,Basic,Tablet,2022-12-31
+VWR0674,APAC,Singapore,25-34,Standard,Desktop,2022-08-15
+VWR0675,Europe,France,55+,Basic,Smart TV,2022-07-21
+VWR0676,Europe,Italy,18-24,Premium,Desktop,2022-07-02
+VWR0677,North America,Canada,35-44,Standard,Tablet,2023-12-18
+VWR0678,APAC,India,55+,Standard,Mobile,2024-01-04
+VWR0679,Europe,UK,45-54,Standard,Desktop,2023-11-14
+VWR0680,Europe,Spain,35-44,Standard,Smart TV,2020-07-31
+VWR0681,Europe,UK,55+,Standard,Desktop,2020-03-08
+VWR0682,APAC,South Korea,45-54,Basic,Mobile,2023-04-15
+VWR0683,APAC,South Korea,18-24,Basic,Mobile,2022-06-13
+VWR0684,Europe,Spain,55+,Standard,Tablet,2021-05-30
+VWR0685,LATAM,Argentina,25-34,Premium,Desktop,2020-11-02
+VWR0686,North America,Mexico,35-44,Basic,Tablet,2021-04-29
+VWR0687,APAC,South Korea,45-54,Standard,Mobile,2021-12-27
+VWR0688,Europe,Italy,55+,Standard,Tablet,2023-12-31
+VWR0689,Europe,Italy,18-24,Premium,Mobile,2023-11-23
+VWR0690,LATAM,Brazil,18-24,Premium,Tablet,2020-12-10
+VWR0691,LATAM,Argentina,35-44,Standard,Smart TV,2022-11-24
+VWR0692,Europe,Italy,55+,Premium,Smart TV,2023-08-26
+VWR0693,Europe,Italy,55+,Premium,Tablet,2021-12-27
+VWR0694,LATAM,Chile,45-54,Standard,Smart TV,2021-07-04
+VWR0695,APAC,Australia,55+,Basic,Mobile,2022-11-18
+VWR0696,APAC,Singapore,55+,Standard,Mobile,2021-07-29
+VWR0697,North America,USA,35-44,Standard,Desktop,2021-11-14
+VWR0698,North America,USA,25-34,Standard,Smart TV,2023-01-15
+VWR0699,Europe,UK,25-34,Basic,Mobile,2023-03-05
+VWR0700,LATAM,Argentina,25-34,Standard,Desktop,2022-11-04
+VWR0701,Europe,France,45-54,Basic,Mobile,2020-11-02
+VWR0702,APAC,South Korea,55+,Standard,Mobile,2020-02-08
+VWR0703,LATAM,Colombia,45-54,Standard,Mobile,2021-06-22
+VWR0704,LATAM,Brazil,25-34,Basic,Desktop,2020-11-03
+VWR0705,Europe,Germany,25-34,Basic,Tablet,2020-01-18
+VWR0706,APAC,Japan,25-34,Basic,Mobile,2023-11-24
+VWR0707,North America,USA,45-54,Premium,Smart TV,2020-07-17
+VWR0708,North America,Canada,45-54,Premium,Desktop,2022-02-09
+VWR0709,LATAM,Chile,55+,Standard,Smart TV,2022-07-14
+VWR0710,LATAM,Chile,25-34,Standard,Mobile,2023-08-08
+VWR0711,APAC,Singapore,18-24,Basic,Mobile,2022-01-22
+VWR0712,Europe,UK,55+,Basic,Smart TV,2021-04-05
+VWR0713,North America,USA,25-34,Basic,Smart TV,2022-01-25
+VWR0714,LATAM,Brazil,18-24,Premium,Tablet,2021-07-26
+VWR0715,APAC,Australia,35-44,Premium,Mobile,2022-08-07
+VWR0716,Europe,Spain,18-24,Premium,Tablet,2022-02-26
+VWR0717,APAC,Singapore,18-24,Premium,Mobile,2023-08-07
+VWR0718,Europe,UK,55+,Basic,Smart TV,2020-08-13
+VWR0719,North America,Canada,25-34,Premium,Smart TV,2023-09-09
+VWR0720,APAC,Singapore,18-24,Premium,Mobile,2020-12-05
+VWR0721,Europe,Italy,55+,Premium,Desktop,2022-05-02
+VWR0722,LATAM,Argentina,25-34,Standard,Smart TV,2022-05-18
+VWR0723,North America,Canada,55+,Standard,Mobile,2020-06-19
+VWR0724,North America,USA,25-34,Basic,Smart TV,2024-01-16
+VWR0725,APAC,Australia,55+,Standard,Mobile,2023-11-10
+VWR0726,North America,Canada,18-24,Standard,Tablet,2023-06-27
+VWR0727,Europe,UK,18-24,Standard,Smart TV,2021-02-27
+VWR0728,North America,Canada,35-44,Basic,Smart TV,2022-09-26
+VWR0729,LATAM,Chile,45-54,Premium,Smart TV,2021-07-17
+VWR0730,North America,USA,18-24,Standard,Mobile,2021-11-05
+VWR0731,APAC,India,25-34,Premium,Desktop,2021-05-07
+VWR0732,LATAM,Brazil,25-34,Premium,Desktop,2023-11-19
+VWR0733,Europe,Spain,55+,Basic,Desktop,2020-06-05
+VWR0734,APAC,Singapore,25-34,Premium,Mobile,2021-10-17
+VWR0735,Europe,Spain,25-34,Standard,Tablet,2020-04-22
+VWR0736,North America,Canada,25-34,Standard,Smart TV,2021-07-17
+VWR0737,North America,Mexico,18-24,Standard,Tablet,2023-09-06
+VWR0738,North America,Canada,35-44,Basic,Tablet,2022-01-12
+VWR0739,APAC,India,35-44,Standard,Mobile,2020-08-01
+VWR0740,Europe,UK,25-34,Premium,Mobile,2022-09-27
+VWR0741,LATAM,Argentina,55+,Premium,Tablet,2022-02-11
+VWR0742,APAC,Australia,45-54,Premium,Mobile,2022-11-24
+VWR0743,APAC,Singapore,55+,Premium,Mobile,2021-02-08
+VWR0744,North America,Mexico,35-44,Premium,Desktop,2021-09-28
+VWR0745,APAC,Japan,25-34,Premium,Smart TV,2020-12-22
+VWR0746,Europe,Italy,35-44,Premium,Desktop,2022-10-03
+VWR0747,North America,Canada,25-34,Basic,Desktop,2021-12-05
+VWR0748,North America,Canada,35-44,Standard,Mobile,2022-04-01
+VWR0749,APAC,Australia,25-34,Standard,Mobile,2020-03-26
+VWR0750,LATAM,Chile,18-24,Standard,Smart TV,2023-07-30
+VWR0751,LATAM,Chile,35-44,Premium,Desktop,2023-08-27
+VWR0752,APAC,Singapore,18-24,Basic,Smart TV,2021-05-02
+VWR0753,APAC,Australia,18-24,Premium,Desktop,2022-01-15
+VWR0754,North America,USA,45-54,Basic,Smart TV,2021-11-09
+VWR0755,LATAM,Argentina,55+,Premium,Desktop,2021-10-01
+VWR0756,APAC,Japan,25-34,Premium,Mobile,2022-04-09
+VWR0757,North America,Mexico,45-54,Basic,Tablet,2023-07-28
+VWR0758,North America,Mexico,25-34,Basic,Tablet,2020-05-08
+VWR0759,LATAM,Brazil,18-24,Basic,Tablet,2023-07-02
+VWR0760,LATAM,Brazil,45-54,Basic,Desktop,2023-08-27
+VWR0761,North America,Canada,55+,Standard,Tablet,2022-08-29
+VWR0762,APAC,India,45-54,Premium,Mobile,2022-11-12
+VWR0763,Europe,Spain,55+,Basic,Mobile,2022-12-28
+VWR0764,APAC,India,55+,Standard,Tablet,2021-02-04
+VWR0765,APAC,Japan,45-54,Basic,Smart TV,2020-08-19
+VWR0766,Europe,Italy,45-54,Standard,Smart TV,2024-01-23
+VWR0767,APAC,Singapore,45-54,Basic,Smart TV,2023-03-14
+VWR0768,APAC,Singapore,35-44,Standard,Smart TV,2020-07-22
+VWR0769,LATAM,Argentina,18-24,Basic,Tablet,2023-04-20
+VWR0770,APAC,Australia,45-54,Premium,Mobile,2023-08-31
+VWR0771,North America,USA,45-54,Premium,Smart TV,2021-04-15
+VWR0772,APAC,South Korea,35-44,Premium,Mobile,2023-01-30
+VWR0773,LATAM,Argentina,45-54,Standard,Desktop,2023-05-13
+VWR0774,LATAM,Argentina,45-54,Basic,Desktop,2021-06-24
+VWR0775,Europe,UK,45-54,Basic,Smart TV,2023-06-13
+VWR0776,LATAM,Colombia,25-34,Basic,Mobile,2020-03-04
+VWR0777,Europe,Italy,35-44,Premium,Tablet,2023-02-04
+VWR0778,LATAM,Argentina,45-54,Basic,Smart TV,2020-12-24
+VWR0779,APAC,South Korea,55+,Premium,Mobile,2021-05-10
+VWR0780,LATAM,Argentina,18-24,Standard,Smart TV,2023-09-29
+VWR0781,LATAM,Chile,45-54,Premium,Smart TV,2020-09-25
+VWR0782,North America,Mexico,35-44,Standard,Mobile,2022-09-16
+VWR0783,Europe,Italy,55+,Standard,Smart TV,2021-03-09
+VWR0784,North America,Canada,45-54,Premium,Mobile,2023-04-13
+VWR0785,North America,Canada,35-44,Premium,Desktop,2021-03-09
+VWR0786,Europe,Germany,55+,Basic,Smart TV,2022-04-27
+VWR0787,North America,Mexico,18-24,Basic,Smart TV,2021-01-11
+VWR0788,North America,Canada,45-54,Basic,Tablet,2022-12-09
+VWR0789,Europe,Spain,35-44,Standard,Tablet,2021-01-06
+VWR0790,Europe,Italy,55+,Premium,Tablet,2022-10-16
+VWR0791,APAC,Australia,18-24,Premium,Mobile,2022-09-16
+VWR0792,LATAM,Brazil,18-24,Premium,Smart TV,2020-02-27
+VWR0793,North America,Mexico,45-54,Basic,Smart TV,2020-07-05
+VWR0794,Europe,Italy,55+,Premium,Mobile,2023-04-15
+VWR0795,Europe,France,18-24,Basic,Smart TV,2020-01-17
+VWR0796,LATAM,Argentina,25-34,Premium,Smart TV,2021-12-11
+VWR0797,Europe,France,18-24,Basic,Tablet,2023-07-22
+VWR0798,North America,Canada,25-34,Premium,Desktop,2023-11-14
+VWR0799,North America,USA,45-54,Basic,Tablet,2021-08-19
+VWR0800,North America,Mexico,25-34,Standard,Smart TV,2020-05-07
+VWR0801,LATAM,Chile,18-24,Basic,Desktop,2022-01-03
+VWR0802,North America,USA,55+,Premium,Tablet,2021-09-07
+VWR0803,Europe,UK,18-24,Standard,Tablet,2023-07-19
+VWR0804,APAC,India,35-44,Basic,Mobile,2021-07-13
+VWR0805,Europe,Italy,45-54,Standard,Smart TV,2020-01-26
+VWR0806,Europe,Italy,55+,Basic,Mobile,2023-07-03
+VWR0807,North America,Canada,45-54,Basic,Mobile,2022-02-24
+VWR0808,LATAM,Chile,18-24,Standard,Tablet,2021-06-09
+VWR0809,North America,Mexico,18-24,Premium,Desktop,2020-02-26
+VWR0810,North America,USA,25-34,Premium,Tablet,2021-06-09
+VWR0811,LATAM,Colombia,18-24,Premium,Desktop,2022-06-15
+VWR0812,APAC,India,18-24,Premium,Desktop,2021-01-25
+VWR0813,LATAM,Brazil,25-34,Standard,Tablet,2021-04-06
+VWR0814,North America,Canada,35-44,Standard,Tablet,2024-01-03
+VWR0815,North America,Mexico,35-44,Premium,Smart TV,2022-09-28
+VWR0816,APAC,Australia,35-44,Basic,Mobile,2021-07-03
+VWR0817,APAC,India,25-34,Basic,Smart TV,2021-08-02
+VWR0818,LATAM,Argentina,25-34,Basic,Mobile,2022-01-17
+VWR0819,North America,Mexico,25-34,Standard,Smart TV,2022-08-08
+VWR0820,APAC,Australia,35-44,Basic,Mobile,2023-12-28
+VWR0821,APAC,Singapore,25-34,Standard,Mobile,2022-09-14
+VWR0822,Europe,UK,35-44,Standard,Smart TV,2020-04-18
+VWR0823,LATAM,Colombia,25-34,Premium,Smart TV,2023-09-04
+VWR0824,APAC,Australia,18-24,Basic,Mobile,2021-02-03
+VWR0825,North America,USA,18-24,Premium,Mobile,2022-02-06
+VWR0826,APAC,Japan,35-44,Standard,Mobile,2021-12-15
+VWR0827,North America,Canada,25-34,Basic,Tablet,2020-01-24
+VWR0828,APAC,South Korea,25-34,Premium,Smart TV,2022-10-04
+VWR0829,LATAM,Brazil,45-54,Basic,Tablet,2021-10-16
+VWR0830,Europe,France,45-54,Basic,Mobile,2022-04-01
+VWR0831,APAC,Singapore,55+,Premium,Mobile,2022-10-01
+VWR0832,North America,Mexico,25-34,Premium,Smart TV,2021-07-31
+VWR0833,APAC,Australia,35-44,Basic,Mobile,2021-08-11
+VWR0834,North America,USA,18-24,Premium,Smart TV,2020-03-08
+VWR0835,LATAM,Colombia,35-44,Premium,Smart TV,2022-11-23
+VWR0836,North America,Canada,45-54,Premium,Mobile,2021-05-30
+VWR0837,Europe,Germany,25-34,Premium,Desktop,2022-09-06
+VWR0838,LATAM,Chile,35-44,Basic,Tablet,2022-04-23
+VWR0839,LATAM,Argentina,55+,Premium,Tablet,2024-01-04
+VWR0840,APAC,India,55+,Premium,Mobile,2023-11-08
+VWR0841,North America,Mexico,25-34,Standard,Smart TV,2021-11-21
+VWR0842,APAC,Singapore,35-44,Standard,Mobile,2023-09-02
+VWR0843,Europe,Germany,18-24,Standard,Desktop,2021-03-31
+VWR0844,LATAM,Argentina,45-54,Standard,Smart TV,2022-10-26
+VWR0845,LATAM,Argentina,55+,Premium,Desktop,2022-11-03
+VWR0846,Europe,UK,55+,Premium,Desktop,2020-05-19
+VWR0847,North America,Canada,25-34,Premium,Smart TV,2021-08-02
+VWR0848,APAC,Singapore,35-44,Premium,Mobile,2020-09-23
+VWR0849,APAC,Singapore,35-44,Standard,Mobile,2023-12-22
+VWR0850,Europe,UK,35-44,Standard,Smart TV,2020-10-20
+VWR0851,LATAM,Chile,18-24,Basic,Smart TV,2023-07-05
+VWR0852,LATAM,Colombia,45-54,Basic,Smart TV,2023-08-23
+VWR0853,Europe,Germany,35-44,Standard,Tablet,2020-07-02
+VWR0854,North America,Canada,35-44,Standard,Smart TV,2020-05-02
+VWR0855,APAC,India,45-54,Premium,Mobile,2020-04-23
+VWR0856,LATAM,Chile,18-24,Basic,Desktop,2022-02-22
+VWR0857,APAC,Singapore,35-44,Premium,Mobile,2023-02-20
+VWR0858,APAC,India,35-44,Premium,Mobile,2022-11-02
+VWR0859,LATAM,Chile,45-54,Basic,Tablet,2020-01-17
+VWR0860,North America,USA,25-34,Standard,Mobile,2020-03-22
+VWR0861,North America,USA,35-44,Premium,Mobile,2020-12-03
+VWR0862,North America,USA,45-54,Basic,Tablet,2020-05-30
+VWR0863,Europe,Italy,25-34,Standard,Mobile,2020-11-15
+VWR0864,APAC,Japan,18-24,Premium,Mobile,2023-06-16
+VWR0865,LATAM,Chile,55+,Standard,Desktop,2024-01-10
+VWR0866,Europe,France,55+,Basic,Desktop,2024-01-27
+VWR0867,APAC,Japan,55+,Standard,Smart TV,2023-02-07
+VWR0868,APAC,Japan,55+,Standard,Mobile,2021-04-15
+VWR0869,Europe,UK,55+,Standard,Tablet,2021-09-07
+VWR0870,LATAM,Brazil,35-44,Basic,Tablet,2020-05-17
+VWR0871,LATAM,Colombia,35-44,Premium,Tablet,2020-08-08
+VWR0872,APAC,Australia,25-34,Premium,Mobile,2023-08-31
+VWR0873,LATAM,Chile,18-24,Basic,Desktop,2023-01-31
+VWR0874,North America,Mexico,18-24,Premium,Mobile,2022-02-19
+VWR0875,LATAM,Brazil,18-24,Premium,Desktop,2021-02-26
+VWR0876,North America,USA,35-44,Basic,Desktop,2021-01-16
+VWR0877,North America,Canada,35-44,Basic,Desktop,2020-12-15
+VWR0878,LATAM,Brazil,18-24,Premium,Desktop,2021-07-23
+VWR0879,Europe,UK,35-44,Premium,Desktop,2021-06-02
+VWR0880,Europe,Italy,25-34,Standard,Mobile,2021-04-01
+VWR0881,Europe,France,45-54,Basic,Smart TV,2022-12-03
+VWR0882,APAC,Australia,55+,Premium,Smart TV,2021-05-09
+VWR0883,APAC,Australia,25-34,Standard,Mobile,2022-01-24
+VWR0884,North America,Mexico,25-34,Basic,Mobile,2023-07-09
+VWR0885,APAC,South Korea,45-54,Standard,Mobile,2021-08-04
+VWR0886,LATAM,Chile,45-54,Premium,Desktop,2022-07-11
+VWR0887,LATAM,Brazil,45-54,Basic,Tablet,2020-06-18
+VWR0888,North America,Mexico,18-24,Premium,Tablet,2023-03-24
+VWR0889,North America,USA,25-34,Basic,Desktop,2022-06-12
+VWR0890,Europe,Spain,18-24,Standard,Mobile,2020-07-15
+VWR0891,Europe,Germany,18-24,Premium,Tablet,2020-02-24
+VWR0892,LATAM,Argentina,45-54,Standard,Tablet,2021-12-10
+VWR0893,APAC,Japan,18-24,Standard,Mobile,2020-07-11
+VWR0894,APAC,India,55+,Standard,Desktop,2022-08-21
+VWR0895,North America,Mexico,35-44,Standard,Smart TV,2021-02-11
+VWR0896,LATAM,Argentina,35-44,Basic,Desktop,2020-09-25
+VWR0897,North America,Canada,45-54,Premium,Smart TV,2021-05-23
+VWR0898,APAC,Singapore,35-44,Premium,Mobile,2022-02-23
+VWR0899,Europe,France,25-34,Premium,Mobile,2023-01-09
+VWR0900,North America,Canada,45-54,Basic,Desktop,2021-12-15
+VWR0901,LATAM,Argentina,45-54,Basic,Tablet,2021-11-14
+VWR0902,Europe,Germany,25-34,Basic,Smart TV,2023-01-22
+VWR0903,Europe,France,45-54,Standard,Smart TV,2022-04-25
+VWR0904,APAC,Singapore,18-24,Basic,Mobile,2023-11-05
+VWR0905,Europe,Germany,45-54,Basic,Mobile,2023-01-01
+VWR0906,North America,Mexico,45-54,Premium,Mobile,2021-03-10
+VWR0907,LATAM,Colombia,25-34,Basic,Tablet,2021-07-19
+VWR0908,APAC,Australia,25-34,Premium,Mobile,2021-07-16
+VWR0909,North America,Canada,18-24,Basic,Tablet,2022-08-08
+VWR0910,Europe,France,25-34,Premium,Tablet,2021-08-08
+VWR0911,North America,USA,25-34,Basic,Desktop,2022-10-21
+VWR0912,Europe,UK,45-54,Standard,Tablet,2020-05-06
+VWR0913,LATAM,Chile,18-24,Basic,Desktop,2021-05-05
+VWR0914,LATAM,Chile,25-34,Premium,Desktop,2022-03-15
+VWR0915,North America,Canada,18-24,Premium,Smart TV,2021-02-23
+VWR0916,Europe,Germany,25-34,Basic,Desktop,2021-06-04
+VWR0917,North America,Mexico,55+,Standard,Smart TV,2023-04-13
+VWR0918,APAC,Singapore,55+,Basic,Desktop,2021-06-05
+VWR0919,APAC,South Korea,35-44,Standard,Tablet,2022-02-09
+VWR0920,Europe,Italy,18-24,Premium,Smart TV,2024-01-27
+VWR0921,APAC,Australia,55+,Premium,Mobile,2020-06-21
+VWR0922,APAC,South Korea,18-24,Basic,Mobile,2023-06-06
+VWR0923,North America,USA,35-44,Premium,Desktop,2022-09-24
+VWR0924,APAC,India,25-34,Basic,Mobile,2022-07-22
+VWR0925,LATAM,Brazil,18-24,Standard,Mobile,2020-10-18
+VWR0926,LATAM,Brazil,35-44,Basic,Smart TV,2023-07-18
+VWR0927,LATAM,Colombia,45-54,Basic,Smart TV,2023-12-19
+VWR0928,APAC,India,35-44,Basic,Mobile,2021-03-12
+VWR0929,LATAM,Colombia,45-54,Standard,Mobile,2022-06-30
+VWR0930,LATAM,Argentina,18-24,Standard,Desktop,2021-12-22
+VWR0931,North America,Mexico,25-34,Standard,Desktop,2021-09-01
+VWR0932,APAC,India,35-44,Basic,Mobile,2022-09-21
+VWR0933,Europe,Italy,18-24,Basic,Smart TV,2020-05-05
+VWR0934,APAC,Australia,25-34,Standard,Tablet,2021-05-25
+VWR0935,LATAM,Argentina,55+,Basic,Tablet,2020-01-26
+VWR0936,APAC,India,45-54,Premium,Mobile,2023-11-05
+VWR0937,APAC,Australia,55+,Basic,Desktop,2023-07-27
+VWR0938,APAC,South Korea,25-34,Basic,Mobile,2022-10-29
+VWR0939,APAC,Singapore,35-44,Standard,Mobile,2021-04-27
+VWR0940,Europe,France,45-54,Basic,Mobile,2020-08-17
+VWR0941,LATAM,Chile,55+,Standard,Mobile,2020-03-12
+VWR0942,North America,USA,18-24,Premium,Tablet,2023-11-23
+VWR0943,North America,USA,18-24,Premium,Tablet,2023-09-09
+VWR0944,North America,Mexico,35-44,Basic,Mobile,2021-12-12
+VWR0945,APAC,Australia,55+,Basic,Mobile,2023-06-29
+VWR0946,Europe,Germany,45-54,Standard,Desktop,2023-05-15
+VWR0947,North America,USA,55+,Standard,Desktop,2022-03-17
+VWR0948,North America,Mexico,55+,Standard,Desktop,2021-04-09
+VWR0949,Europe,Germany,55+,Basic,Tablet,2022-04-29
+VWR0950,LATAM,Argentina,45-54,Premium,Tablet,2021-09-07
+VWR0951,Europe,Spain,18-24,Premium,Tablet,2020-07-26
+VWR0952,LATAM,Argentina,18-24,Standard,Mobile,2020-05-19
+VWR0953,Europe,UK,55+,Standard,Smart TV,2022-12-17
+VWR0954,Europe,Germany,45-54,Basic,Tablet,2023-06-28
+VWR0955,LATAM,Brazil,35-44,Standard,Mobile,2021-12-26
+VWR0956,Europe,Italy,35-44,Basic,Mobile,2022-07-25
+VWR0957,LATAM,Argentina,55+,Premium,Desktop,2021-12-18
+VWR0958,Europe,UK,35-44,Basic,Tablet,2023-02-17
+VWR0959,LATAM,Brazil,18-24,Premium,Mobile,2022-03-30
+VWR0960,North America,USA,25-34,Premium,Mobile,2021-01-02
+VWR0961,LATAM,Argentina,45-54,Standard,Desktop,2021-02-27
+VWR0962,Europe,Spain,18-24,Basic,Tablet,2022-09-13
+VWR0963,APAC,Japan,35-44,Basic,Mobile,2022-07-16
+VWR0964,North America,USA,55+,Basic,Mobile,2021-10-16
+VWR0965,North America,USA,45-54,Premium,Mobile,2021-04-26
+VWR0966,LATAM,Brazil,35-44,Standard,Desktop,2021-03-19
+VWR0967,Europe,Germany,45-54,Premium,Smart TV,2024-01-14
+VWR0968,Europe,Spain,45-54,Standard,Tablet,2024-01-06
+VWR0969,North America,Canada,18-24,Standard,Desktop,2022-10-22
+VWR0970,Europe,France,55+,Premium,Mobile,2020-09-16
+VWR0971,LATAM,Colombia,55+,Premium,Mobile,2023-10-28
+VWR0972,Europe,France,18-24,Standard,Tablet,2021-08-19
+VWR0973,LATAM,Argentina,18-24,Premium,Desktop,2023-03-25
+VWR0974,North America,Mexico,25-34,Standard,Mobile,2020-08-10
+VWR0975,North America,Canada,35-44,Premium,Smart TV,2023-04-28
+VWR0976,LATAM,Argentina,18-24,Basic,Smart TV,2020-02-14
+VWR0977,APAC,South Korea,18-24,Premium,Mobile,2022-04-11
+VWR0978,LATAM,Colombia,45-54,Premium,Mobile,2023-03-30
+VWR0979,APAC,South Korea,35-44,Basic,Mobile,2023-02-06
+VWR0980,Europe,Spain,45-54,Basic,Mobile,2021-04-12
+VWR0981,North America,Canada,25-34,Basic,Smart TV,2022-09-20
+VWR0982,APAC,India,55+,Basic,Mobile,2023-11-30
+VWR0983,APAC,South Korea,25-34,Premium,Mobile,2023-09-03
+VWR0984,APAC,Australia,18-24,Standard,Tablet,2021-11-25
+VWR0985,LATAM,Colombia,35-44,Standard,Tablet,2021-09-12
+VWR0986,Europe,France,18-24,Standard,Tablet,2022-02-09
+VWR0987,LATAM,Brazil,55+,Premium,Tablet,2021-10-12
+VWR0988,APAC,India,55+,Premium,Mobile,2023-12-31
+VWR0989,APAC,South Korea,55+,Standard,Mobile,2020-08-26
+VWR0990,APAC,Australia,55+,Premium,Mobile,2021-06-30
+VWR0991,LATAM,Colombia,55+,Premium,Tablet,2023-04-07
+VWR0992,Europe,Spain,55+,Basic,Tablet,2022-08-21
+VWR0993,LATAM,Chile,35-44,Basic,Smart TV,2022-09-03
+VWR0994,APAC,India,55+,Premium,Mobile,2021-12-30
+VWR0995,LATAM,Argentina,18-24,Standard,Mobile,2020-07-17
+VWR0996,APAC,Singapore,55+,Basic,Mobile,2022-02-21
+VWR0997,North America,Mexico,18-24,Basic,Smart TV,2024-01-09
+VWR0998,LATAM,Colombia,45-54,Basic,Tablet,2023-10-28
+VWR0999,APAC,South Korea,18-24,Basic,Mobile,2021-06-29
+VWR1000,LATAM,Argentina,35-44,Standard,Mobile,2020-08-15
+VWR1001,LATAM,Argentina,25-34,Basic,Tablet,2023-11-30
+VWR1002,Europe,UK,18-24,Standard,Tablet,2022-06-06
+VWR1003,Europe,Italy,25-34,Premium,Tablet,2020-07-06
+VWR1004,North America,Canada,55+,Premium,Mobile,2021-01-18
+VWR1005,LATAM,Brazil,35-44,Basic,Mobile,2022-01-02
+VWR1006,North America,Canada,35-44,Standard,Smart TV,2020-06-25
+VWR1007,APAC,South Korea,55+,Basic,Mobile,2022-03-06
+VWR1008,APAC,Australia,45-54,Basic,Mobile,2020-08-22
+VWR1009,LATAM,Chile,25-34,Basic,Smart TV,2022-08-24
+VWR1010,Europe,UK,55+,Premium,Desktop,2021-05-04
+VWR1011,APAC,South Korea,18-24,Standard,Mobile,2020-01-03
+VWR1012,North America,Mexico,45-54,Standard,Mobile,2020-08-08
+VWR1013,LATAM,Argentina,35-44,Basic,Mobile,2020-09-24
+VWR1014,APAC,Singapore,35-44,Standard,Mobile,2023-09-27
+VWR1015,Europe,Spain,18-24,Premium,Smart TV,2020-09-26
+VWR1016,Europe,Italy,45-54,Premium,Desktop,2023-11-07
+VWR1017,North America,Mexico,18-24,Standard,Mobile,2022-03-17
+VWR1018,Europe,Germany,25-34,Standard,Desktop,2021-02-09
+VWR1019,APAC,Australia,18-24,Basic,Mobile,2023-09-13
+VWR1020,LATAM,Chile,18-24,Premium,Smart TV,2021-12-27
+VWR1021,LATAM,Brazil,25-34,Premium,Mobile,2021-08-23
+VWR1022,LATAM,Argentina,25-34,Premium,Smart TV,2020-09-12
+VWR1023,LATAM,Chile,35-44,Premium,Tablet,2020-03-27
+VWR1024,LATAM,Argentina,18-24,Premium,Tablet,2022-06-29
+VWR1025,APAC,India,55+,Premium,Desktop,2020-10-07
+VWR1026,North America,Mexico,55+,Basic,Tablet,2022-03-30
+VWR1027,Europe,France,35-44,Standard,Mobile,2021-07-20
+VWR1028,North America,Mexico,45-54,Basic,Mobile,2023-02-17
+VWR1029,North America,Mexico,25-34,Premium,Desktop,2023-10-05
+VWR1030,North America,Mexico,55+,Basic,Tablet,2022-04-07
+VWR1031,Europe,Spain,35-44,Standard,Desktop,2021-09-29
+VWR1032,Europe,Spain,45-54,Standard,Mobile,2021-07-12
+VWR1033,Europe,UK,18-24,Basic,Smart TV,2024-01-15
+VWR1034,North America,USA,35-44,Basic,Tablet,2020-08-15
+VWR1035,LATAM,Brazil,25-34,Standard,Desktop,2023-02-02
+VWR1036,North America,USA,35-44,Premium,Tablet,2021-09-30
+VWR1037,LATAM,Chile,25-34,Standard,Desktop,2021-06-12
+VWR1038,Europe,UK,25-34,Standard,Smart TV,2021-10-14
+VWR1039,Europe,Italy,25-34,Basic,Desktop,2022-12-21
+VWR1040,APAC,India,55+,Standard,Mobile,2020-10-02
+VWR1041,North America,Mexico,18-24,Premium,Mobile,2024-02-09
+VWR1042,LATAM,Colombia,55+,Standard,Smart TV,2022-09-15
+VWR1043,LATAM,Argentina,45-54,Premium,Mobile,2022-07-12
+VWR1044,North America,Canada,55+,Basic,Desktop,2021-04-14
+VWR1045,Europe,Germany,35-44,Basic,Smart TV,2021-05-23
+VWR1046,Europe,Spain,55+,Premium,Smart TV,2023-09-02
+VWR1047,Europe,Germany,25-34,Basic,Smart TV,2022-10-27
+VWR1048,APAC,Australia,55+,Basic,Desktop,2022-01-05
+VWR1049,LATAM,Argentina,35-44,Standard,Mobile,2021-04-18
+VWR1050,APAC,Japan,25-34,Standard,Mobile,2020-07-08
+VWR1051,Europe,France,25-34,Basic,Smart TV,2021-06-25
+VWR1052,LATAM,Brazil,45-54,Standard,Tablet,2021-11-01
+VWR1053,Europe,Germany,45-54,Standard,Smart TV,2023-07-27
+VWR1054,Europe,Italy,55+,Premium,Smart TV,2023-04-13
+VWR1055,North America,USA,35-44,Standard,Tablet,2020-04-29
+VWR1056,LATAM,Chile,35-44,Premium,Mobile,2023-12-20
+VWR1057,LATAM,Argentina,35-44,Basic,Tablet,2022-01-16
+VWR1058,Europe,Spain,25-34,Standard,Smart TV,2022-05-15
+VWR1059,APAC,Australia,55+,Basic,Mobile,2020-04-12
+VWR1060,Europe,Spain,55+,Premium,Mobile,2022-01-13
+VWR1061,North America,Canada,18-24,Premium,Desktop,2023-11-10
+VWR1062,Europe,UK,25-34,Standard,Mobile,2020-10-27
+VWR1063,North America,USA,45-54,Basic,Tablet,2021-02-28
+VWR1064,Europe,Spain,45-54,Standard,Smart TV,2021-12-13
+VWR1065,Europe,Germany,35-44,Basic,Desktop,2022-02-12
+VWR1066,Europe,Germany,35-44,Basic,Smart TV,2020-03-24
+VWR1067,North America,Mexico,35-44,Standard,Desktop,2022-05-21
+VWR1068,North America,Mexico,18-24,Basic,Mobile,2022-12-22
+VWR1069,North America,Mexico,55+,Standard,Smart TV,2023-09-21
+VWR1070,LATAM,Brazil,18-24,Premium,Desktop,2021-07-02
+VWR1071,LATAM,Argentina,18-24,Basic,Smart TV,2022-01-02
+VWR1072,LATAM,Colombia,18-24,Standard,Tablet,2021-06-24
+VWR1073,Europe,Germany,18-24,Basic,Smart TV,2023-03-10
+VWR1074,APAC,Japan,18-24,Basic,Mobile,2023-04-21
+VWR1075,LATAM,Argentina,55+,Premium,Smart TV,2022-04-24
+VWR1076,North America,Mexico,18-24,Basic,Desktop,2020-12-01
+VWR1077,North America,Canada,25-34,Standard,Tablet,2021-06-12
+VWR1078,APAC,Australia,18-24,Basic,Smart TV,2023-07-29
+VWR1079,North America,USA,18-24,Standard,Desktop,2020-02-11
+VWR1080,APAC,India,35-44,Standard,Mobile,2021-01-17
+VWR1081,North America,Mexico,45-54,Premium,Smart TV,2021-05-10
+VWR1082,Europe,UK,25-34,Standard,Desktop,2022-01-25
+VWR1083,LATAM,Colombia,55+,Basic,Mobile,2022-04-08
+VWR1084,North America,Mexico,18-24,Premium,Tablet,2023-03-04
+VWR1085,North America,Mexico,18-24,Standard,Mobile,2023-08-14
+VWR1086,North America,Mexico,55+,Premium,Desktop,2021-09-14
+VWR1087,North America,USA,18-24,Basic,Desktop,2020-08-03
+VWR1088,Europe,Spain,18-24,Basic,Smart TV,2023-08-12
+VWR1089,APAC,Australia,45-54,Basic,Desktop,2021-08-20
+VWR1090,Europe,Spain,35-44,Premium,Mobile,2022-03-12
+VWR1091,LATAM,Colombia,18-24,Basic,Tablet,2020-11-21
+VWR1092,Europe,Germany,18-24,Premium,Mobile,2020-03-08
+VWR1093,Europe,UK,55+,Premium,Tablet,2021-06-11
+VWR1094,LATAM,Chile,25-34,Basic,Tablet,2022-07-31
+VWR1095,APAC,India,35-44,Basic,Smart TV,2021-07-26
+VWR1096,North America,USA,55+,Premium,Mobile,2020-01-12
+VWR1097,North America,Mexico,18-24,Premium,Smart TV,2023-12-16
+VWR1098,North America,Mexico,25-34,Premium,Tablet,2020-12-03
+VWR1099,Europe,Italy,55+,Premium,Mobile,2021-05-05
+VWR1100,LATAM,Argentina,35-44,Standard,Desktop,2020-07-19
+VWR1101,North America,USA,18-24,Standard,Smart TV,2022-12-26
+VWR1102,LATAM,Brazil,18-24,Basic,Desktop,2020-05-29
+VWR1103,APAC,Australia,25-34,Premium,Mobile,2022-03-20
+VWR1104,LATAM,Brazil,55+,Premium,Smart TV,2021-07-24
+VWR1105,LATAM,Chile,35-44,Standard,Smart TV,2021-12-31
+VWR1106,LATAM,Argentina,35-44,Basic,Mobile,2021-09-10
+VWR1107,LATAM,Chile,25-34,Basic,Tablet,2021-10-14
+VWR1108,APAC,Japan,45-54,Premium,Mobile,2024-02-08
+VWR1109,North America,USA,35-44,Basic,Desktop,2021-09-10
+VWR1110,LATAM,Chile,55+,Premium,Desktop,2020-08-25
+VWR1111,LATAM,Colombia,45-54,Standard,Desktop,2022-02-27
+VWR1112,North America,USA,35-44,Premium,Desktop,2021-12-30
+VWR1113,Europe,UK,55+,Premium,Tablet,2021-05-29
+VWR1114,North America,USA,18-24,Basic,Desktop,2021-05-22
+VWR1115,Europe,France,18-24,Premium,Tablet,2021-04-28
+VWR1116,APAC,Australia,45-54,Basic,Mobile,2020-07-18
+VWR1117,Europe,UK,35-44,Standard,Tablet,2020-07-10
+VWR1118,APAC,Singapore,35-44,Premium,Mobile,2022-04-19
+VWR1119,Europe,UK,55+,Premium,Smart TV,2020-02-03
+VWR1120,North America,Mexico,25-34,Basic,Desktop,2021-12-03
+VWR1121,Europe,UK,45-54,Standard,Desktop,2022-12-16
+VWR1122,LATAM,Argentina,45-54,Standard,Mobile,2023-03-26
+VWR1123,Europe,France,45-54,Standard,Desktop,2020-09-19
+VWR1124,APAC,India,25-34,Basic,Mobile,2023-01-26
+VWR1125,North America,Canada,25-34,Premium,Mobile,2022-07-06
+VWR1126,North America,Canada,45-54,Premium,Desktop,2021-03-05
+VWR1127,North America,USA,18-24,Premium,Tablet,2020-08-26
+VWR1128,North America,USA,25-34,Standard,Tablet,2022-01-29
+VWR1129,Europe,Germany,18-24,Standard,Tablet,2022-02-05
+VWR1130,LATAM,Brazil,55+,Premium,Desktop,2021-03-08
+VWR1131,North America,Canada,35-44,Premium,Smart TV,2024-01-14
+VWR1132,Europe,Spain,25-34,Basic,Desktop,2021-03-23
+VWR1133,APAC,South Korea,45-54,Standard,Tablet,2024-01-17
+VWR1134,APAC,South Korea,55+,Standard,Mobile,2021-08-09
+VWR1135,North America,USA,18-24,Standard,Mobile,2022-02-22
+VWR1136,North America,Mexico,18-24,Basic,Desktop,2021-12-09
+VWR1137,APAC,India,35-44,Premium,Mobile,2020-05-02
+VWR1138,North America,Canada,18-24,Standard,Desktop,2021-10-20
+VWR1139,Europe,UK,25-34,Premium,Desktop,2020-03-26
+VWR1140,North America,USA,55+,Premium,Mobile,2022-01-09
+VWR1141,Europe,Italy,55+,Basic,Desktop,2022-09-23
+VWR1142,LATAM,Chile,25-34,Standard,Desktop,2021-10-06
+VWR1143,North America,USA,25-34,Basic,Desktop,2023-11-27
+VWR1144,Europe,France,18-24,Basic,Desktop,2023-02-04
+VWR1145,APAC,India,25-34,Standard,Mobile,2020-11-08
+VWR1146,North America,Canada,55+,Premium,Smart TV,2023-12-15
+VWR1147,APAC,Japan,25-34,Standard,Mobile,2020-04-09
+VWR1148,Europe,Italy,35-44,Premium,Smart TV,2020-07-31
+VWR1149,Europe,Italy,55+,Premium,Tablet,2022-05-08
+VWR1150,Europe,Germany,35-44,Basic,Smart TV,2021-03-05
+VWR1151,LATAM,Brazil,18-24,Standard,Mobile,2020-12-24
+VWR1152,North America,Canada,18-24,Premium,Smart TV,2020-11-15
+VWR1153,LATAM,Brazil,45-54,Premium,Mobile,2022-06-28
+VWR1154,APAC,India,45-54,Standard,Mobile,2021-07-29
+VWR1155,Europe,Spain,25-34,Basic,Desktop,2021-04-06
+VWR1156,Europe,Spain,55+,Basic,Tablet,2020-03-26
+VWR1157,North America,USA,35-44,Standard,Mobile,2020-07-01
+VWR1158,APAC,India,55+,Standard,Mobile,2021-01-31
+VWR1159,Europe,Spain,35-44,Standard,Mobile,2021-11-08
+VWR1160,Europe,Spain,55+,Basic,Tablet,2023-04-03
+VWR1161,North America,Canada,35-44,Standard,Tablet,2022-06-10
+VWR1162,LATAM,Argentina,18-24,Premium,Smart TV,2023-05-13
+VWR1163,North America,USA,55+,Standard,Smart TV,2022-03-27
+VWR1164,North America,Mexico,18-24,Premium,Smart TV,2020-07-16
+VWR1165,LATAM,Brazil,35-44,Basic,Smart TV,2021-08-25
+VWR1166,LATAM,Brazil,25-34,Premium,Desktop,2021-05-16
+VWR1167,North America,USA,18-24,Standard,Smart TV,2023-03-14
+VWR1168,APAC,India,45-54,Standard,Mobile,2023-06-01
+VWR1169,APAC,Australia,18-24,Premium,Mobile,2022-10-16
+VWR1170,Europe,Spain,25-34,Premium,Tablet,2021-12-05
+VWR1171,APAC,Japan,45-54,Standard,Mobile,2020-03-25
+VWR1172,North America,Canada,18-24,Standard,Tablet,2023-08-12
+VWR1173,Europe,Germany,45-54,Premium,Mobile,2021-06-13
+VWR1174,LATAM,Brazil,18-24,Standard,Tablet,2022-09-13
+VWR1175,APAC,Australia,18-24,Basic,Mobile,2022-12-18
+VWR1176,LATAM,Colombia,45-54,Basic,Mobile,2023-07-20
+VWR1177,APAC,Australia,18-24,Standard,Tablet,2021-07-05
+VWR1178,LATAM,Colombia,55+,Basic,Desktop,2023-03-08
+VWR1179,APAC,India,18-24,Standard,Mobile,2021-01-08
+VWR1180,North America,Mexico,25-34,Basic,Desktop,2021-08-15
+VWR1181,North America,Mexico,35-44,Standard,Tablet,2022-09-14
+VWR1182,APAC,Australia,55+,Premium,Mobile,2022-03-31
+VWR1183,Europe,Italy,55+,Standard,Smart TV,2020-04-28
+VWR1184,North America,Mexico,18-24,Standard,Tablet,2023-10-09
+VWR1185,Europe,Italy,45-54,Basic,Desktop,2020-02-19
+VWR1186,Europe,Italy,25-34,Basic,Mobile,2021-09-29
+VWR1187,LATAM,Argentina,55+,Basic,Smart TV,2021-11-24
+VWR1188,LATAM,Colombia,18-24,Basic,Mobile,2023-11-28
+VWR1189,North America,USA,35-44,Basic,Tablet,2020-01-18
+VWR1190,LATAM,Brazil,18-24,Standard,Mobile,2022-05-26
+VWR1191,LATAM,Argentina,55+,Premium,Smart TV,2021-10-24
+VWR1192,North America,USA,55+,Basic,Smart TV,2020-04-24
+VWR1193,APAC,Singapore,55+,Basic,Mobile,2021-06-13
+VWR1194,APAC,South Korea,18-24,Premium,Mobile,2022-06-07
+VWR1195,LATAM,Argentina,45-54,Basic,Desktop,2021-12-10
+VWR1196,LATAM,Colombia,45-54,Standard,Smart TV,2022-01-03
+VWR1197,Europe,Germany,35-44,Standard,Tablet,2021-07-22
+VWR1198,APAC,Japan,55+,Basic,Smart TV,2022-08-14
+VWR1199,Europe,France,55+,Basic,Desktop,2022-08-30
+VWR1200,North America,Mexico,25-34,Standard,Desktop,2021-12-27
+VWR1201,APAC,India,35-44,Premium,Mobile,2023-06-25
+VWR1202,LATAM,Colombia,35-44,Premium,Smart TV,2020-12-26
+VWR1203,North America,USA,45-54,Premium,Tablet,2022-07-28
+VWR1204,APAC,Singapore,25-34,Premium,Mobile,2023-09-28
+VWR1205,North America,Canada,25-34,Standard,Smart TV,2022-08-29
+VWR1206,LATAM,Argentina,25-34,Basic,Smart TV,2021-12-21
+VWR1207,LATAM,Argentina,25-34,Basic,Mobile,2021-06-11
+VWR1208,North America,USA,55+,Basic,Mobile,2020-03-08
+VWR1209,LATAM,Chile,55+,Standard,Desktop,2023-05-17
+VWR1210,Europe,UK,25-34,Premium,Tablet,2023-11-19
+VWR1211,LATAM,Argentina,25-34,Premium,Desktop,2021-09-27
+VWR1212,Europe,Italy,55+,Basic,Desktop,2022-04-29
+VWR1213,Europe,France,25-34,Standard,Smart TV,2021-12-09
+VWR1214,APAC,India,45-54,Standard,Mobile,2022-08-10
+VWR1215,LATAM,Chile,45-54,Basic,Smart TV,2021-12-11
+VWR1216,Europe,UK,55+,Basic,Smart TV,2021-01-29
+VWR1217,APAC,Australia,45-54,Basic,Mobile,2021-02-27
+VWR1218,LATAM,Colombia,35-44,Standard,Mobile,2022-09-17
+VWR1219,Europe,UK,45-54,Standard,Mobile,2023-09-23
+VWR1220,APAC,Singapore,25-34,Basic,Tablet,2020-02-16
+VWR1221,LATAM,Colombia,35-44,Basic,Mobile,2021-08-22
+VWR1222,LATAM,Argentina,55+,Premium,Desktop,2021-01-03
+VWR1223,Europe,UK,18-24,Standard,Smart TV,2022-11-04
+VWR1224,North America,USA,45-54,Standard,Tablet,2020-01-08
+VWR1225,North America,USA,18-24,Standard,Smart TV,2023-08-04
+VWR1226,LATAM,Colombia,55+,Basic,Desktop,2020-03-14
+VWR1227,LATAM,Chile,25-34,Standard,Mobile,2023-06-07
+VWR1228,Europe,France,45-54,Premium,Mobile,2023-06-27
+VWR1229,Europe,UK,18-24,Standard,Desktop,2020-01-09
+VWR1230,North America,USA,18-24,Basic,Tablet,2022-01-14
+VWR1231,Europe,France,25-34,Basic,Mobile,2021-02-09
+VWR1232,APAC,South Korea,55+,Basic,Desktop,2022-05-06
+VWR1233,LATAM,Chile,55+,Standard,Smart TV,2023-10-07
+VWR1234,Europe,France,25-34,Standard,Tablet,2022-02-24
+VWR1235,North America,USA,45-54,Basic,Desktop,2020-08-04
+VWR1236,North America,USA,45-54,Standard,Mobile,2023-04-15
+VWR1237,North America,Canada,45-54,Premium,Smart TV,2020-11-23
+VWR1238,North America,Canada,55+,Premium,Smart TV,2022-02-25
+VWR1239,APAC,Singapore,45-54,Standard,Smart TV,2023-04-16
+VWR1240,LATAM,Colombia,35-44,Basic,Smart TV,2023-08-09
+VWR1241,LATAM,Brazil,25-34,Basic,Desktop,2023-01-09
+VWR1242,Europe,Spain,45-54,Standard,Tablet,2023-10-16
+VWR1243,APAC,Australia,18-24,Basic,Mobile,2021-12-15
+VWR1244,North America,Mexico,35-44,Basic,Smart TV,2022-04-28
+VWR1245,Europe,Italy,55+,Premium,Mobile,2022-12-01
+VWR1246,LATAM,Brazil,18-24,Premium,Mobile,2023-10-12
+VWR1247,North America,Mexico,25-34,Basic,Desktop,2022-08-24
+VWR1248,LATAM,Chile,18-24,Premium,Mobile,2022-09-22
+VWR1249,North America,Canada,45-54,Premium,Tablet,2020-02-02
+VWR1250,Europe,Italy,35-44,Premium,Tablet,2021-10-04
+VWR1251,North America,Mexico,55+,Basic,Smart TV,2023-01-16
+VWR1252,APAC,Japan,25-34,Standard,Mobile,2023-01-06
+VWR1253,Europe,UK,45-54,Basic,Mobile,2024-01-30
+VWR1254,North America,Mexico,25-34,Basic,Smart TV,2022-02-24
+VWR1255,North America,Canada,18-24,Basic,Desktop,2024-01-05
+VWR1256,Europe,Italy,18-24,Standard,Mobile,2021-04-25
+VWR1257,APAC,Australia,18-24,Standard,Mobile,2023-04-04
+VWR1258,APAC,Singapore,25-34,Standard,Mobile,2020-04-17
+VWR1259,LATAM,Argentina,25-34,Basic,Desktop,2023-10-07
+VWR1260,North America,Canada,35-44,Standard,Tablet,2020-07-04
+VWR1261,North America,Mexico,55+,Premium,Smart TV,2020-05-05
+VWR1262,LATAM,Brazil,55+,Premium,Smart TV,2020-12-20
+VWR1263,North America,Mexico,45-54,Standard,Desktop,2020-05-10
+VWR1264,LATAM,Brazil,35-44,Basic,Desktop,2021-07-15
+VWR1265,APAC,India,55+,Basic,Mobile,2021-09-15
+VWR1266,LATAM,Colombia,25-34,Premium,Desktop,2023-11-17
+VWR1267,North America,Canada,25-34,Premium,Smart TV,2020-04-27
+VWR1268,LATAM,Brazil,25-34,Premium,Mobile,2021-07-05
+VWR1269,APAC,Australia,45-54,Basic,Smart TV,2020-12-23
+VWR1270,APAC,Japan,18-24,Standard,Mobile,2020-10-02
+VWR1271,LATAM,Colombia,18-24,Premium,Tablet,2021-08-11
+VWR1272,Europe,UK,18-24,Standard,Desktop,2020-06-15
+VWR1273,North America,Mexico,55+,Standard,Mobile,2021-04-01
+VWR1274,North America,Canada,35-44,Standard,Tablet,2022-04-12
+VWR1275,APAC,India,25-34,Standard,Mobile,2024-01-03
+VWR1276,LATAM,Brazil,25-34,Basic,Desktop,2023-10-02
+VWR1277,LATAM,Argentina,25-34,Basic,Mobile,2023-12-24
+VWR1278,North America,USA,25-34,Premium,Tablet,2022-04-25
+VWR1279,North America,Mexico,35-44,Premium,Mobile,2021-05-21
+VWR1280,Europe,France,18-24,Premium,Tablet,2023-03-15
+VWR1281,North America,USA,45-54,Standard,Smart TV,2021-05-02
+VWR1282,Europe,Italy,45-54,Premium,Tablet,2020-12-05
+VWR1283,APAC,South Korea,55+,Basic,Mobile,2022-04-24
+VWR1284,North America,USA,55+,Standard,Tablet,2020-10-17
+VWR1285,LATAM,Argentina,35-44,Standard,Desktop,2023-06-17
+VWR1286,North America,Canada,18-24,Standard,Mobile,2022-01-16
+VWR1287,LATAM,Brazil,55+,Premium,Smart TV,2023-10-26
+VWR1288,North America,USA,45-54,Premium,Tablet,2023-05-24
+VWR1289,Europe,Spain,55+,Standard,Tablet,2020-07-15
+VWR1290,Europe,Italy,35-44,Basic,Desktop,2020-07-28
+VWR1291,North America,Mexico,25-34,Basic,Mobile,2021-02-17
+VWR1292,APAC,South Korea,55+,Premium,Mobile,2023-02-01
+VWR1293,North America,Canada,18-24,Basic,Smart TV,2020-03-18
+VWR1294,APAC,Australia,35-44,Basic,Tablet,2020-02-21
+VWR1295,Europe,Spain,35-44,Premium,Smart TV,2021-04-25
+VWR1296,APAC,India,25-34,Premium,Mobile,2021-07-18
+VWR1297,North America,Mexico,35-44,Premium,Smart TV,2023-09-12
+VWR1298,APAC,India,25-34,Standard,Tablet,2023-04-05
+VWR1299,LATAM,Colombia,18-24,Basic,Desktop,2022-05-22
+VWR1300,Europe,UK,18-24,Basic,Tablet,2021-10-28
+VWR1301,APAC,Japan,18-24,Basic,Desktop,2021-11-01
+VWR1302,North America,USA,35-44,Standard,Desktop,2020-04-28
+VWR1303,LATAM,Colombia,45-54,Basic,Desktop,2023-04-11
+VWR1304,Europe,UK,35-44,Premium,Mobile,2022-04-18
+VWR1305,APAC,Japan,25-34,Premium,Mobile,2020-02-27
+VWR1306,Europe,Italy,25-34,Premium,Tablet,2020-03-01
+VWR1307,Europe,France,45-54,Standard,Mobile,2021-02-13
+VWR1308,Europe,Germany,35-44,Standard,Tablet,2022-10-17
+VWR1309,North America,USA,55+,Standard,Desktop,2022-10-15
+VWR1310,LATAM,Colombia,18-24,Premium,Desktop,2022-12-07
+VWR1311,Europe,France,35-44,Basic,Desktop,2021-09-26
+VWR1312,LATAM,Brazil,55+,Premium,Smart TV,2023-07-05
+VWR1313,North America,Canada,35-44,Standard,Tablet,2020-12-21
+VWR1314,APAC,Australia,45-54,Standard,Mobile,2021-12-19
+VWR1315,Europe,UK,35-44,Premium,Desktop,2023-12-11
+VWR1316,North America,Canada,55+,Premium,Smart TV,2021-11-16
+VWR1317,APAC,Japan,35-44,Basic,Mobile,2020-06-21
+VWR1318,APAC,Japan,45-54,Premium,Mobile,2020-05-21
+VWR1319,APAC,South Korea,35-44,Standard,Desktop,2022-07-07
+VWR1320,APAC,India,25-34,Standard,Mobile,2020-05-08
+VWR1321,APAC,Australia,45-54,Standard,Tablet,2022-04-17
+VWR1322,North America,Canada,18-24,Standard,Mobile,2023-07-21
+VWR1323,LATAM,Colombia,35-44,Premium,Mobile,2020-02-22
+VWR1324,LATAM,Chile,25-34,Basic,Smart TV,2023-02-09
+VWR1325,APAC,India,55+,Premium,Mobile,2020-08-24
+VWR1326,North America,Mexico,55+,Standard,Tablet,2021-09-02
+VWR1327,APAC,South Korea,45-54,Standard,Smart TV,2021-04-15
+VWR1328,LATAM,Brazil,35-44,Basic,Desktop,2021-07-15
+VWR1329,APAC,Australia,35-44,Basic,Mobile,2023-01-01
+VWR1330,North America,USA,25-34,Basic,Tablet,2021-09-12
+VWR1331,APAC,Singapore,45-54,Standard,Mobile,2021-09-17
+VWR1332,North America,Canada,55+,Premium,Desktop,2021-02-27
+VWR1333,North America,USA,25-34,Premium,Mobile,2021-04-25
+VWR1334,LATAM,Chile,25-34,Premium,Tablet,2020-04-21
+VWR1335,LATAM,Argentina,25-34,Standard,Desktop,2021-09-28
+VWR1336,Europe,Spain,35-44,Basic,Smart TV,2020-12-12
+VWR1337,APAC,South Korea,45-54,Premium,Tablet,2023-12-20
+VWR1338,Europe,Spain,18-24,Basic,Smart TV,2022-10-20
+VWR1339,APAC,Singapore,35-44,Premium,Mobile,2020-07-30
+VWR1340,LATAM,Chile,55+,Standard,Tablet,2020-02-21
+VWR1341,LATAM,Colombia,35-44,Basic,Mobile,2021-05-20
+VWR1342,Europe,Spain,55+,Standard,Desktop,2021-02-06
+VWR1343,North America,Mexico,35-44,Basic,Tablet,2020-07-25
+VWR1344,LATAM,Chile,25-34,Basic,Desktop,2023-09-27
+VWR1345,APAC,South Korea,45-54,Basic,Tablet,2022-10-24
+VWR1346,LATAM,Colombia,55+,Basic,Tablet,2020-03-27
+VWR1347,APAC,Singapore,18-24,Standard,Mobile,2020-02-24
+VWR1348,North America,USA,35-44,Premium,Smart TV,2022-06-09
+VWR1349,Europe,Germany,35-44,Standard,Tablet,2022-01-03
+VWR1350,North America,Mexico,55+,Premium,Mobile,2023-10-24
+VWR1351,APAC,Japan,55+,Standard,Mobile,2022-03-02
+VWR1352,North America,Mexico,35-44,Premium,Tablet,2021-04-03
+VWR1353,Europe,UK,45-54,Premium,Tablet,2023-02-10
+VWR1354,APAC,Singapore,45-54,Premium,Mobile,2023-10-14
+VWR1355,LATAM,Colombia,55+,Premium,Desktop,2023-07-19
+VWR1356,LATAM,Colombia,25-34,Basic,Mobile,2020-02-01
+VWR1357,North America,USA,55+,Premium,Tablet,2022-10-22
+VWR1358,APAC,Singapore,35-44,Basic,Tablet,2021-01-06
+VWR1359,APAC,India,45-54,Basic,Mobile,2021-01-14
+VWR1360,Europe,Italy,55+,Standard,Tablet,2022-10-23
+VWR1361,North America,Mexico,55+,Premium,Mobile,2023-12-05
+VWR1362,APAC,Australia,55+,Premium,Mobile,2022-05-01
+VWR1363,APAC,Australia,45-54,Standard,Smart TV,2021-02-03
+VWR1364,LATAM,Brazil,25-34,Basic,Desktop,2023-07-19
+VWR1365,Europe,France,45-54,Basic,Desktop,2022-08-04
+VWR1366,Europe,Germany,55+,Premium,Desktop,2023-09-29
+VWR1367,APAC,South Korea,45-54,Standard,Mobile,2022-08-12
+VWR1368,LATAM,Argentina,18-24,Standard,Desktop,2021-07-28
+VWR1369,APAC,Japan,45-54,Basic,Mobile,2023-04-27
+VWR1370,LATAM,Brazil,35-44,Standard,Tablet,2022-03-09
+VWR1371,LATAM,Argentina,35-44,Standard,Tablet,2022-02-09
+VWR1372,North America,USA,55+,Standard,Smart TV,2023-07-22
+VWR1373,Europe,France,35-44,Basic,Desktop,2020-05-25
+VWR1374,Europe,Spain,25-34,Premium,Desktop,2022-05-12
+VWR1375,APAC,Australia,18-24,Standard,Smart TV,2021-09-17
+VWR1376,LATAM,Brazil,35-44,Standard,Smart TV,2020-09-26
+VWR1377,LATAM,Chile,55+,Basic,Desktop,2020-03-07
+VWR1378,Europe,Spain,45-54,Premium,Mobile,2023-06-20
+VWR1379,Europe,Spain,35-44,Basic,Desktop,2020-11-27
+VWR1380,North America,Mexico,45-54,Premium,Smart TV,2022-10-26
+VWR1381,LATAM,Argentina,55+,Basic,Smart TV,2021-11-24
+VWR1382,LATAM,Colombia,55+,Premium,Desktop,2023-09-18
+VWR1383,APAC,Singapore,55+,Premium,Mobile,2021-11-09
+VWR1384,APAC,Australia,25-34,Basic,Mobile,2023-10-14
+VWR1385,North America,Mexico,45-54,Standard,Smart TV,2023-07-02
+VWR1386,Europe,Germany,45-54,Premium,Mobile,2023-05-31
+VWR1387,LATAM,Brazil,55+,Basic,Desktop,2020-10-01
+VWR1388,APAC,India,45-54,Premium,Mobile,2021-10-07
+VWR1389,Europe,France,55+,Basic,Smart TV,2022-12-13
+VWR1390,Europe,Italy,55+,Premium,Tablet,2020-02-20
+VWR1391,North America,USA,45-54,Premium,Desktop,2022-02-04
+VWR1392,APAC,South Korea,18-24,Premium,Mobile,2020-10-17
+VWR1393,Europe,UK,25-34,Basic,Tablet,2023-08-10
+VWR1394,APAC,South Korea,18-24,Premium,Mobile,2021-03-02
+VWR1395,APAC,Japan,55+,Basic,Mobile,2020-03-29
+VWR1396,APAC,Australia,45-54,Premium,Mobile,2021-05-01
+VWR1397,Europe,Italy,35-44,Basic,Desktop,2021-03-28
+VWR1398,APAC,Japan,35-44,Standard,Tablet,2020-04-03
+VWR1399,LATAM,Argentina,25-34,Standard,Tablet,2023-05-15
+VWR1400,Europe,Italy,35-44,Basic,Tablet,2020-10-09
+VWR1401,Europe,UK,18-24,Basic,Tablet,2023-02-27
+VWR1402,APAC,Australia,25-34,Premium,Mobile,2020-11-11
+VWR1403,Europe,Spain,45-54,Premium,Mobile,2022-08-16
+VWR1404,North America,USA,35-44,Standard,Desktop,2022-11-02
+VWR1405,APAC,Japan,35-44,Premium,Desktop,2022-01-08
+VWR1406,Europe,UK,45-54,Standard,Mobile,2021-08-12
+VWR1407,APAC,Australia,55+,Basic,Smart TV,2021-03-07
+VWR1408,North America,Canada,18-24,Standard,Mobile,2021-10-12
+VWR1409,North America,Canada,55+,Premium,Mobile,2023-08-22
+VWR1410,North America,Mexico,45-54,Basic,Mobile,2023-05-27
+VWR1411,Europe,Spain,25-34,Premium,Mobile,2021-12-05
+VWR1412,APAC,Japan,18-24,Basic,Mobile,2021-10-25
+VWR1413,Europe,UK,35-44,Basic,Tablet,2022-11-11
+VWR1414,LATAM,Colombia,45-54,Standard,Tablet,2022-03-21
+VWR1415,North America,Canada,55+,Standard,Desktop,2021-09-19
+VWR1416,LATAM,Chile,35-44,Premium,Smart TV,2021-11-03
+VWR1417,Europe,Germany,55+,Premium,Mobile,2020-07-30
+VWR1418,North America,Canada,35-44,Basic,Desktop,2020-01-12
+VWR1419,North America,Mexico,35-44,Premium,Mobile,2020-11-12
+VWR1420,Europe,UK,55+,Standard,Mobile,2021-08-25
+VWR1421,North America,Canada,55+,Standard,Smart TV,2023-10-29
+VWR1422,Europe,UK,45-54,Basic,Tablet,2022-10-07
+VWR1423,LATAM,Brazil,18-24,Basic,Desktop,2020-10-08
+VWR1424,North America,Mexico,18-24,Premium,Desktop,2022-12-11
+VWR1425,APAC,Singapore,45-54,Standard,Smart TV,2020-07-19
+VWR1426,LATAM,Argentina,55+,Standard,Mobile,2022-09-01
+VWR1427,North America,Mexico,18-24,Standard,Mobile,2023-06-10
+VWR1428,North America,Mexico,18-24,Premium,Tablet,2021-11-06
+VWR1429,LATAM,Chile,45-54,Basic,Mobile,2020-05-17
+VWR1430,North America,USA,55+,Basic,Mobile,2022-09-05
+VWR1431,North America,USA,55+,Basic,Tablet,2021-02-28
+VWR1432,Europe,Germany,25-34,Basic,Mobile,2020-01-09
+VWR1433,LATAM,Brazil,25-34,Premium,Mobile,2021-10-01
+VWR1434,APAC,Japan,18-24,Standard,Mobile,2021-03-22
+VWR1435,Europe,Germany,55+,Basic,Smart TV,2021-02-13
+VWR1436,LATAM,Argentina,18-24,Basic,Mobile,2021-07-19
+VWR1437,North America,USA,25-34,Basic,Mobile,2022-06-13
+VWR1438,LATAM,Colombia,55+,Premium,Desktop,2021-02-27
+VWR1439,Europe,UK,25-34,Basic,Mobile,2021-06-11
+VWR1440,LATAM,Brazil,45-54,Standard,Desktop,2023-07-13
+VWR1441,APAC,South Korea,45-54,Premium,Mobile,2023-07-13
+VWR1442,Europe,Germany,25-34,Premium,Tablet,2021-05-03
+VWR1443,North America,USA,55+,Standard,Smart TV,2023-09-15
+VWR1444,LATAM,Argentina,25-34,Premium,Mobile,2021-01-25
+VWR1445,LATAM,Argentina,25-34,Premium,Tablet,2020-09-14
+VWR1446,APAC,India,35-44,Standard,Mobile,2022-05-24
+VWR1447,North America,Canada,45-54,Premium,Smart TV,2021-04-23
+VWR1448,LATAM,Colombia,45-54,Basic,Tablet,2021-07-03
+VWR1449,Europe,Spain,35-44,Premium,Mobile,2021-02-10
+VWR1450,Europe,UK,45-54,Standard,Tablet,2023-03-18
+VWR1451,LATAM,Chile,25-34,Standard,Smart TV,2020-08-31
+VWR1452,Europe,Spain,45-54,Standard,Smart TV,2020-09-24
+VWR1453,APAC,Singapore,55+,Basic,Mobile,2021-12-16
+VWR1454,Europe,Germany,18-24,Basic,Smart TV,2022-08-09
+VWR1455,North America,Mexico,45-54,Premium,Smart TV,2020-02-10
+VWR1456,Europe,UK,18-24,Standard,Tablet,2020-10-18
+VWR1457,APAC,South Korea,18-24,Standard,Mobile,2022-07-08
+VWR1458,North America,USA,18-24,Premium,Tablet,2021-03-16
+VWR1459,Europe,Spain,45-54,Basic,Mobile,2020-12-20
+VWR1460,Europe,Germany,45-54,Basic,Desktop,2021-06-20
+VWR1461,LATAM,Chile,55+,Premium,Desktop,2024-01-06
+VWR1462,APAC,Singapore,55+,Premium,Mobile,2020-08-20
+VWR1463,Europe,Germany,55+,Premium,Tablet,2021-07-30
+VWR1464,Europe,Spain,35-44,Basic,Smart TV,2020-07-13
+VWR1465,LATAM,Argentina,35-44,Standard,Smart TV,2023-10-11
+VWR1466,LATAM,Chile,18-24,Basic,Desktop,2022-05-08
+VWR1467,LATAM,Chile,18-24,Standard,Mobile,2020-08-29
+VWR1468,Europe,Spain,55+,Basic,Tablet,2020-05-18
+VWR1469,North America,Canada,35-44,Premium,Desktop,2022-08-16
+VWR1470,North America,Canada,45-54,Standard,Smart TV,2023-09-23
+VWR1471,APAC,Singapore,18-24,Premium,Desktop,2021-07-09
+VWR1472,North America,Mexico,25-34,Standard,Tablet,2020-12-07
+VWR1473,APAC,Australia,55+,Premium,Tablet,2022-11-21
+VWR1474,LATAM,Argentina,18-24,Standard,Mobile,2022-07-06
+VWR1475,North America,USA,25-34,Premium,Tablet,2023-01-01
+VWR1476,North America,USA,18-24,Standard,Desktop,2021-09-07
+VWR1477,Europe,Italy,35-44,Basic,Smart TV,2022-09-15
+VWR1478,LATAM,Brazil,25-34,Basic,Smart TV,2023-12-20
+VWR1479,LATAM,Chile,55+,Standard,Mobile,2021-11-22
+VWR1480,Europe,Spain,55+,Standard,Mobile,2021-07-11
+VWR1481,APAC,India,55+,Premium,Mobile,2022-12-16
+VWR1482,North America,Canada,35-44,Standard,Smart TV,2021-04-21
+VWR1483,APAC,Australia,55+,Standard,Mobile,2021-12-01
+VWR1484,Europe,Germany,25-34,Basic,Mobile,2021-09-08
+VWR1485,APAC,South Korea,25-34,Premium,Mobile,2021-05-24
+VWR1486,APAC,Australia,25-34,Premium,Mobile,2022-07-15
+VWR1487,Europe,Spain,55+,Standard,Desktop,2020-02-12
+VWR1488,Europe,UK,55+,Basic,Desktop,2020-12-26
+VWR1489,APAC,Singapore,18-24,Premium,Desktop,2020-09-12
+VWR1490,North America,Mexico,45-54,Basic,Smart TV,2023-07-20
+VWR1491,APAC,India,25-34,Standard,Mobile,2020-03-12
+VWR1492,LATAM,Chile,18-24,Basic,Smart TV,2021-01-24
+VWR1493,APAC,South Korea,55+,Basic,Mobile,2023-02-08
+VWR1494,APAC,Japan,35-44,Premium,Mobile,2020-01-12
+VWR1495,North America,USA,35-44,Standard,Smart TV,2023-01-26
+VWR1496,Europe,Spain,25-34,Premium,Smart TV,2021-08-25
+VWR1497,APAC,South Korea,25-34,Premium,Mobile,2021-12-18
+VWR1498,APAC,South Korea,45-54,Premium,Tablet,2022-04-01
+VWR1499,APAC,Singapore,25-34,Premium,Mobile,2023-03-18
+VWR1500,APAC,Singapore,25-34,Standard,Mobile,2020-03-15

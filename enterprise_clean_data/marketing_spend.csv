@@ -1,0 +1,61 @@
+campaign_id,campaign_name,region,platform,spend_usd,impressions,conversion_rate,quarter
+CAM001,Creator Collab - Europe Connected TV,Europe,Connected TV,439883,13370849,0.0205,Q2 FY2026
+CAM002,Generic Ad - APAC YouTube Shorts,APAC,YouTube Shorts,483296,18074639,0.075,Q2 FY2026
+CAM003,Brand Awareness - APAC Instagram Reels,APAC,Instagram Reels,297311,8625343,0.0584,Q2 FY2026
+CAM004,Creator Collab - LATAM Google Ads,LATAM,Google Ads,140248,5392403,0.0212,Q2 FY2026
+CAM005,Direct Response - Europe TikTok,Europe,TikTok,158634,3458058,0.0187,Q2 FY2026
+CAM006,Brand Awareness - LATAM Instagram Reels,LATAM,Instagram Reels,396232,7840337,0.0325,Q2 FY2026
+CAM007,Creator Collab - APAC Connected TV,APAC,Connected TV,427744,9682280,0.0634,Q2 FY2026
+CAM008,Creator Collab - LATAM Instagram Reels,LATAM,Instagram Reels,145700,6117484,0.0687,Q2 FY2026
+CAM009,Generic Ad - Europe Connected TV,Europe,Connected TV,231412,5372405,0.026,Q2 FY2026
+CAM010,Generic Ad - LATAM Connected TV,LATAM,Connected TV,454544,20506811,0.0351,Q2 FY2026
+CAM011,Creator Collab - Europe Connected TV,Europe,Connected TV,98493,1692373,0.0394,Q2 FY2026
+CAM012,Generic Ad - North America YouTube Shorts,North America,YouTube Shorts,417874,3194924,0.013,Q2 FY2026
+CAM013,Generic Ad - APAC TikTok,APAC,TikTok,158078,7175886,0.056,Q2 FY2026
+CAM014,Direct Response - Europe Instagram Reels,Europe,Instagram Reels,397442,11040218,0.014,Q2 FY2026
+CAM015,Generic Ad - Europe Google Ads,Europe,Google Ads,440788,11220653,0.0232,Q2 FY2026
+CAM016,Brand Awareness - LATAM Connected TV,LATAM,Connected TV,497025,21596095,0.0407,Q2 FY2026
+CAM017,Creator Collab - Europe Connected TV,Europe,Connected TV,286336,1725374,0.0407,Q2 FY2026
+CAM018,Generic Ad - North America Instagram Reels,North America,Instagram Reels,349759,14013834,0.0336,Q2 FY2026
+CAM019,Generic Ad - Europe Google Ads,Europe,Google Ads,401813,18801961,0.0185,Q2 FY2026
+CAM020,Brand Awareness - North America YouTube Shorts,North America,YouTube Shorts,322340,11470486,0.0306,Q2 FY2026
+CAM021,Generic Ad - North America TikTok,North America,TikTok,439378,15822717,0.0429,Q2 FY2026
+CAM022,Direct Response - LATAM Google Ads,LATAM,Google Ads,130008,3778899,0.0202,Q2 FY2026
+CAM023,Creator Collab - North America Instagram Reels,North America,Instagram Reels,276907,5585794,0.021,Q2 FY2026
+CAM024,Generic Ad - APAC Instagram Reels,APAC,Instagram Reels,159058,1367462,0.0446,Q2 FY2026
+CAM025,Brand Awareness - North America Google Ads,North America,Google Ads,282876,12177713,0.0312,Q2 FY2026
+CAM026,Brand Awareness - APAC TikTok,APAC,TikTok,133395,5869603,0.0229,Q2 FY2026
+CAM027,Creator Collab - APAC Connected TV,APAC,Connected TV,14688,500161,0.0249,Q2 FY2026
+CAM028,Brand Awareness - APAC YouTube Shorts,APAC,YouTube Shorts,313253,2129164,0.0651,Q2 FY2026
+CAM029,Brand Awareness - LATAM YouTube Shorts,LATAM,YouTube Shorts,451479,17846001,0.0297,Q2 FY2026
+CAM030,Direct Response - North America Google Ads,North America,Google Ads,334318,3667359,0.0109,Q2 FY2026
+CAM031,Direct Response - North America Connected TV,North America,Connected TV,155281,838321,0.0157,Q2 FY2026
+CAM032,Brand Awareness - APAC Connected TV,APAC,Connected TV,388273,17474521,0.063,Q2 FY2026
+CAM033,Direct Response - LATAM Instagram Reels,LATAM,Instagram Reels,483680,9412076,0.0395,Q2 FY2026
+CAM034,Direct Response - North America TikTok,North America,TikTok,353519,7344985,0.0401,Q2 FY2026
+CAM035,Direct Response - APAC YouTube Shorts,APAC,YouTube Shorts,143425,4985927,0.0568,Q2 FY2026
+CAM036,Creator Collab - APAC Google Ads,APAC,Google Ads,480892,6380517,0.0268,Q2 FY2026
+CAM037,Creator Collab - Europe Google Ads,Europe,Google Ads,231103,2607398,0.0238,Q2 FY2026
+CAM038,Direct Response - APAC Google Ads,APAC,Google Ads,175949,3311714,0.0413,Q2 FY2026
+CAM039,Creator Collab - Europe Instagram Reels,Europe,Instagram Reels,111998,3415489,0.0255,Q2 FY2026
+CAM040,Generic Ad - Europe Google Ads,Europe,Google Ads,322290,15659158,0.0192,Q2 FY2026
+CAM041,Direct Response - LATAM Connected TV,LATAM,Connected TV,415635,10808356,0.0448,Q2 FY2026
+CAM042,Direct Response - APAC TikTok,APAC,TikTok,222259,3501056,0.0695,Q2 FY2026
+CAM043,Brand Awareness - Europe TikTok,Europe,TikTok,145979,2952705,0.0191,Q2 FY2026
+CAM044,Brand Awareness - LATAM Connected TV,LATAM,Connected TV,100603,3071277,0.0371,Q2 FY2026
+CAM045,Brand Awareness - North America Instagram Reels,North America,Instagram Reels,468237,16530591,0.0393,Q2 FY2026
+CAM046,Direct Response - APAC Google Ads,APAC,Google Ads,299225,5697309,0.0209,Q2 FY2026
+CAM047,Direct Response - Europe Google Ads,Europe,Google Ads,334649,11121193,0.0296,Q2 FY2026
+CAM048,Creator Collab - Europe Connected TV,Europe,Connected TV,32786,494548,0.0285,Q2 FY2026
+CAM049,Generic Ad - Europe TikTok,Europe,TikTok,201793,6333735,0.0152,Q2 FY2026
+CAM050,Generic Ad - North America Connected TV,North America,Connected TV,305465,4770453,0.0414,Q2 FY2026
+CAM051,Creator Collab - APAC TikTok,APAC,TikTok,148536,4922607,0.0584,Q2 FY2026
+CAM052,Brand Awareness - North America Google Ads,North America,Google Ads,111350,5334472,0.0142,Q2 FY2026
+CAM053,Creator Collab - APAC Instagram Reels,APAC,Instagram Reels,278638,1520203,0.0565,Q2 FY2026
+CAM054,Creator Collab - North America TikTok,North America,TikTok,405801,20125607,0.0561,Q2 FY2026
+CAM055,Creator Collab - North America TikTok,North America,TikTok,410603,3314215,0.0477,Q2 FY2026
+CAM056,Direct Response - APAC TikTok,APAC,TikTok,65100,1204200,0.0504,Q2 FY2026
+CAM057,Direct Response - APAC Connected TV,APAC,Connected TV,258992,3921763,0.0736,Q2 FY2026
+CAM058,Brand Awareness - APAC Google Ads,APAC,Google Ads,362648,13500044,0.0587,Q2 FY2026
+CAM059,Brand Awareness - APAC Google Ads,APAC,Google Ads,146560,5138956,0.0339,Q2 FY2026
+CAM060,Creator Collab - Europe Google Ads,Europe,Google Ads,43079,2082027,0.025,Q2 FY2026

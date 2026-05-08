@@ -1,0 +1,2501 @@
+review_id,viewer_id,movie_id,rating,review_text,sentiment,review_date
+REV0001,VWR1086,MOV028,4,ending felt rushed tbh,Positive,2025-10-17
+REV0002,VWR0683,MOV024,5,why is the app crashing?,Positive,2025-11-27
+REV0003,VWR1481,MOV040,4,音楽 was good,Positive,2025-06-16
+REV0004,VWR0185,MOV040,2,subtitles broken again,Negative,2025-07-17
+REV0005,VWR0657,MOV038,2,,Negative,2025-04-15
+REV0006,VWR1365,MOV041,2,ending felt rushed tbh,Negative,2025-09-20
+REV0007,VWR1391,MOV019,3,音楽 was good,Neutral,2025-12-04
+REV0008,VWR0045,MOV037,5,ERROR_EXPORT_ROW,Positive,2025-06-09
+REV0009,VWR1371,MOV008,2,why is the app crashing?,Negative,2025-03-13
+REV0010,VWR0232,MOV047,5,subtitles broken again,positive,2025-01-10
+REV0011,VWR0906,MOV014,1,love it,Negative,2025-07-31
+REV0012,VWR0737,MOV040,1,subtitles broken again,Negative,2025-12-06
+REV0013,VWR1222,MOV002,4,subtitles broken again,Positive,2025-08-25
+REV0014,VWR0779,MOV041,1,love it,Negative,2025-02-27
+REV0015,VWR0564,MOV014,4,idk why people like this,Positive,2025-04-01
+REV0016,VWR1083,MOV028,2,idk why people like this,Negative,2025-06-14
+REV0017,VWR0190,MOV025,3,galaxy burn is the best thing ever 💯,Neutral,2025-11-08
+REV0018,VWR0181,MOV024,2,galaxy burn is the best thing ever 💯,Negative,2025-06-10
+REV0019,VWR1360,MOV029,4,meh,Positive,2025-09-18
+REV0020,VWR1314,MOV057,4,so good!,Positive,2025-08-14
+REV0021,VWR1025,MOV026,2,idk why people like this,Negative,2025-11-27
+REV0022,VWR1462,MOV042,4,音楽 was good,Positive,2025-04-15
+REV0023,VWR0329,MOV027,2,音楽 was good,Negative,2025-10-02
+REV0024,VWR0335,MOV053,2,galaxy burn is the best thing ever 💯,Negative,2025-07-23
+REV0025,VWR0364,MOV052,1,terrible pacing ngl,Negative,2025-01-24
+REV0026,VWR1249,MOV045,4,音楽 was good,Positive,2025-06-24
+REV0027,VWR1237,MOV007,5,so good!,Positive,2025-06-09
+REV0028,VWR1452,MOV049,4,love it,Positive,2025-02-09
+REV0029,VWR1053,MOV041,4,idk why people like this,Positive,2025-10-14
+REV0030,VWR1274,MOV040,5,音楽 was good,Positive,2025-07-28
+REV0031,VWR0828,MOV046,2,terrible pacing ngl,negative,2025-11-19
+REV0032,VWR0406,MOV041,4,love it,Positive,2025-08-15
+REV0033,VWR0485,MOV048,5,love it,Positive,2025-02-25
+REV0034,VWR0236,MOV054,1,subtitles broken again,Negative,2025-10-20
+REV0035,VWR0262,MOV034,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-18
+REV0036,VWR1179,MOV027,2,so good!,Negative,2025-10-11
+REV0037,VWR1489,MOV048,1,ending felt rushed tbh,Negative,2025-02-28
+REV0038,VWR0886,MOV059,5,meh,Positive,2025-05-05
+REV0039,VWR0592,MOV030,5,so good!,Positive,2025-12-09
+REV0040,VWR1015,MOV022,5,ending felt rushed tbh,Positive,2025-10-06
+REV0041,VWR0555,MOV023,1,galaxy burn is the best thing ever 💯,Negative,2025-05-08
+REV0042,VWR1033,MOV004,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-10
+REV0043,VWR0421,MOV001,4,THIS SHOW IS INSANE 🔥,Positive,2025-06-29
+REV0044,VWR0257,MOV060,3,love it,Neutral,2025-11-24
+REV0045,VWR1028,MOV054,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-22
+REV0046,VWR0143,MOV021,5,ending felt rushed tbh,Positive,2025-12-03
+REV0047,VWR0753,MOV053,2,terrible pacing ngl,Negative,2025-06-03
+REV0048,VWR0812,MOV053,4,why is the app crashing?,Positive,2025-05-31
+REV0049,VWR0833,MOV045,3,subtitles broken again,neutral,2025-04-01
+REV0050,VWR1251,MOV037,4,love it,Positive,2025-09-13
+REV0051,VWR0088,MOV042,5,terrible pacing ngl,Positive,2025-06-11
+REV0052,VWR0545,MOV034,4,THIS SHOW IS INSANE 🔥,Positive,2025-06-25
+REV0053,VWR1122,MOV027,4,meh,Positive,2025-11-29
+REV0054,VWR1166,MOV055,1,idk why people like this,Negative,2025-09-07
+REV0055,VWR0662,MOV034,5,音楽 was good,Positive,2026-01-01
+REV0056,VWR0600,MOV046,2,terrible pacing ngl,Negative,2025-02-05
+REV0057,VWR0960,MOV026,1,meh,Negative,2025-01-15
+REV0058,VWR1238,MOV048,4,galaxy burn is the best thing ever 💯,Positive,2025-11-16
+REV0059,VWR0774,MOV040,5,THIS SHOW IS INSANE 🔥,Positive,2025-06-20
+REV0060,VWR0707,MOV038,3,idk why people like this,Neutral,2025-02-07
+REV0061,VWR0138,MOV007,2,terrible pacing ngl,Negative,2025-03-11
+REV0062,VWR1449,MOV009,4,ending felt rushed tbh,Positive,2025-10-05
+REV0063,VWR1177,MOV013,4,THIS SHOW IS INSANE 🔥,Positive,2025-05-12
+REV0064,VWR0230,MOV030,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-28
+REV0065,VWR0451,MOV013,2,ending felt rushed tbh,Negative,2025-05-19
+REV0066,VWR0886,MOV015,3,idk why people like this,Neutral,2025-09-22
+REV0067,VWR0051,MOV041,3,,Neutral,2025-07-27
+REV0068,VWR0492,MOV027,5,love it,Positive,2025-05-24
+REV0069,VWR1010,MOV046,1,音楽 was good,Negative,2025-07-21
+REV0070,VWR0746,MOV024,4,galaxy burn is the best thing ever 💯,Positive,2025-08-27
+REV0071,VWR1462,MOV034,3,THIS SHOW IS INSANE 🔥,Neutral,2025-04-18
+REV0072,VWR0054,MOV001,1,ending felt rushed tbh,Negative,2025-09-30
+REV0073,VWR1305,MOV042,4,ending felt rushed tbh,Positive,2025-10-22
+REV0074,VWR1359,MOV029,1,idk why people like this,Negative,2025-12-28
+REV0075,VWR1287,MOV052,1,meh,Negative,2025-06-01
+REV0076,VWR1014,MOV013,1,NaN,Negative,2025-05-13
+REV0077,VWR1359,MOV040,4,subtitles broken again,Positive,2025-11-27
+REV0078,VWR1038,MOV003,4,galaxy burn is the best thing ever 💯,Positive,2025-03-16
+REV0079,VWR0404,MOV043,2,love it,Negative,2025-01-11
+REV0080,VWR0439,MOV041,5,terrible pacing ngl,Positive,2025-03-19
+REV0081,VWR0323,MOV012,2,ERROR_EXPORT_ROW,Negative,2025-06-16
+REV0082,VWR1470,MOV047,2,why is the app crashing?,negative,2025-07-16
+REV0083,VWR1378,MOV054,5,ending felt rushed tbh,Positive,2025-09-17
+REV0084,VWR0837,MOV007,3,idk why people like this,Neutral,2025-07-31
+REV0085,VWR1465,MOV016,5,THIS SHOW IS INSANE 🔥,Positive,2025-10-30
+REV0086,VWR1271,MOV049,2,so good!,Negative,2025-05-06
+REV0087,VWR0904,MOV015,4,galaxy burn is the best thing ever 💯,Positive,2025-04-19
+REV0088,VWR0359,MOV008,3,why is the app crashing?,Neutral,2025-02-20
+REV0089,VWR0904,MOV056,2,NULL,Negative,2025-07-27
+REV0090,VWR0888,MOV020,4,meh,Positive,2025-12-21
+REV0091,VWR0564,MOV004,1,,Negative,2025-08-21
+REV0092,VWR0501,MOV018,4,meh,Positive,2025-11-08
+REV0093,VWR0753,MOV004,2,terrible pacing ngl,Negative,2025-08-20
+REV0094,VWR0646,MOV053,2,音楽 was good,Negative,2025-07-19
+REV0095,VWR1321,MOV029,3,ending felt rushed tbh,Neutral,2025-11-14
+REV0096,VWR1262,MOV060,4,,Positive,2025-11-01
+REV0097,VWR0071,MOV055,1,terrible pacing ngl,Negative,2025-12-11
+REV0098,VWR0072,MOV012,3,,Neutral,2025-12-26
+REV0099,VWR1218,MOV011,4,ending felt rushed tbh,Positive,2025-02-03
+REV0100,VWR1091,MOV015,5,so good!,Positive,2025-07-03
+REV0101,VWR1421,MOV059,4,so good!,Positive,2025-04-25
+REV0102,VWR0459,MOV057,5,so good!,Positive,2025-12-19
+REV0103,VWR0743,MOV032,5,idk why people like this,Positive,2025-12-03
+REV0104,VWR1420,MOV012,3,subtitles broken again,Neutral,2025-05-08
+REV0105,VWR0861,MOV026,3,idk why people like this,Neutral,2025-01-31
+REV0106,VWR1245,MOV059,3,love it,Neutral,2025-01-02
+REV0107,VWR0143,MOV002,4,love it,Positive,2025-08-09
+REV0108,VWR0989,MOV056,2,ending felt rushed tbh,Negative,2025-08-11
+REV0109,VWR0847,MOV056,5,音楽 was good,Positive,2025-03-07
+REV0110,VWR0991,MOV005,5,ending felt rushed tbh,Positive,2025-05-20
+REV0111,VWR0229,MOV035,2,love it,negative,2025-07-05
+REV0112,VWR1438,MOV047,3,音楽 was good,Neutral,2025-02-10
+REV0113,VWR0056,MOV055,1,音楽 was good,Negative,2025-07-03
+REV0114,VWR0571,MOV024,5,音楽 was good,Positive,2025-04-22
+REV0115,VWR0079,MOV002,2,love it,Negative,2025-04-08
+REV0116,VWR1099,MOV036,1,THIS SHOW IS INSANE 🔥,Negative,2025-02-08
+REV0117,VWR0905,MOV001,2,subtitles broken again,Negative,2025-10-12
+REV0118,VWR0028,MOV057,2,love it,Negative,2025-02-23
+REV0119,VWR1299,MOV041,1,NaN,Negative,2025-06-29
+REV0120,VWR0856,MOV029,1,音楽 was good,Negative,2025-05-28
+REV0121,VWR1198,MOV054,3,idk why people like this,Neutral,2025-07-28
+REV0122,VWR1401,MOV001,2,love it,Negative,2025-08-20
+REV0123,VWR0429,MOV024,2,galaxy burn is the best thing ever 💯,Negative,2025-06-01
+REV0124,VWR0661,MOV051,2,love it,Negative,2025-02-18
+REV0125,VWR0226,MOV047,2,terrible pacing ngl,Negative,2025-01-18
+REV0126,VWR0544,MOV060,4,why is the app crashing?,Positive,2025-02-04
+REV0127,VWR0679,MOV056,5,terrible pacing ngl,Positive,2025-07-30
+REV0128,VWR0104,MOV029,4,galaxy burn is the best thing ever 💯,Positive,2025-10-21
+REV0129,VWR0251,MOV052,4,,Positive,2025-03-03
+REV0130,VWR1335,MOV042,4,meh,Positive,2025-10-03
+REV0131,VWR0878,MOV033,1,why is the app crashing?,Negative,2025-08-08
+REV0132,VWR0292,MOV036,5,terrible pacing ngl,Positive,2025-11-28
+REV0133,VWR0063,MOV020,5,音楽 was good,Positive,2025-12-23
+REV0134,VWR0144,MOV001,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-15
+REV0135,VWR0959,MOV026,5,ending felt rushed tbh,Positive,2025-11-19
+REV0136,VWR1246,MOV015,1,meh,Negative,2025-01-14
+REV0137,VWR0120,MOV010,5,galaxy burn is the best thing ever 💯,Positive,2025-09-08
+REV0138,VWR1066,MOV047,1,love it,Negative,2025-02-15
+REV0139,VWR0051,MOV006,4,love it,Positive,2025-09-18
+REV0140,VWR0106,MOV040,5,why is the app crashing?,Positive,2025-06-10
+REV0141,VWR0546,MOV031,1,so good!,Negative,2025-02-13
+REV0142,VWR1175,MOV046,4,音楽 was good,Positive,2025-07-08
+REV0143,VWR0053,MOV035,1,terrible pacing ngl,Negative,2025-05-29
+REV0144,VWR0280,MOV018,5,idk why people like this,Positive,2025-04-30
+REV0145,VWR0492,MOV020,3,THIS SHOW IS INSANE 🔥,Neutral,2025-04-19
+REV0146,VWR1141,MOV033,2,love it,Negative,2025-10-26
+REV0147,VWR0779,MOV056,1,NaN,Negative,2025-10-17
+REV0148,VWR0952,MOV037,5,subtitles broken again,Positive,2025-10-24
+REV0149,VWR0620,MOV036,2,THIS SHOW IS INSANE 🔥,Negative,2025-01-18
+REV0150,VWR0167,MOV028,3,idk why people like this,Neutral,2025-07-28
+REV0151,VWR0861,MOV023,1,THIS SHOW IS INSANE 🔥,Negative,2025-06-20
+REV0152,VWR0061,MOV050,5,love it,Positive,2025-01-06
+REV0153,VWR0352,MOV004,2,terrible pacing ngl,Negative,2025-07-13
+REV0154,VWR0308,MOV005,5,meh,Positive,2025-03-30
+REV0155,VWR0386,MOV052,5,THIS SHOW IS INSANE 🔥,Positive,2025-10-09
+REV0156,VWR0459,MOV041,3,ending felt rushed tbh,Neutral,2025-04-26
+REV0157,VWR0053,MOV044,4,音楽 was good,Positive,2025-09-20
+REV0158,VWR1355,MOV007,1,galaxy burn is the best thing ever 💯,Negative,2025-10-05
+REV0159,VWR0863,MOV017,1,subtitles broken again,Negative,2025-09-20
+REV0160,VWR1091,MOV035,3,love it,Neutral,2025-03-24
+REV0161,VWR0234,MOV039,3,terrible pacing ngl,neutral,2025-04-02
+REV0162,VWR0543,MOV048,2,love it,Negative,2025-09-12
+REV0163,VWR0207,MOV042,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-24
+REV0164,VWR1117,MOV051,1,galaxy burn is the best thing ever 💯,Negative,2025-07-01
+REV0165,VWR0663,MOV001,4,galaxy burn is the best thing ever 💯,Positive,2025-10-21
+REV0166,VWR0014,MOV020,3,ending felt rushed tbh,Neutral,2025-01-27
+REV0167,VWR1445,MOV038,2,subtitles broken again,Negative,2025-05-23
+REV0168,VWR0985,MOV010,1,meh,Negative,2025-01-31
+REV0169,VWR0154,MOV001,3,why is the app crashing?,Neutral,2025-03-17
+REV0170,VWR0455,MOV026,3,ending felt rushed tbh,Neutral,2025-12-25
+REV0171,VWR0147,MOV052,5,音楽 was good,Positive,2025-10-28
+REV0172,VWR0015,MOV023,3,meh,Neutral,2025-11-25
+REV0173,VWR0533,MOV048,4,,Positive,2025-03-23
+REV0174,VWR1078,MOV008,3,meh,Neutral,2025-04-03
+REV0175,VWR0151,MOV004,1,galaxy burn is the best thing ever 💯,Negative,2025-12-05
+REV0176,VWR0839,MOV037,2,love it,Negative,2025-09-26
+REV0177,VWR0999,MOV006,3,音楽 was good,Neutral,2025-07-05
+REV0178,VWR0021,MOV050,4,love it,Positive,2025-11-20
+REV0179,VWR0862,MOV048,4,idk why people like this,Positive,2025-07-03
+REV0180,VWR0371,MOV022,3,so good!,Neutral,2025-01-26
+REV0181,VWR0765,MOV056,5,love it,Positive,2025-05-16
+REV0182,VWR1461,MOV014,3,galaxy burn is the best thing ever 💯,Neutral,2025-07-25
+REV0183,VWR1367,MOV020,1,,Negative,2025-11-16
+REV0184,VWR0498,MOV019,3,love it,Neutral,2025-05-16
+REV0185,VWR0010,MOV043,5,galaxy burn is the best thing ever 💯,Positive,2025-12-13
+REV0186,VWR0195,MOV050,2,why is the app crashing?,Negative,2025-05-28
+REV0187,VWR1094,MOV017,2,ending felt rushed tbh,Negative,2025-08-10
+REV0188,VWR1047,MOV060,3,THIS SHOW IS INSANE 🔥,Neutral,2025-08-04
+REV0189,VWR0333,MOV030,4,ending felt rushed tbh,Positive,2025-06-06
+REV0190,VWR1220,MOV028,1,meh,negative,2025-10-31
+REV0191,VWR0826,MOV048,1,love it,Negative,2025-02-07
+REV0192,VWR1066,MOV034,3,,Neutral,2025-07-25
+REV0193,VWR0777,MOV039,1,so good!,Negative,2025-04-09
+REV0194,VWR0462,MOV031,5,ending felt rushed tbh,Positive,2025-06-11
+REV0195,VWR0615,MOV052,1,meh,Negative,2025-02-22
+REV0196,VWR1260,MOV049,3,idk why people like this,Neutral,2025-09-19
+REV0197,VWR0447,MOV047,1,meh,Negative,2025-03-11
+REV0198,VWR1249,MOV060,5,,Positive,2025-05-19
+REV0199,VWR1128,MOV007,5,#### temp ####,Positive,2025-09-18
+REV0200,VWR0739,MOV025,3,so good!,Neutral,2025-08-06
+REV0201,VWR0242,MOV017,3,meh,Neutral,2025-03-13
+REV0202,VWR0186,MOV012,1,音楽 was good,Negative,2025-03-12
+REV0203,VWR0513,MOV022,1,galaxy burn is the best thing ever 💯,Negative,2025-06-17
+REV0204,VWR0493,MOV023,3,why is the app crashing?,Neutral,2025-01-10
+REV0205,VWR1225,MOV059,3,subtitles broken again,Neutral,2025-01-17
+REV0206,VWR0840,MOV003,3,why is the app crashing?,Neutral,2025-08-14
+REV0207,VWR0043,MOV007,1,subtitles broken again,Negative,2025-03-09
+REV0208,VWR0514,MOV007,1,galaxy burn is the best thing ever 💯,Negative,2025-02-23
+REV0209,VWR0876,MOV051,3,meh,Neutral,2025-09-29
+REV0210,VWR0710,MOV045,5,idk why people like this,Positive,2025-08-03
+REV0211,VWR0068,MOV029,1,so good!,Negative,2025-07-10
+REV0212,VWR0697,MOV054,2,meh,Negative,2025-05-21
+REV0213,VWR1293,MOV006,4,galaxy burn is the best thing ever 💯,positive,2025-10-14
+REV0214,VWR0598,MOV034,5,love it,positive,2025-07-29
+REV0215,VWR0175,MOV059,2,why is the app crashing?,Negative,2025-06-13
+REV0216,VWR0905,MOV057,5,ERROR_EXPORT_ROW,positive,2025-06-30
+REV0217,VWR0632,MOV039,3,,Neutral,2025-03-25
+REV0218,VWR0586,MOV032,5,meh,Positive,2025-09-23
+REV0219,VWR0734,MOV037,2,love it,Negative,2025-02-28
+REV0220,VWR0935,MOV029,5,love it,Positive,2025-12-20
+REV0221,VWR1315,MOV020,5,galaxy burn is the best thing ever 💯,Positive,2025-11-27
+REV0222,VWR0454,MOV045,1,音楽 was good,Negative,2025-11-05
+REV0223,VWR0489,MOV040,5,音楽 was good,Positive,2025-11-28
+REV0224,VWR0993,MOV034,2,why is the app crashing?,Negative,2025-12-11
+REV0225,VWR0067,MOV033,1,love it,Negative,2025-03-25
+REV0226,VWR0148,MOV030,4,galaxy burn is the best thing ever 💯,Positive,2025-10-29
+REV0227,VWR0625,MOV020,5,terrible pacing ngl,Positive,2025-07-26
+REV0228,VWR1392,MOV014,1,why is the app crashing?,Negative,2025-08-12
+REV0229,VWR0613,MOV039,5,love it,Positive,2025-05-18
+REV0230,VWR1215,MOV006,4,meh,Positive,2025-10-07
+REV0231,VWR0348,MOV039,4,so good!,positive,2025-07-28
+REV0232,VWR0556,MOV051,3,ending felt rushed tbh,Neutral,2025-12-27
+REV0233,VWR0620,MOV011,4,love it,Positive,2025-07-06
+REV0234,VWR0313,MOV007,2,so good!,Negative,2025-09-05
+REV0235,VWR0602,MOV037,5,so good!,Positive,2025-02-09
+REV0236,VWR0144,MOV010,3,THIS SHOW IS INSANE 🔥,Neutral,2025-06-21
+REV0237,VWR1342,MOV001,2,meh,Negative,2025-02-08
+REV0238,VWR0173,MOV029,1,why is the app crashing?,Negative,2025-01-04
+REV0239,VWR0641,MOV032,5,meh,Positive,2025-11-19
+REV0240,VWR0230,MOV028,3,so good!,Neutral,2025-11-24
+REV0241,VWR0911,MOV011,5,THIS SHOW IS INSANE 🔥,Positive,2025-07-12
+REV0242,VWR1026,MOV021,4,galaxy burn is the best thing ever 💯,Positive,2025-05-02
+REV0243,VWR1089,MOV007,4,so good!,Positive,2025-05-11
+REV0244,VWR1262,MOV056,5,subtitles broken again,Positive,2025-11-01
+REV0245,VWR0460,MOV001,5,why is the app crashing?,Positive,2025-09-10
+REV0246,VWR0683,MOV001,4,subtitles broken again,Positive,2025-03-12
+REV0247,VWR0813,MOV029,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-22
+REV0248,VWR0892,MOV025,3,so good!,Neutral,2025-12-21
+REV0249,VWR0125,MOV019,1,idk why people like this,Negative,2025-10-12
+REV0250,VWR0669,MOV024,4,love it,Positive,2025-03-31
+REV0251,VWR0570,MOV017,5,idk why people like this,Positive,2025-12-22
+REV0252,VWR1116,MOV018,2,音楽 was good,Negative,2025-02-22
+REV0253,VWR0959,MOV054,2,so good!,Negative,2025-01-18
+REV0254,VWR0661,MOV052,3,why is the app crashing?,Neutral,2025-04-29
+REV0255,VWR0181,MOV001,4,subtitles broken again,Positive,2025-10-11
+REV0256,VWR1347,MOV054,4,love it,Positive,2025-12-02
+REV0257,VWR0911,MOV047,5,terrible pacing ngl,Positive,2025-05-28
+REV0258,VWR0029,MOV006,2,terrible pacing ngl,Negative,2025-04-17
+REV0259,VWR1211,MOV035,2,THIS SHOW IS INSANE 🔥,Negative,2025-03-05
+REV0260,VWR0843,MOV046,3,ending felt rushed tbh,Neutral,2025-06-21
+REV0261,VWR1059,MOV007,5,why is the app crashing?,Positive,2025-12-27
+REV0262,VWR0441,MOV058,1,meh,Negative,2025-03-04
+REV0263,VWR0463,MOV001,5,音楽 was good,Positive,2025-11-24
+REV0264,VWR0698,MOV033,5,so good!,Positive,2025-08-19
+REV0265,VWR1416,MOV030,1,ending felt rushed tbh,negative,2025-04-11
+REV0266,VWR0297,MOV013,4,音楽 was good,Positive,2025-06-21
+REV0267,VWR0845,MOV016,1,meh,Negative,2025-07-06
+REV0268,VWR1225,MOV019,4,ending felt rushed tbh,Positive,2025-02-04
+REV0269,VWR0198,MOV038,4,idk why people like this,Positive,2025-09-20
+REV0270,VWR0931,MOV036,4,so good!,Positive,2025-08-01
+REV0271,VWR0424,MOV008,4,subtitles broken again,Positive,2025-05-08
+REV0272,VWR1136,MOV002,2,why is the app crashing?,negative,2025-01-05
+REV0273,VWR0641,MOV017,2,ending felt rushed tbh,Negative,2025-01-14
+REV0274,VWR0614,MOV039,5,meh,Positive,2025-04-08
+REV0275,VWR0555,MOV038,1,galaxy burn is the best thing ever 💯,Negative,2025-02-09
+REV0276,VWR1179,MOV012,1,terrible pacing ngl,Negative,2025-02-09
+REV0277,VWR0142,MOV038,5,galaxy burn is the best thing ever 💯,Positive,2025-06-20
+REV0278,VWR0911,MOV039,5,idk why people like this,Positive,2025-12-01
+REV0279,VWR0152,MOV058,3,idk why people like this,Neutral,2025-12-24
+REV0280,VWR0179,MOV021,4,terrible pacing ngl,Positive,2025-08-22
+REV0281,VWR1024,MOV027,4,why is the app crashing?,positive,2025-06-11
+REV0282,VWR0038,MOV023,1,so good!,Negative,2025-01-06
+REV0283,VWR0627,MOV023,5,love it,Positive,2025-09-08
+REV0284,VWR0416,MOV030,2,idk why people like this,Negative,2025-06-06
+REV0285,VWR0322,MOV035,1,why is the app crashing?,Negative,2025-10-01
+REV0286,VWR0094,MOV055,3,love it,neutral,2025-04-08
+REV0287,VWR1126,MOV049,1,,Negative,2026-01-01
+REV0288,VWR0392,MOV015,4,,Positive,2025-01-02
+REV0289,VWR0609,MOV029,5,THIS SHOW IS INSANE 🔥,positive,2025-06-26
+REV0290,VWR0422,MOV054,5,love it,positive,2025-10-24
+REV0291,VWR1189,MOV060,3,,Neutral,2025-11-22
+REV0292,VWR1426,MOV056,1,so good!,Negative,2025-01-24
+REV0293,VWR0591,MOV054,1,terrible pacing ngl,Negative,2025-02-27
+REV0294,VWR1084,MOV021,5,so good!,Positive,2025-09-10
+REV0295,VWR0688,MOV025,3,,Neutral,2025-04-15
+REV0296,VWR0822,MOV021,2,terrible pacing ngl,Negative,2025-06-29
+REV0297,VWR0514,MOV043,4,THIS SHOW IS INSANE 🔥,positive,2025-10-15
+REV0298,VWR0264,MOV048,1,subtitles broken again,Negative,2025-05-25
+REV0299,VWR0806,MOV027,5,galaxy burn is the best thing ever 💯,Positive,2025-07-13
+REV0300,VWR0267,MOV020,2,subtitles broken again,Negative,2025-10-31
+REV0301,VWR0280,MOV016,1,meh,Negative,2025-01-26
+REV0302,VWR0495,MOV027,4,terrible pacing ngl,Positive,2025-11-25
+REV0303,VWR0474,MOV047,1,terrible pacing ngl,Negative,2025-04-11
+REV0304,VWR1202,MOV025,1,so good!,Negative,2025-02-04
+REV0305,VWR0836,MOV048,4,ending felt rushed tbh,Positive,2025-09-02
+REV0306,VWR0548,MOV015,3,音楽 was good,Neutral,2025-08-01
+REV0307,VWR0450,MOV029,1,ERROR_EXPORT_ROW,Negative,2025-11-22
+REV0308,VWR1450,MOV022,3,terrible pacing ngl,Neutral,2025-10-15
+REV0309,VWR1140,MOV028,1,#### temp ####,Negative,2025-12-04
+REV0310,VWR0037,MOV059,2,THIS SHOW IS INSANE 🔥,Negative,2025-01-13
+REV0311,VWR0774,MOV041,2,idk why people like this,Negative,2025-07-11
+REV0312,VWR0627,MOV019,2,terrible pacing ngl,Negative,2025-10-24
+REV0313,VWR0881,MOV055,1,ERROR_EXPORT_ROW,Negative,2025-04-20
+REV0314,VWR1152,MOV014,3,why is the app crashing?,Neutral,2025-03-11
+REV0315,VWR1200,MOV033,2,subtitles broken again,Negative,2025-01-10
+REV0316,VWR0832,MOV025,5,meh,Positive,2025-12-22
+REV0317,VWR1006,MOV034,2,why is the app crashing?,Negative,2025-11-06
+REV0318,VWR1325,MOV015,5,subtitles broken again,positive,2025-05-04
+REV0319,VWR0397,MOV029,2,love it,negative,2025-03-09
+REV0320,VWR0108,MOV009,5,meh,Positive,2025-01-24
+REV0321,VWR0575,MOV020,3,THIS SHOW IS INSANE 🔥,Neutral,2025-12-24
+REV0322,VWR0687,MOV047,2,love it,Negative,2025-07-27
+REV0323,VWR1218,MOV023,3,meh,Neutral,2025-07-27
+REV0324,VWR1312,MOV033,5,ending felt rushed tbh,positive,2025-08-30
+REV0325,VWR1033,MOV022,1,ending felt rushed tbh,Negative,2025-03-21
+REV0326,VWR0097,MOV056,4,love it,Positive,2025-09-09
+REV0327,VWR0600,MOV005,4,so good!,Positive,2025-04-15
+REV0328,VWR0615,MOV033,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-13
+REV0329,VWR0634,MOV043,1,why is the app crashing?,Negative,2025-06-17
+REV0330,VWR0302,MOV058,2,idk why people like this,Negative,2025-10-07
+REV0331,VWR1319,MOV045,5,ending felt rushed tbh,Positive,2025-03-10
+REV0332,VWR1477,MOV044,2,love it,Negative,2025-05-21
+REV0333,VWR0720,MOV045,1,idk why people like this,Negative,2025-05-18
+REV0334,VWR1247,MOV026,2,galaxy burn is the best thing ever 💯,Negative,2025-05-21
+REV0335,VWR1369,MOV008,3,galaxy burn is the best thing ever 💯,Neutral,2025-06-17
+REV0336,VWR1229,MOV045,1,love it,Negative,2025-10-25
+REV0337,VWR0527,MOV033,3,galaxy burn is the best thing ever 💯,Neutral,2025-07-14
+REV0338,VWR0368,MOV056,3,so good!,Neutral,2025-02-09
+REV0339,VWR0762,MOV035,3,THIS SHOW IS INSANE 🔥,Neutral,2025-06-26
+REV0340,VWR0450,MOV003,3,THIS SHOW IS INSANE 🔥,Neutral,2025-12-01
+REV0341,VWR0850,MOV037,2,so good!,Negative,2025-06-25
+REV0342,VWR1409,MOV020,2,,Negative,2025-02-20
+REV0343,VWR1009,MOV044,2,,Negative,2025-08-07
+REV0344,VWR1219,MOV040,2,meh,Negative,2025-06-22
+REV0345,VWR0099,MOV021,4,love it,Positive,2025-12-05
+REV0346,VWR1041,MOV036,3,THIS SHOW IS INSANE 🔥,Neutral,2025-02-18
+REV0347,VWR1032,MOV034,1,THIS SHOW IS INSANE 🔥,Negative,2025-02-19
+REV0348,VWR0984,MOV016,3,THIS SHOW IS INSANE 🔥,Neutral,2025-12-28
+REV0349,VWR1359,MOV007,4,galaxy burn is the best thing ever 💯,Positive,2025-12-24
+REV0350,VWR1051,MOV059,4,so good!,positive,2025-04-11
+REV0351,VWR1020,MOV018,1,ending felt rushed tbh,Negative,2025-11-06
+REV0352,VWR0396,MOV052,2,galaxy burn is the best thing ever 💯,Negative,2025-09-15
+REV0353,VWR1484,MOV021,3,so good!,Neutral,2025-01-09
+REV0354,VWR0063,MOV017,1,ending felt rushed tbh,Negative,2025-10-20
+REV0355,VWR1408,MOV027,4,idk why people like this,Positive,2025-06-28
+REV0356,VWR0145,MOV009,4,galaxy burn is the best thing ever 💯,Positive,2025-07-25
+REV0357,VWR0628,MOV036,1,subtitles broken again,Negative,2025-02-16
+REV0358,VWR0449,MOV039,1,meh,Negative,2025-11-27
+REV0359,VWR0007,MOV032,1,terrible pacing ngl,Negative,2025-04-25
+REV0360,VWR0590,MOV016,3,,Neutral,2025-05-15
+REV0361,VWR0815,MOV022,5,meh,Positive,2025-10-21
+REV0362,VWR0008,MOV011,3,meh,Neutral,2025-02-13
+REV0363,VWR0996,MOV038,3,音楽 was good,Neutral,2025-08-31
+REV0364,VWR0454,MOV037,2,THIS SHOW IS INSANE 🔥,Negative,2025-04-13
+REV0365,VWR1345,MOV051,3,,Neutral,2025-10-07
+REV0366,VWR0075,MOV014,1,meh,Negative,2025-03-21
+REV0367,VWR1321,MOV060,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-06
+REV0368,VWR1433,MOV024,3,ending felt rushed tbh,Neutral,2025-03-05
+REV0369,VWR0826,MOV006,3,why is the app crashing?,Neutral,2025-09-04
+REV0370,VWR1192,MOV012,2,meh,Negative,2025-09-29
+REV0371,VWR1007,MOV049,2,idk why people like this,Negative,2025-03-20
+REV0372,VWR0900,MOV035,5,subtitles broken again,Positive,2025-03-11
+REV0373,VWR0838,MOV055,2,love it,Negative,2025-11-22
+REV0374,VWR0065,MOV001,4,ending felt rushed tbh,Positive,2025-11-20
+REV0375,VWR1300,MOV005,5,galaxy burn is the best thing ever 💯,Positive,2025-10-22
+REV0376,VWR0139,MOV025,1,why is the app crashing?,Negative,2025-01-08
+REV0377,VWR1413,MOV001,5,idk why people like this,Positive,2025-03-16
+REV0378,VWR0112,MOV021,3,meh,Neutral,2025-12-13
+REV0379,VWR1490,MOV045,4,音楽 was good,Positive,2025-12-24
+REV0380,VWR0031,MOV035,3,love it,Neutral,2025-04-29
+REV0381,VWR0486,MOV015,4,meh,Positive,2025-04-02
+REV0382,VWR0979,MOV045,3,why is the app crashing?,Neutral,2025-03-11
+REV0383,VWR0773,MOV007,2,THIS SHOW IS INSANE 🔥,Negative,2025-05-10
+REV0384,VWR0955,MOV031,5,meh,Positive,2025-10-03
+REV0385,VWR0270,MOV003,5,,Positive,2025-06-24
+REV0386,VWR0707,MOV021,3,idk why people like this,Neutral,2025-12-03
+REV0387,VWR0234,MOV021,1,idk why people like this,Negative,2025-03-14
+REV0388,VWR0869,MOV054,3,terrible pacing ngl,Neutral,2025-09-12
+REV0389,VWR0834,MOV048,1,idk why people like this,Negative,2025-04-19
+REV0390,VWR0519,MOV037,1,THIS SHOW IS INSANE 🔥,Negative,2025-11-03
+REV0391,VWR1387,MOV056,1,ending felt rushed tbh,negative,2025-07-25
+REV0392,VWR0138,MOV001,5,why is the app crashing?,positive,2025-11-23
+REV0393,VWR1003,MOV001,5,meh,Positive,2025-07-06
+REV0394,VWR0697,MOV025,1,ending felt rushed tbh,Negative,2025-01-23
+REV0395,VWR1438,MOV045,1,love it,Negative,2025-08-16
+REV0396,VWR1240,MOV032,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-10
+REV0397,VWR0499,MOV054,4,THIS SHOW IS INSANE 🔥,Positive,2025-08-14
+REV0398,VWR0923,MOV028,1,idk why people like this,Negative,2025-12-06
+REV0399,VWR1419,MOV048,4,meh,positive,2025-06-03
+REV0400,VWR0272,MOV055,3,love it,Neutral,2025-10-07
+REV0401,VWR0652,MOV025,3,THIS SHOW IS INSANE 🔥,Neutral,2025-01-19
+REV0402,VWR0390,MOV042,1,love it,Negative,2025-08-14
+REV0403,VWR1046,MOV055,2,idk why people like this,Negative,2025-04-05
+REV0404,VWR0117,MOV005,1,meh,Negative,2025-12-04
+REV0405,VWR1398,MOV058,4,idk why people like this,Positive,2025-03-11
+REV0406,VWR0633,MOV019,1,ending felt rushed tbh,Negative,2025-09-09
+REV0407,VWR0564,MOV014,5,音楽 was good,positive,2025-07-23
+REV0408,VWR0816,MOV028,4,galaxy burn is the best thing ever 💯,Positive,2025-03-31
+REV0409,VWR0898,MOV017,2,THIS SHOW IS INSANE 🔥,Negative,2025-12-18
+REV0410,VWR1450,MOV025,3,THIS SHOW IS INSANE 🔥,Neutral,2025-06-13
+REV0411,VWR1341,MOV054,1,so good!,Negative,2025-03-29
+REV0412,VWR0228,MOV037,2,meh,Negative,2025-03-18
+REV0413,VWR0697,MOV019,1,idk why people like this,Negative,2025-09-26
+REV0414,VWR0331,MOV001,2,THIS SHOW IS INSANE 🔥,Negative,2025-06-02
+REV0415,VWR0593,MOV001,3,音楽 was good,Neutral,2025-10-01
+REV0416,VWR0209,MOV038,5,terrible pacing ngl,Positive,2025-02-17
+REV0417,VWR0159,MOV037,3,why is the app crashing?,Neutral,2025-11-14
+REV0418,VWR1328,MOV059,5,meh,Positive,2025-10-10
+REV0419,VWR0401,MOV006,1,so good!,Negative,2025-07-29
+REV0420,VWR0971,MOV001,5,THIS SHOW IS INSANE 🔥,Positive,2025-01-16
+REV0421,VWR0614,MOV056,3,ending felt rushed tbh,Neutral,2025-10-31
+REV0422,VWR1125,MOV047,3,THIS SHOW IS INSANE 🔥,Neutral,2025-08-04
+REV0423,VWR1319,MOV016,3,so good!,Neutral,2025-07-03
+REV0424,VWR1374,MOV036,1,love it,negative,2025-06-06
+REV0425,VWR0961,MOV057,5,ERROR_EXPORT_ROW,Positive,2025-05-10
+REV0426,VWR1099,MOV039,3,why is the app crashing?,Neutral,2025-05-27
+REV0427,VWR1414,MOV048,5,ending felt rushed tbh,Positive,2025-06-23
+REV0428,VWR0396,MOV048,4,terrible pacing ngl,Positive,2025-03-19
+REV0429,VWR1386,MOV058,4,meh,Positive,2025-07-21
+REV0430,VWR1338,MOV050,4,terrible pacing ngl,Positive,2025-02-16
+REV0431,VWR0285,MOV038,1,galaxy burn is the best thing ever 💯,Negative,2025-04-21
+REV0432,VWR0006,MOV020,4,subtitles broken again,Positive,2025-07-23
+REV0433,VWR0072,MOV056,5,why is the app crashing?,Positive,2025-05-22
+REV0434,VWR1079,MOV025,5,#### temp ####,Positive,2025-02-17
+REV0435,VWR0500,MOV015,5,idk why people like this,Positive,2025-02-17
+REV0436,VWR0479,MOV031,3,so good!,Neutral,2025-07-19
+REV0437,VWR0839,MOV059,2,so good!,Negative,2025-02-27
+REV0438,VWR0624,MOV036,4,meh,Positive,2025-04-04
+REV0439,VWR1078,MOV038,3,love it,Neutral,2025-07-28
+REV0440,VWR0265,MOV045,4,why is the app crashing?,Positive,2025-09-11
+REV0441,VWR0346,MOV007,2,音楽 was good,Negative,2025-03-15
+REV0442,VWR0709,MOV026,2,ending felt rushed tbh,Negative,2025-04-11
+REV0443,VWR0473,MOV034,1,idk why people like this,Negative,2025-11-16
+REV0444,VWR1121,MOV011,5,subtitles broken again,Positive,2025-05-22
+REV0445,VWR1233,MOV029,4,so good!,Positive,2025-07-09
+REV0446,VWR1018,MOV009,4,ending felt rushed tbh,Positive,2025-02-05
+REV0447,VWR0195,MOV002,3,love it,Neutral,2025-07-20
+REV0448,VWR1256,MOV036,4,galaxy burn is the best thing ever 💯,Positive,2025-01-20
+REV0449,VWR0228,MOV056,3,subtitles broken again,Neutral,2025-11-01
+REV0450,VWR1094,MOV018,5,love it,Positive,2025-05-05
+REV0451,VWR1234,MOV022,4,,Positive,2025-02-16
+REV0452,VWR1167,MOV057,2,音楽 was good,Negative,2025-04-17
+REV0453,VWR1107,MOV024,4,terrible pacing ngl,Positive,2025-07-19
+REV0454,VWR0393,MOV048,1,THIS SHOW IS INSANE 🔥,Negative,2025-07-19
+REV0455,VWR0358,MOV026,4,,Positive,2025-06-02
+REV0456,VWR0090,MOV017,4,,positive,2025-09-23
+REV0457,VWR0883,MOV042,5,meh,Positive,2025-07-15
+REV0458,VWR1126,MOV057,5,meh,Positive,2025-11-22
+REV0459,VWR0756,MOV015,2,why is the app crashing?,Negative,2025-03-25
+REV0460,VWR1250,MOV022,2,so good!,Negative,2025-04-14
+REV0461,VWR1420,MOV056,3,so good!,Neutral,2025-08-28
+REV0462,VWR0943,MOV001,3,ending felt rushed tbh,Neutral,2025-09-30
+REV0463,VWR1245,MOV024,1,why is the app crashing?,Negative,2025-10-08
+REV0464,VWR0329,MOV025,4,音楽 was good,Positive,2025-02-25
+REV0465,VWR0421,MOV035,1,ending felt rushed tbh,Negative,2025-03-17
+REV0466,VWR1447,MOV025,1,why is the app crashing?,Negative,2025-02-23
+REV0467,VWR0783,MOV032,4,THIS SHOW IS INSANE 🔥,positive,2025-01-30
+REV0468,VWR0605,MOV017,2,subtitles broken again,Negative,2025-04-20
+REV0469,VWR0276,MOV059,1,音楽 was good,Negative,2025-12-16
+REV0470,VWR1389,MOV010,2,terrible pacing ngl,Negative,2025-02-28
+REV0471,VWR0252,MOV034,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-28
+REV0472,VWR0890,MOV034,2,meh,Negative,2025-11-20
+REV0473,VWR1246,MOV042,1,meh,Negative,2025-10-08
+REV0474,VWR0192,MOV023,3,so good!,Neutral,2025-03-02
+REV0475,VWR0689,MOV035,5,galaxy burn is the best thing ever 💯,Positive,2025-04-25
+REV0476,VWR0202,MOV028,5,NaN,Positive,2025-02-12
+REV0477,VWR0387,MOV023,2,idk why people like this,Negative,2025-04-19
+REV0478,VWR0857,MOV010,4,subtitles broken again,Positive,2025-05-22
+REV0479,VWR0492,MOV051,4,love it,Positive,2025-01-22
+REV0480,VWR0655,MOV035,4,subtitles broken again,Positive,2025-03-23
+REV0481,VWR0634,MOV034,4,so good!,Positive,2025-12-02
+REV0482,VWR0961,MOV037,2,love it,Negative,2025-04-18
+REV0483,VWR1375,MOV042,5,idk why people like this,Positive,2025-05-28
+REV0484,VWR0926,MOV044,1,,Negative,2025-01-06
+REV0485,VWR0876,MOV022,1,subtitles broken again,Negative,2025-02-10
+REV0486,VWR0457,MOV008,3,love it,Neutral,2025-12-07
+REV0487,VWR1225,MOV018,5,idk why people like this,Positive,2025-08-22
+REV0488,VWR0206,MOV046,4,ERROR_EXPORT_ROW,Positive,2025-05-13
+REV0489,VWR0411,MOV028,3,音楽 was good,Neutral,2025-10-25
+REV0490,VWR0675,MOV003,5,ending felt rushed tbh,Positive,2025-02-11
+REV0491,VWR1089,MOV044,1,so good!,Negative,2025-02-08
+REV0492,VWR0737,MOV014,4,音楽 was good,Positive,2025-03-12
+REV0493,VWR0318,MOV016,4,THIS SHOW IS INSANE 🔥,Positive,2025-09-22
+REV0494,VWR0767,MOV025,5,why is the app crashing?,Positive,2025-02-02
+REV0495,VWR0852,MOV013,4,galaxy burn is the best thing ever 💯,Positive,2025-12-21
+REV0496,VWR1359,MOV041,1,subtitles broken again,Negative,2025-11-13
+REV0497,VWR1198,MOV025,3,音楽 was good,Neutral,2025-08-19
+REV0498,VWR1021,MOV013,3,love it,Neutral,2025-01-03
+REV0499,VWR0725,MOV032,3,subtitles broken again,Neutral,2025-04-13
+REV0500,VWR0365,MOV035,5,,Positive,2025-12-14
+REV0501,VWR1464,MOV012,5,ending felt rushed tbh,Positive,2025-05-21
+REV0502,VWR0276,MOV009,2,THIS SHOW IS INSANE 🔥,Negative,2025-06-08
+REV0503,VWR0959,MOV043,2,galaxy burn is the best thing ever 💯,Negative,2025-02-14
+REV0504,VWR0615,MOV047,3,THIS SHOW IS INSANE 🔥,Neutral,2025-02-07
+REV0505,VWR0676,MOV029,1,subtitles broken again,Negative,2025-06-24
+REV0506,VWR1081,MOV002,5,why is the app crashing?,Positive,2025-09-29
+REV0507,VWR1196,MOV035,4,galaxy burn is the best thing ever 💯,Positive,2025-05-08
+REV0508,VWR1364,MOV041,5,galaxy burn is the best thing ever 💯,Positive,2025-04-18
+REV0509,VWR1363,MOV037,1,,Negative,2025-11-21
+REV0510,VWR0094,MOV045,4,NULL,Positive,2025-12-23
+REV0511,VWR0299,MOV022,1,subtitles broken again,Negative,2025-06-08
+REV0512,VWR0414,MOV049,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-02
+REV0513,VWR0141,MOV018,5,THIS SHOW IS INSANE 🔥,Positive,2025-03-27
+REV0514,VWR1323,MOV023,1,so good!,Negative,2025-12-06
+REV0515,VWR1280,MOV014,5,THIS SHOW IS INSANE 🔥,Positive,2025-08-07
+REV0516,VWR0697,MOV012,1,音楽 was good,Negative,2025-03-29
+REV0517,VWR1206,MOV031,3,idk why people like this,Neutral,2025-10-13
+REV0518,VWR0947,MOV002,4,why is the app crashing?,Positive,2025-08-01
+REV0519,VWR1135,MOV034,2,why is the app crashing?,Negative,2025-10-22
+REV0520,VWR0745,MOV002,1,meh,negative,2025-01-25
+REV0521,VWR0169,MOV025,1,,Negative,2025-12-13
+REV0522,VWR0252,MOV026,4,meh,Positive,2025-06-08
+REV0523,VWR0233,MOV025,3,terrible pacing ngl,neutral,2025-01-15
+REV0524,VWR1034,MOV019,5,音楽 was good,positive,2025-01-28
+REV0525,VWR0941,MOV050,4,THIS SHOW IS INSANE 🔥,Positive,2025-02-03
+REV0526,VWR1336,MOV027,2,why is the app crashing?,Negative,2025-07-22
+REV0527,VWR0209,MOV049,4,terrible pacing ngl,Positive,2025-09-08
+REV0528,VWR0247,MOV057,4,so good!,Positive,2025-11-21
+REV0529,VWR0568,MOV001,4,why is the app crashing?,Positive,2025-11-24
+REV0530,VWR1361,MOV017,2,meh,Negative,2025-06-19
+REV0531,VWR1183,MOV002,3,音楽 was good,Neutral,2025-04-27
+REV0532,VWR0981,MOV029,5,meh,Positive,2025-12-06
+REV0533,VWR0595,MOV039,2,音楽 was good,Negative,2025-11-02
+REV0534,VWR1168,MOV058,1,why is the app crashing?,Negative,2025-01-03
+REV0535,VWR0624,MOV046,4,ending felt rushed tbh,Positive,2025-07-28
+REV0536,VWR0670,MOV056,3,idk why people like this,Neutral,2025-10-02
+REV0537,VWR0866,MOV002,2,terrible pacing ngl,Negative,2025-01-11
+REV0538,VWR0298,MOV018,2,why is the app crashing?,Negative,2025-12-14
+REV0539,VWR1252,MOV030,5,so good!,Positive,2025-09-11
+REV0540,VWR1051,MOV042,4,galaxy burn is the best thing ever 💯,Positive,2025-01-25
+REV0541,VWR0908,MOV003,5,THIS SHOW IS INSANE 🔥,Positive,2025-06-26
+REV0542,VWR1229,MOV040,1,THIS SHOW IS INSANE 🔥,Negative,2025-05-11
+REV0543,VWR0023,MOV004,4,why is the app crashing?,Positive,2025-07-05
+REV0544,VWR0748,MOV041,2,galaxy burn is the best thing ever 💯,negative,2025-05-09
+REV0545,VWR0815,MOV017,4,why is the app crashing?,Positive,2025-05-28
+REV0546,VWR0955,MOV034,1,why is the app crashing?,Negative,2025-02-26
+REV0547,VWR0920,MOV053,2,terrible pacing ngl,negative,2025-04-19
+REV0548,VWR1470,MOV054,4,galaxy burn is the best thing ever 💯,Positive,2025-09-14
+REV0549,VWR1234,MOV005,4,so good!,Positive,2025-02-06
+REV0550,VWR0110,MOV030,5,idk why people like this,Positive,2025-05-11
+REV0551,VWR0999,MOV043,3,音楽 was good,Neutral,2025-09-10
+REV0552,VWR1481,MOV037,4,音楽 was good,Positive,2025-05-19
+REV0553,VWR0204,MOV056,1,so good!,Negative,2025-10-12
+REV0554,VWR0319,MOV042,3,terrible pacing ngl,Neutral,2025-03-13
+REV0555,VWR0019,MOV024,5,love it,Positive,2025-11-03
+REV0556,VWR0292,MOV050,4,音楽 was good,Positive,2025-09-15
+REV0557,VWR0468,MOV055,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-17
+REV0558,VWR0252,MOV051,2,ending felt rushed tbh,Negative,2025-02-12
+REV0559,VWR0090,MOV049,4,why is the app crashing?,Positive,2025-01-24
+REV0560,VWR0152,MOV055,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-31
+REV0561,VWR0829,MOV040,1,terrible pacing ngl,Negative,2025-07-05
+REV0562,VWR1274,MOV001,5,ending felt rushed tbh,Positive,2025-09-16
+REV0563,VWR0406,MOV058,3,ending felt rushed tbh,Neutral,2025-11-17
+REV0564,VWR1267,MOV046,1,ending felt rushed tbh,Negative,2025-03-07
+REV0565,VWR1290,MOV058,2,ending felt rushed tbh,Negative,2025-10-26
+REV0566,VWR1219,MOV060,1,subtitles broken again,Negative,2025-01-30
+REV0567,VWR0163,MOV002,2,ending felt rushed tbh,Negative,2025-04-11
+REV0568,VWR1381,MOV001,5,音楽 was good,Positive,2025-10-06
+REV0569,VWR0812,MOV020,2,ending felt rushed tbh,Negative,2025-09-20
+REV0570,VWR0622,MOV021,1,galaxy burn is the best thing ever 💯,Negative,2025-11-07
+REV0571,VWR0098,MOV005,1,terrible pacing ngl,Negative,2025-05-25
+REV0572,VWR1414,MOV039,2,subtitles broken again,Negative,2025-05-23
+REV0573,VWR0897,MOV060,2,why is the app crashing?,Negative,2025-04-22
+REV0574,VWR0498,MOV026,1,meh,Negative,2025-08-24
+REV0575,VWR0719,MOV031,1,so good!,Negative,2025-05-19
+REV0576,VWR0586,MOV042,5,meh,Positive,2025-09-11
+REV0577,VWR1143,MOV002,5,ending felt rushed tbh,Positive,2025-05-30
+REV0578,VWR1161,MOV019,4,,Positive,2025-08-19
+REV0579,VWR0208,MOV031,3,ending felt rushed tbh,Neutral,2025-03-04
+REV0580,VWR0303,MOV027,5,galaxy burn is the best thing ever 💯,Positive,2025-07-17
+REV0581,VWR0408,MOV030,3,subtitles broken again,Neutral,2025-01-09
+REV0582,VWR1090,MOV019,1,terrible pacing ngl,Negative,2025-11-19
+REV0583,VWR1295,MOV018,3,ending felt rushed tbh,Neutral,2026-01-01
+REV0584,VWR1055,MOV056,2,why is the app crashing?,Negative,2025-05-04
+REV0585,VWR0360,MOV031,2,galaxy burn is the best thing ever 💯,Negative,2025-05-28
+REV0586,VWR0977,MOV011,4,idk why people like this,Positive,2025-07-23
+REV0587,VWR0471,MOV042,4,love it,Positive,2025-04-26
+REV0588,VWR1387,MOV023,5,meh,Positive,2025-07-02
+REV0589,VWR0803,MOV027,4,terrible pacing ngl,Positive,2025-11-21
+REV0590,VWR0080,MOV023,2,love it,Negative,2025-12-14
+REV0591,VWR1281,MOV057,3,idk why people like this,Neutral,2025-05-26
+REV0592,VWR0111,MOV014,1,why is the app crashing?,Negative,2025-05-31
+REV0593,VWR0623,MOV026,3,terrible pacing ngl,Neutral,2025-05-22
+REV0594,VWR1084,MOV029,1,音楽 was good,Negative,2025-01-04
+REV0595,VWR1043,MOV022,4,terrible pacing ngl,Positive,2025-03-03
+REV0596,VWR1072,MOV027,1,音楽 was good,negative,2025-09-21
+REV0597,VWR1109,MOV057,5,ending felt rushed tbh,Positive,2025-12-27
+REV0598,VWR0948,MOV018,2,love it,Negative,2025-12-30
+REV0599,VWR1190,MOV002,1,idk why people like this,Negative,2025-06-01
+REV0600,VWR1335,MOV058,3,ending felt rushed tbh,Neutral,2025-09-11
+REV0601,VWR0972,MOV009,1,galaxy burn is the best thing ever 💯,Negative,2025-08-16
+REV0602,VWR1223,MOV023,2,音楽 was good,Negative,2025-02-07
+REV0603,VWR0782,MOV025,1,terrible pacing ngl,Negative,2025-02-04
+REV0604,VWR0816,MOV005,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-30
+REV0605,VWR0429,MOV017,5,idk why people like this,Positive,2025-07-08
+REV0606,VWR1205,MOV035,2,THIS SHOW IS INSANE 🔥,Negative,2025-05-16
+REV0607,VWR0198,MOV043,3,subtitles broken again,Neutral,2025-09-19
+REV0608,VWR0969,MOV024,1,terrible pacing ngl,Negative,2025-11-12
+REV0609,VWR0510,MOV005,5,love it,Positive,2025-01-27
+REV0610,VWR0581,MOV055,3,ending felt rushed tbh,Neutral,2025-11-27
+REV0611,VWR0750,MOV035,5,galaxy burn is the best thing ever 💯,Positive,2025-04-10
+REV0612,VWR0866,MOV052,1,meh,Negative,2025-03-05
+REV0613,VWR0262,MOV029,5,subtitles broken again,Positive,2025-03-25
+REV0614,VWR0830,MOV026,3,love it,Neutral,2025-10-09
+REV0615,VWR0976,MOV041,4,,Positive,2025-12-04
+REV0616,VWR1055,MOV010,1,idk why people like this,Negative,2025-08-28
+REV0617,VWR1066,MOV025,2,ending felt rushed tbh,Negative,2025-08-29
+REV0618,VWR0199,MOV026,3,why is the app crashing?,Neutral,2025-02-21
+REV0619,VWR0282,MOV006,4,galaxy burn is the best thing ever 💯,Positive,2025-08-14
+REV0620,VWR0473,MOV012,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-13
+REV0621,VWR0887,MOV007,4,ending felt rushed tbh,Positive,2025-07-30
+REV0622,VWR0470,MOV038,1,love it,Negative,2025-06-06
+REV0623,VWR0200,MOV047,2,THIS SHOW IS INSANE 🔥,Negative,2025-03-03
+REV0624,VWR1057,MOV009,1,galaxy burn is the best thing ever 💯,Negative,2025-04-19
+REV0625,VWR1486,MOV026,1,love it,Negative,2025-02-18
+REV0626,VWR0396,MOV039,2,音楽 was good,Negative,2025-03-04
+REV0627,VWR0303,MOV020,3,love it,Neutral,2025-07-29
+REV0628,VWR1417,MOV054,2,so good!,Negative,2025-10-15
+REV0629,VWR0915,MOV002,1,subtitles broken again,Negative,2025-01-23
+REV0630,VWR0840,MOV008,2,idk why people like this,Negative,2025-10-07
+REV0631,VWR0258,MOV044,3,love it,Neutral,2025-01-10
+REV0632,VWR1031,MOV008,4,why is the app crashing?,positive,2025-04-26
+REV0633,VWR1084,MOV001,1,so good!,Negative,2025-08-12
+REV0634,VWR0950,MOV021,1,ending felt rushed tbh,Negative,2025-08-10
+REV0635,VWR0358,MOV030,1,galaxy burn is the best thing ever 💯,Negative,2025-01-15
+REV0636,VWR1241,MOV027,4,subtitles broken again,Positive,2025-05-05
+REV0637,VWR0368,MOV053,5,terrible pacing ngl,Positive,2025-03-04
+REV0638,VWR0888,MOV051,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-16
+REV0639,VWR0115,MOV058,1,love it,Negative,2025-08-09
+REV0640,VWR0919,MOV009,5,idk why people like this,Positive,2025-04-05
+REV0641,VWR0873,MOV042,3,subtitles broken again,Neutral,2025-11-10
+REV0642,VWR0109,MOV055,5,so good!,Positive,2025-10-14
+REV0643,VWR0308,MOV003,5,音楽 was good,Positive,2025-03-06
+REV0644,VWR1335,MOV009,3,terrible pacing ngl,Neutral,2025-04-02
+REV0645,VWR0325,MOV019,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-28
+REV0646,VWR1274,MOV037,4,so good!,Positive,2025-06-11
+REV0647,VWR0060,MOV033,1,so good!,Negative,2025-11-04
+REV0648,VWR0287,MOV032,4,meh,Positive,2025-02-01
+REV0649,VWR0653,MOV059,5,ending felt rushed tbh,Positive,2025-06-08
+REV0650,VWR0262,MOV025,1,why is the app crashing?,Negative,2025-02-16
+REV0651,VWR0456,MOV006,2,galaxy burn is the best thing ever 💯,Negative,2025-08-29
+REV0652,VWR0074,MOV050,3,subtitles broken again,Neutral,2025-01-15
+REV0653,VWR0549,MOV030,5,idk why people like this,Positive,2025-04-22
+REV0654,VWR0003,MOV017,1,terrible pacing ngl,Negative,2025-09-09
+REV0655,VWR0441,MOV018,1,meh,Negative,2025-07-22
+REV0656,VWR0196,MOV039,5,ending felt rushed tbh,Positive,2025-01-07
+REV0657,VWR0365,MOV003,2,meh,Negative,2025-05-17
+REV0658,VWR1319,MOV042,3,galaxy burn is the best thing ever 💯,Neutral,2025-12-22
+REV0659,VWR0835,MOV027,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-30
+REV0660,VWR1232,MOV039,2,meh,Negative,2025-05-12
+REV0661,VWR0321,MOV057,5,THIS SHOW IS INSANE 🔥,Positive,2025-01-13
+REV0662,VWR1020,MOV012,3,terrible pacing ngl,Neutral,2025-08-13
+REV0663,VWR0719,MOV038,1,subtitles broken again,Negative,2025-06-05
+REV0664,VWR0721,MOV051,4,subtitles broken again,positive,2025-05-10
+REV0665,VWR1453,MOV035,4,subtitles broken again,Positive,2025-02-15
+REV0666,VWR0912,MOV034,1,so good!,Negative,2025-12-14
+REV0667,VWR1400,MOV017,2,why is the app crashing?,Negative,2025-04-09
+REV0668,VWR1347,MOV027,4,ending felt rushed tbh,Positive,2025-07-01
+REV0669,VWR0072,MOV005,3,音楽 was good,Neutral,2025-08-25
+REV0670,VWR0496,MOV059,2,love it,Negative,2025-03-09
+REV0671,VWR0396,MOV041,5,音楽 was good,Positive,2025-12-30
+REV0672,VWR0257,MOV013,5,meh,positive,2025-12-22
+REV0673,VWR0186,MOV001,1,terrible pacing ngl,Negative,2025-09-15
+REV0674,VWR1273,MOV036,2,idk why people like this,Negative,2025-01-17
+REV0675,VWR0120,MOV018,5,love it,Positive,2025-04-19
+REV0676,VWR1269,MOV055,2,idk why people like this,Negative,2025-08-10
+REV0677,VWR0929,MOV011,1,idk why people like this,Negative,2025-08-12
+REV0678,VWR0860,MOV023,1,meh,Negative,2025-04-29
+REV0679,VWR0563,MOV034,3,音楽 was good,Neutral,2025-05-20
+REV0680,VWR0746,MOV024,1,so good!,Negative,2025-12-22
+REV0681,VWR0785,MOV006,5,ending felt rushed tbh,positive,2025-06-17
+REV0682,VWR0336,MOV042,4,NaN,Positive,2025-05-31
+REV0683,VWR0750,MOV055,4,idk why people like this,Positive,2025-07-24
+REV0684,VWR0990,MOV003,1,NULL,Negative,2025-06-26
+REV0685,VWR1477,MOV007,4,meh,Positive,2025-11-01
+REV0686,VWR1086,MOV036,5,galaxy burn is the best thing ever 💯,Positive,2025-02-24
+REV0687,VWR1363,MOV030,2,so good!,Negative,2025-07-10
+REV0688,VWR0633,MOV004,5,subtitles broken again,Positive,2025-12-03
+REV0689,VWR0830,MOV051,3,THIS SHOW IS INSANE 🔥,Neutral,2025-08-28
+REV0690,VWR0302,MOV046,1,音楽 was good,Negative,2025-10-26
+REV0691,VWR1399,MOV039,5,subtitles broken again,Positive,2025-07-20
+REV0692,VWR1139,MOV012,3,NaN,Neutral,2025-08-23
+REV0693,VWR0018,MOV044,2,idk why people like this,Negative,2025-07-18
+REV0694,VWR0159,MOV044,1,love it,Negative,2025-02-25
+REV0695,VWR0093,MOV048,4,love it,Positive,2025-08-20
+REV0696,VWR0999,MOV052,3,idk why people like this,Neutral,2025-02-11
+REV0697,VWR1024,MOV023,3,subtitles broken again,Neutral,2025-02-15
+REV0698,VWR0546,MOV040,4,THIS SHOW IS INSANE 🔥,Positive,2025-12-11
+REV0699,VWR0048,MOV044,3,why is the app crashing?,Neutral,2025-01-24
+REV0700,VWR1428,MOV056,5,terrible pacing ngl,Positive,2025-01-23
+REV0701,VWR0898,MOV024,4,音楽 was good,Positive,2025-12-05
+REV0702,VWR0723,MOV024,5,THIS SHOW IS INSANE 🔥,Positive,2025-06-29
+REV0703,VWR0218,MOV024,3,ending felt rushed tbh,Neutral,2025-06-09
+REV0704,VWR0713,MOV037,2,subtitles broken again,Negative,2025-11-04
+REV0705,VWR0484,MOV040,3,subtitles broken again,Neutral,2025-08-01
+REV0706,VWR0607,MOV014,5,subtitles broken again,Positive,2025-02-09
+REV0707,VWR0818,MOV020,2,subtitles broken again,Negative,2025-03-16
+REV0708,VWR1149,MOV011,4,音楽 was good,Positive,2025-08-09
+REV0709,VWR0222,MOV001,3,love it,Neutral,2025-01-30
+REV0710,VWR0480,MOV025,1,ending felt rushed tbh,Negative,2025-11-20
+REV0711,VWR1319,MOV001,2,love it,Negative,2025-03-16
+REV0712,VWR1412,MOV047,2,meh,Negative,2025-02-13
+REV0713,VWR0155,MOV016,2,THIS SHOW IS INSANE 🔥,Negative,2025-03-16
+REV0714,VWR0636,MOV015,4,音楽 was good,Positive,2025-08-26
+REV0715,VWR0607,MOV016,1,meh,Negative,2025-12-02
+REV0716,VWR0759,MOV030,5,so good!,Positive,2025-03-27
+REV0717,VWR1182,MOV055,1,terrible pacing ngl,Negative,2025-06-15
+REV0718,VWR0536,MOV027,4,why is the app crashing?,Positive,2025-09-15
+REV0719,VWR0545,MOV035,3,so good!,Neutral,2025-06-28
+REV0720,VWR1014,MOV057,4,ending felt rushed tbh,Positive,2025-07-28
+REV0721,VWR0374,MOV028,2,terrible pacing ngl,Negative,2025-03-29
+REV0722,VWR0359,MOV030,1,so good!,Negative,2025-09-07
+REV0723,VWR0818,MOV017,3,ending felt rushed tbh,Neutral,2025-07-25
+REV0724,VWR0737,MOV029,4,idk why people like this,Positive,2025-05-28
+REV0725,VWR0118,MOV020,1,subtitles broken again,Negative,2025-01-16
+REV0726,VWR0880,MOV033,5,why is the app crashing?,Positive,2025-01-09
+REV0727,VWR1433,MOV018,1,音楽 was good,negative,2025-03-26
+REV0728,VWR0116,MOV019,2,idk why people like this,Negative,2025-10-09
+REV0729,VWR1275,MOV033,3,idk why people like this,Neutral,2025-10-08
+REV0730,VWR1382,MOV003,3,meh,neutral,2025-01-15
+REV0731,VWR1292,MOV005,4,ending felt rushed tbh,Positive,2025-09-25
+REV0732,VWR0663,MOV038,5,galaxy burn is the best thing ever 💯,Positive,2025-07-21
+REV0733,VWR0454,MOV046,4,idk why people like this,Positive,2025-05-14
+REV0734,VWR0533,MOV040,2,meh,Negative,2025-10-19
+REV0735,VWR0575,MOV034,1,ending felt rushed tbh,Negative,2025-11-12
+REV0736,VWR1225,MOV001,1,ending felt rushed tbh,Negative,2025-06-15
+REV0737,VWR0733,MOV007,2,ending felt rushed tbh,Negative,2025-01-22
+REV0738,VWR0253,MOV015,2,terrible pacing ngl,Negative,2025-08-12
+REV0739,VWR1055,MOV036,1,why is the app crashing?,Negative,2025-09-11
+REV0740,VWR0695,MOV011,1,,Negative,2025-05-14
+REV0741,VWR0742,MOV020,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-26
+REV0742,VWR1016,MOV031,5,音楽 was good,Positive,2025-09-11
+REV0743,VWR1270,MOV001,3,love it,Neutral,2025-03-22
+REV0744,VWR0894,MOV010,3,音楽 was good,Neutral,2025-03-24
+REV0745,VWR1025,MOV027,5,idk why people like this,Positive,2025-01-01
+REV0746,VWR0103,MOV015,5,ending felt rushed tbh,Positive,2025-04-19
+REV0747,VWR0223,MOV035,2,音楽 was good,Negative,2025-08-12
+REV0748,VWR0613,MOV040,1,why is the app crashing?,Negative,2025-04-21
+REV0749,VWR0463,MOV035,3,so good!,Neutral,2025-09-09
+REV0750,VWR0342,MOV058,3,subtitles broken again,Neutral,2025-02-18
+REV0751,VWR0841,MOV055,4,terrible pacing ngl,Positive,2025-12-16
+REV0752,VWR0616,MOV031,4,terrible pacing ngl,Positive,2025-05-04
+REV0753,VWR0825,MOV014,4,so good!,Positive,2025-07-28
+REV0754,VWR0453,MOV051,2,terrible pacing ngl,Negative,2025-10-31
+REV0755,VWR0615,MOV049,3,terrible pacing ngl,Neutral,2025-09-07
+REV0756,VWR0990,MOV034,2,so good!,negative,2025-11-15
+REV0757,VWR0195,MOV029,4,galaxy burn is the best thing ever 💯,Positive,2025-02-05
+REV0758,VWR0709,MOV048,1,音楽 was good,Negative,2025-06-19
+REV0759,VWR0377,MOV009,2,,Negative,2025-09-17
+REV0760,VWR1164,MOV018,3,why is the app crashing?,Neutral,2025-08-12
+REV0761,VWR1409,MOV059,5,idk why people like this,Positive,2025-03-04
+REV0762,VWR0233,MOV053,5,idk why people like this,Positive,2025-01-30
+REV0763,VWR0720,MOV039,1,why is the app crashing?,Negative,2025-05-02
+REV0764,VWR0531,MOV043,1,meh,Negative,2025-05-19
+REV0765,VWR0939,MOV024,4,ending felt rushed tbh,Positive,2025-11-07
+REV0766,VWR0002,MOV051,5,why is the app crashing?,Positive,2025-07-17
+REV0767,VWR0028,MOV045,5,terrible pacing ngl,Positive,2025-05-20
+REV0768,VWR0309,MOV050,5,ending felt rushed tbh,Positive,2025-01-08
+REV0769,VWR0830,MOV024,3,meh,neutral,2025-02-13
+REV0770,VWR0171,MOV045,3,idk why people like this,Neutral,2025-04-16
+REV0771,VWR1404,MOV039,3,galaxy burn is the best thing ever 💯,Neutral,2025-03-02
+REV0772,VWR1361,MOV014,2,,Negative,2025-11-25
+REV0773,VWR1043,MOV041,1,why is the app crashing?,Negative,2025-02-26
+REV0774,VWR0213,MOV039,2,galaxy burn is the best thing ever 💯,Negative,2025-11-27
+REV0775,VWR0701,MOV049,1,subtitles broken again,Negative,2025-12-12
+REV0776,VWR1388,MOV040,3,THIS SHOW IS INSANE 🔥,Neutral,2025-07-20
+REV0777,VWR1451,MOV036,2,idk why people like this,negative,2025-06-16
+REV0778,VWR1257,MOV023,4,why is the app crashing?,Positive,2025-08-20
+REV0779,VWR0156,MOV043,3,subtitles broken again,Neutral,2025-03-08
+REV0780,VWR0533,MOV027,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-24
+REV0781,VWR0831,MOV022,5,terrible pacing ngl,Positive,2025-06-29
+REV0782,VWR0099,MOV004,2,galaxy burn is the best thing ever 💯,Negative,2025-05-30
+REV0783,VWR1207,MOV025,1,ending felt rushed tbh,negative,2025-01-29
+REV0784,VWR0372,MOV018,4,meh,Positive,2025-07-29
+REV0785,VWR0335,MOV009,2,THIS SHOW IS INSANE 🔥,Negative,2025-10-28
+REV0786,VWR0305,MOV011,4,why is the app crashing?,positive,2025-07-18
+REV0787,VWR0657,MOV037,2,so good!,Negative,2025-03-12
+REV0788,VWR0964,MOV044,2,meh,Negative,2025-02-04
+REV0789,VWR0378,MOV038,3,ending felt rushed tbh,Neutral,2025-04-28
+REV0790,VWR0490,MOV022,3,terrible pacing ngl,Neutral,2025-10-11
+REV0791,VWR1056,MOV056,2,terrible pacing ngl,Negative,2025-08-13
+REV0792,VWR1062,MOV048,3,音楽 was good,Neutral,2025-10-19
+REV0793,VWR0421,MOV042,2,terrible pacing ngl,Negative,2025-03-16
+REV0794,VWR1018,MOV041,2,NULL,Negative,2025-04-09
+REV0795,VWR0357,MOV051,5,so good!,Positive,2025-05-25
+REV0796,VWR0619,MOV009,5,terrible pacing ngl,positive,2025-11-27
+REV0797,VWR0317,MOV024,1,terrible pacing ngl,Negative,2025-05-31
+REV0798,VWR1140,MOV052,1,subtitles broken again,Negative,2025-03-01
+REV0799,VWR0609,MOV048,4,音楽 was good,Positive,2025-02-03
+REV0800,VWR0317,MOV054,4,why is the app crashing?,Positive,2025-06-12
+REV0801,VWR0207,MOV054,1,音楽 was good,Negative,2025-11-23
+REV0802,VWR0549,MOV049,5,why is the app crashing?,Positive,2025-08-18
+REV0803,VWR0086,MOV060,1,音楽 was good,Negative,2025-06-23
+REV0804,VWR1267,MOV012,1,love it,Negative,2025-09-17
+REV0805,VWR1270,MOV059,4,why is the app crashing?,Positive,2025-01-01
+REV0806,VWR1368,MOV044,2,音楽 was good,Negative,2025-02-14
+REV0807,VWR0007,MOV034,2,so good!,Negative,2025-06-09
+REV0808,VWR0261,MOV036,1,meh,Negative,2025-01-31
+REV0809,VWR0604,MOV027,3,ending felt rushed tbh,Neutral,2025-06-09
+REV0810,VWR0523,MOV040,3,THIS SHOW IS INSANE 🔥,neutral,2025-07-11
+REV0811,VWR1340,MOV021,4,meh,Positive,2025-12-19
+REV0812,VWR0049,MOV021,3,idk why people like this,Neutral,2025-10-23
+REV0813,VWR1438,MOV007,4,idk why people like this,Positive,2025-04-20
+REV0814,VWR1013,MOV015,3,idk why people like this,Neutral,2025-06-05
+REV0815,VWR1085,MOV029,2,why is the app crashing?,Negative,2025-09-12
+REV0816,VWR0775,MOV057,2,,negative,2025-10-02
+REV0817,VWR0453,MOV036,5,galaxy burn is the best thing ever 💯,Positive,2025-11-13
+REV0818,VWR0986,MOV054,3,NULL,Neutral,2025-12-30
+REV0819,VWR0031,MOV028,3,terrible pacing ngl,Neutral,2025-07-26
+REV0820,VWR0695,MOV001,4,so good!,Positive,2025-02-04
+REV0821,VWR0943,MOV029,4,why is the app crashing?,Positive,2025-12-24
+REV0822,VWR1428,MOV048,1,galaxy burn is the best thing ever 💯,Negative,2025-02-18
+REV0823,VWR0560,MOV016,5,love it,Positive,2025-07-26
+REV0824,VWR0728,MOV018,4,why is the app crashing?,Positive,2025-01-28
+REV0825,VWR1014,MOV020,4,love it,Positive,2025-11-26
+REV0826,VWR0671,MOV060,2,ending felt rushed tbh,negative,2025-01-04
+REV0827,VWR0895,MOV009,3,love it,neutral,2025-01-28
+REV0828,VWR0050,MOV002,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-30
+REV0829,VWR0470,MOV017,5,so good!,Positive,2025-03-23
+REV0830,VWR1438,MOV056,5,音楽 was good,Positive,2025-03-31
+REV0831,VWR1312,MOV018,5,ending felt rushed tbh,Positive,2025-09-15
+REV0832,VWR0880,MOV049,5,,Positive,2025-09-25
+REV0833,VWR1434,MOV010,3,subtitles broken again,Neutral,2025-04-01
+REV0834,VWR0868,MOV039,4,,Positive,2025-09-11
+REV0835,VWR1410,MOV043,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-04
+REV0836,VWR0313,MOV050,5,why is the app crashing?,Positive,2025-07-29
+REV0837,VWR1159,MOV048,1,love it,Negative,2025-08-06
+REV0838,VWR0519,MOV032,1,THIS SHOW IS INSANE 🔥,Negative,2025-06-22
+REV0839,VWR1225,MOV006,1,idk why people like this,Negative,2025-06-26
+REV0840,VWR0874,MOV046,3,subtitles broken again,Neutral,2025-12-31
+REV0841,VWR0334,MOV016,5,meh,Positive,2025-09-17
+REV0842,VWR0473,MOV019,2,love it,Negative,2025-07-01
+REV0843,VWR0033,MOV012,4,terrible pacing ngl,Positive,2025-10-17
+REV0844,VWR1325,MOV059,1,why is the app crashing?,Negative,2025-08-20
+REV0845,VWR0118,MOV035,5,音楽 was good,Positive,2025-07-08
+REV0846,VWR1277,MOV050,3,subtitles broken again,Neutral,2025-12-10
+REV0847,VWR0667,MOV039,3,galaxy burn is the best thing ever 💯,Neutral,2025-11-05
+REV0848,VWR0505,MOV007,3,idk why people like this,Neutral,2025-08-19
+REV0849,VWR0622,MOV009,3,THIS SHOW IS INSANE 🔥,Neutral,2025-01-09
+REV0850,VWR1119,MOV020,1,meh,Negative,2025-09-21
+REV0851,VWR0884,MOV016,4,ending felt rushed tbh,Positive,2025-10-26
+REV0852,VWR0239,MOV035,3,idk why people like this,Neutral,2025-09-15
+REV0853,VWR1026,MOV031,2,ERROR_EXPORT_ROW,Negative,2025-01-20
+REV0854,VWR0376,MOV044,4,galaxy burn is the best thing ever 💯,positive,2025-02-19
+REV0855,VWR1276,MOV047,2,so good!,Negative,2025-05-05
+REV0856,VWR0343,MOV040,5,,Positive,2025-07-19
+REV0857,VWR0518,MOV010,3,galaxy burn is the best thing ever 💯,Neutral,2025-06-18
+REV0858,VWR0696,MOV005,1,so good!,Negative,2025-06-16
+REV0859,VWR0152,MOV002,2,why is the app crashing?,Negative,2025-05-07
+REV0860,VWR0474,MOV018,3,why is the app crashing?,neutral,2025-09-09
+REV0861,VWR1422,MOV051,4,terrible pacing ngl,Positive,2025-12-28
+REV0862,VWR0036,MOV048,4,subtitles broken again,Positive,2025-07-28
+REV0863,VWR0299,MOV025,1,galaxy burn is the best thing ever 💯,negative,2025-12-14
+REV0864,VWR0878,MOV055,1,meh,Negative,2025-06-13
+REV0865,VWR0035,MOV021,2,terrible pacing ngl,negative,2025-10-15
+REV0866,VWR0609,MOV001,1,terrible pacing ngl,Negative,2025-03-05
+REV0867,VWR0387,MOV009,4,,Positive,2025-08-12
+REV0868,VWR0658,MOV016,2,音楽 was good,Negative,2025-05-16
+REV0869,VWR0464,MOV018,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-21
+REV0870,VWR0744,MOV008,5,terrible pacing ngl,Positive,2025-05-17
+REV0871,VWR0815,MOV001,4,galaxy burn is the best thing ever 💯,Positive,2025-02-18
+REV0872,VWR1114,MOV016,3,terrible pacing ngl,Neutral,2025-08-30
+REV0873,VWR0068,MOV017,4,音楽 was good,Positive,2025-01-29
+REV0874,VWR0317,MOV001,5,idk why people like this,Positive,2025-09-21
+REV0875,VWR1144,MOV044,4,idk why people like this,Positive,2025-05-07
+REV0876,VWR1313,MOV046,2,terrible pacing ngl,Negative,2025-08-14
+REV0877,VWR0456,MOV055,5,ending felt rushed tbh,Positive,2025-02-06
+REV0878,VWR1046,MOV028,1,subtitles broken again,negative,2025-09-06
+REV0879,VWR1125,MOV013,3,subtitles broken again,Neutral,2025-01-09
+REV0880,VWR0986,MOV022,4,THIS SHOW IS INSANE 🔥,Positive,2025-11-30
+REV0881,VWR0713,MOV041,1,galaxy burn is the best thing ever 💯,Negative,2025-04-28
+REV0882,VWR0797,MOV022,2,subtitles broken again,Negative,2025-07-13
+REV0883,VWR0951,MOV031,1,why is the app crashing?,Negative,2025-07-11
+REV0884,VWR0090,MOV060,4,idk why people like this,positive,2025-11-10
+REV0885,VWR0687,MOV025,2,subtitles broken again,Negative,2025-09-27
+REV0886,VWR0036,MOV048,2,音楽 was good,Negative,2025-08-16
+REV0887,VWR1036,MOV048,1,idk why people like this,negative,2025-09-09
+REV0888,VWR1407,MOV002,2,meh,Negative,2025-08-20
+REV0889,VWR0704,MOV001,5,why is the app crashing?,Positive,2025-01-29
+REV0890,VWR0074,MOV007,1,why is the app crashing?,Negative,2025-06-24
+REV0891,VWR0894,MOV009,2,THIS SHOW IS INSANE 🔥,Negative,2025-04-06
+REV0892,VWR1254,MOV045,4,love it,Positive,2025-10-02
+REV0893,VWR1024,MOV060,4,THIS SHOW IS INSANE 🔥,Positive,2025-04-10
+REV0894,VWR1015,MOV030,2,galaxy burn is the best thing ever 💯,Negative,2025-01-05
+REV0895,VWR0807,MOV013,1,galaxy burn is the best thing ever 💯,Negative,2025-06-12
+REV0896,VWR1201,MOV030,2,idk why people like this,Negative,2025-01-22
+REV0897,VWR0141,MOV048,3,so good!,Neutral,2025-07-16
+REV0898,VWR0999,MOV027,4,meh,Positive,2025-05-25
+REV0899,VWR0080,MOV002,2,ending felt rushed tbh,Negative,2025-04-20
+REV0900,VWR0904,MOV038,2,音楽 was good,Negative,2025-12-20
+REV0901,VWR0606,MOV031,5,so good!,positive,2025-03-30
+REV0902,VWR1035,MOV058,3,音楽 was good,Neutral,2025-12-14
+REV0903,VWR0974,MOV021,2,so good!,Negative,2025-03-11
+REV0904,VWR0936,MOV053,4,love it,Positive,2025-08-25
+REV0905,VWR1354,MOV003,1,音楽 was good,Negative,2025-09-29
+REV0906,VWR0918,MOV040,5,so good!,Positive,2025-07-01
+REV0907,VWR1146,MOV043,2,terrible pacing ngl,Negative,2025-08-24
+REV0908,VWR1218,MOV029,3,galaxy burn is the best thing ever 💯,Neutral,2025-07-09
+REV0909,VWR0710,MOV023,4,meh,Positive,2025-01-13
+REV0910,VWR0299,MOV021,4,why is the app crashing?,Positive,2025-06-04
+REV0911,VWR0564,MOV011,3,so good!,Neutral,2025-03-17
+REV0912,VWR0611,MOV034,2,so good!,negative,2025-10-19
+REV0913,VWR0822,MOV056,5,why is the app crashing?,Positive,2025-06-03
+REV0914,VWR1365,MOV005,4,why is the app crashing?,Positive,2025-04-05
+REV0915,VWR0960,MOV002,2,subtitles broken again,Negative,2025-09-07
+REV0916,VWR1020,MOV025,5,idk why people like this,positive,2025-06-15
+REV0917,VWR0581,MOV028,4,galaxy burn is the best thing ever 💯,Positive,2025-03-25
+REV0918,VWR0708,MOV027,1,so good!,Negative,2025-11-24
+REV0919,VWR0545,MOV026,5,so good!,Positive,2025-10-12
+REV0920,VWR0120,MOV001,1,so good!,negative,2025-12-28
+REV0921,VWR1013,MOV024,1,ending felt rushed tbh,negative,2025-06-08
+REV0922,VWR1400,MOV012,4,THIS SHOW IS INSANE 🔥,Positive,2025-02-03
+REV0923,VWR1428,MOV007,3,#### temp ####,Neutral,2025-02-22
+REV0924,VWR0291,MOV020,5,subtitles broken again,Positive,2025-01-30
+REV0925,VWR0496,MOV027,2,idk why people like this,Negative,2025-04-01
+REV0926,VWR0722,MOV045,3,subtitles broken again,Neutral,2025-02-02
+REV0927,VWR1310,MOV037,1,galaxy burn is the best thing ever 💯,Negative,2025-04-01
+REV0928,VWR0671,MOV003,1,galaxy burn is the best thing ever 💯,Negative,2025-06-13
+REV0929,VWR1017,MOV002,1,音楽 was good,Negative,2025-01-12
+REV0930,VWR0989,MOV030,1,ending felt rushed tbh,Negative,2025-09-22
+REV0931,VWR1450,MOV044,1,idk why people like this,Negative,2025-09-20
+REV0932,VWR1293,MOV030,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-13
+REV0933,VWR1160,MOV006,3,ERROR_EXPORT_ROW,Neutral,2025-09-21
+REV0934,VWR0618,MOV004,3,terrible pacing ngl,Neutral,2025-09-08
+REV0935,VWR1273,MOV004,3,so good!,Neutral,2025-12-18
+REV0936,VWR0349,MOV049,4,love it,Positive,2025-05-04
+REV0937,VWR0866,MOV011,4,so good!,Positive,2025-03-25
+REV0938,VWR0579,MOV042,5,subtitles broken again,Positive,2025-04-21
+REV0939,VWR1154,MOV050,1,ending felt rushed tbh,Negative,2025-02-08
+REV0940,VWR1128,MOV005,3,meh,Neutral,2025-02-12
+REV0941,VWR0621,MOV002,1,subtitles broken again,Negative,2025-11-18
+REV0942,VWR0836,MOV042,1,so good!,Negative,2025-03-29
+REV0943,VWR0587,MOV030,5,meh,Positive,2025-07-10
+REV0944,VWR0986,MOV020,4,meh,Positive,2025-01-14
+REV0945,VWR0560,MOV016,3,terrible pacing ngl,Neutral,2025-12-19
+REV0946,VWR1477,MOV036,1,THIS SHOW IS INSANE 🔥,Negative,2025-03-07
+REV0947,VWR0386,MOV024,2,so good!,negative,2025-07-28
+REV0948,VWR0571,MOV027,3,subtitles broken again,Neutral,2025-06-19
+REV0949,VWR0066,MOV026,3,so good!,Neutral,2025-12-08
+REV0950,VWR0471,MOV029,5,ERROR_EXPORT_ROW,Positive,2025-09-12
+REV0951,VWR0579,MOV027,5,THIS SHOW IS INSANE 🔥,Positive,2025-08-20
+REV0952,VWR1072,MOV016,1,terrible pacing ngl,Negative,2025-02-27
+REV0953,VWR0517,MOV044,5,terrible pacing ngl,Positive,2025-12-28
+REV0954,VWR0471,MOV027,3,why is the app crashing?,Neutral,2025-01-06
+REV0955,VWR1101,MOV020,2,idk why people like this,Negative,2025-12-31
+REV0956,VWR1396,MOV013,2,meh,Negative,2025-05-28
+REV0957,VWR1374,MOV013,1,ending felt rushed tbh,Negative,2025-08-31
+REV0958,VWR1404,MOV051,3,terrible pacing ngl,Neutral,2025-07-14
+REV0959,VWR0677,MOV025,3,,Neutral,2025-06-13
+REV0960,VWR0811,MOV012,4,meh,Positive,2025-09-21
+REV0961,VWR0186,MOV037,1,,Negative,2025-05-15
+REV0962,VWR1490,MOV048,4,so good!,Positive,2025-08-20
+REV0963,VWR1247,MOV033,4,so good!,Positive,2025-05-15
+REV0964,VWR0184,MOV021,4,NaN,Positive,2025-04-19
+REV0965,VWR0934,MOV054,3,ending felt rushed tbh,Neutral,2025-11-24
+REV0966,VWR0938,MOV044,1,so good!,Negative,2025-09-30
+REV0967,VWR0403,MOV005,4,terrible pacing ngl,Positive,2025-08-20
+REV0968,VWR0610,MOV027,4,so good!,Positive,2025-12-21
+REV0969,VWR1399,MOV046,1,,Negative,2025-11-25
+REV0970,VWR1284,MOV007,5,galaxy burn is the best thing ever 💯,Positive,2025-07-02
+REV0971,VWR1340,MOV049,2,terrible pacing ngl,Negative,2025-09-18
+REV0972,VWR0492,MOV042,4,ending felt rushed tbh,Positive,2025-03-10
+REV0973,VWR1115,MOV043,2,idk why people like this,Negative,2025-10-25
+REV0974,VWR1006,MOV028,3,idk why people like this,Neutral,2025-09-17
+REV0975,VWR1033,MOV011,2,THIS SHOW IS INSANE 🔥,Negative,2025-09-22
+REV0976,VWR1373,MOV044,3,音楽 was good,Neutral,2025-08-28
+REV0977,VWR0039,MOV026,4,why is the app crashing?,Positive,2025-07-03
+REV0978,VWR0654,MOV051,5,terrible pacing ngl,Positive,2025-02-26
+REV0979,VWR1154,MOV004,1,so good!,Negative,2025-10-13
+REV0980,VWR1261,MOV054,3,galaxy burn is the best thing ever 💯,Neutral,2025-12-08
+REV0981,VWR1275,MOV009,2,subtitles broken again,Negative,2025-07-19
+REV0982,VWR1035,MOV044,3,love it,neutral,2025-09-24
+REV0983,VWR1315,MOV013,3,idk why people like this,Neutral,2025-05-23
+REV0984,VWR1022,MOV037,3,meh,Neutral,2025-06-09
+REV0985,VWR1112,MOV028,1,love it,Negative,2025-08-29
+REV0986,VWR0942,MOV019,1,音楽 was good,Negative,2025-02-06
+REV0987,VWR0821,MOV030,3,THIS SHOW IS INSANE 🔥,Neutral,2025-12-01
+REV0988,VWR1365,MOV053,2,ending felt rushed tbh,Negative,2025-02-23
+REV0989,VWR0944,MOV030,4,why is the app crashing?,Positive,2025-07-01
+REV0990,VWR0564,MOV027,2,so good!,Negative,2025-04-24
+REV0991,VWR0642,MOV004,2,音楽 was good,Negative,2025-11-11
+REV0992,VWR1254,MOV020,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-01
+REV0993,VWR1134,MOV057,5,音楽 was good,positive,2025-10-06
+REV0994,VWR1457,MOV055,5,terrible pacing ngl,positive,2025-04-30
+REV0995,VWR0878,MOV014,4,why is the app crashing?,Positive,2025-03-08
+REV0996,VWR0928,MOV022,3,subtitles broken again,Neutral,2025-08-03
+REV0997,VWR1300,MOV039,1,meh,Negative,2025-09-17
+REV0998,VWR1232,MOV055,4,so good!,Positive,2025-11-14
+REV0999,VWR0940,MOV025,3,ending felt rushed tbh,Neutral,2025-01-13
+REV1000,VWR0697,MOV041,1,音楽 was good,Negative,2025-04-21
+REV1001,VWR1409,MOV044,1,idk why people like this,Negative,2025-02-15
+REV1002,VWR0313,MOV023,1,galaxy burn is the best thing ever 💯,negative,2025-08-19
+REV1003,VWR0866,MOV006,3,ending felt rushed tbh,neutral,2025-08-03
+REV1004,VWR0585,MOV040,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-04
+REV1005,VWR0052,MOV048,4,galaxy burn is the best thing ever 💯,Positive,2025-12-19
+REV1006,VWR0784,MOV044,3,so good!,Neutral,2025-04-20
+REV1007,VWR1075,MOV031,5,meh,Positive,2025-01-19
+REV1008,VWR0252,MOV026,4,terrible pacing ngl,Positive,2025-08-01
+REV1009,VWR1332,MOV030,4,meh,Positive,2025-09-21
+REV1010,VWR1410,MOV045,3,terrible pacing ngl,Neutral,2025-04-06
+REV1011,VWR0251,MOV044,1,THIS SHOW IS INSANE 🔥,Negative,2025-04-16
+REV1012,VWR1082,MOV007,3,#### temp ####,Neutral,2025-05-10
+REV1013,VWR1355,MOV042,2,love it,Negative,2025-04-23
+REV1014,VWR0022,MOV029,4,so good!,Positive,2025-11-23
+REV1015,VWR0186,MOV018,2,meh,Negative,2025-10-23
+REV1016,VWR0368,MOV022,1,音楽 was good,negative,2025-07-27
+REV1017,VWR0270,MOV040,3,ending felt rushed tbh,Neutral,2025-12-26
+REV1018,VWR0030,MOV033,5,so good!,Positive,2025-06-19
+REV1019,VWR0542,MOV027,3,so good!,Neutral,2025-07-10
+REV1020,VWR0042,MOV030,2,,Negative,2025-10-03
+REV1021,VWR0085,MOV014,1,why is the app crashing?,Negative,2025-08-31
+REV1022,VWR0336,MOV052,3,so good!,Neutral,2025-11-28
+REV1023,VWR0762,MOV060,3,,Neutral,2025-02-14
+REV1024,VWR0611,MOV040,3,ending felt rushed tbh,Neutral,2025-05-03
+REV1025,VWR0132,MOV003,2,subtitles broken again,Negative,2025-09-13
+REV1026,VWR0935,MOV013,2,subtitles broken again,negative,2025-03-14
+REV1027,VWR0742,MOV047,2,ending felt rushed tbh,Negative,2025-02-02
+REV1028,VWR0537,MOV021,3,idk why people like this,Neutral,2025-09-29
+REV1029,VWR1460,MOV016,2,terrible pacing ngl,Negative,2025-02-11
+REV1030,VWR0117,MOV042,1,meh,Negative,2025-10-01
+REV1031,VWR1172,MOV042,5,meh,Positive,2025-04-22
+REV1032,VWR1141,MOV060,5,galaxy burn is the best thing ever 💯,Positive,2025-09-21
+REV1033,VWR0046,MOV011,1,why is the app crashing?,Negative,2025-05-08
+REV1034,VWR1323,MOV027,5,terrible pacing ngl,Positive,2025-09-22
+REV1035,VWR0086,MOV058,2,idk why people like this,Negative,2025-03-27
+REV1036,VWR1305,MOV034,4,meh,Positive,2025-08-21
+REV1037,VWR0991,MOV034,2,ending felt rushed tbh,Negative,2025-01-06
+REV1038,VWR0815,MOV005,2,idk why people like this,Negative,2025-08-22
+REV1039,VWR0919,MOV047,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-30
+REV1040,VWR0971,MOV014,1,idk why people like this,Negative,2025-09-25
+REV1041,VWR0835,MOV001,4,ending felt rushed tbh,Positive,2025-02-26
+REV1042,VWR0879,MOV060,3,,Neutral,2025-01-12
+REV1043,VWR0004,MOV026,3,subtitles broken again,Neutral,2025-03-19
+REV1044,VWR0635,MOV056,1,love it,Negative,2025-02-27
+REV1045,VWR0415,MOV053,5,,Positive,2025-07-26
+REV1046,VWR0881,MOV045,2,THIS SHOW IS INSANE 🔥,Negative,2025-02-26
+REV1047,VWR0495,MOV044,2,so good!,negative,2025-01-17
+REV1048,VWR0291,MOV041,4,why is the app crashing?,Positive,2025-05-21
+REV1049,VWR1466,MOV050,5,so good!,Positive,2025-08-27
+REV1050,VWR0917,MOV015,2,terrible pacing ngl,Negative,2025-12-26
+REV1051,VWR0475,MOV051,5,meh,Positive,2025-12-22
+REV1052,VWR1115,MOV029,1,音楽 was good,Negative,2025-04-21
+REV1053,VWR0970,MOV034,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-27
+REV1054,VWR1019,MOV053,2,idk why people like this,Negative,2025-09-22
+REV1055,VWR1497,MOV004,5,idk why people like this,Positive,2025-01-03
+REV1056,VWR1065,MOV039,3,,Neutral,2025-02-23
+REV1057,VWR0258,MOV017,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-16
+REV1058,VWR1120,MOV004,3,meh,Neutral,2025-05-04
+REV1059,VWR0382,MOV012,3,,Neutral,2025-07-18
+REV1060,VWR1226,MOV001,1,meh,Negative,2025-02-14
+REV1061,VWR0253,MOV050,5,音楽 was good,Positive,2025-06-19
+REV1062,VWR0738,MOV041,2,subtitles broken again,Negative,2025-01-30
+REV1063,VWR1406,MOV042,1,love it,Negative,2025-09-04
+REV1064,VWR1348,MOV021,4,THIS SHOW IS INSANE 🔥,Positive,2025-11-11
+REV1065,VWR1009,MOV017,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-06
+REV1066,VWR0634,MOV001,2,ending felt rushed tbh,Negative,2025-10-02
+REV1067,VWR0287,MOV035,1,音楽 was good,Negative,2025-06-16
+REV1068,VWR1367,MOV059,5,idk why people like this,Positive,2025-01-04
+REV1069,VWR1076,MOV047,5,音楽 was good,Positive,2025-03-31
+REV1070,VWR0450,MOV020,5,ending felt rushed tbh,Positive,2025-07-30
+REV1071,VWR1356,MOV024,3,idk why people like this,Neutral,2025-04-10
+REV1072,VWR1234,MOV043,2,subtitles broken again,Negative,2025-11-29
+REV1073,VWR0452,MOV057,3,idk why people like this,neutral,2025-05-23
+REV1074,VWR0413,MOV057,3,so good!,Neutral,2025-08-25
+REV1075,VWR1403,MOV009,3,idk why people like this,Neutral,2025-08-26
+REV1076,VWR0139,MOV002,1,THIS SHOW IS INSANE 🔥,Negative,2025-05-18
+REV1077,VWR0060,MOV015,2,meh,Negative,2025-07-20
+REV1078,VWR0043,MOV060,2,idk why people like this,Negative,2025-03-03
+REV1079,VWR0904,MOV018,2,subtitles broken again,Negative,2025-08-14
+REV1080,VWR1242,MOV022,1,love it,Negative,2025-07-14
+REV1081,VWR1055,MOV059,1,音楽 was good,Negative,2025-01-13
+REV1082,VWR0937,MOV047,4,idk why people like this,Positive,2025-07-06
+REV1083,VWR0420,MOV001,3,why is the app crashing?,Neutral,2025-05-24
+REV1084,VWR0116,MOV029,3,love it,Neutral,2025-08-26
+REV1085,VWR0533,MOV031,4,音楽 was good,Positive,2025-11-24
+REV1086,VWR0685,MOV019,1,THIS SHOW IS INSANE 🔥,Negative,2025-03-10
+REV1087,VWR0561,MOV041,3,音楽 was good,Neutral,2025-12-06
+REV1088,VWR0573,MOV006,4,THIS SHOW IS INSANE 🔥,Positive,2025-12-30
+REV1089,VWR0705,MOV020,5,so good!,Positive,2025-05-25
+REV1090,VWR0538,MOV059,2,galaxy burn is the best thing ever 💯,Negative,2025-09-08
+REV1091,VWR0433,MOV055,3,meh,Neutral,2025-01-31
+REV1092,VWR1139,MOV028,4,love it,Positive,2025-12-29
+REV1093,VWR0923,MOV034,4,love it,Positive,2025-12-09
+REV1094,VWR1251,MOV020,5,,Positive,2025-09-27
+REV1095,VWR0737,MOV036,3,why is the app crashing?,Neutral,2025-06-05
+REV1096,VWR0311,MOV032,4,ending felt rushed tbh,Positive,2025-09-17
+REV1097,VWR0615,MOV053,5,idk why people like this,Positive,2025-06-30
+REV1098,VWR1206,MOV001,4,音楽 was good,Positive,2025-07-15
+REV1099,VWR0952,MOV023,4,terrible pacing ngl,Positive,2025-02-12
+REV1100,VWR1251,MOV014,1,THIS SHOW IS INSANE 🔥,Negative,2025-02-25
+REV1101,VWR1087,MOV050,1,galaxy burn is the best thing ever 💯,Negative,2025-04-18
+REV1102,VWR0771,MOV028,4,THIS SHOW IS INSANE 🔥,Positive,2025-05-17
+REV1103,VWR0701,MOV003,5,subtitles broken again,Positive,2025-06-14
+REV1104,VWR0972,MOV053,2,idk why people like this,Negative,2025-05-22
+REV1105,VWR0226,MOV043,5,音楽 was good,Positive,2025-01-13
+REV1106,VWR0723,MOV026,3,terrible pacing ngl,Neutral,2025-03-27
+REV1107,VWR0280,MOV017,3,galaxy burn is the best thing ever 💯,Neutral,2025-02-03
+REV1108,VWR1030,MOV014,5,terrible pacing ngl,Positive,2025-03-01
+REV1109,VWR1219,MOV019,4,terrible pacing ngl,Positive,2025-05-23
+REV1110,VWR0646,MOV027,5,meh,Positive,2025-10-09
+REV1111,VWR0229,MOV023,2,ending felt rushed tbh,Negative,2025-01-12
+REV1112,VWR0771,MOV057,5,subtitles broken again,Positive,2025-06-21
+REV1113,VWR0898,MOV014,2,galaxy burn is the best thing ever 💯,Negative,2025-01-11
+REV1114,VWR1264,MOV046,1,terrible pacing ngl,Negative,2025-08-29
+REV1115,VWR0428,MOV049,2,音楽 was good,Negative,2025-08-18
+REV1116,VWR1061,MOV032,3,terrible pacing ngl,Neutral,2025-10-06
+REV1117,VWR1010,MOV030,2,ending felt rushed tbh,Negative,2025-04-02
+REV1118,VWR1158,MOV032,1,why is the app crashing?,Negative,2025-01-09
+REV1119,VWR0857,MOV019,5,THIS SHOW IS INSANE 🔥,Positive,2025-09-18
+REV1120,VWR0216,MOV037,5,idk why people like this,Positive,2025-04-07
+REV1121,VWR1478,MOV012,3,so good!,Neutral,2025-11-21
+REV1122,VWR0071,MOV050,3,idk why people like this,Neutral,2025-12-05
+REV1123,VWR1132,MOV013,5,why is the app crashing?,Positive,2025-05-10
+REV1124,VWR0542,MOV009,5,ending felt rushed tbh,Positive,2025-07-15
+REV1125,VWR0247,MOV052,3,meh,Neutral,2025-09-08
+REV1126,VWR1264,MOV051,5,so good!,positive,2025-10-05
+REV1127,VWR0341,MOV009,5,meh,Positive,2025-03-12
+REV1128,VWR1192,MOV006,3,ERROR_EXPORT_ROW,Neutral,2025-05-27
+REV1129,VWR0669,MOV042,4,subtitles broken again,positive,2025-03-13
+REV1130,VWR0635,MOV050,2,idk why people like this,Negative,2025-03-08
+REV1131,VWR1094,MOV001,5,idk why people like this,Positive,2025-01-05
+REV1132,VWR1417,MOV059,3,love it,Neutral,2025-04-08
+REV1133,VWR0837,MOV025,1,ending felt rushed tbh,Negative,2025-05-14
+REV1134,VWR1101,MOV046,5,ending felt rushed tbh,Positive,2025-10-15
+REV1135,VWR1035,MOV059,3,meh,Neutral,2025-04-18
+REV1136,VWR0107,MOV014,2,音楽 was good,Negative,2025-01-07
+REV1137,VWR0765,MOV048,3,THIS SHOW IS INSANE 🔥,Neutral,2025-08-01
+REV1138,VWR1078,MOV056,5,meh,Positive,2025-12-30
+REV1139,VWR0925,MOV029,1,idk why people like this,Negative,2025-11-22
+REV1140,VWR0775,MOV055,3,idk why people like this,neutral,2025-04-18
+REV1141,VWR0844,MOV047,5,why is the app crashing?,Positive,2025-04-21
+REV1142,VWR0567,MOV004,2,idk why people like this,Negative,2025-06-19
+REV1143,VWR0958,MOV054,3,THIS SHOW IS INSANE 🔥,Neutral,2025-11-22
+REV1144,VWR0479,MOV006,5,so good!,Positive,2025-06-30
+REV1145,VWR0620,MOV016,1,galaxy burn is the best thing ever 💯,Negative,2025-12-21
+REV1146,VWR0004,MOV043,1,NULL,Negative,2025-11-05
+REV1147,VWR0302,MOV006,4,why is the app crashing?,Positive,2025-04-29
+REV1148,VWR1057,MOV042,3,subtitles broken again,Neutral,2025-09-09
+REV1149,VWR0595,MOV025,1,galaxy burn is the best thing ever 💯,Negative,2025-10-09
+REV1150,VWR1086,MOV015,3,subtitles broken again,Neutral,2025-05-09
+REV1151,VWR1201,MOV046,1,terrible pacing ngl,Negative,2025-07-22
+REV1152,VWR1058,MOV035,3,love it,Neutral,2025-06-12
+REV1153,VWR0330,MOV016,4,galaxy burn is the best thing ever 💯,Positive,2025-11-15
+REV1154,VWR1386,MOV013,2,音楽 was good,Negative,2025-11-25
+REV1155,VWR0571,MOV037,4,THIS SHOW IS INSANE 🔥,Positive,2025-02-23
+REV1156,VWR0114,MOV054,5,love it,Positive,2025-05-28
+REV1157,VWR1136,MOV010,1,meh,Negative,2025-10-16
+REV1158,VWR0106,MOV009,1,音楽 was good,Negative,2025-03-08
+REV1159,VWR0378,MOV012,1,idk why people like this,Negative,2025-12-13
+REV1160,VWR1323,MOV018,5,galaxy burn is the best thing ever 💯,Positive,2025-09-09
+REV1161,VWR0113,MOV001,3,THIS SHOW IS INSANE 🔥,Neutral,2025-09-14
+REV1162,VWR0109,MOV023,3,why is the app crashing?,Neutral,2025-05-11
+REV1163,VWR0405,MOV024,3,ending felt rushed tbh,Neutral,2025-01-04
+REV1164,VWR0133,MOV039,3,terrible pacing ngl,Neutral,2025-09-05
+REV1165,VWR0822,MOV020,2,galaxy burn is the best thing ever 💯,Negative,2025-08-07
+REV1166,VWR0633,MOV037,2,idk why people like this,Negative,2025-01-17
+REV1167,VWR0831,MOV060,1,音楽 was good,Negative,2025-04-23
+REV1168,VWR0736,MOV016,4,音楽 was good,Positive,2025-05-22
+REV1169,VWR1270,MOV042,3,subtitles broken again,Neutral,2025-06-18
+REV1170,VWR0788,MOV038,2,terrible pacing ngl,Negative,2025-02-02
+REV1171,VWR0227,MOV049,2,meh,Negative,2025-08-21
+REV1172,VWR1114,MOV013,2,terrible pacing ngl,Negative,2025-02-07
+REV1173,VWR0897,MOV009,3,galaxy burn is the best thing ever 💯,neutral,2025-10-04
+REV1174,VWR0746,MOV017,3,音楽 was good,Neutral,2025-04-23
+REV1175,VWR0582,MOV023,3,subtitles broken again,Neutral,2025-03-17
+REV1176,VWR1387,MOV027,4,,Positive,2025-05-17
+REV1177,VWR1178,MOV011,4,love it,Positive,2025-06-03
+REV1178,VWR0104,MOV015,1,THIS SHOW IS INSANE 🔥,Negative,2025-09-30
+REV1179,VWR0594,MOV057,1,ending felt rushed tbh,Negative,2025-12-22
+REV1180,VWR0914,MOV049,4,terrible pacing ngl,Positive,2025-01-01
+REV1181,VWR0767,MOV041,5,ERROR_EXPORT_ROW,Positive,2025-09-26
+REV1182,VWR0183,MOV019,2,galaxy burn is the best thing ever 💯,Negative,2025-01-06
+REV1183,VWR0090,MOV009,4,galaxy burn is the best thing ever 💯,Positive,2025-07-20
+REV1184,VWR1063,MOV040,2,音楽 was good,Negative,2025-11-29
+REV1185,VWR0516,MOV045,3,NaN,Neutral,2025-02-19
+REV1186,VWR0510,MOV057,4,ERROR_EXPORT_ROW,Positive,2025-06-24
+REV1187,VWR0381,MOV002,5,galaxy burn is the best thing ever 💯,Positive,2025-12-28
+REV1188,VWR0456,MOV054,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-13
+REV1189,VWR0133,MOV060,3,galaxy burn is the best thing ever 💯,Neutral,2025-02-06
+REV1190,VWR0696,MOV050,3,terrible pacing ngl,Neutral,2025-11-16
+REV1191,VWR0498,MOV017,4,love it,Positive,2025-08-04
+REV1192,VWR0359,MOV051,3,subtitles broken again,Neutral,2025-01-13
+REV1193,VWR0500,MOV011,5,音楽 was good,Positive,2025-04-11
+REV1194,VWR0216,MOV001,1,so good!,Negative,2025-05-26
+REV1195,VWR1282,MOV008,4,love it,Positive,2025-08-12
+REV1196,VWR0915,MOV048,4,subtitles broken again,Positive,2025-11-22
+REV1197,VWR0569,MOV043,2,音楽 was good,Negative,2025-08-27
+REV1198,VWR0020,MOV001,1,so good!,Negative,2025-10-14
+REV1199,VWR0695,MOV031,2,galaxy burn is the best thing ever 💯,Negative,2025-09-14
+REV1200,VWR0515,MOV059,4,音楽 was good,Positive,2025-09-07
+REV1201,VWR0450,MOV012,2,,Negative,2025-11-12
+REV1202,VWR0289,MOV059,2,#### temp ####,Negative,2025-03-30
+REV1203,VWR0310,MOV016,3,terrible pacing ngl,Neutral,2025-11-17
+REV1204,VWR0108,MOV017,2,subtitles broken again,Negative,2025-01-25
+REV1205,VWR0426,MOV044,2,idk why people like this,negative,2025-08-27
+REV1206,VWR0974,MOV031,2,so good!,Negative,2025-10-20
+REV1207,VWR0211,MOV045,4,terrible pacing ngl,Positive,2025-06-27
+REV1208,VWR0456,MOV012,4,THIS SHOW IS INSANE 🔥,Positive,2025-01-13
+REV1209,VWR1176,MOV022,1,why is the app crashing?,Negative,2025-03-06
+REV1210,VWR1102,MOV011,2,音楽 was good,Negative,2025-12-19
+REV1211,VWR0606,MOV039,5,love it,Positive,2025-02-05
+REV1212,VWR0683,MOV031,3,THIS SHOW IS INSANE 🔥,Neutral,2025-01-26
+REV1213,VWR0132,MOV052,2,terrible pacing ngl,Negative,2025-11-14
+REV1214,VWR0158,MOV058,3,why is the app crashing?,Neutral,2025-02-04
+REV1215,VWR0998,MOV014,3,meh,Neutral,2025-08-24
+REV1216,VWR1485,MOV032,5,terrible pacing ngl,Positive,2025-11-05
+REV1217,VWR1261,MOV012,3,love it,Neutral,2025-09-07
+REV1218,VWR0162,MOV001,5,terrible pacing ngl,positive,2025-05-15
+REV1219,VWR0363,MOV040,2,terrible pacing ngl,Negative,2025-04-22
+REV1220,VWR1018,MOV055,1,subtitles broken again,Negative,2025-01-18
+REV1221,VWR0856,MOV058,5,ending felt rushed tbh,Positive,2025-05-02
+REV1222,VWR0301,MOV060,3,idk why people like this,Neutral,2025-12-23
+REV1223,VWR1477,MOV019,2,galaxy burn is the best thing ever 💯,Negative,2026-01-01
+REV1224,VWR1497,MOV028,1,ending felt rushed tbh,Negative,2025-04-24
+REV1225,VWR0367,MOV003,5,terrible pacing ngl,Positive,2025-06-02
+REV1226,VWR0897,MOV023,2,so good!,Negative,2025-11-21
+REV1227,VWR0602,MOV059,2,love it,Negative,2025-06-20
+REV1228,VWR1303,MOV019,4,THIS SHOW IS INSANE 🔥,Positive,2025-02-23
+REV1229,VWR1419,MOV005,5,so good!,Positive,2025-07-12
+REV1230,VWR0652,MOV045,3,so good!,Neutral,2025-11-21
+REV1231,VWR0360,MOV021,1,idk why people like this,Negative,2025-03-15
+REV1232,VWR1382,MOV035,2,love it,Negative,2025-11-02
+REV1233,VWR1202,MOV045,4,subtitles broken again,Positive,2025-11-26
+REV1234,VWR1235,MOV002,2,love it,Negative,2025-11-15
+REV1235,VWR0352,MOV026,5,subtitles broken again,Positive,2025-06-05
+REV1236,VWR0292,MOV047,4,why is the app crashing?,Positive,2025-08-31
+REV1237,VWR0116,MOV031,4,terrible pacing ngl,Positive,2025-02-17
+REV1238,VWR0208,MOV023,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-06
+REV1239,VWR0540,MOV047,3,meh,Neutral,2025-01-27
+REV1240,VWR1114,MOV006,2,love it,Negative,2025-10-25
+REV1241,VWR0238,MOV046,5,,Positive,2025-08-21
+REV1242,VWR1380,MOV029,2,meh,Negative,2025-04-22
+REV1243,VWR1342,MOV045,5,ending felt rushed tbh,Positive,2025-07-12
+REV1244,VWR0616,MOV055,2,音楽 was good,Negative,2025-01-07
+REV1245,VWR0735,MOV009,3,so good!,Neutral,2025-03-28
+REV1246,VWR1028,MOV036,2,subtitles broken again,Negative,2025-12-27
+REV1247,VWR1454,MOV049,5,galaxy burn is the best thing ever 💯,Positive,2025-12-19
+REV1248,VWR1295,MOV060,4,terrible pacing ngl,Positive,2025-10-16
+REV1249,VWR1072,MOV040,2,idk why people like this,Negative,2025-09-03
+REV1250,VWR0283,MOV035,4,idk why people like this,Positive,2025-03-11
+REV1251,VWR1434,MOV040,2,音楽 was good,Negative,2025-08-30
+REV1252,VWR1455,MOV023,1,so good!,Negative,2025-01-02
+REV1253,VWR0358,MOV013,4,音楽 was good,Positive,2025-03-14
+REV1254,VWR1408,MOV058,1,love it,Negative,2025-12-04
+REV1255,VWR0104,MOV009,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-05
+REV1256,VWR1326,MOV059,4,meh,Positive,2025-07-20
+REV1257,VWR0017,MOV012,1,THIS SHOW IS INSANE 🔥,Negative,2025-03-17
+REV1258,VWR0046,MOV035,3,terrible pacing ngl,Neutral,2025-10-28
+REV1259,VWR0594,MOV051,3,音楽 was good,neutral,2025-01-01
+REV1260,VWR0036,MOV050,3,,Neutral,2025-08-06
+REV1261,VWR0332,MOV032,3,why is the app crashing?,Neutral,2025-10-12
+REV1262,VWR0729,MOV006,4,subtitles broken again,Positive,2025-03-11
+REV1263,VWR1224,MOV013,4,terrible pacing ngl,Positive,2025-11-21
+REV1264,VWR1141,MOV018,1,meh,Negative,2025-12-25
+REV1265,VWR0650,MOV004,3,idk why people like this,Neutral,2025-02-22
+REV1266,VWR0417,MOV012,2,love it,Negative,2025-04-18
+REV1267,VWR0608,MOV059,5,galaxy burn is the best thing ever 💯,Positive,2025-05-27
+REV1268,VWR0277,MOV055,4,galaxy burn is the best thing ever 💯,Positive,2025-03-20
+REV1269,VWR0596,MOV053,3,why is the app crashing?,neutral,2025-11-16
+REV1270,VWR0381,MOV024,2,galaxy burn is the best thing ever 💯,Negative,2025-07-17
+REV1271,VWR1038,MOV005,5,why is the app crashing?,Positive,2025-03-07
+REV1272,VWR1287,MOV038,1,NULL,Negative,2025-12-02
+REV1273,VWR1403,MOV019,2,ending felt rushed tbh,Negative,2025-03-31
+REV1274,VWR1383,MOV031,2,subtitles broken again,Negative,2025-08-11
+REV1275,VWR1245,MOV013,5,idk why people like this,Positive,2025-10-12
+REV1276,VWR1395,MOV041,3,meh,Neutral,2025-08-13
+REV1277,VWR0034,MOV029,2,,Negative,2025-06-11
+REV1278,VWR0857,MOV047,3,音楽 was good,Neutral,2025-04-10
+REV1279,VWR1293,MOV053,1,ending felt rushed tbh,Negative,2025-03-05
+REV1280,VWR0084,MOV032,3,terrible pacing ngl,Neutral,2025-10-12
+REV1281,VWR0167,MOV026,4,subtitles broken again,Positive,2025-03-04
+REV1282,VWR0622,MOV019,1,so good!,Negative,2025-09-20
+REV1283,VWR1161,MOV055,3,galaxy burn is the best thing ever 💯,Neutral,2025-05-16
+REV1284,VWR0461,MOV004,1,subtitles broken again,Negative,2025-04-19
+REV1285,VWR0795,MOV006,1,love it,Negative,2025-02-25
+REV1286,VWR0086,MOV027,1,love it,Negative,2025-12-12
+REV1287,VWR1278,MOV029,2,so good!,Negative,2025-05-20
+REV1288,VWR0909,MOV019,5,terrible pacing ngl,Positive,2025-08-28
+REV1289,VWR1362,MOV018,2,galaxy burn is the best thing ever 💯,Negative,2025-10-13
+REV1290,VWR0014,MOV019,2,ending felt rushed tbh,Negative,2025-11-15
+REV1291,VWR1155,MOV058,5,ending felt rushed tbh,Positive,2025-04-26
+REV1292,VWR0265,MOV015,1,love it,Negative,2025-06-21
+REV1293,VWR0189,MOV012,2,terrible pacing ngl,Negative,2025-09-16
+REV1294,VWR0831,MOV003,5,so good!,Positive,2025-10-04
+REV1295,VWR1205,MOV031,4,ending felt rushed tbh,Positive,2025-01-12
+REV1296,VWR1311,MOV011,2,idk why people like this,Negative,2025-05-14
+REV1297,VWR1077,MOV001,4,idk why people like this,Positive,2025-08-27
+REV1298,VWR1396,MOV053,5,subtitles broken again,Positive,2025-06-02
+REV1299,VWR1105,MOV021,4,meh,Positive,2025-06-08
+REV1300,VWR1227,MOV020,1,THIS SHOW IS INSANE 🔥,Negative,2025-10-23
+REV1301,VWR0533,MOV040,5,subtitles broken again,Positive,2025-08-24
+REV1302,VWR1109,MOV017,5,subtitles broken again,Positive,2025-07-26
+REV1303,VWR0066,MOV016,4,love it,Positive,2025-06-30
+REV1304,VWR1252,MOV052,5,subtitles broken again,Positive,2025-07-26
+REV1305,VWR1025,MOV020,4,so good!,Positive,2025-11-03
+REV1306,VWR1031,MOV022,3,love it,Neutral,2025-03-15
+REV1307,VWR1242,MOV017,2,THIS SHOW IS INSANE 🔥,Negative,2025-06-05
+REV1308,VWR0677,MOV059,2,音楽 was good,Negative,2025-12-17
+REV1309,VWR1360,MOV031,4,ending felt rushed tbh,Positive,2025-02-15
+REV1310,VWR1002,MOV034,5,so good!,positive,2025-03-27
+REV1311,VWR1146,MOV040,1,meh,Negative,2025-01-15
+REV1312,VWR1347,MOV032,1,galaxy burn is the best thing ever 💯,Negative,2025-12-04
+REV1313,VWR0392,MOV008,2,terrible pacing ngl,Negative,2025-05-03
+REV1314,VWR0628,MOV039,3,#### temp ####,Neutral,2025-11-24
+REV1315,VWR0817,MOV052,5,meh,positive,2025-12-29
+REV1316,VWR0596,MOV039,2,音楽 was good,Negative,2025-12-04
+REV1317,VWR1369,MOV057,4,terrible pacing ngl,Positive,2025-09-04
+REV1318,VWR0836,MOV047,4,音楽 was good,Positive,2025-11-21
+REV1319,VWR0147,MOV029,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-26
+REV1320,VWR0365,MOV032,5,音楽 was good,Positive,2025-01-02
+REV1321,VWR0110,MOV056,3,so good!,Neutral,2025-07-21
+REV1322,VWR1366,MOV001,5,THIS SHOW IS INSANE 🔥,Positive,2025-07-29
+REV1323,VWR1432,MOV002,1,terrible pacing ngl,Negative,2025-09-11
+REV1324,VWR0085,MOV052,1,ending felt rushed tbh,Negative,2025-08-09
+REV1325,VWR0685,MOV004,5,meh,Positive,2025-08-02
+REV1326,VWR0868,MOV009,3,,Neutral,2025-04-20
+REV1327,VWR1156,MOV037,4,why is the app crashing?,Positive,2025-02-03
+REV1328,VWR1136,MOV002,3,ending felt rushed tbh,neutral,2025-03-20
+REV1329,VWR1151,MOV031,3,terrible pacing ngl,Neutral,2025-06-21
+REV1330,VWR0658,MOV055,4,love it,Positive,2025-03-01
+REV1331,VWR0228,MOV052,2,love it,Negative,2025-12-03
+REV1332,VWR1088,MOV005,4,love it,Positive,2025-02-01
+REV1333,VWR0218,MOV006,3,why is the app crashing?,Neutral,2025-11-15
+REV1334,VWR1362,MOV041,3,subtitles broken again,Neutral,2025-10-05
+REV1335,VWR0921,MOV050,2,ending felt rushed tbh,Negative,2025-04-14
+REV1336,VWR0283,MOV042,5,why is the app crashing?,Positive,2025-01-06
+REV1337,VWR0260,MOV019,4,so good!,Positive,2025-03-13
+REV1338,VWR0020,MOV018,5,so good!,Positive,2025-11-18
+REV1339,VWR1465,MOV060,3,音楽 was good,Neutral,2025-03-23
+REV1340,VWR0969,MOV037,3,so good!,Neutral,2025-04-11
+REV1341,VWR0116,MOV022,2,ending felt rushed tbh,Negative,2025-09-16
+REV1342,VWR1463,MOV055,3,galaxy burn is the best thing ever 💯,Neutral,2025-02-03
+REV1343,VWR0854,MOV057,4,so good!,Positive,2025-01-11
+REV1344,VWR0798,MOV019,5,so good!,positive,2025-01-20
+REV1345,VWR0797,MOV027,2,love it,Negative,2025-12-05
+REV1346,VWR0312,MOV031,1,音楽 was good,Negative,2025-11-02
+REV1347,VWR0019,MOV038,4,love it,Positive,2025-08-13
+REV1348,VWR0513,MOV023,5,idk why people like this,Positive,2025-07-14
+REV1349,VWR0358,MOV027,4,idk why people like this,positive,2025-06-13
+REV1350,VWR0843,MOV001,1,so good!,Negative,2025-05-05
+REV1351,VWR1045,MOV040,4,why is the app crashing?,Positive,2025-08-26
+REV1352,VWR0800,MOV037,2,love it,Negative,2025-03-02
+REV1353,VWR0544,MOV001,5,love it,Positive,2025-01-31
+REV1354,VWR0493,MOV012,2,ending felt rushed tbh,Negative,2025-05-24
+REV1355,VWR0870,MOV004,5,ending felt rushed tbh,Positive,2025-04-14
+REV1356,VWR0729,MOV059,5,why is the app crashing?,Positive,2025-02-10
+REV1357,VWR0971,MOV024,4,why is the app crashing?,Positive,2025-05-12
+REV1358,VWR0163,MOV050,2,idk why people like this,Negative,2025-12-28
+REV1359,VWR1403,MOV043,3,so good!,Neutral,2025-09-02
+REV1360,VWR0124,MOV027,4,ending felt rushed tbh,Positive,2025-09-26
+REV1361,VWR1162,MOV001,4,terrible pacing ngl,Positive,2025-11-01
+REV1362,VWR0476,MOV058,1,subtitles broken again,Negative,2025-02-27
+REV1363,VWR1069,MOV023,3,meh,Neutral,2025-04-02
+REV1364,VWR0537,MOV040,3,love it,Neutral,2025-03-25
+REV1365,VWR0894,MOV030,5,galaxy burn is the best thing ever 💯,Positive,2025-04-27
+REV1366,VWR1323,MOV026,2,love it,Negative,2025-02-17
+REV1367,VWR0515,MOV025,2,#### temp ####,Negative,2025-09-13
+REV1368,VWR0890,MOV019,4,so good!,Positive,2025-11-11
+REV1369,VWR0185,MOV022,3,terrible pacing ngl,Neutral,2025-02-04
+REV1370,VWR0131,MOV031,3,so good!,Neutral,2025-08-08
+REV1371,VWR0239,MOV016,2,so good!,Negative,2025-09-10
+REV1372,VWR0947,MOV005,3,terrible pacing ngl,Neutral,2025-07-23
+REV1373,VWR1024,MOV004,3,meh,Neutral,2025-12-03
+REV1374,VWR0425,MOV047,2,meh,Negative,2025-03-09
+REV1375,VWR0789,MOV013,3,subtitles broken again,Neutral,2025-09-12
+REV1376,VWR0917,MOV001,3,,Neutral,2025-12-31
+REV1377,VWR1488,MOV025,1,love it,Negative,2025-11-16
+REV1378,VWR0340,MOV043,5,,Positive,2025-04-01
+REV1379,VWR1040,MOV049,2,subtitles broken again,Negative,2025-06-28
+REV1380,VWR0682,MOV025,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-24
+REV1381,VWR0340,MOV058,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-09
+REV1382,VWR0781,MOV001,2,terrible pacing ngl,Negative,2025-04-26
+REV1383,VWR1204,MOV037,5,terrible pacing ngl,Positive,2025-09-26
+REV1384,VWR0367,MOV031,2,why is the app crashing?,Negative,2025-01-08
+REV1385,VWR0280,MOV015,3,meh,Neutral,2025-07-22
+REV1386,VWR0940,MOV055,1,meh,Negative,2025-05-04
+REV1387,VWR0205,MOV006,2,音楽 was good,Negative,2025-08-23
+REV1388,VWR0559,MOV028,3,ending felt rushed tbh,Neutral,2025-09-26
+REV1389,VWR0280,MOV014,5,idk why people like this,Positive,2025-05-14
+REV1390,VWR0948,MOV003,5,,Positive,2025-03-01
+REV1391,VWR0873,MOV043,2,subtitles broken again,Negative,2025-05-22
+REV1392,VWR0616,MOV016,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-16
+REV1393,VWR0655,MOV013,4,meh,Positive,2025-07-17
+REV1394,VWR0843,MOV051,1,音楽 was good,Negative,2025-03-08
+REV1395,VWR0604,MOV052,3,terrible pacing ngl,Neutral,2025-08-07
+REV1396,VWR0098,MOV056,4,so good!,Positive,2025-03-21
+REV1397,VWR0204,MOV018,5,音楽 was good,Positive,2025-06-16
+REV1398,VWR0208,MOV042,3,meh,Neutral,2025-08-01
+REV1399,VWR0371,MOV005,4,love it,Positive,2025-03-24
+REV1400,VWR1373,MOV001,2,音楽 was good,Negative,2026-01-01
+REV1401,VWR0077,MOV045,5,THIS SHOW IS INSANE 🔥,Positive,2025-02-21
+REV1402,VWR0235,MOV012,2,so good!,Negative,2025-03-11
+REV1403,VWR0666,MOV040,1,idk why people like this,Negative,2025-08-21
+REV1404,VWR0057,MOV015,5,idk why people like this,Positive,2025-09-21
+REV1405,VWR1181,MOV002,2,ending felt rushed tbh,Negative,2025-04-11
+REV1406,VWR0586,MOV026,1,音楽 was good,Negative,2025-03-10
+REV1407,VWR1407,MOV053,1,音楽 was good,Negative,2025-03-11
+REV1408,VWR1489,MOV046,5,so good!,Positive,2025-06-16
+REV1409,VWR0045,MOV009,5,THIS SHOW IS INSANE 🔥,Positive,2025-03-21
+REV1410,VWR0605,MOV020,3,love it,Neutral,2025-07-25
+REV1411,VWR0561,MOV001,3,音楽 was good,Neutral,2025-08-16
+REV1412,VWR0883,MOV026,3,,Neutral,2025-05-05
+REV1413,VWR0002,MOV029,4,ending felt rushed tbh,Positive,2025-06-21
+REV1414,VWR0200,MOV026,1,idk why people like this,Negative,2025-05-15
+REV1415,VWR0221,MOV027,2,meh,Negative,2025-05-11
+REV1416,VWR0447,MOV029,4,subtitles broken again,Positive,2025-06-06
+REV1417,VWR0725,MOV023,2,why is the app crashing?,Negative,2025-03-07
+REV1418,VWR0367,MOV027,4,音楽 was good,Positive,2025-03-15
+REV1419,VWR0610,MOV014,4,subtitles broken again,Positive,2025-01-11
+REV1420,VWR0963,MOV051,1,音楽 was good,Negative,2025-04-30
+REV1421,VWR1112,MOV027,1,meh,Negative,2025-03-20
+REV1422,VWR1225,MOV018,2,galaxy burn is the best thing ever 💯,Negative,2025-03-30
+REV1423,VWR0536,MOV009,2,why is the app crashing?,Negative,2025-10-11
+REV1424,VWR0735,MOV019,5,love it,Positive,2025-10-06
+REV1425,VWR1455,MOV052,1,love it,Negative,2025-01-26
+REV1426,VWR0351,MOV005,5,ending felt rushed tbh,Positive,2025-04-04
+REV1427,VWR0487,MOV024,5,NaN,Positive,2025-12-17
+REV1428,VWR1482,MOV036,3,subtitles broken again,Neutral,2025-06-10
+REV1429,VWR0137,MOV042,5,ending felt rushed tbh,Positive,2025-11-07
+REV1430,VWR1468,MOV057,2,ending felt rushed tbh,Negative,2025-09-18
+REV1431,VWR0490,MOV001,4,terrible pacing ngl,Positive,2025-10-10
+REV1432,VWR0342,MOV041,1,so good!,Negative,2025-01-18
+REV1433,VWR0995,MOV019,5,THIS SHOW IS INSANE 🔥,Positive,2025-01-09
+REV1434,VWR1367,MOV048,4,ending felt rushed tbh,Positive,2025-05-21
+REV1435,VWR0168,MOV055,2,galaxy burn is the best thing ever 💯,Negative,2025-11-19
+REV1436,VWR1444,MOV044,4,so good!,Positive,2025-10-21
+REV1437,VWR1275,MOV012,3,galaxy burn is the best thing ever 💯,Neutral,2025-04-02
+REV1438,VWR0736,MOV030,4,love it,Positive,2025-09-29
+REV1439,VWR0134,MOV034,4,NaN,Positive,2025-11-02
+REV1440,VWR1007,MOV018,5,,Positive,2025-05-02
+REV1441,VWR1104,MOV030,5,terrible pacing ngl,Positive,2025-01-15
+REV1442,VWR0463,MOV006,3,subtitles broken again,Neutral,2025-05-30
+REV1443,VWR0632,MOV027,1,galaxy burn is the best thing ever 💯,Negative,2025-11-22
+REV1444,VWR1002,MOV018,4,idk why people like this,Positive,2025-04-20
+REV1445,VWR0572,MOV046,3,音楽 was good,Neutral,2025-10-31
+REV1446,VWR0930,MOV029,2,so good!,Negative,2025-05-15
+REV1447,VWR0223,MOV042,4,why is the app crashing?,Positive,2025-08-12
+REV1448,VWR0298,MOV008,2,音楽 was good,Negative,2025-09-30
+REV1449,VWR1203,MOV005,2,ending felt rushed tbh,Negative,2025-04-18
+REV1450,VWR1273,MOV037,3,why is the app crashing?,Neutral,2025-11-28
+REV1451,VWR0485,MOV060,4,ending felt rushed tbh,Positive,2025-11-21
+REV1452,VWR1261,MOV017,5,galaxy burn is the best thing ever 💯,Positive,2025-08-17
+REV1453,VWR0096,MOV042,3,,Neutral,2025-07-17
+REV1454,VWR1153,MOV027,2,meh,Negative,2025-10-06
+REV1455,VWR0979,MOV015,2,so good!,Negative,2025-08-16
+REV1456,VWR1098,MOV041,3,why is the app crashing?,Neutral,2025-08-30
+REV1457,VWR1403,MOV022,5,idk why people like this,Positive,2025-02-13
+REV1458,VWR1333,MOV022,2,galaxy burn is the best thing ever 💯,negative,2025-08-19
+REV1459,VWR0115,MOV011,5,subtitles broken again,Positive,2025-05-24
+REV1460,VWR1420,MOV025,2,terrible pacing ngl,Negative,2025-07-09
+REV1461,VWR0073,MOV035,1,so good!,Negative,2025-02-17
+REV1462,VWR0472,MOV058,4,,Positive,2025-03-30
+REV1463,VWR0873,MOV019,3,galaxy burn is the best thing ever 💯,Neutral,2025-11-06
+REV1464,VWR1392,MOV021,4,subtitles broken again,Positive,2025-03-14
+REV1465,VWR0253,MOV055,4,,positive,2025-12-05
+REV1466,VWR1384,MOV055,1,so good!,Negative,2025-05-31
+REV1467,VWR1201,MOV015,3,idk why people like this,Neutral,2025-04-09
+REV1468,VWR0710,MOV016,2,love it,Negative,2025-11-02
+REV1469,VWR0648,MOV023,4,ending felt rushed tbh,Positive,2025-08-29
+REV1470,VWR0707,MOV054,5,idk why people like this,Positive,2025-02-01
+REV1471,VWR0058,MOV052,5,galaxy burn is the best thing ever 💯,Positive,2025-05-03
+REV1472,VWR1165,MOV054,5,love it,Positive,2025-10-06
+REV1473,VWR0057,MOV024,3,so good!,Neutral,2025-06-24
+REV1474,VWR0586,MOV014,1,why is the app crashing?,Negative,2025-12-26
+REV1475,VWR1233,MOV017,2,meh,Negative,2025-06-03
+REV1476,VWR1182,MOV027,4,why is the app crashing?,Positive,2025-09-05
+REV1477,VWR1345,MOV011,2,ending felt rushed tbh,Negative,2025-09-13
+REV1478,VWR0205,MOV043,4,subtitles broken again,Positive,2025-04-17
+REV1479,VWR0728,MOV057,1,THIS SHOW IS INSANE 🔥,Negative,2025-10-20
+REV1480,VWR0564,MOV009,1,galaxy burn is the best thing ever 💯,Negative,2025-12-15
+REV1481,VWR0097,MOV021,1,idk why people like this,Negative,2025-10-27
+REV1482,VWR1456,MOV043,2,terrible pacing ngl,Negative,2025-04-21
+REV1483,VWR0453,MOV022,2,ending felt rushed tbh,Negative,2025-04-25
+REV1484,VWR1104,MOV009,1,terrible pacing ngl,Negative,2025-08-01
+REV1485,VWR0185,MOV041,1,meh,Negative,2025-10-07
+REV1486,VWR1227,MOV046,2,subtitles broken again,negative,2025-02-01
+REV1487,VWR1434,MOV009,3,terrible pacing ngl,Neutral,2025-05-18
+REV1488,VWR0149,MOV059,3,,Neutral,2025-04-15
+REV1489,VWR0216,MOV042,3,idk why people like this,Neutral,2025-10-22
+REV1490,VWR0338,MOV041,1,ending felt rushed tbh,Negative,2025-07-11
+REV1491,VWR1080,MOV002,4,galaxy burn is the best thing ever 💯,Positive,2025-07-01
+REV1492,VWR0585,MOV033,1,love it,Negative,2025-10-18
+REV1493,VWR0752,MOV039,5,音楽 was good,Positive,2025-04-19
+REV1494,VWR0677,MOV024,3,love it,Neutral,2025-03-19
+REV1495,VWR0500,MOV030,1,,negative,2025-12-15
+REV1496,VWR0842,MOV035,1,so good!,Negative,2025-02-27
+REV1497,VWR0720,MOV060,4,terrible pacing ngl,Positive,2025-12-21
+REV1498,VWR0585,MOV059,1,subtitles broken again,Negative,2025-03-05
+REV1499,VWR0022,MOV018,1,so good!,Negative,2025-09-25
+REV1500,VWR0104,MOV043,5,subtitles broken again,Positive,2025-03-17
+REV1501,VWR0506,MOV024,4,subtitles broken again,Positive,2025-07-20
+REV1502,VWR1200,MOV054,4,THIS SHOW IS INSANE 🔥,Positive,2025-01-26
+REV1503,VWR1116,MOV007,2,subtitles broken again,Negative,2025-06-24
+REV1504,VWR0907,MOV030,4,,Positive,2025-03-13
+REV1505,VWR0770,MOV054,1,THIS SHOW IS INSANE 🔥,Negative,2025-06-15
+REV1506,VWR1000,MOV060,3,ending felt rushed tbh,Neutral,2025-08-27
+REV1507,VWR0709,MOV032,3,subtitles broken again,neutral,2025-10-27
+REV1508,VWR1024,MOV053,3,NULL,Neutral,2025-06-27
+REV1509,VWR0327,MOV052,3,terrible pacing ngl,Neutral,2025-12-26
+REV1510,VWR1368,MOV028,2,love it,Negative,2025-01-10
+REV1511,VWR0931,MOV053,4,love it,Positive,2025-03-04
+REV1512,VWR0809,MOV049,2,idk why people like this,Negative,2025-11-03
+REV1513,VWR0046,MOV015,4,音楽 was good,Positive,2025-02-23
+REV1514,VWR0849,MOV021,4,why is the app crashing?,Positive,2025-10-10
+REV1515,VWR1067,MOV032,3,THIS SHOW IS INSANE 🔥,Neutral,2025-01-06
+REV1516,VWR0339,MOV007,5,terrible pacing ngl,Positive,2025-08-19
+REV1517,VWR0662,MOV036,5,meh,Positive,2025-08-12
+REV1518,VWR1462,MOV045,1,ending felt rushed tbh,Negative,2025-10-06
+REV1519,VWR0980,MOV044,5,love it,Positive,2025-09-28
+REV1520,VWR0748,MOV053,1,so good!,Negative,2025-01-02
+REV1521,VWR1187,MOV008,2,love it,Negative,2025-08-10
+REV1522,VWR0151,MOV055,4,why is the app crashing?,Positive,2025-10-10
+REV1523,VWR0566,MOV034,1,why is the app crashing?,Negative,2025-03-16
+REV1524,VWR1429,MOV007,4,so good!,Positive,2025-09-08
+REV1525,VWR0131,MOV037,4,love it,Positive,2025-03-28
+REV1526,VWR0465,MOV008,3,terrible pacing ngl,Neutral,2025-05-25
+REV1527,VWR0343,MOV046,1,meh,negative,2025-09-23
+REV1528,VWR0532,MOV003,1,so good!,Negative,2025-01-12
+REV1529,VWR0819,MOV047,5,love it,Positive,2025-01-13
+REV1530,VWR0819,MOV003,2,so good!,Negative,2025-12-24
+REV1531,VWR1092,MOV044,1,meh,Negative,2025-07-30
+REV1532,VWR0624,MOV042,2,音楽 was good,Negative,2025-11-12
+REV1533,VWR0467,MOV056,4,terrible pacing ngl,Positive,2025-01-17
+REV1534,VWR0431,MOV015,5,so good!,Positive,2025-07-02
+REV1535,VWR0284,MOV030,5,meh,Positive,2025-08-04
+REV1536,VWR0515,MOV037,2,idk why people like this,Negative,2025-10-01
+REV1537,VWR0230,MOV046,1,terrible pacing ngl,Negative,2025-03-13
+REV1538,VWR0146,MOV017,4,idk why people like this,Positive,2025-04-23
+REV1539,VWR1038,MOV042,1,音楽 was good,Negative,2025-08-14
+REV1540,VWR1026,MOV003,3,love it,Neutral,2025-03-16
+REV1541,VWR0009,MOV008,1,,Negative,2025-09-14
+REV1542,VWR1061,MOV058,3,so good!,Neutral,2025-01-30
+REV1543,VWR0973,MOV031,2,subtitles broken again,Negative,2025-08-19
+REV1544,VWR0248,MOV031,1,terrible pacing ngl,Negative,2025-11-02
+REV1545,VWR0742,MOV039,4,so good!,Positive,2025-02-10
+REV1546,VWR1093,MOV046,3,meh,Neutral,2025-12-22
+REV1547,VWR0292,MOV031,5,音楽 was good,Positive,2025-01-08
+REV1548,VWR1325,MOV050,4,ending felt rushed tbh,Positive,2025-09-09
+REV1549,VWR0337,MOV047,3,subtitles broken again,Neutral,2025-11-01
+REV1550,VWR0491,MOV042,4,galaxy burn is the best thing ever 💯,Positive,2025-11-16
+REV1551,VWR0791,MOV040,3,ending felt rushed tbh,Neutral,2025-09-09
+REV1552,VWR0261,MOV030,4,so good!,positive,2025-09-07
+REV1553,VWR0974,MOV060,3,音楽 was good,Neutral,2025-03-01
+REV1554,VWR0227,MOV045,1,subtitles broken again,Negative,2025-06-03
+REV1555,VWR0148,MOV013,3,THIS SHOW IS INSANE 🔥,Neutral,2025-09-18
+REV1556,VWR0387,MOV044,3,,Neutral,2025-08-30
+REV1557,VWR0578,MOV007,3,galaxy burn is the best thing ever 💯,Neutral,2025-03-03
+REV1558,VWR1146,MOV005,1,terrible pacing ngl,Negative,2025-08-11
+REV1559,VWR0261,MOV054,2,音楽 was good,Negative,2025-05-22
+REV1560,VWR1395,MOV058,5,THIS SHOW IS INSANE 🔥,Positive,2025-02-07
+REV1561,VWR0433,MOV007,4,galaxy burn is the best thing ever 💯,Positive,2025-03-17
+REV1562,VWR0683,MOV054,1,terrible pacing ngl,Negative,2025-06-14
+REV1563,VWR1005,MOV012,1,so good!,Negative,2025-11-26
+REV1564,VWR1428,MOV031,3,love it,Neutral,2025-04-29
+REV1565,VWR0715,MOV052,4,meh,Positive,2025-08-17
+REV1566,VWR1324,MOV052,2,ending felt rushed tbh,Negative,2025-03-02
+REV1567,VWR1198,MOV025,2,meh,Negative,2025-02-23
+REV1568,VWR0001,MOV059,2,THIS SHOW IS INSANE 🔥,Negative,2025-12-14
+REV1569,VWR0715,MOV049,3,meh,neutral,2025-06-05
+REV1570,VWR0009,MOV038,1,meh,Negative,2025-09-09
+REV1571,VWR0242,MOV009,2,love it,Negative,2025-04-08
+REV1572,VWR0844,MOV030,4,idk why people like this,Positive,2025-08-14
+REV1573,VWR0322,MOV031,5,terrible pacing ngl,Positive,2025-02-13
+REV1574,VWR0553,MOV040,2,音楽 was good,Negative,2025-10-29
+REV1575,VWR0454,MOV022,2,ending felt rushed tbh,Negative,2025-12-16
+REV1576,VWR0575,MOV027,2,THIS SHOW IS INSANE 🔥,Negative,2025-04-13
+REV1577,VWR1060,MOV004,2,terrible pacing ngl,Negative,2025-09-24
+REV1578,VWR0513,MOV030,3,,Neutral,2025-07-16
+REV1579,VWR0630,MOV012,4,galaxy burn is the best thing ever 💯,Positive,2025-03-28
+REV1580,VWR1483,MOV037,3,terrible pacing ngl,Neutral,2025-03-03
+REV1581,VWR1009,MOV001,1,ending felt rushed tbh,Negative,2025-01-10
+REV1582,VWR1263,MOV060,4,idk why people like this,Positive,2025-01-26
+REV1583,VWR0695,MOV004,3,love it,Neutral,2025-02-02
+REV1584,VWR1230,MOV034,3,meh,neutral,2025-11-03
+REV1585,VWR0380,MOV040,1,idk why people like this,Negative,2025-06-18
+REV1586,VWR1255,MOV026,5,love it,Positive,2025-08-14
+REV1587,VWR1180,MOV009,4,,Positive,2025-10-29
+REV1588,VWR0164,MOV009,2,galaxy burn is the best thing ever 💯,Negative,2025-10-02
+REV1589,VWR0077,MOV056,1,terrible pacing ngl,Negative,2025-03-25
+REV1590,VWR1063,MOV023,3,,Neutral,2025-03-10
+REV1591,VWR1150,MOV020,1,galaxy burn is the best thing ever 💯,Negative,2025-04-28
+REV1592,VWR0849,MOV055,5,galaxy burn is the best thing ever 💯,Positive,2025-01-29
+REV1593,VWR0735,MOV027,3,THIS SHOW IS INSANE 🔥,Neutral,2025-06-25
+REV1594,VWR0398,MOV037,3,音楽 was good,Neutral,2025-02-09
+REV1595,VWR1499,MOV046,5,,Positive,2025-12-11
+REV1596,VWR1438,MOV039,1,THIS SHOW IS INSANE 🔥,Negative,2025-12-10
+REV1597,VWR1147,MOV050,1,subtitles broken again,Negative,2025-09-07
+REV1598,VWR0673,MOV035,4,meh,Positive,2025-10-06
+REV1599,VWR0359,MOV021,4,THIS SHOW IS INSANE 🔥,Positive,2025-05-22
+REV1600,VWR1472,MOV022,1,THIS SHOW IS INSANE 🔥,Negative,2025-12-13
+REV1601,VWR1393,MOV031,5,idk why people like this,Positive,2025-05-17
+REV1602,VWR1377,MOV058,5,subtitles broken again,Positive,2025-07-17
+REV1603,VWR0026,MOV056,3,meh,Neutral,2025-09-27
+REV1604,VWR0290,MOV049,3,love it,Neutral,2025-06-14
+REV1605,VWR0749,MOV020,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-12
+REV1606,VWR0347,MOV044,3,idk why people like this,Neutral,2025-08-11
+REV1607,VWR0703,MOV030,4,galaxy burn is the best thing ever 💯,Positive,2025-03-26
+REV1608,VWR0568,MOV012,5,terrible pacing ngl,Positive,2025-08-28
+REV1609,VWR0972,MOV050,5,subtitles broken again,Positive,2025-11-10
+REV1610,VWR0446,MOV044,3,terrible pacing ngl,Neutral,2025-11-30
+REV1611,VWR0580,MOV001,5,音楽 was good,positive,2025-09-03
+REV1612,VWR1050,MOV005,3,ending felt rushed tbh,Neutral,2025-03-01
+REV1613,VWR0654,MOV004,5,galaxy burn is the best thing ever 💯,Positive,2025-08-22
+REV1614,VWR1138,MOV046,5,subtitles broken again,Positive,2025-09-02
+REV1615,VWR0640,MOV015,2,idk why people like this,Negative,2025-09-28
+REV1616,VWR0220,MOV013,1,terrible pacing ngl,Negative,2025-05-21
+REV1617,VWR0842,MOV030,3,so good!,Neutral,2025-08-30
+REV1618,VWR0239,MOV031,4,,Positive,2025-06-30
+REV1619,VWR0720,MOV012,3,meh,Neutral,2025-07-12
+REV1620,VWR0968,MOV056,1,音楽 was good,Negative,2025-06-03
+REV1621,VWR0285,MOV013,5,so good!,Positive,2025-11-19
+REV1622,VWR0458,MOV040,2,subtitles broken again,Negative,2025-10-05
+REV1623,VWR0761,MOV040,5,idk why people like this,Positive,2025-09-09
+REV1624,VWR1250,MOV039,5,so good!,Positive,2025-03-13
+REV1625,VWR0536,MOV025,2,idk why people like this,Negative,2025-08-01
+REV1626,VWR0734,MOV031,3,NaN,Neutral,2025-05-07
+REV1627,VWR1457,MOV036,5,THIS SHOW IS INSANE 🔥,Positive,2025-12-27
+REV1628,VWR0991,MOV023,4,idk why people like this,Positive,2025-10-20
+REV1629,VWR1439,MOV012,5,ERROR_EXPORT_ROW,Positive,2025-01-15
+REV1630,VWR0924,MOV037,3,meh,Neutral,2025-02-26
+REV1631,VWR1243,MOV037,1,THIS SHOW IS INSANE 🔥,Negative,2025-02-08
+REV1632,VWR0049,MOV001,5,terrible pacing ngl,Positive,2025-11-25
+REV1633,VWR1348,MOV053,2,why is the app crashing?,Negative,2025-02-25
+REV1634,VWR1249,MOV033,5,love it,Positive,2025-04-24
+REV1635,VWR0748,MOV032,3,terrible pacing ngl,Neutral,2025-03-06
+REV1636,VWR0937,MOV024,1,so good!,Negative,2025-11-10
+REV1637,VWR1449,MOV003,2,THIS SHOW IS INSANE 🔥,Negative,2025-04-27
+REV1638,VWR0782,MOV045,3,THIS SHOW IS INSANE 🔥,Neutral,2025-02-28
+REV1639,VWR1078,MOV005,5,love it,Positive,2025-11-26
+REV1640,VWR0522,MOV056,1,terrible pacing ngl,negative,2025-01-23
+REV1641,VWR0692,MOV028,3,meh,Neutral,2025-11-26
+REV1642,VWR0301,MOV023,1,so good!,Negative,2025-03-27
+REV1643,VWR0757,MOV011,5,idk why people like this,Positive,2025-11-30
+REV1644,VWR1192,MOV032,1,galaxy burn is the best thing ever 💯,Negative,2025-03-09
+REV1645,VWR0569,MOV037,4,so good!,Positive,2025-08-22
+REV1646,VWR0968,MOV058,2,subtitles broken again,Negative,2025-12-05
+REV1647,VWR0196,MOV005,1,subtitles broken again,Negative,2025-04-11
+REV1648,VWR1282,MOV059,2,idk why people like this,Negative,2025-04-07
+REV1649,VWR1172,MOV022,5,terrible pacing ngl,Positive,2025-10-27
+REV1650,VWR0807,MOV048,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-25
+REV1651,VWR0404,MOV054,1,idk why people like this,Negative,2025-05-18
+REV1652,VWR1120,MOV009,5,音楽 was good,Positive,2025-06-20
+REV1653,VWR0088,MOV043,2,subtitles broken again,Negative,2025-07-23
+REV1654,VWR1027,MOV057,3,galaxy burn is the best thing ever 💯,Neutral,2025-12-25
+REV1655,VWR0976,MOV042,5,galaxy burn is the best thing ever 💯,Positive,2025-07-18
+REV1656,VWR1141,MOV039,2,so good!,Negative,2025-01-17
+REV1657,VWR0805,MOV023,5,galaxy burn is the best thing ever 💯,Positive,2025-08-24
+REV1658,VWR0967,MOV050,4,NaN,Positive,2025-08-02
+REV1659,VWR1034,MOV033,2,THIS SHOW IS INSANE 🔥,Negative,2025-12-01
+REV1660,VWR0111,MOV016,5,so good!,Positive,2025-05-24
+REV1661,VWR0590,MOV055,4,so good!,Positive,2025-06-21
+REV1662,VWR1175,MOV049,3,so good!,Neutral,2025-09-10
+REV1663,VWR0416,MOV005,3,subtitles broken again,Neutral,2025-05-18
+REV1664,VWR1423,MOV031,1,so good!,Negative,2025-03-13
+REV1665,VWR0873,MOV059,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-21
+REV1666,VWR1075,MOV017,4,subtitles broken again,Positive,2025-06-08
+REV1667,VWR1179,MOV017,3,THIS SHOW IS INSANE 🔥,Neutral,2025-04-24
+REV1668,VWR0071,MOV057,3,meh,Neutral,2025-06-26
+REV1669,VWR0402,MOV038,4,terrible pacing ngl,Positive,2025-08-30
+REV1670,VWR0742,MOV032,2,so good!,Negative,2025-07-31
+REV1671,VWR0857,MOV036,5,so good!,Positive,2025-02-01
+REV1672,VWR0328,MOV030,3,so good!,Neutral,2025-09-07
+REV1673,VWR0352,MOV015,1,love it,Negative,2025-06-23
+REV1674,VWR0373,MOV011,3,subtitles broken again,Neutral,2025-07-19
+REV1675,VWR1018,MOV019,4,terrible pacing ngl,Positive,2025-08-14
+REV1676,VWR1110,MOV002,5,ending felt rushed tbh,Positive,2025-02-08
+REV1677,VWR0185,MOV039,5,meh,Positive,2025-02-15
+REV1678,VWR1276,MOV040,5,NULL,Positive,2025-11-04
+REV1679,VWR0377,MOV005,5,galaxy burn is the best thing ever 💯,Positive,2025-09-03
+REV1680,VWR0843,MOV025,5,THIS SHOW IS INSANE 🔥,Positive,2025-03-06
+REV1681,VWR0354,MOV052,4,meh,Positive,2025-01-14
+REV1682,VWR0280,MOV002,5,so good!,Positive,2025-03-11
+REV1683,VWR0444,MOV059,4,THIS SHOW IS INSANE 🔥,Positive,2025-09-18
+REV1684,VWR1367,MOV025,2,terrible pacing ngl,Negative,2025-03-24
+REV1685,VWR0434,MOV041,5,love it,Positive,2025-09-15
+REV1686,VWR0108,MOV042,2,galaxy burn is the best thing ever 💯,Negative,2025-12-22
+REV1687,VWR0128,MOV017,2,why is the app crashing?,Negative,2025-10-30
+REV1688,VWR0271,MOV049,5,why is the app crashing?,Positive,2025-06-03
+REV1689,VWR0753,MOV001,4,subtitles broken again,Positive,2025-09-24
+REV1690,VWR0484,MOV006,3,音楽 was good,Neutral,2025-06-23
+REV1691,VWR0857,MOV004,5,why is the app crashing?,Positive,2025-02-20
+REV1692,VWR1254,MOV034,4,音楽 was good,Positive,2025-07-22
+REV1693,VWR0226,MOV001,3,ending felt rushed tbh,Neutral,2025-05-03
+REV1694,VWR0567,MOV015,4,idk why people like this,Positive,2025-10-13
+REV1695,VWR1194,MOV009,4,subtitles broken again,Positive,2025-11-16
+REV1696,VWR0653,MOV014,2,,Negative,2025-06-23
+REV1697,VWR0099,MOV021,1,THIS SHOW IS INSANE 🔥,Negative,2025-03-22
+REV1698,VWR0669,MOV059,1,terrible pacing ngl,Negative,2025-03-21
+REV1699,VWR0281,MOV040,5,subtitles broken again,Positive,2025-11-06
+REV1700,VWR1198,MOV040,3,音楽 was good,Neutral,2025-01-05
+REV1701,VWR0547,MOV038,1,why is the app crashing?,Negative,2025-06-07
+REV1702,VWR0098,MOV060,1,ending felt rushed tbh,Negative,2025-11-13
+REV1703,VWR0032,MOV020,2,THIS SHOW IS INSANE 🔥,Negative,2025-11-07
+REV1704,VWR0527,MOV042,3,NULL,Neutral,2025-04-24
+REV1705,VWR0120,MOV024,5,why is the app crashing?,Positive,2025-12-12
+REV1706,VWR0138,MOV035,2,NaN,Negative,2025-07-26
+REV1707,VWR0875,MOV003,3,音楽 was good,Neutral,2025-06-28
+REV1708,VWR0765,MOV036,4,,Positive,2025-08-13
+REV1709,VWR0732,MOV035,4,idk why people like this,Positive,2025-10-23
+REV1710,VWR1333,MOV053,3,galaxy burn is the best thing ever 💯,Neutral,2025-04-13
+REV1711,VWR0004,MOV051,2,ending felt rushed tbh,Negative,2025-05-26
+REV1712,VWR1296,MOV032,3,terrible pacing ngl,Neutral,2025-03-13
+REV1713,VWR0585,MOV018,1,galaxy burn is the best thing ever 💯,Negative,2025-03-31
+REV1714,VWR0071,MOV039,2,THIS SHOW IS INSANE 🔥,Negative,2025-02-24
+REV1715,VWR1392,MOV022,4,idk why people like this,Positive,2025-05-20
+REV1716,VWR0501,MOV048,4,音楽 was good,Positive,2025-05-15
+REV1717,VWR0495,MOV024,3,so good!,Neutral,2025-08-25
+REV1718,VWR0354,MOV035,1,THIS SHOW IS INSANE 🔥,Negative,2025-07-18
+REV1719,VWR1065,MOV022,5,,Positive,2025-07-29
+REV1720,VWR1428,MOV013,4,THIS SHOW IS INSANE 🔥,Positive,2025-09-17
+REV1721,VWR0029,MOV029,5,love it,Positive,2025-10-04
+REV1722,VWR0170,MOV012,4,subtitles broken again,Positive,2025-09-16
+REV1723,VWR1326,MOV022,2,,Negative,2025-10-19
+REV1724,VWR0582,MOV053,4,ERROR_EXPORT_ROW,Positive,2025-11-12
+REV1725,VWR1318,MOV039,2,音楽 was good,negative,2025-07-16
+REV1726,VWR0644,MOV040,4,galaxy burn is the best thing ever 💯,Positive,2025-03-11
+REV1727,VWR0511,MOV001,5,why is the app crashing?,Positive,2025-06-08
+REV1728,VWR1176,MOV052,1,THIS SHOW IS INSANE 🔥,Negative,2025-06-25
+REV1729,VWR0024,MOV044,2,THIS SHOW IS INSANE 🔥,Negative,2025-05-30
+REV1730,VWR0702,MOV030,5,ending felt rushed tbh,Positive,2025-01-02
+REV1731,VWR0061,MOV024,2,ERROR_EXPORT_ROW,Negative,2025-07-21
+REV1732,VWR0357,MOV017,3,THIS SHOW IS INSANE 🔥,Neutral,2025-10-22
+REV1733,VWR0451,MOV024,3,meh,Neutral,2025-08-23
+REV1734,VWR0367,MOV045,4,idk why people like this,Positive,2025-07-03
+REV1735,VWR0530,MOV038,2,音楽 was good,Negative,2025-05-18
+REV1736,VWR0967,MOV058,3,ending felt rushed tbh,Neutral,2025-09-27
+REV1737,VWR0432,MOV053,1,galaxy burn is the best thing ever 💯,Negative,2026-01-01
+REV1738,VWR0885,MOV027,3,idk why people like this,Neutral,2025-06-30
+REV1739,VWR0328,MOV056,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-18
+REV1740,VWR0697,MOV046,4,so good!,Positive,2025-03-30
+REV1741,VWR0048,MOV007,4,meh,Positive,2025-03-04
+REV1742,VWR0935,MOV034,1,love it,Negative,2025-03-28
+REV1743,VWR0204,MOV011,2,subtitles broken again,Negative,2025-07-23
+REV1744,VWR1075,MOV060,5,ending felt rushed tbh,Positive,2025-08-15
+REV1745,VWR0997,MOV050,4,love it,Positive,2025-04-10
+REV1746,VWR1352,MOV018,4,love it,Positive,2025-12-18
+REV1747,VWR0268,MOV001,5,音楽 was good,Positive,2025-08-15
+REV1748,VWR0276,MOV051,5,音楽 was good,Positive,2025-02-16
+REV1749,VWR0768,MOV039,1,idk why people like this,Negative,2025-11-13
+REV1750,VWR0994,MOV001,1,why is the app crashing?,Negative,2025-10-26
+REV1751,VWR0483,MOV017,2,,Negative,2025-11-17
+REV1752,VWR0713,MOV035,4,terrible pacing ngl,Positive,2025-02-20
+REV1753,VWR0928,MOV011,3,音楽 was good,Neutral,2025-12-19
+REV1754,VWR0058,MOV059,4,subtitles broken again,Positive,2025-03-19
+REV1755,VWR0543,MOV008,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-14
+REV1756,VWR1426,MOV059,2,galaxy burn is the best thing ever 💯,Negative,2025-01-13
+REV1757,VWR1378,MOV025,5,meh,Positive,2025-07-26
+REV1758,VWR1105,MOV001,2,音楽 was good,Negative,2025-03-27
+REV1759,VWR0071,MOV013,4,terrible pacing ngl,Positive,2025-07-16
+REV1760,VWR0059,MOV037,4,NaN,Positive,2025-11-26
+REV1761,VWR0090,MOV037,1,why is the app crashing?,Negative,2025-12-28
+REV1762,VWR0107,MOV026,2,ending felt rushed tbh,Negative,2025-04-03
+REV1763,VWR1258,MOV017,5,galaxy burn is the best thing ever 💯,Positive,2025-12-27
+REV1764,VWR0903,MOV036,1,ending felt rushed tbh,Negative,2025-06-04
+REV1765,VWR1301,MOV060,4,so good!,Positive,2025-07-22
+REV1766,VWR0495,MOV057,1,why is the app crashing?,Negative,2025-10-15
+REV1767,VWR1372,MOV039,3,ending felt rushed tbh,Neutral,2025-11-29
+REV1768,VWR0871,MOV003,5,love it,Positive,2025-07-12
+REV1769,VWR1381,MOV050,3,subtitles broken again,Neutral,2025-12-12
+REV1770,VWR0419,MOV057,4,ending felt rushed tbh,positive,2025-07-04
+REV1771,VWR0864,MOV032,2,,Negative,2025-10-10
+REV1772,VWR0497,MOV010,3,meh,Neutral,2025-12-03
+REV1773,VWR0428,MOV047,2,subtitles broken again,Negative,2025-11-07
+REV1774,VWR1449,MOV007,1,meh,Negative,2025-01-19
+REV1775,VWR0142,MOV040,1,音楽 was good,negative,2025-07-30
+REV1776,VWR1144,MOV020,5,idk why people like this,Positive,2025-12-02
+REV1777,VWR0112,MOV051,3,subtitles broken again,Neutral,2025-11-18
+REV1778,VWR0428,MOV047,1,terrible pacing ngl,Negative,2025-05-20
+REV1779,VWR0434,MOV017,3,terrible pacing ngl,Neutral,2025-07-18
+REV1780,VWR0223,MOV038,3,音楽 was good,Neutral,2025-04-21
+REV1781,VWR1058,MOV058,3,so good!,Neutral,2025-05-28
+REV1782,VWR1317,MOV054,5,meh,Positive,2025-08-01
+REV1783,VWR0748,MOV045,2,so good!,Negative,2025-05-06
+REV1784,VWR1314,MOV005,1,subtitles broken again,negative,2025-01-10
+REV1785,VWR0977,MOV030,5,terrible pacing ngl,Positive,2025-09-21
+REV1786,VWR0425,MOV030,1,love it,Negative,2025-03-23
+REV1787,VWR0637,MOV024,4,ending felt rushed tbh,Positive,2025-01-25
+REV1788,VWR0629,MOV054,3,galaxy burn is the best thing ever 💯,Neutral,2025-01-27
+REV1789,VWR1313,MOV060,5,meh,Positive,2025-06-17
+REV1790,VWR1165,MOV033,1,love it,Negative,2025-11-16
+REV1791,VWR1087,MOV055,2,why is the app crashing?,Negative,2025-02-08
+REV1792,VWR1457,MOV018,1,love it,Negative,2025-04-15
+REV1793,VWR0430,MOV011,5,meh,Positive,2025-12-30
+REV1794,VWR0780,MOV025,2,love it,Negative,2025-06-20
+REV1795,VWR0849,MOV059,5,galaxy burn is the best thing ever 💯,Positive,2025-09-02
+REV1796,VWR0740,MOV006,5,idk why people like this,Positive,2025-12-03
+REV1797,VWR0803,MOV011,2,ending felt rushed tbh,Negative,2025-03-19
+REV1798,VWR0487,MOV045,5,meh,Positive,2025-03-07
+REV1799,VWR0711,MOV006,2,idk why people like this,Negative,2025-07-01
+REV1800,VWR0280,MOV002,2,THIS SHOW IS INSANE 🔥,Negative,2025-01-23
+REV1801,VWR0907,MOV017,3,ending felt rushed tbh,Neutral,2025-09-01
+REV1802,VWR1291,MOV001,3,love it,Neutral,2025-03-09
+REV1803,VWR1315,MOV028,2,ending felt rushed tbh,Negative,2025-11-10
+REV1804,VWR1300,MOV057,5,subtitles broken again,Positive,2025-04-17
+REV1805,VWR1262,MOV051,1,ending felt rushed tbh,Negative,2025-01-26
+REV1806,VWR0952,MOV024,4,subtitles broken again,Positive,2025-12-18
+REV1807,VWR1223,MOV015,1,why is the app crashing?,Negative,2025-04-15
+REV1808,VWR1493,MOV033,2,idk why people like this,Negative,2025-11-20
+REV1809,VWR0023,MOV051,4,,Positive,2025-08-31
+REV1810,VWR1255,MOV025,3,love it,Neutral,2025-09-16
+REV1811,VWR1330,MOV029,4,音楽 was good,Positive,2025-11-17
+REV1812,VWR1156,MOV050,1,so good!,Negative,2025-12-06
+REV1813,VWR1001,MOV022,3,ending felt rushed tbh,Neutral,2025-10-17
+REV1814,VWR0464,MOV058,3,meh,Neutral,2025-12-05
+REV1815,VWR0839,MOV036,5,idk why people like this,Positive,2025-04-09
+REV1816,VWR1075,MOV001,1,galaxy burn is the best thing ever 💯,Negative,2025-08-27
+REV1817,VWR0615,MOV025,2,subtitles broken again,Negative,2025-03-09
+REV1818,VWR0901,MOV016,3,so good!,Neutral,2025-11-15
+REV1819,VWR0725,MOV010,4,ending felt rushed tbh,positive,2025-08-18
+REV1820,VWR0639,MOV004,2,love it,Negative,2025-07-13
+REV1821,VWR1015,MOV017,1,why is the app crashing?,Negative,2025-11-05
+REV1822,VWR0542,MOV032,4,subtitles broken again,Positive,2025-06-30
+REV1823,VWR1262,MOV026,1,galaxy burn is the best thing ever 💯,Negative,2025-04-24
+REV1824,VWR0978,MOV014,3,ending felt rushed tbh,Neutral,2025-10-20
+REV1825,VWR0941,MOV017,3,,Neutral,2025-05-25
+REV1826,VWR0615,MOV007,5,subtitles broken again,Positive,2025-02-05
+REV1827,VWR1467,MOV047,2,meh,Negative,2025-10-15
+REV1828,VWR0534,MOV030,4,so good!,Positive,2025-08-29
+REV1829,VWR0420,MOV052,5,love it,Positive,2025-01-19
+REV1830,VWR0512,MOV035,1,so good!,Negative,2025-10-01
+REV1831,VWR0623,MOV041,4,ending felt rushed tbh,Positive,2025-04-11
+REV1832,VWR0915,MOV031,5,love it,Positive,2025-09-29
+REV1833,VWR1429,MOV018,1,meh,Negative,2025-10-23
+REV1834,VWR0470,MOV037,5,meh,Positive,2025-06-26
+REV1835,VWR0782,MOV004,4,idk why people like this,Positive,2025-02-26
+REV1836,VWR1272,MOV003,1,,Negative,2025-12-19
+REV1837,VWR1065,MOV029,4,galaxy burn is the best thing ever 💯,Positive,2025-01-03
+REV1838,VWR1320,MOV028,4,subtitles broken again,positive,2025-11-16
+REV1839,VWR1097,MOV060,2,meh,Negative,2025-12-14
+REV1840,VWR0963,MOV039,4,terrible pacing ngl,Positive,2025-09-18
+REV1841,VWR0188,MOV046,4,ending felt rushed tbh,Positive,2025-09-07
+REV1842,VWR1420,MOV013,5,NULL,Positive,2025-02-01
+REV1843,VWR0305,MOV005,2,,Negative,2025-09-22
+REV1844,VWR0252,MOV052,1,so good!,negative,2025-11-01
+REV1845,VWR0593,MOV037,2,音楽 was good,Negative,2025-05-31
+REV1846,VWR0965,MOV034,2,THIS SHOW IS INSANE 🔥,Negative,2025-09-23
+REV1847,VWR0552,MOV040,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-04
+REV1848,VWR0746,MOV047,1,,Negative,2025-04-12
+REV1849,VWR1117,MOV049,1,so good!,Negative,2025-06-13
+REV1850,VWR0575,MOV044,4,subtitles broken again,Positive,2025-11-22
+REV1851,VWR1140,MOV058,4,why is the app crashing?,Positive,2025-07-24
+REV1852,VWR0022,MOV037,1,so good!,Negative,2025-05-14
+REV1853,VWR0113,MOV014,3,THIS SHOW IS INSANE 🔥,Neutral,2025-10-08
+REV1854,VWR0777,MOV029,4,love it,Positive,2025-07-26
+REV1855,VWR0522,MOV019,2,ending felt rushed tbh,negative,2025-03-29
+REV1856,VWR1359,MOV045,2,love it,Negative,2025-06-14
+REV1857,VWR1465,MOV023,2,galaxy burn is the best thing ever 💯,Negative,2025-07-02
+REV1858,VWR0500,MOV001,2,THIS SHOW IS INSANE 🔥,Negative,2025-12-26
+REV1859,VWR0477,MOV006,5,音楽 was good,Positive,2025-09-04
+REV1860,VWR0510,MOV014,3,ending felt rushed tbh,Neutral,2025-07-31
+REV1861,VWR0235,MOV031,1,so good!,Negative,2025-05-23
+REV1862,VWR1054,MOV031,2,idk why people like this,Negative,2025-03-29
+REV1863,VWR0177,MOV044,2,THIS SHOW IS INSANE 🔥,Negative,2025-05-25
+REV1864,VWR0824,MOV033,5,galaxy burn is the best thing ever 💯,Positive,2025-09-29
+REV1865,VWR0006,MOV051,5,love it,Positive,2026-01-01
+REV1866,VWR0927,MOV031,3,ending felt rushed tbh,Neutral,2025-12-16
+REV1867,VWR1291,MOV021,1,so good!,Negative,2025-11-11
+REV1868,VWR1063,MOV006,2,love it,Negative,2025-05-21
+REV1869,VWR0677,MOV017,5,so good!,Positive,2025-11-20
+REV1870,VWR0293,MOV052,3,galaxy burn is the best thing ever 💯,Neutral,2025-02-20
+REV1871,VWR0801,MOV018,4,terrible pacing ngl,Positive,2025-02-09
+REV1872,VWR1088,MOV002,3,galaxy burn is the best thing ever 💯,Neutral,2025-07-04
+REV1873,VWR0674,MOV013,4,subtitles broken again,Positive,2025-09-25
+REV1874,VWR1188,MOV041,5,idk why people like this,Positive,2025-12-14
+REV1875,VWR0282,MOV034,5,ending felt rushed tbh,Positive,2025-01-30
+REV1876,VWR1094,MOV036,4,terrible pacing ngl,Positive,2025-05-05
+REV1877,VWR0722,MOV054,5,so good!,Positive,2025-08-01
+REV1878,VWR0473,MOV041,4,terrible pacing ngl,Positive,2025-04-16
+REV1879,VWR0491,MOV056,4,ending felt rushed tbh,Positive,2025-12-26
+REV1880,VWR1213,MOV025,2,love it,Negative,2025-09-08
+REV1881,VWR1380,MOV030,3,ending felt rushed tbh,Neutral,2025-07-21
+REV1882,VWR0642,MOV021,1,ERROR_EXPORT_ROW,Negative,2025-02-25
+REV1883,VWR0597,MOV051,4,idk why people like this,Positive,2025-03-23
+REV1884,VWR1157,MOV034,2,galaxy burn is the best thing ever 💯,Negative,2025-03-13
+REV1885,VWR1468,MOV014,4,galaxy burn is the best thing ever 💯,Positive,2025-12-28
+REV1886,VWR0150,MOV050,5,why is the app crashing?,Positive,2025-11-25
+REV1887,VWR0864,MOV001,3,ending felt rushed tbh,Neutral,2025-04-16
+REV1888,VWR1258,MOV025,3,love it,Neutral,2025-08-16
+REV1889,VWR1237,MOV003,4,THIS SHOW IS INSANE 🔥,Positive,2025-04-03
+REV1890,VWR0684,MOV013,3,meh,Neutral,2025-05-09
+REV1891,VWR1191,MOV010,3,,Neutral,2025-04-29
+REV1892,VWR0225,MOV001,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-03
+REV1893,VWR1085,MOV001,5,subtitles broken again,Positive,2025-08-04
+REV1894,VWR0864,MOV029,1,idk why people like this,Negative,2025-06-15
+REV1895,VWR0485,MOV048,5,ending felt rushed tbh,Positive,2026-01-01
+REV1896,VWR0669,MOV056,1,love it,Negative,2025-09-15
+REV1897,VWR0679,MOV036,1,音楽 was good,Negative,2025-10-13
+REV1898,VWR1256,MOV013,4,,Positive,2025-06-04
+REV1899,VWR0914,MOV017,3,idk why people like this,Neutral,2025-01-07
+REV1900,VWR0302,MOV001,2,subtitles broken again,Negative,2025-01-11
+REV1901,VWR0293,MOV044,2,terrible pacing ngl,Negative,2025-06-18
+REV1902,VWR1476,MOV011,2,音楽 was good,Negative,2025-02-07
+REV1903,VWR0377,MOV049,2,THIS SHOW IS INSANE 🔥,Negative,2025-10-18
+REV1904,VWR1063,MOV001,5,subtitles broken again,Positive,2025-01-08
+REV1905,VWR1314,MOV038,1,why is the app crashing?,Negative,2025-04-12
+REV1906,VWR0255,MOV044,3,meh,Neutral,2025-04-02
+REV1907,VWR0526,MOV044,5,音楽 was good,Positive,2025-12-20
+REV1908,VWR1345,MOV022,3,idk why people like this,Neutral,2025-11-20
+REV1909,VWR1192,MOV060,3,ending felt rushed tbh,Neutral,2025-01-18
+REV1910,VWR0942,MOV028,1,love it,Negative,2025-12-23
+REV1911,VWR0566,MOV047,1,why is the app crashing?,negative,2025-08-16
+REV1912,VWR0492,MOV015,2,音楽 was good,Negative,2025-01-12
+REV1913,VWR0848,MOV059,2,THIS SHOW IS INSANE 🔥,Negative,2025-02-10
+REV1914,VWR1065,MOV032,4,THIS SHOW IS INSANE 🔥,Positive,2025-06-02
+REV1915,VWR0034,MOV041,4,idk why people like this,Positive,2025-08-24
+REV1916,VWR0236,MOV042,2,galaxy burn is the best thing ever 💯,Negative,2025-03-16
+REV1917,VWR1296,MOV053,5,love it,Positive,2025-07-03
+REV1918,VWR0756,MOV051,5,meh,Positive,2025-05-30
+REV1919,VWR1021,MOV011,5,why is the app crashing?,Positive,2025-06-08
+REV1920,VWR0274,MOV024,5,ending felt rushed tbh,Positive,2025-09-10
+REV1921,VWR0064,MOV009,4,terrible pacing ngl,Positive,2025-07-22
+REV1922,VWR1028,MOV009,1,love it,Negative,2025-11-03
+REV1923,VWR1317,MOV056,5,galaxy burn is the best thing ever 💯,Positive,2025-12-24
+REV1924,VWR1299,MOV017,4,,Positive,2025-07-07
+REV1925,VWR0242,MOV055,5,THIS SHOW IS INSANE 🔥,Positive,2025-02-18
+REV1926,VWR0169,MOV033,5,so good!,Positive,2025-07-22
+REV1927,VWR1466,MOV045,2,,Negative,2025-03-08
+REV1928,VWR1417,MOV010,5,why is the app crashing?,Positive,2025-07-02
+REV1929,VWR0160,MOV053,3,terrible pacing ngl,Neutral,2025-01-22
+REV1930,VWR1251,MOV034,2,subtitles broken again,Negative,2025-11-29
+REV1931,VWR0992,MOV033,4,terrible pacing ngl,Positive,2025-11-12
+REV1932,VWR0126,MOV041,5,,positive,2025-07-05
+REV1933,VWR1024,MOV048,3,THIS SHOW IS INSANE 🔥,neutral,2025-07-14
+REV1934,VWR0327,MOV034,3,subtitles broken again,Neutral,2025-11-02
+REV1935,VWR0338,MOV040,5,,Positive,2025-07-10
+REV1936,VWR0425,MOV013,1,meh,Negative,2025-04-12
+REV1937,VWR0265,MOV059,1,love it,Negative,2025-05-30
+REV1938,VWR0263,MOV019,5,subtitles broken again,positive,2025-08-20
+REV1939,VWR0612,MOV044,1,terrible pacing ngl,Negative,2025-12-02
+REV1940,VWR1258,MOV001,3,,Neutral,2025-09-22
+REV1941,VWR0717,MOV051,5,galaxy burn is the best thing ever 💯,Positive,2025-09-19
+REV1942,VWR1166,MOV042,1,音楽 was good,Negative,2025-08-17
+REV1943,VWR0835,MOV053,3,subtitles broken again,Neutral,2025-08-10
+REV1944,VWR1382,MOV008,4,ending felt rushed tbh,Positive,2025-09-03
+REV1945,VWR1322,MOV052,3,音楽 was good,Neutral,2025-05-26
+REV1946,VWR0702,MOV006,2,THIS SHOW IS INSANE 🔥,Negative,2025-06-12
+REV1947,VWR0261,MOV028,2,why is the app crashing?,Negative,2025-10-28
+REV1948,VWR1069,MOV003,4,meh,Positive,2025-12-17
+REV1949,VWR1275,MOV006,3,idk why people like this,Neutral,2025-06-15
+REV1950,VWR1109,MOV051,4,terrible pacing ngl,Positive,2025-02-07
+REV1951,VWR1465,MOV004,1,ending felt rushed tbh,Negative,2025-04-22
+REV1952,VWR0189,MOV013,4,meh,Positive,2025-12-30
+REV1953,VWR1201,MOV045,2,meh,Negative,2025-04-18
+REV1954,VWR0687,MOV038,2,subtitles broken again,Negative,2025-07-21
+REV1955,VWR1294,MOV008,4,why is the app crashing?,Positive,2025-10-30
+REV1956,VWR1038,MOV052,1,subtitles broken again,Negative,2025-11-30
+REV1957,VWR0523,MOV042,4,galaxy burn is the best thing ever 💯,Positive,2025-03-13
+REV1958,VWR1337,MOV055,2,音楽 was good,Negative,2025-02-10
+REV1959,VWR0029,MOV021,3,terrible pacing ngl,Neutral,2025-05-07
+REV1960,VWR0559,MOV056,1,subtitles broken again,Negative,2025-08-06
+REV1961,VWR0159,MOV040,5,idk why people like this,Positive,2025-08-25
+REV1962,VWR0837,MOV041,3,love it,Neutral,2025-01-31
+REV1963,VWR0333,MOV054,4,why is the app crashing?,Positive,2025-09-20
+REV1964,VWR0612,MOV045,2,meh,negative,2025-03-10
+REV1965,VWR0851,MOV045,1,#### temp ####,Negative,2025-12-25
+REV1966,VWR0352,MOV025,5,subtitles broken again,Positive,2025-10-03
+REV1967,VWR1188,MOV016,4,ending felt rushed tbh,Positive,2025-11-16
+REV1968,VWR1237,MOV011,2,NaN,Negative,2026-01-01
+REV1969,VWR1371,MOV001,2,THIS SHOW IS INSANE 🔥,Negative,2025-11-24
+REV1970,VWR0752,MOV042,4,,Positive,2025-05-23
+REV1971,VWR0834,MOV017,2,,Negative,2025-11-22
+REV1972,VWR1259,MOV057,3,love it,Neutral,2025-10-05
+REV1973,VWR1207,MOV050,1,galaxy burn is the best thing ever 💯,Negative,2025-03-19
+REV1974,VWR0381,MOV038,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-18
+REV1975,VWR0577,MOV002,3,terrible pacing ngl,Neutral,2025-06-18
+REV1976,VWR1122,MOV050,3,galaxy burn is the best thing ever 💯,Neutral,2025-12-03
+REV1977,VWR0020,MOV034,3,why is the app crashing?,Neutral,2025-11-28
+REV1978,VWR1007,MOV047,5,subtitles broken again,Positive,2025-08-04
+REV1979,VWR0529,MOV021,5,subtitles broken again,Positive,2025-12-26
+REV1980,VWR0722,MOV030,5,meh,Positive,2025-04-29
+REV1981,VWR0482,MOV022,1,meh,Negative,2025-01-28
+REV1982,VWR0684,MOV029,4,so good!,Positive,2025-05-31
+REV1983,VWR1288,MOV001,2,why is the app crashing?,Negative,2025-03-12
+REV1984,VWR0139,MOV044,5,ERROR_EXPORT_ROW,Positive,2025-02-17
+REV1985,VWR1317,MOV050,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-26
+REV1986,VWR0391,MOV009,2,音楽 was good,Negative,2025-04-28
+REV1987,VWR0362,MOV022,3,subtitles broken again,Neutral,2025-11-19
+REV1988,VWR0361,MOV052,3,音楽 was good,Neutral,2025-12-08
+REV1989,VWR0286,MOV038,1,meh,Negative,2025-03-25
+REV1990,VWR1288,MOV024,3,why is the app crashing?,Neutral,2025-06-16
+REV1991,VWR0108,MOV046,1,galaxy burn is the best thing ever 💯,Negative,2025-02-10
+REV1992,VWR0150,MOV038,2,meh,Negative,2025-05-27
+REV1993,VWR1307,MOV024,4,terrible pacing ngl,positive,2025-12-24
+REV1994,VWR1314,MOV001,2,galaxy burn is the best thing ever 💯,Negative,2025-11-21
+REV1995,VWR0152,MOV004,5,THIS SHOW IS INSANE 🔥,Positive,2025-05-16
+REV1996,VWR1007,MOV055,5,meh,Positive,2025-09-14
+REV1997,VWR0141,MOV018,1,ending felt rushed tbh,negative,2025-03-16
+REV1998,VWR0817,MOV035,2,love it,Negative,2025-07-06
+REV1999,VWR1105,MOV010,1,meh,Negative,2025-06-29
+REV2000,VWR0217,MOV004,3,idk why people like this,Neutral,2025-12-08
+REV2001,VWR0169,MOV021,4,THIS SHOW IS INSANE 🔥,Positive,2025-02-17
+REV2002,VWR1250,MOV048,2,idk why people like this,Negative,2025-10-01
+REV2003,VWR0010,MOV022,2,so good!,Negative,2025-02-25
+REV2004,VWR0239,MOV013,2,so good!,Negative,2025-10-30
+REV2005,VWR0122,MOV003,4,音楽 was good,Positive,2025-06-25
+REV2006,VWR0844,MOV045,1,why is the app crashing?,Negative,2025-03-30
+REV2007,VWR0890,MOV045,2,THIS SHOW IS INSANE 🔥,Negative,2025-10-22
+REV2008,VWR0680,MOV045,1,terrible pacing ngl,Negative,2025-10-21
+REV2009,VWR0295,MOV008,5,,Positive,2025-03-07
+REV2010,VWR1202,MOV023,1,meh,Negative,2025-06-21
+REV2011,VWR1195,MOV043,2,terrible pacing ngl,Negative,2025-08-04
+REV2012,VWR1361,MOV050,2,why is the app crashing?,Negative,2025-01-13
+REV2013,VWR0509,MOV060,4,why is the app crashing?,Positive,2025-10-23
+REV2014,VWR0592,MOV003,5,音楽 was good,Positive,2025-06-08
+REV2015,VWR0841,MOV025,1,galaxy burn is the best thing ever 💯,Negative,2025-08-30
+REV2016,VWR0754,MOV010,1,ending felt rushed tbh,Negative,2025-10-21
+REV2017,VWR0889,MOV057,3,love it,Neutral,2025-03-25
+REV2018,VWR0064,MOV058,2,terrible pacing ngl,Negative,2025-05-16
+REV2019,VWR1259,MOV028,4,love it,Positive,2025-02-11
+REV2020,VWR0809,MOV017,1,galaxy burn is the best thing ever 💯,negative,2025-05-12
+REV2021,VWR1446,MOV020,1,galaxy burn is the best thing ever 💯,Negative,2025-01-21
+REV2022,VWR1086,MOV036,1,THIS SHOW IS INSANE 🔥,negative,2025-12-09
+REV2023,VWR0614,MOV059,2,so good!,Negative,2025-12-30
+REV2024,VWR0519,MOV002,4,音楽 was good,Positive,2025-11-10
+REV2025,VWR0502,MOV009,1,THIS SHOW IS INSANE 🔥,Negative,2025-01-03
+REV2026,VWR0824,MOV032,4,galaxy burn is the best thing ever 💯,Positive,2025-09-25
+REV2027,VWR0497,MOV043,2,love it,negative,2025-03-31
+REV2028,VWR0209,MOV048,5,ending felt rushed tbh,Positive,2025-08-17
+REV2029,VWR0066,MOV059,5,galaxy burn is the best thing ever 💯,Positive,2025-05-13
+REV2030,VWR1307,MOV048,2,terrible pacing ngl,Negative,2025-02-14
+REV2031,VWR0535,MOV009,5,ending felt rushed tbh,Positive,2025-06-18
+REV2032,VWR1424,MOV022,5,THIS SHOW IS INSANE 🔥,positive,2025-06-13
+REV2033,VWR0023,MOV040,1,idk why people like this,Negative,2025-01-28
+REV2034,VWR0441,MOV017,1,ending felt rushed tbh,Negative,2025-02-28
+REV2035,VWR1351,MOV054,1,ending felt rushed tbh,Negative,2025-06-29
+REV2036,VWR0771,MOV032,1,love it,Negative,2025-09-01
+REV2037,VWR0890,MOV037,4,NULL,Positive,2025-05-24
+REV2038,VWR0999,MOV015,1,meh,Negative,2025-09-02
+REV2039,VWR1051,MOV046,1,THIS SHOW IS INSANE 🔥,Negative,2025-12-16
+REV2040,VWR0378,MOV046,3,galaxy burn is the best thing ever 💯,neutral,2025-08-20
+REV2041,VWR0377,MOV004,5,terrible pacing ngl,Positive,2025-06-27
+REV2042,VWR0689,MOV034,5,idk why people like this,Positive,2025-09-11
+REV2043,VWR1168,MOV021,5,so good!,positive,2025-04-30
+REV2044,VWR0189,MOV051,3,subtitles broken again,Neutral,2025-09-26
+REV2045,VWR1165,MOV059,3,THIS SHOW IS INSANE 🔥,Neutral,2025-06-13
+REV2046,VWR0119,MOV041,2,galaxy burn is the best thing ever 💯,Negative,2025-05-18
+REV2047,VWR0285,MOV050,3,ending felt rushed tbh,Neutral,2025-10-02
+REV2048,VWR0554,MOV037,2,subtitles broken again,Negative,2025-01-31
+REV2049,VWR0986,MOV034,4,terrible pacing ngl,Positive,2025-01-02
+REV2050,VWR1236,MOV035,1,galaxy burn is the best thing ever 💯,Negative,2025-12-30
+REV2051,VWR0688,MOV025,1,idk why people like this,Negative,2025-03-07
+REV2052,VWR1458,MOV022,5,love it,Positive,2025-05-18
+REV2053,VWR0707,MOV010,1,subtitles broken again,Negative,2025-11-19
+REV2054,VWR0830,MOV024,3,terrible pacing ngl,Neutral,2025-09-03
+REV2055,VWR0557,MOV013,1,音楽 was good,negative,2025-08-30
+REV2056,VWR0137,MOV039,2,terrible pacing ngl,Negative,2025-01-14
+REV2057,VWR0071,MOV004,3,why is the app crashing?,neutral,2025-08-04
+REV2058,VWR0599,MOV021,4,THIS SHOW IS INSANE 🔥,positive,2025-12-23
+REV2059,VWR1066,MOV004,2,THIS SHOW IS INSANE 🔥,Negative,2025-01-18
+REV2060,VWR0073,MOV020,4,,Positive,2025-12-17
+REV2061,VWR0353,MOV009,5,音楽 was good,Positive,2025-11-07
+REV2062,VWR1150,MOV034,1,ending felt rushed tbh,Negative,2025-01-02
+REV2063,VWR0349,MOV004,3,love it,Neutral,2025-09-16
+REV2064,VWR0666,MOV008,5,subtitles broken again,Positive,2025-07-03
+REV2065,VWR0810,MOV048,2,terrible pacing ngl,Negative,2025-08-29
+REV2066,VWR0825,MOV002,1,音楽 was good,Negative,2025-02-05
+REV2067,VWR1185,MOV032,2,galaxy burn is the best thing ever 💯,Negative,2025-09-24
+REV2068,VWR1467,MOV040,2,love it,negative,2025-07-19
+REV2069,VWR0662,MOV034,1,meh,Negative,2025-07-09
+REV2070,VWR0231,MOV037,1,galaxy burn is the best thing ever 💯,Negative,2025-03-23
+REV2071,VWR0731,MOV026,3,terrible pacing ngl,neutral,2025-01-06
+REV2072,VWR1170,MOV009,5,galaxy burn is the best thing ever 💯,Positive,2025-12-05
+REV2073,VWR0005,MOV014,3,why is the app crashing?,Neutral,2025-06-02
+REV2074,VWR1253,MOV059,4,subtitles broken again,Positive,2025-11-22
+REV2075,VWR0607,MOV038,2,so good!,Negative,2025-04-19
+REV2076,VWR1476,MOV011,1,idk why people like this,negative,2025-06-27
+REV2077,VWR0902,MOV052,5,subtitles broken again,Positive,2025-02-13
+REV2078,VWR0913,MOV018,4,ending felt rushed tbh,Positive,2025-08-18
+REV2079,VWR0506,MOV022,1,so good!,Negative,2025-07-05
+REV2080,VWR0040,MOV041,2,galaxy burn is the best thing ever 💯,Negative,2025-11-18
+REV2081,VWR1448,MOV044,1,galaxy burn is the best thing ever 💯,Negative,2025-07-19
+REV2082,VWR1128,MOV060,2,why is the app crashing?,Negative,2025-03-24
+REV2083,VWR0774,MOV007,2,subtitles broken again,Negative,2025-02-09
+REV2084,VWR0103,MOV001,3,so good!,Neutral,2025-12-15
+REV2085,VWR0045,MOV048,3,meh,Neutral,2025-02-23
+REV2086,VWR0851,MOV007,4,,Positive,2025-11-01
+REV2087,VWR0186,MOV034,2,so good!,Negative,2025-08-10
+REV2088,VWR0658,MOV047,4,terrible pacing ngl,Positive,2025-04-19
+REV2089,VWR1197,MOV056,5,ending felt rushed tbh,Positive,2025-06-02
+REV2090,VWR0189,MOV030,2,ending felt rushed tbh,Negative,2025-09-08
+REV2091,VWR0669,MOV046,5,meh,Positive,2025-07-05
+REV2092,VWR0913,MOV011,2,why is the app crashing?,Negative,2025-05-14
+REV2093,VWR0499,MOV047,1,love it,Negative,2025-02-12
+REV2094,VWR0130,MOV025,1,ending felt rushed tbh,Negative,2025-12-30
+REV2095,VWR0131,MOV060,3,subtitles broken again,Neutral,2025-01-12
+REV2096,VWR0253,MOV043,1,love it,Negative,2025-04-19
+REV2097,VWR0732,MOV054,3,THIS SHOW IS INSANE 🔥,Neutral,2025-05-31
+REV2098,VWR0665,MOV034,4,ending felt rushed tbh,Positive,2025-07-04
+REV2099,VWR0178,MOV039,4,meh,Positive,2025-04-29
+REV2100,VWR1043,MOV020,2,terrible pacing ngl,Negative,2025-12-05
+REV2101,VWR0229,MOV007,4,meh,Positive,2025-07-24
+REV2102,VWR0334,MOV005,2,meh,Negative,2025-09-05
+REV2103,VWR0130,MOV023,3,idk why people like this,Neutral,2025-07-29
+REV2104,VWR1014,MOV048,4,,Positive,2025-12-06
+REV2105,VWR0536,MOV018,4,THIS SHOW IS INSANE 🔥,Positive,2025-03-18
+REV2106,VWR1405,MOV030,4,galaxy burn is the best thing ever 💯,Positive,2025-06-24
+REV2107,VWR0652,MOV054,4,音楽 was good,Positive,2025-08-15
+REV2108,VWR0224,MOV031,5,love it,Positive,2025-07-04
+REV2109,VWR0391,MOV019,3,terrible pacing ngl,Neutral,2025-11-01
+REV2110,VWR1205,MOV007,1,idk why people like this,Negative,2025-07-19
+REV2111,VWR0871,MOV058,5,meh,Positive,2025-09-23
+REV2112,VWR1237,MOV049,4,THIS SHOW IS INSANE 🔥,Positive,2025-11-28
+REV2113,VWR0266,MOV022,2,meh,Negative,2025-12-08
+REV2114,VWR1397,MOV008,4,THIS SHOW IS INSANE 🔥,Positive,2025-06-30
+REV2115,VWR0672,MOV005,3,terrible pacing ngl,Neutral,2025-03-27
+REV2116,VWR1011,MOV060,5,idk why people like this,Positive,2025-10-11
+REV2117,VWR0441,MOV047,5,subtitles broken again,Positive,2025-11-05
+REV2118,VWR0117,MOV048,5,idk why people like this,Positive,2025-07-31
+REV2119,VWR1099,MOV041,2,why is the app crashing?,Negative,2025-02-19
+REV2120,VWR0322,MOV039,2,meh,negative,2025-06-01
+REV2121,VWR1191,MOV048,2,idk why people like this,Negative,2025-02-21
+REV2122,VWR0888,MOV006,5,galaxy burn is the best thing ever 💯,Positive,2025-10-10
+REV2123,VWR0436,MOV032,1,音楽 was good,Negative,2025-12-10
+REV2124,VWR0969,MOV015,3,THIS SHOW IS INSANE 🔥,Neutral,2025-10-20
+REV2125,VWR0938,MOV035,2,,Negative,2025-08-05
+REV2126,VWR0094,MOV008,5,meh,Positive,2025-06-15
+REV2127,VWR1233,MOV048,1,love it,Negative,2025-02-11
+REV2128,VWR0410,MOV042,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-15
+REV2129,VWR0219,MOV045,3,THIS SHOW IS INSANE 🔥,Neutral,2025-02-24
+REV2130,VWR0703,MOV011,4,why is the app crashing?,Positive,2025-12-21
+REV2131,VWR0636,MOV030,5,why is the app crashing?,Positive,2025-10-20
+REV2132,VWR0492,MOV056,4,terrible pacing ngl,Positive,2025-10-05
+REV2133,VWR0868,MOV058,4,meh,Positive,2025-05-18
+REV2134,VWR0724,MOV058,4,idk why people like this,Positive,2025-11-21
+REV2135,VWR0386,MOV035,5,love it,Positive,2025-10-25
+REV2136,VWR1216,MOV039,1,so good!,Negative,2025-08-31
+REV2137,VWR0268,MOV022,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-24
+REV2138,VWR1388,MOV024,2,THIS SHOW IS INSANE 🔥,negative,2025-05-13
+REV2139,VWR1123,MOV051,5,galaxy burn is the best thing ever 💯,Positive,2025-07-16
+REV2140,VWR0148,MOV025,1,音楽 was good,Negative,2025-03-26
+REV2141,VWR1470,MOV033,1,subtitles broken again,Negative,2025-04-11
+REV2142,VWR0240,MOV024,5,ending felt rushed tbh,Positive,2025-03-25
+REV2143,VWR0503,MOV041,3,why is the app crashing?,Neutral,2025-01-17
+REV2144,VWR0563,MOV043,2,meh,Negative,2025-10-30
+REV2145,VWR0431,MOV008,4,meh,Positive,2025-08-27
+REV2146,VWR0013,MOV034,2,NaN,Negative,2025-11-24
+REV2147,VWR1357,MOV031,4,why is the app crashing?,Positive,2025-08-15
+REV2148,VWR0618,MOV030,1,subtitles broken again,Negative,2025-06-10
+REV2149,VWR0452,MOV058,3,why is the app crashing?,Neutral,2025-06-25
+REV2150,VWR0325,MOV059,5,THIS SHOW IS INSANE 🔥,Positive,2025-08-26
+REV2151,VWR0039,MOV013,5,why is the app crashing?,Positive,2025-07-13
+REV2152,VWR0751,MOV028,1,love it,Negative,2025-10-11
+REV2153,VWR1411,MOV042,2,terrible pacing ngl,negative,2025-05-02
+REV2154,VWR0249,MOV027,1,ending felt rushed tbh,Negative,2025-01-19
+REV2155,VWR0928,MOV052,2,idk why people like this,Negative,2025-04-06
+REV2156,VWR0571,MOV016,5,galaxy burn is the best thing ever 💯,Positive,2025-12-13
+REV2157,VWR0589,MOV043,3,terrible pacing ngl,Neutral,2025-01-13
+REV2158,VWR1214,MOV004,1,terrible pacing ngl,Negative,2025-08-08
+REV2159,VWR0213,MOV006,5,so good!,Positive,2025-06-18
+REV2160,VWR0792,MOV030,2,音楽 was good,Negative,2025-03-27
+REV2161,VWR1420,MOV051,1,subtitles broken again,Negative,2025-03-21
+REV2162,VWR1086,MOV007,3,terrible pacing ngl,Neutral,2025-12-15
+REV2163,VWR1099,MOV034,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-21
+REV2164,VWR0411,MOV008,1,meh,Negative,2025-11-30
+REV2165,VWR1309,MOV012,2,terrible pacing ngl,Negative,2025-04-24
+REV2166,VWR0283,MOV050,3,meh,Neutral,2025-07-31
+REV2167,VWR1126,MOV013,4,,Positive,2025-09-18
+REV2168,VWR1294,MOV026,4,why is the app crashing?,Positive,2025-10-21
+REV2169,VWR1259,MOV030,4,subtitles broken again,Positive,2025-01-02
+REV2170,VWR1334,MOV031,5,subtitles broken again,Positive,2025-03-13
+REV2171,VWR0691,MOV058,5,idk why people like this,Positive,2025-04-18
+REV2172,VWR1149,MOV001,5,idk why people like this,Positive,2025-08-03
+REV2173,VWR0610,MOV017,1,idk why people like this,Negative,2025-05-08
+REV2174,VWR0054,MOV017,3,meh,neutral,2025-06-16
+REV2175,VWR0781,MOV035,5,terrible pacing ngl,Positive,2025-02-15
+REV2176,VWR0339,MOV034,3,galaxy burn is the best thing ever 💯,Neutral,2025-04-08
+REV2177,VWR0775,MOV007,1,so good!,Negative,2025-07-28
+REV2178,VWR0782,MOV003,4,ending felt rushed tbh,Positive,2025-11-02
+REV2179,VWR0991,MOV003,5,terrible pacing ngl,Positive,2025-09-20
+REV2180,VWR1361,MOV016,2,音楽 was good,Negative,2025-05-02
+REV2181,VWR0736,MOV060,4,subtitles broken again,Positive,2025-10-27
+REV2182,VWR1286,MOV028,1,so good!,Negative,2025-03-27
+REV2183,VWR0972,MOV021,1,idk why people like this,Negative,2025-09-25
+REV2184,VWR0155,MOV042,1,,Negative,2025-12-05
+REV2185,VWR0156,MOV047,1,ending felt rushed tbh,Negative,2025-07-25
+REV2186,VWR0497,MOV057,2,meh,Negative,2025-12-21
+REV2187,VWR0266,MOV011,2,idk why people like this,Negative,2025-02-27
+REV2188,VWR0060,MOV022,4,ending felt rushed tbh,Positive,2025-07-13
+REV2189,VWR1309,MOV057,3,why is the app crashing?,Neutral,2025-10-24
+REV2190,VWR0273,MOV038,2,THIS SHOW IS INSANE 🔥,Negative,2025-07-18
+REV2191,VWR0443,MOV022,1,so good!,Negative,2025-10-05
+REV2192,VWR0045,MOV007,3,terrible pacing ngl,Neutral,2025-07-07
+REV2193,VWR1137,MOV041,4,subtitles broken again,positive,2025-07-20
+REV2194,VWR1149,MOV056,5,音楽 was good,Positive,2025-09-09
+REV2195,VWR0280,MOV030,4,love it,Positive,2025-04-16
+REV2196,VWR1168,MOV026,5,love it,Positive,2025-01-21
+REV2197,VWR0920,MOV052,4,terrible pacing ngl,Positive,2025-05-23
+REV2198,VWR1060,MOV020,5,idk why people like this,Positive,2025-03-11
+REV2199,VWR0559,MOV006,5,meh,Positive,2025-08-22
+REV2200,VWR1039,MOV034,3,love it,Neutral,2025-02-15
+REV2201,VWR0567,MOV008,3,音楽 was good,Neutral,2025-11-16
+REV2202,VWR1191,MOV012,1,idk why people like this,Negative,2025-12-22
+REV2203,VWR0544,MOV050,1,why is the app crashing?,Negative,2025-03-01
+REV2204,VWR0711,MOV012,2,why is the app crashing?,Negative,2025-05-29
+REV2205,VWR0906,MOV056,3,,Neutral,2025-05-12
+REV2206,VWR0557,MOV015,4,meh,Positive,2025-12-04
+REV2207,VWR0168,MOV027,1,galaxy burn is the best thing ever 💯,Negative,2025-05-12
+REV2208,VWR0042,MOV001,5,THIS SHOW IS INSANE 🔥,Positive,2025-08-02
+REV2209,VWR0246,MOV054,2,音楽 was good,Negative,2025-07-02
+REV2210,VWR0060,MOV013,4,subtitles broken again,Positive,2025-03-20
+REV2211,VWR1417,MOV025,1,ending felt rushed tbh,Negative,2025-05-11
+REV2212,VWR0492,MOV019,2,subtitles broken again,Negative,2025-04-26
+REV2213,VWR0112,MOV007,5,音楽 was good,Positive,2025-08-12
+REV2214,VWR0984,MOV019,1,galaxy burn is the best thing ever 💯,Negative,2025-03-10
+REV2215,VWR0239,MOV031,4,音楽 was good,Positive,2025-05-29
+REV2216,VWR0420,MOV049,5,subtitles broken again,Positive,2025-09-11
+REV2217,VWR0098,MOV011,2,galaxy burn is the best thing ever 💯,Negative,2025-07-21
+REV2218,VWR0924,MOV051,5,THIS SHOW IS INSANE 🔥,Positive,2025-02-11
+REV2219,VWR1084,MOV016,5,meh,Positive,2025-07-21
+REV2220,VWR0820,MOV006,4,ending felt rushed tbh,Positive,2025-03-30
+REV2221,VWR1386,MOV057,1,terrible pacing ngl,negative,2025-03-12
+REV2222,VWR1410,MOV013,2,ending felt rushed tbh,Negative,2025-05-09
+REV2223,VWR0340,MOV014,2,why is the app crashing?,Negative,2025-06-15
+REV2224,VWR1163,MOV026,1,meh,Negative,2025-08-27
+REV2225,VWR1485,MOV038,1,why is the app crashing?,negative,2025-12-04
+REV2226,VWR0612,MOV058,5,so good!,Positive,2025-08-17
+REV2227,VWR0947,MOV057,4,so good!,Positive,2025-05-19
+REV2228,VWR1466,MOV054,2,ending felt rushed tbh,Negative,2025-12-24
+REV2229,VWR1258,MOV018,3,meh,Neutral,2025-09-01
+REV2230,VWR1068,MOV010,5,subtitles broken again,Positive,2025-06-06
+REV2231,VWR1450,MOV056,4,so good!,Positive,2025-08-15
+REV2232,VWR1353,MOV012,5,subtitles broken again,Positive,2025-02-07
+REV2233,VWR0869,MOV049,1,love it,Negative,2025-08-21
+REV2234,VWR0393,MOV052,3,galaxy burn is the best thing ever 💯,Neutral,2025-03-30
+REV2235,VWR1091,MOV059,4,galaxy burn is the best thing ever 💯,Positive,2025-08-13
+REV2236,VWR0279,MOV041,5,so good!,Positive,2025-11-15
+REV2237,VWR1284,MOV055,5,音楽 was good,Positive,2025-09-08
+REV2238,VWR0602,MOV003,5,so good!,Positive,2025-03-28
+REV2239,VWR0610,MOV028,3,ending felt rushed tbh,Neutral,2025-05-29
+REV2240,VWR1215,MOV038,2,subtitles broken again,Negative,2025-03-12
+REV2241,VWR0374,MOV054,4,ending felt rushed tbh,Positive,2025-11-12
+REV2242,VWR0094,MOV028,5,so good!,Positive,2025-01-23
+REV2243,VWR1078,MOV023,2,音楽 was good,Negative,2025-12-28
+REV2244,VWR0790,MOV041,5,love it,positive,2025-10-18
+REV2245,VWR0564,MOV025,1,love it,Negative,2025-10-26
+REV2246,VWR1400,MOV036,2,love it,Negative,2025-02-24
+REV2247,VWR1489,MOV051,2,galaxy burn is the best thing ever 💯,Negative,2025-01-29
+REV2248,VWR0888,MOV001,4,love it,Positive,2025-01-12
+REV2249,VWR0439,MOV015,3,meh,Neutral,2025-03-12
+REV2250,VWR0441,MOV060,1,love it,Negative,2025-10-12
+REV2251,VWR1314,MOV055,3,NaN,Neutral,2025-01-25
+REV2252,VWR0692,MOV032,1,idk why people like this,Negative,2025-12-06
+REV2253,VWR0274,MOV058,3,why is the app crashing?,Neutral,2025-05-19
+REV2254,VWR0439,MOV049,5,terrible pacing ngl,Positive,2025-01-25
+REV2255,VWR0937,MOV060,2,love it,Negative,2025-02-19
+REV2256,VWR0127,MOV028,1,ending felt rushed tbh,Negative,2025-06-25
+REV2257,VWR0688,MOV037,2,why is the app crashing?,Negative,2025-07-09
+REV2258,VWR0880,MOV056,4,subtitles broken again,Positive,2025-01-22
+REV2259,VWR0277,MOV029,2,THIS SHOW IS INSANE 🔥,Negative,2025-06-09
+REV2260,VWR0164,MOV049,4,idk why people like this,positive,2025-12-22
+REV2261,VWR1478,MOV052,4,terrible pacing ngl,Positive,2025-08-13
+REV2262,VWR0305,MOV039,2,idk why people like this,Negative,2025-12-31
+REV2263,VWR0701,MOV043,5,meh,Positive,2025-11-29
+REV2264,VWR0492,MOV053,2,ending felt rushed tbh,Negative,2025-02-09
+REV2265,VWR0142,MOV038,3,idk why people like this,Neutral,2025-07-08
+REV2266,VWR0507,MOV024,3,terrible pacing ngl,Neutral,2025-01-04
+REV2267,VWR0288,MOV028,1,subtitles broken again,negative,2025-06-29
+REV2268,VWR1232,MOV005,1,THIS SHOW IS INSANE 🔥,Negative,2025-05-08
+REV2269,VWR1251,MOV044,1,ending felt rushed tbh,Negative,2025-12-29
+REV2270,VWR0055,MOV041,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-23
+REV2271,VWR0601,MOV045,3,why is the app crashing?,Neutral,2025-12-16
+REV2272,VWR1253,MOV014,2,love it,Negative,2025-03-10
+REV2273,VWR1325,MOV004,5,THIS SHOW IS INSANE 🔥,Positive,2025-01-01
+REV2274,VWR0913,MOV057,4,love it,positive,2025-03-08
+REV2275,VWR1207,MOV040,3,音楽 was good,Neutral,2025-06-25
+REV2276,VWR1041,MOV007,5,ending felt rushed tbh,Positive,2025-09-13
+REV2277,VWR1455,MOV055,1,THIS SHOW IS INSANE 🔥,Negative,2025-08-24
+REV2278,VWR1021,MOV003,4,so good!,Positive,2025-03-16
+REV2279,VWR1059,MOV047,2,THIS SHOW IS INSANE 🔥,Negative,2025-12-13
+REV2280,VWR0081,MOV026,4,subtitles broken again,Positive,2025-03-04
+REV2281,VWR0965,MOV023,4,so good!,Positive,2025-01-27
+REV2282,VWR0663,MOV022,3,why is the app crashing?,Neutral,2025-12-11
+REV2283,VWR0034,MOV024,4,subtitles broken again,Positive,2025-03-25
+REV2284,VWR0212,MOV042,4,so good!,Positive,2025-10-15
+REV2285,VWR1083,MOV027,5,why is the app crashing?,Positive,2025-07-25
+REV2286,VWR0031,MOV053,3,,Neutral,2025-06-27
+REV2287,VWR0213,MOV045,1,love it,Negative,2025-07-13
+REV2288,VWR0197,MOV041,5,ending felt rushed tbh,Positive,2025-08-04
+REV2289,VWR0482,MOV041,2,why is the app crashing?,Negative,2025-01-25
+REV2290,VWR0721,MOV022,5,ending felt rushed tbh,Positive,2025-12-09
+REV2291,VWR0365,MOV047,4,idk why people like this,Positive,2025-02-22
+REV2292,VWR0391,MOV007,2,galaxy burn is the best thing ever 💯,Negative,2025-07-21
+REV2293,VWR1079,MOV040,2,#### temp ####,Negative,2025-10-09
+REV2294,VWR1367,MOV029,5,so good!,Positive,2025-10-17
+REV2295,VWR0822,MOV045,4,why is the app crashing?,Positive,2025-10-07
+REV2296,VWR0626,MOV020,1,love it,Negative,2025-10-08
+REV2297,VWR1388,MOV013,1,meh,Negative,2025-06-22
+REV2298,VWR0726,MOV008,2,THIS SHOW IS INSANE 🔥,Negative,2025-05-31
+REV2299,VWR0293,MOV041,2,音楽 was good,Negative,2025-01-02
+REV2300,VWR0880,MOV060,4,terrible pacing ngl,Positive,2025-02-28
+REV2301,VWR1472,MOV025,4,idk why people like this,Positive,2025-05-13
+REV2302,VWR1459,MOV058,2,so good!,Negative,2025-02-02
+REV2303,VWR0592,MOV028,3,idk why people like this,Neutral,2025-11-02
+REV2304,VWR0401,MOV013,1,THIS SHOW IS INSANE 🔥,Negative,2025-12-11
+REV2305,VWR0186,MOV035,2,meh,Negative,2025-08-19
+REV2306,VWR1016,MOV058,3,meh,Neutral,2025-02-11
+REV2307,VWR0566,MOV037,2,love it,Negative,2025-12-08
+REV2308,VWR0943,MOV040,4,THIS SHOW IS INSANE 🔥,Positive,2025-01-04
+REV2309,VWR1454,MOV019,3,why is the app crashing?,Neutral,2025-07-03
+REV2310,VWR1211,MOV020,1,音楽 was good,Negative,2025-11-08
+REV2311,VWR1498,MOV040,1,idk why people like this,Negative,2025-12-16
+REV2312,VWR1150,MOV017,2,love it,Negative,2025-06-10
+REV2313,VWR1395,MOV019,3,terrible pacing ngl,Neutral,2025-02-03
+REV2314,VWR1442,MOV046,4,meh,Positive,2025-05-20
+REV2315,VWR0048,MOV018,4,meh,Positive,2025-12-28
+REV2316,VWR0962,MOV049,2,idk why people like this,Negative,2025-03-16
+REV2317,VWR1152,MOV016,4,terrible pacing ngl,Positive,2025-09-24
+REV2318,VWR0588,MOV025,5,ending felt rushed tbh,Positive,2025-08-24
+REV2319,VWR1369,MOV047,1,THIS SHOW IS INSANE 🔥,Negative,2025-02-01
+REV2320,VWR0132,MOV031,5,galaxy burn is the best thing ever 💯,Positive,2025-04-13
+REV2321,VWR0797,MOV044,2,meh,Negative,2025-11-15
+REV2322,VWR1049,MOV023,1,meh,Negative,2025-12-11
+REV2323,VWR0410,MOV046,1,why is the app crashing?,Negative,2025-12-13
+REV2324,VWR1054,MOV058,5,galaxy burn is the best thing ever 💯,Positive,2025-07-23
+REV2325,VWR0392,MOV023,4,why is the app crashing?,Positive,2025-04-30
+REV2326,VWR0999,MOV046,1,subtitles broken again,Negative,2025-11-27
+REV2327,VWR0760,MOV023,1,ending felt rushed tbh,Negative,2025-10-31
+REV2328,VWR0792,MOV059,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-07
+REV2329,VWR1150,MOV032,1,terrible pacing ngl,Negative,2025-10-28
+REV2330,VWR0098,MOV009,4,THIS SHOW IS INSANE 🔥,Positive,2025-10-29
+REV2331,VWR0971,MOV036,5,galaxy burn is the best thing ever 💯,positive,2025-03-05
+REV2332,VWR1317,MOV011,3,meh,Neutral,2025-03-29
+REV2333,VWR0341,MOV057,2,ending felt rushed tbh,Negative,2025-02-13
+REV2334,VWR0600,MOV024,4,THIS SHOW IS INSANE 🔥,Positive,2025-06-09
+REV2335,VWR0010,MOV011,1,,Negative,2025-10-19
+REV2336,VWR0115,MOV038,2,galaxy burn is the best thing ever 💯,Negative,2025-08-03
+REV2337,VWR1273,MOV037,3,idk why people like this,Neutral,2025-06-16
+REV2338,VWR0055,MOV036,2,meh,Negative,2025-04-24
+REV2339,VWR1043,MOV003,4,THIS SHOW IS INSANE 🔥,Positive,2025-09-10
+REV2340,VWR0369,MOV039,2,why is the app crashing?,Negative,2025-07-15
+REV2341,VWR0028,MOV039,1,galaxy burn is the best thing ever 💯,Negative,2025-10-20
+REV2342,VWR1352,MOV013,3,so good!,Neutral,2025-03-30
+REV2343,VWR0403,MOV053,5,idk why people like this,Positive,2025-10-04
+REV2344,VWR0647,MOV053,3,THIS SHOW IS INSANE 🔥,Neutral,2025-08-22
+REV2345,VWR0334,MOV016,4,love it,positive,2025-08-08
+REV2346,VWR0281,MOV042,4,love it,Positive,2025-08-07
+REV2347,VWR0653,MOV033,5,love it,Positive,2025-03-26
+REV2348,VWR0851,MOV055,3,meh,Neutral,2025-07-01
+REV2349,VWR1137,MOV003,3,so good!,Neutral,2025-10-31
+REV2350,VWR1038,MOV023,1,meh,Negative,2025-11-24
+REV2351,VWR1363,MOV056,5,THIS SHOW IS INSANE 🔥,Positive,2025-04-09
+REV2352,VWR0437,MOV047,3,galaxy burn is the best thing ever 💯,Neutral,2025-08-27
+REV2353,VWR0262,MOV060,5,meh,Positive,2025-01-11
+REV2354,VWR0177,MOV001,2,galaxy burn is the best thing ever 💯,Negative,2025-11-27
+REV2355,VWR1417,MOV037,3,ending felt rushed tbh,Neutral,2025-05-29
+REV2356,VWR1304,MOV001,3,subtitles broken again,Neutral,2025-12-27
+REV2357,VWR0360,MOV038,5,so good!,Positive,2025-02-08
+REV2358,VWR0823,MOV014,3,galaxy burn is the best thing ever 💯,Neutral,2025-03-20
+REV2359,VWR1291,MOV051,2,love it,Negative,2025-10-27
+REV2360,VWR1372,MOV036,1,terrible pacing ngl,Negative,2025-05-05
+REV2361,VWR1306,MOV044,5,so good!,positive,2025-03-05
+REV2362,VWR0036,MOV039,5,why is the app crashing?,Positive,2025-08-14
+REV2363,VWR1185,MOV040,5,why is the app crashing?,Positive,2025-03-12
+REV2364,VWR0784,MOV015,3,ending felt rushed tbh,Neutral,2025-09-11
+REV2365,VWR0592,MOV040,2,THIS SHOW IS INSANE 🔥,Negative,2025-01-18
+REV2366,VWR1391,MOV011,5,音楽 was good,Positive,2025-02-16
+REV2367,VWR1282,MOV047,1,ending felt rushed tbh,Negative,2025-11-21
+REV2368,VWR0411,MOV058,1,so good!,Negative,2025-08-28
+REV2369,VWR0103,MOV043,4,why is the app crashing?,Positive,2025-01-21
+REV2370,VWR0413,MOV026,4,音楽 was good,Positive,2025-04-11
+REV2371,VWR1383,MOV046,4,THIS SHOW IS INSANE 🔥,Positive,2025-02-08
+REV2372,VWR0274,MOV049,3,,Neutral,2025-08-25
+REV2373,VWR1424,MOV043,4,why is the app crashing?,Positive,2025-06-06
+REV2374,VWR0772,MOV042,1,so good!,Negative,2025-08-21
+REV2375,VWR0660,MOV006,2,subtitles broken again,Negative,2025-10-08
+REV2376,VWR0504,MOV056,3,love it,Neutral,2025-09-07
+REV2377,VWR0870,MOV013,3,love it,Neutral,2025-03-05
+REV2378,VWR0971,MOV041,3,ending felt rushed tbh,Neutral,2025-09-24
+REV2379,VWR1159,MOV058,1,why is the app crashing?,Negative,2025-06-12
+REV2380,VWR0042,MOV011,1,galaxy burn is the best thing ever 💯,Negative,2025-03-23
+REV2381,VWR0218,MOV057,1,meh,Negative,2025-06-04
+REV2382,VWR1002,MOV015,4,love it,Positive,2025-09-23
+REV2383,VWR0172,MOV037,2,idk why people like this,Negative,2025-04-18
+REV2384,VWR0510,MOV030,3,idk why people like this,Neutral,2025-03-07
+REV2385,VWR0568,MOV035,4,so good!,Positive,2025-09-29
+REV2386,VWR0302,MOV024,1,ending felt rushed tbh,Negative,2025-02-01
+REV2387,VWR0364,MOV006,2,ending felt rushed tbh,Negative,2025-02-23
+REV2388,VWR0301,MOV025,3,ending felt rushed tbh,Neutral,2025-04-06
+REV2389,VWR0270,MOV005,2,ending felt rushed tbh,Negative,2025-06-13
+REV2390,VWR0850,MOV057,3,subtitles broken again,Neutral,2025-05-05
+REV2391,VWR0207,MOV039,1,音楽 was good,Negative,2025-09-28
+REV2392,VWR1015,MOV042,1,ending felt rushed tbh,Negative,2025-02-18
+REV2393,VWR0287,MOV050,3,idk why people like this,Neutral,2025-06-10
+REV2394,VWR1455,MOV046,2,THIS SHOW IS INSANE 🔥,Negative,2025-08-22
+REV2395,VWR0922,MOV049,3,THIS SHOW IS INSANE 🔥,Neutral,2025-03-24
+REV2396,VWR1101,MOV021,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-06
+REV2397,VWR1173,MOV055,3,idk why people like this,neutral,2025-09-15
+REV2398,VWR0715,MOV002,3,,Neutral,2025-09-03
+REV2399,VWR1022,MOV041,2,subtitles broken again,Negative,2025-10-12
+REV2400,VWR1426,MOV001,4,terrible pacing ngl,Positive,2025-11-29
+REV2401,VWR0872,MOV013,3,love it,Neutral,2025-03-15
+REV2402,VWR0588,MOV056,5,ending felt rushed tbh,Positive,2025-02-15
+REV2403,VWR1062,MOV012,3,meh,Neutral,2025-04-27
+REV2404,VWR0452,MOV007,4,terrible pacing ngl,Positive,2025-07-06
+REV2405,VWR0923,MOV008,3,idk why people like this,Neutral,2025-04-24
+REV2406,VWR0881,MOV045,4,subtitles broken again,Positive,2025-01-01
+REV2407,VWR1082,MOV052,1,why is the app crashing?,negative,2025-01-24
+REV2408,VWR0965,MOV056,5,音楽 was good,Positive,2025-08-29
+REV2409,VWR0881,MOV022,5,why is the app crashing?,Positive,2025-06-13
+REV2410,VWR0589,MOV012,3,NaN,Neutral,2025-12-25
+REV2411,VWR0851,MOV038,4,idk why people like this,Positive,2025-02-19
+REV2412,VWR0697,MOV028,4,subtitles broken again,Positive,2025-09-30
+REV2413,VWR0096,MOV041,3,音楽 was good,Neutral,2025-05-08
+REV2414,VWR0099,MOV043,4,galaxy burn is the best thing ever 💯,Positive,2025-09-27
+REV2415,VWR1193,MOV019,2,idk why people like this,Negative,2025-10-23
+REV2416,VWR0326,MOV033,3,why is the app crashing?,Neutral,2025-08-07
+REV2417,VWR0761,MOV024,3,idk why people like this,Neutral,2025-06-08
+REV2418,VWR1399,MOV031,4,love it,Positive,2025-01-11
+REV2419,VWR0873,MOV001,4,meh,Positive,2025-09-15
+REV2420,VWR0357,MOV036,4,love it,Positive,2025-04-29
+REV2421,VWR1266,MOV013,4,love it,Positive,2025-05-28
+REV2422,VWR0707,MOV038,5,why is the app crashing?,Positive,2025-02-27
+REV2423,VWR1189,MOV056,2,love it,Negative,2025-12-17
+REV2424,VWR0786,MOV004,2,love it,negative,2025-05-29
+REV2425,VWR0186,MOV033,4,love it,Positive,2025-12-27
+REV2426,VWR1484,MOV039,2,ending felt rushed tbh,Negative,2025-05-28
+REV2427,VWR1166,MOV007,4,subtitles broken again,Positive,2025-01-31
+REV2428,VWR1412,MOV008,4,,Positive,2025-10-21
+REV2429,VWR0834,MOV046,1,meh,Negative,2025-10-12
+REV2430,VWR1385,MOV024,5,,Positive,2025-04-25
+REV2431,VWR0891,MOV040,4,why is the app crashing?,Positive,2025-12-24
+REV2432,VWR0455,MOV026,5,,Positive,2025-08-07
+REV2433,VWR1054,MOV048,5,why is the app crashing?,Positive,2025-07-25
+REV2434,VWR0142,MOV011,1,so good!,Negative,2025-08-15
+REV2435,VWR0949,MOV005,1,galaxy burn is the best thing ever 💯,Negative,2025-03-10
+REV2436,VWR1335,MOV051,3,terrible pacing ngl,Neutral,2025-02-12
+REV2437,VWR0098,MOV034,2,idk why people like this,Negative,2025-07-05
+REV2438,VWR1333,MOV042,5,why is the app crashing?,Positive,2025-07-24
+REV2439,VWR0263,MOV002,5,ending felt rushed tbh,Positive,2025-11-18
+REV2440,VWR1065,MOV004,2,ending felt rushed tbh,Negative,2025-07-03
+REV2441,VWR1265,MOV018,3,NaN,Neutral,2025-08-26
+REV2442,VWR0541,MOV024,5,so good!,Positive,2025-01-21
+REV2443,VWR0838,MOV029,1,why is the app crashing?,Negative,2025-01-12
+REV2444,VWR0260,MOV041,2,meh,Negative,2025-07-11
+REV2445,VWR0548,MOV032,3,THIS SHOW IS INSANE 🔥,Neutral,2025-02-28
+REV2446,VWR1273,MOV027,2,THIS SHOW IS INSANE 🔥,Negative,2025-12-02
+REV2447,VWR0326,MOV020,3,THIS SHOW IS INSANE 🔥,Neutral,2025-04-16
+REV2448,VWR1142,MOV004,4,love it,Positive,2025-04-15
+REV2449,VWR0025,MOV020,3,meh,Neutral,2025-05-25
+REV2450,VWR0331,MOV044,1,THIS SHOW IS INSANE 🔥,Negative,2025-04-16
+REV2451,VWR1362,MOV003,1,subtitles broken again,negative,2025-07-31
+REV2452,VWR0830,MOV023,2,ending felt rushed tbh,Negative,2025-04-11
+REV2453,VWR0928,MOV022,2,why is the app crashing?,Negative,2025-02-06
+REV2454,VWR0417,MOV039,5,音楽 was good,Positive,2025-12-30
+REV2455,VWR0456,MOV001,4,idk why people like this,Positive,2025-12-14
+REV2456,VWR0327,MOV024,1,meh,Negative,2025-08-30
+REV2457,VWR0572,MOV020,3,love it,Neutral,2025-12-02
+REV2458,VWR1355,MOV050,2,音楽 was good,Negative,2025-04-02
+REV2459,VWR0666,MOV058,5,terrible pacing ngl,Positive,2025-11-08
+REV2460,VWR1095,MOV044,3,love it,Neutral,2025-08-07
+REV2461,VWR1139,MOV038,2,idk why people like this,Negative,2025-06-10
+REV2462,VWR1235,MOV035,1,love it,Negative,2025-03-07
+REV2463,VWR0746,MOV050,4,,Positive,2025-05-15
+REV2464,VWR0453,MOV038,3,so good!,Neutral,2025-05-08
+REV2465,VWR0999,MOV044,3,meh,Neutral,2025-02-27
+REV2466,VWR0720,MOV010,3,ending felt rushed tbh,Neutral,2025-05-03
+REV2467,VWR0131,MOV026,5,meh,Positive,2025-08-29
+REV2468,VWR0778,MOV060,2,ending felt rushed tbh,Negative,2025-08-24
+REV2469,VWR1102,MOV031,2,subtitles broken again,negative,2025-08-20
+REV2470,VWR0471,MOV004,4,love it,Positive,2025-03-12
+REV2471,VWR0027,MOV043,4,galaxy burn is the best thing ever 💯,Positive,2025-05-21
+REV2472,VWR0411,MOV034,2,meh,Negative,2025-04-14
+REV2473,VWR0547,MOV047,5,subtitles broken again,Positive,2025-05-11
+REV2474,VWR0962,MOV036,1,galaxy burn is the best thing ever 💯,Negative,2025-05-31
+REV2475,VWR0204,MOV002,3,ending felt rushed tbh,Neutral,2025-04-04
+REV2476,VWR0737,MOV043,3,why is the app crashing?,Neutral,2025-07-02
+REV2477,VWR0866,MOV009,1,NaN,Negative,2025-04-05
+REV2478,VWR0277,MOV058,4,love it,Positive,2025-07-25
+REV2479,VWR1057,MOV006,2,meh,Negative,2025-07-12
+REV2480,VWR0585,MOV055,3,subtitles broken again,Neutral,2025-02-01
+REV2481,VWR0305,MOV001,3,idk why people like this,Neutral,2025-01-19
+REV2482,VWR0343,MOV052,1,terrible pacing ngl,Negative,2025-11-22
+REV2483,VWR0547,MOV036,2,音楽 was good,Negative,2025-02-05
+REV2484,VWR0480,MOV026,2,idk why people like this,Negative,2025-09-02
+REV2485,VWR0639,MOV047,3,why is the app crashing?,Neutral,2025-10-29
+REV2486,VWR1198,MOV042,1,love it,Negative,2025-10-06
+REV2487,VWR0434,MOV005,3,音楽 was good,Neutral,2025-01-27
+REV2488,VWR0582,MOV058,3,galaxy burn is the best thing ever 💯,Neutral,2025-10-08
+REV2489,VWR1260,MOV025,4,meh,Positive,2025-05-22
+REV2490,VWR0617,MOV048,4,terrible pacing ngl,Positive,2025-05-12
+REV2491,VWR0826,MOV023,3,subtitles broken again,Neutral,2025-06-09
+REV2492,VWR0348,MOV002,5,subtitles broken again,Positive,2025-10-18
+REV2493,VWR0348,MOV019,5,love it,Positive,2025-05-11
+REV2494,VWR0289,MOV027,2,THIS SHOW IS INSANE 🔥,Negative,2025-09-07
+REV2495,VWR0195,MOV023,3,subtitles broken again,Neutral,2025-05-13
+REV2496,VWR0567,MOV038,2,subtitles broken again,Negative,2025-12-25
+REV2497,VWR0870,MOV012,4,ending felt rushed tbh,Positive,2025-08-24
+REV2498,VWR0885,MOV018,3,meh,Neutral,2025-01-10
+REV2499,VWR1238,MOV036,1,ending felt rushed tbh,Negative,2025-11-21
+REV2500,VWR1276,MOV057,4,idk why people like this,Positive,2025-05-29
