@@ -1,0 +1,72 @@
+[
+  {
+    "query": "APAC growth contribution",
+    "environment": "vistastream",
+    "expected_sources": ["Q2 FY2026 Campaign Performance Summary.pdf"],
+    "expected_keywords": ["APAC", "subscriber growth", "contribution"],
+    "expected_topics": ["regional performance"]
+  },
+  {
+    "query": "science-fiction engagement trends",
+    "environment": "vistastream",
+    "expected_sources": ["Q3 Content Roadmap.pdf", "Q2 FY2026 Audience Behaviour Report.pdf"],
+    "expected_keywords": ["sci-fi", "science-fiction", "engagement"],
+    "expected_topics": ["content strategy"]
+  },
+  {
+    "query": "Europe campaign underperformance",
+    "environment": "vistastream",
+    "expected_sources": ["Q2 FY2026 Campaign Performance Summary.pdf"],
+    "expected_keywords": ["Europe", "failed", "conversion targets"],
+    "expected_topics": ["marketing efficiency"]
+  },
+  {
+    "query": "subtitle quality and localization",
+    "environment": "vistastream",
+    "expected_sources": ["Q2 FY2026 Audience Behaviour Report.pdf"],
+    "expected_keywords": ["localization", "subtitle", "quality"],
+    "expected_topics": ["product quality"]
+  },
+  {
+    "query": "ad-spend efficiency in North America",
+    "environment": "vistastream",
+    "expected_sources": ["Q2 FY2026 Campaign Performance Summary.pdf"],
+    "expected_keywords": ["ad spend", "efficiency", "North America"],
+    "expected_topics": ["financial metrics"]
+  },
+  {
+    "query": "retention decline in Q2",
+    "environment": "neonplay",
+    "expected_sources": ["Q2 FY2026 Quarterly Executive Report (1).pdf"],
+    "expected_keywords": ["retention", "decline", "churn"],
+    "expected_topics": ["operational health"]
+  },
+  {
+    "query": "subtitle complaints status",
+    "environment": "neonplay",
+    "expected_sources": ["Content Roadmap.pdf"],
+    "expected_keywords": ["subtitle", "complaints", "localization"],
+    "expected_topics": ["feedback"]
+  },
+  {
+    "query": "Galaxy Burn release schedule",
+    "environment": "neonplay",
+    "expected_sources": ["Content Roadmap.pdf"],
+    "expected_keywords": ["Galaxy Burn", "Sci-Fi", "release"],
+    "expected_topics": ["roadmap"]
+  },
+  {
+    "query": "APAC growth metrics",
+    "environment": "neonplay",
+    "expected_sources": ["campaign summary fy26.pdf"],
+    "expected_keywords": ["APAC", "growth", "ROI"],
+    "expected_topics": ["marketing results"]
+  },
+  {
+    "query": "startup ingestion inconsistency patterns",
+    "environment": "neonplay",
+    "expected_sources": ["Global Policy Guidelines.pdf"],
+    "expected_keywords": ["inconsistency", "data quality", "ingestion"],
+    "expected_topics": ["governance"]
+  }
+]

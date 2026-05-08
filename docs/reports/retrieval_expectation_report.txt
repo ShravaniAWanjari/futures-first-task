@@ -1,0 +1,117 @@
+=== RETRIEVAL EXPECTATION VALIDATION REPORT ===
+
+=== RETRIEVAL VERIFICATION: VISTASTREAM ===
+
+Query: APAC growth contribution
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Campaign Performance Summary.pdf
+Keyword Overlap: 3
+Snippet Preview: l advertising 
+campaigns. 
+ 
+ 
+Regional Campaign Analysis 
+APAC Performance 
+APAC accounted for the highest subscriber growth contribution during Q2. ...
+----------------------------------------
+Query: science-fiction engagement trends
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Audience Behaviour Report.pdf, Q3 Content Roadmap.pdf
+Keyword Overlap: 3
+Snippet Preview: Closing Summary 
+Q2 FY2026 demonstrated continued audience growth across mobile-first 
+international markets, with science-fiction content and localiz...
+----------------------------------------
+Query: Europe campaign underperformance
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Quarterly Executive Report (1).pdf, Q2 FY2026 Campaign Performance Summary.pdf
+Keyword Overlap: 3
+Snippet Preview: Europe Campaign Underperformance 
+Europe campaigns failed to meet projected conversion targets despite elevated 
+advertising spend. 
+ 
+Key Issues Iden...
+----------------------------------------
+Query: subtitle quality and localization
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Quarterly Executive Report (1).pdf, Q2 FY2026 Audience Behaviour Report.pdf, Q3 Content Roadmap.pdf
+Keyword Overlap: 3
+Snippet Preview: ce strategy team recommends stronger localization investment during 
+Q3. 
+ 
+LATAM 
+LATAM demonstrated consistent fantasy and drama engagement growth. ...
+----------------------------------------
+Query: ad-spend efficiency in North America
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Quarterly Executive Report (1).pdf, Q2 FY2026 Campaign Performance Summary.pdf
+Keyword Overlap: 2
+Snippet Preview: content promotions 
+ 
+Total global campaign spend reached $33.2M, with APAC producing the 
+strongest return on investment across all active markets. 
+...
+----------------------------------------
+=== RETRIEVAL VERIFICATION: NEONPLAY ===
+
+Query: retention decline in Q2
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Quarterly Executive Report (1).pdf, audience behaviour report q2 fy26.pdf
+Keyword Overlap: 2
+Snippet Preview: retention signals 
+Things linked to better retention: 
+ 
+●​ subtitles enabled 
+●​ watching multiple days/week 
+●​ recommendation interaction 
+●​ seria...
+----------------------------------------
+Query: subtitle complaints status
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Content Roadmap.pdf, audience behaviour report q2 fy26.pdf
+Keyword Overlap: 3
+Snippet Preview: zation teams got overloaded 
+during Q2 releases. 
+ 
+ 
+ 
+## localization Subtitle complaints dropped after the last update 
+but still not fully fixed. ...
+----------------------------------------
+Query: Galaxy Burn release schedule
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Quarterly Executive Report (1).pdf, Content Roadmap.pdf
+Keyword Overlap: 3
+Snippet Preview: ## roadmap section (duplicate from earlier export maybe) Planned 
+priorities: 
+ 
+●​ sci-fi expansion 
+●​ creator collabs 
+●​ subtitle improvements 
+●​...
+----------------------------------------
+Query: APAC growth metrics
+Status: [WARNING] Expected source missing, but significant keyword/topic overlap detected.
+Retrieved Sources: Q2 FY2026 Quarterly Executive Report (1).pdf
+Keyword Overlap: 2
+Snippet Preview: NeonPlay Media 
+quarterly exec report q2 fy26 
+Prepared by: ops + growth + analytics ​
+Internal only pls  
+Reporting window: Apr 2026 - Jun 2026 
+Over...
+----------------------------------------
+Query: startup ingestion inconsistency patterns
+Status: [FAIL] No expected semantic overlap detected.
+Retrieved Sources: campaign summary fy26.pdf, Content Roadmap.pdf, audience behaviour report q2 fy26.pdf
+Keyword Overlap: 0
+Snippet Preview: ence behavior notes Analytics keeps showing: 
+ 
+●​ mobile users binge more often 
+●​ subtitle users retain better 
+●​ late-night viewers watch longer ...
+----------------------------------------
+
+=== RETRIEVAL EXPECTATION SUMMARY ===
+VISTASTREAM: Total: 5 | PASS: 5 | WARNING: 0 | FAIL: 0
+NEONPLAY: Total: 5 | PASS: 3 | WARNING: 1 | FAIL: 1

@@ -15,6 +15,7 @@ from backend.orchestration.retrieval_tools import search_documents, query_struct
 from backend.logging_utils import get_file_logger
 from backend.schemas import QueryRequest, QueryResponse, QueryTrace, ClassificationTrace
 from backend.exceptions import UnsafeQueryError, RetrievalError
+from backend.config import Config
 
 def _mock_text_to_sql_llm(user_query: str, dataset_name: str) -> str:
     """Mock LLM capability representing a Text-to-SQL generation step."""
@@ -48,8 +49,12 @@ def orchestrate_query(request: QueryRequest, generated_sql: str = None) -> Query
     answer_context = []
     tool_executions = []
     sources = []
-    warnings = []
     errors = []
+    
+    # Demo mode logic: limited retrieval counts and stable outputs
+    retrieval_limit = 2 if Config.DEMO_MODE else 5
+    if Config.DEMO_MODE:
+        warnings.append("System is running in DEMO_MODE. Results are limited and deterministic.")
     
     # 2. Flow: Execute Tools (SQL)
     if "query_structured_data" in classification.recommended_tools:
@@ -68,7 +73,7 @@ def orchestrate_query(request: QueryRequest, generated_sql: str = None) -> Query
     if "search_documents" in classification.recommended_tools:
         logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Executing semantic PDF retrieval path...")
         try:
-            doc_results, doc_trace = search_documents(user_query, dataset, req_id, n_results=3)
+            doc_results, doc_trace = search_documents(user_query, dataset, req_id, n_results=retrieval_limit)
             tool_executions.append(doc_trace)
             answer_context.append(format_document_results(doc_results))
             for res in doc_results:

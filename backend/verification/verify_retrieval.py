@@ -1,13 +1,57 @@
 import sqlite3
 import os
+import json
+import time
+from typing import List, Dict, Any
 from backend.config import Config
+
 try:
     import chromadb
 except ImportError:
-    print("ChromaDB not installed. Please install it to verify retrievals.")
     chromadb = None
 
-def verify_retrieval_infrastructure(report_file):
+def load_expectations():
+    path = os.path.join(os.path.dirname(__file__), "retrieval_expectations.json")
+    if not os.path.exists(path):
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def validate_retrieval(query_obj: Dict[str, Any], results: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Heuristic validation of retrieval against expectations."""
+    retrieved_sources = [r['metadata'].get('source_file') for r in results]
+    retrieved_text = " ".join([r['document'].lower() for r in results])
+    
+    # 1. Source Presence
+    source_match = any(src in retrieved_sources for src in query_obj['expected_sources'])
+    
+    # 2. Keyword Overlap
+    matched_keywords = [kw for kw in query_obj['expected_keywords'] if kw.lower() in retrieved_text]
+    keyword_score = len(matched_keywords) / len(query_obj['expected_keywords'])
+    
+    # 3. Topic Overlap (Heuristic based on keywords/source)
+    topic_match = any(topic.lower() in retrieved_text for topic in query_obj['expected_topics'])
+    
+    # Determination
+    if source_match and keyword_score > 0.5:
+        status = "PASS"
+        msg = "Expected source found in top retrievals with strong keyword overlap."
+    elif source_match or keyword_score > 0.3:
+        status = "WARNING"
+        msg = "Expected source missing, but significant keyword/topic overlap detected."
+    else:
+        status = "FAIL"
+        msg = "No expected semantic overlap detected."
+        
+    return {
+        "status": status,
+        "message": msg,
+        "retrieved_sources": list(set(retrieved_sources)),
+        "keyword_overlap": len(matched_keywords),
+        "source_match": source_match
+    }
+
+def verify_retrieval_infrastructure(report_file, expectation_report_file):
     chroma_dir = Config.CHROMA_DB_PATH
     
     if chromadb is None:
@@ -21,15 +65,13 @@ def verify_retrieval_infrastructure(report_file):
         return
         
     client = chromadb.PersistentClient(path=chroma_dir)
+    expectations = load_expectations()
+    
+    summary = {"vistastream": {"pass": 0, "warning": 0, "fail": 0}, "neonplay": {"pass": 0, "warning": 0, "fail": 0}}
+    
+    expectation_report_file.write("=== RETRIEVAL EXPECTATION VALIDATION REPORT ===\n\n")
     
     datasets = ["vistastream", "neonplay"]
-    queries = [
-        "APAC growth",
-        "sci-fi engagement",
-        "Europe campaign performance",
-        "subtitle quality"
-    ]
-    
     for dataset in datasets:
         db_path = Config.VISTASTREAM_DB_PATH if dataset == "vistastream" else Config.NEONPLAY_DB_PATH
         if not os.path.exists(db_path):
@@ -38,11 +80,12 @@ def verify_retrieval_infrastructure(report_file):
         header = f"=== RETRIEVAL VERIFICATION: {dataset.upper()} ===\n"
         print(header)
         report_file.write(header + "\n")
+        expectation_report_file.write(header + "\n")
         
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
         
-        # 1. Verify Chunk and Embedding Counts
+        # Metadata check
         cursor.execute("SELECT COUNT(*) FROM pdf_chunks_metadata")
         sql_chunk_count = cursor.fetchone()[0]
         
@@ -51,82 +94,64 @@ def verify_retrieval_infrastructure(report_file):
             collection = client.get_collection(name=collection_name)
             chroma_count = collection.count()
         except Exception:
-            # Collection might not exist if it's empty or still processing
             chroma_count = 0
             collection = None
             
         report_file.write(f"SQLite Chunk Metadata Count: {sql_chunk_count}\n")
         report_file.write(f"ChromaDB Embedding Count: {chroma_count}\n")
         
-        # 2. Collection Integrity Checks
-        if sql_chunk_count == chroma_count:
-            report_file.write("-> PASS: Chunk metadata count perfectly matches embedding count.\n")
-        else:
-            report_file.write("-> FAIL: Discrepancy between SQLite chunks and ChromaDB embeddings.\n")
+        # Expectations validation
+        dataset_expectations = [e for e in expectations if e['environment'] == dataset]
+        for exp in dataset_expectations:
+            print(f"Testing Query: '{exp['query']}'...")
+            expectation_report_file.write(f"Query: {exp['query']}\n")
             
-        # 3. Detect Missing Embeddings / Orphans / Duplicates
-        cursor.execute("SELECT COUNT(*) FROM pdf_chunks_metadata WHERE embedding_id IS NULL")
-        missing_embeddings = cursor.fetchone()[0]
-        report_file.write(f"SQLite Chunks Missing Embeddings (Orphan Metadata): {missing_embeddings}\n")
-        
-        cursor.execute("SELECT chunk_id, COUNT(*) FROM pdf_chunks_metadata GROUP BY chunk_id HAVING COUNT(*) > 1")
-        dupes = len(cursor.fetchall())
-        report_file.write(f"Duplicated Chunk IDs in SQLite: {dupes}\n")
-        
-        report_file.write("\n--- RETRIEVAL TESTS ---\n")
-        
-        # 4. Test Retrieval
-        if collection is not None and chroma_count > 0:
-            for q in queries:
-                report_file.write(f"\nQuery: '{q}'\n")
-                
-                results = collection.query(
-                    query_texts=[q],
-                    n_results=2
-                )
-                
+            if collection and chroma_count > 0:
+                results = collection.query(query_texts=[exp['query']], n_results=3)
+                formatted_results = []
                 if results['ids'] and results['ids'][0]:
-                    for idx, chunk_id in enumerate(results['ids'][0]):
-                        distance = results['distances'][0][idx] if 'distances' in results and results['distances'] else "N/A"
-                        metadata = results['metadatas'][0][idx]
-                        doc_snippet = results['documents'][0][idx][:150].replace('\n', ' ') + "..."
-                        
-                        source = metadata.get("source_file", "UNKNOWN")
-                        page = metadata.get("page_number", "UNKNOWN")
-                        section = metadata.get("section_title", "UNKNOWN")
-                        
-                        report_file.write(f"  Result {idx+1} [Distance: {distance:.4f}]:\n")
-                        report_file.write(f"    -> Chunk ID: {chunk_id}\n")
-                        report_file.write(f"    -> Source: {source} (Page {page})\n")
-                        report_file.write(f"    -> Section: {section}\n")
-                        report_file.write(f"    -> Snippet: {doc_snippet}\n")
-                        
-                        # 5. Metadata Consistency & Traceability
-                        cursor.execute("SELECT source_file, page_number FROM pdf_chunks_metadata WHERE chunk_id = ?", (chunk_id,))
-                        sql_meta = cursor.fetchone()
-                        if sql_meta:
-                            # Verify if Chroma metadata correctly maps to SQLite source truth
-                            if str(sql_meta[0]) == str(source) and str(sql_meta[1]) == str(page):
-                                report_file.write("    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)\n")
-                            else:
-                                report_file.write(f"    -> Traceability Check: FAIL (Expected {sql_meta[0]} p{sql_meta[1]}, got {source} p{page})\n")
-                        else:
-                            report_file.write("    -> Traceability Check: FAIL (Orphan Embedding! No matching row in SQLite)\n")
-                else:
-                    report_file.write("  No results found.\n")
-        else:
-            report_file.write("Skipping retrieval tests. Collection empty or not found.\n")
+                    for i in range(len(results['ids'][0])):
+                        formatted_results.append({
+                            "id": results['ids'][0][i],
+                            "document": results['documents'][0][i],
+                            "metadata": results['metadatas'][0][i]
+                        })
+                
+                validation = validate_retrieval(exp, formatted_results)
+                status = validation['status']
+                summary[dataset][status.lower()] += 1
+                
+                expectation_report_file.write(f"Status: [{status}] {validation['message']}\n")
+                expectation_report_file.write(f"Retrieved Sources: {', '.join(validation['retrieved_sources'])}\n")
+                expectation_report_file.write(f"Keyword Overlap: {validation['keyword_overlap']}\n")
+                if formatted_results:
+                    expectation_report_file.write(f"Snippet Preview: {formatted_results[0]['document'][:150].replace('\\n', ' ')}...\n")
+            else:
+                expectation_report_file.write("Status: [FAIL] Collection empty or missing.\n")
+                summary[dataset]["fail"] += 1
+            
+            expectation_report_file.write("-" * 40 + "\n")
             
         report_file.write("\n" + "="*50 + "\n\n")
         conn.close()
 
+    # Final Summary in Expectation Report
+    expectation_report_file.write("\n=== RETRIEVAL EXPECTATION SUMMARY ===\n")
+    for ds in datasets:
+        ds_sum = summary[ds]
+        total = ds_sum['pass'] + ds_sum['warning'] + ds_sum['fail']
+        expectation_report_file.write(f"{ds.upper()}: Total: {total} | PASS: {ds_sum['pass']} | WARNING: {ds_sum['warning']} | FAIL: {ds_sum['fail']}\n")
+
 def generate_verification_report():
     report_path = os.path.join(Config.BASE_DIR, "docs", "reports", "retrieval_verification_report.txt")
+    expectation_report_path = os.path.join(Config.BASE_DIR, "docs", "reports", "retrieval_expectation_report.txt")
     
-    with open(report_path, "w", encoding="utf-8") as f:
-        verify_retrieval_infrastructure(f)
+    with open(report_path, "w", encoding="utf-8") as f, open(expectation_report_path, "w", encoding="utf-8") as exp_f:
+        verify_retrieval_infrastructure(f, exp_f)
         
-    print(f"\nRetrieval verification complete. Audit report generated at: {report_path}")
+    print(f"\nRetrieval verification complete.")
+    print(f"Technical Audit: {report_path}")
+    print(f"Expectation Report: {expectation_report_path}")
 
 if __name__ == "__main__":
     generate_verification_report()

@@ -2,67 +2,6 @@
 
 SQLite Chunk Metadata Count: 64
 ChromaDB Embedding Count: 64
--> PASS: Chunk metadata count perfectly matches embedding count.
-SQLite Chunks Missing Embeddings (Orphan Metadata): 0
-Duplicated Chunk IDs in SQLite: 0
-
---- RETRIEVAL TESTS ---
-
-Query: 'APAC growth'
-  Result 1 [Distance: 0.8396]:
-    -> Chunk ID: 639d9211ad5e28dc414ea7babe71f664
-    -> Source: Q2 FY2026 Campaign Performance Summary.pdf (Page 3)
-    -> Section: Customer Acquisition Efficiency
-    -> Snippet: l advertising  campaigns.      Regional Campaign Analysis  APAC Performance  APAC accounted for the highest subscriber growth contribution during Q2. ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 0.9789]:
-    -> Chunk ID: e6a21d2915ab7991a8b458044390e7df
-    -> Source: Q2 FY2026 Campaign Performance Summary.pdf (Page 1)
-    -> Section: Unknown Section
-    -> Snippet: content promotions    Total global campaign spend reached $33.2M, with APAC producing the  strongest return on investment across all active markets.  ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-
-Query: 'sci-fi engagement'
-  Result 1 [Distance: 1.1220]:
-    -> Chunk ID: 84a586791939e351625216a25f0edf13
-    -> Source: Q3 Content Roadmap.pdf (Page 1)
-    -> Section: Unknown Section
-    -> Snippet: .  Key Objectives  Subscriber Growth  Increase subscriber acquisition through flagship science-fiction releases and  regional marketing partnerships. ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.1661]:
-    -> Chunk ID: 3f24c2221abffbc4f6c6556e09722df3
-    -> Source: Q2 FY2026 Audience Behaviour Report.pdf (Page 9)
-    -> Section: Closing Summary
-    -> Snippet: Closing Summary  Q2 FY2026 demonstrated continued audience growth across mobile-first  international markets, with science-fiction content and localiz...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-
-Query: 'Europe campaign performance'
-  Result 1 [Distance: 0.8590]:
-    -> Chunk ID: 2b5cb5470dbd655bc26f6f99a442f3cc
-    -> Source: Q2 FY2026 Campaign Performance Summary.pdf (Page 4)
-    -> Section: Europe Campaign Underperformance
-    -> Snippet: Europe Campaign Underperformance  Europe campaigns failed to meet projected conversion targets despite elevated  advertising spend.    Key Issues Iden...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.1688]:
-    -> Chunk ID: aece385ae8cbcad97251c67dd604838a
-    -> Source: Q2 FY2026 Campaign Performance Summary.pdf (Page 2)
-    -> Section: Highest Performing Campaigns
-    -> Snippet: Highest Performing Campaigns  1. “Enter The Galactic Era” — APAC  Campaign Type: Influencer + Mobile Video Primary Content: Galactic Dawn:  Reborn Pla...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-
-Query: 'subtitle quality'
-  Result 1 [Distance: 1.2437]:
-    -> Chunk ID: efa0afc4d83a55282f27706a7ff3c7c6
-    -> Source: Q3 Content Roadmap.pdf (Page 3)
-    -> Section: Regional Expansion
-    -> Snippet: ized sci-fi continues outperforming standalone releases  ●​ completion rates are highest for episodes under 48 minutes  ●​ mobile users prefer weekly ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.2875]:
-    -> Chunk ID: 58fc5387ce258aeda291f9c13497d35e
-    -> Source: Q2 FY2026 Audience Behaviour Report.pdf (Page 5)
-    -> Section: North America
-    -> Snippet: ce strategy team recommends stronger localization investment during  Q3.    LATAM  LATAM demonstrated consistent fantasy and drama engagement growth. ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
 
 ==================================================
 
@@ -70,67 +9,6 @@ Query: 'subtitle quality'
 
 SQLite Chunk Metadata Count: 54
 ChromaDB Embedding Count: 54
--> PASS: Chunk metadata count perfectly matches embedding count.
-SQLite Chunks Missing Embeddings (Orphan Metadata): 0
-Duplicated Chunk IDs in SQLite: 0
-
---- RETRIEVAL TESTS ---
-
-Query: 'APAC growth'
-  Result 1 [Distance: 1.0322]:
-    -> Chunk ID: b0be759fa0a91cf5c417fa4d1a6ef462
-    -> Source: Q2 FY2026 Quarterly Executive Report (1).pdf (Page 8)
-    -> Section: Unknown Section
-    -> Snippet: final comments  Overall Q2 was way stronger than expected and the company is  growing faster than earlier forecasts predicted.    Biggest positives:  ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.0744]:
-    -> Chunk ID: 71f4a1cf4114b2cd4936e4495474f1b5
-    -> Source: Content Roadmap.pdf (Page 3)
-    -> Section: Unknown Section
-    -> Snippet: ●​ fan edits  ●​ reaction clips  ●​ theory discussions​ after episode drops.        ## APAC focus APAC still driving most growth.    Planned investmen...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-
-Query: 'sci-fi engagement'
-  Result 1 [Distance: 1.1214]:
-    -> Chunk ID: 92b2fcff71c3bcd53a6edf53c6f1d5ff
-    -> Source: Q2 FY2026 Quarterly Executive Report (1).pdf (Page 6)
-    -> Section: Unknown Section
-    -> Snippet: i fatigue risk if we oversaturate  ●​ weaker engagement outside serialized content  ●​ higher expectations after Galaxy Burn success    Need stronger ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.1630]:
-    -> Chunk ID: 8cc23c59d80d62f6ad663ebdbfb58fd6
-    -> Source: Content Roadmap.pdf (Page 2)
-    -> Section: Unknown Section
-    -> Snippet: ## planned releases    title  genre  target region  expected  release  Galaxy Burn:  Frontier  Sci-Fi  APAC  July  Neon Streets  Cyberpunk  Global  Au...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-
-Query: 'Europe campaign performance'
-  Result 1 [Distance: 1.0178]:
-    -> Chunk ID: 233be39b9fe516b22fac5334e4305d9c
-    -> Source: campaign summary fy26.pdf (Page 2)
-    -> Section: Unknown Section
-    -> Snippet: regional campaign results  Region  Spend  New Subs  ROI  APAC  $2.8M  1.1M  4.7x  North America  $1.9M  410K  2.9x  Europe  $1.7M  150K  1.4x  LATAM  ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.0389]:
-    -> Chunk ID: 48d06a588118a2aa1b05057ac234a6fe
-    -> Source: campaign summary fy26.pdf (Page 3)
-    -> Section: Metric
-    -> Snippet: Most engagement spikes happened after episode releases between 9PM  - 1AM.  Europe problems  Europe campaigns still struggling despite decent spend.  ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-
-Query: 'subtitle quality'
-  Result 1 [Distance: 0.9366]:
-    -> Chunk ID: d7755d8564896583261ea4e3e7b2daeb
-    -> Source: Content Roadmap.pdf (Page 4)
-    -> Section: Unknown Section
-    -> Snippet: ●​ more regional reviewers    One Indonesian creator specifically called out subtitle quality  during a livestream so product team escalated it.      ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
-  Result 2 [Distance: 1.0092]:
-    -> Chunk ID: 4b3c8d3add1636e263aab6261df47c47
-    -> Source: Content Roadmap.pdf (Page 3)
-    -> Section: Unknown Section
-    -> Snippet: zation teams got overloaded  during Q2 releases.        ## localization Subtitle complaints dropped after the last update  but still not fully fixed. ...
-    -> Traceability Check: PASS (SQLite metadata matches Chroma metadata)
 
 ==================================================
 

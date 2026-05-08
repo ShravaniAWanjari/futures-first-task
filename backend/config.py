@@ -16,6 +16,7 @@ class Config:
     APP_ENV = os.getenv("APP_ENV", "development")
     LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
     EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "all-MiniLM-L6-v2")
+    DEMO_MODE = os.getenv("DEMO_MODE", "false").lower() == "true"
     
     # Path Resolution (Safe defaults dynamically anchored to BASE_DIR)
     CHROMA_DB_PATH = os.path.join(BASE_DIR, os.getenv("CHROMA_DB_PATH", "chroma"))

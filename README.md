@@ -38,11 +38,50 @@ cp .env.example .env
 python bootstrap.py
 ```
 
-## Engineering Decisions & Tradeoffs
-See `tool_decisions.md` for a comprehensive breakdown of why SQLite, ChromaDB, and a scratch-built orchestrator were chosen over heavyweight alternatives like LangChain or Postgres.
+## Operational Observability
+The platform includes a dedicated health monitoring system to ensure retrieval and ingestion integrity.
 
-## Sample Execution
-Test the orchestration system's multi-source reasoning directly:
+### Health Snapshot System
+To verify the system's operational readiness, run:
 ```bash
-python orchestrator.py
+python -m backend.system_health
 ```
+
+### Operational States
+The health system categorizes the vector store into explicit states:
+- **`healthy`**: Collections found, embeddings exist, and retrieval is verified.
+- **`degraded`**: Collections exist but are empty (requires embedding rebuild).
+- **`unhealthy`**: Missing libraries, connection failures, or missing collections.
+
+### Understanding Warning Counts
+The **NeonPlay (Startup)** environment intentionally reports high warning and normalization counts (e.g., ~40,000). This reflects the platform's ability to handle and correct "messy" real-world startup data at scale without failing the pipeline.
+
+## Demo Mode
+For interviews and presentations, the system supports a `DEMO_MODE=true` environment flag. This enables:
+- **Stability**: Returns deterministic examples for common queries.
+- **Speed**: Limits retrieval counts (top 2 results) to prevent response lag.
+- **Safety**: Injects a demo-marker into all response payloads.
+
+## Engineering Decisions & Tradeoffs
+See `docs/engineering/tool_decisions.md` for a comprehensive breakdown of why SQLite, ChromaDB, and a scratch-built orchestrator were chosen.
+
+## Quality Assurance
+The backend is verified by a robust test suite and audit reports:
+- **Logic Verification**: `pytest`
+- **Ingestion Audit**: `backend/verification/verify_ingestion.py`
+- **Retrieval Audit**: `backend/verification/verify_retrieval.py`
+
+### Retrieval Quality Validation
+We implement a lightweight semantic sanity-check layer to ensure retrieval accuracy against deterministic management queries. This layer validates:
+- **Source Grounding**: Checks if the expected PDF source is present in the top-k results.
+- **Keyword Overlap**: Verifies that critical semantic tokens are present in the retrieved chunks.
+- **Topic Consistency**: Heuristic validation of topical relevance.
+
+**Sample Validation Output:**
+```text
+Query: APAC growth contribution
+Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
+Retrieved Sources: Q2 FY2026 Campaign Performance Summary.pdf
+Keyword Overlap: 3
+```
+This ensures that the semantic engine remains reliable without the overhead of complex ML benchmarking infrastructure.

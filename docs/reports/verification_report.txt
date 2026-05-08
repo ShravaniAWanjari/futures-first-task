@@ -5,20 +5,20 @@ viewers: 1500 rows
 watch_activity: 20000 rows
 reviews: 2500 rows
 marketing_campaigns: 60 rows
-regional_performance: 12 rows
+regional_performance: 16 rows
 
-Rejected Rows: 10
+Rejected Rows: 15
 Warnings: 0
 Normalizations: 0
 
 --- Most Common Warnings ---
 
 --- Most Common Errors ---
- - 2x: Transaction failed: UNIQUE constraint failed: watch_activity.activity_id
- - 2x: Transaction failed: UNIQUE constraint failed: viewers.viewer_id
- - 2x: Transaction failed: UNIQUE constraint failed: reviews.review_id
- - 2x: Transaction failed: UNIQUE constraint failed: movies.movie_id
- - 2x: Transaction failed: UNIQUE constraint failed: marketing_campaigns.campaign_id
+ - 3x: Transaction failed: UNIQUE constraint failed: watch_activity.activity_id
+ - 3x: Transaction failed: UNIQUE constraint failed: viewers.viewer_id
+ - 3x: Transaction failed: UNIQUE constraint failed: reviews.review_id
+ - 3x: Transaction failed: UNIQUE constraint failed: movies.movie_id
+ - 3x: Transaction failed: UNIQUE constraint failed: marketing_campaigns.campaign_id
 
 --- Normalization Frequency ---
 
@@ -50,32 +50,32 @@ viewers: 1199 rows
 watch_activity: 11597 rows
 reviews: 2005 rows
 marketing_campaigns: 59 rows
-regional_performance: 18 rows
+regional_performance: 24 rows
 
-Rejected Rows: 12616
-Warnings: 39732
-Normalizations: 39732
+Rejected Rows: 16823
+Warnings: 52976
+Normalizations: 52976
 
 --- Most Common Warnings ---
- - 5955x: Normalized device_type from 'android' to 'Mobile'
- - 5931x: Normalized device_type from 'iphone' to 'Mobile'
- - 5703x: Normalized device_type from 'smart tv' to 'Smart TV'
- - 5625x: Normalized device_type from 'iPhone' to 'Mobile'
- - 5556x: Normalized device_type from 'SmartTV' to 'Smart TV'
+ - 7940x: Normalized device_type from 'android' to 'Mobile'
+ - 7908x: Normalized device_type from 'iphone' to 'Mobile'
+ - 7604x: Normalized device_type from 'smart tv' to 'Smart TV'
+ - 7500x: Normalized device_type from 'iPhone' to 'Mobile'
+ - 7408x: Normalized device_type from 'SmartTV' to 'Smart TV'
 
 --- Most Common Errors ---
- - 795x: Missing critical field: movie_id
- - 528x: Missing critical field: region
- - 141x: Value 105.0 above maximum 100
- - 105x: Value 999.0 above maximum 100
- - 75x: Value -10.0 below minimum 0
+ - 1060x: Missing critical field: movie_id
+ - 704x: Missing critical field: region
+ - 188x: Value 105.0 above maximum 100
+ - 140x: Value 999.0 above maximum 100
+ - 100x: Value -10.0 below minimum 0
 
 --- Normalization Frequency ---
- - 5955x: Normalized device_type from 'android' to 'Mobile'
- - 5931x: Normalized device_type from 'iphone' to 'Mobile'
- - 5703x: Normalized device_type from 'smart tv' to 'Smart TV'
- - 5625x: Normalized device_type from 'iPhone' to 'Mobile'
- - 5556x: Normalized device_type from 'SmartTV' to 'Smart TV'
+ - 7940x: Normalized device_type from 'android' to 'Mobile'
+ - 7908x: Normalized device_type from 'iphone' to 'Mobile'
+ - 7604x: Normalized device_type from 'smart tv' to 'Smart TV'
+ - 7500x: Normalized device_type from 'iPhone' to 'Mobile'
+ - 7408x: Normalized device_type from 'SmartTV' to 'Smart TV'
 
 --- QA Validation Checks ---
 Unnormalized regions found (should be 0): 0
