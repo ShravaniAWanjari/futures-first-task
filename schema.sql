@@ -77,8 +77,9 @@ CREATE TABLE IF NOT EXISTS ingestion_logs (
 
 CREATE TABLE IF NOT EXISTS pdf_chunks_metadata (
     chunk_id TEXT PRIMARY KEY,
-    document_name TEXT,
+    source_file TEXT,
     page_number INTEGER,
-    text_content TEXT,
+    section_title TEXT,
+    snippet_text TEXT,
     embedding_id TEXT
 );

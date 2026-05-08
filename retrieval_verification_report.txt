@@ -1,0 +1,26 @@
+=== RETRIEVAL VERIFICATION: VISTASTREAM ===
+
+SQLite Chunk Metadata Count: 64
+ChromaDB Embedding Count: 0
+-> FAIL: Discrepancy between SQLite chunks and ChromaDB embeddings.
+SQLite Chunks Missing Embeddings (Orphan Metadata): 64
+Duplicated Chunk IDs in SQLite: 0
+
+--- RETRIEVAL TESTS ---
+Skipping retrieval tests. Collection empty or not found.
+
+==================================================
+
+=== RETRIEVAL VERIFICATION: NEONPLAY ===
+
+SQLite Chunk Metadata Count: 54
+ChromaDB Embedding Count: 0
+-> FAIL: Discrepancy between SQLite chunks and ChromaDB embeddings.
+SQLite Chunks Missing Embeddings (Orphan Metadata): 54
+Duplicated Chunk IDs in SQLite: 0
+
+--- RETRIEVAL TESTS ---
+Skipping retrieval tests. Collection empty or not found.
+
+==================================================
+
