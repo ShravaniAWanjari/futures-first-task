@@ -505,33 +505,95 @@ This became a major focus during orchestration stabilization.
 
 # UI Screenshots
 
+# UI Screenshots
+
 ## Landing Workspace
 
-[ Add Image Here ]
+![Landing Workspace](./readme-images/landing-workspace.png)
+
+Clean management-focused workspace with:
+- workspace isolation
+- suggested operational queries
+- persistent conversations
+- low-cognitive-load layout
 
 ---
 
-## Example Management Query
+## Management Query Example
 
-[ Add Image Here ]
+![Management Query](./readme-images/management-query-example.png)
+
+Example executive-style operational query showing:
+- management-focused synthesis
+- structured analytics
+- conversational workflow
+- operational summaries
 
 ---
 
 ## Supporting Sources Panel
 
-[ Add Image Here ]
+![Supporting Sources Panel](./readme-images/supporting-sources-panel.png)
+
+Traceability panel showing:
+- routing classification
+- retrieval reasoning
+- supporting evidence
+- structured vs semantic retrieval flow
+- operational source transparency
 
 ---
 
-## Operational Analytics Visualization
+## Operational Visualization
 
-[ Add Image Here ]
+![Operational Visualization](./readme-images/operational-visualization.png)
+
+Structured visual analytics generated from validated operational data:
+- KPI comparison cards
+- metric visualizations
+- executive-readable summaries
+- supporting operational evidence
 
 ---
 
-## Workspace Switching
+## Workspace Isolation
 
-[ Add Image Here ]
+![Workspace Isolation](./readme-images/workspace-isolation.png)
+
+Workspace-based operational separation between:
+- VistaStream Global (enterprise-grade clean data)
+- NeonPlay Media (messy startup environment)
+
+Each workspace maintains isolated:
+- databases
+- retrieval collections
+- orchestration context
+- conversation history
+
+---
+
+## Conversational Analytics
+
+![Conversational Analytics](./readme-images/conversational-analytics.png)
+
+Multi-turn management conversations with:
+- conversational continuity
+- follow-up explanations
+- contextual reasoning
+- operational evidence grounding
+
+---
+
+## Ingestion & Operational Monitoring
+
+![Operational Monitoring](./readme-images/operational-monitoring1.png)
+![Operational Monitoring](./readme-images/operational-monitoring2.png)
+
+Operational monitoring and ingestion-quality analysis including:
+- warning detection
+- duplicate tracking
+- validation failures
+- operational anomaly summaries
 
 ---
 
