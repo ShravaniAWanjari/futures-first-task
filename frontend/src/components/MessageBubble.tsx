@@ -7,6 +7,13 @@ interface MessageBubbleProps {
   onOpenSources?: (trace?: any, context?: string) => void;
 }
 
+/**
+ * Converts markdown bold markers to HTML strong tags
+ */
+function boldToHtml(s: string): string {
+  return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+}
+
 export default function MessageBubble({ message, onOpenSources }: MessageBubbleProps) {
   const isUser = message.role === 'user';
 
@@ -105,7 +112,7 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
       )}
 
       {/* Narrative segments */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
         {segments.map((seg, i) => (
           <SegmentRenderer key={i} segment={seg} isFirst={i === 0 && !structured} />
         ))}
@@ -160,18 +167,43 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
       return <DataTable columns={columns} rows={rows} />;
 
     case 'heading':
-      const Tag = segment.level === 2 ? 'h3' : 'h4';
       return (
-        <Tag style={{
-          fontSize: segment.level === 2 ? 15 : 13.5,
-          fontWeight: 600,
+        <div style={{
+          fontSize: segment.level === 2 ? 16 : 14,
+          fontWeight: 700,
           color: 'var(--color-text)',
           margin: 0,
-          marginTop: isFirst ? 0 : 8,
+          marginTop: isFirst ? 0 : 24,
+          marginBottom: 8,
           letterSpacing: '-0.01em',
+          textTransform: segment.level === 2 ? 'uppercase' as const : 'none' as const,
+          ...(segment.level === 2 ? { 
+            fontSize: 12, 
+            letterSpacing: '0.08em', 
+            opacity: 0.6,
+            borderBottom: '1px solid var(--color-border-subtle)',
+            paddingBottom: 8,
+          } : {}),
         }}>
           {segment.content}
-        </Tag>
+        </div>
+      );
+
+    case 'callout':
+      return (
+        <div style={{
+          margin: '16px 0',
+          padding: '16px 20px',
+          background: 'rgba(255, 255, 255, 0.02)',
+          borderLeft: '3px solid var(--color-text)',
+          borderRadius: '0 12px 12px 0',
+          fontSize: 13.5,
+          lineHeight: 1.7,
+          color: 'var(--color-text)',
+          fontWeight: 500,
+        }}
+        dangerouslySetInnerHTML={{ __html: boldToHtml(segment.content) }}
+        />
       );
 
     case 'bullet-list':
@@ -192,7 +224,7 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
                 color: 'var(--color-text-secondary)',
               }}
               dangerouslySetInnerHTML={{
-                __html: item.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
+                __html: boldToHtml(item),
               }}
             />
           ))}
@@ -204,7 +236,7 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
         <hr style={{
           border: 'none',
           borderTop: '1px solid var(--color-border-subtle)',
-          margin: '12px 0',
+          margin: '16px 0',
         }} />
       );
 
@@ -212,16 +244,13 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
       return (
         <div
           style={{
-            fontSize: isFirst ? 16 : 14.5,
-            lineHeight: 1.6,
+            fontSize: 14,
+            lineHeight: 1.7,
             color: 'var(--color-text)',
-            fontWeight: 700,
-            marginTop: isFirst ? 0 : 20,
             marginBottom: 8,
-            letterSpacing: '-0.01em'
           }}
           dangerouslySetInnerHTML={{
-            __html: segment.content.replace(/\*\*(.*?)\*\*/g, '$1'),
+            __html: boldToHtml(segment.content),
           }}
         />
       );
@@ -235,10 +264,10 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
             lineHeight: 1.75,
             color: isFirst ? 'var(--color-text)' : 'var(--color-text-secondary)',
             margin: 0,
-            marginBottom: 12
+            marginBottom: 8,
           }}
           dangerouslySetInnerHTML={{
-            __html: segment.content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
+            __html: boldToHtml(segment.content),
           }}
         />
       );
