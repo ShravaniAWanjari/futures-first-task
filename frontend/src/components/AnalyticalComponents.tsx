@@ -17,48 +17,76 @@ export const DataTable: React.FC<TableProps> = ({ columns, rows }) => {
     <div 
       id="analytical-table-container"
       style={{ 
-        margin: '24px 0', 
+        margin: '32px 0', 
         overflowX: 'auto', 
-        borderRadius: '12px', 
-        border: '1px solid var(--color-border)',
-        background: 'var(--color-surface)',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.05)'
+        borderRadius: '24px', 
+        border: '1px solid rgba(255, 255, 255, 0.05)',
+        background: 'linear-gradient(145deg, var(--color-surface), var(--color-bg))',
+        boxShadow: '20px 20px 60px rgba(0,0,0,0.08), -20px -20px 60px rgba(255,255,255,0.02)',
+        padding: '1px'
       }}
     >
-      <table style={{ 
-        width: '100%', 
-        borderCollapse: 'collapse', 
-        fontSize: '13px', 
-        textAlign: 'left' 
+      <div style={{
+        borderRadius: '23px',
+        overflow: 'hidden',
+        background: 'rgba(255, 255, 255, 0.01)',
+        backdropFilter: 'blur(10px)'
       }}>
-        <thead style={{ background: 'var(--color-surface-raised)' }}>
-          <tr>
-            {columns.map((col, i) => (
-              <th key={i} style={{ 
-                padding: '14px 20px', 
-                fontWeight: 700, 
-                color: 'var(--color-text)', 
-                borderBottom: '2px solid var(--color-border)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.03em'
-              }}>
-                {col.replace(/_/g, ' ')}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, ri) => (
-            <tr key={ri} style={{ borderBottom: '1px solid var(--color-border-subtle)', transition: 'background 0.1s' }} onMouseEnter={e => e.currentTarget.style.background = 'var(--color-bg)'} onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
-              {columns.map((col, ci) => (
-                <td key={ci} style={{ padding: '12px 20px', color: 'var(--color-text-secondary)', fontWeight: 500 }}>
-                  {typeof row[col] === 'number' ? row[col].toLocaleString() : row[col]}
-                </td>
+        <table style={{ 
+          width: '100%', 
+          borderCollapse: 'separate', 
+          borderSpacing: '0',
+          fontSize: '13px', 
+          textAlign: 'left' 
+        }}>
+          <thead>
+            <tr style={{ background: 'rgba(255, 255, 255, 0.03)' }}>
+              {columns.map((col, i) => (
+                <th key={i} style={{ 
+                  padding: '18px 24px', 
+                  fontWeight: 700, 
+                  color: 'var(--color-text)', 
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  fontSize: '11px',
+                  opacity: 0.7
+                }}>
+                  {col.replace(/_/g, ' ')}
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {rows.map((row, ri) => (
+              <tr key={ri} style={{ 
+                borderBottom: '1px solid rgba(255, 255, 255, 0.03)', 
+                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)' 
+              }} onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)';
+                e.currentTarget.style.transform = 'scale(1.002)';
+              }} onMouseLeave={e => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.transform = 'scale(1)';
+              }}>
+                {columns.map((col, ci) => (
+                  <td key={ci} style={{ 
+                    padding: '16px 24px', 
+                    color: 'var(--color-text-secondary)', 
+                    fontWeight: 500,
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.02)'
+                  }}
+                  dangerouslySetInnerHTML={{
+                    __html: (typeof row[col] === 'number' ? row[col].toLocaleString() : String(row[col]))
+                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                  }}
+                  />
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

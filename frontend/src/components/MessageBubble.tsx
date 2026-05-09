@@ -212,12 +212,16 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
       return (
         <div
           style={{
-            fontSize: isFirst ? 14 : 13.5,
-            lineHeight: 1.75,
+            fontSize: isFirst ? 16 : 14.5,
+            lineHeight: 1.6,
             color: 'var(--color-text)',
+            fontWeight: 700,
+            marginTop: isFirst ? 0 : 20,
+            marginBottom: 8,
+            letterSpacing: '-0.01em'
           }}
           dangerouslySetInnerHTML={{
-            __html: segment.content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
+            __html: segment.content.replace(/\*\*(.*?)\*\*/g, '$1'),
           }}
         />
       );
@@ -225,14 +229,18 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
     case 'paragraph':
     default:
       return (
-        <p style={{
-          fontSize: isFirst ? 14 : 13.5,
-          lineHeight: 1.75,
-          color: isFirst ? 'var(--color-text)' : 'var(--color-text-secondary)',
-          margin: 0,
-        }}>
-          {segment.content}
-        </p>
+        <p 
+          style={{
+            fontSize: isFirst ? 14 : 13.5,
+            lineHeight: 1.75,
+            color: isFirst ? 'var(--color-text)' : 'var(--color-text-secondary)',
+            margin: 0,
+            marginBottom: 12
+          }}
+          dangerouslySetInnerHTML={{
+            __html: segment.content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
+          }}
+        />
       );
   }
 }

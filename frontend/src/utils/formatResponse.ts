@@ -67,30 +67,59 @@ export function formatResponse(raw: string): FormattedSegment[] {
       continue;
     }
 
-    // --- Markdown Table ---
-    if (block.includes('|') && block.includes('---')) {
-      const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
-      // Find the header row (usually the first line with pipes)
-      const headerIdx = lines.findIndex(l => l.startsWith('|') && l.endsWith('|'));
-      const sepIdx = lines.findIndex(l => l.includes('|') && l.includes('---'));
+    // --- Markdown Table (Multi-table support) ---
+    if (block.includes('|')) {
+      const lines = block.split('\n');
+      let currentIdx = 0;
       
-      if (headerIdx !== -1 && sepIdx !== -1) {
-        const columns = lines[headerIdx].split('|').map(c => c.trim()).filter(Boolean);
-        const rows = lines.slice(sepIdx + 1).map(line => {
+      while (currentIdx < lines.length) {
+        const tableStartIdx = lines.findIndex((l, i) => i >= currentIdx && (l.match(/\|/g) || []).length >= 2);
+        
+        if (tableStartIdx === -1) {
+          // No more tables, add remaining lines as paragraph
+          const remainingLines = lines.slice(currentIdx).filter(l => l.trim());
+          if (remainingLines.length > 0) {
+            segments.push({ type: 'paragraph', content: remainingLines.join('\n') });
+          }
+          break;
+        }
+
+        // Add text before this table
+        const introLines = lines.slice(currentIdx, tableStartIdx).filter(l => l.trim());
+        if (introLines.length > 0) {
+          segments.push({ type: 'paragraph', content: introLines.join('\n') });
+        }
+
+        // Find table end
+        let tableEndIdx = tableStartIdx;
+        while (tableEndIdx < lines.length && (lines[tableEndIdx].match(/\|/g) || []).length >= 2) {
+          tableEndIdx++;
+        }
+
+        const tableLines = lines.slice(tableStartIdx, tableEndIdx);
+        const headerLine = tableLines[0];
+        const columns = headerLine.split('|').map(c => c.trim()).filter(Boolean);
+        const dataRows = tableLines.slice(1).filter(l => !l.includes('---'));
+        
+        const rows = dataRows.map(line => {
           const cells = line.split('|').map(c => c.trim()).filter(Boolean);
           const rowObj: any = {};
           columns.forEach((col, i) => {
-            rowObj[col] = cells[i] || '';
+            rowObj[col] = cells[i] || 'N/A';
           });
           return rowObj;
         });
 
-        segments.push({ 
-          type: 'table', 
-          content: JSON.stringify({ columns, rows }) 
-        });
-        continue;
+        if (columns.length > 0 && rows.length > 0) {
+          segments.push({ 
+            type: 'table', 
+            content: JSON.stringify({ columns, rows }) 
+          });
+        }
+
+        currentIdx = tableEndIdx;
       }
+      continue;
     }
 
     // --- Bold paragraph (contains **) ---
