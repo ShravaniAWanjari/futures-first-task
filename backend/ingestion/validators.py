@@ -72,7 +72,8 @@ def validate_numeric_range(value, min_val=None, max_val=None, allow_empty=False)
         if min_val is not None and num < min_val:
             return make_result(False, "ERROR", f"Value {num} below minimum {min_val}", "reject")
         if max_val is not None and num > max_val:
-            return make_result(False, "ERROR", f"Value {num} above maximum {max_val}", "reject")
+            # Phase 11: Stricter enforcement for startup spend outliers
+            return make_result(False, "ERROR", f"Value {num} above maximum threshold {max_val}", "reject")
         return make_result(True, "INFO", "Valid numeric range", "accept")
     except ValueError:
         return make_result(False, "ERROR", f"Impossible numeric value: {value}", "reject")
@@ -168,13 +169,20 @@ def validate_review(row, seen_pks, valid_viewers=None, valid_movies=None, datase
     return make_result(True, "INFO", "Review row valid", "accept")
 
 def validate_campaign(row, seen_pks, dataset_type="startup"):
-    req_res = validate_required_fields(row, ["campaign_id", "campaign_name"])
+    # Phase 11: Region is now a mandatory analytical dimension
+    required = ["campaign_id", "campaign_name", "region"]
+    if dataset_type == "enterprise":
+        required.append("quarter")
+        
+    req_res = validate_required_fields(row, required)
     if not req_res["valid"]: return req_res
     
     pk_res = check_duplicate_pk(row["campaign_id"], seen_pks)
     if not pk_res["valid"]: return pk_res
     
-    spend_res = validate_numeric_range(row.get("spend_usd"), min_val=0, allow_empty=(dataset_type=="startup"))
+    # Cap startup spend at 10M to catch anomalies like CAM030
+    max_spend = 10_000_000 if dataset_type == "startup" else 1_000_000_000
+    spend_res = validate_numeric_range(row.get("spend_usd"), min_val=0, max_val=max_spend, allow_empty=(dataset_type=="startup"))
     if not spend_res["valid"]: return spend_res
     
     seen_pks.add(row["campaign_id"])

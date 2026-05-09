@@ -48,10 +48,28 @@ def plan_and_generate_sql(intent: Optional[Dict[str, Any]], routing_plan: Option
 
     # 3. Construct Filters
     filters = []
-    if entities and "region" in valid_columns:
-        # Simple exact match for mock
-        entity_list = "', '".join(entities)
-        filters.append(f"region IN ('{entity_list}')")
+    if entities:
+        regions = [e for e in entities if e in ["APAC", "LATAM", "EMEA", "North America", "Europe"]]
+        platforms = [e for e in entities if e in ["YouTube Shorts", "TikTok", "Instagram Reels", "Connected TV", "Google Ads"]]
+        
+        if regions and "region" in valid_columns:
+            # Normalize classifier region aliases to database region values.
+            region_aliases = {
+                "EMEA": ["Europe"],
+                "APAC": ["APAC"],
+                "LATAM": ["LATAM"],
+                "North America": ["North America"],
+                "Europe": ["Europe"],
+            }
+            normalized_regions = []
+            for region in regions:
+                normalized_regions.extend(region_aliases.get(region, [region]))
+            normalized_regions = list(dict.fromkeys(normalized_regions))
+            entity_list = "', '".join(normalized_regions)
+            filters.append(f"region IN ('{entity_list}')")
+        if platforms and "platform" in valid_columns:
+            entity_list = "', '".join(platforms)
+            filters.append(f"platform IN ('{entity_list}')")
 
     where_clause = f" WHERE {' AND '.join(filters)}" if filters else ""
 
@@ -142,7 +160,10 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
         for msg in reversed(history):
             if msg.get('role') == 'assistant' and msg.get('trace'):
                 try:
-                    prev_trace = json.loads(msg['trace'])
+                    raw_trace = msg.get('trace')
+                    prev_trace = json.loads(raw_trace) if isinstance(raw_trace, str) else raw_trace
+                    if not isinstance(prev_trace, dict):
+                        continue
                     prev_type = prev_trace['classification']['query_type']
                     if prev_type in ['sql', 'pdf']:
                         classification_dict['query_type'] = prev_type
@@ -158,7 +179,8 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
                         memory_inheritance = True
                         inheritance_reason = f"Explicit follow-up detected. Inheriting {prev_type} context."
                         break
-                except: continue
+                except Exception:
+                    continue
     
     memory_trace = {
         "memory_inheritance": memory_inheritance,
@@ -256,10 +278,20 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
         if context_memory and (conv_action or follow_up_detected):
             final_context = context_memory
             logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Falling back to context memory (action={conv_action}).")
-        elif classification.confidence < 0.7:
-            final_context = "I wasn't able to find strongly relevant data for that query. Could you try rephrasing with specific topics, metrics, or regions? For example: 'What are the Q3 priorities?' or 'Show marketing ROI by region.'"
-        else:
-            final_context = "No specific operational records matching this query were found in the current workspace."
+        elif classification.confidence < 0.7 and not any(tool.success for tool in tool_executions if tool.tool == 'search_documents'):
+            final_context = "I couldn't find definitive operational evidence matching all parts of your query (topics: " + ", ".join(detected_domains or ["general"]) + "). \n\nTry rephrasing with specific metrics (ROI, Spend, Growth) or time periods (Q1, Q2 FY2026). For example: 'What were the Q2 regional highlights?'"
+        elif not final_context.strip() or "No strongly relevant" in final_context:
+            final_context = "No specific records matching your query were found in the current " + dataset.title() + " workspace. I've scanned both document reports and structured databases, but the specific combination of entities you requested is not available."
+    elif (
+        follow_up_detected
+        and conv_action in ["refinement_request", "continuation_request", "clarification_request"]
+        and context_memory
+        and "No strongly relevant document evidence was found." in final_context
+    ):
+        # For conversational follow-ups like "explain in more detail", prefer
+        # elaborating from the last grounded assistant answer over empty retrieval.
+        final_context = context_memory
+        logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Using context memory due to empty follow-up retrieval.")
         
     total_time = round((time.time() - start_time) * 1000, 2)
     
@@ -275,11 +307,11 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
     routing_debug = {
         "query": user_query,
         "intent": classification_dict.get('intent'),
-        "entities": classification_dict.get('intent', {}).get('entities', []),
-        "candidate_tables": classification_dict.get('routing_plan', {}).get('candidate_tables', {}),
-        "selected_tables": classification_dict.get('routing_plan', {}).get('target_tables', []),
-        "candidate_collections": classification_dict.get('routing_plan', {}).get('candidate_collections', {}),
-        "selected_collections": classification_dict.get('routing_plan', {}).get('target_collections', []),
+        "entities": (classification_dict.get('intent') or {}).get('entities', []),
+        "candidate_tables": (classification_dict.get('routing_plan') or {}).get('candidate_tables', {}),
+        "selected_tables": (classification_dict.get('routing_plan') or {}).get('target_tables', []),
+        "candidate_collections": (classification_dict.get('routing_plan') or {}).get('candidate_collections', {}),
+        "selected_collections": (classification_dict.get('routing_plan') or {}).get('target_collections', []),
         "route": classification.query_type,
         "confidence": classification.confidence
     }

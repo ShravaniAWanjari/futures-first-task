@@ -16,7 +16,7 @@ from backend.ingestion import normalizers
 from backend.ingestion import validators
 
 def handle_nan(val):
-    if pd.isna(val):
+    if pd.isna(val) or val == "":
         return None
     return val
 
@@ -28,7 +28,8 @@ def normalize_text_only(value, dataset_type="startup"):
 
 def load_csv_safe(csv_path, dataset_type):
     try:
-        return pd.read_csv(csv_path)
+        # Phase 11: Explicitly disable NA filtering to prevent 'NA' (North America) from being treated as null
+        return pd.read_csv(csv_path, keep_default_na=False, na_filter=False)
     except Exception as e:
         if dataset_type == "enterprise":
             raise RuntimeError(f"Failed to load CSV {csv_path}: {e}")

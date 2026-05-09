@@ -74,12 +74,25 @@ def classify_query(query: str, history: List[Dict[str, Any]] = None) -> Dict[str
     conv_action = _classify_conversational_action(query_lower)
     
     # 1. Detect Follow-up context
-    is_follow_up = _is_follow_up(query_lower) or conv_action in ["continuation_request", "formatting_request", "refinement_request"]
+    is_follow_up = _is_follow_up(query_lower) or conv_action in [
+        "continuation_request",
+        "formatting_request",
+        "refinement_request",
+        "clarification_request",
+    ]
     resolved_query = query
     context_reasoning = ""
 
     if is_follow_up and history:
-        last_user_query = next((m['content'] for m in reversed(history) if m['role'] == 'user'), "")
+        # Resolve against the previous user turn (not the current incoming query).
+        last_user_query = next(
+            (
+                m['content']
+                for m in reversed(history)
+                if m.get('role') == 'user' and str(m.get('content', '')).strip().lower() != query.strip().lower()
+            ),
+            ""
+        )
         if last_user_query:
             resolved_query = f"{last_user_query} (Follow-up: {query})"
             context_reasoning = f"Conversational follow-up resolved against: '{last_user_query}'."
@@ -341,28 +354,42 @@ def _extract_intent(query: str, query_type: str, detected_domains: List[str]) ->
     # Extract Entities (Mock basic NER with Normalization)
     entities = []
     
-    # APAC
-    if any(kw in query for kw in ["apac", "asia pacific", "asia-pacific"]):
-        entities.append("APAC")
-    
-    # LATAM
-    if any(kw in query for kw in ["latam", "latin america"]):
-        entities.append("LATAM")
+    # Regions
+    if any(kw in query for kw in ["apac", "asia pacific", "asia-pacific"]): entities.append("APAC")
+    if any(kw in query for kw in ["latam", "latin america"]): entities.append("LATAM")
+    if any(kw in query for kw in ["europe", "emea", "middle east", "africa"]): entities.append("EMEA")
+    if "north america" in query or re.search(r"\bna\b", query): entities.append("North America")
         
-    # EMEA / Europe
-    if any(kw in query for kw in ["europe", "emea", "middle east", "africa"]):
-        # Map to EMEA as requested
-        entities.append("EMEA")
-        
-    # NA / North America
-    if "north america" in query or re.search(r"\bna\b", query):
-        entities.append("North America")
-        
+    # Platforms
+    platforms = {
+        "youtube": "YouTube Shorts", "youtube shorts": "YouTube Shorts",
+        "tiktok": "TikTok", "tik tok": "TikTok",
+        "instagram": "Instagram Reels", "reels": "Instagram Reels",
+        "tv": "Connected TV", "connected tv": "Connected TV",
+        "google": "Google Ads", "google ads": "Google Ads"
+    }
+    for kw, entity in platforms.items():
+        if kw in query:
+            entities.append(entity)
+            
     # Operational Topics (Fuzzy extraction for SQL LIKE filters)
     topics = ["watch activity", "marketing", "validation", "ingestion", "subtitle", "localization"]
     for topic in topics:
         if topic in query:
             entities.append(topic)
+
+    # Time Periods (Quarters, Fiscal Years)
+    quarters = {
+        "q1": "Q1", "quarter 1": "Q1",
+        "q2": "Q2", "quarter 2": "Q2",
+        "q3": "Q3", "quarter 3": "Q3",
+        "q4": "Q4", "quarter 4": "Q4",
+        "fy2026": "FY2026", "2026": "FY2026",
+        "fy2025": "FY2025", "2025": "FY2025"
+    }
+    for kw, entity in quarters.items():
+        if kw in query:
+            entities.append(entity)
     
     if entities:
         # De-duplicate

@@ -1,87 +1,751 @@
-# Dual-Environment Streaming Analytics Platform
+# Iris.
 
-## Project Overview
-This project establishes a comprehensive, secure, and fully observable ingestion and orchestration backend for a dual-environment streaming platform (VistaStream Global & NeonPlay Media). It dynamically parses operational data (CSVs) alongside unstructured policies (PDFs), bridging them securely for Retrieval-Augmented Generation (RAG) and Agentic Orchestration.
+Operational Intelligence Platform for Management Analytics
 
-The architecture strictly delineates between **Enterprise** datasets (clean, strictly validated) and **Startup** datasets (messy, requiring automated normalization), offering a unified tooling layer that enforces LLM safety.
+---
 
-## Architecture Philosophy
-- **Dual-Environment Validation**: Normalization scripts proactively correct noisy "startup" data, while Enterprise data fails-loudly on violations.
-- **Absolute Security Boundaries**: The orchestration layer enforces `query_only = ON` in SQLite, actively preventing LLMs from initiating destructive mutations. The raw DB is entirely firewalled from external models.
-- **Absolute Traceability**: Every SQL execution and semantic PDF chunk generates a deterministic hash ID mapping strictly back to the source document and page number.
+## Overview
 
-## Core Component Flow
-1. **Ingestion Engine (`ingest.py`)**: Filters incoming CSV rows through `validators.py` and `normalizers.py`, securely appending logs to the `ingestion_logs` table.
-2. **Text Extraction (`pdf_chunker.py`)**: Uses PyMuPDF to extract layout-aware text, executing deterministic chunk overlaps and injecting the metadata back into the SQL database.
-3. **Semantic Layer (`embedding_pipeline.py`)**: Ingests chunks into dedicated, environmentally isolated ChromaDB collections.
-4. **Tool Access (`retrieval_tools.py`)**: Standardizes interfaces (`search_documents` and `query_structured_data`) that return strictly formatted strings, preventing context-window blowouts.
-5. **Orchestrator (`orchestrator.py`)**: Resolves incoming queries via an NLP classifier, delegates to the appropriate retrieval tool, and constructs a completely sanitized response.
+Iris is a management-focused operational intelligence platform built to combine structured analytics, document intelligence, and conversational querying inside a single workspace.
 
-## Setup Instructions
-To replicate the pristine state of this pipeline locally:
+The system connects:
+
+* Structured operational data (SQLite)
+* Internal reports and PDFs (ChromaDB semantic retrieval)
+* Deterministic orchestration
+* Executive-focused response synthesis
+* Explainable source tracing
+
+The goal was to build a system that feels reliable and understandable for management users instead of feeling like a generic AI chatbot.
+
+The project was intentionally designed around:
+
+* deterministic routing
+* explainable answers
+* operational traceability
+* structured retrieval
+* readable management responses
+* lightweight infrastructure
+
+---
+
+# Product Philosophy
+
+Most AI assistants either:
+
+* hallucinate confidently
+* expose raw retrieval chunks
+* behave inconsistently between queries
+* or hide reasoning completely.
+
+Iris was built with a different approach.
+
+Instead of letting an LLM control the entire pipeline, the system uses deterministic orchestration first and generative synthesis last.
+
+The LLM is used only after:
+
+* routing
+* retrieval
+* validation
+* filtering
+* context selection
+
+This keeps responses grounded in actual operational evidence.
+
+---
+
+# Core Features
+
+## Operational Analytics
+
+Structured analytics over:
+
+* regional performance
+* marketing ROI
+* watch activity
+* ingestion quality
+* validation warnings
+* operational anomalies
+* campaign performance
+
+The platform supports:
+
+* tables
+* visual summaries
+* KPI comparisons
+* management-focused synthesis
+
+---
+
+## Semantic Document Intelligence
+
+PDF reports are indexed into vector embeddings and retrieved semantically.
+
+Supported document categories:
+
+* executive reports
+* strategy roadmaps
+* audience behaviour reports
+* operational reports
+* governance policies
+* engineering planning documents
+
+The system retrieves only relevant excerpts instead of exposing entire documents.
+
+---
+
+## Deterministic Orchestration
+
+Queries are classified before retrieval.
+
+The system routes requests into:
+
+* SQL analytics
+* operational log analysis
+* semantic document retrieval
+* conversational handling
+
+This avoids generic "search everything" behavior.
+
+The orchestration layer was built manually instead of using large orchestration frameworks so routing behavior remains predictable and explainable.
+
+---
+
+## Supporting Sources
+
+Every answer includes supporting sources.
+
+Users can inspect:
+
+* source documents
+* retrieved excerpts
+* confidence indicators
+* related operational evidence
+
+The goal was to make responses feel auditable instead of opaque.
+
+---
+
+## Workspace-Based Isolation
+
+Each workspace has isolated:
+
+* SQLite databases
+* vector collections
+* retrieval pipelines
+* operational context
+
+Current included workspaces:
+
+* VistaStream Global (clean enterprise environment)
+* NeonPlay Media (messy startup environment)
+
+This demonstrates both:
+
+* analytical quality
+* operational resilience
+
+---
+
+## Conversational Continuity
+
+The assistant supports:
+
+* follow-up explanations
+* clarification questions
+* contextual continuation
+* conversational restructuring
+
+Examples:
+
+* “Explain further”
+* “What do you mean by that?”
+* “Can you summarize this better?”
+
+Conversation continuity is intentionally constrained to avoid stale-context contamination.
+
+---
+
+# Architecture
+
+## High-Level Flow
+
+```text
+User Query
+↓
+Frontend Workspace UI
+↓
+FastAPI API Layer
+↓
+Intent Classification
+↓
+Route Planning
+↓
+┌─────────────────────────────┐
+│ Structured SQL Analytics   │
+│ Semantic PDF Retrieval     │
+│ Operational Log Analysis   │
+│ Conversational Handling    │
+└─────────────────────────────┘
+↓
+Retrieval Validation
+↓
+Response Synthesis
+↓
+Table / Chart Formatting
+↓
+Supporting Sources
+↓
+Management Response
+```
+
+---
+
+## System Architecture
+
+```text
+                        ┌─────────────────────┐
+                        │      Frontend       │
+                        │ React + TypeScript  │
+                        └──────────┬──────────┘
+                                   │
+                                   ▼
+                        ┌─────────────────────┐
+                        │    FastAPI Layer    │
+                        │  Session Handling   │
+                        │   API Contracts     │
+                        └──────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌───────────────────────────┐
+                    │   Orchestration Engine    │
+                    │ Intent + Route Planning   │
+                    └───────┬─────────┬────────┘
+                            │         │
+             ┌──────────────┘         └──────────────┐
+             ▼                                       ▼
+ ┌────────────────────┐                 ┌────────────────────┐
+ │ Structured Queries │                 │ Semantic Retrieval │
+ │ SQLite Analytics   │                 │ ChromaDB + PDFs    │
+ └─────────┬──────────┘                 └─────────┬──────────┘
+           │                                      │
+           └──────────────┬───────────────────────┘
+                          ▼
+              ┌──────────────────────┐
+              │ Retrieval Validation │
+              │ Evidence Selection   │
+              └──────────┬───────────┘
+                         ▼
+              ┌──────────────────────┐
+              │ Gemini Synthesis     │
+              │ Structured Responses │
+              └──────────┬───────────┘
+                         ▼
+              ┌──────────────────────┐
+              │ Tables + Charts      │
+              │ Supporting Sources   │
+              └──────────────────────┘
+```
+
+---
+
+## Backend Components
+
+### FastAPI
+
+Handles:
+
+* API routing
+* session handling
+* orchestration requests
+* health checks
+* structured responses
+
+---
+
+### SQLite
+
+Used for:
+
+* operational datasets
+* ingestion logs
+* validation tracking
+* session persistence
+* structured analytics
+
+SQLite was chosen intentionally because:
+
+* setup is zero friction
+* portability matters more than distributed scale for this project
+* reviewers should be able to clone and run immediately
+
+---
+
+### ChromaDB
+
+Used for:
+
+* vector embeddings
+* semantic retrieval
+* PDF indexing
+* source retrieval
+
+Embeddings are generated locally using:
+
+```text
+all-MiniLM-L6-v2
+```
+
+This avoids external retrieval latency and keeps retrieval inexpensive.
+
+---
+
+### Gemini
+
+Gemini is used only for:
+
+* synthesis
+* summarization
+* response restructuring
+* conversational formatting
+
+Gemini does NOT:
+
+* generate raw SQL
+* directly access databases
+* directly access PDFs
+* control orchestration
+
+This separation was intentional.
+
+---
+
+# Technology Stack
+
+## Frontend
+
+* React
+* TypeScript
+* Vite
+* Vanilla CSS
+* Custom design system
+* Chart rendering
+
+---
+
+## Backend
+
+* Python 3.11
+* FastAPI
+* Pydantic
+* SQLite
+* ChromaDB
+* Sentence Transformers
+
+---
+
+## AI Layer
+
+* Gemini API
+* all-MiniLM-L6-v2 embeddings
+
+---
+
+## Infrastructure
+
+* Docker
+* Docker Compose
+* Persistent mounted volumes
+
+---
+
+# Project Structure
+
+```text
+futures-first/
+│
+├── backend/
+│   ├── api/
+│   ├── orchestration/
+│   ├── ingestion/
+│   ├── verification/
+│   ├── tests/
+│   ├── bootstrap.py
+│   ├── config.py
+│   ├── schemas.py
+│   └── system_health.py
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── services/
+│   └── styles/
+│
+├── data/
+│   ├── enterprise_clean_data/
+│   └── startup_messy_data/
+│
+├── databases/
+│   ├── vistastream.db
+│   └── neonplay.db
+│
+├── chroma/
+│   └── vector_collections/
+│
+├── docs/
+│   ├── architecture/
+│   ├── engineering/
+│   └── reports/
+│
+├── logs/
+│
+├── requirements.txt
+├── requirements-dev.txt
+├── docker-compose.yml
+├── Dockerfile
+└── README.md
+```
+
+---
+
+# Security & Safety Decisions
+
+## SQL Safety
+
+The SQL layer:
+
+* validates table access
+* blocks unsafe keywords
+* prevents schema leakage
+* rejects dangerous query structures
+* enforces read-only access
+
+---
+
+## Workspace Isolation
+
+Each workspace is isolated.
+
+This prevents:
+
+* cross-workspace leakage
+* mixed retrieval contamination
+* operational confusion
+
+---
+
+## Source-Constrained Synthesis
+
+The synthesizer only receives:
+
+* validated SQL results
+* filtered retrieval chunks
+* bounded operational evidence
+
+This reduces hallucination risk.
+
+---
+
+## Domain Restrictions
+
+The assistant intentionally blocks:
+
+* code generation
+* explicit content
+* unrelated tutoring
+* jailbreak attempts
+
+The goal is to keep the platform focused on operational intelligence workflows.
+
+---
+
+# Operational Intelligence Features
+
+## Structured Tables
+
+The system automatically converts:
+
+* KPI comparisons
+* regional metrics
+* performance breakdowns
+* operational summaries
+
+into readable tables.
+
+---
+
+## Visualizations
+
+Supported visual types:
+
+* bar charts
+* line charts
+* pie charts
+* KPI cards
+
+Charts are generated from structured backend metrics instead of hallucinated LLM output.
+
+---
+
+## Operational Anomaly Analysis
+
+The platform supports:
+
+* warning analysis
+* duplicate detection
+* validation failures
+* ingestion inconsistencies
+* normalization tracking
+
+This became a major focus during orchestration stabilization.
+
+---
+
+# UI Screenshots
+
+## Landing Workspace
+
+[ Add Image Here ]
+
+---
+
+## Example Management Query
+
+[ Add Image Here ]
+
+---
+
+## Supporting Sources Panel
+
+[ Add Image Here ]
+
+---
+
+## Operational Analytics Visualization
+
+[ Add Image Here ]
+
+---
+
+## Workspace Switching
+
+[ Add Image Here ]
+
+---
+
+# Example Queries
+
+## Operational Analytics
+
+* Which regions had the strongest growth?
+* Compare APAC vs Europe ROI.
+* Why are there so many validation warnings?
+* Show watch activity inconsistencies.
+* Summarize Q2 performance.
+
+---
+
+## Strategic Questions
+
+* What are the roadmap priorities for Q3?
+* What operational risks were mentioned recently?
+* What are the localization complaints in APAC?
+* Summarize executive commentary.
+
+---
+
+## Conversational Queries
+
+* Explain further.
+* What do you mean by scalable growth?
+* Can you summarize this better?
+* Give me a quick overview.
+
+---
+
+# Docker Setup
+
+## Quick Start
+
+### ⚠️ Critical First Step: API Key Configuration
+
+Before running Docker, configure environment variables.
+
+The platform uses the Google Gemini API for:
+
+* response synthesis
+* conversational reasoning
+* management summaries
+* structured answer generation
+
+---
+
+## Clone Repository
 
 ```bash
-# 1. Clone & Set Up Environment
 git clone <repository>
 cd futures-first
-python -m venv venv
-source venv/bin/activate  # (or .\venv\Scripts\activate on Windows)
-
-# 2. Install Dependencies
-pip install -r requirements.txt
-
-# 3. Configure Env
-cp .env.example .env
-# Fill in GEMINI_API_KEY if testing live LLM generations later
-
-# 4. Deterministic Bootstrap
-python bootstrap.py
 ```
 
-## Operational Observability
-The platform includes a dedicated health monitoring system to ensure retrieval and ingestion integrity.
+---
 
-### Health Snapshot System
-To verify the system's operational readiness, run:
+## Configure Environment Variables
+
+Create a local `.env` file:
+
 ```bash
-python -m backend.system_health
+cp .env.example .env
 ```
 
-### Operational States
-The health system categorizes the vector store into explicit states:
-- **`healthy`**: Collections found, embeddings exist, and retrieval is verified.
-- **`degraded`**: Collections exist but are empty (requires embedding rebuild).
-- **`unhealthy`**: Missing libraries, connection failures, or missing collections.
+Open the `.env` file and add:
 
-### Understanding Warning Counts
-The **NeonPlay (Startup)** environment intentionally reports high warning and normalization counts (e.g., ~40,000). This reflects the platform's ability to handle and correct "messy" real-world startup data at scale without failing the pipeline.
-
-## Demo Mode
-For interviews and presentations, the system supports a `DEMO_MODE=true` environment flag. This enables:
-- **Stability**: Returns deterministic examples for common queries.
-- **Speed**: Limits retrieval counts (top 2 results) to prevent response lag.
-- **Safety**: Injects a demo-marker into all response payloads.
-
-## Engineering Decisions & Tradeoffs
-See `docs/engineering/tool_decisions.md` for a comprehensive breakdown of why SQLite, ChromaDB, and a scratch-built orchestrator were chosen.
-
-## Quality Assurance
-The backend is verified by a robust test suite and audit reports:
-- **Logic Verification**: `pytest`
-- **Ingestion Audit**: `backend/verification/verify_ingestion.py`
-- **Retrieval Audit**: `backend/verification/verify_retrieval.py`
-
-### Retrieval Quality Validation
-We implement a lightweight semantic sanity-check layer to ensure retrieval accuracy against deterministic management queries. This layer validates:
-- **Source Grounding**: Checks if the expected PDF source is present in the top-k results.
-- **Keyword Overlap**: Verifies that critical semantic tokens are present in the retrieved chunks.
-- **Topic Consistency**: Heuristic validation of topical relevance.
-
-**Sample Validation Output:**
 ```text
-Query: APAC growth contribution
-Status: [PASS] Expected source found in top retrievals with strong keyword overlap.
-Retrieved Sources: Q2 FY2026 Campaign Performance Summary.pdf
-Keyword Overlap: 3
+GEMINI_API_KEY=your_actual_api_key_here
 ```
-This ensures that the semantic engine remains reliable without the overhead of complex ML benchmarking infrastructure.
+
+---
+
+## Launch Everything
+
+```bash
+docker compose up --build
+```
+
+---
+
+## What Happens Automatically
+
+On first startup the system will:
+
+* build frontend and backend containers
+* initialize databases
+* ingest CSV datasets
+* process PDF documents
+* generate vector embeddings
+* initialize retrieval pipelines
+* start API services
+* start frontend services
+
+On future startups:
+
+* bootstrap is skipped automatically
+* databases persist through Docker volumes
+* vector collections persist through Docker volumes
+
+---
+
+## Access URLs
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+Backend API:
+
+```text
+http://localhost:8000
+```
+
+---
+
+## Important Note
+
+The system can boot without a `GEMINI_API_KEY`.
+
+However:
+
+* conversational synthesis
+* management summaries
+* reasoning generation
+* response restructuring
+
+will be disabled.
+
+Core infrastructure and retrieval layers will still function.
+
+---
+
+# Local Development
+
+## Backend
+
+```bash
+pip install -r requirements.txt
+python -m backend.bootstrap
+uvicorn backend.api.app:app --reload
+```
+
+---
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+# Validation & Testing
+
+The system includes:
+
+* orchestration regression tests
+* SQL guard validation
+* retrieval validation
+* ingestion verification
+* conversational continuity checks
+* security checks
+
+The orchestration regression suite was used heavily during stabilization to identify:
+
+* routing failures
+* retrieval contamination
+* entity extraction issues
+* conversational inheritance bugs
+
+---
+
+# Future Improvements
+
+Planned future improvements include:
+
+* custom workspace uploads
+* dynamic schema onboarding
+* richer visualization support
+* collaborative sessions
+* exportable management reports
+* multi-user deployment
+* advanced retrieval evaluation
+
+---
+
+# Final Notes
+
+The project evolved significantly during development.
+
+The largest engineering effort ended up being:
+
+* orchestration reliability
+* retrieval correctness
+* conversational continuity
+* synthesis quality
+
+The final architecture intentionally favors:
+
+* predictable behavior
+* operational grounding
+* explainable retrieval
+* management readability
+
+over:
+
+* autonomous agents
+* opaque orchestration
+* excessive abstraction
+* generic chatbot behavior

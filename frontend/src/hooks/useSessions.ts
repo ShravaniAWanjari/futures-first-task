@@ -8,6 +8,8 @@ export function useSessions() {
   const [loading, setLoading] = useState(false);
   const [queryLoading, setQueryLoading] = useState(false);
   const [lastTrace, setLastTrace] = useState<QueryResponse['trace'] | null>(null);
+  const [lastContext, setLastContext] = useState<string | null>(null);
+  const [health, setHealth] = useState<any>(null);
   const [workspaceOverride, setWorkspaceOverride] = useState<string | null>(null);
   const pendingRef = useRef(false);
 
@@ -27,9 +29,18 @@ export function useSessions() {
     }
   }, []);
 
-  // Sync sessions whenever workspace changes
+  // Sync sessions and health whenever workspace changes
   useEffect(() => {
     loadSessions(workspace);
+    const checkHealth = async () => {
+      try {
+        const h = await api.fetchHealth(workspace);
+        setHealth(h);
+      } catch (err) {
+        console.error('Failed to fetch health:', err);
+      }
+    };
+    checkHealth();
   }, [workspace, loadSessions]);
 
   const setWorkspace = useCallback((ws: string) => {
@@ -50,12 +61,15 @@ export function useSessions() {
         if (lastMsg.role === 'assistant' && lastMsg.trace) {
           try {
             setLastTrace(JSON.parse(lastMsg.trace));
+            setLastContext(lastMsg.context || null);
           } catch {
             setLastTrace(null);
+            setLastContext(null);
           }
         }
       } else {
         setLastTrace(null);
+        setLastContext(null);
       }
     } catch {
       console.error('Failed to load session');
@@ -80,6 +94,7 @@ export function useSessions() {
       setActiveSession(session);
       setWorkspaceOverride(targetWs);
       setLastTrace(null);
+      setLastContext(null);
       return session;
     } catch {
       console.error('Failed to create session');
@@ -125,29 +140,45 @@ export function useSessions() {
       timestamp: new Date().toISOString(),
     };
     
-    // Optimistic update if sending to active session
-    if (activeSession?.id === targetSessionId) {
-      setActiveSession(prev => prev ? { ...prev, messages: [...prev.messages, userMsg] } : null);
-    }
-
-    try {
-      const res = await api.sendQuery(query, targetSessionId, workspace);
-      console.log('[useSessions] API Response:', res);
-
-      const assistantMsg: Message = {
-        id: crypto.randomUUID(),
-        role: 'assistant',
-        content: res.answer_context,
-        sources: res.sources.join(','),
-        trace: JSON.stringify(res.trace),
-        structured_data: res.structured_data ? JSON.stringify(res.structured_data) : null,
-        timestamp: new Date().toISOString(),
-      };
-
-      if (activeSession?.id === targetSessionId) {
-        setActiveSession(prev => prev ? { ...prev, messages: [...prev.messages, assistantMsg] } : null);
+      // Optimistic update
+      setActiveSession(prev => {
+        if (prev && prev.id === targetSessionId) {
+          return { ...prev, messages: [...prev.messages, userMsg] };
+        }
+        // If we're sending to a session that's currently being initialized, 
+        // we'll rely on the re-render or the final API response update.
+        return prev;
+      });
+  
+      try {
+        const res = await api.sendQuery(query, targetSessionId, workspace);
+        console.log('[useSessions] API Response:', res);
+  
+        const assistantMsg: Message = {
+          id: crypto.randomUUID(),
+          role: 'assistant',
+          content: res.answer_context,
+          context: res.raw_reasoning,
+          sources: res.sources.join(','),
+          trace: JSON.stringify(res.trace),
+          structured_data: res.structured_data ? JSON.stringify(res.structured_data) : null,
+          timestamp: new Date().toISOString(),
+        };
+  
+        setActiveSession(prev => {
+          if (prev && prev.id === targetSessionId) {
+            return { ...prev, messages: [...prev.messages, assistantMsg] };
+          }
+          // If prev is null but we have a targetSessionId, we should try to fetch it 
+          // or at least ensure the state catches up. 
+          // This happens during the "one-click" new chat transition.
+          return prev;
+        });
         setLastTrace(res.trace);
-      }
+        // Robust fallback: if raw_reasoning is missing, use answer_context
+        const contextToStore = res.raw_reasoning || res.answer_context || null;
+        setLastContext(contextToStore);
+        console.log('[useSessions] Trace & Context synchronized:', { trace: !!res.trace, context: !!contextToStore });
 
       // Refetch session to pick up backend-generated semantic title if it was empty
       const isFirstMsg = activeSession?.id === targetSessionId && activeSession.messages.length === 0;
@@ -178,7 +209,7 @@ export function useSessions() {
   }, [activeSession, workspace]);
 
   return {
-    sessions, activeSession, loading, queryLoading, workspace, lastTrace,
+    sessions, activeSession, loading, queryLoading, workspace, lastTrace, health,
     loadSessions, loadSession, createSession, removeSession,
     renameActiveSession, sendMessage, setActiveSession, setWorkspace,
   };

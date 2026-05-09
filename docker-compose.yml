@@ -1,0 +1,58 @@
+# =============================================================================
+# FuturesFirst — Docker Compose (Development & Production)
+# =============================================================================
+# Usage:
+#   docker compose up --build        # First run (builds + bootstraps)
+#   docker compose up                # Subsequent runs (uses cached build)
+#   docker compose down -v           # Full teardown (removes data volumes)
+# =============================================================================
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      # Persistent data volumes — survive container restarts
+      - futures-databases:/app/databases
+      - futures-chroma:/app/chroma
+      - futures-logs:/app/logs
+      # Mount source data (read-only) for bootstrap ingestion
+      - ./data:/app/data:ro
+      - ./docs:/app/docs:ro
+    environment:
+      - APP_ENV=${APP_ENV:-development}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - DEMO_MODE=${DEMO_MODE:-false}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 240s
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+# Named volumes for persistent storage
+volumes:
+  futures-databases:
+    driver: local
+  futures-chroma:
+    driver: local
+  futures-logs:
+    driver: local

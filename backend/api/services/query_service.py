@@ -10,6 +10,66 @@ from backend.api.services.response_synthesizer import synthesize_response, gener
 
 logger = logging.getLogger("api")
 
+
+def _build_rich_raw_reasoning(response: QueryResponse, fallback_context: str) -> str:
+    """
+    Build a richer debug-style reasoning block so the right sidebar
+    consistently shows route decisions and retrieval evidence.
+    """
+    trace = response.trace
+    if not trace:
+        return fallback_context
+
+    classification = trace.classification
+    route = getattr(classification, "query_type", "unknown")
+    confidence = getattr(classification, "confidence", 0.0)
+    reason = getattr(classification, "reasoning", "")
+    intent = getattr(classification, "intent", None)
+    routing_plan = getattr(classification, "routing_plan", None)
+
+    parts: List[str] = []
+    parts.append("=== ORCHESTRATION REASONING ===")
+    parts.append(f"Route: {route} (confidence: {confidence:.2f})")
+    if reason:
+        parts.append(f"Classifier rationale: {reason}")
+
+    if intent:
+        try:
+            parts.append("Intent: " + json.dumps(intent, ensure_ascii=True))
+        except Exception:
+            parts.append(f"Intent: {intent}")
+
+    if routing_plan:
+        try:
+            parts.append("Routing plan: " + json.dumps(routing_plan, ensure_ascii=True))
+        except Exception:
+            parts.append(f"Routing plan: {routing_plan}")
+
+    for i, tool in enumerate(trace.tool_executions or [], 1):
+        tool_name = getattr(tool, "tool", "unknown")
+        success = getattr(tool, "success", False)
+        timing_ms = getattr(tool, "timing_ms", None)
+        parts.append(f"[Tool {i}] {tool_name} | success={success} | latency={timing_ms}ms")
+        if tool_name == "search_documents":
+            parts.append(
+                "  retrieval: n_results="
+                f"{getattr(tool, 'n_results', 0)}, avg_confidence={getattr(tool, 'average_confidence', 0.0):.2f}, "
+                f"rejected_chunks={getattr(tool, 'rejected_chunks', 0)}"
+            )
+        if tool_name == "query_structured_data":
+            query_used = getattr(tool, "query_used", None)
+            if query_used:
+                parts.append(f"  sql: {query_used}")
+            tables = getattr(tool, "table_references", None) or []
+            if tables:
+                parts.append(f"  tables: {', '.join(tables)}")
+
+    if fallback_context:
+        parts.append("")
+        parts.append(fallback_context)
+
+    return "\n".join(parts)
+
 class QueryService:
     @staticmethod
     def execute_query(query: str, session_id: str, workspace: str, request_id: Optional[str] = None) -> QueryResponse:
@@ -38,16 +98,21 @@ class QueryService:
         # 4. Execute Orchestration with Context
         response = orchestrate_query(orchestrator_req, history=history)
         
+        # 4. Capture clean orchestration output for synthesis
+        # Keep synthesis input free of debug/routing metadata.
+        synthesis_input_context = response.answer_context
+        raw_context = _build_rich_raw_reasoning(response, response.answer_context)
+        
         # 4. Synthesize Response — transform raw output into management-grade narrative
-        raw_context = response.answer_context
         synthesized_context, structured_data = synthesize_response(
-            answer_context=raw_context,
+            answer_context=synthesis_input_context,
             sources=response.sources,
             confidence=response.overall_confidence,
             history=history,
             original_query=query
         )
         response.answer_context = synthesized_context
+        response.raw_reasoning = raw_context
         response.structured_data = structured_data
         
         # 5. Persist Assistant Response
@@ -89,9 +154,9 @@ class QueryService:
             ]
         else:
             return [
-                "Why are there so many warnings in the watch activity data?",
-                "What is the current status of subtitle quality improvements?",
-                "Summarize the internal notes for Galaxy Burn release.",
-                "How does the marketing spend correlate with regional performance?",
-                "List the data quality inconsistencies found in the latest upload."
+                "Which NeonPlay titles had the highest completion rates this month?",
+                "What common themes appear in viewer feedback for recent originals?",
+                "Which genres are driving the strongest repeat viewing behavior?",
+                "How did the latest content releases perform across regions?",
+                "Which shows are showing early signs of audience drop-off, and why?"
             ]

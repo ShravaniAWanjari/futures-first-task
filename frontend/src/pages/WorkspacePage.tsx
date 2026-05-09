@@ -8,7 +8,7 @@ import SourcesPanel from '../components/SourcesPanel';
 
 export default function WorkspacePage() {
   const {
-    sessions, activeSession, loading, queryLoading, workspace, lastTrace,
+    sessions, activeSession, loading, queryLoading, workspace, lastTrace, lastContext, health,
     loadSessions, loadSession, createSession, removeSession,
     renameActiveSession, sendMessage, setWorkspace,
   } = useSessions();
@@ -101,7 +101,7 @@ export default function WorkspacePage() {
     }
   }, [activeSession, createSession, sendMessage, workspace, queryLoading]);
 
-  const hasMessages = activeSession && activeSession.messages.length > 0;
+  const hasMessages = (activeSession && activeSession.messages.length > 0) || queryLoading;
 
   return (
     <div style={{ display: 'flex', height: '100vh', overflow: 'hidden', background: 'var(--color-bg)' }}>
@@ -118,6 +118,33 @@ export default function WorkspacePage() {
 
       {/* Center */}
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        {/* Gemini Key Warning */}
+        {health?.llm_service?.status === 'unhealthy' && (
+          <div style={{
+            background: '#fffbeb', borderBottom: '1px solid #fef3c7',
+            padding: '12px 40px', display: 'flex', alignItems: 'flex-start', gap: 12
+          }}>
+            <div style={{ 
+              background: '#f59e0b', color: '#fff', borderRadius: '50%', 
+              width: 20, height: 20, display: 'flex', alignItems: 'center', 
+              justifyContent: 'center', fontSize: 14, fontWeight: 'bold', marginTop: 2
+            }}>!</div>
+            <div style={{ flex: 1 }}>
+              <h3 style={{ fontSize: 13, fontWeight: 600, color: '#92400e', marginBottom: 2 }}>
+                Gemini API Key Missing
+              </h3>
+              <p style={{ fontSize: 12, color: '#b45309', lineHeight: 1.5 }}>
+                LLM-based features are disabled. To fix this, create a <strong>.env</strong> file in the root directory 
+                replicated from <strong>.env.example</strong> and add your <code>GEMINI_API_KEY</code>.
+              </p>
+              <div style={{ marginTop: 8, background: '#0000000a', padding: '6px 10px', borderRadius: 4, fontFamily: 'monospace', fontSize: 11, color: '#92400e' }}>
+                # Run this to verify setup:<br/>
+                python -m backend.config
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Header */}
         <header style={{
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -133,17 +160,20 @@ export default function WorkspacePage() {
             <button
               onClick={() => setSourcesOpen(!sourcesOpen)}
               style={{
-                fontSize: 12, padding: '4px 10px', borderRadius: 5,
+                fontSize: 11, padding: '6px 12px', borderRadius: 6,
                 border: 'none',
-                background: sourcesOpen ? 'var(--color-active)' : 'transparent',
-                color: sourcesOpen ? 'var(--color-text-secondary)' : 'var(--color-text-muted)',
-                cursor: 'pointer', fontWeight: 500,
+                background: '#374151',
+                color: '#ffffff',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.1)',
+                cursor: 'pointer', fontWeight: 600,
                 fontFamily: 'inherit', transition: 'all 0.1s',
+                textTransform: 'uppercase',
+                letterSpacing: '0.02em'
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'var(--color-primary-soft)'; e.currentTarget.style.color = 'var(--color-text-secondary)'; }}
-              onMouseLeave={e => { if (!sourcesOpen) { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--color-text-muted)'; } }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#1f2937'; e.currentTarget.style.transform = 'translateY(-1px)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#374151'; e.currentTarget.style.transform = 'translateY(0)'; }}
             >
-              Sources
+              View Data Sources
             </button>
           )}
         </header>
@@ -159,7 +189,7 @@ export default function WorkspacePage() {
 
       <SourcesPanel 
         trace={selectedTrace} 
-        context={selectedContext} 
+        context={selectedContext || lastContext || undefined} 
         open={sourcesOpen} 
         onClose={() => setSourcesOpen(false)} 
       />

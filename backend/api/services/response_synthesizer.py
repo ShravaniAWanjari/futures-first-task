@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.INFO)
 
 # Phase 4: Token Safety — Maximum chars per snippet
 MAX_SNIPPET_CHARS = 500
-MAX_FINDINGS = 4
+MAX_FINDINGS = 5
 
 
 def _detect_tone(query: str) -> str:
@@ -58,13 +58,15 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     structured_data = _extract_structured_data(answer_context, original_query)
 
     # Core Content Extraction
-    content_found = False
+    data_found = False
     for section_type, content in sections:
         narrative = None
         if section_type == 'sql':
             narrative = _synthesize_sql_narrative(content)
+            data_found = True
         elif section_type == 'retrieval':
             narrative = _synthesize_retrieval_narrative(content, is_expansion=is_expansion, tone=tone)
+            data_found = True
         elif section_type == 'plain':
             # Small talk and conversational responses pass through directly
             if content.strip():
@@ -72,20 +74,26 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
             
         if narrative:
             synthesized_parts.append(narrative)
-            content_found = True
     
-    if not content_found:
+    if not synthesized_parts:
         if is_follow_up:
             return "No additional operational details could be retrieved to expand on the previous answer.", None
         return "The requested information could not be retrieved from current datasets.", None
 
-    # Add Operational Recommendation/Implication
-    if tone != "concise":
+    # Add Operational Recommendation/Implication only if we actually found data
+    # Phase 11: Skip for simple informational "What is" queries
+    is_informational = any(original_query.lower().startswith(p) for p in ["what is", "who is", "define", "what does"])
+    if tone != "concise" and data_found and not is_informational:
         recommendation = _generate_operational_implication(answer_context, original_query)
         if recommendation:
             synthesized_parts.append(recommendation)
     
     narrative_output = "\n\n".join(synthesized_parts)
+    
+    # Phase 12: Narrative Metric Bolding (Executive Readability)
+    narrative_output = re.sub(r'(\$[\d\.]+M?)', r'**\1**', narrative_output)
+    narrative_output = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', narrative_output)
+    narrative_output = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', narrative_output)
     
     # Update structured_data with narrative components if not already there
     if structured_data:
@@ -125,7 +133,15 @@ def _synthesize_sql_narrative(content: str) -> Optional[str]:
     if metric_cols and category_cols:
         metric, category = metric_cols[0], category_cols[0]
         label, cat_label = _humanize(metric), _humanize(category)
-        entries = sorted([{'cat': r[category], 'val': _parse_num(r[metric])} for r in rows if _parse_num(r[metric]) is not None], key=lambda x: x['val'], reverse=True)
+        entries = sorted(
+            [
+                {'cat': r[category], 'val': _parse_num(r[metric])}
+                for r in rows
+                if _parse_num(r[metric]) is not None and not _is_missing_dimension(r.get(category))
+            ],
+            key=lambda x: x['val'],
+            reverse=True
+        )
         
         if entries:
             top = entries[0]
@@ -204,8 +220,8 @@ def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, to
             snippet = snippet.replace('\u200b', '')
             snippet = re.sub(r'#+\s*', '', snippet)
             
-            # 2. Fix fragments at start
-            snippet = re.sub(r'^[a-z]{1,10}\b\s*', '', snippet)
+            # 2. Fix fragments at start (Only if it's truly a fragment, not a capitalized entity like LATAM)
+            snippet = re.sub(r'^[a-z]{1,5}\b\s*', '', snippet)
             
             # 3. Bullet Point Normalization
             # Only match single asterisks used as list delimiters (not ** bold markers)
@@ -215,15 +231,14 @@ def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, to
             # 4. Header Identification
             snippet = re.sub(r'(\b[A-Z][a-z/ ]+[:])', r'\n\n**\1**\n', snippet)
             
-            # 5. Sentence cleanup
+            # 5. Sentence cleanup and Word Deduplication
             snippet = re.sub(r'\.([A-Z])', r'. \1', snippet)
+            snippet = re.sub(r'\b(\w+)\s+\1\b', r'\1', snippet, flags=re.IGNORECASE)
             
-            # Phase 4: Token Safety — Truncate oversized snippets
-            if len(snippet) > MAX_SNIPPET_CHARS:
-                snippet = snippet[:MAX_SNIPPET_CHARS].rsplit('.', 1)[0] + '.'
-            
-            # Clean up excessive newlines
-            snippet = re.sub(r'\n{3,}', '\n\n', snippet)
+            # Phase 12: Bolden metrics in snippets for better visibility
+            snippet = re.sub(r'(\$[\d\.]+M?)', r'**\1**', snippet)
+            snippet = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', snippet)
+            snippet = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', snippet)
             
             if len(snippet) > 40 and not _is_fragment(snippet):
                 findings.append({
@@ -315,25 +330,30 @@ def _split_sections(context: str) -> List[tuple]:
 
 
 def _is_numeric_col(rows: list, col: str) -> bool:
-    return len(rows) > 0 and _parse_num(rows[0].get(col, '')) is not None
+    if not rows or not col: return False
+    # Exclude ID-like columns
+    col_lower = col.lower()
+    if any(k in col_lower for k in ['id', 'pk', 'uuid', 'session', 'timestamp', 'index']):
+        return False
+    val = rows[0].get(col)
+    parsed = _parse_num(val)
+    if parsed is None: return False
+    # Heuristic: if it's a very large integer (> 100M) without decimals, it's likely an ID or timestamp
+    if isinstance(parsed, float) and parsed > 100_000_000 and parsed == int(parsed):
+        return False
+    return True
 
-def _parse_num(val: str) -> Optional[float]:
+def _parse_num(val: Any) -> Optional[float]:
     if val is None: return None
-    s = str(val).replace(',', '').replace('$', '').replace('%', '').strip()
+    if isinstance(val, (int, float)): return float(val)
+    s = str(val).strip().replace(',', '').replace('$', '').replace('%', '')
     if not s: return None
-    
-    multiplier = 1.0
-    if s.upper().endswith('K'):
-        multiplier = 1_000.0
-        s = s[:-1]
-    elif s.upper().endswith('M'):
-        multiplier = 1_000_000.0
-        s = s[:-1]
-    elif s.upper().endswith('B'):
-        multiplier = 1_000_000_000.0
-        s = s[:-1]
-        
-    try: return float(s) * multiplier
+    try:
+        # Handle suffixes
+        if s.upper().endswith('B'): return float(s[:-1]) * 1_000_000_000.0
+        if s.upper().endswith('M'): return float(s[:-1]) * 1_000_000.0
+        if s.upper().endswith('K'): return float(s[:-1]) * 1_000.0
+        return float(s)
     except: return None
 
 def _humanize(col: str) -> str:
@@ -351,6 +371,12 @@ def _pct(part: float, total: float) -> str:
 
 def _is_fragment(text: str) -> bool:
     return len(text.split()) < 4 or text.lower() in ('controls', 'overview', 'summary')
+
+
+def _is_missing_dimension(value: Any) -> bool:
+    if value is None:
+        return True
+    return str(value).strip().lower() in ("", "none", "null", "n/a", "undefined")
 
 
 def generate_session_title(query: str) -> str:
@@ -477,6 +503,12 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         if '|' in content and '---' in content:
             table_content = content
             logger.info("[synthesizer] Found Markdown table content for extraction")
+        # Look for flattened table patterns if explicit table/comparison request
+        elif any(k in query.lower() for k in ['table', 'comparison', 'summary', 'list', 'breakdown', 'roi']):
+            flattened = _extract_flattened_table(content)
+            if flattened:
+                table_content = flattened
+                logger.info("[synthesizer] Found Flattened table content for extraction")
             
     content_to_parse = sql_content or table_content
     if not content_to_parse:
@@ -507,6 +539,9 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         values = [v.strip() for v in line.split('|')]
         if len(values) >= len(columns):
             row = {columns[ci]: values[ci] for ci in range(len(columns))}
+            label_cols = [c for c in columns if c.lower() in ('region', 'platform', 'category', 'channel')]
+            if label_cols and _is_missing_dimension(row.get(label_cols[0])):
+                continue
             rows.append(row)
             
     if not rows: return None
@@ -535,11 +570,44 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
     
     if metric_cols and category_cols:
         metric = metric_cols[0]
-        category = category_cols[0]
         
-        # Limit labels for chart clarity
-        labels = [str(r[category]) for r in rows[:10]]
-        values = [_parse_num(r[metric]) for r in rows[:10]]
+        # Smart Category Selection: Prefer columns with diversity and relevant names
+        best_category = category_cols[0]
+        max_diversity = 0
+        
+        for col in category_cols:
+            unique_vals = len(set(str(r.get(col, '')) for r in rows))
+            col_lower = col.lower()
+            
+            # Bonus for relevant keywords
+            diversity_score = unique_vals
+            if any(k in col_lower for k in ['name', 'table', 'region', 'platform', 'type', 'category']):
+                diversity_score += 10
+            
+            # Penalty for constants
+            if unique_vals <= 1 and len(rows) > 1:
+                diversity_score = -1
+                
+            if diversity_score > max_diversity:
+                max_diversity = diversity_score
+                best_category = col
+        
+        category = best_category
+        
+        # Filter out None/empty labels and outliers
+        chart_data = []
+        for r in rows[:15]:
+            label_val = str(r.get(category, ''))
+            if label_val.lower() in ('none', 'null', '', 'undefined'):
+                continue
+            val = _parse_num(r.get(metric))
+            if val is not None:
+                chart_data.append((label_val, val))
+        
+        if not chart_data: return structured
+
+        labels = [d[0] for d in chart_data[:10]]
+        values = [d[1] for d in chart_data[:10]]
         
         chart_type = "bar"
         if res_type == "trend_analysis": chart_type = "line"
@@ -561,3 +629,50 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
             }
             
     return structured
+
+def _extract_flattened_table(text: str) -> Optional[str]:
+    """Tries to reconstruct a markdown table from flattened text strings."""
+    # Pattern 1: Multi-column financial matches (Region Spend ROI Conv)
+    # e.g. "APAC $12.8M 4.2x 14.8% North America $8.1M 2.7x 9.2%"
+    lines = text.split('\n')
+    for line in lines:
+        financial_matches = re.findall(r'([A-Z][a-z\s]+)\s+(\$[\d\.]+M?)\s+([\d\.]+x)\s+([\d\.]+%?)', line)
+        if len(financial_matches) >= 2:
+            header = "| Region | Marketing Spend | ROI | Conversion |\n|---|---|---|---|\n"
+            rows = []
+            for m in financial_matches:
+                rows.append(f"| {m[0].strip()} | **{m[1]}** | **{m[2]}** | **{m[3]}** |")
+            return header + "\n".join(rows)
+
+        # Pattern 2: QoQ Metric matches (Metric Q1 Q2 Change)
+        # e.g. "Total Subscribers 41.2M 45.8M +11.1%"
+        qoq_matches = re.findall(r'([A-Z][A-Za-z\s]{5,})\s+([\d\.]+M?)\s+([\d\.]+M?)\s+([\+\-][\d\.]+%?)', line)
+        if len(qoq_matches) >= 2:
+            header = "| Performance Metric | Q1 FY2026 | Q2 FY2026 | QoQ Change |\n|---|---|---|---|\n"
+            rows = []
+            for m in qoq_matches:
+                rows.append(f"| {m[0].strip()} | {m[1]} | {m[2]} | **{m[3]}** |")
+            return header + "\n".join(rows)
+
+        # Pattern 3: Basic Label-Value pairs (Metric Value)
+        matches = re.findall(r'([A-Za-z\s]{3,})\s+([\d\.]+[%xMh]?)\s+', line + " ")
+        if len(matches) >= 3:
+            header = "| Metric | Current Value |\n|---|---|\n"
+            rows = []
+            for m in matches:
+                label = m[0].strip()
+                val = m[1].strip()
+                rows.append(f"| {label} | **{val}** |")
+            return header + "\n".join(rows)
+
+        # Pattern 4: High-density growth metrics (Metric Q1 Q2 Shift)
+        # e.g. "Monthly Active Users 33.7M 37.9M +12.4%"
+        growth_matches = re.findall(r'([A-Za-z\s]{8,})\s+([\d\.]+(?:M|hrs|%)?)\s+([\d\.]+(?:M|hrs|%)?)\s+([\+\-][\d\.]+%?)', line)
+        if len(growth_matches) >= 2:
+            header = "| Metric | Previous | Current | Change |\n|---|---|---|---|\n"
+            rows = []
+            for m in growth_matches:
+                rows.append(f"| {m[0].strip()} | {m[1]} | {m[2]} | **{m[3]}** |")
+            return header + "\n".join(rows)
+
+    return None

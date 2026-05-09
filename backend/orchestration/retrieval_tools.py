@@ -9,7 +9,7 @@ Outputs: Standardized dictionary outputs formatted via clean Markdown converters
 """
 import os
 import time
-from typing import Dict, Any, List, Tuple
+from typing import Dict, Any, List, Tuple, Optional
 
 try:
     import chromadb
@@ -41,6 +41,11 @@ ENTITY_ALIASES = {
     "emea": ["europe", "middle east", "africa", "emea"],
     "na": ["north america", "united states", "canada", "us", "usa"],
     "north america": ["north america", "united states", "canada", "us", "usa"],
+    "q1": ["q1", "quarter 1", "1st quarter"],
+    "q2": ["q2", "quarter 2", "2nd quarter", "q2 fy2026"],
+    "q3": ["q3", "quarter 3", "3rd quarter"],
+    "q4": ["q4", "quarter 4", "4th quarter"],
+    "fy2026": ["fy2026", "fiscal year 2026", "2026 summary"],
 }
 
 def _expand_entity_aliases(entities: list) -> list:
@@ -101,7 +106,14 @@ def search_documents(query: str, dataset_name: str, request_id: str = "UNKNOWN",
         except Exception:
             raise RetrievalError(f"Collection '{collection_name}' not found. Verify embeddings were generated.")
             
-        chroma_res = collection.query(query_texts=[query], n_results=n_results)
+        # Phase 11: Informational query enhancement
+        query_lower = query.lower()
+        search_query = query
+        if any(p in query_lower for p in ["what is", "who is", "define", "what does"]):
+            search_query = f"{query} definition explanation meaning acronym"
+            logger.info(f"[{dataset_name}] [REQ:{request_id}] [retrieval_doc] Enhanced informational query: '{search_query}'")
+
+        chroma_res = collection.query(query_texts=[search_query], n_results=n_results)
         
         parsed_results = []
         if chroma_res['ids'] and chroma_res['ids'][0]:
@@ -164,6 +176,16 @@ def search_documents(query: str, dataset_name: str, request_id: str = "UNKNOWN",
         trace.timing_ms = round((time.time() - start_time) * 1000, 2)
         
         logger.info(f"[{dataset_name}] [REQ:{request_id}] [retrieval_doc] Semantic search completed in {trace.timing_ms}ms. Yielded {trace.n_results} valid chunks, {trace.rejected_chunks} rejected.")
+        
+        # Part4: Relaxed Search Fallback (if no results but intent was specific)
+        if trace.n_results == 0 and intent and intent.get("entities"):
+            logger.info(f"[{dataset_name}] [REQ:{request_id}] [retrieval_doc] No results with strict entities. Retrying RELAXED search...")
+            # Retry without intent (no entity/metric filtering)
+            relaxed_results, relaxed_trace = search_documents(query, dataset_name, request_id, n_results, intent=None)
+            if relaxed_results:
+                logger.info(f"[{dataset_name}] [REQ:{request_id}] [retrieval_doc] Relaxed search succeeded with {len(relaxed_results)} results.")
+                return relaxed_results, relaxed_trace
+
         return parsed_results, trace
         
     except Exception as e:

@@ -149,3 +149,34 @@
 ### Classifier Logic — ✅ All Passing
 - "what do you mean by X" → clarification_request
 - "use bullet points" → formatting_request
+---
+
+## Part 4: Analytical Presentation & Visualization
+
+### Phase 10 — Structured Data Extraction ✅
+**File:** `backend/api/services/response_synthesizer.py`
+- Implemented `_extract_structured_data()` — transforms SQL results/Markdown tables into JSON
+- Added `_extract_flattened_table()` — uses regex heuristics to reconstruct tables from RAG text
+- Supports: `metric_comparison`, `trend_analysis`, `breakdown_analysis`, `table_response`
+- Handles percentages (`%`), financial units (`$`, `M`, `K`), and ID-like exclusion
+
+### Phase 11 — High-Fidelity UI Components ✅
+**File:** `frontend/src/components/AnalyticalComponents.tsx`, `MessageBubble.tsx`
+- Created `DataTable`: Responsive, styled table with hover states and column formatting
+- Created `DataChart`: CSS-driven bar/line charts with animated gradients and scaling
+- Created `KPICard`: Highlight metrics for singular data points
+- Added `Executive Header`: Professional titles and metadata badges for analytical responses
+
+### Phase 12 — Smart Labeling & Outlier Logic ✅
+**File:** `backend/api/services/response_synthesizer.py`
+- Added **Diversity-Weighted Category Selection**: Skips constant columns (e.g., "ERROR") in favor of descriptive ones (e.g., "Table Name")
+- Added **ID Hardening**: Automatically excludes large whole-number IDs from being misinterpreted as metrics
+- Added **Label Cleaning**: Strips redundant header text from extracted metrics for cleaner chart labels
+
+---
+
+## Status: PROJECT COMPLETE ✅
+- Security & Robustness: Hardened
+- Conversational UX: Fluid
+- Analytical Insights: Visualized
+- Executive Dashboard: Finalized

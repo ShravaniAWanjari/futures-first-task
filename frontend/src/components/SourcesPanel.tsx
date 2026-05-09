@@ -14,6 +14,7 @@ export default function SourcesPanel({ trace, context, open, onClose }: SourcesP
 
   const classification = trace.classification;
   const tools = trace.tool_executions;
+  const rawReasoningText = buildRawReasoningText(trace, context);
 
   return (
     <div
@@ -52,20 +53,24 @@ export default function SourcesPanel({ trace, context, open, onClose }: SourcesP
         </SourceSection>
 
         {/* Raw Reasoning (from context) */}
-        {context && (
-          <SourceSection title="Raw Reasoning">
+        {rawReasoningText && (
+          <SourceSection title="Raw Reasoning" noBorder>
             <div style={{ 
               fontSize: 11, 
-              color: 'var(--color-text-secondary)', 
-              lineHeight: 1.5, 
-              maxHeight: 200, 
+              color: '#4b5563', 
+              lineHeight: 1.6, 
+              maxHeight: 280, 
               overflowY: 'auto',
-              background: 'rgba(0,0,0,0.2)',
-              padding: '10px',
-              borderRadius: '6px',
-              fontFamily: 'monospace'
+              background: '#e5e7eb',
+              padding: '14px 16px',
+              borderRadius: '8px',
+              fontFamily: '"SF Mono", "Fira Code", "Cascadia Code", monospace',
+              border: '1px solid #d1d5db',
+              whiteSpace: 'pre-wrap',
+              boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.05)',
+              letterSpacing: '-0.01em'
             }}>
-              {context}
+              {rawReasoningText}
             </div>
           </SourceSection>
         )}
@@ -116,7 +121,47 @@ export default function SourcesPanel({ trace, context, open, onClose }: SourcesP
   );
 }
 
-function SourceSection({ title, children }: { title: string; children: React.ReactNode }) {
+function buildRawReasoningText(trace: QueryResponse['trace'], context?: string): string {
+  const classification = trace.classification;
+  const cleanContext = (context || '').trim();
+  const cleanReasoning = (classification.reasoning || '').trim();
+
+  // If backend already returned rich reasoning, use it as-is.
+  if (cleanContext && cleanContext.length > 220) return cleanContext;
+  if (cleanContext && cleanContext !== cleanReasoning) return cleanContext;
+
+  // Frontend fallback for sparse/older payloads.
+  const lines: string[] = [];
+  lines.push('=== ORCHESTRATION REASONING ===');
+  lines.push(`Route: ${classification.query_type} (confidence: ${classification.confidence.toFixed(2)})`);
+  if (cleanReasoning) {
+    lines.push(`Classifier rationale: ${cleanReasoning}`);
+  }
+
+  if ('intent' in classification && classification.intent) {
+    lines.push(`Intent: ${String(classification.intent)}`);
+  }
+  if ('routing_plan' in classification && classification.routing_plan) {
+    lines.push(`Routing plan: ${String(classification.routing_plan)}`);
+  }
+
+  trace.tool_executions.forEach((tool, i) => {
+    const toolName = 'tool' in tool ? String(tool.tool) : 'unknown';
+    const success = 'success' in tool ? String(tool.success) : 'false';
+    const latency = 'timing_ms' in tool ? String(tool.timing_ms) : 'n/a';
+    lines.push(`[Tool ${i + 1}] ${toolName} | success=${success} | latency=${latency}ms`);
+    if ('n_results' in tool) {
+      lines.push(`  retrieval: n_results=${String(tool.n_results)}`);
+    }
+    if ('query_used' in tool && tool.query_used) {
+      lines.push(`  sql: ${tool.query_used}`);
+    }
+  });
+
+  return lines.join('\n');
+}
+
+function SourceSection({ title, children, noBorder }: { title: string; children: React.ReactNode; noBorder?: boolean }) {
   return (
     <section>
       <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
@@ -127,8 +172,9 @@ function SourceSection({ title, children }: { title: string; children: React.Rea
         <div style={{ height: '1px', flex: 1, background: 'var(--color-border-subtle)' }} />
       </div>
       <div style={{
-        background: 'rgba(255,255,255,0.01)', border: '1px solid var(--color-border-subtle)',
-        borderRadius: 12, padding: '16px', display: 'flex', flexDirection: 'column', gap: 8,
+        background: noBorder ? 'transparent' : 'rgba(255,255,255,0.01)', 
+        border: noBorder ? 'none' : '1px solid var(--color-border-subtle)',
+        borderRadius: 12, padding: noBorder ? '0' : '16px', display: 'flex', flexDirection: 'column', gap: 8,
       }}>
         {children}
       </div>

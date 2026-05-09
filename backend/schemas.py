@@ -90,6 +90,7 @@ class QueryTrace(BaseModel):
 class QueryResponse(BaseModel):
     request_id: str
     answer_context: str
+    raw_reasoning: Optional[str] = None
     sources: List[str]
     trace: QueryTrace
     overall_confidence: float

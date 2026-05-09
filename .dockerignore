@@ -1,0 +1,53 @@
+# Version Control
+.git
+.gitignore
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv
+venv/
+ENV/
+env/
+
+# Persistent data (mounted as volumes)
+databases/
+chroma/
+logs/
+
+# Secrets
+.env
+
+# Frontend (built separately)
+frontend/node_modules/
+frontend/dist/
+
+# IDE / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project artifacts
+archive/
+brain/
+sample_requests/
+sample_responses/
+tests/
+*.md
+issues.md
+api docs.pdf
+futures-first/

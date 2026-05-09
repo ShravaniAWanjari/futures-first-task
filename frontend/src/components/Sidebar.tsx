@@ -42,9 +42,10 @@ export default function Sidebar({
       borderRight: '1px solid var(--color-border)', background: 'var(--color-sidebar-bg)',
     }}>
       {/* Brand */}
-      <div style={{ padding: '18px 16px 6px' }}>
-        <p style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text-muted)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-          FuturesFirst
+      <div style={{ padding: '18px 16px 12px', display: 'flex', alignItems: 'center', gap: 10 }}>
+        <img src="/logo-iris-grey.png" alt="Iris Logo" style={{ height: 28, display: 'block' }} />
+        <p style={{ fontSize: 21, fontWeight: 1000, color: '#424242', letterSpacing: '0.06em', margin: 0 }}>
+          Iris.
         </p>
       </div>
 
@@ -90,9 +91,9 @@ export default function Sidebar({
                   onMouseLeave={e => { if (workspace !== ws) (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
                 >
                   <span>{ws === 'vistastream' ? 'VistaStream Global' : 'NeonPlay Media'}</span>
-                  {ws === 'neonplay' && (
-                    <span style={{ fontSize: 10, color: 'var(--color-text-muted)', fontWeight: 400 }}>Higher ingestion variance</span>
-                  )}
+                  <span style={{ fontSize: 10, color: 'var(--color-text-muted)', fontWeight: 400 }}>
+                    {ws === 'vistastream' ? 'Clean Enterprise Input Data' : 'Messy Startup Input Data'}
+                  </span>
                 </button>
               ))}
             </div>

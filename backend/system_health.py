@@ -155,8 +155,15 @@ def get_system_health(dataset: str = "vistastream") -> Dict[str, Any]:
     db_health = check_sqlite_health(db_path)
     chroma_health = check_chroma_health(dataset)
     
+    # LLM Check
+    llm_health = {
+        "status": "healthy" if Config.GEMINI_API_KEY else "unhealthy",
+        "message": "GEMINI_API_KEY is configured." if Config.GEMINI_API_KEY else "GEMINI_API_KEY is missing.",
+        "suggested_fix": "Add GEMINI_API_KEY to your .env file (replicate from .env.example)." if not Config.GEMINI_API_KEY else None
+    }
+    
     # Overall Determination
-    if db_health["status"] == "unhealthy" or chroma_health["status"] == "unhealthy":
+    if db_health["status"] == "unhealthy" or chroma_health["status"] == "unhealthy" or llm_health["status"] == "unhealthy":
         overall = "unhealthy"
     elif chroma_health["status"] == "degraded":
         overall = "degraded"
@@ -170,7 +177,8 @@ def get_system_health(dataset: str = "vistastream") -> Dict[str, Any]:
         "timestamp": time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
         "database": db_health,
         "vector_store": chroma_health,
-        "recommendation": "System is production-ready." if overall == "healthy" else "System requires manual intervention (see suggested_fix)."
+        "llm_service": llm_health,
+        "recommendation": "System is production-ready." if overall == "healthy" else "System requires configuration or intervention."
     }
 
 if __name__ == "__main__":

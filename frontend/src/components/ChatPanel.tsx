@@ -5,7 +5,7 @@ import MessageBubble from './MessageBubble';
 interface ChatPanelProps {
   messages: Message[];
   queryLoading: boolean;
-  onOpenSources: (trace?: any) => void;
+  onOpenSources: (trace?: any, context?: string) => void;
 }
 
 export default function ChatPanel({ messages, queryLoading, onOpenSources }: ChatPanelProps) {
