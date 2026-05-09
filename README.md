@@ -522,8 +522,8 @@ Clean management-focused workspace with:
 ## Management Query Example
 
 <p align="center">
-  <img src="./readme-images/management-query-example.png" width="520"/>
-  <img src="./readme-images/management-query-example2.png" width="520"/>
+  <img src="./readme-images/management-query-example.png" width="48%"/>
+  <img src="./readme-images/management-query-example2.png" width="48%"/>
 </p>
 
 Example executive-style operational query showing:
