@@ -587,8 +587,8 @@ Multi-turn management conversations with:
 
 ## Ingestion & Operational Monitoring
 
-![Operational Monitoring](./readme-images/operational-monitoring1.png)
-![Operational Monitoring](./readme-images/operational-monitoring2.png)
+![Operational Monitoring](./readme-images/operational-monitoring.png)
+
 
 Operational monitoring and ingestion-quality analysis including:
 - warning detection
