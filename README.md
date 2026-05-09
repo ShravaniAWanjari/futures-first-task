@@ -552,8 +552,8 @@ Traceability panel showing:
 ## Operational Visualization
 
 <p align="center">
-  <img src="./readme-images/operational-visualization1.png" width="520"/>
-  <img src="./readme-images/operational-visualization2.png" width="520"/>
+  <img src="./readme-images/operational-visualization1.png" width="48%"/>
+  <img src="./readme-images/operational-visualization2.png" width="48%"/>
 </p>
 
 Structured visual analytics generated from validated operational data:
