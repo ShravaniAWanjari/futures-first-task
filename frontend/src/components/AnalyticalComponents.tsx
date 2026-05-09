@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 /**
  * Analytical Presentation Pass
@@ -17,76 +17,73 @@ export const DataTable: React.FC<TableProps> = ({ columns, rows }) => {
     <div 
       id="analytical-table-container"
       style={{ 
-        margin: '32px 0', 
+        margin: '24px 0', 
         overflowX: 'auto', 
-        borderRadius: '24px', 
-        border: '1px solid rgba(255, 255, 255, 0.05)',
-        background: 'linear-gradient(145deg, var(--color-surface), var(--color-bg))',
-        boxShadow: '20px 20px 60px rgba(0,0,0,0.08), -20px -20px 60px rgba(255,255,255,0.02)',
-        padding: '1px'
+        borderRadius: '20px', 
+        border: '1px solid rgba(0,0,0,0.06)',
+        background: 'var(--color-surface, #fff)',
+        boxShadow: '0 2px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
       }}
     >
-      <div style={{
-        borderRadius: '23px',
-        overflow: 'hidden',
-        background: 'rgba(255, 255, 255, 0.01)',
-        backdropFilter: 'blur(10px)'
+      <table style={{ 
+        width: '100%', 
+        borderCollapse: 'collapse',
+        fontSize: '13px', 
+        textAlign: 'left',
+        minWidth: '400px',
       }}>
-        <table style={{ 
-          width: '100%', 
-          borderCollapse: 'separate', 
-          borderSpacing: '0',
-          fontSize: '13px', 
-          textAlign: 'left' 
-        }}>
-          <thead>
-            <tr style={{ background: 'rgba(255, 255, 255, 0.03)' }}>
-              {columns.map((col, i) => (
-                <th key={i} style={{ 
-                  padding: '18px 24px', 
-                  fontWeight: 700, 
-                  color: 'var(--color-text)', 
-                  borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.08em',
-                  fontSize: '11px',
-                  opacity: 0.7
-                }}>
-                  {col.replace(/_/g, ' ')}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, ri) => (
-              <tr key={ri} style={{ 
-                borderBottom: '1px solid rgba(255, 255, 255, 0.03)', 
-                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)' 
-              }} onMouseEnter={e => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)';
-                e.currentTarget.style.transform = 'scale(1.002)';
-              }} onMouseLeave={e => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.transform = 'scale(1)';
+        <thead>
+          <tr style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+            {columns.map((col, i) => (
+              <th key={i} style={{ 
+                padding: '14px 20px', 
+                fontWeight: 600, 
+                color: 'var(--color-text-muted, #888)', 
+                textTransform: 'uppercase',
+                letterSpacing: '0.07em',
+                fontSize: '10.5px',
+                whiteSpace: 'nowrap',
               }}>
-                {columns.map((col, ci) => (
-                  <td key={ci} style={{ 
-                    padding: '16px 24px', 
-                    color: 'var(--color-text-secondary)', 
-                    fontWeight: 500,
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.02)'
-                  }}
-                  dangerouslySetInnerHTML={{
-                    __html: (typeof row[col] === 'number' ? row[col].toLocaleString() : String(row[col]))
-                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                  }}
-                  />
-                ))}
-              </tr>
+                {col.replace(/_/g, ' ')}
+              </th>
             ))}
-          </tbody>
-        </table>
-      </div>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row, ri) => (
+            <tr 
+              key={ri} 
+              style={{ 
+                borderBottom: ri < rows.length - 1 ? '1px solid rgba(0,0,0,0.04)' : 'none',
+                transition: 'background 0.15s',
+              }} 
+              onMouseEnter={e => e.currentTarget.style.background = 'rgba(0,0,0,0.015)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+            >
+              {columns.map((col, ci) => {
+                const val = row[col];
+                const isFirst = ci === 0;
+                const htmlVal = typeof val === 'number' 
+                  ? val.toLocaleString() 
+                  : String(val ?? 'N/A').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                return (
+                  <td 
+                    key={ci} 
+                    style={{ 
+                      padding: '13px 20px', 
+                      color: isFirst ? 'var(--color-text, #111)' : 'var(--color-text-secondary, #555)', 
+                      fontWeight: isFirst ? 600 : 400,
+                      fontSize: '13px',
+                      lineHeight: 1.5,
+                    }}
+                    dangerouslySetInnerHTML={{ __html: htmlVal }}
+                  />
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
@@ -98,52 +95,126 @@ interface ChartProps {
   label?: string;
 }
 
+// Color palette for bars — cycling through accent tones
+const BAR_COLORS = [
+  'rgba(59, 130, 246, 0.85)',   // blue
+  'rgba(16, 185, 129, 0.85)',   // emerald
+  'rgba(245, 158, 11, 0.85)',   // amber
+  'rgba(239, 68, 68, 0.85)',    // red
+  'rgba(139, 92, 246, 0.85)',   // violet
+  'rgba(236, 72, 153, 0.85)',   // pink
+  'rgba(14, 165, 233, 0.85)',   // sky
+  'rgba(168, 85, 247, 0.85)',   // purple
+];
+
 export const DataChart: React.FC<ChartProps> = ({ type, labels, values, label }) => {
   if (!values || values.length === 0) return null;
 
   const max = Math.max(...values, 1);
 
-  if (type === 'bar') {
-    return (
-      <div 
-        id="analytical-chart-bar"
-        style={{ 
-          margin: '24px 0', 
-          padding: '24px', 
-          background: 'var(--color-surface)', 
-          borderRadius: '16px', 
-          border: '1px solid var(--color-border)',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.04)'
-        }}
-      >
-        <h5 style={{ margin: '0 0 20px 0', fontSize: '14px', fontWeight: 700, color: 'var(--color-text)', letterSpacing: '-0.01em' }}>
-          {label || 'Comparative Performance Metrics'}
+  const formatValue = (v: number) => {
+    if (v >= 1_000_000) return `${(v / 1_000_000).toFixed(1)}M`;
+    if (v >= 1_000) return `${(v / 1_000).toFixed(1)}K`;
+    if (v % 1 !== 0) return v.toFixed(2);
+    return v.toLocaleString();
+  };
+
+  return (
+    <div 
+      id="analytical-chart-bar"
+      style={{ 
+        margin: '24px 0',
+        padding: '24px 28px 20px',
+        background: 'var(--color-surface, #fff)',
+        borderRadius: '20px', 
+        border: '1px solid rgba(0,0,0,0.06)',
+        boxShadow: '0 2px 24px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04)',
+      }}
+    >
+      {/* Chart header */}
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'space-between', 
+        alignItems: 'baseline', 
+        marginBottom: 24 
+      }}>
+        <h5 style={{ 
+          margin: 0, 
+          fontSize: '13px', 
+          fontWeight: 600, 
+          color: 'var(--color-text, #111)', 
+          letterSpacing: '-0.01em' 
+        }}>
+          {label || 'Performance Breakdown'}
         </h5>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-          {labels.map((l, i) => (
-            <div key={i} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px' }}>
-                <span style={{ color: 'var(--color-text-secondary)', fontWeight: 600 }}>{l}</span>
-                <span style={{ fontWeight: 700, color: 'var(--color-text)' }}>{values[i].toLocaleString()}</span>
+        <span style={{ 
+          fontSize: '10px', 
+          fontWeight: 600, 
+          color: 'var(--color-text-muted, #888)', 
+          textTransform: 'uppercase', 
+          letterSpacing: '0.07em' 
+        }}>
+          {type === 'bar' ? 'Bar Chart' : type === 'line' ? 'Trend' : 'Distribution'}
+        </span>
+      </div>
+
+      {/* Bars */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        {labels.map((lbl, i) => {
+          const pct = (values[i] / max) * 100;
+          const color = BAR_COLORS[i % BAR_COLORS.length];
+          return (
+            <div key={i}>
+              <div style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                alignItems: 'center',
+                marginBottom: 6,
+                fontSize: '12.5px',
+              }}>
+                <span style={{ 
+                  color: 'var(--color-text-secondary, #555)', 
+                  fontWeight: 500,
+                  maxWidth: '65%',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}>
+                  {lbl}
+                </span>
+                <span style={{ 
+                  fontWeight: 700, 
+                  color: 'var(--color-text, #111)',
+                  fontSize: '12.5px',
+                  letterSpacing: '-0.01em',
+                }}>
+                  {formatValue(values[i])}
+                </span>
               </div>
-              <div style={{ width: '100%', height: '10px', background: 'var(--color-bg)', borderRadius: '5px', overflow: 'hidden' }}>
-                <div style={{ 
-                  width: `${(values[i] / max) * 100}%`, 
-                  height: '100%', 
-                  background: 'linear-gradient(90deg, #202020, #404040)',
-                  borderRadius: '5px',
-                  transition: 'width 1s cubic-bezier(0.34, 1.56, 0.64, 1)'
-                }} />
+              {/* Bar track */}
+              <div style={{ 
+                width: '100%', 
+                height: '8px', 
+                background: 'rgba(0,0,0,0.05)', 
+                borderRadius: '4px', 
+                overflow: 'hidden' 
+              }}>
+                <div 
+                  style={{ 
+                    width: `${pct}%`, 
+                    height: '100%', 
+                    background: color,
+                    borderRadius: '4px',
+                    transition: 'width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                  }} 
+                />
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
-    );
-  }
-
-  // Fallback or simple visualization
-  return <DataTable columns={['Category', 'Value']} rows={labels.map((l, i) => ({'Category': l, 'Value': values[i]}))} />;
+    </div>
+  );
 };
 
 interface KPICardProps {
@@ -155,24 +226,89 @@ interface KPICardProps {
 export const KPICard: React.FC<KPICardProps> = ({ label, value, context }) => {
   return (
     <div style={{ 
-      padding: '20px', 
-      background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02))', 
-      borderRadius: '12px', 
-      border: '1px solid var(--color-border)',
-      minWidth: '200px',
-      flex: '1'
+      padding: '20px 24px', 
+      background: 'var(--color-surface, #fff)',
+      borderRadius: '16px', 
+      border: '1px solid rgba(0,0,0,0.06)',
+      boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+      display: 'inline-flex',
+      flexDirection: 'column',
+      gap: 6,
     }}>
-      <div style={{ fontSize: '12px', fontWeight: 500, color: 'var(--color-text-muted)', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+      <div style={{ 
+        fontSize: '11px', 
+        fontWeight: 600, 
+        color: 'var(--color-text-muted, #888)', 
+        textTransform: 'uppercase', 
+        letterSpacing: '0.07em' 
+      }}>
         {label}
       </div>
-      <div style={{ fontSize: '28px', fontWeight: 700, color: 'var(--color-text)', marginBottom: '4px' }}>
+      <div style={{ 
+        fontSize: '32px', 
+        fontWeight: 700, 
+        color: 'var(--color-text, #111)', 
+        letterSpacing: '-0.03em',
+        lineHeight: 1.1,
+      }}>
         {value}
       </div>
       {context && (
-        <div style={{ fontSize: '11px', color: 'var(--color-text-secondary)', opacity: 0.8 }}>
+        <div style={{ 
+          fontSize: '12px', 
+          color: 'var(--color-text-secondary, #666)',
+          marginTop: 2,
+        }}>
           {context}
         </div>
       )}
     </div>
+  );
+};
+
+/**
+ * InlineChart — auto-generates a bar chart from a markdown table's
+ * first numeric column, triggered directly from the formatResponse pipeline.
+ */
+interface InlineChartProps {
+  columns: string[];
+  rows: any[];
+  label?: string;
+}
+
+export const InlineChart: React.FC<InlineChartProps> = ({ columns, rows, label }) => {
+  if (!rows || rows.length === 0 || columns.length < 2) return null;
+
+  // Find the first column with numeric values
+  const labelCol = columns[0];
+  const numericCol = columns.slice(1).find(col => {
+    return rows.some(r => {
+      const v = String(r[col] ?? '').replace(/[$,%x]/g, '').trim();
+      return !isNaN(parseFloat(v)) && v !== '';
+    });
+  });
+
+  if (!numericCol) return null;
+
+  const parseVal = (v: any): number => {
+    const s = String(v ?? '').replace(/[$,%x,]/g, '').trim();
+    if (s.toUpperCase().endsWith('M')) return parseFloat(s) * 1_000_000;
+    if (s.toUpperCase().endsWith('K')) return parseFloat(s) * 1_000;
+    return parseFloat(s) || 0;
+  };
+
+  const chartData = rows
+    .map(r => ({ lbl: String(r[labelCol] ?? ''), val: parseVal(r[numericCol]) }))
+    .filter(d => d.lbl && d.val > 0);
+
+  if (chartData.length < 2) return null;
+
+  return (
+    <DataChart
+      type="bar"
+      labels={chartData.map(d => d.lbl)}
+      values={chartData.map(d => d.val)}
+      label={label || numericCol}
+    />
   );
 };

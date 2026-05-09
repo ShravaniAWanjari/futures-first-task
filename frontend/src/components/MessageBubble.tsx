@@ -1,6 +1,6 @@
 import type { Message } from '../types';
 import { formatResponse, type FormattedSegment } from '../utils/formatResponse';
-import { DataTable, DataChart, KPICard } from './AnalyticalComponents';
+import { DataTable, DataChart, KPICard, InlineChart } from './AnalyticalComponents';
 
 interface MessageBubbleProps {
   message: Message;
@@ -162,9 +162,15 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
 
 function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFirst: boolean }) {
   switch (segment.type) {
-    case 'table':
+    case 'table': {
       const { columns, rows } = JSON.parse(segment.content);
-      return <DataTable columns={columns} rows={rows} />;
+      return (
+        <div>
+          <DataTable columns={columns} rows={rows} />
+          <InlineChart columns={columns} rows={rows} />
+        </div>
+      );
+    }
 
     case 'heading':
       return (
