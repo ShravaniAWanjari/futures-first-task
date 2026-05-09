@@ -521,7 +521,8 @@ Clean management-focused workspace with:
 
 ## Management Query Example
 
-![Management Query](./readme-images/management-query-example.png)
+![Management Query](./readme-images/management-query-example1.png)
+![Management Query](./readme-images/management-query-example2.png)
 
 Example executive-style operational query showing:
 - management-focused synthesis
