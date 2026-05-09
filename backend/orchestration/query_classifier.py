@@ -321,6 +321,7 @@ def _extract_intent(query: str, query_type: str, detected_domains: List[str]) ->
     """
     Extracts structured analytical intent from the user query.
     """
+    query_lower = query.lower()
     intent = {
         "mode": "structured" if query_type == "sql" else "document",
         "domain": detected_domains[0] if detected_domains else ("marketing_performance" if query_type == "sql" else "operational_reports"),
@@ -331,13 +332,13 @@ def _extract_intent(query: str, query_type: str, detected_domains: List[str]) ->
         "confidence": 0.90 if query_type == "sql" else 0.85
     }
     
-    # Extract Extremes (Phase 16)
-    if any(k in query for k in ["highest", "most", "top", "best", "greatest", "max"]):
+    # 1. Extract Extremes
+    if any(k in query_lower for k in ["highest", "most", "top", "best", "greatest", "max"]):
         intent["extreme"] = "highest"
-    elif any(k in query for k in ["lowest", "least", "bottom", "worst", "min"]):
+    elif any(k in query_lower for k in ["lowest", "least", "bottom", "worst", "min"]):
         intent["extreme"] = "lowest"
     
-    # Extract Metrics
+    # 2. Extract Metrics
     metrics_map = {
         "roi": ["roi", "efficiency", "return"],
         "spend": ["spend", "cost", "budget"],
@@ -345,63 +346,58 @@ def _extract_intent(query: str, query_type: str, detected_domains: List[str]) ->
         "performance": ["performance", "watch hours", "completion", "engagement"]
     }
     for m, keywords in metrics_map.items():
-        if any(kw in query for kw in keywords):
+        if any(kw in query_lower for kw in keywords):
             intent["metric"] = m
             break
             
-    # Extract Dimensions
+    # 3. Extract Dimensions
     dimensions_map = {
         "platform": ["platform", "channel", "youtube", "tiktok", "instagram", "tv"],
         "region": ["region", "europe", "apac", "na", "north america", "latam", "emerging market"]
     }
     for d, keywords in dimensions_map.items():
-        if any(kw in query for kw in keywords):
+        if any(kw in query_lower for kw in keywords):
             intent["dimension"] = d
             break
             
-    # Extract Entities (Mock basic NER with Normalization)
+    # 4. Extract Entities (Robust Matching)
     entities = []
     
-    # Regions
-    if any(kw in query for kw in ["apac", "asia pacific", "asia-pacific"]): entities.append("APAC")
-    if any(kw in query for kw in ["latam", "latin america"]): entities.append("LATAM")
-    if any(kw in query for kw in ["europe", "emea", "middle east", "africa"]): entities.append("EMEA")
-    if "north america" in query or re.search(r"\bna\b", query): entities.append("North America")
-        
-    # Platforms
-    platforms = {
-        "youtube": "YouTube Shorts", "youtube shorts": "YouTube Shorts",
-        "tiktok": "TikTok", "tik tok": "TikTok",
-        "instagram": "Instagram Reels", "reels": "Instagram Reels",
-        "tv": "Connected TV", "connected tv": "Connected TV",
-        "google": "Google Ads", "google ads": "Google Ads"
+    # Geographic Entities
+    geo_map = {
+        "APAC": ["apac", "asia", "pacific"],
+        "LATAM": ["latam", "latin america"],
+        "EMEA": ["europe", "emea", "middle east", "africa"],
+        "North America": ["north america", "usa", "us", "na"]
     }
-    for kw, entity in platforms.items():
-        if kw in query:
-            entities.append(entity)
+    for ent, keywords in geo_map.items():
+        if any(re.search(rf"\b{kw}\b", query_lower) for kw in keywords):
+            entities.append(ent)
             
-    # Operational Topics (Fuzzy extraction for SQL LIKE filters)
-    topics = ["watch activity", "marketing", "validation", "ingestion", "subtitle", "localization"]
-    for topic in topics:
-        if topic in query:
-            entities.append(topic)
-
-    # Time Periods (Quarters, Fiscal Years)
-    quarters = {
-        "q1": "Q1", "quarter 1": "Q1",
-        "q2": "Q2", "quarter 2": "Q2",
-        "q3": "Q3", "quarter 3": "Q3",
-        "q4": "Q4", "quarter 4": "Q4",
-        "fy2026": "FY2026", "2026": "FY2026",
-        "fy2025": "FY2025", "2025": "FY2025"
+    # Platform Entities
+    platform_map = {
+        "YouTube Shorts": ["youtube", "shorts"],
+        "TikTok": ["tiktok", "tik tok"],
+        "Instagram Reels": ["instagram", "reels", "insta"],
+        "Connected TV": ["tv", "ctv", "connected tv"],
+        "Google Ads": ["google", "ads"]
     }
-    for kw, entity in quarters.items():
-        if kw in query:
-            entities.append(entity)
-    
+    for ent, keywords in platform_map.items():
+        if any(re.search(rf"\b{kw}\b", query_lower) for kw in keywords):
+            entities.append(ent)
+            
+    # Time Periods
+    time_map = {
+        "Q1": ["q1", "quarter 1"], "Q2": ["q2", "quarter 2"],
+        "Q3": ["q3", "quarter 3"], "Q4": ["q4", "quarter 4"],
+        "FY2026": ["fy2026", "2026"], "FY2025": ["fy2025", "2025"]
+    }
+    for ent, keywords in time_map.items():
+        if any(re.search(rf"\b{kw}\b", query_lower) for kw in keywords):
+            entities.append(ent)
+            
     if entities:
-        # De-duplicate
-        intent["entities"] = list(set(entities))
+        intent["entities"] = list(dict.fromkeys(entities)) # Preserve order + unique
         
     return intent
 

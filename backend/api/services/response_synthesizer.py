@@ -120,15 +120,15 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         )
         if llm_narrative:
             logger.info("[synthesizer] Successfully generated LLM narrative.")
-            narrative_output = llm_narrative
+            narrative_output = _format_all_flattened_tables(llm_narrative)
         else:
             logger.warning("[synthesizer] LLM synthesis failed or returned empty. Falling back to deterministic.")
             narrative_output = "\n\n".join(synthesized_parts)
     else:
         narrative_output = "\n\n".join(synthesized_parts)
-    
-    # Phase 12: Narrative Metric Bolding (Executive Readability) - Only apply if not LLM (LLM does its own)
-    if not llm_service.enabled:
+        
+        # Phase 12: Narrative Metric Bolding (Executive Readability) - Only for deterministic
+        narrative_output = _format_all_flattened_tables(narrative_output)
         narrative_output = re.sub(r'(\$[\d\.]+M?)', r'**\1**', narrative_output)
         narrative_output = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', narrative_output)
         narrative_output = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', narrative_output)
@@ -137,7 +137,13 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     if structured_data:
         structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
         if 'title' not in structured_data:
-            structured_data['title'] = generate_session_title(original_query)
+            # Phase 19: AI-Powered Title Generation
+            if llm_service.enabled:
+                structured_data['title'] = llm_service.generate_title(original_query)
+            else:
+                # Fallback deterministic logic
+                q = original_query.lower()
+                structured_data['title'] = "Executive Insight Report"
         
         # Phase 15: Result-Driven Dynamic Titles (Management Visualization)
         if original_query.lower().startswith("which") and "chart" in structured_data:
@@ -715,17 +721,31 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
 
 def _extract_flattened_table(text: str) -> Optional[str]:
     """Tries to reconstruct a markdown table from flattened text strings."""
-    # Pattern 0: Specific QoQ Multi-Metric Block (Found in Q2 Executive Reports)
-    # e.g. "Total Subscribers 41.2M 45.8M +11.1% Monthly Active Users 33.7M 37.9M +12.4%"
-    # We use a broad but structured regex to capture these recurring patterns
-    qoq_pattern = r'([A-Z][A-Za-z\s]{3,40}?(?=\s+\d))\s+([\d\.]+(?:M|hrs|%)?)\s+([\d\.]+(?:M|hrs|%)?)\s+([\+\-][\d\.]+(?:%|M)?)'
+    # Pattern 0: Specific QoQ Multi-Metric Block (Metric Val1 Val2 [Change])
+    # Matches: "Avg Weekly Watch Hours 4.8 hrs 5.7 hrs" or "Total Subscribers 41.2M 45.8M +11.1%"
+    qoq_pattern = r'([A-Z][A-Za-z\s]{3,45}?(?=\s+\d))\s+([\d\.]+(?:M|hrs|%|min)?)\s+([\d\.]+(?:M|hrs|%|min)?)(?:\s+([\+\-][\d\.]+(?:%|M)?))?'
     qoq_items = re.findall(qoq_pattern, text)
     
     if len(qoq_items) >= 2:
-        header = "| Performance Metric | Q1 FY2026 | Q2 FY2026 | QoQ Change |\n|---|---|---|---|\n"
+        # Check if we have change values
+        has_change = any(m[3] for m in qoq_items)
+        header = "| Metric | Q1 FY2026 | Q2 FY2026 |" + (" Change |" if has_change else "")
+        sep = "|---|---|---|" + ("---|" if has_change else "")
         rows = []
         for m in qoq_items:
-            rows.append(f"| {m[0].strip()} | {m[1]} | {m[2]} | **{m[3]}** |")
+            row = f"| {m[0].strip()} | {m[1]} | {m[2]} |"
+            if has_change:
+                row += f" **{m[3] if m[3] else 'N/A'}** |"
+            rows.append(row)
+        return f"{header}\n{sep}\n" + "\n".join(rows)
+
+    # Pattern 0.1: Regional Activity Windows
+    # Matches: "APAC 8 PM – 1 AM North America 7 PM – 11 PM"
+    window_pattern = r'([A-Z][A-Za-z\s]{1,20})\s+(\d+\s*[AP]M\s*–\s*\d+\s*[AP]M)'
+    window_items = re.findall(window_pattern, text)
+    if len(window_items) >= 2:
+        header = "| Region | Peak Viewing Window |\n|---|---|\n"
+        rows = [f"| {m[0].strip()} | {m[1]} |" for m in window_items]
         return header + "\n".join(rows)
 
     lines = text.split('\n')
@@ -760,3 +780,86 @@ def _extract_flattened_table(text: str) -> Optional[str]:
             return header + "\n".join(rows)
 
     return None
+
+def _format_all_flattened_tables(text: str) -> str:
+    """Detects and replaces dense metric strings with markdown tables in the final text."""
+    # 1. QoQ Metric Replacement (Metric Val1 Val2 [Change])
+    # Matches: "Avg Weekly Watch Hours 4.8 hrs 5.7 hrs"
+    qoq_pattern = r'([A-Z][A-Za-z\s]{3,45}?(?=\s+\d))\s+([\d\.]+(?:M|hrs|%|min)?)\s+([\d\.]+(?:M|hrs|%|min)?)(?:\s+([\+\-][\d\.]+(?:%|M)?))?'
+    qoq_matches = re.findall(qoq_pattern, text)
+    
+    if len(qoq_matches) >= 2:
+        has_change = any(m[3] for m in qoq_matches)
+        header = "| Metric | Q1 FY2026 | Q2 FY2026 |" + (" Change |" if has_change else "")
+        sep = "|---|---|---|" + ("---|" if has_change else "")
+        table_rows = []
+        for m in qoq_matches:
+            row = f"| {m[0].strip()} | {m[1]} | {m[2]} |"
+            if has_change:
+                row += f" **{m[3] if m[3] else 'N/A'}** |"
+            table_rows.append(row)
+        
+        table_md = f"\n{header}\n{sep}\n" + "\n".join(table_rows) + "\n"
+        
+        # Identify the full block of text to replace
+        try:
+            start_idx = text.find(qoq_matches[0][0])
+            last_item = qoq_matches[-1]
+            # Construct a search string that represents the end of the block
+            search_str = f"{last_item[2]}"
+            if last_item[3]: search_str += f" {last_item[3]}"
+            end_idx = text.find(search_str, start_idx) + len(search_str)
+            
+            if start_idx != -1 and end_idx != -1:
+                text = text[:start_idx] + table_md + text[end_idx:]
+        except Exception:
+            pass
+
+    # 2. Regional Activity Windows Replacement
+    # Matches: "APAC 8 PM – 1 AM" or "LATAM 8PM - midnight"
+    window_pattern = r'([A-Z][A-Za-z\s]{1,20})\s+(\d+\s*[AP]M\s*[–-]\s*(?:\d+\s*[AP]M|midnight))'
+    window_matches = re.findall(window_pattern, text)
+    if len(window_matches) >= 2:
+        header = "| Region | Peak Viewing Window |\n|---|---|\n"
+        table_rows = [f"| {m[0].strip()} | {m[1]} |" for m in window_matches]
+        table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
+        
+        try:
+            start_idx = text.find(window_matches[0][0])
+            last_item = window_matches[-1]
+            search_str = f"{last_item[1]}"
+            end_idx = text.find(search_str, start_idx) + len(search_str)
+            
+            if start_idx != -1 and end_idx != -1:
+                text = text[:start_idx] + table_md + text[end_idx:]
+        except Exception:
+            pass
+
+    # 4. Roadmap / Content Table Replacement
+    # Matches: "Title Genre Region Focus Release Window Neon District Cyberpunk Global August 2026"
+    roadmap_pattern = r'(Title\s+Genre\s+Region\s+Focus\s+Release\s+Window)\s+(.+?)(?=\s*[A-Z][a-z]+\s+[A-Z][a-z]+|$)'
+    roadmap_match = re.search(roadmap_pattern, text)
+    if roadmap_match:
+        header_str = roadmap_match.group(1)
+        content_str = roadmap_match.group(2)
+        
+        # Split content into rows of 5 words approximately
+        header = "| Title | Genre | Region | Focus | Release Window |\n|---|---|---|---|---|\n"
+        # Match groups of 5+ words that look like rows
+        # e.g. "Neon District Cyberpunk Global August 2026"
+        row_pattern = r'([A-Z][A-Za-z\s\d]+?)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+\s+\d{4})'
+        rows = re.findall(row_pattern, content_str)
+        if rows:
+            table_rows = [f"| {r[0].strip()} | {r[1]} | {r[2]} | {r[3]} | {r[4]} |" for r in rows]
+            table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
+            text = text.replace(roadmap_match.group(0), table_md)
+
+    # 5. Markdown Table Sanity Check (Fix common AI mistakes)
+    # Fix double pipes: "| |" -> "|"
+    text = text.replace("| |", "|")
+    # Fix missing space after pipes in separators: "|---|---|---| ---|" -> "|---|---|---|---|"
+    text = re.sub(r'(\|\s*[-:]+\s*)+\|', lambda m: m.group(0).replace(" ", ""), text)
+    # Ensure there is a newline before and after tables
+    text = re.sub(r'([^\n])\n(\|.*\|)\n([^\n])', r'\1\n\n\2\n\n\3', text)
+
+    return text

@@ -67,6 +67,32 @@ export function formatResponse(raw: string): FormattedSegment[] {
       continue;
     }
 
+    // --- Markdown Table ---
+    if (block.includes('|') && block.includes('---')) {
+      const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+      // Find the header row (usually the first line with pipes)
+      const headerIdx = lines.findIndex(l => l.startsWith('|') && l.endsWith('|'));
+      const sepIdx = lines.findIndex(l => l.includes('|') && l.includes('---'));
+      
+      if (headerIdx !== -1 && sepIdx !== -1) {
+        const columns = lines[headerIdx].split('|').map(c => c.trim()).filter(Boolean);
+        const rows = lines.slice(sepIdx + 1).map(line => {
+          const cells = line.split('|').map(c => c.trim()).filter(Boolean);
+          const rowObj: any = {};
+          columns.forEach((col, i) => {
+            rowObj[col] = cells[i] || '';
+          });
+          return rowObj;
+        });
+
+        segments.push({ 
+          type: 'table', 
+          content: JSON.stringify({ columns, rows }) 
+        });
+        continue;
+      }
+    }
+
     // --- Bold paragraph (contains **) ---
     if (block.includes('**')) {
       segments.push({ type: 'bold-paragraph', content: block });

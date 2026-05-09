@@ -155,6 +155,10 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
 
 function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFirst: boolean }) {
   switch (segment.type) {
+    case 'table':
+      const { columns, rows } = JSON.parse(segment.content);
+      return <DataTable columns={columns} rows={rows} />;
+
     case 'heading':
       const Tag = segment.level === 2 ? 'h3' : 'h4';
       return (

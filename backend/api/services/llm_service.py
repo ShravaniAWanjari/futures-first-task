@@ -13,13 +13,30 @@ class LLMService:
         if self.enabled:
             try:
                 genai.configure(api_key=self.api_key)
-                self.model = genai.GenerativeModel('gemini-1.5-flash')
+                # Use the flash-latest model identified in the diagnostic list
+                self.model = genai.GenerativeModel('gemini-flash-latest')
                 logger.info("[llm_service] Gemini 1.5 Flash initialized successfully.")
             except Exception as e:
                 logger.error(f"[llm_service] Failed to initialize Gemini: {e}")
                 self.enabled = False
         else:
             logger.warning("[llm_service] No GEMINI_API_KEY found. LLM synthesis will be disabled.")
+
+    def generate_title(self, query: str) -> str:
+        """Generates a clean, professional title for the session."""
+        if not self.enabled:
+            return "New Analysis"
+        
+        try:
+            prompt = (
+                f"Generate a professional, concise 3-5 word title for a business intelligence report based on this user query: '{query}'. "
+                "The title should be high-level and executive (e.g. 'Regional ROI Analysis' or 'Subscriber Growth Trends'). "
+                "Do not use punctuation or quotes. Return ONLY the title string."
+            )
+            response = self.model.generate_content(prompt)
+            return response.text.strip().replace('"', '').replace("'", "")
+        except Exception:
+            return "Operational Analysis"
 
     def synthesize_narrative(self, query: str, context: str, history: List[Dict[str, Any]] = None) -> Optional[str]:
         """
@@ -36,15 +53,21 @@ class LLMService:
         # Build prompt
         system_prompt = (
             "You are a Senior Operational Intelligence Analyst. "
-            "Your goal is to provide DIRECT, ACCURATE, and CONCISE answers based on Grounded Evidence. "
-            "\n\nCRITICAL DIRECTIVES:"
-            "\n1. NO CORPORATE FLUFF: Do not use phrases like 'Analysis suggests', 'The data indicates', or 'It is recommended' unless specifically asked for an analysis. Just answer the question."
-            "\n2. DIRECT ANSWERS FIRST: If the user asks a simple question (e.g., 'What regions are covered?'), provide a direct list or statement immediately. Do not wrap it in a 'STRATEGIC SUMMARY' if a simple list is sufficient."
-            "\n3. ONLY use provided Grounded Evidence for data. If the evidence is empty or missing the specific answer, say so clearly."
-            "\n4. DEFINITIONS: For 'What is' queries, provide a one-sentence definition first, then relate it to the evidence."
-            "\n5. STYLE: Data-driven and professional. Use bolding for metrics and entities. NO EMOJIS."
-            "\n6. FORMATTING: Use markdown headers (##) only for complex, multi-part reports. For simple questions, plain text or bullet points are preferred."
-            "\n7. CLEANUP: Correct obvious fragments (e.g. 'YouTub' -> 'YouTube')."
+            "Your goal is to provide HIGH-IMPACT, MANAGEMENT-GRADE insights based on Grounded Evidence. "
+            "\n\nDIRECTIVES FOR PREMIUM STRUCTURE:"
+            "\n1. FREEDOM OF FORMAT: You have a free hand to restructure and reformat the retrieved data into a premium executive layout. Do not just paste text."
+            "\n2. MANDATORY TABLES: If you see metrics comparing periods, regions, platforms, or devices, you MUST use markdown tables. Ensure proper syntax: one header row, one separator row (|---|---|), and subsequent data rows. "
+            "\n3. TWO-COLUMN LISTS: Convert simple bulleted findings into clean two-column markdown tables (e.g., | Attribute | Observation |) to maximize space efficiency. "
+            "\n   Example Table Syntax:"
+            "\n   | Category | Status |"
+            "\n   |---|---|"
+            "\n   | Sci-Fi | **Leader** |"
+            "\n   | Reality | **Lagging** |"
+            "\n4. RICH TYPOGRAPHY: Use bolding for all metrics, entities, and key findings. Use sub-headers (###) to separate logical sections. Always use double newlines before and after tables."
+            "\n4. DATA CALLOUTS: Use blockquotes or bold bullet points for critical operational warnings or 'So What?' insights."
+            "\n5. DIRECT & ACCURATE: Be concise. No fluff like 'It appears that'. Just provide the intelligence. "
+            "\n6. GROUNDING: Ensure every metric is grounded in the provided evidence. Do not hallucinate numbers."
+            "\n7. CLEANUP: Correct obvious fragments (e.g. 'YouTub' -> 'YouTube', 'APAC 8PM' -> 'APAC: 8 PM')."
         )
 
         chat_history = []

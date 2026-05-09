@@ -29,6 +29,8 @@ def plan_and_generate_sql(intent: Optional[Dict[str, Any]], routing_plan: Option
     target_tables = routing_plan.get("target_tables", [])
     extreme = intent.get("extreme") # highest, lowest
     
+    logger.info(f"[orchestrator] Planning SQL for domain={domain}, entities={entities}, metric={metric}")
+    
     if not target_tables:
         return None
 
