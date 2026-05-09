@@ -610,17 +610,26 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         logger.info("[synthesizer] Could not find table dash separator")
         return None
     
+    def _clean_pipe_split(line: str) -> List[str]:
+        parts = line.split('|')
+        if parts and not parts[0].strip(): parts = parts[1:]
+        if parts and not parts[-1].strip(): parts = parts[:-1]
+        return [p.strip() for p in parts]
+
     header_line = lines[dash_idx - 1]
-    columns = [c.strip() for c in header_line.split('|') if c.strip()]
+    columns = _clean_pipe_split(header_line)
+    # Ensure no empty string columns
+    columns = [c if c else f"Column_{i}" for i, c in enumerate(columns)]
+    
     data_lines = [l for l in lines[dash_idx + 1:] if not l.startswith('...')]
     
     logger.info(f"[synthesizer] Parsed {len(columns)} columns and {len(data_lines)} potential rows")
     
     rows = []
     for line in data_lines:
-        values = [v.strip() for v in line.split('|')]
-        if len(values) >= len(columns):
-            row = {columns[ci]: values[ci] for ci in range(len(columns))}
+        values = _clean_pipe_split(line)
+        if len(values) > 0:
+            row = {columns[ci]: values[ci] if ci < len(values) else '' for ci in range(len(columns))}
             label_cols = [c for c in columns if c.lower() in ('region', 'platform', 'category', 'channel')]
             if label_cols and _is_missing_dimension(row.get(label_cols[0])):
                 continue

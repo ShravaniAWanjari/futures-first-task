@@ -1,6 +1,6 @@
 import type { Message } from '../types';
 import { formatResponse, type FormattedSegment } from '../utils/formatResponse';
-import { DataTable, DataChart, KPICard, InlineChart } from './AnalyticalComponents';
+import { DataTable, KPICard } from './AnalyticalComponents';
 
 interface MessageBubbleProps {
   message: Message;
@@ -93,15 +93,6 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
             />
           )}
           
-          {structured.chart && (
-            <DataChart 
-              type={structured.chart.type} 
-              labels={structured.chart.labels} 
-              values={structured.chart.values} 
-              label={structured.chart.label}
-            />
-          )}
-
           {structured.table && structured.response_type === 'table_response' && (
             <DataTable 
               columns={structured.table.columns} 
@@ -167,7 +158,6 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
       return (
         <div>
           <DataTable columns={columns} rows={rows} />
-          <InlineChart columns={columns} rows={rows} />
         </div>
       );
     }
