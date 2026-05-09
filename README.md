@@ -546,7 +546,8 @@ Traceability panel showing:
 
 ## Operational Visualization
 
-![Operational Visualization](./readme-images/operational-visualization.png)
+![Operational Visualization](./readme-images/operational-visualization1.png)
+![Operational Visualization](./readme-images/operational-visualization2.png)
 
 Structured visual analytics generated from validated operational data:
 - KPI comparison cards
