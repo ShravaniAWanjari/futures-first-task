@@ -131,7 +131,7 @@ def classify_query(query: str, history: List[Dict[str, Any]] = None) -> Dict[str
     # 3. Traditional Signal Detection
     sql_explicit = [
         r"how many\b", r"\baverage\b", r"count\b", r"total\b", r"calculate\b", r"top \d+",
-        r"spend", r"roi", r"efficiency", r"correlate", r"relationship", r"compare", r"metrics"
+        r"spend", r"roi", r"efficiency", r"correlate", r"relationship", r"compare", r"metrics", r"\bshow\b", r"\blist\b"
     ]
     pdf_explicit = [
         r"policy", r"guideline", r"governance", r"strategy", r"roadmap", r"narrative", r"commentary"
@@ -436,7 +436,8 @@ def _is_follow_up(query: str) -> bool:
         r"^was this worse before\b",
         r"^summarize (?:that|it|this)\b",
         r"^can you summarize\b",
-        r"^elaborate\b"
+        r"^elaborate\b",
+        r"^(?:show|list|only|just|specifically)\b"
     ]
     
     # 2. Structural Indicators (pronouns, ellipsis, short dependent phrasing)
