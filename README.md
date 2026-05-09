@@ -610,8 +610,6 @@ Operational monitoring and ingestion-quality analysis including:
 
 ---
 
----
-
 # Example Queries
 
 ## Operational Analytics
