@@ -1,6 +1,7 @@
 import sqlite3
 import uuid
 import time
+import secrets
 from typing import List, Dict, Any, Optional
 from backend.config import Config
 
@@ -19,6 +20,7 @@ def init_sessions_db():
             id TEXT PRIMARY KEY,
             title TEXT,
             workspace TEXT,
+            secret TEXT,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
         )
@@ -34,6 +36,7 @@ def init_sessions_db():
             context TEXT,
             sources TEXT,
             trace TEXT,
+            structured_data TEXT,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (session_id) REFERENCES sessions (id) ON DELETE CASCADE
         )
@@ -42,16 +45,30 @@ def init_sessions_db():
     conn.commit()
     conn.close()
 
-def create_session(workspace: str = "vistastream") -> str:
+def create_session(workspace: str = "vistastream") -> dict:
     session_id = str(uuid.uuid4())
+    session_secret = secrets.token_urlsafe(32)
     conn = get_db_connection()
     conn.execute(
-        "INSERT INTO sessions (id, title, workspace) VALUES (?, ?, ?)",
-        (session_id, "New Chat", workspace)
+        "INSERT INTO sessions (id, title, workspace, secret) VALUES (?, ?, ?, ?)",
+        (session_id, "New Chat", workspace, session_secret)
     )
     conn.commit()
     conn.close()
-    return session_id
+    return {"session_id": session_id, "session_secret": session_secret}
+
+def validate_session_secret(session_id: str, secret: str) -> bool:
+    """Phase 3: Lightweight session ownership validation."""
+    conn = get_db_connection()
+    row = conn.execute("SELECT secret FROM sessions WHERE id = ?", (session_id,)).fetchone()
+    conn.close()
+    if not row:
+        return False
+    stored_secret = row["secret"]
+    # If no secret stored (legacy session), allow access
+    if not stored_secret:
+        return True
+    return secrets.compare_digest(stored_secret, secret)
 
 def list_sessions(workspace: Optional[str] = None) -> List[Dict[str, Any]]:
     conn = get_db_connection()
@@ -99,13 +116,13 @@ def update_session_title(session_id: str, title: str):
     conn.commit()
     conn.close()
 
-def add_message(session_id: str, role: str, content: str, context: str = None, sources: str = None, trace: str = None):
+def add_message(session_id: str, role: str, content: str, context: str = None, sources: str = None, trace: str = None, structured_data: str = None):
     msg_id = str(uuid.uuid4())
     conn = get_db_connection()
     
     conn.execute(
-        "INSERT INTO messages (id, session_id, role, content, context, sources, trace) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        (msg_id, session_id, role, content, context, sources, trace)
+        "INSERT INTO messages (id, session_id, role, content, context, sources, trace, structured_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+        (msg_id, session_id, role, content, context, sources, trace, structured_data)
     )
     conn.execute("UPDATE sessions SET updated_at = CURRENT_TIMESTAMP WHERE id = ?", (session_id,))
     

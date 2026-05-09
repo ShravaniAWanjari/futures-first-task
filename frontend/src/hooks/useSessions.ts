@@ -132,6 +132,7 @@ export function useSessions() {
 
     try {
       const res = await api.sendQuery(query, targetSessionId, workspace);
+      console.log('[useSessions] API Response:', res);
 
       const assistantMsg: Message = {
         id: crypto.randomUUID(),
@@ -139,6 +140,7 @@ export function useSessions() {
         content: res.answer_context,
         sources: res.sources.join(','),
         trace: JSON.stringify(res.trace),
+        structured_data: res.structured_data ? JSON.stringify(res.structured_data) : null,
         timestamp: new Date().toISOString(),
       };
 

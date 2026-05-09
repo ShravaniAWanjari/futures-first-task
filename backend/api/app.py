@@ -131,8 +131,8 @@ def get_all_sessions(request: Request, workspace: Optional[str] = FastQuery(None
 @app.post("/sessions", response_model=APIResponse[Dict[str, str]])
 def create_new_session(request: Request, data: SessionCreate):
     req_id = request.state.request_id
-    session_id = SessionService.create_session(workspace=data.workspace)
-    return APIResponse(success=True, request_id=req_id, data={"session_id": session_id})
+    result = SessionService.create_session(workspace=data.workspace)
+    return APIResponse(success=True, request_id=req_id, data=result)
 
 @app.get("/sessions/{session_id}", response_model=APIResponse[SessionResponse])
 def get_session_details(request: Request, session_id: str = Path(...)):

@@ -24,14 +24,27 @@ ALLOWED_TABLES = {
 
 FORBIDDEN_KEYWORDS = [
     r"\bDROP\b", r"\bDELETE\b", r"\bUPDATE\b", r"\bINSERT\b", 
-    r"\bALTER\b", r"\bATTACH\b", r"\bPRAGMA\b", r"\bREPLACE\b", 
-    r"\bTRUNCATE\b", r"\bCREATE\b", r"\bEXEC\b"
+    r"\bALTER\b", r"\bATTACH\b", r"\bDETACH\b", r"\bPRAGMA\b", r"\bREPLACE\b", 
+    r"\bTRUNCATE\b", r"\bCREATE\b", r"\bEXEC\b", r"\bVACUUM\b", r"\bREINDEX\b"
 ]
+
+# Explicit denylist for injection targets (Phase 1 Hardening)
+DENIED_TARGETS = [
+    r"\bSQLITE_MASTER\b", r"\bSQLITE_SCHEMA\b", r"\bSQLITE_TEMP_MASTER\b",
+    r"\bINFORMATION_SCHEMA\b", r"\bSYS\.\b", r"\bDBMS_\b"
+]
+
+def _extract_all_tables(sql_upper: str) -> set:
+    """Extracts ALL table references from FROM, JOIN, and subquery clauses."""
+    # Match tables after FROM and JOIN keywords
+    table_pattern = r'(?:FROM|JOIN)\s+([A-Za-z_][A-Za-z0-9_]*)'
+    found = set(t.lower() for t in re.findall(table_pattern, sql_upper, re.IGNORECASE))
+    return found
 
 def validate_sql(sql_query: str, conn: sqlite3.Connection = None) -> bool:
     """
     Validates a SQL query for safety and structural integrity.
-    Provides strict guardrails specifically mapped to LLM-generated text.
+    Phase 1 Hardened: Extracts ALL table references and validates each against whitelist.
     Raises UnsafeQueryError if validation fails.
     """
     if not sql_query or not sql_query.strip():
@@ -46,10 +59,23 @@ def validate_sql(sql_query: str, conn: sqlite3.Connection = None) -> bool:
     statements = [s.strip() for s in sql_query.split(";") if s.strip()]
     if len(statements) > 1:
         raise UnsafeQueryError("Multiple SQL statements are not permitted.")
+    
+    # Phase 1: Denylist check — block known injection targets BEFORE any execution
+    for denied in DENIED_TARGETS:
+        if re.search(denied, sql_upper):
+            raise UnsafeQueryError(f"Access to restricted system object detected.")
+    
+    # Phase 1: Block UNION-based injection patterns
+    if re.search(r'\bUNION\b', sql_upper):
+        raise UnsafeQueryError("UNION queries are not permitted.")
+    
+    # Block recursive CTE abuse
+    if re.search(r'\bWITH\s+RECURSIVE\b', sql_upper):
+        raise UnsafeQueryError("Recursive CTEs are not permitted.")
         
     for keyword in FORBIDDEN_KEYWORDS:
         if re.search(keyword, sql_upper):
-            raise UnsafeQueryError(f"Forbidden keyword detected: {keyword.replace(r'\b', '')}")
+            raise UnsafeQueryError(f"Forbidden keyword detected: {keyword.replace(chr(92)+'b', '')}")
             
     if "LIMIT" not in sql_upper:
         raise UnsafeQueryError("Query must contain a LIMIT clause to prevent unbounded execution.")
@@ -60,14 +86,19 @@ def validate_sql(sql_query: str, conn: sqlite3.Connection = None) -> bool:
     if clean_sql.count("*") > 2:
         raise UnsafeQueryError("Wildcard (*) abuse detected. Specify columns explicitly.")
 
+    # Phase 1: Extract ALL tables and validate each against whitelist
+    referenced_tables = _extract_all_tables(sql_upper)
+    disallowed = referenced_tables - ALLOWED_TABLES
+    if disallowed:
+        raise UnsafeQueryError(f"Disallowed table(s) referenced: {', '.join(disallowed)}")
+    
+    if not referenced_tables:
+        raise UnsafeQueryError("No recognized tables referenced in the query.")
+
     if conn:
         try:
             cursor = conn.cursor()
             cursor.execute(f"EXPLAIN {sql_query}")
-            
-            found_tables = [t for t in ALLOWED_TABLES if re.search(rf"\b{t.upper()}\b", sql_upper)]
-            if not found_tables:
-                 raise UnsafeQueryError("No globally allowed tables referenced in the query.")
         except sqlite3.Error as e:
             raise UnsafeQueryError(f"SQLite validation failed: {e}")
             

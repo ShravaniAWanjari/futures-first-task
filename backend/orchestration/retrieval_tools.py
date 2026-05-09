@@ -34,9 +34,28 @@ def get_db_path(dataset_name: str) -> str:
 
 # --- FORMATTING HELPERS ---
 
+# Phase 5: Entity alias normalization for soft matching
+ENTITY_ALIASES = {
+    "apac": ["asia pacific", "asia-pacific", "apac"],
+    "latam": ["latin america", "latam", "south america"],
+    "emea": ["europe", "middle east", "africa", "emea"],
+    "na": ["north america", "united states", "canada", "us", "usa"],
+    "north america": ["north america", "united states", "canada", "us", "usa"],
+}
+
+def _expand_entity_aliases(entities: list) -> list:
+    """Expands entity list to include all known aliases for soft matching."""
+    expanded = []
+    for e in entities:
+        e_lower = e.lower()
+        expanded.append(e_lower)
+        if e_lower in ENTITY_ALIASES:
+            expanded.extend(ENTITY_ALIASES[e_lower])
+    return list(set(expanded))
+
 def format_document_results(results: List[RetrievalResult]) -> str:
     if not results:
-        return "No documents found matching the semantic query."
+        return "No strongly relevant document evidence was found."
         
     formatted = "=== SEMANTIC SEARCH RESULTS ===\n"
     for i, res in enumerate(results, 1):
@@ -44,7 +63,6 @@ def format_document_results(results: List[RetrievalResult]) -> str:
         formatted += f"Source File: {res.source_file} (Page {res.page_number})\n"
         formatted += f"Section: {res.section_title}\n"
         formatted += f"Snippet: {res.snippet_text}\n"
-        formatted += f"Trace ID: {res.chunk_id}\n"
     return formatted
 
 def format_sql_results(rows: List[Dict[str, Any]], query: str) -> str:
@@ -69,7 +87,7 @@ def format_sql_results(rows: List[Dict[str, Any]], query: str) -> str:
 
 # --- RETRIEVAL ABSTRACTIONS ---
 
-def search_documents(query: str, dataset_name: str, request_id: str = "UNKNOWN", n_results: int = 3) -> Tuple[List[RetrievalResult], RetrievalTrace]:
+def search_documents(query: str, dataset_name: str, request_id: str = "UNKNOWN", n_results: int = 3, intent: Optional[Dict[str, Any]] = None) -> Tuple[List[RetrievalResult], RetrievalTrace]:
     logger = get_file_logger(dataset_name)
     start_time = time.time()
     trace = RetrievalTrace(success=False, n_results=0)
@@ -92,9 +110,42 @@ def search_documents(query: str, dataset_name: str, request_id: str = "UNKNOWN",
                 dist = chroma_res['distances'][0][idx] if 'distances' in chroma_res and chroma_res['distances'] else 1.0
                 doc_text = chroma_res['documents'][0][idx]
                 
-                # Simple confidence heuristic based on distance
+                # 1. Simple confidence heuristic based on distance
                 conf = max(0.0, min(1.0, 1.0 - (dist / 2.0)))
+                trace.retrieval_scores.append(conf)
                 
+                # 2. Minimum Confidence Threshold (Reject weak chunks)
+                # Threshold: 0.25 for operational recall improvement (Phase 11)
+                if conf < 0.25:
+                    logger.info(f"[{dataset_name}] [REQ:{request_id}] Rejecting chunk {chunk_id} due to low confidence ({conf:.2f}).")
+                    trace.rejected_chunks += 1
+                    continue
+                    
+                # 3. Intent vs Content Validation (Prevent Cross-Contamination)
+                if intent:
+                    metric = intent.get("metric", "")
+                    domain = intent.get("domain", "")
+                    content_lower = doc_text.lower()
+                    
+                    # Example overlap validation: ROI vs Localization
+                    if metric in ["roi", "spend"] and "localization" in content_lower and "roi" not in content_lower:
+                        logger.info(f"[{dataset_name}] [REQ:{request_id}] Rejecting chunk {chunk_id} due to semantic mismatch (Localization vs ROI).")
+                        trace.rejected_chunks += 1
+                        continue
+                        
+                    # Phase 5: Soft entity relevance (boost, not hard-filter)
+                    entities = intent.get("entities", [])
+                    if entities:
+                        expanded = _expand_entity_aliases(entities)
+                        entity_match = any(alias in content_lower for alias in expanded)
+                        if not entity_match:
+                            # Soft penalty: reduce confidence instead of hard reject
+                            conf *= 0.7
+                            if conf < 0.15:
+                                logger.info(f"[{dataset_name}] [REQ:{request_id}] Soft-rejecting chunk {chunk_id} (entity penalty dropped conf to {conf:.2f}).")
+                                trace.rejected_chunks += 1
+                                continue
+
                 res = RetrievalResult(
                     chunk_id=chunk_id,
                     source_file=meta.get("source_file", "Unknown"),
@@ -108,9 +159,11 @@ def search_documents(query: str, dataset_name: str, request_id: str = "UNKNOWN",
                 
         trace.success = True
         trace.n_results = len(parsed_results)
+        if parsed_results:
+            trace.average_confidence = sum(r.confidence for r in parsed_results) / len(parsed_results)
         trace.timing_ms = round((time.time() - start_time) * 1000, 2)
         
-        logger.info(f"[{dataset_name}] [REQ:{request_id}] [retrieval_doc] Semantic search completed in {trace.timing_ms}ms.")
+        logger.info(f"[{dataset_name}] [REQ:{request_id}] [retrieval_doc] Semantic search completed in {trace.timing_ms}ms. Yielded {trace.n_results} valid chunks, {trace.rejected_chunks} rejected.")
         return parsed_results, trace
         
     except Exception as e:

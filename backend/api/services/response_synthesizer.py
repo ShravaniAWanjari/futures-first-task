@@ -5,24 +5,48 @@ Responsibility: bridges retrieval artifacts and executive communication.
 """
 
 import re
-from typing import List, Dict, Any, Optional
+import logging
+import json
+from typing import List, Dict, Any, Optional, Tuple
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO)
+
+# Phase 4: Token Safety — Maximum chars per snippet
+MAX_SNIPPET_CHARS = 500
+MAX_FINDINGS = 4
 
 
-def synthesize_response(answer_context: str, sources: List[str], confidence: float, history: List[Dict[str, Any]] = None, original_query: str = "") -> str:
+def _detect_tone(query: str) -> str:
+    """Phase 8: Detects desired response tone from query phrasing."""
+    q = query.lower()
+    if any(kw in q for kw in ["quick", "brief", "concise", "short", "tl;dr", "briefly"]):
+        return "concise"
+    if any(kw in q for kw in ["casual", "simply", "plain english", "easy", "informal"]):
+        return "conversational"
+    if any(kw in q for kw in ["executive", "management", "formal", "detailed report", "comprehensive"]):
+        return "executive"
+    return "standard"
+
+
+def synthesize_response(answer_context: str, sources: List[str], confidence: float, history: List[Dict[str, Any]] = None, original_query: str = "") -> Tuple[str, Optional[Dict[str, Any]]]:
     """
     Takes raw orchestration answer_context and produces a coherent,
-    management-oriented narrative summary with insights and implications.
+    tone-adaptive narrative summary and structured data for rich rendering.
     """
     sections = _split_sections(answer_context)
     history = history or []
     
+    # Phase 8: Detect tone
+    tone = _detect_tone(original_query)
+    
     # 1. Detect if this is an operational domain query
-    classification = None
-    # We can infer domain from the answer_context if needed, but let's look for SQL lead
     is_operational = "ingestion_logs" in answer_context or "validation_summaries" in answer_context
     
-    # 2. Detect if this is a follow-up expansion
-    is_follow_up = _is_follow_up_prompt(original_query)
+    # 2. Detect expansion intent
+    is_expansion = any(re.search(p, original_query.lower()) for p in [r"provide more", r"what else", r"additional", r"tell me more"])
+    is_follow_up = _is_follow_up_prompt(original_query) or is_expansion
+    
     last_assistant_msg = ""
     if is_follow_up and history:
         for msg in reversed(history):
@@ -31,12 +55,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
                 break
 
     synthesized_parts = []
-    
-    # Lead-in selection
-    if is_operational:
-        synthesized_parts.append("Operational analysis of the latest data pipeline activity indicates:")
-    elif is_follow_up and last_assistant_msg:
-        synthesized_parts.append("Expanding on the prior analysis:")
+    structured_data = _extract_structured_data(answer_context, original_query)
 
     # Core Content Extraction
     content_found = False
@@ -45,9 +64,11 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         if section_type == 'sql':
             narrative = _synthesize_sql_narrative(content)
         elif section_type == 'retrieval':
-            narrative = _synthesize_retrieval_narrative(content)
+            narrative = _synthesize_retrieval_narrative(content, is_expansion=is_expansion, tone=tone)
         elif section_type == 'plain':
-            narrative = content.strip() if content.strip() else None
+            # Small talk and conversational responses pass through directly
+            if content.strip():
+                narrative = content.strip()
             
         if narrative:
             synthesized_parts.append(narrative)
@@ -55,15 +76,24 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     
     if not content_found:
         if is_follow_up:
-            return "No additional operational details could be retrieved to expand on the previous answer."
-        return "No specific operational data matching this query was identified. Re-phrasing the request with different regions or metrics may provide more visibility."
+            return "No additional operational details could be retrieved to expand on the previous answer.", None
+        return "The requested information could not be retrieved from current datasets.", None
 
-    # Add Operational Recommendation/Implication (Synthesized based on context)
-    recommendation = _generate_operational_implication(answer_context, original_query)
-    if recommendation:
-        synthesized_parts.append(recommendation)
+    # Add Operational Recommendation/Implication
+    if tone != "concise":
+        recommendation = _generate_operational_implication(answer_context, original_query)
+        if recommendation:
+            synthesized_parts.append(recommendation)
     
-    return "\n\n".join(synthesized_parts)
+    narrative_output = "\n\n".join(synthesized_parts)
+    
+    # Update structured_data with narrative components if not already there
+    if structured_data:
+        structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
+        if 'title' not in structured_data:
+            structured_data['title'] = generate_session_title(original_query)
+
+    return narrative_output, structured_data
 
 
 def _synthesize_sql_narrative(content: str) -> Optional[str]:
@@ -85,6 +115,10 @@ def _synthesize_sql_narrative(content: str) -> Optional[str]:
     
     if not rows: return None
     
+    # PHASE 3: Specialized Operational Summary
+    if "ingestion_logs" in content.lower() or "validation_summaries" in content.lower():
+        return _synthesize_operational_summary(rows)
+    
     metric_cols = [c for c in columns if _is_numeric_col(rows, c)]
     category_cols = [c for c in columns if c not in metric_cols and c.lower() not in ('id', 'pk')]
     
@@ -104,53 +138,129 @@ def _synthesize_sql_narrative(content: str) -> Optional[str]:
             
             return summary
             
-    return None
+    # Final Fallback: provide a high-level count if data exists but didn't match structured patterns
+    return f"Analysis of the retrieved records identified **{len(rows)} relevant entries**. Dominant categories include **{_humanize(str(list(rows[0].values())[0]))}** and associated operational metrics."
 
 
-def _synthesize_retrieval_narrative(content: str) -> Optional[str]:
-    """Transforms raw retrieval chunks into management-grade narrative analysis."""
+def _synthesize_operational_summary(rows: List[Dict[str, Any]]) -> str:
+    """Specialized synthesis for operational ingestion logs and validation summaries."""
+    # Aggregates
+    total_warnings = sum(_parse_num(r.get('occurrence', r.get('rejected_count', 0))) for r in rows if r.get('log_level') == 'WARNING' or 'rejected_count' in r)
+    total_errors = sum(_parse_num(r.get('occurrence', 0)) for r in rows if r.get('log_level') == 'ERROR')
+    
+    # Categories / Systems
+    table_counts = {}
+    for r in rows:
+        t = r.get('table_name', r.get('validation_rule', 'Unknown System'))
+        table_counts[t] = table_counts.get(t, 0) + _parse_num(r.get('occurrence', r.get('rejected_count', 0)))
+    
+    sorted_tables = sorted(table_counts.items(), key=lambda x: x[1], reverse=True)
+    top_systems = [f"**{_humanize(t)}** ({_fmt(c)} events)" for t, c in sorted_tables[:3]]
+    
+    # Issue Types
+    issue_counts = {}
+    for r in rows:
+        i = r.get('action_taken', r.get('log_level', 'General Anomaly'))
+        issue_counts[i] = issue_counts.get(i, 0) + _parse_num(r.get('occurrence', r.get('rejected_count', 0)))
+    
+    sorted_issues = sorted(issue_counts.items(), key=lambda x: x[1], reverse=True)
+    top_issues = [f"**{_humanize(i)}**" for i, c in sorted_issues[:3]]
+    
+    # Implications
+    implication = "Immediate cross-reference of ingestion manifests is recommended to resolve tracking gaps and prevent downstream reporting inaccuracies."
+    if total_errors > total_warnings:
+        implication = "Critical pipeline failures detected. Priority should be given to resolving rejected records to ensure data completeness for regional stakeholders."
+    
+    # Construct Narrative
+    parts = [
+        "### Operational Analysis Summary",
+        f"**Key Findings**: Pipeline diagnostics identified a total of **{_fmt(total_warnings + total_errors)}** operational events requiring attention, including **{_fmt(total_warnings)} warnings**.",
+        f"**Dominant Issue Types**: High concentration of {', '.join(top_issues)} detected.",
+        f"**Affected Systems**: Primary impact observed in {', '.join(top_systems)}.",
+        f"**Operational Implications**: {implication}"
+    ]
+    
+    return "\n\n".join(parts)
+
+
+def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, tone: str = "standard") -> Optional[str]:
+    """Transforms raw retrieval chunks into structured, management-grade narrative analysis."""
     results = re.split(r'\[Document Result \d+\]', content)
     results = [r.strip() for r in results if r.strip()]
     
-    raw_snippets = []
+    findings = []
     for res in results:
-        match = re.search(r'Snippet:(.*)', res, re.DOTALL)
-        if match:
-            s = match.group(1).strip()
-            if len(s) > 30 and not _is_fragment(s):
-                raw_snippets.append(s)
-    
-    if not raw_snippets: return None
-    
-    # 1. Clean and Normalize
-    cleaned = []
-    for s in raw_snippets:
-        s = s.replace('Snippet:', '').strip()
-        # Remove metadata leakages
-        s = re.sub(r'Source File:.*?\n', '', s)
-        s = re.sub(r'Section:.*?\n', '', s)
-        s = re.sub(r'Page \d+', '', s)
-        cleaned.append(s.strip())
+        # Extract metadata and content
+        source_match = re.search(r'Source File:\s*(.*?)\s*\(', res)
+        snippet_match = re.search(r'Snippet:(.*)', res, re.DOTALL)
         
-    # 2. Semantic Deduplication (Mock)
-    unique = []
-    for c in cleaned:
-        if not any(u[:50].lower() in c[:50].lower() for u in unique):
-            unique.append(c)
+        if source_match and snippet_match:
+            source = source_match.group(1).strip()
+            snippet = snippet_match.group(1).strip()
             
-    # 3. Structural Synthesis
-    if not unique: return None
+            # 1. Technical Artifact Removal
+            snippet = re.sub(r'Trace ID:\s*[a-f0-9]{8,}', '', snippet, flags=re.IGNORECASE)
+            snippet = re.sub(r'\b[a-f0-9]{32}\b', '', snippet, flags=re.IGNORECASE)
+            snippet = snippet.replace('\u200b', '')
+            snippet = re.sub(r'#+\s*', '', snippet)
+            
+            # 2. Fix fragments at start
+            snippet = re.sub(r'^[a-z]{1,10}\b\s*', '', snippet)
+            
+            # 3. Bullet Point Normalization
+            # Only match single asterisks used as list delimiters (not ** bold markers)
+            snippet = re.sub(r'(?<!\*)\*(?!\*)', '\n- ', snippet)
+            snippet = snippet.replace('●', '\n- ').replace('•', '\n- ')
+            
+            # 4. Header Identification
+            snippet = re.sub(r'(\b[A-Z][a-z/ ]+[:])', r'\n\n**\1**\n', snippet)
+            
+            # 5. Sentence cleanup
+            snippet = re.sub(r'\.([A-Z])', r'. \1', snippet)
+            
+            # Phase 4: Token Safety — Truncate oversized snippets
+            if len(snippet) > MAX_SNIPPET_CHARS:
+                snippet = snippet[:MAX_SNIPPET_CHARS].rsplit('.', 1)[0] + '.'
+            
+            # Clean up excessive newlines
+            snippet = re.sub(r'\n{3,}', '\n\n', snippet)
+            
+            if len(snippet) > 40 and not _is_fragment(snippet):
+                findings.append({
+                    "source": source.replace('_', ' ').title(),
+                    "finding": snippet.strip()
+                })
     
-    main_point = unique[0]
-    if not main_point.endswith('.'): main_point += '.'
+    if not findings: return None
     
-    if len(unique) > 1:
-        support = unique[1]
-        # Soften the connection
-        lead = "Additional operational reports suggest that" if len(support.split()) > 10 else "Related commentary notes:"
-        return f"{main_point} {lead} {support.lower() if support[0].isupper() and len(support.split()) > 3 else support}"
+    # Deduplication
+    unique_findings = []
+    seen_content = set()
+    for f in findings:
+        norm = re.sub(r'\s+', ' ', f['finding']).strip().lower()
+        if norm[:100] not in seen_content:
+            unique_findings.append(f)
+            seen_content.add(norm[:100])
+            
+    if not unique_findings: return None
     
-    return main_point
+    # Phase 4: Limit total findings
+    unique_findings = unique_findings[:MAX_FINDINGS]
+    
+    # Construct Narrative based on tone
+    idx_start = 2 if is_expansion and len(unique_findings) > 2 else 0
+    
+    parts = []
+    for i, f in enumerate(unique_findings[idx_start:], 1):
+        if tone == "concise":
+            parts.append(f"- {f['finding'][:200]}")
+        else:
+            if i == 1:
+                parts.append(f"### Key Findings\n\n{f['finding']}")
+            else:
+                parts.append(f"### Additional Context ({f['source']})\n\n{f['finding']}")
+            
+    return "\n\n".join(parts)
 
 
 def _generate_operational_implication(context: str, query: str) -> Optional[str]:
@@ -208,7 +318,22 @@ def _is_numeric_col(rows: list, col: str) -> bool:
     return len(rows) > 0 and _parse_num(rows[0].get(col, '')) is not None
 
 def _parse_num(val: str) -> Optional[float]:
-    try: return float(val.replace(',', ''))
+    if val is None: return None
+    s = str(val).replace(',', '').replace('$', '').replace('%', '').strip()
+    if not s: return None
+    
+    multiplier = 1.0
+    if s.upper().endswith('K'):
+        multiplier = 1_000.0
+        s = s[:-1]
+    elif s.upper().endswith('M'):
+        multiplier = 1_000_000.0
+        s = s[:-1]
+    elif s.upper().endswith('B'):
+        multiplier = 1_000_000_000.0
+        s = s[:-1]
+        
+    try: return float(s) * multiplier
     except: return None
 
 def _humanize(col: str) -> str:
@@ -325,5 +450,114 @@ def _titleize(text: str) -> str:
     return ' '.join(result)
 
 def _clean_title(title: str) -> str:
-    title = re.sub(r'\s+', ' ', title.strip())
-    return title[:47] + '...' if len(title) > 50 else title
+    """Post-processes title for length and clarity."""
+    t = title.strip()
+    # Remove trailing 'Analysis Analysis' or similar
+    t = re.sub(r'( Analysis| Review| Assessment| Investigation)\1+', r'\1', t)
+    # Cap length
+    if len(t) > 45:
+        t = t[:42] + "..."
+    return t
+
+def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[str, Any]]:
+    """Analytical Presentation Pass: Extracts structured data for tables and charts."""
+    sections = _split_sections(answer_context)
+    logger.info(f"[synthesizer] Extracting structured data from {len(sections)} sections")
+    
+    # Priority: SQL results, then search for markdown tables in any section
+    sql_content = None
+    table_content = None
+    
+    for s_type, content in sections:
+        if s_type == 'sql':
+            sql_content = content
+            logger.info("[synthesizer] Found SQL content for extraction")
+            break
+        # Look for markdown table pattern
+        if '|' in content and '---' in content:
+            table_content = content
+            logger.info("[synthesizer] Found Markdown table content for extraction")
+            
+    content_to_parse = sql_content or table_content
+    if not content_to_parse:
+        logger.info("[synthesizer] No table/SQL content found for extraction")
+        return None
+        
+    lines = [l.strip() for l in content_to_parse.split('\n') if l.strip()]
+    
+    # Find header and dash separator
+    dash_idx = -1
+    for i, line in enumerate(lines):
+        if re.match(r'^[|\s-]{3,}$', line) or (line.startswith('|') and '---' in line) or (re.match(r'^-{3,}$', line)):
+            dash_idx = i
+            break
+            
+    if dash_idx <= 0: 
+        logger.info("[synthesizer] Could not find table dash separator")
+        return None
+    
+    header_line = lines[dash_idx - 1]
+    columns = [c.strip() for c in header_line.split('|') if c.strip()]
+    data_lines = [l for l in lines[dash_idx + 1:] if not l.startswith('...')]
+    
+    logger.info(f"[synthesizer] Parsed {len(columns)} columns and {len(data_lines)} potential rows")
+    
+    rows = []
+    for line in data_lines:
+        values = [v.strip() for v in line.split('|')]
+        if len(values) >= len(columns):
+            row = {columns[ci]: values[ci] for ci in range(len(columns))}
+            rows.append(row)
+            
+    if not rows: return None
+    
+    # 1. Determine Response Type
+    res_type = "operational_analysis"
+    q_lower = query.lower()
+    if any(k in q_lower for k in ["compare", "vs", "difference"]): res_type = "metric_comparison"
+    elif any(k in q_lower for k in ["trend", "over time", "month", "quarter"]): res_type = "trend_analysis"
+    elif any(k in q_lower for k in ["breakdown", "contribution", "ratio"]): res_type = "breakdown_analysis"
+    elif len(rows) > 5: res_type = "table_response"
+    
+    # 2. Build Structured Object
+    structured = {
+        "response_type": res_type,
+        "title": generate_session_title(query),
+        "table": {
+            "columns": columns,
+            "rows": rows[:20] # Cap for UI sanity
+        }
+    }
+    
+    # 3. Chart Detection
+    metric_cols = [c for c in columns if _is_numeric_col(rows, c)]
+    category_cols = [c for c in columns if c not in metric_cols and c.lower() not in ('id', 'pk', 'uuid')]
+    
+    if metric_cols and category_cols:
+        metric = metric_cols[0]
+        category = category_cols[0]
+        
+        # Limit labels for chart clarity
+        labels = [str(r[category]) for r in rows[:10]]
+        values = [_parse_num(r[metric]) for r in rows[:10]]
+        
+        chart_type = "bar"
+        if res_type == "trend_analysis": chart_type = "line"
+        elif res_type == "breakdown_analysis": chart_type = "pie"
+        
+        structured["chart"] = {
+            "type": chart_type,
+            "label": _humanize(metric),
+            "labels": labels,
+            "values": values
+        }
+        
+        # Add KPI card if singular metric
+        if len(rows) == 1:
+            structured["kpi"] = {
+                "label": _humanize(metric),
+                "value": _fmt(values[0]),
+                "context": f"Total for {rows[0][category]}"
+            }
+            
+    return structured

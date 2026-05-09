@@ -15,29 +15,48 @@ export default function WorkspacePage() {
 
   const [sourcesOpen, setSourcesOpen] = useState(false);
   const [selectedTrace, setSelectedTrace] = useState(lastTrace);
+  const [selectedContext, setSelectedContext] = useState<string | undefined>();
 
   // Sync selectedTrace with lastTrace on new messages
   useEffect(() => {
-    if (lastTrace) setSelectedTrace(lastTrace);
+    if (lastTrace) {
+      setSelectedTrace(lastTrace);
+      // Don't auto-update context from lastTrace as context comes from the message click
+    }
   }, [lastTrace]);
 
   const isInitialMount = useRef(true);
   const prevWorkspace = useRef(workspace);
 
   useEffect(() => {
-    // Auto-load session when workspace changes or on initial mount
+    // Auto-initialize session: stay on current if reloading, otherwise create new
     const workspaceChanged = prevWorkspace.current !== workspace;
     
-    if ((isInitialMount.current || workspaceChanged) && sessions.length > 0 && !activeSession && !loading) {
-      loadSession(sessions[0].id);
+    if ((isInitialMount.current || workspaceChanged) && !activeSession && !loading) {
+      const persistedSessionId = sessionStorage.getItem('activeSessionId');
+      
+      if (persistedSessionId && !workspaceChanged) {
+        loadSession(persistedSessionId);
+      } else {
+        createSession();
+      }
+      
       isInitialMount.current = false;
       prevWorkspace.current = workspace;
     }
-  }, [sessions, activeSession, loading, loadSession, workspace]);
+  }, [activeSession, loading, createSession, loadSession, workspace]);
 
-  const openSources = useCallback((trace?: any) => {
+  // Persist active session ID for reloads
+  useEffect(() => {
+    if (activeSession?.id) {
+      sessionStorage.setItem('activeSessionId', activeSession.id);
+    }
+  }, [activeSession]);
+
+  const openSources = useCallback((trace?: any, context?: string) => {
     if (trace) {
       setSelectedTrace(trace);
+      setSelectedContext(context);
       setSourcesOpen(true);
     } else if (selectedTrace) {
       setSourcesOpen(true);
@@ -47,6 +66,7 @@ export default function WorkspacePage() {
   const handleNewChat = useCallback(() => {
     createSession();
     setSourcesOpen(false);
+    setSelectedContext(undefined);
   }, [createSession]);
 
   const handleSuggestionSelect = useCallback(async (query: string) => {
@@ -137,7 +157,12 @@ export default function WorkspacePage() {
         <QueryInput onSend={handleSend} disabled={queryLoading} />
       </div>
 
-      <SourcesPanel trace={selectedTrace} open={sourcesOpen} onClose={() => setSourcesOpen(false)} />
+      <SourcesPanel 
+        trace={selectedTrace} 
+        context={selectedContext} 
+        open={sourcesOpen} 
+        onClose={() => setSourcesOpen(false)} 
+      />
     </div>
   );
 }

@@ -4,7 +4,7 @@ from backend.schemas import SessionResponse
 
 class SessionService:
     @staticmethod
-    def create_session(workspace: str) -> str:
+    def create_session(workspace: str) -> dict:
         return session_manager.create_session(workspace)
 
     @staticmethod

@@ -39,6 +39,8 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
         transition: 'box-shadow 0.15s',
       }}>
         <textarea
+          id="query-input"
+          name="query"
           ref={inputRef}
           value={value}
           onChange={e => setValue(e.target.value)}

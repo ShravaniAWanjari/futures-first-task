@@ -14,67 +14,81 @@ from backend.exceptions import UnsafeQueryError, RetrievalError
 from backend.config import Config
 
 
-def _mock_text_to_sql_llm(user_query: str, dataset_name: str) -> Optional[str]:
+def plan_and_generate_sql(intent: Optional[Dict[str, Any]], routing_plan: Optional[Dict[str, Any]]) -> Optional[str]:
     """
-    Mock LLM capability representing a Text-to-SQL generation step.
-    Implements schema-aware grounding for management dimensions.
+    Deterministically generates SQL based strictly on extracted intent and validated schema routing.
+    Eliminates raw natural language prompting to prevent hallucinated queries.
     """
-    query_lower = user_query.lower()
+    if not intent or not routing_plan:
+        return "SELECT * FROM regional_performance LIMIT 5;"
 
-    # 1. Dimension Detection: Region vs Platform
-    is_regional = any(word in query_lower for word in ["region", "europe", "apac", "na", "north america", "latam", "emerging market"])
-    is_platform = any(word in query_lower for word in ["platform", "channel", "youtube", "tiktok", "instagram", "tv"])
+    metric = intent.get("metric", "")
+    dimension = intent.get("dimension", "")
+    domain = intent.get("domain", "")
+    entities = intent.get("entities", [])
+    target_tables = routing_plan.get("target_tables", [])
     
-    # 2. Metric Detection
-    is_spend = any(word in query_lower for word in ["spend", "cost", "ad-spend", "efficiency", "roi"])
-    is_growth = any(word in query_lower for word in ["growth", "subscriber", "new_subscriber"])
-    is_performance = any(word in query_lower for word in ["performance", "watch hours", "completion"])
+    if not target_tables:
+        return None
 
-    # 3. Operational Domain Detection (Direct Routing)
-    is_ingestion = any(word in query_lower for word in ["ingestion", "upload", "inbound"])
-    is_validation = any(word in query_lower for word in ["validation", "rejected", "failed", "error"])
-    is_data_quality = any(word in query_lower for word in ["data quality", "inconsistency", "duplicate"])
+    primary_table = target_tables[0]
 
-    # --- Scenario: Ingestion Quality / Logs ---
-    if is_ingestion or is_data_quality:
-        return "SELECT category, status_code, COUNT(*) as occurrence FROM ingestion_logs GROUP BY category, status_code ORDER BY occurrence DESC;"
-    
-    # --- Scenario: Validation / Rejections ---
-    if is_validation:
-        return "SELECT validation_rule, rejected_count, impact_severity FROM validation_summaries WHERE rejected_count > 0 ORDER BY impact_severity DESC;"
+    # 1. Strict Schema Definition (Actual DB Schema)
+    SCHEMA = {
+        "marketing_campaigns": ["region", "platform", "spend_usd", "impressions", "roi", "cpm", "reach", "spend"],
+        "regional_performance": ["region", "total_watch_hours", "churn_rate", "new_subscribers", "completion_rate", "performance", "growth"],
+        "ingestion_logs": ["log_id", "dataset", "source_file", "table_name", "row_reference", "log_level", "action_taken", "message", "timestamp"]
+    }
 
-    # --- Scenario: Regional Comparison (Highest Priority for management) ---
-    if is_regional and is_spend:
-        # User asked for regional spend/efficiency
-        return "SELECT region, SUM(spend_usd) as total_spend, AVG(spend_usd/impressions)*1000 as cpm_efficiency FROM marketing_campaigns GROUP BY region ORDER BY total_spend DESC LIMIT 5;"
-    
-    if is_regional and is_performance:
-        return "SELECT region, SUM(total_watch_hours) as watch_performance, AVG(churn_rate) as churn_risk FROM regional_performance GROUP BY region ORDER BY watch_performance DESC;"
+    # 2. Validate Dimension against Schema
+    valid_columns = SCHEMA.get(primary_table, [])
+    if dimension and dimension not in valid_columns:
+        # Fallback or error if hallucinated dimension
+        return f"-- ERROR: Dimension '{dimension}' not found in target table '{primary_table}'"
 
-    # --- Scenario: Specific Comparison Follow-up ---
-    if "compare" in query_lower and "europe" in query_lower and "apac" in query_lower:
-        if is_spend:
-            return "SELECT region, SUM(spend_usd) as ad_spend, SUM(impressions) as reach FROM marketing_campaigns WHERE region IN ('Europe', 'APAC') GROUP BY region;"
-        return "SELECT region, total_watch_hours, new_subscribers FROM regional_performance WHERE region IN ('Europe', 'APAC');"
+    # 3. Construct Filters
+    filters = []
+    if entities and "region" in valid_columns:
+        # Simple exact match for mock
+        entity_list = "', '".join(entities)
+        filters.append(f"region IN ('{entity_list}')")
 
-    # --- Scenario: Platform/Channel (Specific) ---
-    if is_platform:
-        if is_spend:
-            return "SELECT platform, SUM(spend_usd) as platform_spend FROM marketing_campaigns GROUP BY platform ORDER BY platform_spend DESC LIMIT 5;"
-        return "SELECT platform, impressions, spend_usd FROM marketing_campaigns LIMIT 5;"
+    where_clause = f" WHERE {' AND '.join(filters)}" if filters else ""
 
-    # --- Scenario: Correlation / Relationship ---
-    if "correlate" in query_lower or "relationship" in query_lower:
-        if "spend" in query_lower and "performance" in query_lower:
-            # Join simulation
-            return "SELECT r.region, m.spend_usd, r.total_watch_hours FROM regional_performance r JOIN marketing_campaigns m ON r.region = m.region LIMIT 5;"
+    # 4. Phase 4: Deterministic Operational Query Templates
+    if primary_table == "ingestion_logs" or domain in ["anomaly_detection", "duplicates", "ingestion_quality", "normalization_activity", "validation_errors"]:
+        # Warning Analysis
+        if domain == "anomaly_detection":
+            return "SELECT log_level, action_taken, table_name, COUNT(*) as occurrence FROM ingestion_logs WHERE log_level IN ('WARNING', 'ERROR') GROUP BY log_level, action_taken, table_name ORDER BY occurrence DESC LIMIT 15;"
+        
+        # Duplicate Analysis
+        if domain == "duplicates":
+            return "SELECT log_level, action_taken, table_name, COUNT(*) as occurrence FROM ingestion_logs WHERE message LIKE '%duplicate%' GROUP BY log_level, action_taken, table_name ORDER BY occurrence DESC LIMIT 10;"
+            
+        # Normalization Issues
+        if domain == "normalization_activity":
+            return "SELECT log_level, action_taken, table_name, COUNT(*) as occurrence FROM ingestion_logs WHERE action_taken = 'normalized' GROUP BY log_level, action_taken, table_name ORDER BY occurrence DESC LIMIT 10;"
 
-    # --- Scenario: General Metrics ---
-    if is_growth:
-        return "SELECT region, new_subscribers, completion_rate FROM regional_performance ORDER BY new_subscribers DESC LIMIT 5;"
-    
-    if is_spend:
-        return "SELECT region, SUM(spend_usd) as spend FROM marketing_campaigns GROUP BY region LIMIT 5;"
+        # Ingestion Inconsistencies / Quality
+        if domain == "ingestion_quality":
+            return "SELECT log_level, action_taken, table_name, COUNT(*) as occurrence FROM ingestion_logs WHERE action_taken IN ('rejected', 'failed', 'error') GROUP BY log_level, action_taken, table_name ORDER BY occurrence DESC LIMIT 10;"
+
+        # Validation Failures (Mapped to ingestion_logs as validation_summaries is missing)
+        if domain == "validation_errors":
+            return "SELECT log_level, action_taken, table_name, COUNT(*) as occurrence FROM ingestion_logs WHERE action_taken = 'rejected' OR log_level = 'ERROR' GROUP BY log_level, action_taken, table_name ORDER BY occurrence DESC LIMIT 10;"
+
+    # 5. Generic Structured Query Fallback (Performance/Growth)
+    if primary_table == "marketing_campaigns":
+        group_col = dimension if dimension else "region"
+        if metric in ["roi", "efficiency"]:
+            return f"SELECT {group_col}, SUM(spend_usd) as total_spend, AVG(spend_usd/impressions)*1000 as cpm_efficiency FROM {primary_table}{where_clause} GROUP BY {group_col} ORDER BY total_spend DESC LIMIT 5;"
+        return f"SELECT {group_col}, SUM(spend_usd) as spend FROM {primary_table}{where_clause} GROUP BY {group_col} LIMIT 5;"
+
+    if primary_table == "regional_performance":
+        group_col = dimension if dimension else "region"
+        if metric == "growth":
+            return f"SELECT {group_col}, new_subscribers, completion_rate FROM {primary_table}{where_clause} ORDER BY new_subscribers DESC LIMIT 5;"
+        return f"SELECT {group_col}, SUM(total_watch_hours) as watch_performance, AVG(churn_rate) as churn_risk FROM {primary_table}{where_clause} GROUP BY {group_col} ORDER BY watch_performance DESC LIMIT 10;"
 
     return None
 
@@ -94,30 +108,85 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
     # 1. Classify with History
     classification_dict = classify_query(user_query, history)
     
-    # Intent Inheritance for follow-ups
-    if classification_dict.get('query_type') == 'hybrid' and classification_dict.get('confidence') < 0.7:
+    # Phase 7: Handle conversational (small talk) queries immediately
+    if classification_dict.get('query_type') == 'conversational':
+        conv_response = classification_dict.get('conversational_response', 'How can I help you?')
+        total_time = round((time.time() - start_time) * 1000, 2)
+        trace = QueryTrace(
+            request_id=req_id, dataset=dataset,
+            classification=ClassificationTrace(**classification_dict),
+            tool_executions=[], total_timing_ms=total_time
+        )
+        logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Small talk handled. No retrieval.")
+        return QueryResponse(
+            request_id=req_id, answer_context=conv_response,
+            sources=[], trace=trace, overall_confidence=1.0,
+            warnings=[], errors=[]
+        )
+    
+    # Part2-Phase2: Build Context Memory Window from recent history
+    context_memory = ""
+    if history:
+        for msg in reversed(history[-6:]):
+            if msg.get('role') == 'assistant' and msg.get('content'):
+                context_memory = msg['content']
+                break
+    
+    # Intent Inheritance for follow-ups (Phase 2 & 4)
+    memory_inheritance = False
+    inheritance_reason = "No follow-up detected."
+    follow_up_detected = classification_dict.get('follow_up_detected', False)
+    
+    if follow_up_detected and history:
         # Check if we can inherit from history
-        if history:
-            for msg in reversed(history):
-                if msg.get('role') == 'assistant' and msg.get('trace'):
-                    try:
-                        prev_trace = json.loads(msg['trace'])
-                        prev_type = prev_trace['classification']['query_type']
-                        if prev_type in ['sql', 'pdf']:
-                            classification_dict['query_type'] = prev_type
-                            classification_dict['recommended_tools'] = prev_trace['classification']['recommended_tools']
-                            classification_dict['confidence'] = 0.8  # Inherited confidence
-                            classification_dict['reasoning'] += f" Inheriting intent from prior {prev_type} interaction."
-                            break
-                    except: continue
+        for msg in reversed(history):
+            if msg.get('role') == 'assistant' and msg.get('trace'):
+                try:
+                    prev_trace = json.loads(msg['trace'])
+                    prev_type = prev_trace['classification']['query_type']
+                    if prev_type in ['sql', 'pdf']:
+                        classification_dict['query_type'] = prev_type
+                        classification_dict['recommended_tools'] = prev_trace['classification']['recommended_tools']
+                        classification_dict['confidence'] = 0.9  # Intentional inheritance
+                        classification_dict['reasoning'] += f" Inheriting intent from prior {prev_type} follow-up."
+                        
+                        if 'intent' in prev_trace['classification']:
+                            classification_dict['intent'] = prev_trace['classification']['intent']
+                        if 'routing_plan' in prev_trace['classification']:
+                            classification_dict['routing_plan'] = prev_trace['classification']['routing_plan']
+                        
+                        memory_inheritance = True
+                        inheritance_reason = f"Explicit follow-up detected. Inheriting {prev_type} context."
+                        break
+                except: continue
+    
+    memory_trace = {
+        "memory_inheritance": memory_inheritance,
+        "inheritance_reason": inheritance_reason,
+        "follow_up_detected": follow_up_detected
+    }
+    logger.info(f"[{dataset}] [REQ:{req_id}] [MEMORY_DEBUG] {json.dumps(memory_trace)}")
 
     classification = ClassificationTrace(**classification_dict)
     
     # Use resolved query for actual tool execution if it exists
     execution_query = classification_dict.get('resolved_query', user_query)
     
+    # Semantic Search Optimization: Strip common framing words for better embedding matches (Phase 11)
+    if classification.query_type == 'pdf' and len(execution_query.split()) < 10:
+        framing_words = ["summarize", "list", "provide", "show", "me", "the", "for"]
+        words = execution_query.split()
+        refined_words = [w for w in words if w.lower() not in framing_words]
+        if refined_words:
+            execution_query = " ".join(refined_words)
+            logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Refined execution query for embedding: '{execution_query}'")
+    
     logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Resolved Query: '{execution_query}'")
     logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Route: {classification.query_type.upper()} (Confidence: {classification.confidence})")
+    
+    if classification.routing_plan:
+        targets = classification.routing_plan.target_tables if classification.routing_plan.primary_route == 'sql' else classification.routing_plan.target_collections
+        logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Routing Plan: strategy={classification.routing_plan.retrieval_strategy}, targets={targets}")
     
     answer_context = []
     tool_executions = []
@@ -131,7 +200,10 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
     for tool_name in classification.recommended_tools:
         if tool_name == "query_structured_data":
             logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Executing SQL path...")
-            sql_to_run = generated_sql if generated_sql else _mock_text_to_sql_llm(execution_query, dataset)
+            sql_to_run = generated_sql if generated_sql else plan_and_generate_sql(
+                classification_dict.get('intent'), 
+                classification_dict.get('routing_plan')
+            )
             
             if not sql_to_run:
                 logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] No SQL generated for resolved query.")
@@ -154,7 +226,13 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
         elif tool_name == "search_documents":
             logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Executing PDF path...")
             try:
-                doc_results, doc_trace = search_documents(execution_query, dataset, req_id, n_results=retrieval_limit)
+                doc_results, doc_trace = search_documents(
+                    query=execution_query, 
+                    dataset_name=dataset, 
+                    request_id=req_id, 
+                    n_results=retrieval_limit,
+                    intent=classification_dict.get('intent')
+                )
                 tool_executions.append(doc_trace)
                 
                 if classification.recommended_tools[0] == "search_documents":
@@ -163,15 +241,23 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
                     answer_context.append(format_document_results(doc_results))
                 
                 for res in doc_results:
-                    sources.append(f"PDF:{res.source_file} (Page {res.page_number} | ID:{res.chunk_id[:8]}...)")
+                    sources.append(f"PDF:{res.source_file} (Page {res.page_number})")
             except RetrievalError as e:
                 errors.append(f"Document Retrieval failed: {e}")
 
     # 3. Final Context
     final_context = "\n\n".join(answer_context)
-    if not final_context.strip():
-        if classification.confidence < 0.7:
-            final_context = "The system could not confidently identify relevant operational data using the currently available sources. Re-phrasing the request with specific metrics or regions may help."
+    conv_action = classification_dict.get('conversational_action')
+    
+    if classification.query_type == "blocked":
+        final_context = classification.reasoning
+    elif not final_context.strip():
+        # Part2-Phase6: Try context memory before failing
+        if context_memory and (conv_action or follow_up_detected):
+            final_context = context_memory
+            logger.info(f"[{dataset}] [REQ:{req_id}] [orchestrator] Falling back to context memory (action={conv_action}).")
+        elif classification.confidence < 0.7:
+            final_context = "I wasn't able to find strongly relevant data for that query. Could you try rephrasing with specific topics, metrics, or regions? For example: 'What are the Q3 priorities?' or 'Show marketing ROI by region.'"
         else:
             final_context = "No specific operational records matching this query were found in the current workspace."
         
@@ -184,6 +270,37 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
         tool_executions=tool_executions,
         total_timing_ms=total_time
     )
+    
+    # --- PHASE 6: ROUTING DEBUG OUTPUT ---
+    routing_debug = {
+        "query": user_query,
+        "intent": classification_dict.get('intent'),
+        "entities": classification_dict.get('intent', {}).get('entities', []),
+        "candidate_tables": classification_dict.get('routing_plan', {}).get('candidate_tables', {}),
+        "selected_tables": classification_dict.get('routing_plan', {}).get('target_tables', []),
+        "candidate_collections": classification_dict.get('routing_plan', {}).get('candidate_collections', {}),
+        "selected_collections": classification_dict.get('routing_plan', {}).get('target_collections', []),
+        "route": classification.query_type,
+        "confidence": classification.confidence
+    }
+    logger.info(f"[{dataset}] [REQ:{req_id}] [ROUTING_DEBUG] {json.dumps(routing_debug)}")
+    
+    # Keep standard observability for internal metrics
+    observability_payload = {
+        "request_id": req_id,
+        "total_timing_ms": total_time,
+        "generated_sql": None,
+        "retrieval_confidence": 0.0,
+        "selected_sources": sources
+    }
+    
+    for ex in tool_executions:
+        if getattr(ex, 'tool', None) == 'query_structured_data':
+            observability_payload["generated_sql"] = getattr(ex, 'query_used', None)
+        elif getattr(ex, 'tool', None) == 'search_documents':
+            observability_payload["retrieval_confidence"] = getattr(ex, 'average_confidence', 0.0)
+            
+    logger.info(f"[{dataset}] [REQ:{req_id}] [OBSERVABILITY] {json.dumps(observability_payload)}")
     
     return QueryResponse(
         request_id=req_id,

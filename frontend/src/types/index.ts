@@ -5,6 +5,7 @@ export interface Message {
   context?: string | null;
   sources?: string | null;
   trace?: string | null;
+  structured_data?: string | null;
   timestamp: string;
 }
 
@@ -57,6 +58,7 @@ export interface QueryResponse {
   overall_confidence: number;
   warnings: string[];
   errors: string[];
+  structured_data?: any;
 }
 
 export interface APIResponse<T> {

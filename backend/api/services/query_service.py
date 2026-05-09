@@ -1,6 +1,7 @@
 import uuid
 import time
 import logging
+import json
 from typing import List, Optional
 from backend.orchestration.orchestrator import orchestrate_query
 from backend.schemas import QueryRequest, QueryResponse
@@ -39,7 +40,7 @@ class QueryService:
         
         # 4. Synthesize Response — transform raw output into management-grade narrative
         raw_context = response.answer_context
-        synthesized_context = synthesize_response(
+        synthesized_context, structured_data = synthesize_response(
             answer_context=raw_context,
             sources=response.sources,
             confidence=response.overall_confidence,
@@ -47,6 +48,7 @@ class QueryService:
             original_query=query
         )
         response.answer_context = synthesized_context
+        response.structured_data = structured_data
         
         # 5. Persist Assistant Response
         session_manager.add_message(
@@ -55,7 +57,8 @@ class QueryService:
             content=synthesized_context,
             context=raw_context,  # preserve raw for source panel
             sources=",".join(response.sources),
-            trace=response.trace.model_dump_json() if response.trace else None
+            trace=response.trace.model_dump_json() if response.trace else None,
+            structured_data=json.dumps(structured_data) if structured_data else None
         )
         
         # 6. Auto-generate semantic title for new sessions

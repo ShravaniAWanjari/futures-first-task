@@ -46,14 +46,39 @@ class RetrievalTrace(BaseModel):
     tool: str = "search_documents"
     success: bool
     n_results: int
+    rejected_chunks: int = 0
+    retrieval_scores: List[float] = Field(default_factory=list)
+    average_confidence: float = 0.0
     error: Optional[str] = None
     timing_ms: float = 0.0
+
+class IntentTrace(BaseModel):
+    mode: str
+    domain: str
+    metric: Optional[str] = None
+    dimension: Optional[str] = None
+    entities: List[str] = Field(default_factory=list)
+    confidence: float
+
+class RoutingPlan(BaseModel):
+    primary_route: str
+    target_tables: List[str] = Field(default_factory=list)
+    target_collections: List[str] = Field(default_factory=list)
+    retrieval_strategy: str
 
 class ClassificationTrace(BaseModel):
     query_type: str
     reasoning: str
     recommended_tools: List[str]
     confidence: float
+    intent: Optional[IntentTrace] = None
+    routing_plan: Optional[RoutingPlan] = None
+    # Phase 7+: Conversational support fields
+    conversational_response: Optional[str] = None
+    conversational_action: Optional[str] = None
+    follow_up_detected: Optional[bool] = None
+    resolved_query: Optional[str] = None
+    operational_domain: Optional[str] = None
 
 class QueryTrace(BaseModel):
     request_id: str
@@ -70,6 +95,8 @@ class QueryResponse(BaseModel):
     overall_confidence: float
     warnings: List[str] = Field(default_factory=list)
     errors: List[str] = Field(default_factory=list)
+    # Analytical Presentation Pass
+    structured_data: Optional[Dict[str, Any]] = None
 
 class QueryRequest(BaseModel):
     query: str
@@ -83,6 +110,7 @@ class MessageResponse(BaseModel):
     context: Optional[str] = None
     sources: Optional[str] = None
     trace: Optional[str] = None
+    structured_data: Optional[str] = None
     timestamp: str
 
 class SessionResponse(BaseModel):
