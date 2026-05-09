@@ -505,11 +505,11 @@ This became a major focus during orchestration stabilization.
 
 # UI Screenshots
 
-# UI Screenshots
-
 ## Landing Workspace
 
-![Landing Workspace](./readme-images/landing-workspace.png)
+<p align="center">
+  <img src="./readme-images/landing-workspace.png" width="900"/>
+</p>
 
 Clean management-focused workspace with:
 - workspace isolation
@@ -521,8 +521,10 @@ Clean management-focused workspace with:
 
 ## Management Query Example
 
-![Management Query](./readme-images/management-query-example.png)
-![Management Query](./readme-images/management-query-example2.png)
+<p align="center">
+  <img src="./readme-images/management-query-example.png" width="520"/>
+  <img src="./readme-images/management-query-example2.png" width="520"/>
+</p>
 
 Example executive-style operational query showing:
 - management-focused synthesis
@@ -534,7 +536,9 @@ Example executive-style operational query showing:
 
 ## Supporting Sources Panel
 
-![Supporting Sources Panel](./readme-images/supporting-sources-panel.png)
+<p align="center">
+  <img src="./readme-images/supporting-sources-panel.png" width="360"/>
+</p>
 
 Traceability panel showing:
 - routing classification
@@ -547,8 +551,10 @@ Traceability panel showing:
 
 ## Operational Visualization
 
-![Operational Visualization](./readme-images/operational-visualization1.png)
-![Operational Visualization](./readme-images/operational-visualization2.png)
+<p align="center">
+  <img src="./readme-images/operational-visualization1.png" width="520"/>
+  <img src="./readme-images/operational-visualization2.png" width="520"/>
+</p>
 
 Structured visual analytics generated from validated operational data:
 - KPI comparison cards
@@ -560,7 +566,9 @@ Structured visual analytics generated from validated operational data:
 
 ## Workspace Isolation
 
-![Workspace Isolation](./readme-images/workspace-isolation.png)
+<p align="center">
+  <img src="./readme-images/workspace-isolation.png"/>
+</p>
 
 Workspace-based operational separation between:
 - VistaStream Global (enterprise-grade clean data)
@@ -576,7 +584,9 @@ Each workspace maintains isolated:
 
 ## Conversational Analytics
 
-![Conversational Analytics](./readme-images/conversational-analytics.png)
+<p align="center">
+  <img src="./readme-images/conversational-analytics.png" width="520"/>
+</p>
 
 Multi-turn management conversations with:
 - conversational continuity
@@ -588,14 +598,17 @@ Multi-turn management conversations with:
 
 ## Ingestion & Operational Monitoring
 
-![Operational Monitoring](./readme-images/operational-monitoring.png)
-
+<p align="center">
+  <img src="./readme-images/operational-monitoring.png" width="520"/>
+</p>
 
 Operational monitoring and ingestion-quality analysis including:
 - warning detection
 - duplicate tracking
 - validation failures
 - operational anomaly summaries
+
+---
 
 ---
 
