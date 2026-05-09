@@ -12,6 +12,9 @@ from backend.logging_utils import get_file_logger
 from backend.schemas import QueryRequest, QueryResponse, QueryTrace, ClassificationTrace
 from backend.exceptions import UnsafeQueryError, RetrievalError
 from backend.config import Config
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def plan_and_generate_sql(intent: Optional[Dict[str, Any]], routing_plan: Optional[Dict[str, Any]]) -> Optional[str]:

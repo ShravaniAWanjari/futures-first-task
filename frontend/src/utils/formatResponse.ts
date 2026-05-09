@@ -67,57 +67,44 @@ export function formatResponse(raw: string): FormattedSegment[] {
       continue;
     }
 
-    // --- Markdown Table (Multi-table support) ---
+    // --- Markdown Table Parser (Multi-table support) ---
     if (block.includes('|')) {
       const lines = block.split('\n');
-      let currentIdx = 0;
-      
-      while (currentIdx < lines.length) {
-        const tableStartIdx = lines.findIndex((l, i) => i >= currentIdx && (l.match(/\|/g) || []).length >= 2);
-        
-        if (tableStartIdx === -1) {
-          // No more tables, add remaining lines as paragraph
-          const remainingLines = lines.slice(currentIdx).filter(l => l.trim());
-          if (remainingLines.length > 0) {
-            segments.push({ type: 'paragraph', content: remainingLines.join('\n') });
+      let i = 0;
+      while (i < lines.length) {
+        // Is this line a table row?
+        if ((lines[i].match(/\|/g) || []).length >= 2) {
+          // Find table block
+          let tableLines = [];
+          while (i < lines.length && (lines[i].match(/\|/g) || []).length >= 2) {
+            tableLines.push(lines[i]);
+            i++;
           }
-          break;
+          
+          if (tableLines.length >= 2) {
+            const headerLine = tableLines[0];
+            const columns = headerLine.split('|').map(c => c.trim()).filter(Boolean);
+            const dataLines = tableLines.slice(1).filter(l => !l.includes('---'));
+            const rows = dataLines.map(line => {
+              const cells = line.split('|').map(c => c.trim()).filter(Boolean);
+              const rowObj: any = {};
+              columns.forEach((col, idx) => {
+                rowObj[col] = cells[idx] || 'N/A';
+              });
+              return rowObj;
+            });
+
+            if (columns.length > 0 && rows.length > 0) {
+              segments.push({ type: 'table', content: JSON.stringify({ columns, rows }) });
+            }
+          }
+        } else {
+          // Paragraph line
+          if (lines[i].trim()) {
+            segments.push({ type: 'paragraph', content: lines[i] });
+          }
+          i++;
         }
-
-        // Add text before this table
-        const introLines = lines.slice(currentIdx, tableStartIdx).filter(l => l.trim());
-        if (introLines.length > 0) {
-          segments.push({ type: 'paragraph', content: introLines.join('\n') });
-        }
-
-        // Find table end
-        let tableEndIdx = tableStartIdx;
-        while (tableEndIdx < lines.length && (lines[tableEndIdx].match(/\|/g) || []).length >= 2) {
-          tableEndIdx++;
-        }
-
-        const tableLines = lines.slice(tableStartIdx, tableEndIdx);
-        const headerLine = tableLines[0];
-        const columns = headerLine.split('|').map(c => c.trim()).filter(Boolean);
-        const dataRows = tableLines.slice(1).filter(l => !l.includes('---'));
-        
-        const rows = dataRows.map(line => {
-          const cells = line.split('|').map(c => c.trim()).filter(Boolean);
-          const rowObj: any = {};
-          columns.forEach((col, i) => {
-            rowObj[col] = cells[i] || 'N/A';
-          });
-          return rowObj;
-        });
-
-        if (columns.length > 0 && rows.length > 0) {
-          segments.push({ 
-            type: 'table', 
-            content: JSON.stringify({ columns, rows }) 
-          });
-        }
-
-        currentIdx = tableEndIdx;
       }
       continue;
     }
