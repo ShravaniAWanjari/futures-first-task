@@ -35,13 +35,17 @@ def _build_rich_raw_reasoning(response: QueryResponse, fallback_context: str) ->
 
     if intent:
         try:
-            parts.append("Intent: " + json.dumps(intent, ensure_ascii=True))
+            # Handle both Pydantic models and raw dicts
+            intent_data = intent.model_dump() if hasattr(intent, 'model_dump') else intent
+            parts.append("Intent: " + json.dumps(intent_data, ensure_ascii=True))
         except Exception:
             parts.append(f"Intent: {intent}")
 
     if routing_plan:
         try:
-            parts.append("Routing plan: " + json.dumps(routing_plan, ensure_ascii=True))
+            # Handle both Pydantic models and raw dicts
+            plan_data = routing_plan.model_dump() if hasattr(routing_plan, 'model_dump') else routing_plan
+            parts.append("Routing plan: " + json.dumps(plan_data, ensure_ascii=True))
         except Exception:
             parts.append(f"Routing plan: {routing_plan}")
 

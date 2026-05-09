@@ -27,6 +27,7 @@ def plan_and_generate_sql(intent: Optional[Dict[str, Any]], routing_plan: Option
     domain = intent.get("domain", "")
     entities = intent.get("entities", [])
     target_tables = routing_plan.get("target_tables", [])
+    extreme = intent.get("extreme") # highest, lowest
     
     if not target_tables:
         return None
@@ -98,9 +99,16 @@ def plan_and_generate_sql(intent: Optional[Dict[str, Any]], routing_plan: Option
     # 5. Generic Structured Query Fallback (Performance/Growth)
     if primary_table == "marketing_campaigns":
         group_col = dimension if dimension else "region"
+        order_clause = ""
+        if extreme == "highest": order_clause = " ORDER BY spend DESC"
+        elif extreme == "lowest": order_clause = " ORDER BY spend ASC"
+        
         if metric in ["roi", "efficiency"]:
-            return f"SELECT {group_col}, SUM(spend_usd) as total_spend, AVG(spend_usd/impressions)*1000 as cpm_efficiency FROM {primary_table}{where_clause} GROUP BY {group_col} ORDER BY total_spend DESC LIMIT 5;"
-        return f"SELECT {group_col}, SUM(spend_usd) as spend FROM {primary_table}{where_clause} GROUP BY {group_col} LIMIT 5;"
+            if extreme == "highest": order_clause = " ORDER BY cpm_efficiency DESC"
+            elif extreme == "lowest": order_clause = " ORDER BY cpm_efficiency ASC"
+            return f"SELECT {group_col}, SUM(spend_usd) as total_spend, AVG(spend_usd/impressions)*1000 as cpm_efficiency FROM {primary_table}{where_clause} GROUP BY {group_col}{order_clause} LIMIT 5;"
+            
+        return f"SELECT {group_col}, SUM(spend_usd) as spend FROM {primary_table}{where_clause} GROUP BY {group_col}{order_clause} LIMIT 5;"
 
     if primary_table == "regional_performance":
         group_col = dimension if dimension else "region"
@@ -284,7 +292,7 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
             final_context = "No specific records matching your query were found in the current " + dataset.title() + " workspace. I've scanned both document reports and structured databases, but the specific combination of entities you requested is not available."
     elif (
         follow_up_detected
-        and conv_action in ["refinement_request", "continuation_request", "clarification_request"]
+        and conv_action in ["refinement_request", "continuation_request", "clarification_request", "formatting_request"]
         and context_memory
         and "No strongly relevant document evidence was found." in final_context
     ):

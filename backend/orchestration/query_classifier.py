@@ -34,7 +34,7 @@ def _classify_conversational_action(query: str) -> Optional[str]:
     """Part2-Phase1: Classifies conversational actions that reuse existing context."""
     q = query.lower().strip()
     
-    formatting = [r"structure.*better", r"use bullet", r"format.*better", r"make.*concise", r"clean.*up", r"organize"]
+    formatting = [r"structure.*better", r"use bullet", r"format.*better", r"make.*concise", r"clean.*up", r"organize", r"bullet\s*point"]
     clarification = [r"what do you mean", r"what is", r"what are", r"define", r"explain\s+\w+"]
     continuation = [r"^continue$", r"^go on$", r"^what else", r"^more$", r"^and\?$"]
     refinement = [r"shorter version", r"executive summary", r"more detail", r"briefly", r"summarize"]
@@ -131,7 +131,8 @@ def classify_query(query: str, history: List[Dict[str, Any]] = None) -> Dict[str
     # 3. Traditional Signal Detection
     sql_explicit = [
         r"how many\b", r"\baverage\b", r"count\b", r"total\b", r"calculate\b", r"top \d+",
-        r"spend", r"roi", r"efficiency", r"correlate", r"relationship", r"compare", r"metrics", r"\bshow\b", r"\blist\b"
+        r"spend", r"roi", r"efficiency", r"correlate", r"relationship", r"compare", r"metrics", 
+        r"\bshow\b", r"\blist\b", r"region", r"country", r"coverage", r"platform", r"broken down"
     ]
     pdf_explicit = [
         r"policy", r"guideline", r"governance", r"strategy", r"roadmap", r"narrative", r"commentary"
@@ -325,9 +326,16 @@ def _extract_intent(query: str, query_type: str, detected_domains: List[str]) ->
         "domain": detected_domains[0] if detected_domains else ("marketing_performance" if query_type == "sql" else "operational_reports"),
         "metric": None,
         "dimension": None,
+        "extreme": None, # highest, lowest
         "entities": [],
         "confidence": 0.90 if query_type == "sql" else 0.85
     }
+    
+    # Extract Extremes (Phase 16)
+    if any(k in query for k in ["highest", "most", "top", "best", "greatest", "max"]):
+        intent["extreme"] = "highest"
+    elif any(k in query for k in ["lowest", "least", "bottom", "worst", "min"]):
+        intent["extreme"] = "lowest"
     
     # Extract Metrics
     metrics_map = {
@@ -437,7 +445,9 @@ def _is_follow_up(query: str) -> bool:
         r"^summarize (?:that|it|this)\b",
         r"^can you summarize\b",
         r"^elaborate\b",
-        r"^(?:show|list|only|just|specifically)\b"
+        r"^(?:show|list|only|just|specifically|give|provide)\b",
+        r"\bbullet\b",
+        r"\bpoints\b"
     ]
     
     # 2. Structural Indicators (pronouns, ellipsis, short dependent phrasing)

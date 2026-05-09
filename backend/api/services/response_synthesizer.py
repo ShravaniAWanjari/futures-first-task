@@ -8,6 +8,7 @@ import re
 import logging
 import json
 from typing import List, Dict, Any, Optional, Tuple
+from backend.api.services.llm_service import llm_service
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -20,10 +21,12 @@ MAX_FINDINGS = 5
 def _detect_tone(query: str) -> str:
     """Phase 8: Detects desired response tone from query phrasing."""
     q = query.lower()
-    if any(kw in q for kw in ["quick", "brief", "concise", "short", "tl;dr", "briefly"]):
+    if any(kw in q for kw in ["quick", "brief", "concise", "short", "tl;dr", "briefly", "summarize"]):
         return "concise"
     if any(kw in q for kw in ["casual", "simply", "plain english", "easy", "informal"]):
         return "conversational"
+    if any(kw in q for kw in ["bullet", "point", "list style"]):
+        return "bulleted"
     if any(kw in q for kw in ["executive", "management", "formal", "detailed report", "comprehensive"]):
         return "executive"
     return "standard"
@@ -62,7 +65,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     for section_type, content in sections:
         narrative = None
         if section_type == 'sql':
-            narrative = _synthesize_sql_narrative(content)
+            narrative = _synthesize_sql_narrative(content, original_query=original_query)
             data_found = True
         elif section_type == 'retrieval':
             narrative = _synthesize_retrieval_narrative(content, is_expansion=is_expansion, tone=tone)
@@ -70,7 +73,16 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         elif section_type == 'plain':
             # Small talk and conversational responses pass through directly
             if content.strip():
-                narrative = content.strip()
+                if tone == "concise" and len(content.strip()) > 400:
+                    # Deterministic Summarization: Extract top points or truncate
+                    lines = [l.strip() for l in content.strip().split('\n') if l.strip()]
+                    summary_points = [l for l in lines if l.startswith('-') or l.startswith('###') or any(k in l for k in ['total', 'growth', 'roi', '%', '$'])]
+                    if summary_points:
+                        narrative = "### Executive Summary (Context Re-summarized)\n\n" + "\n\n".join(summary_points[:5])
+                    else:
+                        narrative = content.strip()[:400] + "..."
+                else:
+                    narrative = content.strip()
             
         if narrative:
             synthesized_parts.append(narrative)
@@ -80,7 +92,18 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
             return "No additional operational details could be retrieved to expand on the previous answer.", None
         return "The requested information could not be retrieved from current datasets.", None
 
-    # Add Operational Recommendation/Implication only if we actually found data
+    if tone == "bulleted":
+        # Transform the narrative output into a clean bulleted list
+        all_text = "\n\n".join(synthesized_parts)
+        lines = [l.strip() for l in all_text.split('\n') if l.strip()]
+        # Extract meaningful lines (metrics or summaries)
+        bullet_candidates = [l for l in lines if not l.startswith('###') and (len(l) > 30 or any(k in l for k in ['%', '$', 'ROI']))]
+        if bullet_candidates:
+            narrative_output = "### 📋 Key Points Summary\n\n" + "\n".join([f"- {p}" for p in bullet_candidates[:5]])
+        else:
+            narrative_output = all_text
+    else:
+        narrative_output = "\n\n".join(synthesized_parts)
     # Phase 11: Skip for simple informational "What is" queries
     is_informational = any(original_query.lower().startswith(p) for p in ["what is", "who is", "define", "what does"])
     if tone != "concise" and data_found and not is_informational:
@@ -88,23 +111,43 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         if recommendation:
             synthesized_parts.append(recommendation)
     
-    narrative_output = "\n\n".join(synthesized_parts)
+    # Phase 14: LLM-Powered Semantic Synthesis (Business Intelligence Narrative)
+    if llm_service.enabled:
+        llm_narrative = llm_service.synthesize_narrative(
+            query=original_query,
+            context=answer_context,
+            history=history
+        )
+        if llm_narrative:
+            logger.info("[synthesizer] Successfully generated LLM narrative.")
+            narrative_output = llm_narrative
+        else:
+            logger.warning("[synthesizer] LLM synthesis failed or returned empty. Falling back to deterministic.")
+            narrative_output = "\n\n".join(synthesized_parts)
+    else:
+        narrative_output = "\n\n".join(synthesized_parts)
     
-    # Phase 12: Narrative Metric Bolding (Executive Readability)
-    narrative_output = re.sub(r'(\$[\d\.]+M?)', r'**\1**', narrative_output)
-    narrative_output = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', narrative_output)
-    narrative_output = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', narrative_output)
+    # Phase 12: Narrative Metric Bolding (Executive Readability) - Only apply if not LLM (LLM does its own)
+    if not llm_service.enabled:
+        narrative_output = re.sub(r'(\$[\d\.]+M?)', r'**\1**', narrative_output)
+        narrative_output = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', narrative_output)
+        narrative_output = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', narrative_output)
     
     # Update structured_data with narrative components if not already there
     if structured_data:
         structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
         if 'title' not in structured_data:
             structured_data['title'] = generate_session_title(original_query)
+        
+        # Phase 15: Result-Driven Dynamic Titles (Management Visualization)
+        if original_query.lower().startswith("which") and "chart" in structured_data:
+            enhanced = _enhance_title_with_result(structured_data['title'], structured_data['chart'])
+            structured_data['title'] = enhanced
 
     return narrative_output, structured_data
 
 
-def _synthesize_sql_narrative(content: str) -> Optional[str]:
+def _synthesize_sql_narrative(content: str, original_query: str = "") -> Optional[str]:
     """Transforms SQL results into an executive summary."""
     lines = [l.strip() for l in content.split('\n') if l.strip()]
     
@@ -133,6 +176,9 @@ def _synthesize_sql_narrative(content: str) -> Optional[str]:
     if metric_cols and category_cols:
         metric, category = metric_cols[0], category_cols[0]
         label, cat_label = _humanize(metric), _humanize(category)
+        # Phase 17: Intent-Aware Sorting (Highest vs Lowest)
+        is_lowest = any(k in original_query.lower() for k in ["lowest", "least", "bottom", "worst", "min"])
+        
         entries = sorted(
             [
                 {'cat': r[category], 'val': _parse_num(r[metric])}
@@ -140,19 +186,19 @@ def _synthesize_sql_narrative(content: str) -> Optional[str]:
                 if _parse_num(r[metric]) is not None and not _is_missing_dimension(r.get(category))
             ],
             key=lambda x: x['val'],
-            reverse=True
+            reverse=not is_lowest # Sort ascending if 'lowest' is requested
         )
         
         if entries:
             top = entries[0]
             total = sum(e['val'] for e in entries)
+            
+            # Phase 16: Direct Answer Override (Conciseness)
+            if any(k in original_query.lower() for k in ["what regions", "list regions", "which regions", "what platforms", "list platforms"]):
+                cats = [f"**{e['cat']}**" for e in entries]
+                return f"The current dataset covers the following {cat_label.lower()}s: {', '.join(cats)}."
+
             summary = f"Performance data indicates that **{top['cat']}** leads in {label} at {_fmt(top['val'])}, representing {_pct(top['val'], total)} of total {label} ({_fmt(total)})."
-            
-            if len(entries) >= 2:
-                runner = entries[1]
-                summary += f" {runner['cat']} follows with {_fmt(runner['val'])}, showing a variance of {_fmt(top['val'] - runner['val'])}."
-            
-            return summary
             
     # Final Fallback: provide a high-level count if data exists but didn't match structured patterns
     return f"Analysis of the retrieved records identified **{len(rows)} relevant entries**. Dominant categories include **{_humanize(str(list(rows[0].values())[0]))}** and associated operational metrics."
@@ -228,7 +274,8 @@ def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, to
             snippet = re.sub(r'(?<!\*)\*(?!\*)', '\n- ', snippet)
             snippet = snippet.replace('●', '\n- ').replace('•', '\n- ')
             
-            # 4. Header Identification
+            # 4. Header Identification (Formal BI Style)
+            snippet = re.sub(r'(\b[A-Z][A-Z\s]{3,}:)', r'\n\n**\1**\n', snippet)
             snippet = re.sub(r'(\b[A-Z][a-z/ ]+[:])', r'\n\n**\1**\n', snippet)
             
             # 5. Sentence cleanup and Word Deduplication
@@ -271,9 +318,10 @@ def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, to
             parts.append(f"- {f['finding'][:200]}")
         else:
             if i == 1:
-                parts.append(f"### Key Findings\n\n{f['finding']}")
+                parts.append(f"## STRATEGIC INTELLIGENCE SUMMARY\n\n---\n\n{f['finding']}")
             else:
-                parts.append(f"### Additional Context ({f['source']})\n\n{f['finding']}")
+                source_label = f["source"].split(".")[0]
+                parts.append(f"## OPERATIONAL CONTEXT: {source_label}\n\n---\n\n{f['finding']}")
             
     return "\n\n".join(parts)
 
@@ -285,19 +333,19 @@ def _generate_operational_implication(context: str, query: str) -> Optional[str]
     
     # Localization / Quality theme
     if any(k in ctx_lower for k in ['localization', 'subtitle', 'quality', 'translation']):
-        return "Internal assessments suggest strengthening localization QA protocols and viewer feedback monitoring before the next major release rollout to mitigate consistency risks."
+        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**STRATEGIC RISK MITIGATION**: Current operational data indicates a need for enhanced localization QA protocols. It is recommended to implement a pre-release audit cycle to ensure regional content parity and viewer satisfaction before the next major roadmap milestone."
         
     # Spend / Efficiency theme
     if any(k in ctx_lower for k in ['spend', 'efficiency', 'roi', 'cost']):
-        return "Given the observed variance in acquisition efficiency, re-aligning budget towards high-performance regions or channels may optimize overall reach for the upcoming quarter."
+        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**CAPITAL OPTIMIZATION**: To maximize acquisition efficiency, leadership should consider re-allocating under-performing display budgets toward high-ROI creator partnerships identified in the APAC and North American performance clusters."
         
     # Data / Warning theme
     if any(k in ctx_lower for k in ['warning', 'inconsistency', 'data quality', 'error']):
-        return "Addressing these data inconsistencies is a priority for operational transparency. Recommendations include a cross-reference pass with the latest ingestion logs to resolve tracking gaps."
+        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**OPERATIONAL INTEGRITY**: Addressing current ingestion anomalies is critical for downstream reporting accuracy. A technical deep-dive into the rejected record sets is advised to stabilize the data pipeline for Q3 reporting."
 
     # Growth / Performance theme
     if any(k in ctx_lower for k in ['growth', 'subscriber', 'reach', 'performance']):
-        return "Sustaining this performance trajectory likely requires continued focus on high-engagement content segments identified in these reports."
+        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**GROWTH SUSTAINABILITY**: Sustaining the current subscriber trajectory requires continued investment in the science-fiction and mobile-first content pillars that are currently driving outsized regional engagement."
 
     return None
 
@@ -387,11 +435,10 @@ def generate_session_title(query: str) -> str:
     
     # Pattern matching for common query structures
     patterns = [
-        # "Why did X happen" → "X Analysis"
-        (r"(?i)^why\s+(?:did|does|do|are|is|were|was)\s+(.+?)(?:\s+(?:drop|fall|decline|decrease))", lambda m: f"{_extract_subject(m.group(1))} Decline Analysis"),
-        (r"(?i)^why\s+(?:did|does|do|are|is|were|was)\s+(.+?)(?:\s+(?:increase|grow|rise|improve))", lambda m: f"{_extract_subject(m.group(1))} Growth Analysis"),
-        (r"(?i)^why\s+(?:are|is)\s+there\s+so\s+many\s+(.+)", lambda m: f"{_titleize(m.group(1))} Investigation"),
-        (r"(?i)^why\s+(.+)", lambda m: f"{_extract_subject(m.group(1))} Analysis"),
+        # "What regions/platforms" → "X Coverage"
+        (r"(?i)^what\s+regions?\b", "Regional Coverage"),
+        (r"(?i)^what\s+platforms?\b", "Platform Coverage"),
+        (r"(?i)^what\s+channels?\b", "Channel Coverage"),
         
         # "What is/was the X" → "X Overview"
         (r"(?i)^what\s+(?:is|was|are|were)\s+the\s+(.+?)(?:\s+(?:in|for|during|across)\s+(.+))?$", _what_title),
@@ -460,7 +507,10 @@ def _what_title(match) -> str:
     return f"{subject_clean} Review"
 
 def _extract_subject(text: str) -> str:
-    stop_prefixes = ['our', 'the', 'their', 'its', 'my', 'your', 'a', 'an', 'some', 'any']
+    stop_prefixes = [
+        'our', 'the', 'their', 'its', 'my', 'your', 'a', 'an', 'some', 'any',
+        'is', 'was', 'are', 'were', 'do', 'does', 'did', 'about', 'of'
+    ]
     words = text.strip().split()
     while words and words[0].lower() in stop_prefixes: words.pop(0)
     return _titleize(' '.join(words[:5]))
@@ -485,6 +535,32 @@ def _clean_title(title: str) -> str:
         t = t[:42] + "..."
     return t
 
+def _enhance_title_with_result(title: str, chart_data: Dict[str, Any]) -> str:
+    """Refines a generic title (e.g. 'Region Analysis') with the actual winner (e.g. 'APAC Analysis')."""
+    labels = chart_data.get('labels', [])
+    if not labels: return title
+    top_val = str(labels[0])
+    
+    # Common category names to replace at the start of the title
+    categories = ['Region', 'Platform', 'Channel', 'Category', 'System', 'Market', 'Country', 'Month', 'Quarter', 'Campaign']
+    
+    for cat in categories:
+        # Match case-insensitively but preserve structure
+        if title.lower().startswith(cat.lower()):
+            # Replace the category name with the top value
+            # e.g. "Region Had The Highest Spend" -> "APAC Had The Highest Spend"
+            pattern = re.compile(re.escape(cat), re.IGNORECASE)
+            new_title = pattern.sub(top_val, title, count=1)
+            return new_title
+            
+    # Fallback: if it's an analysis title, prepend the winner
+    if any(k in title for k in ["Analysis", "Review", "Summary", "Report"]):
+        # Avoid prepending if it's already there
+        if top_val.lower() not in title.lower():
+            return f"{top_val}: {title}"
+            
+    return title
+
 def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[str, Any]]:
     """Analytical Presentation Pass: Extracts structured data for tables and charts."""
     sections = _split_sections(answer_context)
@@ -503,8 +579,8 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         if '|' in content and '---' in content:
             table_content = content
             logger.info("[synthesizer] Found Markdown table content for extraction")
-        # Look for flattened table patterns if explicit table/comparison request
-        elif any(k in query.lower() for k in ['table', 'comparison', 'summary', 'list', 'breakdown', 'roi']):
+        # Look for flattened table patterns if explicit table/comparison/growth request
+        elif any(k in query.lower() for k in ['table', 'comparison', 'summary', 'list', 'breakdown', 'roi', 'growth', 'performance', 'metric']):
             flattened = _extract_flattened_table(content)
             if flattened:
                 table_content = flattened
@@ -549,7 +625,7 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
     # 1. Determine Response Type
     res_type = "operational_analysis"
     q_lower = query.lower()
-    if any(k in q_lower for k in ["compare", "vs", "difference"]): res_type = "metric_comparison"
+    if any(k in q_lower for k in ["compare", "vs", "difference", "growth", "change"]): res_type = "metric_comparison"
     elif any(k in q_lower for k in ["trend", "over time", "month", "quarter"]): res_type = "trend_analysis"
     elif any(k in q_lower for k in ["breakdown", "contribution", "ratio"]): res_type = "breakdown_analysis"
     elif len(rows) > 5: res_type = "table_response"
@@ -569,12 +645,19 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
     category_cols = [c for c in columns if c not in metric_cols and c.lower() not in ('id', 'pk', 'uuid')]
     
     if metric_cols and category_cols:
-        metric = metric_cols[0]
-        
-        # Smart Category Selection: Prefer columns with diversity and relevant names
+        # Smart Category Selection
         best_category = category_cols[0]
-        max_diversity = 0
         
+        # Smart Metric Selection: Prefer 'Current' or 'Change' or 'ROI' for charts
+        best_metric = metric_cols[0]
+        for col in metric_cols:
+            if any(k in col.lower() for k in ['current', 'change', 'roi', 'growth', 'spend']):
+                best_metric = col
+                break
+        
+        metric = best_metric
+        
+        max_diversity = 0
         for col in category_cols:
             unique_vals = len(set(str(r.get(col, '')) for r in rows))
             col_lower = col.lower()
@@ -632,10 +715,22 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
 
 def _extract_flattened_table(text: str) -> Optional[str]:
     """Tries to reconstruct a markdown table from flattened text strings."""
-    # Pattern 1: Multi-column financial matches (Region Spend ROI Conv)
-    # e.g. "APAC $12.8M 4.2x 14.8% North America $8.1M 2.7x 9.2%"
+    # Pattern 0: Specific QoQ Multi-Metric Block (Found in Q2 Executive Reports)
+    # e.g. "Total Subscribers 41.2M 45.8M +11.1% Monthly Active Users 33.7M 37.9M +12.4%"
+    # We use a broad but structured regex to capture these recurring patterns
+    qoq_pattern = r'([A-Z][A-Za-z\s]{3,40}?(?=\s+\d))\s+([\d\.]+(?:M|hrs|%)?)\s+([\d\.]+(?:M|hrs|%)?)\s+([\+\-][\d\.]+(?:%|M)?)'
+    qoq_items = re.findall(qoq_pattern, text)
+    
+    if len(qoq_items) >= 2:
+        header = "| Performance Metric | Q1 FY2026 | Q2 FY2026 | QoQ Change |\n|---|---|---|---|\n"
+        rows = []
+        for m in qoq_items:
+            rows.append(f"| {m[0].strip()} | {m[1]} | {m[2]} | **{m[3]}** |")
+        return header + "\n".join(rows)
+
     lines = text.split('\n')
     for line in lines:
+        # Pattern 1: Multi-column financial matches (Region Spend ROI Conv)
         financial_matches = re.findall(r'([A-Z][a-z\s]+)\s+(\$[\d\.]+M?)\s+([\d\.]+x)\s+([\d\.]+%?)', line)
         if len(financial_matches) >= 2:
             header = "| Region | Marketing Spend | ROI | Conversion |\n|---|---|---|---|\n"
@@ -644,9 +739,8 @@ def _extract_flattened_table(text: str) -> Optional[str]:
                 rows.append(f"| {m[0].strip()} | **{m[1]}** | **{m[2]}** | **{m[3]}** |")
             return header + "\n".join(rows)
 
-        # Pattern 2: QoQ Metric matches (Metric Q1 Q2 Change)
-        # e.g. "Total Subscribers 41.2M 45.8M +11.1%"
-        qoq_matches = re.findall(r'([A-Z][A-Za-z\s]{5,})\s+([\d\.]+M?)\s+([\d\.]+M?)\s+([\+\-][\d\.]+%?)', line)
+        # Pattern 2: QoQ Metric matches (Metric Q1 Q2 Change) - Improved
+        qoq_matches = re.findall(r'([A-Z][A-Za-z\s]{5,})\s+([\d\.]+(?:M|hrs|%)?)\s+([\d\.]+(?:M|hrs|%)?)\s+([\+\-][\d\.]+(?:%|M)?)', line)
         if len(qoq_matches) >= 2:
             header = "| Performance Metric | Q1 FY2026 | Q2 FY2026 | QoQ Change |\n|---|---|---|---|\n"
             rows = []
@@ -663,16 +757,6 @@ def _extract_flattened_table(text: str) -> Optional[str]:
                 label = m[0].strip()
                 val = m[1].strip()
                 rows.append(f"| {label} | **{val}** |")
-            return header + "\n".join(rows)
-
-        # Pattern 4: High-density growth metrics (Metric Q1 Q2 Shift)
-        # e.g. "Monthly Active Users 33.7M 37.9M +12.4%"
-        growth_matches = re.findall(r'([A-Za-z\s]{8,})\s+([\d\.]+(?:M|hrs|%)?)\s+([\d\.]+(?:M|hrs|%)?)\s+([\+\-][\d\.]+%?)', line)
-        if len(growth_matches) >= 2:
-            header = "| Metric | Previous | Current | Change |\n|---|---|---|---|\n"
-            rows = []
-            for m in growth_matches:
-                rows.append(f"| {m[0].strip()} | {m[1]} | {m[2]} | **{m[3]}** |")
             return header + "\n".join(rows)
 
     return None
