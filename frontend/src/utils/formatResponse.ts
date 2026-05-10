@@ -102,14 +102,19 @@ export function formatResponse(raw: string): FormattedSegment[] {
       continue;
     }
 
-    // --- Heading (### or ##) ---
-    const headingMatch = block.match(/^(#{2,3})\s+(.+)/);
+    const headingMatch = block.match(/^(#{1,6})\s+(.+)/);
     if (headingMatch) {
       segments.push({
         type: 'heading',
         level: headingMatch[1].length,
         content: stripBold(headingMatch[2].trim()),
       });
+      // If there's more text after the heading in the same block, add it as a paragraph
+      const lines = block.split('\n');
+      if (lines.length > 1) {
+        const rest = lines.slice(1).join('\n').trim();
+        if (rest) segments.push({ type: 'paragraph', content: rest });
+      }
       continue;
     }
 
