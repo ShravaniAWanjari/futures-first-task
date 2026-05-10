@@ -19,9 +19,9 @@ services:
       - futures-databases:/app/databases
       - futures-chroma:/app/chroma
       - futures-logs:/app/logs
-      # Mount source data (read-only) for bootstrap ingestion
+      # Mount source data for bootstrap ingestion
       - ./data:/app/data:ro
-      - ./docs:/app/docs:ro
+      - ./docs:/app/docs
     environment:
       - APP_ENV=${APP_ENV:-development}
       - LOG_LEVEL=${LOG_LEVEL:-INFO}
