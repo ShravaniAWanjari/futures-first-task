@@ -125,7 +125,8 @@ def verify_retrieval_infrastructure(report_file, expectation_report_file):
                 expectation_report_file.write(f"Retrieved Sources: {', '.join(validation['retrieved_sources'])}\n")
                 expectation_report_file.write(f"Keyword Overlap: {validation['keyword_overlap']}\n")
                 if formatted_results:
-                    expectation_report_file.write(f"Snippet Preview: {formatted_results[0]['document'][:150].replace('\\n', ' ')}...\n")
+                    snippet = formatted_results[0]['document'][:150].replace('\n', ' ')
+                    expectation_report_file.write(f"Snippet Preview: {snippet}...\n")
             else:
                 expectation_report_file.write("Status: [FAIL] Collection empty or missing.\n")
                 summary[dataset]["fail"] += 1
