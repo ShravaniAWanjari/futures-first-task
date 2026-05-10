@@ -70,6 +70,7 @@ class LLMService:
             "\n8. CLEANUP: Correct obvious fragments (e.g. 'YouTub' -> 'YouTube', 'APAC 8PM' -> 'APAC: 8 PM')."
             "\n9. For simple informational queries (like 'what is LATAM'), provide a direct, concise definition or explanation. Do not over-complicate."
             "\n10. EXPLICIT FORMAT REQUESTS: If the USER QUERY asks for a specific format (e.g., '3 bullet points', 'short summary'), you MUST provide ONLY that requested format. DO NOT include tables, DO NOT include a 'Strategic Implication', and DO NOT include extra headings or introductions. Output strictly what was asked for. For bullet points, always use proper Markdown list syntax (start with '- ')."
+            "\n11. CONVERSATIONAL GREETINGS: If the user simply says 'hi', 'hello', or greets you, start your response with 'Hello there, I am Iris, your Operational Intelligence Assistant.' Then, in the first person, briefly list the areas you can support (e.g., data quality, marketing performance, regional metrics) and ask how you can help."
         )
 
         chat_history = []
