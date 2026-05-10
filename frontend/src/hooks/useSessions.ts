@@ -140,15 +140,31 @@ export function useSessions() {
       timestamp: new Date().toISOString(),
     };
     
+      const optimisticTitle = query.length > 30 ? query.substring(0, 27) + '...' : query;
+
       // Optimistic update
       setActiveSession(prev => {
         if (prev && prev.id === targetSessionId) {
-          return { ...prev, messages: [...prev.messages, userMsg] };
+          const isNew = prev.title === 'New conversation' || prev.title === 'New Chat';
+          return { 
+            ...prev, 
+            title: isNew ? optimisticTitle : prev.title,
+            messages: [...prev.messages, userMsg] 
+          };
         }
-        // If we're sending to a session that's currently being initialized, 
-        // we'll rely on the re-render or the final API response update.
         return prev;
       });
+
+      setSessions(prev => prev.map(s => {
+        if (s.id === targetSessionId) {
+          const isNew = s.title === 'New conversation' || s.title === 'New Chat';
+          return {
+            ...s,
+            title: isNew ? optimisticTitle : s.title
+          };
+        }
+        return s;
+      }));
   
       try {
         const res = await api.sendQuery(query, targetSessionId, workspace);

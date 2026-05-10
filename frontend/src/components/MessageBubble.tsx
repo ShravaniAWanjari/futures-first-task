@@ -210,6 +210,7 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
           display: 'flex',
           flexDirection: 'column',
           gap: 6,
+          listStyleType: 'disc',
         }}>
           {segment.items?.map((item, idx) => (
             <li

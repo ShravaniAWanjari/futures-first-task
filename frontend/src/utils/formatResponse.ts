@@ -15,9 +15,8 @@ function stripBold(s: string): string {
   return s.replace(/\*\*(.*?)\*\*/g, '$1');
 }
 
-/** Checks if a line looks like a markdown table row (has at least 2 pipes) */
 function isTableLine(line: string): boolean {
-  return (line.match(/\|/g) || []).length >= 2;
+  return (line.match(/\|/g) || []).length >= 1;
 }
 
 /** Checks if a line is a separator row like |---|---|--- */
@@ -187,7 +186,7 @@ export function formatResponse(raw: string): FormattedSegment[] {
     // --- Bullet List (lines starting with - or *) ---
     const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
     const bulletLines = lines.filter(l => /^[-*•]\s+/.test(l));
-    if (bulletLines.length >= 2 || (bulletLines.length === lines.length && bulletLines.length >= 1)) {
+    if (bulletLines.length >= 1) {
       const intro = lines.filter(l => !/^[-*•]\s+/.test(l)).join(' ');
       const items = bulletLines.map(l => l.replace(/^[-*•]\s+/, ''));
       if (intro) segments.push({ type: 'paragraph', content: intro });
@@ -195,8 +194,7 @@ export function formatResponse(raw: string): FormattedSegment[] {
       continue;
     }
 
-    // --- "LABEL: description" bold label pattern → heading + body ---
-    const labelBodyMatch = block.match(/^\*\*([^*\n]{1,80})\*\*[:\s]+(.{10,})/s);
+    const labelBodyMatch = block.match(/^\*\*([^*\n]{1,80})\*\*[:\-]+\s*(.{10,})/s);
     if (labelBodyMatch) {
       segments.push({ type: 'heading', level: 3, content: labelBodyMatch[1].trim() });
       segments.push({ type: 'paragraph', content: labelBodyMatch[2].trim() });

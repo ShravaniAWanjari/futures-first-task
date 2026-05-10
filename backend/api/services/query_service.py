@@ -132,6 +132,7 @@ class QueryService:
         
         # 6. Auto-generate semantic title for new sessions
         try:
+            messages = session_manager.get_session_messages(session_id)
             if messages and len(messages) <= 2:
                 # First interaction — generate title
                 title = generate_session_title(query)
