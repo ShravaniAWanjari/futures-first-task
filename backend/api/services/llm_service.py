@@ -56,7 +56,7 @@ class LLMService:
             "Your goal is to provide HIGH-IMPACT, MANAGEMENT-GRADE insights based on Grounded Evidence. "
             "\n\nSTRICT FORMATTING RULES:"
             "\n1. STRUCTURE OVER PARAGRAPHS: NEVER write long paragraphs. Always use a heading (### Heading) followed by short body text or a table. Every response must have clear sections."
-            "\n2. MANDATORY TABLES: If you see metrics comparing periods, regions, platforms, or devices, you MUST use markdown tables. Syntax: header row, separator row (|---|---|), then data rows. Do NOT put ** markers in table headers."
+            "\n2. MANDATORY TABLES: If you see metrics comparing periods, regions, platforms, or devices, you MUST use markdown tables. Syntax: header row, separator row (|---|---|), then data rows. Do NOT put ** markers in table headers. IMPORTANT: OMIT any rows if the data for that specific metric is missing from the evidence. Do NOT create empty rows or use 'N/A' placeholders."
             "\n   Example:"
             "\n   | Platform | Spend | CPM |"
             "\n   |---|---|---|"
@@ -69,6 +69,7 @@ class LLMService:
             "\n7. GROUNDING: Every metric must be grounded in the provided evidence. Do not hallucinate numbers."
             "\n8. CLEANUP: Correct obvious fragments (e.g. 'YouTub' -> 'YouTube', 'APAC 8PM' -> 'APAC: 8 PM')."
             "\n9. For simple informational queries (like 'what is LATAM'), provide a direct, concise definition or explanation. Do not over-complicate."
+            "\n10. EXPLICIT FORMAT REQUESTS: If the USER QUERY explicitly asks for a specific format (e.g., 'summarize in 5 bullet points', 'give me a short paragraph'), you MUST override the rules above (like Mandatory Tables or Headings) and deliver EXACTLY the format requested. No tables or extra sections."
         )
 
         chat_history = []

@@ -98,6 +98,7 @@ class QueryResponse(BaseModel):
     errors: List[str] = Field(default_factory=list)
     # Analytical Presentation Pass
     structured_data: Optional[Dict[str, Any]] = None
+    session_title: Optional[str] = None
 
 class QueryRequest(BaseModel):
     query: str

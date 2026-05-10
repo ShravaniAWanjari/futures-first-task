@@ -436,7 +436,13 @@ def _is_missing_dimension(value: Any) -> bool:
 def generate_session_title(query: str) -> str:
     """
     Generates a concise, management-oriented session title from a user query.
+    Uses AI-powered generation if available, otherwise falls back to deterministic patterns.
     """
+    if llm_service.enabled:
+        ai_title = llm_service.generate_title(query)
+        if ai_title and ai_title != "Operational Analysis":
+            return ai_title
+
     query_clean = query.strip().rstrip('?').rstrip('.').strip()
     
     # Pattern matching for common query structures
@@ -630,9 +636,15 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         values = _clean_pipe_split(line)
         if len(values) > 0:
             row = {columns[ci]: values[ci] if ci < len(values) else '' for ci in range(len(columns))}
-            label_cols = [c for c in columns if c.lower() in ('region', 'platform', 'category', 'channel')]
+            label_cols = [c for c in columns if c.lower() in ('region', 'platform', 'category', 'channel', 'metric', 'dimension')]
             if label_cols and _is_missing_dimension(row.get(label_cols[0])):
                 continue
+            
+            # Skip if all non-label columns are empty (prevents empty rows in cards/tables)
+            non_label_values = [v for k, v in row.items() if k not in label_cols and k.lower() not in ('metric', 'category', 'label', 'column_0')]
+            if len(non_label_values) > 0 and not any(v.strip() for v in non_label_values):
+                continue
+                
             rows.append(row)
             
     if not rows: return None

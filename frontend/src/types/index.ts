@@ -59,6 +59,7 @@ export interface QueryResponse {
   warnings: string[];
   errors: string[];
   structured_data?: any;
+  session_title?: string;
 }
 
 export interface APIResponse<T> {

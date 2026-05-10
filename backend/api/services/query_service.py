@@ -132,11 +132,11 @@ class QueryService:
         
         # 6. Auto-generate semantic title for new sessions
         try:
-            messages = session_manager.get_session_messages(session_id)
             if messages and len(messages) <= 2:
                 # First interaction — generate title
                 title = generate_session_title(query)
                 session_manager.update_session_title(session_id, title)
+                response.session_title = title
                 logger.info(f"Session titled: '{title}'")
         except Exception as e:
             logger.warning(f"Title generation failed: {e}")

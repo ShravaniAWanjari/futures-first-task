@@ -180,18 +180,13 @@ export function useSessions() {
         setLastContext(contextToStore);
         console.log('[useSessions] Trace & Context synchronized:', { trace: !!res.trace, context: !!contextToStore });
 
-      // Refetch session to pick up backend-generated semantic title if it was empty
-      const isFirstMsg = activeSession?.id === targetSessionId && activeSession.messages.length === 0;
-      if (isFirstMsg) {
-        try {
-          const updated = await api.fetchSession(targetSessionId);
-          if (updated.title && updated.title !== 'New conversation' && updated.title !== 'New Chat') {
-            setSessions(prev => prev.map(s => s.id === targetSessionId ? { ...s, title: updated.title } : s));
-            setActiveSession(prev => prev?.id === targetSessionId ? { ...prev, title: updated.title } : prev);
-          }
-        } catch { /* title update is non-critical */ }
-      }
-      return res;
+        // Update session title if returned by backend
+        if (res.session_title) {
+          setSessions(prev => prev.map(s => s.id === targetSessionId ? { ...s, title: res.session_title! } : s));
+          setActiveSession(prev => prev?.id === targetSessionId ? { ...prev, title: res.session_title! } : prev);
+        }
+
+        return res;
     } catch (err) {
       if (activeSession?.id === targetSessionId) {
         const errorMsg: Message = {
