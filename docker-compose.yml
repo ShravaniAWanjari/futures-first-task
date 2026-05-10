@@ -29,10 +29,10 @@ services:
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
-      interval: 15s
-      timeout: 5s
-      retries: 5
-      start_period: 240s
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 600s
     restart: unless-stopped
 
   frontend:
