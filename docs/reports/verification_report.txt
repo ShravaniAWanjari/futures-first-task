@@ -5,20 +5,15 @@ viewers: 1500 rows
 watch_activity: 20000 rows
 reviews: 2500 rows
 marketing_campaigns: 60 rows
-regional_performance: 16 rows
+regional_performance: 4 rows
 
-Rejected Rows: 15
+Rejected Rows: 0
 Warnings: 0
 Normalizations: 0
 
 --- Most Common Warnings ---
 
 --- Most Common Errors ---
- - 3x: Transaction failed: UNIQUE constraint failed: watch_activity.activity_id
- - 3x: Transaction failed: UNIQUE constraint failed: viewers.viewer_id
- - 3x: Transaction failed: UNIQUE constraint failed: reviews.review_id
- - 3x: Transaction failed: UNIQUE constraint failed: movies.movie_id
- - 3x: Transaction failed: UNIQUE constraint failed: marketing_campaigns.campaign_id
 
 --- Normalization Frequency ---
 
@@ -46,36 +41,36 @@ Duplicate activity IDs found (should be 0): 0
 === DATABASE VERIFICATION: NeonPlay Media (Startup) ===
 
 movies: 60 rows
-viewers: 1199 rows
-watch_activity: 11597 rows
-reviews: 2005 rows
-marketing_campaigns: 59 rows
-regional_performance: 24 rows
+viewers: 1362 rows
+watch_activity: 13122 rows
+reviews: 2273 rows
+marketing_campaigns: 58 rows
+regional_performance: 7 rows
 
-Rejected Rows: 16823
-Warnings: 52976
-Normalizations: 52976
+Rejected Rows: 2246
+Warnings: 13397
+Normalizations: 13397
 
 --- Most Common Warnings ---
- - 7940x: Normalized device_type from 'android' to 'Mobile'
- - 7908x: Normalized device_type from 'iphone' to 'Mobile'
- - 7604x: Normalized device_type from 'smart tv' to 'Smart TV'
- - 7500x: Normalized device_type from 'iPhone' to 'Mobile'
- - 7408x: Normalized device_type from 'SmartTV' to 'Smart TV'
+ - 1985x: Normalized device_type from 'android' to 'Mobile'
+ - 1977x: Normalized device_type from 'iphone' to 'Mobile'
+ - 1901x: Normalized device_type from 'smart tv' to 'Smart TV'
+ - 1875x: Normalized device_type from 'iPhone' to 'Mobile'
+ - 1852x: Normalized device_type from 'SmartTV' to 'Smart TV'
 
 --- Most Common Errors ---
- - 1060x: Missing critical field: movie_id
- - 704x: Missing critical field: region
- - 188x: Value 105.0 above maximum 100
- - 140x: Value 999.0 above maximum 100
- - 100x: Value -10.0 below minimum 0
+ - 265x: Missing critical field: movie_id
+ - 50x: Value 105.0 above maximum threshold 100
+ - 40x: Value 999.0 above maximum threshold 100
+ - 34x: Value -10.0 below minimum 0
+ - 20x: Invalid foreign key reference: VWR0252
 
 --- Normalization Frequency ---
- - 7940x: Normalized device_type from 'android' to 'Mobile'
- - 7908x: Normalized device_type from 'iphone' to 'Mobile'
- - 7604x: Normalized device_type from 'smart tv' to 'Smart TV'
- - 7500x: Normalized device_type from 'iPhone' to 'Mobile'
- - 7408x: Normalized device_type from 'SmartTV' to 'Smart TV'
+ - 1985x: Normalized device_type from 'android' to 'Mobile'
+ - 1977x: Normalized device_type from 'iphone' to 'Mobile'
+ - 1901x: Normalized device_type from 'smart tv' to 'Smart TV'
+ - 1875x: Normalized device_type from 'iPhone' to 'Mobile'
+ - 1852x: Normalized device_type from 'SmartTV' to 'Smart TV'
 
 --- QA Validation Checks ---
 Unnormalized regions found (should be 0): 0
