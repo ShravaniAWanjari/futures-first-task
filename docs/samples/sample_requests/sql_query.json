@@ -1,0 +1,5 @@
+{
+  "query": "What is the total revenue in APAC last quarter?",
+  "dataset": "vistastream",
+  "request_id": "req_sql_001"
+}
