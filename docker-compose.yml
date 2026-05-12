@@ -22,6 +22,8 @@ services:
       # Mount source data for bootstrap ingestion
       - ./data:/app/data:ro
       - ./docs:/app/docs
+    env_file:
+      - .env
     environment:
       - APP_ENV=${APP_ENV:-development}
       - LOG_LEVEL=${LOG_LEVEL:-INFO}

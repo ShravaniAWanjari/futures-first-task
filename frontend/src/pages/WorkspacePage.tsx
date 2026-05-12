@@ -184,7 +184,7 @@ export default function WorkspacePage() {
           <Suggestions workspace={workspace} onSelect={handleSuggestionSelect} />
         )}
 
-        <QueryInput onSend={handleSend} disabled={queryLoading} />
+        <QueryInput onSend={handleSend} disabled={queryLoading} workspace={workspace} />
       </div>
 
       <SourcesPanel 

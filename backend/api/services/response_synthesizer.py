@@ -5,6 +5,7 @@ Responsibility: bridges retrieval artifacts and executive communication.
 """
 
 import re
+import math
 import logging
 import json
 from typing import List, Dict, Any, Optional, Tuple
@@ -14,8 +15,9 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Phase 4: Token Safety — Maximum chars per snippet
-MAX_SNIPPET_CHARS = 500
+MAX_SNIPPET_CHARS = 800
 MAX_FINDINGS = 5
+REDUNDANT_HEADERS = ["prepared by:", "internal only", "draft v", "version:", "maybe final", "neonplay media", "quarterly exec report"]
 
 
 def _detect_tone(query: str) -> str:
@@ -73,16 +75,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         elif section_type == 'plain':
             # Small talk and conversational responses pass through directly
             if content.strip():
-                if tone == "concise" and len(content.strip()) > 400:
-                    # Deterministic Summarization: Extract top points or truncate
-                    lines = [l.strip() for l in content.strip().split('\n') if l.strip()]
-                    summary_points = [l for l in lines if l.startswith('-') or l.startswith('###') or any(k in l for k in ['total', 'growth', 'roi', '%', '$'])]
-                    if summary_points:
-                        narrative = "### Executive Summary (Context Re-summarized)\n\n" + "\n\n".join(summary_points[:5])
-                    else:
-                        narrative = content.strip()[:400] + "..."
-                else:
-                    narrative = content.strip()
+                narrative = content.strip()
             
         if narrative:
             synthesized_parts.append(narrative)
@@ -92,18 +85,8 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
             return "No additional operational details could be retrieved to expand on the previous answer.", None
         return "The requested information could not be retrieved from current datasets.", None
 
-    if tone == "bulleted":
-        # Transform the narrative output into a clean bulleted list
-        all_text = "\n\n".join(synthesized_parts)
-        lines = [l.strip() for l in all_text.split('\n') if l.strip()]
-        # Extract meaningful lines (metrics or summaries)
-        bullet_candidates = [l for l in lines if not l.startswith('###') and (len(l) > 30 or any(k in l for k in ['%', '$', 'ROI']))]
-        if bullet_candidates:
-            narrative_output = "### 📋 Key Points Summary\n\n" + "\n".join([f"- {p}" for p in bullet_candidates[:5]])
-        else:
-            narrative_output = all_text
-    else:
-        narrative_output = "\n\n".join(synthesized_parts)
+    narrative_output = "\n\n".join(synthesized_parts)
+
     # Phase 11: Skip for simple informational "What is" queries
     is_informational = any(original_query.lower().startswith(p) for p in ["what is", "who is", "define", "what does"])
     if tone != "concise" and data_found and not is_informational:
@@ -133,22 +116,36 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         narrative_output = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', narrative_output)
         narrative_output = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', narrative_output)
     
-    # Update structured_data with narrative components if not already there
-    if structured_data:
-        structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
-        if 'title' not in structured_data:
-            # Phase 19: AI-Powered Title Generation
-            if llm_service.enabled:
-                structured_data['title'] = llm_service.generate_title(original_query)
+    # Phase 25: Multi-Pass Data Extraction
+    # If no chart was found in the raw context, try extracting from the CLEAN narrative
+    if not structured_data or 'chart' not in structured_data:
+        logger.info("[synthesizer] No chart found in raw context. Attempting extraction from synthesized narrative.")
+        narrative_structured = _extract_structured_data(narrative_output, original_query)
+        if narrative_structured and 'chart' in narrative_structured:
+            if not structured_data:
+                structured_data = narrative_structured
             else:
-                # Fallback deterministic logic
-                q = original_query.lower()
-                structured_data['title'] = "Executive Insight Report"
-        
-        # Phase 15: Result-Driven Dynamic Titles (Management Visualization)
-        if original_query.lower().startswith("which") and "chart" in structured_data:
-            enhanced = _enhance_title_with_result(structured_data['title'], structured_data['chart'])
-            structured_data['title'] = enhanced
+                structured_data['chart'] = narrative_structured['chart']
+                # Sync table if found in narrative but not in raw
+                if 'table' in narrative_structured and 'table' not in structured_data:
+                    structured_data['table'] = narrative_structured['table']
+
+    # Update structured_data with LLM fallback if still missing
+    if llm_service.enabled and (not structured_data or 'chart' not in structured_data):
+        chart_intent = any(k in original_query.lower() for k in ["chart", "graph", "plot", "viz", "visualization", "pie", "bar", "line", "summary", "breakdown"])
+        if chart_intent or not structured_data:
+            logger.info("[synthesizer] Conventional extraction insufficient. Attempting LLM-driven structured extraction.")
+            # Use the synthesis narrative for extraction as it's cleaner than raw context
+            llm_structured = llm_service.extract_structured_data(original_query, narrative_output)
+            if llm_structured and 'chart' in llm_structured:
+                if not structured_data:
+                    structured_data = llm_structured
+                else:
+                    structured_data['chart'] = llm_structured['chart']
+                
+                if 'title' not in structured_data or structured_data['title'] == "Operational Analysis":
+                    structured_data['title'] = llm_service.generate_title(original_query)
+                structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
 
     return narrative_output, structured_data
 
@@ -207,7 +204,8 @@ def _synthesize_sql_narrative(content: str, original_query: str = "") -> Optiona
             summary = f"Performance data indicates that **{top['cat']}** leads in {label} at {_fmt(top['val'])}, representing {_pct(top['val'], total)} of total {label} ({_fmt(total)})."
             
     # Final Fallback: provide a high-level count if data exists but didn't match structured patterns
-    return f"Analysis of the retrieved records identified **{len(rows)} relevant entries**. Dominant categories include **{_humanize(str(list(rows[0].values())[0]))}** and associated operational metrics."
+    # Final Fallback: provide a professional observation
+    return f"Operational data for **{_humanize(str(list(rows[0].values())[0]))}** has been processed. The results highlight key metrics across the requested dimensions, including {', '.join([_humanize(c) for c in metric_cols[:2]])}."
 
 
 def _synthesize_operational_summary(rows: List[Dict[str, Any]]) -> str:
@@ -266,6 +264,28 @@ def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, to
             source = source_match.group(1).strip()
             snippet = snippet_match.group(1).strip()
             
+            # Phase 23: Metadata Noise Reduction
+            snippet_lower = snippet.lower()
+            for header in REDUNDANT_HEADERS:
+                if header in snippet_lower[:100]:
+                    # Remove the header line
+                    lines = snippet.split('\n')
+                    snippet = '\n'.join([l for l in lines if header not in l.lower()]).strip()
+            
+            if not snippet: continue
+
+            # Word-Aware Truncation
+            if len(snippet) > MAX_SNIPPET_CHARS:
+                # Truncate and back up to last space/sentence
+                snippet = snippet[:MAX_SNIPPET_CHARS]
+                last_period = snippet.rfind('.')
+                if last_period > 300:
+                    snippet = snippet[:last_period + 1]
+                else:
+                    last_space = snippet.rfind(' ')
+                    if last_space > 300:
+                        snippet = snippet[:last_space] + "..."
+
             # 1. Technical Artifact Removal
             snippet = re.sub(r'Trace ID:\s*[a-f0-9]{8,}', '', snippet, flags=re.IGNORECASE)
             snippet = re.sub(r'\b[a-f0-9]{32}\b', '', snippet, flags=re.IGNORECASE)
@@ -416,6 +436,7 @@ def _humanize(col: str) -> str:
     return ' '.join(w.upper() if w.lower() in acronyms else w.capitalize() for w in words)
 
 def _fmt(n: float) -> str:
+    n = float(n)
     if abs(n) >= 1_000_000: return f"{n / 1_000_000:.1f}M"
     if abs(n) >= 1_000: return f"{n / 1_000:.1f}K"
     return f"{n:.1f}"
@@ -730,14 +751,47 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         if res_type == "trend_analysis": chart_type = "line"
         elif res_type == "breakdown_analysis": chart_type = "pie"
         
-        structured["chart"] = {
-            "type": chart_type,
-            "title": f"{_humanize(metric)} by {_humanize(category)}",
-            "data": [{"label": labels[i], "value": values[i]} for i in range(len(labels))]
-        }
+        # 4. Multi-Scale Charting (Phase 22: High-Resolution Visualization)
+        # If the range of values is too high, split into multiple charts
+        non_zero_vals = [v for l, v in chart_data if v > 0]
+        if non_zero_vals:
+            max_v = max(non_zero_vals)
+            min_v = min(non_zero_vals)
+            
+            # If scale difference is > 100x, split them
+            if max_v / min_v > 100:
+                logger.info(f"[synthesizer] Scale imbalance detected ({max_v} vs {min_v}). Splitting charts.")
+                
+                # Group into Key Metrics vs Operational Ratios buckets
+                buckets = {}
+                for l, v in chart_data:
+                    mag = 0
+                    if v > 0:
+                        mag = int(math.log10(v))
+                    
+                    # Group into categories: Volume Metrics (e.g. Millions) vs Rates (e.g. Churn, %)
+                    bucket_key = "Key Performance Metrics" if mag >= 4 else "Operational Rates & Ratios"
+                    if bucket_key not in buckets: buckets[bucket_key] = []
+                    buckets[bucket_key].append({"label": l, "value": v})
+                
+                charts = []
+                for b_name, b_data in buckets.items():
+                    if not b_data: continue
+                    charts.append({
+                        "type": chart_type, # Preserve original intent (Bar/Line/Pie)
+                        "title": f"{b_name}: {_humanize(metric)} Analysis",
+                        "data": b_data
+                    })
+                structured["charts"] = charts
+            else:
+                # Standard single chart
+                structured["chart"] = {
+                    "type": chart_type,
+                    "title": f"{_humanize(metric)} by {_humanize(category)}",
+                    "data": [{"label": labels[i], "value": values[i]} for i in range(len(labels))]
+                }
         
-        # If we have a chart, and it's a metric comparison, we can skip the primary table 
-        # to avoid redundancy, as the chart + narrative table is enough.
+        # If we have charts, and it's a metric comparison, we can skip the primary table 
         if res_type == "metric_comparison" and len(rows) <= 5:
             structured["response_type"] = "chart_only_response"
             
@@ -867,26 +921,39 @@ def _format_all_flattened_tables(text: str) -> str:
         except Exception:
             pass
 
-    # 4. Roadmap / Content Table Replacement
-    # Matches: "Title Genre Region Focus Release Window Neon District Cyberpunk Global August 2026"
-    roadmap_pattern = r'(Title\s+Genre\s+Region\s+Focus\s+Release\s+Window)\s+(.+?)(?=\s*[A-Z][a-z]+\s+[A-Z][a-z]+|$)'
-    roadmap_match = re.search(roadmap_pattern, text)
-    if roadmap_match:
-        header_str = roadmap_match.group(1)
-        content_str = roadmap_match.group(2)
+    # 5. Generic Metric List Replacement
+    # Matches: "- APAC: 84%" or "- North America: 73%"
+    list_pattern = r'^[ \t]*[-*•]\s*([A-Z][A-Za-z\s]+):\s*(\d+(?:\.\d+)?(?:%|M|hrs|min)?)(?=\s|$)'
+    list_matches = re.findall(list_pattern, text, re.MULTILINE)
+    if len(list_matches) >= 3:
+        header = "| Category | Metric Value |\n|---|---|\n"
+        table_rows = [f"| {m[0].strip()} | **{m[1]}** |" for m in list_matches]
+        table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
         
-        # Split content into rows of 5 words approximately
-        header = "| Title | Genre | Region | Focus | Release Window |\n|---|---|---|---|---|\n"
-        # Match groups of 5+ words that look like rows
-        # e.g. "Neon District Cyberpunk Global August 2026"
-        row_pattern = r'([A-Z][A-Za-z\s\d]+?)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+)\s+([A-Z][a-z]+\s+\d{4})'
-        rows = re.findall(row_pattern, content_str)
-        if rows:
-            table_rows = [f"| {r[0].strip()} | {r[1]} | {r[2]} | {r[3]} | {r[4]} |" for r in rows]
-            table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
-            text = text.replace(roadmap_match.group(0), table_md)
+        # Determine the range of text to replace
+        lines = text.split('\n')
+        new_lines = []
+        in_list = False
+        list_added = False
+        
+        for line in lines:
+            if re.match(list_pattern, line):
+                if not in_list:
+                    in_list = True
+                continue
+            else:
+                if in_list and not list_added:
+                    new_lines.append(table_md)
+                    list_added = True
+                    in_list = False
+                new_lines.append(line)
+        
+        if in_list and not list_added:
+            new_lines.append(table_md)
+            
+        text = '\n'.join(new_lines)
 
-    # 5. Markdown Table Sanity Check (Fix common AI mistakes)
+    # 6. Markdown Table Sanity Check (Fix common AI mistakes)
     # Fix double pipes: "| |" -> "|"
     text = text.replace("| |", "|")
     # Fix missing space after pipes in separators: "|---|---|---| ---|" -> "|---|---|---|---|"

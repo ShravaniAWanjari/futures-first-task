@@ -97,7 +97,7 @@ class QueryService:
             logger.info(f"[QueryService] Image query detected, routing to Gemini Vision")
             history = session_manager.get_session_messages(session_id)
             
-            vision_response = llm_service.analyze_image(query, image, history=history)
+            vision_response = llm_service.analyze_attachment(query, image, history=history)
             
             if vision_response:
                 from backend.schemas import QueryTrace, ClassificationTrace
@@ -212,11 +212,20 @@ class QueryService:
                 "Summarize the Q3 content roadmap for science-fiction.",
                 "Compare ad-spend efficiency between Europe and APAC."
             ]
-        else:
+        elif workspace == "neonplay":
             return [
                 "Which NeonPlay titles had the highest completion rates this month?",
                 "What common themes appear in viewer feedback for recent originals?",
                 "Which genres are driving the strongest repeat viewing behavior?",
                 "How did the latest content releases perform across regions?",
                 "Which shows are showing early signs of audience drop-off, and why?"
+            ]
+        else:
+            # Custom / Default Workspace suggestions
+            return [
+                "Summarize the key findings from the uploaded operational data.",
+                "Identify any significant trends or anomalies in the dataset.",
+                "Compare metrics across the different categories provided.",
+                "What are the primary operational implications of this data?",
+                "Create a high-level executive summary of the recent activities."
             ]

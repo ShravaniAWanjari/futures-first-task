@@ -270,7 +270,7 @@ export const SimplePieChart: React.FC<ChartProps> = ({ data, labels, values, tit
 };
 
 // Helper for formatting large numbers used by charts
-const _fmt = (n: float) => {
+const _fmt = (n: number) => {
   if (Math.abs(n) >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
   if (Math.abs(n) >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
   return n.toLocaleString();

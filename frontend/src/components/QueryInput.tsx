@@ -1,15 +1,16 @@
 import { useState, useRef, useEffect } from 'react';
-import { ArrowUp, Plus, X, Image as ImageIcon } from 'lucide-react';
+import { ArrowUp, Plus, X, Image as ImageIcon, FileText, AlertCircle } from 'lucide-react';
 
 interface QueryInputProps {
   onSend: (query: string, image?: string | null) => void;
   disabled: boolean;
+  workspace: string;
 }
 
-export default function QueryInput({ onSend, disabled }: QueryInputProps) {
+export default function QueryInput({ onSend, disabled, workspace }: QueryInputProps) {
   const [value, setValue] = useState('');
-  const [imagePreview, setImagePreview] = useState<string | null>(null);
-  const [imageBase64, setImageBase64] = useState<string | null>(null);
+  const [filePreview, setFilePreview] = useState<{ type: 'image' | 'doc', url: string, name: string } | null>(null);
+  const [fileBase64, setFileBase64] = useState<string | null>(null);
   const [showWarning, setShowWarning] = useState(false);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -20,19 +21,16 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
 
   const handlePlusClick = () => {
     if (disabled) return;
-    setShowWarning(true);
-    // Auto-dismiss warning after 4 seconds
-    setTimeout(() => setShowWarning(false), 4000);
     fileInputRef.current?.click();
   };
 
   const handleSubmit = () => {
     const trimmed = value.trim();
-    if ((!trimmed && !imageBase64) || disabled) return;
-    onSend(trimmed || 'Analyze this image', imageBase64);
+    if ((!trimmed && !fileBase64) || disabled) return;
+    onSend(trimmed || (filePreview?.type === 'image' ? 'Analyze this image' : 'Analyze this document'), fileBase64);
     setValue('');
-    setImagePreview(null);
-    setImageBase64(null);
+    setFilePreview(null);
+    setFileBase64(null);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -46,35 +44,46 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    // Validate file type
-    if (!file.type.startsWith('image/')) {
+    const isImage = file.type.startsWith('image/');
+    const isDoc = file.type === 'application/pdf' || file.type === 'text/csv';
+
+    // Enforcement: Only images for enterprise, docs allowed for custom
+    if (workspace !== 'custom' && !isImage) {
+      alert("Only image uploads are permitted in enterprise workspaces.");
       return;
     }
 
-    // Validate file size (max 10MB)
-    if (file.size > 10 * 1024 * 1024) {
+    // Validate file size
+    const maxSize = isImage ? 10 * 1024 * 1024 : 5 * 1024 * 1024; // 10MB image, 5MB doc
+    if (file.size > maxSize) {
+      alert(`File is too large. Max size is ${maxSize / (1024 * 1024)}MB.`);
       return;
     }
 
     const reader = new FileReader();
     reader.onload = () => {
       const result = reader.result as string;
-      setImagePreview(result);
-      // Strip the data:image/...;base64, prefix for the API
-      setImageBase64(result);
+      setFilePreview({ 
+        type: isImage ? 'image' : 'doc', 
+        url: isImage ? result : '', 
+        name: file.name 
+      });
+      setFileBase64(result);
     };
     reader.readAsDataURL(file);
 
-    // Reset file input so the same file can be selected again
     e.target.value = '';
   };
 
-  const removeImage = () => {
-    setImagePreview(null);
-    setImageBase64(null);
+  const removeFile = () => {
+    setFilePreview(null);
+    setFileBase64(null);
   };
 
-  const canSend = (value.trim().length > 0 || !!imageBase64) && !disabled;
+  const canSend = (value.trim().length > 0 || !!fileBase64) && !disabled;
+
+  // Determine accepted file types
+  const acceptTypes = workspace === 'custom' ? "image/*,application/pdf,text/csv" : "image/*";
 
   return (
     <div style={{ padding: '10px 40px 28px', background: 'var(--color-bg)' }}>
@@ -84,22 +93,32 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
         boxShadow: '0 0 0 1px var(--color-border), 0 1px 6px rgba(0,0,0,0.03), 0 3px 12px rgba(0,0,0,0.03)',
         transition: 'box-shadow 0.15s',
       }}>
-        {/* Image Preview Strip */}
-        {imagePreview && (
+        {/* Attachment Preview Strip */}
+        {filePreview && (
           <div style={{
             padding: '10px 14px 0', display: 'flex', alignItems: 'flex-start', gap: 8,
           }}>
             <div style={{ position: 'relative', display: 'inline-block' }}>
-              <img
-                src={imagePreview}
-                alt="Upload preview"
-                style={{
-                  height: 64, maxWidth: 120, borderRadius: 8,
-                  objectFit: 'cover', border: '1px solid var(--color-border)',
-                }}
-              />
+              {filePreview.type === 'image' ? (
+                <img
+                  src={filePreview.url}
+                  alt="Upload preview"
+                  style={{
+                    height: 64, maxWidth: 120, borderRadius: 8,
+                    objectFit: 'cover', border: '1px solid var(--color-border)',
+                  }}
+                />
+              ) : (
+                <div style={{
+                  height: 64, width: 80, borderRadius: 8,
+                  background: 'var(--color-primary-soft)', border: '1px solid var(--color-border)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <FileText style={{ width: 32, height: 32, color: 'var(--color-primary)' }} />
+                </div>
+              )}
               <button
-                onClick={removeImage}
+                onClick={removeFile}
                 style={{
                   position: 'absolute', top: -6, right: -6,
                   width: 18, height: 18, borderRadius: '50%',
@@ -108,27 +127,30 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   padding: 0,
                 }}
-                aria-label="Remove image"
+                aria-label="Remove attachment"
               >
                 <X style={{ width: 10, height: 10 }} />
               </button>
             </div>
-            <span style={{
-              fontSize: 11, color: 'var(--color-text-muted)',
-              padding: '4px 0', lineHeight: 1.4,
-            }}>
-              <ImageIcon style={{ width: 11, height: 11, display: 'inline', verticalAlign: 'middle', marginRight: 3 }} />
-              Image attached
-            </span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 2, padding: '4px 0' }}>
+              <span style={{ fontSize: 11, fontWeight: 600, color: 'var(--color-text)' }}>
+                {filePreview.name.length > 25 ? filePreview.name.substring(0, 22) + '...' : filePreview.name}
+              </span>
+              <span style={{ fontSize: 10, color: 'var(--color-text-muted)' }}>
+                {filePreview.type === 'image' ? 'Image attached' : 'Document attached'}
+              </span>
+            </div>
           </div>
         )}
 
         <div style={{ display: 'flex', alignItems: 'flex-end' }}>
-          {/* Plus / Image Upload Button */}
+          {/* Plus / Upload Button */}
           <div style={{ position: 'relative', padding: '0 0 8px 8px' }}>
             <button
               onClick={handlePlusClick}
               disabled={disabled}
+              onMouseEnter={() => { if (workspace === 'custom') setShowWarning(true); }}
+              onMouseLeave={() => setShowWarning(false)}
               style={{
                 width: 32, height: 32, borderRadius: 8, border: 'none',
                 cursor: disabled ? 'default' : 'pointer',
@@ -138,36 +160,33 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
                 transition: 'all 0.12s',
                 opacity: disabled ? 0.4 : 1,
               }}
-              onMouseOver={e => { if (!disabled) e.currentTarget.style.color = 'var(--color-text)'; e.currentTarget.style.background = 'var(--color-primary-soft)'; }}
-              onMouseOut={e => { e.currentTarget.style.color = 'var(--color-text-muted)'; e.currentTarget.style.background = 'transparent'; }}
-              aria-label="Attach image"
+              aria-label="Attach file"
             >
               <Plus style={{ width: 16, height: 16 }} />
             </button>
             
-            {/* Schema Compatibility Warning */}
-            {showWarning && !disabled && (
+            {/* Schema Compatibility Warning (Hover Only) */}
+            {showWarning && workspace === 'custom' && !disabled && (
               <div className="animate-fade-in" style={{
                 position: 'absolute', bottom: '100%', left: 0, 
-                marginBottom: 12, width: 280, padding: '12px 14px', borderRadius: 10,
-                background: '#fffbeb', border: '1px solid #fef3c7',
-                color: '#92400e', fontSize: 12, lineHeight: 1.5,
-                boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                zIndex: 50,
+                marginBottom: 12, width: 280, padding: '14px 16px', borderRadius: 12,
+                background: '#ffffff', border: '1px solid var(--color-border)',
+                color: 'var(--color-text)', fontSize: 12, lineHeight: 1.5,
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+                zIndex: 50, pointerEvents: 'none',
               }}>
-                <div style={{ fontWeight: 600, marginBottom: 4, display: 'flex', alignItems: 'center', gap: 6 }}>
-                  <span style={{ fontSize: 14 }}>⚠️</span> Schema Compatibility
+                <div style={{ fontWeight: 600, marginBottom: 6, display: 'flex', alignItems: 'center', gap: 8, color: 'var(--color-warning)' }}>
+                  <AlertCircle style={{ width: 14, height: 14 }} /> Schema Compatibility
                 </div>
-                Ensure uploaded files have compatible schemas. Unrelated data structures may disrupt the conversation and result in inaccurate intelligence.
+                Ensure uploaded files (PDF/CSV) have compatible structures. Incompatible data may result in analytical hallucinations or reasoning errors.
               </div>
             )}
           </div>
 
-          {/* Hidden file input */}
           <input
             ref={fileInputRef}
             type="file"
-            accept="image/*"
+            accept={acceptTypes}
             style={{ display: 'none' }}
             onChange={handleFileSelect}
           />
@@ -181,7 +200,7 @@ export default function QueryInput({ onSend, disabled }: QueryInputProps) {
             onKeyDown={handleKeyDown}
             disabled={disabled}
             rows={1}
-            placeholder={imageBase64 ? "Ask about this image…" : "Ask a question…"}
+            placeholder={fileBase64 ? "Ask about this attachment…" : "Ask a question…"}
             style={{
               flex: 1, resize: 'none', border: 'none', outline: 'none',
               borderRadius: 14, padding: '14px 50px 14px 6px', fontSize: 14,

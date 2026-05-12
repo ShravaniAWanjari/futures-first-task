@@ -14,6 +14,41 @@ function boldToHtml(s: string): string {
   return s.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 }
 
+interface ChartRendererProps {
+  chart: any;
+}
+
+const ChartRenderer: React.FC<ChartRendererProps> = ({ chart }) => {
+  return (
+    <>
+      {chart.type === 'bar' && (
+        <SimpleBarChart 
+          title={chart.title} 
+          data={chart.data} 
+          labels={chart.labels}
+          values={chart.values}
+        />
+      )}
+      {chart.type === 'line' && (
+        <SimpleLineChart 
+          title={chart.title} 
+          data={chart.data} 
+          labels={chart.labels}
+          values={chart.values}
+        />
+      )}
+      {chart.type === 'pie' && (
+        <SimplePieChart 
+          title={chart.title} 
+          data={chart.data} 
+          labels={chart.labels}
+          values={chart.values}
+        />
+      )}
+    </>
+  );
+};
+
 export default function MessageBubble({ message, onOpenSources }: MessageBubbleProps) {
   const isUser = message.role === 'user';
 
@@ -111,34 +146,15 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
             />
           )}
 
+          {/* Single Chart (Legacy Support) */}
           {structured.chart && (
-            <>
-              {structured.chart.type === 'bar' && (
-                <SimpleBarChart 
-                  title={structured.chart.title} 
-                  data={structured.chart.data} 
-                  labels={structured.chart.labels}
-                  values={structured.chart.values}
-                />
-              )}
-              {structured.chart.type === 'line' && (
-                <SimpleLineChart 
-                  title={structured.chart.title} 
-                  data={structured.chart.data} 
-                  labels={structured.chart.labels}
-                  values={structured.chart.values}
-                />
-              )}
-              {structured.chart.type === 'pie' && (
-                <SimplePieChart 
-                  title={structured.chart.title} 
-                  data={structured.chart.data} 
-                  labels={structured.chart.labels}
-                  values={structured.chart.values}
-                />
-              )}
-            </>
+            <ChartRenderer chart={structured.chart} />
           )}
+
+          {/* Multiple Charts (Scale-Aware) */}
+          {structured.charts && Array.isArray(structured.charts) && structured.charts.map((c: any, ci: number) => (
+            <ChartRenderer key={ci} chart={c} />
+          ))}
         </div>
       )}
 
