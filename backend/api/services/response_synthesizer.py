@@ -54,6 +54,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     # Phase 8: Detect tone
     tone = _detect_tone(original_query)
     is_summary_request = _is_summary_request(original_query)
+    is_informational = any(original_query.lower().startswith(p) for p in ["what is", "who is", "define", "what does"])
     
     # 2. Detect expansion intent
     is_expansion = any(re.search(p, original_query.lower()) for p in [r"provide more", r"what else", r"additional", r"tell me more"])
@@ -67,7 +68,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
                 break
 
     synthesized_parts = []
-    structured_data = _extract_structured_data(answer_context, original_query)
+    structured_data = None if is_informational else _extract_structured_data(answer_context, original_query)
 
     # Core Content Extraction
     for section_type, content in sections:
@@ -121,7 +122,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
 
     # Phase 25: Multi-Pass Data Extraction
     # If no chart was found in the raw context, try extracting from the CLEAN narrative
-    if not _has_visual_payload(structured_data):
+    if not is_informational and not _has_visual_payload(structured_data):
         logger.info("[synthesizer] No chart found in raw context. Attempting extraction from synthesized narrative.")
         narrative_structured = _extract_structured_data(narrative_output, original_query)
         if narrative_structured and (_has_visual_payload(narrative_structured) or narrative_structured.get('table')):
@@ -136,7 +137,7 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
                     structured_data['table'] = narrative_structured['table']
 
     # Update structured_data with LLM fallback if still missing
-    if llm_service.enabled and not _has_visual_payload(structured_data):
+    if llm_service.enabled and not is_informational and not _has_visual_payload(structured_data):
         chart_intent = any(k in original_query.lower() for k in ["chart", "graph", "plot", "viz", "visualization", "pie", "bar", "line", "summary", "breakdown"])
         if chart_intent or not structured_data:
             logger.info("[synthesizer] Conventional extraction insufficient. Attempting LLM-driven structured extraction.")
@@ -155,8 +156,10 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
                     structured_data['title'] = llm_service.generate_title(original_query)
                 structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
 
-    if structured_data:
+    if structured_data and not is_informational:
         structured_data = _normalize_structured_payload(structured_data)
+    elif is_informational:
+        structured_data = None
 
     return narrative_output, structured_data
 

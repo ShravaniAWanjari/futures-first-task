@@ -15,6 +15,15 @@ SMALL_TALK_RESPONSES = {
     "farewell": "Goodbye! Feel free to return anytime you need operational insights."
 }
 
+GLOSSARY_RESPONSES = {
+    "latam": "LATAM stands for Latin America.",
+    "apac": "APAC stands for Asia Pacific.",
+    "emea": "EMEA stands for Europe, the Middle East, and Africa.",
+    "roi": "ROI stands for return on investment.",
+    "cpm": "CPM stands for cost per thousand impressions.",
+    "ctv": "CTV stands for connected TV.",
+}
+
 def _is_small_talk(query: str) -> Optional[str]:
     """Phase 7: Detects conversational small talk that should NOT trigger retrieval."""
     q = query.lower().strip()
@@ -46,6 +55,36 @@ def _classify_conversational_action(query: str) -> Optional[str]:
     return None
 
 
+def _lookup_glossary_response(query: str) -> Optional[str]:
+    q = query.lower().strip().rstrip("?.!")
+    patterns = [
+        r"^what is ([a-z0-9 \-]+)$",
+        r"^define ([a-z0-9 \-]+)$",
+        r"^what does ([a-z0-9 \-]+) mean$",
+    ]
+
+    term = None
+    for pattern in patterns:
+        match = re.match(pattern, q)
+        if match:
+            term = match.group(1).strip()
+            break
+
+    if not term:
+        return None
+
+    normalized = {
+        "latin america": "latam",
+        "asia pacific": "apac",
+        "middle east africa": "emea",
+        "return on investment": "roi",
+        "cost per thousand impressions": "cpm",
+        "connected tv": "ctv",
+    }.get(term, term)
+
+    return GLOSSARY_RESPONSES.get(normalized)
+
+
 def classify_query(query: str, history: List[Dict[str, Any]] = None) -> Dict[str, Any]:
     """
     Classifies a query into an execution route with deterministic operational mapping.
@@ -67,6 +106,22 @@ def classify_query(query: str, history: List[Dict[str, Any]] = None) -> Dict[str
             "routing_plan": None,
             "follow_up_detected": False,
             "conversational_response": SMALL_TALK_RESPONSES.get(small_talk_type, "How can I help you?"),
+            "conversational_action": None
+        }
+
+    glossary_response = _lookup_glossary_response(query_lower)
+    if glossary_response:
+        return {
+            "query_type": "conversational",
+            "reasoning": "Glossary-style informational query detected.",
+            "recommended_tools": [],
+            "confidence": 1.0,
+            "resolved_query": query,
+            "operational_domain": None,
+            "intent": None,
+            "routing_plan": None,
+            "follow_up_detected": False,
+            "conversational_response": glossary_response,
             "conversational_action": None
         }
     
