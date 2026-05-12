@@ -169,31 +169,33 @@ def orchestrate_query(request: QueryRequest, history: List[Dict[str, Any]] = Non
     follow_up_detected = classification_dict.get('follow_up_detected', False)
     
     if follow_up_detected and history:
-        # Check if we can inherit from history
-        for msg in reversed(history):
-            if msg.get('role') == 'assistant' and msg.get('trace'):
-                try:
-                    raw_trace = msg.get('trace')
-                    prev_trace = json.loads(raw_trace) if isinstance(raw_trace, str) else raw_trace
-                    if not isinstance(prev_trace, dict):
-                        continue
+        previous_assistant = next(
+            (msg for msg in reversed(history) if msg.get('role') == 'assistant'),
+            None
+        )
+        if previous_assistant and previous_assistant.get('trace'):
+            try:
+                raw_trace = previous_assistant.get('trace')
+                prev_trace = json.loads(raw_trace) if isinstance(raw_trace, str) else raw_trace
+                if isinstance(prev_trace, dict):
                     prev_type = prev_trace['classification']['query_type']
                     if prev_type in ['sql', 'pdf']:
                         classification_dict['query_type'] = prev_type
                         classification_dict['recommended_tools'] = prev_trace['classification']['recommended_tools']
-                        classification_dict['confidence'] = 0.9  # Intentional inheritance
-                        classification_dict['reasoning'] += f" Inheriting intent from prior {prev_type} follow-up."
-                        
+                        classification_dict['confidence'] = 0.9
+                        classification_dict['reasoning'] += f" Inheriting intent from the immediately previous {prev_type} answer."
+
                         if 'intent' in prev_trace['classification']:
                             classification_dict['intent'] = prev_trace['classification']['intent']
                         if 'routing_plan' in prev_trace['classification']:
                             classification_dict['routing_plan'] = prev_trace['classification']['routing_plan']
-                        
+
                         memory_inheritance = True
-                        inheritance_reason = f"Explicit follow-up detected. Inheriting {prev_type} context."
-                        break
-                except Exception:
-                    continue
+                        inheritance_reason = f"Explicit follow-up detected. Inheriting immediate {prev_type} context."
+                    else:
+                        inheritance_reason = f"Immediate prior answer was {prev_type}; skipping SQL/PDF inheritance."
+            except Exception:
+                inheritance_reason = "Immediate prior answer trace could not be parsed."
     
     memory_trace = {
         "memory_inheritance": memory_inheritance,

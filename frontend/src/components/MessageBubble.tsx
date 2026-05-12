@@ -71,7 +71,7 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
     const isImage = message.image && message.image.startsWith('data:image/');
 
     return (
-      <div className="animate-fade-in" style={{ marginBottom: 28 }}>
+      <div className="animate-fade-in" style={{ marginBottom: 32 }}>
         {message.image && (
           <div style={{ marginBottom: 12 }}>
             {isImage ? (
@@ -110,9 +110,27 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
             )}
           </div>
         )}
-        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text)' }}>
-          {message.content}
-        </p>
+        <div style={{
+          padding: '18px 22px',
+          background: 'linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,248,246,0.95))',
+          border: '1px solid var(--color-border)',
+          borderRadius: 18,
+          boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
+        }}>
+          <div style={{
+            fontSize: 11,
+            fontWeight: 700,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            color: 'var(--color-text-muted)',
+            marginBottom: 10,
+          }}>
+            Question
+          </div>
+          <p style={{ fontSize: 22, lineHeight: 1.35, color: 'var(--color-text)', margin: 0, fontWeight: 600, letterSpacing: '-0.02em' }}>
+            {message.content}
+          </p>
+        </div>
       </div>
     );
   }
@@ -131,9 +149,8 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
   }
 
   const segments = formatResponse(message.content);
-  const narrativeSegments = structured?.table
-    ? segments.filter((seg) => seg.type !== 'table')
-    : segments;
+  const hasNarrativeTables = segments.some((seg) => seg.type === 'table');
+  const narrativeSegments = segments;
   const hasSources = message.sources && message.sources.split(',').filter(Boolean).length > 0;
   const sourceCount = hasSources ? message.sources!.split(',').filter(Boolean).length : 0;
   const charts = structured
@@ -165,7 +182,7 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
             />
           )}
           
-          {structured.table && (
+          {structured.table && !hasNarrativeTables && (
             <DataTable 
               columns={structured.table.columns} 
               rows={structured.table.rows} 

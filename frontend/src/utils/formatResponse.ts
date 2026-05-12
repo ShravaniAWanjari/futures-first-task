@@ -193,7 +193,7 @@ export function formatResponse(raw: string): FormattedSegment[] {
 
     // --- Bullet List (lines starting with - or *) ---
     const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
-    const bulletLines = lines.filter(l => /^[-*•]\s+/.test(l));
+    const bulletLines = lines.filter(l => /^[-*•]\s+/.test(l) && !/^[-*•]\s*-?\s*$/.test(l));
     if (bulletLines.length >= 1) {
       const intro = lines.filter(l => !/^[-*•]\s+/.test(l)).join(' ');
       const items = bulletLines.map(l => l.replace(/^[-*•]\s+/, ''));

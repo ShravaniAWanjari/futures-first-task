@@ -101,6 +101,13 @@ class QueryService:
             
             if vision_response:
                 from backend.schemas import QueryTrace, ClassificationTrace
+                synthesized_context, structured_data = synthesize_response(
+                    answer_context=vision_response,
+                    sources=["Gemini Vision Analysis"],
+                    confidence=0.95,
+                    history=history,
+                    original_query=query
+                )
                 trace = QueryTrace(
                     request_id=req_id,
                     dataset=workspace,
@@ -115,22 +122,24 @@ class QueryService:
                 )
                 response = QueryResponse(
                     request_id=req_id,
-                    answer_context=vision_response,
+                    answer_context=synthesized_context,
                     sources=["Gemini Vision Analysis"],
                     trace=trace,
                     overall_confidence=0.95,
                     warnings=[],
-                    errors=[]
+                    errors=[],
+                    structured_data=structured_data
                 )
                 
                 # Persist Assistant Response
                 session_manager.add_message(
                     session_id=session_id,
                     role="assistant",
-                    content=vision_response,
+                    content=synthesized_context,
                     context="Image analysis via Gemini Vision",
                     sources="Gemini Vision Analysis",
-                    trace=trace.model_dump_json() if trace else None
+                    trace=trace.model_dump_json() if trace else None,
+                    structured_data=json.dumps(structured_data) if structured_data else None
                 )
                 
                 # Auto-generate title for new sessions

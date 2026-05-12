@@ -68,3 +68,42 @@ def test_sanitizer_removes_internal_control_text():
     assert "charts only response" not in cleaned.lower()
     assert "internal notes" not in cleaned
     assert "### Strategic Implication" in cleaned
+
+
+def test_metric_bucket_does_not_force_pie_chart(monkeypatch):
+    monkeypatch.setattr(rs.llm_service, "enabled", False)
+
+    narrative, structured = rs.synthesize_response(
+        answer_context="""## Mixed Metrics
+
+| Metric | Value |
+|---|---|
+| Total Subscribers | 45800000 |
+| Users | 41200000 |
+| Subscriber Churn | 5.8 |
+| Contribution | 3.2 |
+""",
+        sources=[],
+        confidence=0.95,
+        history=[],
+        original_query="Summarize these key metrics",
+    )
+
+    assert structured is not None
+    assert "pie" not in {chart["type"] for chart in structured["charts"]}
+
+
+def test_top_titles_block_is_reformatted_into_table():
+    output = rs._format_all_flattened_tables(
+        "content performance top titles this quarter Galaxy Burn Sci-Fi 84% APAC Shadow Circuit Thriller 73% North America HarborLine Drama 66% Europe"
+    )
+
+    assert "| Title | Genre | Avg Completion | Primary Region |" in output
+
+
+def test_device_share_block_is_reformatted_into_table():
+    output = rs._format_all_flattened_tables(
+        "device usage Device Share Mobile 73% Smart TV 17% Desktop 7% Tablet 3%"
+    )
+
+    assert "| Device | Share |" in output
