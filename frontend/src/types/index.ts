@@ -2,6 +2,7 @@ export interface Message {
   id: string;
   role: 'user' | 'assistant';
   content: string;
+  image?: string | null;
   context?: string | null;
   sources?: string | null;
   trace?: string | null;

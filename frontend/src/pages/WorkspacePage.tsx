@@ -81,11 +81,11 @@ export default function WorkspacePage() {
     }
     
     if (targetSessionId) {
-      sendMessage(query, targetSessionId);
+      sendMessage(query, targetSessionId, null);
     }
   }, [activeSession, createSession, sendMessage, workspace, queryLoading]);
 
-  const handleSend = useCallback(async (query: string) => {
+  const handleSend = useCallback(async (query: string, image?: string | null) => {
     if (queryLoading) return;
     
     let targetSessionId = activeSession?.id;
@@ -97,7 +97,7 @@ export default function WorkspacePage() {
     }
     
     if (targetSessionId) {
-      sendMessage(query, targetSessionId);
+      sendMessage(query, targetSessionId, image);
     }
   }, [activeSession, createSession, sendMessage, workspace, queryLoading]);
 

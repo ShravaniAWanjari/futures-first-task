@@ -1,6 +1,6 @@
 import type { Message } from '../types';
 import { formatResponse, type FormattedSegment } from '../utils/formatResponse';
-import { DataTable, KPICard } from './AnalyticalComponents';
+import { DataTable, KPICard, SimpleBarChart, SimpleLineChart, SimplePieChart } from './AnalyticalComponents';
 
 interface MessageBubbleProps {
   message: Message;
@@ -33,6 +33,17 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
   if (isUser) {
     return (
       <div className="animate-fade-in" style={{ marginBottom: 28 }}>
+        {message.image && (
+          <img
+            src={message.image}
+            alt="User uploaded"
+            style={{
+              maxHeight: 180, maxWidth: 320, borderRadius: 10,
+              objectFit: 'cover', marginBottom: 10,
+              border: '1px solid var(--color-border)',
+            }}
+          />
+        )}
         <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text)' }}>
           {message.content}
         </p>
@@ -93,11 +104,40 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
             />
           )}
           
-          {structured.table && structured.response_type === 'table_response' && (
+          {structured.table && (structured.response_type === 'table_response' || structured.response_type === 'metric_comparison') && (
             <DataTable 
               columns={structured.table.columns} 
               rows={structured.table.rows} 
             />
+          )}
+
+          {structured.chart && (
+            <>
+              {structured.chart.type === 'bar' && (
+                <SimpleBarChart 
+                  title={structured.chart.title} 
+                  data={structured.chart.data} 
+                  labels={structured.chart.labels}
+                  values={structured.chart.values}
+                />
+              )}
+              {structured.chart.type === 'line' && (
+                <SimpleLineChart 
+                  title={structured.chart.title} 
+                  data={structured.chart.data} 
+                  labels={structured.chart.labels}
+                  values={structured.chart.values}
+                />
+              )}
+              {structured.chart.type === 'pie' && (
+                <SimplePieChart 
+                  title={structured.chart.title} 
+                  data={structured.chart.data} 
+                  labels={structured.chart.labels}
+                  values={structured.chart.values}
+                />
+              )}
+            </>
           )}
         </div>
       )}
@@ -109,18 +149,7 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
         ))}
       </div>
 
-      {/* Tables for analysis if not already shown as primary */}
-      {structured && structured.table && structured.response_type !== 'table_response' && (
-        <div style={{ marginTop: 24 }}>
-          <p style={{ fontSize: 12, fontWeight: 600, color: 'var(--color-text-muted)', marginBottom: 8 }}>
-            DATA BREAKDOWN
-          </p>
-          <DataTable 
-            columns={structured.table.columns} 
-            rows={structured.table.rows.slice(0, 5)} 
-          />
-        </div>
-      )}
+
 
       {/* Supporting Sources link */}
       {hasSources && onOpenSources && (

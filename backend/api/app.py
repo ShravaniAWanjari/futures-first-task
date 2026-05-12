@@ -30,6 +30,7 @@ class ChatQuery(BaseModel):
     query: str
     session_id: str
     workspace: Optional[str] = None
+    image: Optional[str] = None
 
 # --- App Initialization ---
 
@@ -101,7 +102,8 @@ def handle_query(request: Request, chat_req: ChatQuery):
         query=chat_req.query,
         session_id=chat_req.session_id,
         workspace=workspace,
-        request_id=req_id
+        request_id=req_id,
+        image=chat_req.image
     )
     
     return APIResponse(

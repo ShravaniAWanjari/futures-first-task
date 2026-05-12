@@ -7,6 +7,7 @@ from backend.orchestration.orchestrator import orchestrate_query
 from backend.schemas import QueryRequest, QueryResponse
 from backend.api import session_manager
 from backend.api.services.response_synthesizer import synthesize_response, generate_session_title
+from backend.api.services.llm_service import llm_service
 
 logger = logging.getLogger("api")
 
@@ -76,12 +77,75 @@ def _build_rich_raw_reasoning(response: QueryResponse, fallback_context: str) ->
 
 class QueryService:
     @staticmethod
-    def execute_query(query: str, session_id: str, workspace: str, request_id: Optional[str] = None) -> QueryResponse:
+    def execute_query(query: str, session_id: str, workspace: str, request_id: Optional[str] = None, image: Optional[str] = None) -> QueryResponse:
         """
         Coordinates orchestration, response synthesis, and message persistence.
+        If an image is provided, routes directly to Gemini Vision for multimodal analysis.
         """
         req_id = request_id or str(uuid.uuid4())[:8]
         
+        # Persist User Message
+        session_manager.add_message(
+            session_id=session_id,
+            role="user",
+            content=query,
+            image=image
+        )
+        
+        # --- IMAGE QUERY: Route directly to Gemini Vision ---
+        if image and llm_service.enabled:
+            logger.info(f"[QueryService] Image query detected, routing to Gemini Vision")
+            history = session_manager.get_session_messages(session_id)
+            
+            vision_response = llm_service.analyze_image(query, image, history=history)
+            
+            if vision_response:
+                from backend.schemas import QueryTrace, ClassificationTrace
+                trace = QueryTrace(
+                    request_id=req_id,
+                    dataset=workspace,
+                    classification=ClassificationTrace(
+                        query_type="image_analysis",
+                        reasoning="User attached an image for visual analysis.",
+                        recommended_tools=["gemini_vision"],
+                        confidence=0.95
+                    ),
+                    tool_executions=[],
+                    total_timing_ms=0
+                )
+                response = QueryResponse(
+                    request_id=req_id,
+                    answer_context=vision_response,
+                    sources=["Gemini Vision Analysis"],
+                    trace=trace,
+                    overall_confidence=0.95,
+                    warnings=[],
+                    errors=[]
+                )
+                
+                # Persist Assistant Response
+                session_manager.add_message(
+                    session_id=session_id,
+                    role="assistant",
+                    content=vision_response,
+                    context="Image analysis via Gemini Vision",
+                    sources="Gemini Vision Analysis",
+                    trace=trace.model_dump_json() if trace else None
+                )
+                
+                # Auto-generate title for new sessions
+                try:
+                    messages = session_manager.get_session_messages(session_id)
+                    if messages and len(messages) <= 2:
+                        title = generate_session_title(query)
+                        session_manager.update_session_title(session_id, title)
+                        response.session_title = title
+                except Exception as e:
+                    logger.warning(f"Title generation failed: {e}")
+                
+                return response
+        
+        # --- STANDARD QUERY: Normal orchestration pipeline ---
         # 1. Create Orchestration Request
         orchestrator_req = QueryRequest(
             query=query,
@@ -89,25 +153,17 @@ class QueryService:
             request_id=req_id
         )
         
-        # 2. Persist User Message
-        session_manager.add_message(
-            session_id=session_id,
-            role="user",
-            content=query
-        )
-        
-        # 3. Fetch History for Context Resolution
+        # 2. Fetch History for Context Resolution
         history = session_manager.get_session_messages(session_id)
         
-        # 4. Execute Orchestration with Context
+        # 3. Execute Orchestration with Context
         response = orchestrate_query(orchestrator_req, history=history)
         
         # 4. Capture clean orchestration output for synthesis
-        # Keep synthesis input free of debug/routing metadata.
         synthesis_input_context = response.answer_context
         raw_context = _build_rich_raw_reasoning(response, response.answer_context)
         
-        # 4. Synthesize Response — transform raw output into management-grade narrative
+        # 5. Synthesize Response
         synthesized_context, structured_data = synthesize_response(
             answer_context=synthesis_input_context,
             sources=response.sources,
@@ -119,22 +175,21 @@ class QueryService:
         response.raw_reasoning = raw_context
         response.structured_data = structured_data
         
-        # 5. Persist Assistant Response
+        # 6. Persist Assistant Response
         session_manager.add_message(
             session_id=session_id,
             role="assistant",
             content=synthesized_context,
-            context=raw_context,  # preserve raw for source panel
+            context=raw_context,
             sources=",".join(response.sources),
             trace=response.trace.model_dump_json() if response.trace else None,
             structured_data=json.dumps(structured_data) if structured_data else None
         )
         
-        # 6. Auto-generate semantic title for new sessions
+        # 7. Auto-generate semantic title for new sessions
         try:
             messages = session_manager.get_session_messages(session_id)
             if messages and len(messages) <= 2:
-                # First interaction — generate title
                 title = generate_session_title(query)
                 session_manager.update_session_title(session_id, title)
                 response.session_title = title

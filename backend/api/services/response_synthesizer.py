@@ -663,9 +663,16 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         "title": generate_session_title(query),
         "table": {
             "columns": columns,
-            "rows": rows[:20] # Cap for UI sanity
+            "rows": rows[:20] 
         }
     }
+    
+    # Check if narrative already contains a table (to avoid primary table redundancy)
+    if "|---" in answer_context:
+        # If narrative has a table, and we are not in 'table_response' mode, 
+        # we might want to suppress the primary table to avoid double-rendering.
+        # But we'll keep it for now and let the chart handle the visual part.
+        pass
     
     # 3. Chart Detection
     metric_cols = [c for c in columns if _is_numeric_col(rows, c)]
@@ -725,11 +732,15 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         
         structured["chart"] = {
             "type": chart_type,
-            "label": _humanize(metric),
-            "labels": labels,
-            "values": values
+            "title": f"{_humanize(metric)} by {_humanize(category)}",
+            "data": [{"label": labels[i], "value": values[i]} for i in range(len(labels))]
         }
         
+        # If we have a chart, and it's a metric comparison, we can skip the primary table 
+        # to avoid redundancy, as the chart + narrative table is enough.
+        if res_type == "metric_comparison" and len(rows) <= 5:
+            structured["response_type"] = "chart_only_response"
+            
         # Add KPI card if singular metric
         if len(rows) == 1:
             structured["kpi"] = {

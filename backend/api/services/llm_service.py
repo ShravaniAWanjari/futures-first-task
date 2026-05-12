@@ -1,4 +1,6 @@
 import logging
+import base64
+import io
 import google.generativeai as genai
 from typing import List, Dict, Any, Optional
 from backend.config import Config
@@ -37,6 +39,53 @@ class LLMService:
             return response.text.strip().replace('"', '').replace("'", "")
         except Exception:
             return "Operational Analysis"
+
+    def analyze_image(self, query: str, image_data: str, history: List[Dict[str, Any]] = None) -> Optional[str]:
+        """
+        Analyzes an image using Gemini's multimodal vision capability.
+        Accepts a base64 data URL (e.g., data:image/png;base64,...).
+        """
+        if not self.enabled:
+            return None
+
+        try:
+            # Parse the data URL to extract raw bytes and mime type
+            if image_data.startswith('data:'):
+                header, b64_data = image_data.split(',', 1)
+                mime_type = header.split(':')[1].split(';')[0]
+            else:
+                b64_data = image_data
+                mime_type = 'image/png'
+
+            image_bytes = base64.b64decode(b64_data)
+
+            # Build the prompt
+            system_context = (
+                "You are Iris., a Senior Operational Intelligence Assistant. "
+                "The user has shared an image with their query. Analyze the image carefully and provide a clear, "
+                "professional response. If the image contains charts, tables, or data visualizations, extract and "
+                "interpret the key metrics. If it contains text, summarize or answer questions about it. "
+                "Use markdown formatting: ### headings, **bold** for key metrics, and tables where appropriate. "
+                "Be concise and executive-grade in your analysis."
+            )
+
+            prompt_text = f"{system_context}\n\nUSER QUERY: {query}"
+
+            # Build multimodal content parts
+            parts = [
+                prompt_text,
+                {"mime_type": mime_type, "data": image_bytes}
+            ]
+
+            response = self.model.generate_content(parts)
+
+            if response and response.text:
+                return response.text.strip()
+            return None
+
+        except Exception as e:
+            logger.error(f"[llm_service] Image analysis failed: {e}")
+            return None
 
     def synthesize_narrative(self, query: str, context: str, history: List[Dict[str, Any]] = None) -> Optional[str]:
         """
@@ -99,3 +148,4 @@ class LLMService:
 
 # Singleton instance
 llm_service = LLMService()
+

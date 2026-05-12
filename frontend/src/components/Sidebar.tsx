@@ -22,7 +22,7 @@ export default function Sidebar({
   const [wsOpen, setWsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const currentWs = workspace === 'vistastream' ? 'VistaStream' : 'NeonPlay';
+  const currentWs = workspace === 'vistastream' ? 'VistaStream' : workspace === 'neonplay' ? 'NeonPlay' : 'Custom Input';
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -76,23 +76,27 @@ export default function Sidebar({
               border: '1px solid var(--color-border)', borderRadius: 8, background: 'var(--color-surface)',
               overflow: 'hidden', boxShadow: '0 4px 16px rgba(0,0,0,0.07)',
             }}>
-              {['vistastream', 'neonplay'].map(ws => (
+              {[
+                { id: 'vistastream', name: 'VistaStream Global', sub: 'Clean Enterprise Input Data' },
+                { id: 'neonplay', name: 'NeonPlay Media', sub: 'Messy Startup Input Data' },
+                { id: 'custom', name: 'Custom Input', sub: 'Manual Data Uploads' }
+              ].map(ws => (
                 <button
-                  key={ws}
-                  onClick={() => { onChangeWorkspace(ws); setWsOpen(false); }}
+                  key={ws.id}
+                  onClick={() => { onChangeWorkspace(ws.id); setWsOpen(false); }}
                   style={{
                     width: '100%', padding: '8px 10px', fontSize: 13, textAlign: 'left',
-                    background: workspace === ws ? 'var(--color-active)' : 'transparent',
-                    color: 'var(--color-text)', fontWeight: workspace === ws ? 500 : 400,
+                    background: workspace === ws.id ? 'var(--color-active)' : 'transparent',
+                    color: 'var(--color-text)', fontWeight: workspace === ws.id ? 500 : 400,
                     border: 'none', cursor: 'pointer', fontFamily: 'inherit',
                     display: 'flex', flexDirection: 'column', gap: 1,
                   }}
-                  onMouseEnter={e => { if (workspace !== ws) (e.currentTarget as HTMLElement).style.background = 'var(--color-primary-soft)'; }}
-                  onMouseLeave={e => { if (workspace !== ws) (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
+                  onMouseEnter={e => { if (workspace !== ws.id) (e.currentTarget as HTMLElement).style.background = 'var(--color-primary-soft)'; }}
+                  onMouseLeave={e => { if (workspace !== ws.id) (e.currentTarget as HTMLElement).style.background = 'transparent'; }}
                 >
-                  <span>{ws === 'vistastream' ? 'VistaStream Global' : 'NeonPlay Media'}</span>
+                  <span>{ws.name}</span>
                   <span style={{ fontSize: 10, color: 'var(--color-text-muted)', fontWeight: 400 }}>
-                    {ws === 'vistastream' ? 'Clean Enterprise Input Data' : 'Messy Startup Input Data'}
+                    {ws.sub}
                   </span>
                 </button>
               ))}

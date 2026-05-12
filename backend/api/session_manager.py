@@ -33,6 +33,7 @@ def init_sessions_db():
             session_id TEXT,
             role TEXT,
             content TEXT,
+            image TEXT,
             context TEXT,
             sources TEXT,
             trace TEXT,
@@ -41,6 +42,12 @@ def init_sessions_db():
             FOREIGN KEY (session_id) REFERENCES sessions (id) ON DELETE CASCADE
         )
     ''')
+    
+    # Migration: Add image column if it doesn't exist (Phase 11.2)
+    try:
+        cursor.execute("ALTER TABLE messages ADD COLUMN image TEXT")
+    except sqlite3.OperationalError:
+        pass # Already exists
     
     conn.commit()
     conn.close()
@@ -116,13 +123,13 @@ def update_session_title(session_id: str, title: str):
     conn.commit()
     conn.close()
 
-def add_message(session_id: str, role: str, content: str, context: str = None, sources: str = None, trace: str = None, structured_data: str = None):
+def add_message(session_id: str, role: str, content: str, image: Optional[str] = None, context: str = None, sources: str = None, trace: str = None, structured_data: str = None):
     msg_id = str(uuid.uuid4())
     conn = get_db_connection()
     
     conn.execute(
-        "INSERT INTO messages (id, session_id, role, content, context, sources, trace, structured_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
-        (msg_id, session_id, role, content, context, sources, trace, structured_data)
+        "INSERT INTO messages (id, session_id, role, content, image, context, sources, trace, structured_data) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        (msg_id, session_id, role, content, image, context, sources, trace, structured_data)
     )
     conn.execute("UPDATE sessions SET updated_at = CURRENT_TIMESTAMP WHERE id = ?", (session_id,))
     

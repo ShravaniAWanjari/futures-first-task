@@ -54,11 +54,14 @@ export async function renameSession(id: string, title: string): Promise<void> {
 export async function sendQuery(
   query: string,
   sessionId: string,
-  workspace: string
+  workspace: string,
+  image?: string | null
 ): Promise<QueryResponse> {
+  const body: Record<string, any> = { query, session_id: sessionId, workspace };
+  if (image) body.image = image;
   return request<QueryResponse>('/query', {
     method: 'POST',
-    body: JSON.stringify({ query, session_id: sessionId, workspace }),
+    body: JSON.stringify(body),
   });
 }
 

@@ -126,7 +126,7 @@ export function useSessions() {
     }
   }, [activeSession]);
 
-  const sendMessage = useCallback(async (query: string, overrideSessionId?: string) => {
+  const sendMessage = useCallback(async (query: string, overrideSessionId?: string, image?: string | null) => {
     const targetSessionId = overrideSessionId || activeSession?.id;
     if (!targetSessionId || pendingRef.current) return;
     
@@ -137,6 +137,7 @@ export function useSessions() {
       id: crypto.randomUUID(),
       role: 'user',
       content: query,
+      image: image || null,
       timestamp: new Date().toISOString(),
     };
     
@@ -167,7 +168,7 @@ export function useSessions() {
       }));
   
       try {
-        const res = await api.sendQuery(query, targetSessionId, workspace);
+        const res = await api.sendQuery(query, targetSessionId, workspace, image);
         console.log('[useSessions] API Response:', res);
   
         const assistantMsg: Message = {
@@ -220,7 +221,7 @@ export function useSessions() {
   }, [activeSession, workspace]);
 
   return {
-    sessions, activeSession, loading, queryLoading, workspace, lastTrace, health,
+    sessions, activeSession, loading, queryLoading, workspace, lastTrace, lastContext, health,
     loadSessions, loadSession, createSession, removeSession,
     renameActiveSession, sendMessage, setActiveSession, setWorkspace,
   };
