@@ -126,7 +126,7 @@ export function useSessions() {
     }
   }, [activeSession]);
 
-  const sendMessage = useCallback(async (query: string, overrideSessionId?: string, image?: string | null) => {
+  const sendMessage = useCallback(async (query: string, image?: string | null, fileName?: string | null, overrideSessionId?: string) => {
     const targetSessionId = overrideSessionId || activeSession?.id;
     if (!targetSessionId || pendingRef.current) return;
     
@@ -138,6 +138,7 @@ export function useSessions() {
       role: 'user',
       content: query,
       image: image || null,
+      file_name: fileName || null,
       timestamp: new Date().toISOString(),
     };
     

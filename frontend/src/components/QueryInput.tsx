@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ArrowUp, Plus, X, Image as ImageIcon, FileText, AlertCircle } from 'lucide-react';
 
 interface QueryInputProps {
-  onSend: (query: string, image?: string | null) => void;
+  onSend: (query: string, image?: string | null, fileName?: string | null) => void;
   disabled: boolean;
   workspace: string;
 }
@@ -27,7 +27,11 @@ export default function QueryInput({ onSend, disabled, workspace }: QueryInputPr
   const handleSubmit = () => {
     const trimmed = value.trim();
     if ((!trimmed && !fileBase64) || disabled) return;
-    onSend(trimmed || (filePreview?.type === 'image' ? 'Analyze this image' : 'Analyze this document'), fileBase64);
+    onSend(
+      trimmed || (filePreview?.type === 'image' ? 'Analyze this image' : 'Analyze this document'), 
+      fileBase64,
+      filePreview?.name || null
+    );
     setValue('');
     setFilePreview(null);
     setFileBase64(null);

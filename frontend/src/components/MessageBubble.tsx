@@ -49,6 +49,8 @@ const ChartRenderer: React.FC<ChartRendererProps> = ({ chart }) => {
   );
 };
 
+import { FileText, Image as ImageIcon } from 'lucide-react';
+
 export default function MessageBubble({ message, onOpenSources }: MessageBubbleProps) {
   const isUser = message.role === 'user';
 
@@ -66,18 +68,48 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
   };
 
   if (isUser) {
+    const isImage = message.image && message.image.startsWith('data:image/');
+    const isDoc = message.image && (message.image.includes('application/pdf') || message.image.includes('text/csv'));
+
     return (
       <div className="animate-fade-in" style={{ marginBottom: 28 }}>
         {message.image && (
-          <img
-            src={message.image}
-            alt="User uploaded"
-            style={{
-              maxHeight: 180, maxWidth: 320, borderRadius: 10,
-              objectFit: 'cover', marginBottom: 10,
-              border: '1px solid var(--color-border)',
-            }}
-          />
+          <div style={{ marginBottom: 12 }}>
+            {isImage ? (
+              <img
+                src={message.image}
+                alt={message.file_name || "User uploaded"}
+                style={{
+                  maxHeight: 180, maxWidth: 320, borderRadius: 10,
+                  objectFit: 'cover',
+                  border: '1px solid var(--color-border)',
+                }}
+              />
+            ) : (
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: 12,
+                padding: '12px 16px', background: 'var(--color-surface)',
+                borderRadius: 12, border: '1px solid var(--color-border)',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.02)',
+              }}>
+                <div style={{
+                  width: 36, height: 36, borderRadius: 8,
+                  background: 'var(--color-primary-soft)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <FileText style={{ width: 20, height: 20, color: 'var(--color-primary)' }} />
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text)' }}>
+                    {message.file_name || "Document attached"}
+                  </span>
+                  <span style={{ fontSize: 11, color: 'var(--color-text-muted)' }}>
+                    {message.image.includes('pdf') ? 'PDF Document' : 'CSV Spreadsheet'}
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
         )}
         <p style={{ fontSize: 14, lineHeight: 1.7, color: 'var(--color-text)' }}>
           {message.content}

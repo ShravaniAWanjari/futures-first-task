@@ -3,6 +3,7 @@ export interface Message {
   role: 'user' | 'assistant';
   content: string;
   image?: string | null;
+  file_name?: string | null;
   context?: string | null;
   sources?: string | null;
   trace?: string | null;
