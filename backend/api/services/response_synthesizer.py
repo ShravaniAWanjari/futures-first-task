@@ -953,7 +953,48 @@ def _format_all_flattened_tables(text: str) -> str:
             
         text = '\n'.join(new_lines)
 
-    # 6. Markdown Table Sanity Check (Fix common AI mistakes)
+    # 6. Dense Line Metrics (Multiple Label Value pairs on one line)
+    # Matches: "Mobile 73% Smart TV 17% Desktop 7% Tablet 3%"
+    dense_pattern = r'([A-Z][A-Za-z\s]{2,20})\s+(\d+(?:\.\d+)?(?:%|M|hrs|min)?)(?=\s|$)'
+    dense_matches = re.findall(dense_pattern, text)
+    if len(dense_matches) >= 3 and "| Category |" not in text:
+        header = "| Segment | Contribution |\n|---|---|\n"
+        table_rows = [f"| {m[0].strip()} | **{m[1]}** |" for m in dense_matches]
+        table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
+        
+        # Try to replace the line that contains these matches
+        first_match = dense_matches[0][0]
+        last_match = dense_matches[-1][1]
+        
+        start_idx = text.find(first_match)
+        end_idx = text.find(last_match, start_idx) + len(last_match)
+        
+        if start_idx != -1 and end_idx != -1:
+            # Check if we are already in a table
+            if text[max(0, start_idx-5):start_idx].count('|') < 2:
+                text = text[:start_idx] + table_md + text[end_idx:]
+
+    # 7. Roadmap / Planned Release Reconstruction
+    # Handles: "planned releases title genre target region expected release Galaxy Burn: Frontier Sci-Fi APAC July..."
+    if "planned releases" in text.lower() and "| Title |" not in text:
+        roadmap_pattern = r'([A-Z][A-Za-z\d\s:]{3,30})\s+([A-Z][a-z\d\-]+)\s+([A-Z]{2,10})\s+([A-Z][a-z]+(?:\s+\d{4})?)'
+        roadmap_matches = re.findall(roadmap_pattern, text)
+        if len(roadmap_matches) >= 2:
+            header = "| Project Title | Genre | Region | Release Window |\n|---|---|---|---|\n"
+            table_rows = [f"| {m[0].strip().replace(':', '')} | {m[1]} | {m[2]} | {m[3]} |" for m in roadmap_matches]
+            table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
+            
+            # Find the "planned releases" block and replace it
+            try:
+                start_marker = re.search(r'planned releases', text, re.IGNORECASE).start()
+                last_m = roadmap_matches[-1]
+                end_marker = text.find(last_m[3], start_marker) + len(last_m[3])
+                if start_marker != -1 and end_marker != -1:
+                    text = text[:start_marker] + table_md + text[end_marker:]
+            except Exception:
+                pass
+
+    # 8. Markdown Table Sanity Check (Fix common AI mistakes)
     # Fix double pipes: "| |" -> "|"
     text = text.replace("| |", "|")
     # Fix missing space after pipes in separators: "|---|---|---| ---|" -> "|---|---|---|---|"

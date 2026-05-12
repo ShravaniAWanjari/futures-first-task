@@ -96,10 +96,11 @@ class LLMService:
             f"GROUNDED EVIDENCE:\n{context}\n\n"
             "INSTRUCTIONS:\n"
             "1. RECONSTRUCT FRAGMENTS: The evidence contains fragmented data dumps. Identify and transform these into professional Markdown tables (using | and --- syntax).\n"
-            "2. TABULAR DATA MANDATE: Any regional performance, time-based viewing windows, or content roadmap data MUST be presented as a Markdown table. Do not use plain text lists for metrics.\n"
-            "3. DIRECT ANSWER: Answer the query directly and authoritatively. No filler.\n"
-            "4. NO META-COMMENTARY: NEVER mention 'retrieved records' or technical mechanics.\n"
-            "5. STRATEGIC IMPLICATION: Always end with a '### Strategic Implication' section."
+            "2. TABULAR DATA MANDATE: Any regional performance, time-based viewing windows, or content roadmap data MUST be presented as a Markdown table. Do not use plain text lists for metrics. NEVER dump multiple data points in a single line without a table structure.\n"
+            "3. INTELLIGENT ATTRIBUTION: If specific 'Key Attributes' for underperforming categories are missing from the raw fragments, do not simply use 'N/A'. Instead, cross-reference broader operational issues mentioned in the context (e.g., 'localization delays', 'generic marketing', 'mobile optimization gaps') to provide a reasoned diagnostic attribution.\n"
+            "4. DIRECT ANSWER: Answer the query directly and authoritatively. No filler.\n"
+            "5. NO META-COMMENTARY: NEVER mention 'retrieved records' or technical mechanics.\n"
+            "6. STRATEGIC IMPLICATION: Always end with a '### Strategic Implication' section."
         )
 
         try:
