@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { ArrowUp, Plus, X, Image as ImageIcon, FileText, AlertCircle } from 'lucide-react';
+import { ArrowUp, Plus, X, FileText, AlertCircle } from 'lucide-react';
 
 interface QueryInputProps {
   onSend: (query: string, image?: string | null, fileName?: string | null) => void;
@@ -49,7 +49,6 @@ export default function QueryInput({ onSend, disabled, workspace }: QueryInputPr
     if (!file) return;
 
     const isImage = file.type.startsWith('image/');
-    const isDoc = file.type === 'application/pdf' || file.type === 'text/csv';
 
     // Enforcement: Only images for enterprise, docs allowed for custom
     if (workspace !== 'custom' && !isImage) {

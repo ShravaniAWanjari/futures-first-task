@@ -5,7 +5,6 @@ Responsibility: bridges retrieval artifacts and executive communication.
 """
 
 import re
-import math
 import logging
 import json
 from typing import List, Dict, Any, Optional, Tuple
@@ -18,6 +17,7 @@ logging.basicConfig(level=logging.INFO)
 MAX_SNIPPET_CHARS = 800
 MAX_FINDINGS = 5
 REDUNDANT_HEADERS = ["prepared by:", "internal only", "draft v", "version:", "maybe final", "neonplay media", "quarterly exec report"]
+SUMMARY_PATTERNS = [r"\bsummarize\b", r"\bsummary\b", r"\bbrief\b", r"\bshorter\b", r"\btl;dr\b"]
 
 
 def _detect_tone(query: str) -> str:
@@ -44,16 +44,14 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     
     # Phase 8: Detect tone
     tone = _detect_tone(original_query)
-    
-    # 1. Detect if this is an operational domain query
-    is_operational = "ingestion_logs" in answer_context or "validation_summaries" in answer_context
+    is_summary_request = _is_summary_request(original_query)
     
     # 2. Detect expansion intent
     is_expansion = any(re.search(p, original_query.lower()) for p in [r"provide more", r"what else", r"additional", r"tell me more"])
     is_follow_up = _is_follow_up_prompt(original_query) or is_expansion
     
     last_assistant_msg = ""
-    if is_follow_up and history:
+    if (is_follow_up or is_summary_request) and history:
         for msg in reversed(history):
             if msg.get('role') == 'assistant':
                 last_assistant_msg = msg.get('content', '')
@@ -63,15 +61,12 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
     structured_data = _extract_structured_data(answer_context, original_query)
 
     # Core Content Extraction
-    data_found = False
     for section_type, content in sections:
         narrative = None
         if section_type == 'sql':
             narrative = _synthesize_sql_narrative(content, original_query=original_query)
-            data_found = True
         elif section_type == 'retrieval':
             narrative = _synthesize_retrieval_narrative(content, is_expansion=is_expansion, tone=tone)
-            data_found = True
         elif section_type == 'plain':
             # Small talk and conversational responses pass through directly
             if content.strip():
@@ -86,13 +81,6 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         return "The requested information could not be retrieved from current datasets.", None
 
     narrative_output = "\n\n".join(synthesized_parts)
-
-    # Phase 11: Skip for simple informational "What is" queries
-    is_informational = any(original_query.lower().startswith(p) for p in ["what is", "who is", "define", "what does"])
-    if tone != "concise" and data_found and not is_informational:
-        recommendation = _generate_operational_implication(answer_context, original_query)
-        if recommendation:
-            synthesized_parts.append(recommendation)
     
     # Phase 14: LLM-Powered Semantic Synthesis (Business Intelligence Narrative)
     if llm_service.enabled:
@@ -115,37 +103,53 @@ def synthesize_response(answer_context: str, sources: List[str], confidence: flo
         narrative_output = re.sub(r'(\$[\d\.]+M?)', r'**\1**', narrative_output)
         narrative_output = re.sub(r'(\d+(?:\.\d+)?%)', r'**\1**', narrative_output)
         narrative_output = re.sub(r'(\d+(?:\.\d+)?x)', r'**\1**', narrative_output)
-    
+
+    if is_summary_request and last_assistant_msg:
+        normalized_previous = _normalize_compare_text(last_assistant_msg)
+        normalized_current = _normalize_compare_text(narrative_output)
+        if not normalized_current or normalized_current == normalized_previous:
+            narrative_output = _summarize_previous_answer(last_assistant_msg)
+
+    narrative_output = _sanitize_narrative_output(narrative_output)
+
     # Phase 25: Multi-Pass Data Extraction
     # If no chart was found in the raw context, try extracting from the CLEAN narrative
-    if not structured_data or 'chart' not in structured_data:
+    if not _has_visual_payload(structured_data):
         logger.info("[synthesizer] No chart found in raw context. Attempting extraction from synthesized narrative.")
         narrative_structured = _extract_structured_data(narrative_output, original_query)
-        if narrative_structured and 'chart' in narrative_structured:
+        if narrative_structured and _has_visual_payload(narrative_structured):
             if not structured_data:
                 structured_data = narrative_structured
             else:
-                structured_data['chart'] = narrative_structured['chart']
-                # Sync table if found in narrative but not in raw
+                if narrative_structured.get('chart'):
+                    structured_data['chart'] = narrative_structured['chart']
+                if narrative_structured.get('charts'):
+                    structured_data['charts'] = narrative_structured['charts']
                 if 'table' in narrative_structured and 'table' not in structured_data:
                     structured_data['table'] = narrative_structured['table']
 
     # Update structured_data with LLM fallback if still missing
-    if llm_service.enabled and (not structured_data or 'chart' not in structured_data):
+    if llm_service.enabled and not _has_visual_payload(structured_data):
         chart_intent = any(k in original_query.lower() for k in ["chart", "graph", "plot", "viz", "visualization", "pie", "bar", "line", "summary", "breakdown"])
         if chart_intent or not structured_data:
             logger.info("[synthesizer] Conventional extraction insufficient. Attempting LLM-driven structured extraction.")
             # Use the synthesis narrative for extraction as it's cleaner than raw context
             llm_structured = llm_service.extract_structured_data(original_query, narrative_output)
-            if llm_structured and 'chart' in llm_structured:
+            if llm_structured and _has_visual_payload(llm_structured):
                 if not structured_data:
                     structured_data = llm_structured
                 else:
-                    structured_data['chart'] = llm_structured['chart']
+                    if llm_structured.get('chart'):
+                        structured_data['chart'] = llm_structured['chart']
+                    if llm_structured.get('charts'):
+                        structured_data['charts'] = llm_structured['charts']
                 
                 if 'title' not in structured_data or structured_data['title'] == "Operational Analysis":
                     structured_data['title'] = llm_service.generate_title(original_query)
                 structured_data['summary'] = narrative_output[:300] + "..." if len(narrative_output) > 300 else narrative_output
+
+    if structured_data:
+        structured_data = _normalize_structured_payload(structured_data)
 
     return narrative_output, structured_data
 
@@ -201,11 +205,31 @@ def _synthesize_sql_narrative(content: str, original_query: str = "") -> Optiona
                 cats = [f"**{e['cat']}**" for e in entries]
                 return f"The current dataset covers the following {cat_label.lower()}s: {', '.join(cats)}."
 
-            summary = f"Performance data indicates that **{top['cat']}** leads in {label} at {_fmt(top['val'])}, representing {_pct(top['val'], total)} of total {label} ({_fmt(total)})."
+            tone = _detect_tone(original_query)
+            if tone == "concise":
+                return f"**{top['cat']}** leads {label.lower()} at **{_fmt(top['val'])}**, accounting for **{_pct(top['val'], total)}** of the total **{_fmt(total)}**."
+
+            runner_up = entries[1] if len(entries) > 1 else None
+            bottom = entries[-1]
+            spread = top['val'] - bottom['val']
+
+            snapshot_lines = []
+            if runner_up:
+                snapshot_lines.append(f"- **{runner_up['cat']}** follows at **{_fmt(runner_up['val'])}**.")
+            if len(entries) > 2:
+                snapshot_lines.append(f"- The spread between the top and bottom performer is **{_fmt(spread)}**.")
+            snapshot_lines.append(f"- Total observed {label.lower()} across the result set is **{_fmt(total)}**.")
+
+            summary_parts = [
+                f"## {top['cat']} Leads {_humanize(metric)}",
+                f"### Executive Takeaway\n**{top['cat']}** delivers the highest {label.lower()} at **{_fmt(top['val'])}**, representing **{_pct(top['val'], total)}** of the total measured {label.lower()}.",
+                "### Performance Snapshot\n" + "\n".join(snapshot_lines),
+            ]
+            return "\n\n".join(summary_parts)
             
-    # Final Fallback: provide a high-level count if data exists but didn't match structured patterns
-    # Final Fallback: provide a professional observation
-    return f"Operational data for **{_humanize(str(list(rows[0].values())[0]))}** has been processed. The results highlight key metrics across the requested dimensions, including {', '.join([_humanize(c) for c in metric_cols[:2]])}."
+    entity_name = _humanize(str(list(rows[0].values())[0]))
+    available_metrics = ", ".join([_humanize(c) for c in metric_cols[:2]]) if metric_cols else "the available metrics"
+    return f"## Data Snapshot\n\n**{entity_name}** appears in the result set, with coverage across **{available_metrics}**."
 
 
 def _synthesize_operational_summary(rows: List[Dict[str, Any]]) -> str:
@@ -352,30 +376,6 @@ def _synthesize_retrieval_narrative(content: str, is_expansion: bool = False, to
     return "\n\n".join(parts)
 
 
-def _generate_operational_implication(context: str, query: str) -> Optional[str]:
-    """Adds a layer of synthesized management implication based on the context."""
-    ctx_lower = context.lower()
-    q_lower = query.lower()
-    
-    # Localization / Quality theme
-    if any(k in ctx_lower for k in ['localization', 'subtitle', 'quality', 'translation']):
-        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**STRATEGIC RISK MITIGATION**: Current operational data indicates a need for enhanced localization QA protocols. It is recommended to implement a pre-release audit cycle to ensure regional content parity and viewer satisfaction before the next major roadmap milestone."
-        
-    # Spend / Efficiency theme
-    if any(k in ctx_lower for k in ['spend', 'efficiency', 'roi', 'cost']):
-        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**CAPITAL OPTIMIZATION**: To maximize acquisition efficiency, leadership should consider re-allocating under-performing display budgets toward high-ROI creator partnerships identified in the APAC and North American performance clusters."
-        
-    # Data / Warning theme
-    if any(k in ctx_lower for k in ['warning', 'inconsistency', 'data quality', 'error']):
-        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**OPERATIONAL INTEGRITY**: Addressing current ingestion anomalies is critical for downstream reporting accuracy. A technical deep-dive into the rejected record sets is advised to stabilize the data pipeline for Q3 reporting."
-
-    # Growth / Performance theme
-    if any(k in ctx_lower for k in ['growth', 'subscriber', 'reach', 'performance']):
-        return "## MANAGEMENT RECOMMENDATION\n\n---\n\n**GROWTH SUSTAINABILITY**: Sustaining the current subscriber trajectory requires continued investment in the science-fiction and mobile-first content pillars that are currently driving outsized regional engagement."
-
-    return None
-
-
 def _is_follow_up_prompt(query: str) -> bool:
     q = query.lower().strip()
     return any(re.match(p, q) for p in [
@@ -452,6 +452,97 @@ def _is_missing_dimension(value: Any) -> bool:
     if value is None:
         return True
     return str(value).strip().lower() in ("", "none", "null", "n/a", "undefined")
+
+
+def _is_summary_request(query: str) -> bool:
+    q = query.lower()
+    return any(re.search(pattern, q) for pattern in SUMMARY_PATTERNS)
+
+
+def _normalize_compare_text(text: str) -> str:
+    return re.sub(r'\s+', ' ', _sanitize_narrative_output(text or "")).strip().lower()
+
+
+def _sanitize_narrative_output(text: str) -> str:
+    if not text:
+        return ""
+
+    cleaned = text
+    cleaned = re.sub(r'<thinking>.*?</thinking>', '', cleaned, flags=re.IGNORECASE | re.DOTALL)
+    cleaned = re.sub(r'(?is)<analysis>.*?</analysis>', '', cleaned)
+    cleaned = re.sub(r'(?im)^\s*(chart[s]?\s+only\s+response|chart_only_response|table_response|metric_comparison|response_type\s*:.*|internal thinking.*)\s*$', '', cleaned)
+    cleaned = re.sub(r'(?im)^\s*Operational data for .* has been processed\..*$', '', cleaned)
+    cleaned = cleaned.replace("## MANAGEMENT RECOMMENDATION", "### Strategic Implication")
+    cleaned = re.sub(r'\n{3,}', '\n\n', cleaned)
+    return cleaned.strip()
+
+
+def _summarize_previous_answer(text: str) -> str:
+    cleaned = _sanitize_narrative_output(text)
+    bullet_candidates: List[str] = []
+
+    for line in cleaned.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if stripped.startswith('|') or re.match(r'^[-_]{3,}$', stripped):
+            continue
+        stripped = re.sub(r'^#{1,6}\s*', '', stripped)
+        stripped = re.sub(r'^[-*]\s*', '', stripped)
+        if len(stripped.split()) < 4:
+            continue
+        bullet_candidates.append(stripped)
+
+    deduped: List[str] = []
+    seen = set()
+    for item in bullet_candidates:
+        key = re.sub(r'\s+', ' ', item).strip().lower()
+        if key not in seen:
+            deduped.append(item)
+            seen.add(key)
+        if len(deduped) == 3:
+            break
+
+    if not deduped:
+        return cleaned
+
+    bullets = "\n".join([f"- {item}" for item in deduped])
+    return f"## Executive Summary\n\n{bullets}"
+
+
+def _has_visual_payload(structured: Optional[Dict[str, Any]]) -> bool:
+    if not structured:
+        return False
+    return bool(structured.get("chart") or structured.get("charts"))
+
+
+def _normalize_structured_payload(structured: Dict[str, Any]) -> Dict[str, Any]:
+    charts = structured.get("charts")
+    if not charts and structured.get("chart"):
+        charts = [structured["chart"]]
+
+    normalized_charts = []
+    for chart in charts or []:
+        data_points = chart.get("data") or []
+        if not data_points and chart.get("labels") and chart.get("values"):
+            data_points = [
+                {"label": chart["labels"][idx], "value": chart["values"][idx]}
+                for idx in range(min(len(chart["labels"]), len(chart["values"])))
+            ]
+        if data_points:
+            normalized_chart = dict(chart)
+            normalized_chart["data"] = data_points
+            normalized_charts.append(normalized_chart)
+
+    if normalized_charts:
+        structured["charts"] = normalized_charts
+        structured["chart"] = normalized_charts[0]
+
+    if structured.get("title") == "Operational Analysis" and normalized_charts:
+        labels = [point["label"] for point in normalized_charts[0].get("data", [])]
+        structured["title"] = _enhance_title_with_result(structured["title"], {"labels": labels})
+
+    return structured
 
 
 def generate_session_title(query: str) -> str:
@@ -747,53 +838,32 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
         labels = [d[0] for d in chart_data[:10]]
         values = [d[1] for d in chart_data[:10]]
         
-        chart_type = "bar"
-        if res_type == "trend_analysis": chart_type = "line"
-        elif res_type == "breakdown_analysis": chart_type = "pie"
-        
-        # 4. Multi-Scale Charting (Phase 22: High-Resolution Visualization)
-        # If the range of values is too high, split into multiple charts
-        non_zero_vals = [v for l, v in chart_data if v > 0]
-        if non_zero_vals:
-            max_v = max(non_zero_vals)
-            min_v = min(non_zero_vals)
-            
-            # If scale difference is > 100x, split them
-            if max_v / min_v > 100:
-                logger.info(f"[synthesizer] Scale imbalance detected ({max_v} vs {min_v}). Splitting charts.")
-                
-                # Group into Key Metrics vs Operational Ratios buckets
-                buckets = {}
-                for l, v in chart_data:
-                    mag = 0
-                    if v > 0:
-                        mag = int(math.log10(v))
-                    
-                    # Group into categories: Volume Metrics (e.g. Millions) vs Rates (e.g. Churn, %)
-                    bucket_key = "Key Performance Metrics" if mag >= 4 else "Operational Rates & Ratios"
-                    if bucket_key not in buckets: buckets[bucket_key] = []
-                    buckets[bucket_key].append({"label": l, "value": v})
-                
-                charts = []
-                for b_name, b_data in buckets.items():
-                    if not b_data: continue
-                    charts.append({
-                        "type": chart_type, # Preserve original intent (Bar/Line/Pie)
-                        "title": f"{b_name}: {_humanize(metric)} Analysis",
-                        "data": b_data
-                    })
-                structured["charts"] = charts
-            else:
-                # Standard single chart
-                structured["chart"] = {
-                    "type": chart_type,
-                    "title": f"{_humanize(metric)} by {_humanize(category)}",
-                    "data": [{"label": labels[i], "value": values[i]} for i in range(len(labels))]
-                }
-        
-        # If we have charts, and it's a metric comparison, we can skip the primary table 
-        if res_type == "metric_comparison" and len(rows) <= 5:
-            structured["response_type"] = "chart_only_response"
+        chart_points = [{"label": labels[i], "value": values[i]} for i in range(len(labels))]
+        charts = [
+            {
+                "type": "bar",
+                "title": f"{_humanize(metric)} by {_humanize(category)}",
+                "data": chart_points,
+            }
+        ]
+
+        if len(chart_points) >= 2:
+            charts.append({
+                "type": "line",
+                "title": f"{_humanize(metric)} Trend Across {_humanize(category)}",
+                "data": chart_points,
+            })
+
+        if len(chart_points) >= 2 and sum(point["value"] for point in chart_points) > 0 and all(point["value"] >= 0 for point in chart_points):
+            charts.append({
+                "type": "pie",
+                "title": f"Share of {_humanize(metric)} by {_humanize(category)}",
+                "data": chart_points,
+            })
+
+        structured["charts"] = charts
+        structured["chart"] = charts[0]
+        structured["title"] = _enhance_title_with_result(structured["title"], {"labels": labels})
             
         # Add KPI card if singular metric
         if len(rows) == 1:
@@ -803,7 +873,7 @@ def _extract_structured_data(answer_context: str, query: str) -> Optional[Dict[s
                 "context": f"Total for {rows[0][category]}"
             }
             
-    return structured
+    return _normalize_structured_payload(structured)
 
 def _extract_flattened_table(text: str) -> Optional[str]:
     """Tries to reconstruct a markdown table from flattened text strings."""
@@ -832,6 +902,25 @@ def _extract_flattened_table(text: str) -> Optional[str]:
     if len(window_items) >= 2:
         header = "| Region | Peak Viewing Window |\n|---|---|\n"
         rows = [f"| {m[0].strip()} | {m[1]} |" for m in window_items]
+        return header + "\n".join(rows)
+
+    # Pattern 0.2: Proportional Breakdown (Pie Chart Discovery)
+    # Matches: "TikTok 34% YouTube Shorts 29% Instagram Reels 18%"
+    prop_pattern = r'([A-Z][A-Za-z\s]{2,20})\s+(\d+(?:\.\d+)?%)(?=\s|$)'
+    prop_items = re.findall(prop_pattern, text)
+    if len(prop_items) >= 3:
+        header = "| Segment | Contribution Share |\n|---|---|\n"
+        rows = [f"| {m[0].strip()} | {m[1]} |" for m in prop_items]
+        return header + "\n".join(rows)
+
+    # Pattern 0.3: Multi-Value Region/Metric (Bar Chart Discovery)
+    # Matches: "APAC 81% North America 72% Europe 61%"
+    multi_pattern = r'([A-Z][A-Za-z\s]{1,15})\s+(\d+(?:\.\d+)?(?:%|M|hrs|min)?)(?=\s|$)'
+    multi_items = re.findall(multi_pattern, text)
+    relevant = [m for m in multi_items if any(k in m[0] for k in ["APAC", "America", "Europe", "LATAM", "Asia", "India", "Indonesia"])]
+    if len(relevant) >= 2:
+        header = "| Category | Metric Value |\n|---|---|\n"
+        rows = [f"| {m[0].strip()} | **{m[1]}** |" for m in relevant]
         return header + "\n".join(rows)
 
     lines = text.split('\n')
@@ -953,28 +1042,46 @@ def _format_all_flattened_tables(text: str) -> str:
             
         text = '\n'.join(new_lines)
 
-    # 6. Dense Line Metrics (Multiple Label Value pairs on one line)
-    # Matches: "Mobile 73% Smart TV 17% Desktop 7% Tablet 3%"
-    dense_pattern = r'([A-Z][A-Za-z\s]{2,20})\s+(\d+(?:\.\d+)?(?:%|M|hrs|min)?)(?=\s|$)'
-    dense_matches = re.findall(dense_pattern, text)
-    if len(dense_matches) >= 3 and "| Category |" not in text:
-        header = "| Segment | Contribution |\n|---|---|\n"
-        table_rows = [f"| {m[0].strip()} | **{m[1]}** |" for m in dense_matches]
+    # 6. Proportional Breakdown (Pie Chart Discovery)
+    # Matches: "TikTok 34% YouTube Shorts 29% Instagram Reels 18%"
+    prop_pattern = r'([A-Z][A-Za-z\s]{2,20})\s+(\d+(?:\.\d+)?%)(?=\s|$)'
+    prop_matches = re.findall(prop_pattern, text)
+    if len(prop_matches) >= 3 and "| Platform |" not in text:
+        header = "| Segment | Contribution Share |\n|---|---|\n"
+        table_rows = [f"| {m[0].strip()} | {m[1]} |" for m in prop_matches]
         table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
         
-        # Try to replace the line that contains these matches
-        first_match = dense_matches[0][0]
-        last_match = dense_matches[-1][1]
-        
-        start_idx = text.find(first_match)
-        end_idx = text.find(last_match, start_idx) + len(last_match)
-        
-        if start_idx != -1 and end_idx != -1:
-            # Check if we are already in a table
-            if text[max(0, start_idx-5):start_idx].count('|') < 2:
-                text = text[:start_idx] + table_md + text[end_idx:]
+        # Replace the first cluster of matches found
+        try:
+            first_m = prop_matches[0][0]
+            last_m = prop_matches[-1][1]
+            start_i = text.find(first_m)
+            end_i = text.find(last_m, start_i) + len(last_m)
+            if start_i != -1 and end_i != -1:
+                text = text[:start_i] + table_md + text[end_i:]
+        except Exception: pass
 
-    # 7. Roadmap / Planned Release Reconstruction
+    # 7. Multi-Value Region/Metric Rehydration (Bar Chart Discovery)
+    # Matches: "APAC 81% North America 72% Europe 61%"
+    multi_metric_pattern = r'([A-Z][A-Za-z\s]{1,15})\s+(\d+(?:\.\d+)?(?:%|M|hrs|min)?)(?=\s|$)'
+    multi_matches = re.findall(multi_metric_pattern, text)
+    # Filter to ensure we have actual regions or categories
+    relevant_multi = [m for m in multi_matches if any(k in m[0] for k in ["APAC", "America", "Europe", "LATAM", "Asia", "India", "Indonesia"])]
+    if len(relevant_multi) >= 2 and "| Region |" not in text:
+        header = "| Category | Metric Value |\n|---|---|\n"
+        table_rows = [f"| {m[0].strip()} | **{m[1]}** |" for m in relevant_multi]
+        table_md = f"\n{header}" + "\n".join(table_rows) + "\n"
+        
+        try:
+            first_m = relevant_multi[0][0]
+            last_m = relevant_multi[-1][1]
+            start_i = text.find(first_m)
+            end_i = text.find(last_m, start_i) + len(last_m)
+            if start_i != -1 and end_i != -1:
+                text = text[:start_i] + table_md + text[end_i:]
+        except Exception: pass
+
+    # 8. Roadmap / Planned Release Reconstruction
     # Handles: "planned releases title genre target region expected release Galaxy Burn: Frontier Sci-Fi APAC July..."
     if "planned releases" in text.lower() and "| Title |" not in text:
         roadmap_pattern = r'([A-Z][A-Za-z\d\s:]{3,30})\s+([A-Z][a-z\d\-]+)\s+([A-Z]{2,10})\s+([A-Z][a-z]+(?:\s+\d{4})?)'
@@ -994,12 +1101,41 @@ def _format_all_flattened_tables(text: str) -> str:
             except Exception:
                 pass
 
-    # 8. Markdown Table Sanity Check (Fix common AI mistakes)
+    # 8. Regional Acronym Expansion (Avoid "NA" confusion)
+    # Replaces " NA " or " NA|" with " North America " or " North America|"
+    text = re.sub(r'(\s|\|)NA(\s|\|)', r'\1North America\2', text)
+
+    # 9. Markdown Table Sanity Check & Structural Hygiene
     # Fix double pipes: "| |" -> "|"
     text = text.replace("| |", "|")
+    
+    # Remove "manual decorators" (lines of only dashes/dots inside/around tables)
+    text = re.sub(r'\|[ \t]*[-.]{3,}[ \t]*\|', '|', text) # Remove dashes inside cells
+    text = re.sub(r'^[ \t]*[-.]{5,}[ \t]*$', '', text, flags=re.MULTILINE) # Remove standalone dashed lines
+    
     # Fix missing space after pipes in separators: "|---|---|---| ---|" -> "|---|---|---|---|"
     text = re.sub(r'(\|\s*[-:]+\s*)+\|', lambda m: m.group(0).replace(" ", ""), text)
+    
     # Ensure there is a newline before and after tables
+    # First, find lines that look like tables and make sure they are separated from text
     text = re.sub(r'([^\n])\n(\|.*\|)\n([^\n])', r'\1\n\n\2\n\n\3', text)
+    
+    # 10. List Rehydration (Fix fragmented bullets and orphan hyphens)
+    # Remove "phantom bullets" (standalone dots or hyphens on a line)
+    text = re.sub(r'^[ \t]*[•\-\*]\s*$', '', text, flags=re.MULTILINE)
+    
+    # Fix "double-bulleting" like "• - "
+    text = text.replace("• -", "•")
+    text = text.replace("* -", "•")
+    
+    # Merge fragments that were meant to be one line but split by a newline and a bullet
+    # e.g., "Increasing long \n - content strategy" -> "Increasing long content strategy"
+    text = re.sub(r'([a-z])\s*\n\s*[•\-\*]\s*([a-z])', r'\1 \2', text)
+
+    # Final cleanup of any trailing empty table cells that were just dashes
+    text = text.replace("|---|---|---|---|---|", "|---|---|---|---|")
+    
+    # Remove any internal [CHART] or [TABLE] tags that might have leaked
+    text = re.sub(r'\[[A-Z\s_]{5,}\]', '', text)
 
     return text

@@ -49,7 +49,7 @@ const ChartRenderer: React.FC<ChartRendererProps> = ({ chart }) => {
   );
 };
 
-import { FileText, Image as ImageIcon } from 'lucide-react';
+import { FileText } from 'lucide-react';
 
 export default function MessageBubble({ message, onOpenSources }: MessageBubbleProps) {
   const isUser = message.role === 'user';
@@ -69,7 +69,6 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
 
   if (isUser) {
     const isImage = message.image && message.image.startsWith('data:image/');
-    const isDoc = message.image && (message.image.includes('application/pdf') || message.image.includes('text/csv'));
 
     return (
       <div className="animate-fade-in" style={{ marginBottom: 28 }}>
@@ -132,8 +131,16 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
   }
 
   const segments = formatResponse(message.content);
+  const narrativeSegments = structured?.table
+    ? segments.filter((seg) => seg.type !== 'table')
+    : segments;
   const hasSources = message.sources && message.sources.split(',').filter(Boolean).length > 0;
   const sourceCount = hasSources ? message.sources!.split(',').filter(Boolean).length : 0;
+  const charts = structured
+    ? (Array.isArray(structured.charts) && structured.charts.length > 0
+        ? structured.charts
+        : (structured.chart ? [structured.chart] : []))
+    : [];
 
   return (
     <div className="animate-fade-in" style={{ marginBottom: 32, borderBottom: '1px solid var(--color-border-subtle)', paddingBottom: 28 }}>
@@ -143,20 +150,7 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
           <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--color-text)', marginBottom: 8, letterSpacing: '-0.02em' }}>
             {structured.title}
           </h2>
-          {structured.response_type && (
-            <span style={{ 
-              fontSize: 10, 
-              fontWeight: 700, 
-              background: 'var(--color-primary-soft)', 
-              color: 'var(--color-text-secondary)', 
-              padding: '2px 8px', 
-              borderRadius: '4px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              {structured.response_type.replace(/_/g, ' ')}
-            </span>
-          )}
+          {/* response_type is internal, no need to show it */}
         </div>
       )}
 
@@ -171,20 +165,14 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
             />
           )}
           
-          {structured.table && (structured.response_type === 'table_response' || structured.response_type === 'metric_comparison') && (
+          {structured.table && (
             <DataTable 
               columns={structured.table.columns} 
               rows={structured.table.rows} 
             />
           )}
 
-          {/* Single Chart (Legacy Support) */}
-          {structured.chart && (
-            <ChartRenderer chart={structured.chart} />
-          )}
-
-          {/* Multiple Charts (Scale-Aware) */}
-          {structured.charts && Array.isArray(structured.charts) && structured.charts.map((c: any, ci: number) => (
+          {charts.map((c: any, ci: number) => (
             <ChartRenderer key={ci} chart={c} />
           ))}
         </div>
@@ -192,7 +180,7 @@ export default function MessageBubble({ message, onOpenSources }: MessageBubbleP
 
       {/* Narrative segments */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-        {segments.map((seg, i) => (
+        {narrativeSegments.map((seg, i) => (
           <SegmentRenderer key={i} segment={seg} isFirst={i === 0 && !structured} />
         ))}
       </div>
@@ -242,21 +230,20 @@ function SegmentRenderer({ segment, isFirst }: { segment: FormattedSegment; isFi
     case 'heading':
       return (
         <div style={{
-          fontSize: segment.level === 2 ? 16 : 14,
+          fontSize: segment.level === 2 ? 18 : 15,
           fontWeight: 700,
           color: 'var(--color-text)',
           margin: 0,
-          marginTop: isFirst ? 0 : 24,
-          marginBottom: 8,
-          letterSpacing: '-0.01em',
-          textTransform: segment.level === 2 ? 'uppercase' as const : 'none' as const,
+          marginTop: isFirst ? 0 : 32,
+          marginBottom: 12,
+          letterSpacing: '-0.02em',
           ...(segment.level === 2 ? { 
-            fontSize: 12, 
-            letterSpacing: '0.08em', 
-            opacity: 0.6,
-            borderBottom: '1px solid var(--color-border-subtle)',
-            paddingBottom: 8,
-          } : {}),
+            borderLeft: '4px solid var(--color-primary)',
+            paddingLeft: 12,
+            lineHeight: 1.2,
+          } : {
+            lineHeight: 1.4,
+          }),
         }}>
           {segment.content}
         </div>

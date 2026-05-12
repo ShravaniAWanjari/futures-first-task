@@ -55,6 +55,7 @@ export interface QueryTrace {
 export interface QueryResponse {
   request_id: string;
   answer_context: string;
+  raw_reasoning?: string;
   sources: string[];
   trace: QueryTrace;
   overall_confidence: number;

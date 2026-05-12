@@ -9,7 +9,7 @@ import SourcesPanel from '../components/SourcesPanel';
 export default function WorkspacePage() {
   const {
     sessions, activeSession, loading, queryLoading, workspace, lastTrace, lastContext, health,
-    loadSessions, loadSession, createSession, removeSession,
+    loadSession, createSession, removeSession,
     renameActiveSession, sendMessage, setWorkspace,
   } = useSessions();
 
@@ -179,7 +179,7 @@ export default function WorkspacePage() {
         </header>
 
         {hasMessages ? (
-          <ChatPanel messages={activeSession.messages} queryLoading={queryLoading} onOpenSources={openSources} />
+          <ChatPanel messages={activeSession?.messages || []} queryLoading={queryLoading} onOpenSources={openSources} />
         ) : (
           <Suggestions workspace={workspace} onSelect={handleSuggestionSelect} />
         )}

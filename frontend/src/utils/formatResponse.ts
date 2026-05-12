@@ -48,7 +48,10 @@ export function formatResponse(raw: string): FormattedSegment[] {
   let cleaned = raw
     .replace(/^>\s*/gm, '')
     .replace(/SO WHAT\??:?\s*/gi, 'Strategic Implication: ')
-    .replace(/So What\??:?\s*/g, 'Strategic Implication: ');
+    .replace(/So What\??:?\s*/g, 'Strategic Implication: ')
+    .replace(/^\s*(chart[s]?\s+only\s+response|chart_only_response|table_response|metric_comparison)\s*$/gim, '')
+    .replace(/^\s*response_type\s*:.*$/gim, '')
+    .replace(/<thinking>[\s\S]*?<\/thinking>/gi, '');
 
   // ── Table Re-assembly ───────────────────────────────────────────────────────
   // The AI often inserts blank lines BETWEEN table rows, splitting them into

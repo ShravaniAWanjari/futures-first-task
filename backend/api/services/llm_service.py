@@ -1,16 +1,20 @@
 import logging
 import base64
 import io
-import google.generativeai as genai
 from typing import List, Dict, Any, Optional
 from backend.config import Config
+
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
 
 logger = logging.getLogger(__name__)
 
 class LLMService:
     def __init__(self):
         self.api_key = Config.GEMINI_API_KEY
-        self.enabled = bool(self.api_key)
+        self.enabled = bool(self.api_key and genai is not None)
         
         if self.enabled:
             try:
@@ -23,11 +27,13 @@ class LLMService:
                     "\n\nSTRICT OPERATIONAL RULES:"
                     "\n1. NO TECHNICAL META-COMMENTARY: NEVER mention 'retrieved records', 'identified entries', 'searching databases', or describe your technical mechanics. Provide insights directly as a senior human analyst would."
                     "\n2. DATA RECONSTRUCTION: You will receive 'Grounded Evidence' which often contains fragmented or flattened table data (e.g. 'region spend cpm APAC $5M $55'). You MUST identify these patterns and reconstruct them into clean, valid Markdown tables."
-                    "\n3. STRUCTURE: Use ### headings for sections. NEVER write long paragraphs. Every heading must be followed by meaningful analytical body text."
-                    "\n4. MANDATORY TABLES: For any regional, platform, or temporal comparisons, you MUST use Markdown tables. Omit rows where data is missing."
+                    "\n3. STRUCTURE: Use concise executive sections with ## and ### headings. Keep paragraphs short and analytical."
+                    "\n4. MANDATORY TABLES: For any regional, platform, campaign, or temporal comparisons, you MUST use Markdown tables. Omit rows where data is missing."
                     "\n5. BOLDING: Use **bold** for key metrics and entity names within narrative text."
                     "\n6. PROFESSIONAL TONE: Be concise, direct, and authoritative. Avoid fluff or introductory filler (e.g. 'Based on the records...')."
-                    "\n7. GREETINGS: Only if the user says 'hi' or 'hello', start with 'Hello there, I am Iris., your Operational Intelligence Assistant.' Otherwise, jump straight to the analysis."
+                    "\n7. DO NOT LEAK CONTROL TEXT: Never output internal tags or labels such as 'chart only response', 'response_type', 'thinking', or process notes."
+                    "\n8. EVIDENCE-GROUNDED ACTIONS ONLY: Do not invent generic management recommendations. If you include an action or implication, it must be explicitly tied to the metrics in the evidence."
+                    "\n9. GREETINGS: Only if the user says 'hi' or 'hello', start with 'Hello there, I am Iris., your Operational Intelligence Assistant.' Otherwise, jump straight to the analysis."
                 )
                 
                 # Use gemini-2.5-flash for the best balance of speed, reasoning, and generous limits
@@ -39,6 +45,9 @@ class LLMService:
             except Exception as e:
                 logger.error(f"[llm_service] Failed to initialize Gemini: {e}")
                 self.enabled = False
+        elif genai is None:
+            logger.warning("[llm_service] google-generativeai is not installed. Falling back to deterministic synthesis.")
+            self.enabled = False
         else:
             import os
             logger.warning("[llm_service] No GEMINI_API_KEY found. os.environ keys: " + str(list(os.environ.keys())))
@@ -95,12 +104,18 @@ class LLMService:
             f"USER QUERY: {query}\n\n"
             f"GROUNDED EVIDENCE:\n{context}\n\n"
             "INSTRUCTIONS:\n"
-            "1. RECONSTRUCT FRAGMENTS: The evidence contains fragmented data dumps. Identify and transform these into professional Markdown tables (using | and --- syntax).\n"
-            "2. TABULAR DATA MANDATE: Any regional performance, time-based viewing windows, or content roadmap data MUST be presented as a Markdown table. Do not use plain text lists for metrics. NEVER dump multiple data points in a single line without a table structure.\n"
-            "3. INTELLIGENT ATTRIBUTION: If specific 'Key Attributes' for underperforming categories are missing from the raw fragments, do not simply use 'N/A'. Instead, cross-reference broader operational issues mentioned in the context (e.g., 'localization delays', 'generic marketing', 'mobile optimization gaps') to provide a reasoned diagnostic attribution.\n"
-            "4. DIRECT ANSWER: Answer the query directly and authoritatively. No filler.\n"
-            "5. NO META-COMMENTARY: NEVER mention 'retrieved records' or technical mechanics.\n"
-            "6. STRATEGIC IMPLICATION: Always end with a '### Strategic Implication' section."
+            "1. ANSWER-FIRST STRUCTURE: Start every response with a Level 2 Heading (##) that states the core business conclusion or leading performer.\n"
+            "2. EXECUTIVE BI STYLE: Sound like a strategy analyst preparing output for leadership. Short paragraphs, strong metric callouts, no filler.\n"
+            "3. RECONSTRUCT FRAGMENTS: The evidence contains fragmented data dumps. Identify and transform these into professional Markdown tables (using | and --- syntax).\n"
+            "4. TABULAR DATA MANDATE: Any regional, platform, campaign, or time-based metric comparison MUST be presented as a Markdown table. Do not use plain text lists for metrics.\n"
+            "4. REGIONAL CLARITY: Always use full regional names (e.g., 'North America' instead of 'NA', 'Asia Pacific' instead of 'APAC' in titles) to avoid ambiguity with data states like 'Not Available'.\n"
+            "5. TABLE HYGIENE: Do not use manual dashed lines or extra decorations inside tables. Use only standard Markdown table syntax.\n"
+            "6. INTELLIGENT ATTRIBUTION: If specific drivers are missing, infer cautiously from nearby evidence, but do not fabricate unsupported claims.\n"
+            "7. DIRECT ANSWER: Answer the query directly and authoritatively. No filler.\n"
+            "8. NO META-COMMENTARY: NEVER mention 'retrieved records', system behavior, or technical mechanics.\n"
+            "9. NO CONTROL LABELS: Never output internal labels such as 'chart only response', 'response_type', 'thinking', or other prompt artifacts.\n"
+            "10. STRATEGIC IMPLICATION: Only include a '### Strategic Implication' section when the evidence clearly supports an action. The action must reference actual metrics in the response.\n"
+            "11. SUMMARIZATION BEHAVIOR: If the user asks to summarize, compress the answer materially. Do not repeat the previous response verbatim."
         )
 
         try:
@@ -133,14 +148,19 @@ class LLMService:
         
         try:
             prompt = (
-                "You are a Data Extraction Engine. Extract visualization-ready data from the evidence provided below. "
+                "You are a Data Extraction Engine. Extract ALL visualization-ready datasets from the evidence provided below. "
                 "\n\nRULES:"
-                "\n1. If the User Query asks for a chart (bar, pie, line) or mentions comparing metrics across categories (regions, titles, platforms), extract the data."
-                "\n2. Return ONLY a JSON object. No markdown, no triple backticks, no extra text."
-                "\n3. JSON Schema:"
-                "\n   { \"chart\": { \"type\": \"bar|pie|line\", \"title\": \"Descriptive Title\", \"data\": [ { \"label\": \"Category\", \"value\": 123.4 } ] } }"
-                "\n4. IMPORTANT: In the 'value' field, return ONLY a number (float or int). Strip characters like '%', '$', or 'M'. (e.g. '84%' becomes 84.0)."
-                "\n5. If no clear chart-ready data exists, return an empty object {}."
+                "\n1. Identify every independent dataset suitable for a chart (bar, pie, line). Examples: regional performance, platform shares, spend breakdowns, time trends."
+                "\n2. DATA ROUTING: Use 'pie' charts for percentage-based breakdowns or shares of a whole. Use 'bar' charts for discrete performance comparisons. Use 'line' charts for ordered trends or time-series patterns."
+                "\n3. Return ONLY a JSON object. No markdown, no triple backticks, no extra text."
+                "\n4. JSON Schema:"
+                "\n   { \"title\": \"The Main Finding\", \"table\": { \"columns\": [\"Dimension\", \"Metric\"], \"rows\": [{ \"Dimension\": \"A\", \"Metric\": \"123\" }] }, \"charts\": [ { \"type\": \"bar|pie|line\", \"title\": \"Metric by Category\", \"data\": [ { \"label\": \"Category\", \"value\": 123.4 } ] } ] }"
+                "\n5. IMPORTANT: THE TOP-LEVEL TITLE must be 'Answer-First'. It should summarize the core conclusion or the highest performing metric found in the data. "
+                "NEVER use generic titles like 'Analysis', 'Summary', or 'Data Results'. "
+                "Good example: 'Serialized Sci-Fi Dominates Q2 Engagement'. Bad example: 'Q2 Performance Summary'."
+                "\n6. In the 'value' field, return ONLY a number (float or int). Strip characters like '%', '$', or 'M'."
+                "\n7. When metrics exist, prefer returning a chart suite that includes bar, pie, and line variants when the same dataset supports them."
+                "\n8. If no clear chart-ready data exists, return an empty object {}."
                 f"\n\nUSER QUERY: {query}"
                 f"\n\nGROUNDED EVIDENCE:\n{context}"
             )

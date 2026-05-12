@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
 /**
  * Analytical Presentation Pass
@@ -228,7 +228,7 @@ export const SimplePieChart: React.FC<ChartProps> = ({ data, labels, values, tit
   
   const colors = [
     'var(--color-primary)', 
-    '#6366f1', '#8b5cf6', '#a855f7', '#d946ef', '#ec4899', '#f43f5e'
+    '#0f766e', '#1d4ed8', '#b45309', '#be123c', '#475569', '#0f172a'
   ];
 
   const slices = chartData.map((d, i) => {
@@ -247,7 +247,7 @@ export const SimplePieChart: React.FC<ChartProps> = ({ data, labels, values, tit
       display: 'flex', flexDirection: 'column', gap: 20
     }}>
       {title && <h3 style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-text)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{title}</h3>}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
         <div style={{
           width: 120, height: 120, borderRadius: '50%',
           background: `conic-gradient(${gradient})`,
@@ -275,7 +275,5 @@ const _fmt = (n: number) => {
   if (Math.abs(n) >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
   return n.toLocaleString();
 };
-
-
 
 
