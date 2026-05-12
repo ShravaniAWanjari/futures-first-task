@@ -1,8 +1,0 @@
-﻿==============================================
-  FuturesFirst Backend ΓÇö Container Startup
-==============================================
-[INIT] Existing databases found ΓÇö skipping bootstrap.
-[INIT] To force a rebuild, delete the databases/ volume and restart.
-
-[START] Launching FuturesFirst API Server...
-INFO:     172.18.0.3:57348 - "POST /query HTTP/1.1" 200 OK
